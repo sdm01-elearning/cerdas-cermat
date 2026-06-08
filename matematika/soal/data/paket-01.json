@@ -1,1 +1,131 @@
-
+{
+  "meta": {
+    "paket": "01",
+    "kategori": "matematika",
+    "kategori_label": "Pengetahuan Matematika",
+    "total_soal": 10,
+    "target_soal": 40,
+    "catatan": "Paket ini berisi 10 soal contoh. Tambahkan soal hingga 40 sesuai panduan di README.",
+    "versi": "1.0.0"
+  },
+  "soal": [
+    {
+      "id": 1,
+      "teks": "Berapakah hasil dari 125 × 8?",
+      "bahasa": "id",
+      "jawaban": "1.000",
+      "alternatif_jawaban": [
+        "1000"
+      ],
+      "pembahasan": "125 × 8 = 1.000. Cara cepat: 125 × 8 = 125 × 4 × 2 = 500 × 2 = 1.000. Atau: 125 × 8 = 1.000 karena 8 × 125 = 1.000 (setengah dari 2.000).",
+      "topik": "Aritmatika",
+      "level": "mudah",
+      "waktu": 20
+    },
+    {
+      "id": 2,
+      "teks": "Berapakah akar kuadrat dari 144?",
+      "bahasa": "id",
+      "jawaban": "12",
+      "alternatif_jawaban": [],
+      "pembahasan": "√144 = 12, karena 12 × 12 = 144. Cara hafal: bilangan yang akar kuadratnya mudah diingat: √1=1, √4=2, √9=3, √16=4, √25=5, √36=6, √49=7, √64=8, √81=9, √100=10, √121=11, √144=12.",
+      "topik": "Aritmatika",
+      "level": "mudah",
+      "waktu": 15
+    },
+    {
+      "id": 3,
+      "teks": "Berapakah FPB (Faktor Persekutuan Terbesar) dari 24 dan 36?",
+      "bahasa": "id",
+      "jawaban": "12",
+      "alternatif_jawaban": [],
+      "pembahasan": "Faktor dari 24: 1, 2, 3, 4, 6, 8, 12, 24. Faktor dari 36: 1, 2, 3, 4, 6, 9, 12, 18, 36. Faktor persekutuan: 1, 2, 3, 4, 6, 12. FPB (yang terbesar) = 12.",
+      "topik": "Bilangan",
+      "level": "sedang",
+      "waktu": 25
+    },
+    {
+      "id": 4,
+      "teks": "Berapakah KPK (Kelipatan Persekutuan Terkecil) dari 4 dan 6?",
+      "bahasa": "id",
+      "jawaban": "12",
+      "alternatif_jawaban": [],
+      "pembahasan": "Kelipatan 4: 4, 8, 12, 16, 20... Kelipatan 6: 6, 12, 18, 24... Kelipatan persekutuan terkecil = 12. Cara lain: KPK = (4 × 6) ÷ FPB(4,6) = 24 ÷ 2 = 12.",
+      "topik": "Bilangan",
+      "level": "sedang",
+      "waktu": 25
+    },
+    {
+      "id": 5,
+      "teks": "What is 15% of 200?",
+      "bahasa": "en",
+      "jawaban": "30",
+      "alternatif_jawaban": [],
+      "pembahasan": "15% of 200 = 15/100 × 200 = 15 × 2 = 30. Cara cepat: 10% dari 200 = 20, maka 5% = 10, sehingga 15% = 20 + 10 = 30.",
+      "topik": "Persentase",
+      "level": "sedang",
+      "waktu": 25
+    },
+    {
+      "id": 6,
+      "teks": "Berapakah luas persegi panjang dengan panjang 12 cm dan lebar 8 cm?",
+      "bahasa": "id",
+      "jawaban": "96 cm²",
+      "alternatif_jawaban": [
+        "96"
+      ],
+      "pembahasan": "Luas persegi panjang = panjang × lebar = 12 cm × 8 cm = 96 cm². Satuan luas adalah cm² (sentimeter persegi).",
+      "topik": "Geometri",
+      "level": "mudah",
+      "waktu": 20
+    },
+    {
+      "id": 7,
+      "teks": "Sebuah lingkaran memiliki jari-jari 7 cm. Berapakah kelilingnya? (π = 22/7)",
+      "bahasa": "id",
+      "jawaban": "44 cm",
+      "alternatif_jawaban": [
+        "44"
+      ],
+      "pembahasan": "Keliling lingkaran = 2 × π × r = 2 × 22/7 × 7 = 2 × 22 = 44 cm. Ingat rumus: K = 2πr atau K = πd (d = diameter = 2r).",
+      "topik": "Geometri",
+      "level": "sedang",
+      "waktu": 25
+    },
+    {
+      "id": 8,
+      "teks": "Berapakah rata-rata (mean) dari bilangan: 4, 7, 8, 9, 12?",
+      "bahasa": "id",
+      "jawaban": "8",
+      "alternatif_jawaban": [],
+      "pembahasan": "Rata-rata = jumlah semua data ÷ banyak data = (4 + 7 + 8 + 9 + 12) ÷ 5 = 40 ÷ 5 = 8.",
+      "topik": "Statistika",
+      "level": "sedang",
+      "waktu": 25
+    },
+    {
+      "id": 9,
+      "teks": "Jika 2³ + 4² = n, berapakah nilai n?",
+      "bahasa": "id",
+      "jawaban": "24",
+      "alternatif_jawaban": [],
+      "pembahasan": "2³ = 2 × 2 × 2 = 8. 4² = 4 × 4 = 16. Maka n = 8 + 16 = 24. Ingat: aⁿ artinya a dikalikan sebanyak n kali (perpangkatan).",
+      "topik": "Perpangkatan",
+      "level": "sulit",
+      "waktu": 25
+    },
+    {
+      "id": 10,
+      "teks": "Sebuah kubus memiliki volume 216 cm³. Berapakah panjang rusuknya?",
+      "bahasa": "id",
+      "jawaban": "6 cm",
+      "alternatif_jawaban": [
+        "6"
+      ],
+      "pembahasan": "Volume kubus = s³ (s = panjang rusuk). Maka s³ = 216, sehingga s = ∛216 = 6 cm. Cek: 6³ = 6 × 6 × 6 = 216 ✓.",
+      "topik": "Geometri",
+      "level": "sulit",
+      "waktu": 30
+    }
+  ]
+}
