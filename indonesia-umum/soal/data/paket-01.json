@@ -1,1 +1,145 @@
-
+{
+  "meta": {
+    "paket": "01",
+    "kategori": "indonesia-umum",
+    "kategori_label": "Pengetahuan Indonesia & Umum",
+    "total_soal": 10,
+    "target_soal": 40,
+    "catatan": "Paket ini berisi 10 soal contoh. Tambahkan soal hingga 40 sesuai panduan di README.",
+    "versi": "1.0.0"
+  },
+  "soal": [
+    {
+      "id": 1,
+      "teks": "Apa nama ibukota Indonesia?",
+      "bahasa": "id",
+      "jawaban": "Jakarta",
+      "alternatif_jawaban": [],
+      "pembahasan": "Jakarta adalah ibukota Negara Kesatuan Republik Indonesia sejak 1945. Indonesia saat ini sedang membangun ibukota baru bernama Nusantara di Kalimantan Timur.",
+      "topik": "Geografi Indonesia",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 2,
+      "teks": "Siapakah presiden pertama Republik Indonesia?",
+      "bahasa": "id",
+      "jawaban": "Ir. Soekarno",
+      "alternatif_jawaban": [
+        "Soekarno",
+        "Bung Karno"
+      ],
+      "pembahasan": "Ir. Soekarno adalah Presiden pertama RI yang menjabat dari 17 Agustus 1945 hingga 12 Maret 1967. Beliau juga dikenal sebagai Bung Karno, Proklamator kemerdekaan Indonesia.",
+      "topik": "Sejarah Indonesia",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 3,
+      "teks": "Sebutkan semboyan yang tertulis pada lambang negara Garuda Pancasila!",
+      "bahasa": "id",
+      "jawaban": "Bhinneka Tunggal Ika",
+      "alternatif_jawaban": [
+        "Bhineka Tunggal Ika"
+      ],
+      "pembahasan": "Bhinneka Tunggal Ika berasal dari bahasa Sansekerta yang berarti 'Berbeda-beda tetapi tetap satu'. Semboyan ini mencerminkan keberagaman suku, agama, dan budaya Indonesia yang tetap bersatu.",
+      "topik": "Kewarganegaraan",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 4,
+      "teks": "Berapa jumlah provinsi di Indonesia saat ini?",
+      "bahasa": "id",
+      "jawaban": "38 provinsi",
+      "alternatif_jawaban": [
+        "38"
+      ],
+      "pembahasan": "Per 2024, Indonesia memiliki 38 provinsi. Jumlah ini bertambah dari 34 setelah pemekaran wilayah di Papua yang menghasilkan beberapa provinsi baru seperti Papua Selatan, Papua Tengah, Papua Pegunungan, dan Papua Barat Daya.",
+      "topik": "Geografi Indonesia",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 5,
+      "teks": "Siapakah pencipta lagu kebangsaan Indonesia Raya?",
+      "bahasa": "id",
+      "jawaban": "Wage Rudolf Supratman",
+      "alternatif_jawaban": [
+        "W.R. Supratman",
+        "WR Supratman"
+      ],
+      "pembahasan": "Wage Rudolf Supratman (W.R. Supratman) adalah pencipta lagu Indonesia Raya. Lagu ini pertama kali diperdengarkan pada Kongres Pemuda II, 28 Oktober 1928, yang juga dikenal sebagai hari Sumpah Pemuda.",
+      "topik": "Sejarah Indonesia",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 6,
+      "teks": "Hari Kemerdekaan Indonesia diperingati setiap tanggal berapa?",
+      "bahasa": "id",
+      "jawaban": "17 Agustus",
+      "alternatif_jawaban": [
+        "17 Agustus 1945"
+      ],
+      "pembahasan": "Proklamasi Kemerdekaan Indonesia dibacakan oleh Soekarno-Hatta pada tanggal 17 Agustus 1945 di Jalan Pegangsaan Timur No. 56, Jakarta. Setiap tanggal 17 Agustus diperingati sebagai Hari Kemerdekaan RI.",
+      "topik": "Sejarah Indonesia",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 7,
+      "teks": "What is the name of Indonesia's national monument located in Central Jakarta?",
+      "bahasa": "en",
+      "jawaban": "Monas (National Monument)",
+      "alternatif_jawaban": [
+        "Monas",
+        "National Monument",
+        "Monumen Nasional"
+      ],
+      "pembahasan": "Monas (Monumen Nasional) adalah tugu setinggi 132 meter di pusat Jakarta. Dibangun atas gagasan Presiden Soekarno dan diresmikan pada 1975. Puncaknya dihiasi api abadi berlapis emas seberat 35 kg.",
+      "topik": "Tempat Bersejarah",
+      "level": "sedang",
+      "waktu": 15
+    },
+    {
+      "id": 8,
+      "teks": "Suku apakah yang merupakan suku terbesar di Indonesia berdasarkan sensus penduduk?",
+      "bahasa": "id",
+      "jawaban": "Suku Jawa",
+      "alternatif_jawaban": [
+        "Jawa"
+      ],
+      "pembahasan": "Suku Jawa adalah suku terbesar di Indonesia dengan populasi sekitar 40% dari total penduduk Indonesia. Suku Jawa sebagian besar bermukim di Jawa Tengah, Jawa Timur, dan Daerah Istimewa Yogyakarta.",
+      "topik": "Keberagaman Budaya",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 9,
+      "teks": "Presiden Indonesia yang menjabat dari tahun 2014 hingga 2024 adalah?",
+      "bahasa": "id",
+      "jawaban": "Joko Widodo",
+      "alternatif_jawaban": [
+        "Jokowi"
+      ],
+      "pembahasan": "Joko Widodo (Jokowi) adalah Presiden ke-7 RI, menjabat dua periode (2014-2019 dan 2019-2024). Sebelum menjadi Presiden, beliau pernah menjabat sebagai Wali Kota Surakarta dan Gubernur DKI Jakarta. Pada 2024, beliau digantikan oleh Prabowo Subianto.",
+      "topik": "Tokoh Nasional",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 10,
+      "teks": "Apa nama ibukota baru Indonesia yang sedang dibangun di Kalimantan Timur?",
+      "bahasa": "id",
+      "jawaban": "Nusantara",
+      "alternatif_jawaban": [
+        "IKN Nusantara"
+      ],
+      "pembahasan": "Ibu Kota Nusantara (IKN) adalah nama ibukota baru Indonesia yang dibangun di Kecamatan Sepaku, Penajam Paser Utara, Kalimantan Timur. Pemindahan ini bertujuan untuk pemerataan pembangunan dan mengurangi beban Jakarta. Nama 'Nusantara' dipilih karena merupakan nama lain Indonesia.",
+      "topik": "Berita & Pengetahuan Terkini",
+      "level": "sulit",
+      "waktu": 10
+    }
+  ]
+}
