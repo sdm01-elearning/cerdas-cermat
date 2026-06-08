@@ -1,1 +1,145 @@
-
+{
+  "meta": {
+    "paket": "01",
+    "kategori": "sains",
+    "kategori_label": "Pengetahuan Sains",
+    "total_soal": 10,
+    "target_soal": 40,
+    "catatan": "Paket ini berisi 10 soal contoh. Tambahkan soal hingga 40 sesuai panduan di README.",
+    "versi": "1.0.0"
+  },
+  "soal": [
+    {
+      "id": 1,
+      "teks": "Planet apakah yang paling besar dalam tata surya kita?",
+      "bahasa": "id",
+      "jawaban": "Jupiter",
+      "alternatif_jawaban": [],
+      "pembahasan": "Jupiter adalah planet terbesar di tata surya dengan diameter sekitar 139.820 km, lebih dari 11 kali diameter Bumi. Jupiter termasuk planet gas raksasa dan memiliki lebih dari 90 bulan yang mengorbitnya.",
+      "topik": "Tata Surya",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 2,
+      "teks": "Apa nama organ pernapasan utama pada manusia?",
+      "bahasa": "id",
+      "jawaban": "Paru-paru",
+      "alternatif_jawaban": [
+        "Pulmo"
+      ],
+      "pembahasan": "Paru-paru adalah organ pernapasan utama manusia yang terdapat di dalam rongga dada. Fungsi utamanya adalah pertukaran gas: menyerap oksigen dari udara dan mengeluarkan karbon dioksida dari darah.",
+      "topik": "Tubuh Manusia",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 3,
+      "teks": "Proses tumbuhan membuat makanan sendiri menggunakan cahaya matahari disebut?",
+      "bahasa": "id",
+      "jawaban": "Fotosintesis",
+      "alternatif_jawaban": [
+        "Photosynthesis"
+      ],
+      "pembahasan": "Fotosintesis adalah proses kimia yang dilakukan tumbuhan hijau untuk mengubah karbon dioksida (CO₂) dan air (H₂O) menjadi glukosa dan oksigen dengan bantuan cahaya matahari. Berlangsung di kloroplas yang mengandung klorofil.",
+      "topik": "Biologi Tumbuhan",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 4,
+      "teks": "What planet in our solar system is closest to the Sun?",
+      "bahasa": "en",
+      "jawaban": "Mercury",
+      "alternatif_jawaban": [
+        "Merkurius"
+      ],
+      "pembahasan": "Mercury (Merkurius) adalah planet pertama dan terdekat dari Matahari dengan jarak rata-rata sekitar 58 juta km. Merkurius juga merupakan planet terkecil di tata surya dan tidak memiliki atmosfer yang berarti.",
+      "topik": "Tata Surya",
+      "level": "sedang",
+      "waktu": 15
+    },
+    {
+      "id": 5,
+      "teks": "Hewan yang mengalami metamorfosis sempurna melewati tahap: telur, larva, pupa, dan...?",
+      "bahasa": "id",
+      "jawaban": "Imago (dewasa)",
+      "alternatif_jawaban": [
+        "Imago",
+        "Dewasa",
+        "Serangga dewasa"
+      ],
+      "pembahasan": "Metamorfosis sempurna (holometabolisme) memiliki 4 tahap: telur → larva (ulat/belatung) → pupa (kepompong) → imago (dewasa). Contoh hewan: kupu-kupu, nyamuk, lalat, kumbang, lebah, dan semut.",
+      "topik": "Biologi Hewan",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 6,
+      "teks": "Apa rumus kimia dari air?",
+      "bahasa": "id",
+      "jawaban": "H₂O",
+      "alternatif_jawaban": [
+        "H2O"
+      ],
+      "pembahasan": "H₂O adalah rumus kimia air, yang menunjukkan bahwa satu molekul air terdiri dari 2 atom Hidrogen (H) dan 1 atom Oksigen (O). Air memiliki sifat unik seperti titik didih 100°C dan titik beku 0°C pada tekanan normal.",
+      "topik": "Kimia Dasar",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 7,
+      "teks": "Gerhana matahari total terjadi ketika posisi Bulan berada tepat di antara apa?",
+      "bahasa": "id",
+      "jawaban": "Bumi dan Matahari",
+      "alternatif_jawaban": [
+        "Matahari dan Bumi"
+      ],
+      "pembahasan": "Gerhana matahari terjadi saat Bulan berada di antara Bumi dan Matahari pada satu garis lurus. Bayangan Bulan jatuh ke permukaan Bumi, menyebabkan Matahari tampak tertutup sebagian atau seluruhnya. Gerhana total terjadi di area umbra (bayangan inti) Bulan.",
+      "topik": "Astronomi",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 8,
+      "teks": "Lapisan atmosfer bumi yang berfungsi melindungi bumi dari sinar ultraviolet adalah?",
+      "bahasa": "id",
+      "jawaban": "Lapisan ozon",
+      "alternatif_jawaban": [
+        "Ozon",
+        "Stratosfer"
+      ],
+      "pembahasan": "Lapisan ozon (O₃) berada di stratosfer pada ketinggian 15–35 km dari permukaan Bumi. Fungsinya adalah menyerap sebagian besar radiasi ultraviolet (UV) dari Matahari yang berbahaya bagi makhluk hidup. Penipisan lapisan ozon disebabkan antara lain oleh gas CFC.",
+      "topik": "Atmosfer Bumi",
+      "level": "sulit",
+      "waktu": 10
+    },
+    {
+      "id": 9,
+      "teks": "Bagian sel yang berfungsi sebagai pusat pengendali seluruh kegiatan sel disebut?",
+      "bahasa": "id",
+      "jawaban": "Inti sel (nukleus)",
+      "alternatif_jawaban": [
+        "Nukleus",
+        "Inti sel"
+      ],
+      "pembahasan": "Inti sel atau nukleus adalah organel sel yang berfungsi sebagai pusat kendali kegiatan sel, mengandung materi genetik (DNA) yang menentukan sifat-sifat makhluk hidup, dan mengatur proses pembelahan sel.",
+      "topik": "Biologi Sel",
+      "level": "sulit",
+      "waktu": 10
+    },
+    {
+      "id": 10,
+      "teks": "Apa nama zat yang membuat daun berwarna hijau dan berperan dalam fotosintesis?",
+      "bahasa": "id",
+      "jawaban": "Klorofil",
+      "alternatif_jawaban": [
+        "Chlorophyll"
+      ],
+      "pembahasan": "Klorofil adalah pigmen hijau yang terdapat di dalam kloroplas pada sel-sel tumbuhan. Klorofil menyerap cahaya matahari (terutama cahaya merah dan biru) untuk digunakan sebagai energi dalam proses fotosintesis.",
+      "topik": "Biologi Tumbuhan",
+      "level": "sedang",
+      "waktu": 10
+    }
+  ]
+}
