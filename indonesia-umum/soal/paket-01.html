@@ -3,18 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Paket 01 — Indonesia & Umum | Cerdas Cermat SDM01KKS</title>
+  <title>Paket 01 — Indonesia &amp; Umum | Cerdas Cermat SDM01KKS</title>
   <link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../../assets/css/style.css">
 </head>
 <body class="page-quiz">
 
-  <!-- Quiz engine akan me-render seluruh konten di sini -->
   <div id="quiz-root"></div>
 
+  <!-- 30 soal acak dari pool.json -->
   <script>
     window.QUIZ_CONFIG = {
-      dataUrl: 'data/paket-01.json'
+      dataUrl:       'data/pool.json',
+      questionCount: 30,   // 0 = tampilkan semua soal; >0 = acak sejumlah ini
+      shuffle:       true,
     };
   </script>
   <script src="../../assets/js/quiz-engine.js"></script>
