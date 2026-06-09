@@ -1,0 +1,536 @@
+{
+  "meta": {
+    "kategori": "indonesia-umum",
+    "kategori_label": "Pengetahuan Indonesia & Umum",
+    "versi": "1.0.0",
+    "total_soal": 40,
+    "target_soal": 120,
+    "catatan": "Bank soal aktif. Tambahkan soal hingga 100-120 untuk memperbesar variasi. Pertahankan rasio ~10% soal bahasa Inggris."
+  },
+  "soal": [
+    {
+      "id": 1,
+      "teks": "Apa nama ibukota Indonesia?",
+      "bahasa": "id",
+      "jawaban": "Jakarta",
+      "alternatif_jawaban": [],
+      "pembahasan": "Jakarta adalah ibukota NKRI. Indonesia kini sedang membangun ibukota baru bernama Nusantara di Penajam Paser Utara, Kalimantan Timur.",
+      "topik": "Geografi Indonesia",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 2,
+      "teks": "Pulau terbesar di Indonesia adalah?",
+      "bahasa": "id",
+      "jawaban": "Kalimantan",
+      "alternatif_jawaban": [
+        "Borneo",
+        "Pulau Kalimantan"
+      ],
+      "pembahasan": "Kalimantan (Borneo) adalah pulau terbesar di Indonesia dengan luas ±743.330 km² dan merupakan pulau terbesar ketiga di dunia. Wilayah Indonesia di Kalimantan terdiri dari 5 provinsi.",
+      "topik": "Geografi Indonesia",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 3,
+      "teks": "Danau terbesar di Indonesia adalah?",
+      "bahasa": "id",
+      "jawaban": "Danau Toba",
+      "alternatif_jawaban": [
+        "Toba"
+      ],
+      "pembahasan": "Danau Toba di Sumatera Utara adalah danau terbesar di Indonesia sekaligus Asia Tenggara. Terbentuk dari letusan supervolcano sekitar 74.000 tahun lalu. Di tengahnya terdapat Pulau Samosir.",
+      "topik": "Geografi Indonesia",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 4,
+      "teks": "Sungai terpanjang di Indonesia adalah Sungai Kapuas, terletak di provinsi mana?",
+      "bahasa": "id",
+      "jawaban": "Kalimantan Barat",
+      "alternatif_jawaban": [
+        "Kalbar"
+      ],
+      "pembahasan": "Sungai Kapuas sepanjang 1.143 km mengalir di Kalimantan Barat, dari pegunungan Muller di timur hingga Selat Karimata di barat. Merupakan sungai terpanjang di Indonesia.",
+      "topik": "Geografi Indonesia",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 5,
+      "teks": "Indonesia terletak di antara dua samudra, yaitu Samudra Hindia dan Samudra apa?",
+      "bahasa": "id",
+      "jawaban": "Samudra Pasifik",
+      "alternatif_jawaban": [
+        "Pasifik"
+      ],
+      "pembahasan": "Indonesia terletak di antara Samudra Hindia (barat-selatan) dan Samudra Pasifik (timur-utara), sehingga posisi geografisnya sangat strategis sebagai jalur pelayaran dunia.",
+      "topik": "Geografi Indonesia",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 6,
+      "teks": "Berapa jumlah provinsi di Indonesia saat ini (2024)?",
+      "bahasa": "id",
+      "jawaban": "38 provinsi",
+      "alternatif_jawaban": [
+        "38"
+      ],
+      "pembahasan": "Indonesia memiliki 38 provinsi per 2024. Jumlah bertambah dari 34 setelah pemekaran wilayah Papua yang menghasilkan Papua Selatan, Papua Tengah, Papua Pegunungan, dan Papua Barat Daya.",
+      "topik": "Geografi Indonesia",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 7,
+      "teks": "Gunung berapi aktif tertinggi di Indonesia adalah Gunung Kerinci. Di provinsi mana gunung ini berada?",
+      "bahasa": "id",
+      "jawaban": "Sumatera Barat",
+      "alternatif_jawaban": [
+        "Sumbar"
+      ],
+      "pembahasan": "Gunung Kerinci (3.805 m) adalah gunung berapi aktif tertinggi di Indonesia, terletak di Kabupaten Kerinci, Sumatera Barat (sebagian masuk Jambi). Termasuk dalam Taman Nasional Kerinci Seblat.",
+      "topik": "Geografi Indonesia",
+      "level": "sulit",
+      "waktu": 10
+    },
+    {
+      "id": 8,
+      "teks": "Indonesia terdiri dari sekitar berapa banyak pulau?",
+      "bahasa": "id",
+      "jawaban": "Lebih dari 17.000 pulau",
+      "alternatif_jawaban": [
+        "17.000",
+        "17.508"
+      ],
+      "pembahasan": "Indonesia adalah negara kepulauan (archipelago) terbesar di dunia dengan lebih dari 17.000 pulau, sekitar 7.000 di antaranya berpenghuni. Membentang sepanjang 5.100 km dari barat ke timur.",
+      "topik": "Geografi Indonesia",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 9,
+      "teks": "Pada tanggal berapa Indonesia memproklamasikan kemerdekaannya?",
+      "bahasa": "id",
+      "jawaban": "17 Agustus 1945",
+      "alternatif_jawaban": [
+        "17 Agustus"
+      ],
+      "pembahasan": "Proklamasi Kemerdekaan Indonesia dibacakan oleh Soekarno-Hatta pada 17 Agustus 1945 pukul 10.00 WIB di Jl. Pegangsaan Timur No. 56, Jakarta (kini Jl. Proklamasi).",
+      "topik": "Sejarah Indonesia",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 10,
+      "teks": "Peristiwa Sumpah Pemuda terjadi pada tanggal berapa?",
+      "bahasa": "id",
+      "jawaban": "28 Oktober 1928",
+      "alternatif_jawaban": [
+        "28 Oktober"
+      ],
+      "pembahasan": "Sumpah Pemuda adalah ikrar para pemuda Indonesia pada Kongres Pemuda II, 28 Oktober 1928. Isinya: satu tanah air (Indonesia), satu bangsa (Indonesia), satu bahasa (Bahasa Indonesia). Diperingati sebagai Hari Sumpah Pemuda.",
+      "topik": "Sejarah Indonesia",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 11,
+      "teks": "Siapakah yang mengetik teks Proklamasi Kemerdekaan Indonesia?",
+      "bahasa": "id",
+      "jawaban": "Sayuti Melik",
+      "alternatif_jawaban": [],
+      "pembahasan": "Sayuti Melik mengetik ulang teks proklamasi dari tulisan tangan Soekarno pada malam 16–17 Agustus 1945 di rumah Laksamana Maeda, Jl. Imam Bonjol No. 1, Jakarta.",
+      "topik": "Sejarah Indonesia",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 12,
+      "teks": "Fatmawati adalah istri Presiden Soekarno yang berjasa menjahit apa?",
+      "bahasa": "id",
+      "jawaban": "Bendera Merah Putih (Sang Saka Merah Putih)",
+      "alternatif_jawaban": [
+        "bendera",
+        "Bendera Merah Putih"
+      ],
+      "pembahasan": "Fatmawati menjahit Bendera Sang Saka Merah Putih yang dikibarkan saat Proklamasi 17 Agustus 1945. Bendera asli tersebut disimpan di Istana Merdeka, Jakarta, dan tidak lagi dikibarkan sejak 1968.",
+      "topik": "Sejarah Indonesia",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 13,
+      "teks": "Siapakah Ketua BPUPKI yang memimpin sidang perumusan dasar negara Indonesia?",
+      "bahasa": "id",
+      "jawaban": "Dr. K.R.T. Radjiman Wedyodiningrat",
+      "alternatif_jawaban": [
+        "Radjiman",
+        "Radjiman Wedyodiningrat"
+      ],
+      "pembahasan": "Dr. K.R.T. Radjiman Wedyodiningrat adalah dokter, budayawan, dan tokoh pergerakan nasional yang menjabat Ketua BPUPKI. Beliau mengajukan pertanyaan mendasar tentang dasar negara kepada sidang.",
+      "topik": "Sejarah Indonesia",
+      "level": "sulit",
+      "waktu": 10
+    },
+    {
+      "id": 14,
+      "teks": "Pada tanggal berapa Jepang menyerah kepada Sekutu, membuka jalan kemerdekaan Indonesia?",
+      "bahasa": "id",
+      "jawaban": "15 Agustus 1945",
+      "alternatif_jawaban": [],
+      "pembahasan": "Kaisar Hirohito mengumumkan penyerahan Jepang kepada Sekutu pada 15 Agustus 1945 menyusul bom atom di Hiroshima (6 Agustus) dan Nagasaki (9 Agustus). Berita ini tersebar cepat ke Indonesia.",
+      "topik": "Sejarah Indonesia",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 15,
+      "teks": "Di kota mana Peristiwa Rengasdengklok terjadi?",
+      "bahasa": "id",
+      "jawaban": "Karawang, Jawa Barat",
+      "alternatif_jawaban": [
+        "Rengasdengklok",
+        "Karawang"
+      ],
+      "pembahasan": "Rengasdengklok adalah kota kecil di Karawang, Jawa Barat. Di sini para pemuda membawa Soekarno-Hatta pada 16 Agustus 1945 untuk mendesak agar proklamasi segera dilakukan, jauh dari pengaruh Jepang.",
+      "topik": "Sejarah Indonesia",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 16,
+      "teks": "Siapakah presiden pertama Republik Indonesia?",
+      "bahasa": "id",
+      "jawaban": "Ir. Soekarno",
+      "alternatif_jawaban": [
+        "Soekarno",
+        "Bung Karno"
+      ],
+      "pembahasan": "Ir. Soekarno adalah Presiden pertama RI yang dipilih secara aklamasi oleh PPKI pada 18 Agustus 1945. Beliau adalah Proklamator kemerdekaan bersama Mohammad Hatta.",
+      "topik": "Sejarah Indonesia",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 17,
+      "teks": "Sebutkan semboyan yang tertulis di pita pada lambang Garuda Pancasila!",
+      "bahasa": "id",
+      "jawaban": "Bhinneka Tunggal Ika",
+      "alternatif_jawaban": [
+        "Bhineka Tunggal Ika"
+      ],
+      "pembahasan": "Bhinneka Tunggal Ika berasal dari Kitab Sutasoma karya Mpu Tantular (abad ke-14), berarti 'Berbeda-beda tetapi tetap satu'. Menjadi semboyan resmi NKRI.",
+      "topik": "PKn",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 18,
+      "teks": "Pancasila memiliki berapa sila?",
+      "bahasa": "id",
+      "jawaban": "5 (lima)",
+      "alternatif_jawaban": [
+        "5",
+        "lima"
+      ],
+      "pembahasan": "Pancasila terdiri dari 5 sila. 'Panca' berarti lima dan 'Sila' berarti prinsip/dasar dalam bahasa Sansekerta. Lima sila ini saling berkaitan dan tidak bisa dipisahkan.",
+      "topik": "PKn",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 19,
+      "teks": "Apa lambang sila ke-3 Pancasila (Persatuan Indonesia)?",
+      "bahasa": "id",
+      "jawaban": "Pohon Beringin",
+      "alternatif_jawaban": [
+        "beringin"
+      ],
+      "pembahasan": "Pohon Beringin melambangkan Persatuan Indonesia karena pohon ini besar, rindang, berakar kuat, dan tempat berteduh — menggambarkan Indonesia yang melindungi seluruh rakyatnya.",
+      "topik": "PKn",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 20,
+      "teks": "Kapan Hari Lahir Pancasila diperingati setiap tahunnya?",
+      "bahasa": "id",
+      "jawaban": "1 Juni",
+      "alternatif_jawaban": [
+        "1 Juni 1945"
+      ],
+      "pembahasan": "1 Juni ditetapkan sebagai Hari Lahir Pancasila melalui Keppres No. 24/2016, bertepatan dengan pidato Soekarno tentang Pancasila dalam sidang BPUPKI pada 1 Juni 1945.",
+      "topik": "PKn",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 21,
+      "teks": "Bahasa resmi dan bahasa nasional Indonesia adalah?",
+      "bahasa": "id",
+      "jawaban": "Bahasa Indonesia",
+      "alternatif_jawaban": [],
+      "pembahasan": "Bahasa Indonesia ditetapkan dalam Pasal 36 UUD 1945 sebagai bahasa negara. Berakar dari Bahasa Melayu dan diresmikan sebagai bahasa persatuan dalam Sumpah Pemuda 28 Oktober 1928.",
+      "topik": "PKn",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 22,
+      "teks": "Apa kepanjangan dari NKRI?",
+      "bahasa": "id",
+      "jawaban": "Negara Kesatuan Republik Indonesia",
+      "alternatif_jawaban": [],
+      "pembahasan": "NKRI adalah sebutan resmi bentuk negara Indonesia — negara kesatuan berbentuk republik, sesuai Pasal 1 ayat 1 UUD 1945. Bentuk NKRI tidak boleh diubah (final).",
+      "topik": "PKn",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 23,
+      "teks": "Apa isi semboyan 'Bhinneka Tunggal Ika'?",
+      "bahasa": "id",
+      "jawaban": "Berbeda-beda tetapi tetap satu",
+      "alternatif_jawaban": [
+        "berbeda tapi satu"
+      ],
+      "pembahasan": "Bhinneka Tunggal Ika (dari bahasa Jawa Kuno) artinya 'Berbeda-beda namun tetap satu jua'. Mencerminkan keberagaman suku, agama, dan budaya Indonesia yang tetap bersatu dalam NKRI.",
+      "topik": "PKn",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 24,
+      "teks": "Siapakah yang dijuluki 'Bapak Koperasi Indonesia'?",
+      "bahasa": "id",
+      "jawaban": "Mohammad Hatta",
+      "alternatif_jawaban": [
+        "Drs. Mohammad Hatta",
+        "Bung Hatta"
+      ],
+      "pembahasan": "Mohammad Hatta (Bung Hatta) adalah Wakil Presiden RI pertama sekaligus Proklamator kemerdekaan. Beliau sangat berjasa dalam mengembangkan sistem koperasi sebagai soko guru perekonomian Indonesia.",
+      "topik": "Tokoh Nasional",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 25,
+      "teks": "Ki Hajar Dewantara mendirikan sekolah bernama apa pada tahun 1922?",
+      "bahasa": "id",
+      "jawaban": "Taman Siswa",
+      "alternatif_jawaban": [
+        "Perguruan Taman Siswa"
+      ],
+      "pembahasan": "Taman Siswa (Nationaal Onderwijs Instituut Taman Siswa) didirikan Ki Hajar Dewantara pada 3 Juli 1922 di Yogyakarta. Sekolah pribumi pertama yang menggunakan sistem pendidikan nasional.",
+      "topik": "Tokoh Nasional",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 26,
+      "teks": "Pencipta lagu kebangsaan Indonesia Raya adalah?",
+      "bahasa": "id",
+      "jawaban": "Wage Rudolf Supratman",
+      "alternatif_jawaban": [
+        "W.R. Supratman",
+        "WR Supratman"
+      ],
+      "pembahasan": "W.R. Supratman memperdengarkan lagu Indonesia Raya untuk pertama kali pada Kongres Pemuda II, 28 Oktober 1928. Lagu ini kemudian menjadi lagu kebangsaan Indonesia.",
+      "topik": "Tokoh Nasional",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 27,
+      "teks": "Siapa pahlawan wanita dari Aceh yang terus berjuang meski sudah tua dan menderita sakit?",
+      "bahasa": "id",
+      "jawaban": "Cut Nyak Dien",
+      "alternatif_jawaban": [],
+      "pembahasan": "Cut Nyak Dien terus melawan Belanda meski menderita rabun dan encok. Ditangkap 1905, diasingkan ke Sumedang, dan wafat 6 November 1908 dalam pengasingan. Simbol keteguhan perjuangan wanita Indonesia.",
+      "topik": "Tokoh Nasional",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 28,
+      "teks": "Siapa Presiden Indonesia yang menjabat dari tahun 2014 hingga 2024?",
+      "bahasa": "id",
+      "jawaban": "Joko Widodo",
+      "alternatif_jawaban": [
+        "Jokowi"
+      ],
+      "pembahasan": "Joko Widodo (Jokowi) adalah Presiden ke-7 RI, menjabat dua periode: 2014-2019 dan 2019-2024. Sebelumnya menjabat sebagai Walikota Solo dan Gubernur DKI Jakarta.",
+      "topik": "Tokoh Nasional",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 29,
+      "teks": "Siapa presiden Indonesia yang menjabat setelah Joko Widodo (mulai Oktober 2024)?",
+      "bahasa": "id",
+      "jawaban": "Prabowo Subianto",
+      "alternatif_jawaban": [
+        "Prabowo"
+      ],
+      "pembahasan": "Prabowo Subianto adalah Presiden RI ke-8 yang dilantik pada 20 Oktober 2024, didampingi Wakil Presiden Gibran Rakabuming Raka (putra Joko Widodo).",
+      "topik": "Tokoh Nasional",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 30,
+      "teks": "Apa nama maskapai penerbangan nasional Indonesia?",
+      "bahasa": "id",
+      "jawaban": "Garuda Indonesia",
+      "alternatif_jawaban": [
+        "PT Garuda Indonesia"
+      ],
+      "pembahasan": "Garuda Indonesia (PT Garuda Indonesia Persero Tbk) adalah maskapai nasional Indonesia yang didirikan sejak 26 Januari 1949. Nama 'Garuda' diambil dari lambang negara Garuda Pancasila.",
+      "topik": "Pengetahuan Umum Indonesia",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 31,
+      "teks": "Candi Borobudur, candi Buddha terbesar di dunia, terletak di kota mana?",
+      "bahasa": "id",
+      "jawaban": "Magelang, Jawa Tengah",
+      "alternatif_jawaban": [
+        "Magelang"
+      ],
+      "pembahasan": "Candi Borobudur terletak di Kabupaten Magelang, Jawa Tengah, dibangun sekitar abad ke-8–9 Masehi pada masa Dinasti Syailendra. Ditetapkan sebagai Warisan Dunia UNESCO pada 1991.",
+      "topik": "Pengetahuan Umum Indonesia",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 32,
+      "teks": "Hewan komodo hanya dapat ditemukan secara alami di kepulauan mana di Indonesia?",
+      "bahasa": "id",
+      "jawaban": "Kepulauan Komodo, Nusa Tenggara Timur",
+      "alternatif_jawaban": [
+        "Pulau Komodo",
+        "NTT"
+      ],
+      "pembahasan": "Komodo (Varanus komodoensis) adalah kadal terbesar di dunia yang hidup endemik di Pulau Komodo, Rinca, Flores, dan beberapa pulau kecil sekitarnya. Dilindungi dalam Taman Nasional Komodo, NTT.",
+      "topik": "Flora & Fauna",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 33,
+      "teks": "Bunga nasional Indonesia yang dijuluki 'Puspa Pesona' adalah?",
+      "bahasa": "id",
+      "jawaban": "Melati putih",
+      "alternatif_jawaban": [
+        "Melati",
+        "Jasminum sambac"
+      ],
+      "pembahasan": "Indonesia memiliki 3 bunga nasional: Melati putih (Puspa Pesona), Anggrek bulan (Puspa Bangsa), dan Padma Raksasa Rafflesia arnoldii (Puspa Langka). Melati putih dikenal karena keharuman dan kesederhanaan.",
+      "topik": "Flora & Fauna",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 34,
+      "teks": "Apa nama ibukota baru Indonesia yang sedang dibangun di Kalimantan Timur?",
+      "bahasa": "id",
+      "jawaban": "Nusantara",
+      "alternatif_jawaban": [
+        "IKN Nusantara",
+        "IKN"
+      ],
+      "pembahasan": "Ibu Kota Nusantara (IKN) dibangun di Penajam Paser Utara, Kalimantan Timur, untuk pemerataan pembangunan dan mengurangi beban Jakarta. Nama 'Nusantara' mencerminkan identitas kepulauan Indonesia.",
+      "topik": "Pengetahuan Umum Indonesia",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 35,
+      "teks": "Suku terbesar di Indonesia berdasarkan sensus penduduk adalah?",
+      "bahasa": "id",
+      "jawaban": "Suku Jawa",
+      "alternatif_jawaban": [
+        "Jawa"
+      ],
+      "pembahasan": "Suku Jawa adalah suku terbesar dengan populasi sekitar 40% dari total penduduk Indonesia, sebagian besar bermukim di Jawa Tengah, Jawa Timur, dan DIY.",
+      "topik": "Kebudayaan",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 36,
+      "teks": "Di kota manakah Keraton Kasultanan Yogyakarta berada?",
+      "bahasa": "id",
+      "jawaban": "Yogyakarta",
+      "alternatif_jawaban": [
+        "Kota Yogyakarta"
+      ],
+      "pembahasan": "Keraton Ngayogyakarta Hadiningrat berdiri sejak 1755 di pusat Kota Yogyakarta, didirikan oleh Sultan Hamengku Buwono I. Saat ini dipimpin oleh Sultan Hamengku Buwono X yang juga menjabat Gubernur DIY.",
+      "topik": "Kebudayaan",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 37,
+      "teks": "What is the name of the national monument of Indonesia, located in the center of Jakarta?",
+      "bahasa": "en",
+      "jawaban": "Monas (National Monument)",
+      "alternatif_jawaban": [
+        "Monas",
+        "National Monument",
+        "Monumen Nasional"
+      ],
+      "pembahasan": "Monas (Monumen Nasional) adalah tugu setinggi 132 meter di pusat Jakarta. Dibangun atas gagasan Presiden Soekarno dan diresmikan 1975. Puncaknya dihiasi api abadi berlapis emas 35 kg.",
+      "topik": "Pengetahuan Umum Indonesia",
+      "level": "sedang",
+      "waktu": 15
+    },
+    {
+      "id": 38,
+      "teks": "What is the largest island in Indonesia, which is also the third largest island in the world?",
+      "bahasa": "en",
+      "jawaban": "Kalimantan (Borneo)",
+      "alternatif_jawaban": [
+        "Borneo",
+        "Kalimantan"
+      ],
+      "pembahasan": "Kalimantan (Borneo) adalah pulau terbesar di Indonesia (±743.330 km²) dan pulau terbesar ketiga di dunia setelah Greenland dan Papua/New Guinea. Dibagi antara Indonesia, Malaysia, dan Brunei.",
+      "topik": "Geografi Indonesia",
+      "level": "sedang",
+      "waktu": 15
+    },
+    {
+      "id": 39,
+      "teks": "What does 'Bhinneka Tunggal Ika' mean in English?",
+      "bahasa": "en",
+      "jawaban": "Unity in Diversity",
+      "alternatif_jawaban": [
+        "Different but one",
+        "One in many"
+      ],
+      "pembahasan": "'Bhinneka Tunggal Ika' (Berbeda-beda tetapi tetap satu) translates to 'Unity in Diversity' in English. It is the national motto of Indonesia, reflecting the country's rich cultural diversity.",
+      "topik": "PKn",
+      "level": "sedang",
+      "waktu": 15
+    },
+    {
+      "id": 40,
+      "teks": "Which regional organization, of which Indonesia is a founding member, groups countries of Southeast Asia?",
+      "bahasa": "en",
+      "jawaban": "ASEAN",
+      "alternatif_jawaban": [
+        "Association of Southeast Asian Nations"
+      ],
+      "pembahasan": "ASEAN (Association of Southeast Asian Nations / Perhimpunan Bangsa-Bangsa Asia Tenggara) didirikan 8 Agustus 1967 di Bangkok. Indonesia adalah salah satu dari 5 pendiri ASEAN, bersama Malaysia, Singapura, Thailand, dan Filipina.",
+      "topik": "Organisasi Internasional",
+      "level": "sedang",
+      "waktu": 15
+    }
+  ]
+}
