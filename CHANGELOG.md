@@ -5,6 +5,43 @@ Format mengikuti [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ---
 
+## [1.1.0] — 2025-06-09
+
+### Ditambahkan
+- `assets/img/logo-sdm01.svg` — logo sekolah SDM 01 Kukusan
+- `index.html` — logo sekolah ditampilkan di header landing page
+- `indonesia-umum/index.html` — **hub komprehensif** dirancang ulang total:
+  - Bagian 1: 12 topik materi dalam grid kartu (tersedia / segera hadir)
+  - Bagian 2: 10 container paket soal latihan
+  - Quick-nav anchor (#materi / #soal)
+- `indonesia-umum/materi/index.html` — hub materi dengan 12 kartu topik berwarna,
+  progress bar ketersediaan, badge status setiap topik
+- `indonesia-umum/materi/pahlawan-nasional.html` — **slideshow materi pertama** (12 slide):
+  - Slide penuh layar, proyektor-friendly (tema merah-putih)
+  - Navigasi keyboard ← → dan sentuh (swipe)
+  - Konten: Ki Hajar Dewantara, R.A. Kartini, Pangeran Diponegoro,
+    Jenderal Sudirman, Cut Nyak Dien, Sultan Hasanuddin,
+    Tuanku Imam Bonjol, Pattimura + tokoh lainnya
+  - Slide rangkuman tabel + tombol CTA ke soal latihan
+
+### Daftar 12 Topik Materi Indonesia & Umum
+| # | Slug | Status |
+|---|---|---|
+| 1 | kemerdekaan-indonesia | Segera Hadir |
+| 2 | pahlawan-nasional | ✅ Tersedia |
+| 3 | pancasila-uud1945 | Segera Hadir |
+| 4 | lambang-simbol-negara | Segera Hadir |
+| 5 | geografi-indonesia | Segera Hadir |
+| 6 | kebudayaan-nusantara | Segera Hadir |
+| 7 | pemerintahan-indonesia | Segera Hadir |
+| 8 | flora-fauna-indonesia | Segera Hadir |
+| 9 | negara-ibukota-dunia | Segera Hadir |
+| 10 | organisasi-internasional | Segera Hadir |
+| 11 | penemuan-penemu | Segera Hadir |
+| 12 | hari-penting | Segera Hadir |
+
+---
+
 ## [1.0.0] — 2025-06-08
 
 ### Ditambahkan
