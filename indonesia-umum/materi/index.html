@@ -3,41 +3,315 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Materi Indonesia & Umum — Cerdas Cermat SDM01KKS</title>
+  <title>Materi Indonesia &amp; Umum — Cerdas Cermat SDM01KKS</title>
   <link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../../assets/css/style.css">
-  <style>:root { --hero-color: #c62828; }</style>
+  <style>
+    :root { --hero-color:#c62828; }
+
+    .stats-row {
+      display:flex; gap:1.5rem; flex-wrap:wrap;
+      padding:.75rem 2rem;
+      background:#fff; border-bottom:1px solid #e9ecef;
+    }
+    .stat-item {
+      display:flex; align-items:center; gap:.4rem;
+      font-size:.82rem; color:#4a5568;
+    }
+    .stat-item strong { color:#c62828; font-size:1.05rem; }
+
+    .mc-grid {
+      display:grid;
+      grid-template-columns:repeat(auto-fill,minmax(240px,1fr));
+      gap:1.25rem;
+    }
+    .mc {
+      background:#fff; border-radius:16px;
+      border:1px solid #e9ecef;
+      overflow:hidden;
+      box-shadow:0 2px 10px rgba(0,0,0,.06);
+      display:flex; flex-direction:column;
+      transition:transform .2s, box-shadow .2s;
+    }
+    .mc:not(.mc-dim):hover {
+      transform:translateY(-4px);
+      box-shadow:0 10px 28px rgba(0,0,0,.12);
+    }
+    .mc-dim { opacity:.55; }
+    .mc-bar  { height:5px; background:var(--c); }
+    .mc-body { padding:1.25rem; display:flex; flex-direction:column; flex:1; gap:.7rem; }
+    .mc-top  { display:flex; align-items:center; justify-content:space-between; }
+    .mc-icon { font-size:2.1rem; line-height:1; }
+    .badge-a {
+      font-size:.65rem; font-weight:800; letter-spacing:.04em;
+      padding:2px 8px; border-radius:10px;
+      background:#e6f4ea; color:#2e7d32;
+    }
+    .badge-s {
+      font-size:.65rem; font-weight:700; letter-spacing:.04em;
+      padding:2px 8px; border-radius:10px;
+      background:#f5f5f5; color:#9e9e9e;
+    }
+    .mc-title { font-family:var(--font-display); font-size:1.05rem; font-weight:700; color:#1a2420; margin:0; }
+    .mc-desc  { font-size:.82rem; color:#718096; line-height:1.6; flex:1; margin:0; }
+    .mc-foot  { display:flex; align-items:center; justify-content:space-between; padding-top:.5rem; border-top:1px solid #f0f4f8; margin-top:auto; }
+    .mc-count { font-size:.73rem; color:#a0aec0; }
+    .mc-btn {
+      display:inline-flex; align-items:center;
+      background:var(--c); color:#fff;
+      font-size:.78rem; font-weight:700;
+      padding:.35rem .9rem; border-radius:8px;
+      transition:opacity .15s;
+    }
+    .mc-btn:hover { opacity:.85; }
+    .mc-btn-soon { font-size:.75rem; color:#bbb; font-style:italic; }
+
+    .progress-note {
+      background:linear-gradient(135deg,#fff8e1,#fffde7);
+      border:1px solid #ffe082; border-radius:12px;
+      padding:1.25rem 1.5rem; margin-top:2rem;
+      font-size:.85rem; color:#6d4c00; line-height:1.7;
+    }
+    .progress-note strong { color:#c62828; }
+    .progress-bar-wrap {
+      height:10px; background:#f0f4f8; border-radius:10px;
+      margin:1rem 0; overflow:hidden;
+    }
+    .progress-fill {
+      height:100%; border-radius:10px;
+      background:linear-gradient(90deg,#c62828,#c6282880);
+      width:8%;
+    }
+  </style>
 </head>
 <body class="page-inner">
+
   <nav class="inner-nav">
-    <a href="../../../index.html" class="nav-brand">🏆 Cerdas Cermat</a>
+    <a href="../../index.html" class="nav-brand">🏆 Cerdas Cermat</a>
     <span class="nav-sep">›</span>
-    <a href="../index.html">Indonesia & Umum</a>
+    <a href="../index.html">🇮🇩 Indonesia &amp; Umum</a>
     <span class="nav-sep">›</span>
     <span class="nav-current">Materi</span>
   </nav>
 
   <div class="cat-hero">
-    <div class="cat-hero-icon">🇮🇩</div>
-    <h1 class="cat-hero-title">Materi — Indonesia & Umum</h1>
-    <p class="cat-hero-desc">Ringkasan materi siap pakai untuk sesi belajar bersama.</p>
+    <div class="cat-hero-icon">📚</div>
+    <h1 class="cat-hero-title">Materi — Indonesia &amp; Umum</h1>
+    <p class="cat-hero-desc">
+      12 topik materi slideshow, siap ditampilkan di infokus bersama siswa.
+    </p>
   </div>
 
-  <div class="content-area">
-    <div class="coming-soon">
-      <h3>🚧 Materi Segera Hadir</h3>
-      <p>
-        Halaman materi pembelajaran untuk kategori ini sedang dalam persiapan.<br>
-        Kontributor dapat menambahkan file HTML di folder
-        <code>indonesia-umum/materi/</code> dan mendaftarkannya di halaman ini.
-      </p>
-      <p style="margin-top:1rem">
-        <a href="../index.html" style="color:#c62828;font-weight:700;">← Kembali ke Indonesia & Umum</a>
-      </p>
-    </div>
+  <div class="stats-row">
+    <div class="stat-item"><strong>1</strong> materi tersedia</div>
+    <div class="stat-item"><strong>11</strong> sedang disiapkan</div>
+    <div class="stat-item"><strong>12</strong> topik total</div>
   </div>
+
+  <div class="content-area" style="max-width:1100px">
+
+    <div class="mc-grid">
+      
+    <div class="mc mc-dim" style="--c:#e53935">
+      <div class="mc-bar"></div>
+      <div class="mc-body">
+        <div class="mc-top">
+          <span class="mc-icon">🇮🇩</span>
+          <span class="badge-s">Segera Hadir</span>
+        </div>
+        <h3 class="mc-title">Kemerdekaan Indonesia</h3>
+        <p class="mc-desc">Proklamasi 17 Agustus 1945, BPUPKI, PPKI, dan Peristiwa Rengasdengklok.</p>
+        <div class="mc-foot">
+          <span class="mc-count">📖 14 slide</span>
+          <span class="mc-btn-soon">Belum tersedia</span>
+        </div>
+      </div>
+    </div>
+    <div class="mc" style="--c:#c62828">
+      <div class="mc-bar"></div>
+      <div class="mc-body">
+        <div class="mc-top">
+          <span class="mc-icon">🦸</span>
+          <span class="badge-a">✓ Tersedia</span>
+        </div>
+        <h3 class="mc-title">Pahlawan Nasional</h3>
+        <p class="mc-desc">Ki Hajar Dewantara, R.A. Kartini, Pangeran Diponegoro, Jenderal Sudirman, dan lainnya.</p>
+        <div class="mc-foot">
+          <span class="mc-count">📖 12 slide</span>
+          <a href="pahlawan-nasional.html" class="mc-btn">Buka Materi →</a>
+        </div>
+      </div>
+    </div>
+    <div class="mc mc-dim" style="--c:#b71c1c">
+      <div class="mc-bar"></div>
+      <div class="mc-body">
+        <div class="mc-top">
+          <span class="mc-icon">⚖️</span>
+          <span class="badge-s">Segera Hadir</span>
+        </div>
+        <h3 class="mc-title">Pancasila & UUD 1945</h3>
+        <p class="mc-desc">Bunyi sila-sila Pancasila, sejarah perumusan, dan pasal-pasal penting UUD 1945.</p>
+        <div class="mc-foot">
+          <span class="mc-count">📖 15 slide</span>
+          <span class="mc-btn-soon">Belum tersedia</span>
+        </div>
+      </div>
+    </div>
+    <div class="mc mc-dim" style="--c:#880e4f">
+      <div class="mc-bar"></div>
+      <div class="mc-body">
+        <div class="mc-top">
+          <span class="mc-icon">🦅</span>
+          <span class="badge-s">Segera Hadir</span>
+        </div>
+        <h3 class="mc-title">Lambang & Simbol Negara</h3>
+        <p class="mc-desc">Garuda Pancasila, Sang Saka Merah Putih, lagu Indonesia Raya, dan maknanya.</p>
+        <div class="mc-foot">
+          <span class="mc-count">📖 11 slide</span>
+          <span class="mc-btn-soon">Belum tersedia</span>
+        </div>
+      </div>
+    </div>
+    <div class="mc mc-dim" style="--c:#2e7d32">
+      <div class="mc-bar"></div>
+      <div class="mc-body">
+        <div class="mc-top">
+          <span class="mc-icon">🗺️</span>
+          <span class="badge-s">Segera Hadir</span>
+        </div>
+        <h3 class="mc-title">Geografi Indonesia</h3>
+        <p class="mc-desc">Provinsi, pulau-pulau besar, gunung, sungai, danau, dan letak geografis Indonesia.</p>
+        <div class="mc-foot">
+          <span class="mc-count">📖 16 slide</span>
+          <span class="mc-btn-soon">Belum tersedia</span>
+        </div>
+      </div>
+    </div>
+    <div class="mc mc-dim" style="--c:#1b5e20">
+      <div class="mc-bar"></div>
+      <div class="mc-body">
+        <div class="mc-top">
+          <span class="mc-icon">🎭</span>
+          <span class="badge-s">Segera Hadir</span>
+        </div>
+        <h3 class="mc-title">Kebudayaan Nusantara</h3>
+        <p class="mc-desc">Tarian tradisional, pakaian adat, alat musik, dan rumah adat dari tiap daerah.</p>
+        <div class="mc-foot">
+          <span class="mc-count">📖 18 slide</span>
+          <span class="mc-btn-soon">Belum tersedia</span>
+        </div>
+      </div>
+    </div>
+    <div class="mc mc-dim" style="--c:#1a237e">
+      <div class="mc-bar"></div>
+      <div class="mc-body">
+        <div class="mc-top">
+          <span class="mc-icon">🏛️</span>
+          <span class="badge-s">Segera Hadir</span>
+        </div>
+        <h3 class="mc-title">Pemerintahan Indonesia</h3>
+        <p class="mc-desc">Urutan presiden RI, lembaga negara (MPR/DPR/DPD), dan sistem pemerintahan.</p>
+        <div class="mc-foot">
+          <span class="mc-count">📖 12 slide</span>
+          <span class="mc-btn-soon">Belum tersedia</span>
+        </div>
+      </div>
+    </div>
+    <div class="mc mc-dim" style="--c:#0d47a1">
+      <div class="mc-bar"></div>
+      <div class="mc-body">
+        <div class="mc-top">
+          <span class="mc-icon">🌺</span>
+          <span class="badge-s">Segera Hadir</span>
+        </div>
+        <h3 class="mc-title">Flora & Fauna Indonesia</h3>
+        <p class="mc-desc">Hewan endemik (komodo, anoa, tarsius), bunga nasional, dan taman nasional.</p>
+        <div class="mc-foot">
+          <span class="mc-count">📖 13 slide</span>
+          <span class="mc-btn-soon">Belum tersedia</span>
+        </div>
+      </div>
+    </div>
+    <div class="mc mc-dim" style="--c:#006064">
+      <div class="mc-bar"></div>
+      <div class="mc-body">
+        <div class="mc-top">
+          <span class="mc-icon">🌍</span>
+          <span class="badge-s">Segera Hadir</span>
+        </div>
+        <h3 class="mc-title">Negara & Ibukota Dunia</h3>
+        <p class="mc-desc">Ibukota negara-negara penting, mata uang, benua, dan samudra di dunia.</p>
+        <div class="mc-foot">
+          <span class="mc-count">📖 15 slide</span>
+          <span class="mc-btn-soon">Belum tersedia</span>
+        </div>
+      </div>
+    </div>
+    <div class="mc mc-dim" style="--c:#37474f">
+      <div class="mc-bar"></div>
+      <div class="mc-body">
+        <div class="mc-top">
+          <span class="mc-icon">🤝</span>
+          <span class="badge-s">Segera Hadir</span>
+        </div>
+        <h3 class="mc-title">Organisasi Internasional</h3>
+        <p class="mc-desc">PBB dan badan-badannya, ASEAN, UNESCO, WHO, dan peran Indonesia.</p>
+        <div class="mc-foot">
+          <span class="mc-count">📖 11 slide</span>
+          <span class="mc-btn-soon">Belum tersedia</span>
+        </div>
+      </div>
+    </div>
+    <div class="mc mc-dim" style="--c:#e65100">
+      <div class="mc-bar"></div>
+      <div class="mc-body">
+        <div class="mc-top">
+          <span class="mc-icon">💡</span>
+          <span class="badge-s">Segera Hadir</span>
+        </div>
+        <h3 class="mc-title">Penemuan & Penemu Dunia</h3>
+        <p class="mc-desc">Penemu telepon, listrik, pesawat terbang, dan inovasi penting dunia.</p>
+        <div class="mc-foot">
+          <span class="mc-count">📖 12 slide</span>
+          <span class="mc-btn-soon">Belum tersedia</span>
+        </div>
+      </div>
+    </div>
+    <div class="mc mc-dim" style="--c:#6a1b9a">
+      <div class="mc-bar"></div>
+      <div class="mc-body">
+        <div class="mc-top">
+          <span class="mc-icon">📅</span>
+          <span class="badge-s">Segera Hadir</span>
+        </div>
+        <h3 class="mc-title">Hari-Hari Penting</h3>
+        <p class="mc-desc">Hari nasional Indonesia (Kartini, Pendidikan, Pahlawan) dan hari-hari internasional.</p>
+        <div class="mc-foot">
+          <span class="mc-count">📖 10 slide</span>
+          <span class="mc-btn-soon">Belum tersedia</span>
+        </div>
+      </div>
+    </div>
+    </div>
+
+    <div class="progress-note">
+      <strong>📈 Progress Pembuatan Materi</strong>
+      <div class="progress-bar-wrap">
+        <div class="progress-fill"></div>
+      </div>
+      <strong>1 dari 12</strong> topik materi telah tersedia.
+      Kontributor dapat menambahkan file HTML slideshow baru di folder
+      <code>indonesia-umum/materi/</code> dan mendaftarkannya di halaman ini.<br>
+      Lihat <code>pahlawan-nasional.html</code> sebagai contoh format dan struktur materi.
+    </div>
+
+  </div>
+
 <footer class="inner-footer">
-  <p>© SD Muhammadiyah 01 Kukusan · <a href="../../../index.html">← Halaman Utama</a></p>
+  <p>© SD Muhammadiyah 01 Kukusan ·
+    <a href="../index.html">← Indonesia &amp; Umum</a> ·
+    <a href="../../index.html">Halaman Utama</a>
+  </p>
 </footer>
 </body>
 </html>

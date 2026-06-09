@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pahlawan Nasional Indonesia — Materi Cerdas Cermat SDM01KKS</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    /* ── Reset ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { height: 100%; font-family: 'Nunito', sans-serif; }
+
+    /* ── Variables ── */
+    :root {
+      --red:     #c62828;
+      --red-dk:  #8e0000;
+      --red-lt:  #ffcdd2;
+      --gold:    #f9a825;
+      --navy:    #1a237e;
+      --green:   #2e7d32;
+      --cream:   #fefdf8;
+      --text:    #1a2420;
+      --muted:   #718096;
+      --card-bg: #ffffff;
+      --radius:  16px;
+      --nav-h:   58px;
+    }
+
+    /* ── Shell ── */
+    body { background: var(--cream); color: var(--text); display: flex; flex-direction: column; height: 100vh; overflow: hidden; }
+
+    /* ── Top nav ── */
+    .s-nav {
+      height: var(--nav-h); flex-shrink: 0;
+      display: flex; align-items: center; gap: 1rem;
+      padding: 0 1.5rem;
+      background: var(--red); color: #fff;
+      box-shadow: 0 2px 12px rgba(0,0,0,.25);
+      z-index: 20;
+    }
+    .s-nav a {
+      color: rgba(255,255,255,.8);
+      text-decoration: none;
+      font-size: .85rem;
+      transition: color .15s;
+    }
+    .s-nav a:hover { color: #fff; }
+    .s-nav .sep { opacity: .4; }
+    .s-nav .s-title {
+      flex: 1; font-weight: 800; font-size: .95rem;
+      white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+    }
+    .s-nav .s-counter {
+      font-weight: 700; font-size: .85rem;
+      background: rgba(255,255,255,.2);
+      padding: .25rem .75rem; border-radius: 20px;
+      white-space: nowrap;
+    }
+    .btn-fs {
+      background: rgba(255,255,255,.15);
+      border: none; color: #fff;
+      width: 34px; height: 34px; border-radius: 8px;
+      font-size: 1rem; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      transition: background .15s;
+    }
+    .btn-fs:hover { background: rgba(255,255,255,.3); }
+
+    /* ── Progress bar ── */
+    .s-prog {
+      height: 4px; background: rgba(255,255,255,.25);
+      flex-shrink: 0;
+    }
+    .s-prog-fill {
+      height: 100%; background: var(--gold);
+      transition: width .4s ease;
+    }
+
+    /* ── Slides container ── */
+    .slides-wrap {
+      flex: 1; position: relative; overflow: hidden;
+    }
+    .slide {
+      position: absolute; inset: 0;
+      padding: 2.5rem 3rem;
+      opacity: 0;
+      transform: translateX(30px);
+      transition: opacity .35s ease, transform .35s ease;
+      pointer-events: none;
+      overflow-y: auto;
+    }
+    .slide.active {
+      opacity: 1; transform: translateX(0);
+      pointer-events: all;
+    }
+    .slide.leaving {
+      opacity: 0; transform: translateX(-30px);
+    }
+
+    /* ── Cover slide ── */
+    .slide-cover {
+      background: linear-gradient(145deg, var(--red) 0%, var(--red-dk) 100%);
+      color: #fff;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      text-align: center; gap: 1.5rem;
+    }
+    .cover-flag { font-size: 5rem; line-height: 1; }
+    .cover-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 900;
+      text-shadow: 0 2px 16px rgba(0,0,0,.3);
+      line-height: 1.2;
+    }
+    .cover-sub {
+      font-size: clamp(.9rem, 2vw, 1.2rem);
+      opacity: .85; max-width: 540px; line-height: 1.6;
+    }
+    .cover-tag {
+      display: inline-flex; gap: 1rem; flex-wrap: wrap;
+      justify-content: center; margin-top: .5rem;
+    }
+    .cover-tag span {
+      background: rgba(255,255,255,.18);
+      border: 1px solid rgba(255,255,255,.35);
+      border-radius: 20px; padding: .3rem 1rem;
+      font-size: .8rem; font-weight: 700;
+    }
+
+    /* ── Content slides ── */
+    .slide-content { display: flex; flex-direction: column; gap: 1.5rem; max-width: 860px; margin: 0 auto; }
+    .slide-label {
+      font-size: .72rem; text-transform: uppercase; letter-spacing: .12em;
+      color: var(--red); font-weight: 800;
+    }
+    .slide-heading {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.6rem, 4vw, 2.6rem);
+      font-weight: 700; color: var(--text);
+      line-height: 1.2;
+    }
+    .slide-heading .sub { font-size: .55em; color: var(--muted); display: block; font-family: 'Nunito', sans-serif; font-weight: 600; margin-top: .2rem; }
+
+    /* Highlight box */
+    .hl {
+      border-radius: 12px; padding: 1rem 1.4rem;
+      font-weight: 700; font-size: .95rem;
+      display: flex; align-items: center; gap: .75rem;
+    }
+    .hl-red   { background: #ffebee; border-left: 4px solid var(--red); color: var(--red-dk); }
+    .hl-gold  { background: #fff8e1; border-left: 4px solid var(--gold); color: #6d4c00; }
+    .hl-green { background: #e8f5e9; border-left: 4px solid var(--green); color: #1b5e20; }
+    .hl-navy  { background: #e8eaf6; border-left: 4px solid var(--navy); color: var(--navy); }
+    .hl-icon  { font-size: 1.4rem; flex-shrink: 0; }
+
+    /* Facts grid */
+    .facts {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: .85rem;
+    }
+    .fact {
+      background: #fff; border: 1px solid #e9ecef;
+      border-radius: 10px; padding: .85rem 1rem;
+    }
+    .fact-label { font-size: .68rem; text-transform: uppercase; letter-spacing: .1em; color: var(--muted); margin-bottom: .25rem; }
+    .fact-value { font-weight: 800; font-size: .95rem; color: var(--text); }
+
+    /* List styles */
+    .sl { list-style: none; display: flex; flex-direction: column; gap: .55rem; }
+    .sl li { display: flex; gap: .6rem; align-items: flex-start; font-size: .95rem; line-height: 1.55; }
+    .sl li::before { content: "▸"; color: var(--red); font-size: .75rem; margin-top: .25rem; flex-shrink: 0; }
+
+    /* Table */
+    .tbl { width: 100%; border-collapse: collapse; font-size: .88rem; }
+    .tbl th { background: var(--red); color: #fff; padding: .6rem .9rem; text-align: left; font-weight: 700; }
+    .tbl td { padding: .55rem .9rem; border-bottom: 1px solid #f0f4f8; vertical-align: top; }
+    .tbl tr:hover td { background: #fef9f9; }
+    .tbl .hl-row td { background: #fff8e1; font-weight: 700; }
+
+    /* CTA button */
+    .cta-btn {
+      display: inline-flex; align-items: center; gap: .5rem;
+      background: var(--red); color: #fff;
+      padding: .75rem 1.75rem; border-radius: 10px;
+      font-weight: 800; font-size: 1rem;
+      text-decoration: none;
+      transition: opacity .15s;
+      align-self: flex-start;
+    }
+    .cta-btn:hover { opacity: .85; }
+
+    /* ── Footer nav ── */
+    .s-footer {
+      height: 64px; flex-shrink: 0;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 1.5rem;
+      background: #fff;
+      border-top: 1px solid #e9ecef;
+    }
+    .nav-btn {
+      display: flex; align-items: center; gap: .4rem;
+      background: none; border: 1.5px solid #e9ecef;
+      border-radius: 10px; padding: .5rem 1.2rem;
+      font-family: inherit; font-size: .88rem; font-weight: 700;
+      color: var(--text); cursor: pointer;
+      transition: background .15s, border-color .15s;
+    }
+    .nav-btn:hover { background: #f5f5f5; border-color: #ccc; }
+    .nav-btn:disabled { opacity: .3; cursor: default; }
+    .nav-btn.next-btn {
+      background: var(--red); color: #fff;
+      border-color: var(--red);
+    }
+    .nav-btn.next-btn:hover { opacity: .88; }
+    .nav-btn.next-btn:disabled { background: #ccc; border-color: #ccc; opacity:.6; }
+    .s-hint { font-size: .72rem; color: var(--muted); text-align: center; }
+    .s-hint kbd {
+      background: #f0f4f8; border: 1px solid #ddd;
+      border-radius: 4px; padding: 1px 5px;
+      font-family: monospace; font-size: .68rem;
+    }
+
+    @media (max-width: 600px) {
+      .slide { padding: 1.25rem 1rem; }
+      .s-hint { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Nav bar -->
+  <header class="s-nav">
+    <a href="../index.html">← Materi</a>
+    <span class="sep">›</span>
+    <span class="s-title">Pahlawan Nasional Indonesia</span>
+    <span class="s-counter" id="s-counter">1 / 12</span>
+    <button class="btn-fs" id="btn-fs" title="Layar penuh (F)">⛶</button>
+  </header>
+
+  <!-- Progress -->
+  <div class="s-prog"><div class="s-prog-fill" id="s-prog" style="width:8.33%"></div></div>
+
+  <!-- Slides -->
+  <div class="slides-wrap" id="slides-wrap">
+
+    <!-- ══ SLIDE 1 — COVER ══ -->
+    <div class="slide slide-cover active" id="sl1">
+      <div class="cover-flag">🦸</div>
+      <h1 class="cover-title">Pahlawan Nasional Indonesia</h1>
+      <p class="cover-sub">Mengenal tokoh-tokoh pejuang bangsa yang berjasa luar biasa bagi kemerdekaan dan kemajuan Indonesia.</p>
+      <div class="cover-tag">
+        <span>📖 12 Slide</span>
+        <span>🎯 Cerdas Cermat SD</span>
+        <span>⌨️ ← → navigasi</span>
+      </div>
+    </div>
+
+    <!-- ══ SLIDE 2 — PENGERTIAN ══ -->
+    <div class="slide" id="sl2">
+      <div class="slide-content">
+        <div class="slide-label">Slide 2 · Pengertian</div>
+        <h2 class="slide-heading">Apa Itu Pahlawan Nasional?</h2>
+        <div class="hl hl-red">
+          <span class="hl-icon">📜</span>
+          <span>Gelar kehormatan <strong>tertinggi</strong> yang diberikan Pemerintah RI kepada warga negara yang berjasa luar biasa bagi bangsa dan negara.</span>
+        </div>
+        <ul class="sl">
+          <li>Ditetapkan melalui <strong>Keputusan Presiden (Keppres)</strong></li>
+          <li>Harus Warga Negara Indonesia (atau pernah menjadi WNI)</li>
+          <li>Berjasa luar biasa dalam memperjuangkan kemerdekaan / mempertahankan NKRI</li>
+          <li><strong>Tidak pernah menyerah atau berkhianat</strong> kepada bangsa dan negara</li>
+          <li>Sudah wafat (gelar tidak diberikan kepada yang masih hidup)</li>
+        </ul>
+        <div class="hl hl-gold">
+          <span class="hl-icon">🏅</span>
+          <span>Indonesia memiliki lebih dari <strong>190 Pahlawan Nasional</strong> yang telah ditetapkan hingga saat ini.</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ SLIDE 3 — KI HAJAR DEWANTARA ══ -->
+    <div class="slide" id="sl3">
+      <div class="slide-content">
+        <div class="slide-label">Slide 3 · Tokoh</div>
+        <h2 class="slide-heading">Ki Hajar Dewantara
+          <span class="sub">Bapak Pendidikan Nasional</span>
+        </h2>
+        <div class="hl hl-navy">
+          <span class="hl-icon">📚</span>
+          <span>Nama asli: <strong>Raden Mas Soewardi Soerjaningrat</strong></span>
+        </div>
+        <div class="facts">
+          <div class="fact"><div class="fact-label">Lahir</div><div class="fact-value">2 Mei 1889 · Yogyakarta</div></div>
+          <div class="fact"><div class="fact-label">Wafat</div><div class="fact-value">26 April 1959</div></div>
+          <div class="fact"><div class="fact-label">Perjuangan</div><div class="fact-value">Mendirikan Taman Siswa (3 Juli 1922)</div></div>
+          <div class="fact"><div class="fact-label">Hari Peringatan</div><div class="fact-value">2 Mei = Hari Pendidikan Nasional (Hardiknas)</div></div>
+        </div>
+        <div class="hl hl-green">
+          <span class="hl-icon">💬</span>
+          <span>Semboyan terkenal: <strong>"Tut Wuri Handayani"</strong> — dari belakang memberi dorongan. Kini menjadi semboyan Kemendikbud RI.</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ SLIDE 4 — R.A. KARTINI ══ -->
+    <div class="slide" id="sl4">
+      <div class="slide-content">
+        <div class="slide-label">Slide 4 · Tokoh</div>
+        <h2 class="slide-heading">R.A. Kartini
+          <span class="sub">Pelopor Emansipasi Wanita</span>
+        </h2>
+        <div class="hl hl-red">
+          <span class="hl-icon">✍️</span>
+          <span>Nama lengkap: <strong>Raden Adjeng Kartini</strong></span>
+        </div>
+        <div class="facts">
+          <div class="fact"><div class="fact-label">Lahir</div><div class="fact-value">21 April 1879 · Jepara, Jawa Tengah</div></div>
+          <div class="fact"><div class="fact-label">Wafat</div><div class="fact-value">17 September 1904 (usia 25 tahun)</div></div>
+          <div class="fact"><div class="fact-label">Perjuangan</div><div class="fact-value">Memperjuangkan kesetaraan pendidikan bagi wanita Indonesia</div></div>
+          <div class="fact"><div class="fact-label">Hari Peringatan</div><div class="fact-value">21 April = Hari Kartini</div></div>
+        </div>
+        <div class="hl hl-gold">
+          <span class="hl-icon">📖</span>
+          <span>Karya terkenal: Surat-surat Kartini dikumpulkan dalam buku <strong>"Habis Gelap Terbitlah Terang"</strong> (Door Duisternis tot Licht).</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ SLIDE 5 — PANGERAN DIPONEGORO ══ -->
+    <div class="slide" id="sl5">
+      <div class="slide-content">
+        <div class="slide-label">Slide 5 · Tokoh</div>
+        <h2 class="slide-heading">Pangeran Diponegoro
+          <span class="sub">Pemimpin Perang Jawa (1825–1830)</span>
+        </h2>
+        <div class="hl hl-red">
+          <span class="hl-icon">⚔️</span>
+          <span>Nama asli: <strong>Raden Mas Antawirya</strong> — Putra Sultan Hamengkubuwono III, Yogyakarta</span>
+        </div>
+        <div class="facts">
+          <div class="fact"><div class="fact-label">Lahir</div><div class="fact-value">11 November 1785 · Yogyakarta</div></div>
+          <div class="fact"><div class="fact-label">Wafat</div><div class="fact-value">8 Januari 1855 · Makassar (dalam pengasingan)</div></div>
+          <div class="fact"><div class="fact-label">Perang</div><div class="fact-value">Perang Diponegoro / Perang Jawa (1825–1830)</div></div>
+          <div class="fact"><div class="fact-label">Ditangkap</div><div class="fact-value">28 Maret 1830 di Magelang (tipu muslihat Belanda)</div></div>
+        </div>
+        <div class="hl hl-gold">
+          <span class="hl-icon">💴</span>
+          <span>Wajah Pangeran Diponegoro diabadikan pada <strong>uang kertas Rp 100.000</strong>.</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ SLIDE 6 — JENDERAL SUDIRMAN ══ -->
+    <div class="slide" id="sl6">
+      <div class="slide-content">
+        <div class="slide-label">Slide 6 · Tokoh</div>
+        <h2 class="slide-heading">Jenderal Sudirman
+          <span class="sub">Panglima Besar TNI Pertama</span>
+        </h2>
+        <div class="hl hl-navy">
+          <span class="hl-icon">🎖️</span>
+          <span>Panglima Besar pertama Tentara Nasional Indonesia (TNI)</span>
+        </div>
+        <div class="facts">
+          <div class="fact"><div class="fact-label">Lahir</div><div class="fact-value">24 Januari 1916 · Purbalingga, Jawa Tengah</div></div>
+          <div class="fact"><div class="fact-label">Wafat</div><div class="fact-value">29 Januari 1950 · Magelang (usia 34 tahun)</div></div>
+          <div class="fact"><div class="fact-label">Perjuangan</div><div class="fact-value">Memimpin perang gerilya melawan Belanda (1948–1949)</div></div>
+          <div class="fact"><div class="fact-label">Fakta Luar Biasa</div><div class="fact-value">Bergerilya 7 bulan sambil menderita TBC parah, berjalan dipapah</div></div>
+        </div>
+        <div class="hl hl-green">
+          <span class="hl-icon">🛣️</span>
+          <span>Namanya diabadikan sebagai nama <strong>jalan utama di hampir seluruh kota di Indonesia</strong> (Jl. Jenderal Sudirman).</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ SLIDE 7 — CUT NYAK DIEN ══ -->
+    <div class="slide" id="sl7">
+      <div class="slide-content">
+        <div class="slide-label">Slide 7 · Tokoh</div>
+        <h2 class="slide-heading">Cut Nyak Dien
+          <span class="sub">Srikandi Perjuangan dari Aceh</span>
+        </h2>
+        <div class="hl hl-red">
+          <span class="hl-icon">🌹</span>
+          <span>Pahlawan wanita yang terus berjuang meski dalam kondisi sakit dan lanjut usia.</span>
+        </div>
+        <div class="facts">
+          <div class="fact"><div class="fact-label">Lahir</div><div class="fact-value">1848 · Lampadang, Aceh Besar</div></div>
+          <div class="fact"><div class="fact-label">Wafat</div><div class="fact-value">6 November 1908 · Sumedang (pengasingan)</div></div>
+          <div class="fact"><div class="fact-label">Suami I</div><div class="fact-value">Teuku Ibrahim Lamnga — gugur dalam perang 1878</div></div>
+          <div class="fact"><div class="fact-label">Suami II</div><div class="fact-value">Teuku Umar — melanjutkan perjuangan bersama (gugur 1899)</div></div>
+        </div>
+        <div class="hl hl-gold">
+          <span class="hl-icon">💪</span>
+          <span>Ditangkap Belanda tahun 1905. Meski menderita <strong>rabun dan encok</strong>, Cut Nyak Dien tidak pernah berhenti berjuang.</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ SLIDE 8 — SULTAN HASANUDDIN ══ -->
+    <div class="slide" id="sl8">
+      <div class="slide-content">
+        <div class="slide-label">Slide 8 · Tokoh</div>
+        <h2 class="slide-heading">Sultan Hasanuddin
+          <span class="sub">Ayam Jantan dari Timur</span>
+        </h2>
+        <div class="hl hl-navy">
+          <span class="hl-icon">👑</span>
+          <span>Raja Gowa ke-16 (1653–1669), Sulawesi Selatan</span>
+        </div>
+        <div class="facts">
+          <div class="fact"><div class="fact-label">Lahir</div><div class="fact-value">12 Januari 1631 · Gowa, Sulawesi Selatan</div></div>
+          <div class="fact"><div class="fact-label">Wafat</div><div class="fact-value">12 Juni 1670</div></div>
+          <div class="fact"><div class="fact-label">Julukan</div><div class="fact-value">"Ayam Jantan dari Timur" — julukan dari Belanda karena keberaniannya</div></div>
+          <div class="fact"><div class="fact-label">Perjanjian</div><div class="fact-value">Dipaksa menandatangani Perjanjian Bongaya oleh Belanda (1667)</div></div>
+        </div>
+        <div class="hl hl-red">
+          <span class="hl-icon">⚓</span>
+          <span>Memimpin Kerajaan Gowa melawan VOC/Belanda dengan gagah berani di kawasan timur Indonesia.</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ SLIDE 9 — TUANKU IMAM BONJOL ══ -->
+    <div class="slide" id="sl9">
+      <div class="slide-content">
+        <div class="slide-label">Slide 9 · Tokoh</div>
+        <h2 class="slide-heading">Tuanku Imam Bonjol
+          <span class="sub">Pemimpin Perang Padri (1821–1837)</span>
+        </h2>
+        <div class="hl hl-red">
+          <span class="hl-icon">⚔️</span>
+          <span>Nama asli: <strong>Muhammad Shahab</strong> — ulama dan pemimpin perang di Sumatera Barat</span>
+        </div>
+        <div class="facts">
+          <div class="fact"><div class="fact-label">Lahir</div><div class="fact-value">1772 · Pasaman, Sumatera Barat</div></div>
+          <div class="fact"><div class="fact-label">Wafat</div><div class="fact-value">6 November 1864 · Minahasa (pengasingan)</div></div>
+          <div class="fact"><div class="fact-label">Perang</div><div class="fact-value">Perang Padri (1821–1837) melawan Belanda di Sumatera Barat</div></div>
+          <div class="fact"><div class="fact-label">Pengasingan</div><div class="fact-value">Cianjur → Ambon → Menado setelah ditangkap 1837</div></div>
+        </div>
+        <div class="hl hl-gold">
+          <span class="hl-icon">💴</span>
+          <span>Wajahnya pernah diabadikan pada <strong>uang kertas Rp 5.000</strong> edisi lama.</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ SLIDE 10 — PATTIMURA ══ -->
+    <div class="slide" id="sl10">
+      <div class="slide-content">
+        <div class="slide-label">Slide 10 · Tokoh</div>
+        <h2 class="slide-heading">Pattimura
+          <span class="sub">Pahlawan dari Maluku</span>
+        </h2>
+        <div class="hl hl-navy">
+          <span class="hl-icon">⚓</span>
+          <span>Nama asli: <strong>Thomas Matulessy</strong> — pemimpin perlawanan rakyat Maluku</span>
+        </div>
+        <div class="facts">
+          <div class="fact"><div class="fact-label">Lahir</div><div class="fact-value">8 Juni 1783 · Hualoy, Maluku</div></div>
+          <div class="fact"><div class="fact-label">Wafat</div><div class="fact-value">16 Desember 1817 (dihukum gantung Belanda)</div></div>
+          <div class="fact"><div class="fact-label">Perjuangan</div><div class="fact-value">Memimpin perlawanan rakyat Maluku melawan Belanda (1817)</div></div>
+          <div class="fact"><div class="fact-label">Pertempuran</div><div class="fact-value">Merebut Benteng Duurstede di Saparua, Maluku</div></div>
+        </div>
+        <div class="hl hl-gold">
+          <span class="hl-icon">💴</span>
+          <span>Wajahnya pernah diabadikan pada <strong>uang kertas Rp 1.000</strong> edisi lama. Hari lahirnya (8 Juni) diperingati di Maluku.</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ SLIDE 11 — TOKOH LAINNYA ══ -->
+    <div class="slide" id="sl11">
+      <div class="slide-content">
+        <div class="slide-label">Slide 11 · Tokoh Lainnya</div>
+        <h2 class="slide-heading">Pahlawan Nasional Lainnya</h2>
+        <table class="tbl">
+          <thead>
+            <tr><th>Nama</th><th>Asal</th><th>Peran / Keistimewaan</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>Mohammad Hatta</strong></td><td>Sumatera Barat</td><td>Wakil Presiden RI pertama · "Bapak Koperasi Indonesia"</td></tr>
+            <tr><td><strong>Ahmad Yani</strong></td><td>Purworejo, Jawa Tengah</td><td>Pahlawan Revolusi · Korban G30S/PKI, 1 Oktober 1965</td></tr>
+            <tr><td><strong>Martha C. Tiahahu</strong></td><td>Maluku</td><td>Pahlawan wanita termuda (usia 17 tahun), berjuang bersama Pattimura</td></tr>
+            <tr><td><strong>Pangeran Antasari</strong></td><td>Kalimantan Selatan</td><td>Pemimpin Perang Banjar (1859–1862) melawan Belanda</td></tr>
+            <tr><td><strong>Wolter Monginsidi</strong></td><td>Manado, Sulawesi</td><td>Pahlawan muda dari Sulawesi, dihukum tembak Belanda usia 24 tahun</td></tr>
+            <tr class="hl-row"><td><strong>Soepomo</strong></td><td>Jawa Tengah</td><td>Perumus UUD 1945, pakar hukum tata negara</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- ══ SLIDE 12 — RANGKUMAN ══ -->
+    <div class="slide" id="sl12">
+      <div class="slide-content">
+        <div class="slide-label">Slide 12 · Rangkuman</div>
+        <h2 class="slide-heading">Rangkuman Pahlawan Nasional</h2>
+        <table class="tbl">
+          <thead>
+            <tr><th>Nama</th><th>Daerah</th><th>Julukan / Peran Utama</th><th>Hari Peringatan</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>Ki Hajar Dewantara</strong></td><td>Yogyakarta</td><td>Bapak Pendidikan Nasional</td><td>2 Mei (Hardiknas)</td></tr>
+            <tr><td><strong>R.A. Kartini</strong></td><td>Jepara</td><td>Pelopor Emansipasi Wanita</td><td>21 April (Hari Kartini)</td></tr>
+            <tr><td><strong>Pangeran Diponegoro</strong></td><td>Yogyakarta</td><td>Pemimpin Perang Jawa 1825–30</td><td>—</td></tr>
+            <tr><td><strong>Jenderal Sudirman</strong></td><td>Purbalingga</td><td>Panglima Besar TNI Pertama</td><td>—</td></tr>
+            <tr><td><strong>Cut Nyak Dien</strong></td><td>Aceh</td><td>Pejuang Wanita Aceh</td><td>—</td></tr>
+            <tr><td><strong>Sultan Hasanuddin</strong></td><td>Gowa, Sulsel</td><td>Ayam Jantan dari Timur</td><td>—</td></tr>
+            <tr><td><strong>Tuanku Imam Bonjol</strong></td><td>Sumatera Barat</td><td>Pemimpin Perang Padri</td><td>—</td></tr>
+            <tr><td><strong>Pattimura</strong></td><td>Maluku</td><td>Pahlawan Maluku</td><td>8 Juni</td></tr>
+          </tbody>
+        </table>
+        <div class="hl hl-green">
+          <span class="hl-icon">✅</span>
+          <span>Selamat! Kamu sudah mempelajari <strong>8 tokoh pahlawan nasional</strong> beserta fakta-fakta pentingnya.</span>
+        </div>
+        <a href="../soal/paket-01.html" class="cta-btn">📝 Latihan Soal Sekarang →</a>
+      </div>
+    </div>
+
+  </div><!-- /slides-wrap -->
+
+  <!-- Footer nav -->
+  <footer class="s-footer">
+    <button class="nav-btn prev-btn" id="btn-prev" onclick="prev()" disabled>◄ Sebelumnya</button>
+    <div class="s-hint">
+      <kbd>←</kbd> <kbd>→</kbd> navigasi &nbsp;·&nbsp; <kbd>F</kbd> layar penuh
+    </div>
+    <button class="nav-btn next-btn" id="btn-next" onclick="next()">Berikutnya ►</button>
+  </footer>
+
+  <script>
+    const TOTAL = 12;
+    let cur = 1;
+
+    function showSlide(n) {
+      const prev_sl = document.getElementById('sl' + cur);
+      const next_sl = document.getElementById('sl' + n);
+      if (!next_sl) return;
+
+      prev_sl.classList.add('leaving');
+      prev_sl.classList.remove('active');
+      setTimeout(() => { prev_sl.classList.remove('leaving'); }, 400);
+
+      next_sl.classList.add('active');
+      cur = n;
+
+      // Update UI
+      document.getElementById('s-counter').textContent = cur + ' / ' + TOTAL;
+      document.getElementById('s-prog').style.width = (cur / TOTAL * 100).toFixed(1) + '%';
+      document.getElementById('btn-prev').disabled = (cur === 1);
+      document.getElementById('btn-next').disabled = (cur === TOTAL);
+    }
+
+    function next() { if (cur < TOTAL) showSlide(cur + 1); }
+    function prev() { if (cur > 1)     showSlide(cur - 1); }
+
+    document.addEventListener('keydown', e => {
+      if (e.code === 'ArrowRight' || e.code === 'ArrowDown')  next();
+      if (e.code === 'ArrowLeft'  || e.code === 'ArrowUp')    prev();
+      if (e.code === 'KeyF') toggleFS();
+    });
+
+    document.getElementById('btn-fs').addEventListener('click', toggleFS);
+
+    function toggleFS() {
+      if (!document.fullscreenElement)
+        document.documentElement.requestFullscreen().catch(() => {});
+      else
+        document.exitFullscreen();
+    }
+
+    // Touch swipe
+    let ts = 0;
+    document.getElementById('slides-wrap').addEventListener('touchstart', e => { ts = e.touches[0].clientX; });
+    document.getElementById('slides-wrap').addEventListener('touchend', e => {
+      const dx = e.changedTouches[0].clientX - ts;
+      if (Math.abs(dx) > 50) { dx < 0 ? next() : prev(); }
+    });
+  </script>
+</body>
+</html>
