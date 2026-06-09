@@ -3,51 +3,387 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Indonesia & Umum — Cerdas Cermat SDM01KKS</title>
+  <title>Indonesia &amp; Umum — Cerdas Cermat SDM01KKS</title>
   <link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/style.css">
   <style>
-    :root { --hero-color: #c62828; }
+    :root { --hero-color:#c62828; }
+
+    /* ── Quick nav anchors ── */
+    .qnav {
+      display:flex; gap:.75rem; flex-wrap:wrap;
+      padding:1rem 2rem; background:#fff;
+      border-bottom:1px solid #e9ecef;
+      position:sticky; top:60px; z-index:40;
+    }
+    .qnav a {
+      display:inline-flex; align-items:center; gap:.4rem;
+      font-size:.85rem; font-weight:700;
+      color:#c62828; background:#fff5f5;
+      border:1.5px solid #ffcdd2; border-radius:20px;
+      padding:.35rem 1rem; transition:background .15s;
+    }
+    .qnav a:hover { background:#ffcdd2; }
+
+    /* ── Section heads ── */
+    .sec-head {
+      display:flex; align-items:baseline; gap:1rem;
+      margin-bottom:1.5rem;
+    }
+    .sec-head h2 {
+      font-family:var(--font-display); font-size:1.5rem;
+      color:#c62828; margin:0;
+    }
+    .sec-head .sec-sub { font-size:.82rem; color:#718096; }
+
+    /* ── Materi cards grid ── */
+    .materi-grid {
+      display:grid;
+      grid-template-columns:repeat(auto-fill,minmax(210px,1fr));
+      gap:1rem;
+      margin-bottom:3rem;
+    }
+    .materi-card {
+      background:#fff; border-radius:14px;
+      border:1px solid #e9ecef;
+      display:flex; flex-direction:column;
+      text-decoration:none; color:inherit;
+      overflow:hidden;
+      box-shadow:0 2px 8px rgba(0,0,0,.06);
+      transition:transform .18s, box-shadow .18s;
+    }
+    .materi-card:hover:not(.mc-dim) {
+      transform:translateY(-3px);
+      box-shadow:0 8px 24px rgba(0,0,0,.12);
+    }
+    .mc-dim { opacity:.6; }
+    .mc-accent { height:4px; background:var(--mc); }
+    .mc-icon  { font-size:2rem; padding:.9rem 1rem .3rem; line-height:1; }
+    .mc-title { font-weight:800; font-size:.9rem; padding:0 1rem .35rem; color:#1a2420; }
+    .mc-desc  { font-size:.78rem; color:#718096; padding:0 1rem; line-height:1.55; flex:1; }
+    .mc-foot  {
+      display:flex; align-items:center; justify-content:space-between;
+      padding:.6rem 1rem; margin-top:.5rem;
+      border-top:1px solid #f0f4f8;
+    }
+    .mc-slides { font-size:.72rem; color:#a0aec0; }
+    .mbadge {
+      font-size:.65rem; font-weight:800; letter-spacing:.03em;
+      padding:2px 7px; border-radius:10px;
+    }
+    .mbadge-avail { background:#e6f4ea; color:#2e7d32; }
+    .mbadge-soon  { background:#f5f5f5; color:#999; }
+
+    /* ── Paket rows ── */
+    .paket-rows { display:flex; flex-direction:column; gap:.75rem; }
+    .paket-row {
+      background:#fff; border-radius:12px; border:1px solid #e9ecef;
+      display:flex; align-items:center; gap:1rem;
+      padding:1rem 1.25rem;
+      box-shadow:0 1px 6px rgba(0,0,0,.05);
+      transition:transform .15s;
+    }
+    .paket-row:hover { transform:translateX(3px); }
+    .pr-num {
+      font-family:var(--font-display); font-size:1.6rem; font-weight:900;
+      color:#c62828; min-width:34px; text-align:center; flex-shrink:0;
+    }
+    .pr-info { flex:1; }
+    .pr-title { font-weight:700; color:#1a2420; font-size:.92rem; }
+    .pr-meta  { font-size:.75rem; color:#718096; margin-top:2px; }
+    .pbadge {
+      font-size:.7rem; font-weight:800; padding:3px 9px;
+      border-radius:10px; flex-shrink:0;
+    }
+    .pbadge-avail { background:#e6f4ea; color:#2e7d32; }
+    .pbadge-soon  { background:#fff3e0; color:#e65100; }
+    .btn-mulai {
+      display:inline-flex; align-items:center; gap:.3rem;
+      background:#c62828; color:#fff;
+      padding:.45rem 1.1rem; border-radius:8px;
+      font-weight:700; font-size:.83rem;
+      transition:opacity .15s; white-space:nowrap;
+    }
+    .btn-mulai:hover { opacity:.85; }
+
+    /* ── Info box ── */
+    .info-box {
+      background:#fff8e1; border:1px solid #ffe082;
+      border-radius:10px; padding:1rem 1.25rem;
+      font-size:.83rem; color:#6d4c00;
+      margin-top:1.5rem; line-height:1.65;
+    }
+    .info-box a { color:#c62828; font-weight:700; }
   </style>
 </head>
 <body class="page-inner">
+
   <nav class="inner-nav">
-  <a href="../../index.html" class="nav-brand">🏆 Cerdas Cermat</a>
-  <span class="nav-sep">›</span>
-  <span class="nav-current">Indonesia & Umum</span>
+    <a href="../index.html" class="nav-brand">🏆 Cerdas Cermat</a>
+    <span class="nav-sep">›</span>
+    <span class="nav-current">🇮🇩 Indonesia &amp; Umum</span>
   </nav>
 
   <div class="cat-hero">
     <div class="cat-hero-icon">🇮🇩</div>
-    <h1 class="cat-hero-title">Indonesia & Umum</h1>
-    <p class="cat-hero-desc">Sejarah Indonesia, geografi, kewarganegaraan, tokoh nasional, dan pengetahuan umum dunia.</p>
+    <h1 class="cat-hero-title">Pengetahuan Indonesia &amp; Umum</h1>
+    <p class="cat-hero-desc">
+      Hub materi dan soal latihan · <strong>12 topik materi</strong> · <strong>10 paket soal</strong>
+      · <strong>1 materi tersedia</strong>
+    </p>
   </div>
 
-  <div class="content-area">
-    <h2 class="section-heading">Pilih Mode</h2>
-    <div class="menu-grid">
-      <a href="soal/index.html" class="menu-card">
-        <div class="menu-card-icon">📝</div>
-        <div class="menu-card-title">Soal Latihan</div>
-        <div class="menu-card-desc">
-          Paket soal isian singkat dengan timer countdown dan pembahasan detail.
-          Cocok untuk sesi latihan bersama menggunakan proyektor.
-        </div>
-        <div class="menu-card-link">Lihat paket soal →</div>
-      </a>
-      <a href="materi/index.html" class="menu-card">
-        <div class="menu-card-icon">📚</div>
-        <div class="menu-card-title">Materi Belajar</div>
-        <div class="menu-card-desc">
-          Ringkasan materi pembelajaran berbasis slideshow,
-          siap ditampilkan di infokus sebelum sesi latihan soal.
-        </div>
-        <div class="menu-card-link">Lihat materi →</div>
-      </a>
-    </div>
+  <!-- Quick-nav anchors -->
+  <div class="qnav">
+    <a href="#materi">📚 Materi Pembelajaran</a>
+    <a href="#soal">📝 Soal Latihan</a>
+    <a href="materi/index.html">Lihat Semua Materi →</a>
   </div>
+
+  <div class="content-area" style="max-width:1100px">
+
+    <!-- ══ MATERI ══ -->
+    <div id="materi" style="scroll-margin-top:120px">
+      <div class="sec-head">
+        <h2>📚 Materi Pembelajaran</h2>
+        <span class="sec-sub">12 topik · klik untuk membuka</span>
+      </div>
+      <div class="materi-grid">
+        
+    <a href="materi/index.html" class="materi-card mc-dim" style="--mc:#e53935;cursor:default" title="Kemerdekaan Indonesia">
+      <div class="mc-accent"></div>
+      <div class="mc-icon">🇮🇩</div>
+      <div class="mc-title">Kemerdekaan Indonesia</div>
+      <div class="mc-desc">Proklamasi 17 Agustus 1945, BPUPKI, PPKI, dan Peristiwa Rengasdengklok.</div>
+      <div class="mc-foot">
+        <span class="mc-slides">📖 14 slide</span>
+        <span class="mbadge mbadge-soon">Segera Hadir</span>
+      </div>
+    </a>
+    <a href="materi/pahlawan-nasional.html" class="materi-card " style="--mc:#c62828;cursor:pointer" title="Pahlawan Nasional">
+      <div class="mc-accent"></div>
+      <div class="mc-icon">🦸</div>
+      <div class="mc-title">Pahlawan Nasional</div>
+      <div class="mc-desc">Ki Hajar Dewantara, R.A. Kartini, Pangeran Diponegoro, Jenderal Sudirman, dan lainnya.</div>
+      <div class="mc-foot">
+        <span class="mc-slides">📖 12 slide</span>
+        <span class="mbadge mbadge-avail">✓ Tersedia</span>
+      </div>
+    </a>
+    <a href="materi/index.html" class="materi-card mc-dim" style="--mc:#b71c1c;cursor:default" title="Pancasila & UUD 1945">
+      <div class="mc-accent"></div>
+      <div class="mc-icon">⚖️</div>
+      <div class="mc-title">Pancasila & UUD 1945</div>
+      <div class="mc-desc">Bunyi sila-sila Pancasila, sejarah perumusan, dan pasal-pasal penting UUD 1945.</div>
+      <div class="mc-foot">
+        <span class="mc-slides">📖 15 slide</span>
+        <span class="mbadge mbadge-soon">Segera Hadir</span>
+      </div>
+    </a>
+    <a href="materi/index.html" class="materi-card mc-dim" style="--mc:#880e4f;cursor:default" title="Lambang & Simbol Negara">
+      <div class="mc-accent"></div>
+      <div class="mc-icon">🦅</div>
+      <div class="mc-title">Lambang & Simbol Negara</div>
+      <div class="mc-desc">Garuda Pancasila, Sang Saka Merah Putih, lagu Indonesia Raya, dan maknanya.</div>
+      <div class="mc-foot">
+        <span class="mc-slides">📖 11 slide</span>
+        <span class="mbadge mbadge-soon">Segera Hadir</span>
+      </div>
+    </a>
+    <a href="materi/index.html" class="materi-card mc-dim" style="--mc:#2e7d32;cursor:default" title="Geografi Indonesia">
+      <div class="mc-accent"></div>
+      <div class="mc-icon">🗺️</div>
+      <div class="mc-title">Geografi Indonesia</div>
+      <div class="mc-desc">Provinsi, pulau-pulau besar, gunung, sungai, danau, dan letak geografis Indonesia.</div>
+      <div class="mc-foot">
+        <span class="mc-slides">📖 16 slide</span>
+        <span class="mbadge mbadge-soon">Segera Hadir</span>
+      </div>
+    </a>
+    <a href="materi/index.html" class="materi-card mc-dim" style="--mc:#1b5e20;cursor:default" title="Kebudayaan Nusantara">
+      <div class="mc-accent"></div>
+      <div class="mc-icon">🎭</div>
+      <div class="mc-title">Kebudayaan Nusantara</div>
+      <div class="mc-desc">Tarian tradisional, pakaian adat, alat musik, dan rumah adat dari tiap daerah.</div>
+      <div class="mc-foot">
+        <span class="mc-slides">📖 18 slide</span>
+        <span class="mbadge mbadge-soon">Segera Hadir</span>
+      </div>
+    </a>
+    <a href="materi/index.html" class="materi-card mc-dim" style="--mc:#1a237e;cursor:default" title="Pemerintahan Indonesia">
+      <div class="mc-accent"></div>
+      <div class="mc-icon">🏛️</div>
+      <div class="mc-title">Pemerintahan Indonesia</div>
+      <div class="mc-desc">Urutan presiden RI, lembaga negara (MPR/DPR/DPD), dan sistem pemerintahan.</div>
+      <div class="mc-foot">
+        <span class="mc-slides">📖 12 slide</span>
+        <span class="mbadge mbadge-soon">Segera Hadir</span>
+      </div>
+    </a>
+    <a href="materi/index.html" class="materi-card mc-dim" style="--mc:#0d47a1;cursor:default" title="Flora & Fauna Indonesia">
+      <div class="mc-accent"></div>
+      <div class="mc-icon">🌺</div>
+      <div class="mc-title">Flora & Fauna Indonesia</div>
+      <div class="mc-desc">Hewan endemik (komodo, anoa, tarsius), bunga nasional, dan taman nasional.</div>
+      <div class="mc-foot">
+        <span class="mc-slides">📖 13 slide</span>
+        <span class="mbadge mbadge-soon">Segera Hadir</span>
+      </div>
+    </a>
+    <a href="materi/index.html" class="materi-card mc-dim" style="--mc:#006064;cursor:default" title="Negara & Ibukota Dunia">
+      <div class="mc-accent"></div>
+      <div class="mc-icon">🌍</div>
+      <div class="mc-title">Negara & Ibukota Dunia</div>
+      <div class="mc-desc">Ibukota negara-negara penting, mata uang, benua, dan samudra di dunia.</div>
+      <div class="mc-foot">
+        <span class="mc-slides">📖 15 slide</span>
+        <span class="mbadge mbadge-soon">Segera Hadir</span>
+      </div>
+    </a>
+    <a href="materi/index.html" class="materi-card mc-dim" style="--mc:#37474f;cursor:default" title="Organisasi Internasional">
+      <div class="mc-accent"></div>
+      <div class="mc-icon">🤝</div>
+      <div class="mc-title">Organisasi Internasional</div>
+      <div class="mc-desc">PBB dan badan-badannya, ASEAN, UNESCO, WHO, dan peran Indonesia.</div>
+      <div class="mc-foot">
+        <span class="mc-slides">📖 11 slide</span>
+        <span class="mbadge mbadge-soon">Segera Hadir</span>
+      </div>
+    </a>
+    <a href="materi/index.html" class="materi-card mc-dim" style="--mc:#e65100;cursor:default" title="Penemuan & Penemu Dunia">
+      <div class="mc-accent"></div>
+      <div class="mc-icon">💡</div>
+      <div class="mc-title">Penemuan & Penemu Dunia</div>
+      <div class="mc-desc">Penemu telepon, listrik, pesawat terbang, dan inovasi penting yang mengubah dunia.</div>
+      <div class="mc-foot">
+        <span class="mc-slides">📖 12 slide</span>
+        <span class="mbadge mbadge-soon">Segera Hadir</span>
+      </div>
+    </a>
+    <a href="materi/index.html" class="materi-card mc-dim" style="--mc:#6a1b9a;cursor:default" title="Hari-Hari Penting">
+      <div class="mc-accent"></div>
+      <div class="mc-icon">📅</div>
+      <div class="mc-title">Hari-Hari Penting</div>
+      <div class="mc-desc">Hari nasional Indonesia (Kartini, Pendidikan, Pahlawan) dan hari-hari internasional.</div>
+      <div class="mc-foot">
+        <span class="mc-slides">📖 10 slide</span>
+        <span class="mbadge mbadge-soon">Segera Hadir</span>
+      </div>
+    </a>
+      </div>
+    </div>
+
+    <!-- ══ SOAL ══ -->
+    <div id="soal" style="scroll-margin-top:120px">
+      <div class="sec-head">
+        <h2>📝 Paket Soal Latihan</h2>
+        <span class="sec-sub">10 paket · 40 soal per paket · ~10% Bahasa Inggris</span>
+      </div>
+      <div class="paket-rows">
+        
+    <div class="paket-row" >
+      <div class="pr-num">01</div>
+      <div class="pr-info">
+        <div class="pr-title">Paket Soal 01 — Perdana</div>
+        <div class="pr-meta">10 soal contoh (target: 40)</div>
+      </div>
+      <span class="pbadge pbadge-avail">✓ Tersedia</span>
+      <a href="soal/paket-01.html" class="btn-mulai">▶ Mulai</a>
+    </div>
+    <div class="paket-row" style="opacity:.5;pointer-events:none">
+      <div class="pr-num">02</div>
+      <div class="pr-info">
+        <div class="pr-title">Paket Soal 02 — Sesi 2</div>
+        <div class="pr-meta">40 soal · ~10% English</div>
+      </div>
+      <span class="pbadge pbadge-soon">Segera Hadir</span>
+      
+    </div>
+    <div class="paket-row" style="opacity:.5;pointer-events:none">
+      <div class="pr-num">03</div>
+      <div class="pr-info">
+        <div class="pr-title">Paket Soal 03 — Sesi 3</div>
+        <div class="pr-meta">40 soal · ~10% English</div>
+      </div>
+      <span class="pbadge pbadge-soon">Segera Hadir</span>
+      
+    </div>
+    <div class="paket-row" style="opacity:.5;pointer-events:none">
+      <div class="pr-num">04</div>
+      <div class="pr-info">
+        <div class="pr-title">Paket Soal 04 — Sesi 4</div>
+        <div class="pr-meta">40 soal · ~10% English</div>
+      </div>
+      <span class="pbadge pbadge-soon">Segera Hadir</span>
+      
+    </div>
+    <div class="paket-row" style="opacity:.5;pointer-events:none">
+      <div class="pr-num">05</div>
+      <div class="pr-info">
+        <div class="pr-title">Paket Soal 05 — Sesi 5</div>
+        <div class="pr-meta">40 soal · ~10% English</div>
+      </div>
+      <span class="pbadge pbadge-soon">Segera Hadir</span>
+      
+    </div>
+    <div class="paket-row" style="opacity:.5;pointer-events:none">
+      <div class="pr-num">06</div>
+      <div class="pr-info">
+        <div class="pr-title">Paket Soal 06 — Sesi 6</div>
+        <div class="pr-meta">40 soal · ~10% English</div>
+      </div>
+      <span class="pbadge pbadge-soon">Segera Hadir</span>
+      
+    </div>
+    <div class="paket-row" style="opacity:.5;pointer-events:none">
+      <div class="pr-num">07</div>
+      <div class="pr-info">
+        <div class="pr-title">Paket Soal 07 — Sesi 7</div>
+        <div class="pr-meta">40 soal · ~10% English</div>
+      </div>
+      <span class="pbadge pbadge-soon">Segera Hadir</span>
+      
+    </div>
+    <div class="paket-row" style="opacity:.5;pointer-events:none">
+      <div class="pr-num">08</div>
+      <div class="pr-info">
+        <div class="pr-title">Paket Soal 08 — Sesi 8</div>
+        <div class="pr-meta">40 soal · ~10% English</div>
+      </div>
+      <span class="pbadge pbadge-soon">Segera Hadir</span>
+      
+    </div>
+    <div class="paket-row" style="opacity:.5;pointer-events:none">
+      <div class="pr-num">09</div>
+      <div class="pr-info">
+        <div class="pr-title">Paket Soal 09 — Sesi 9</div>
+        <div class="pr-meta">40 soal · ~10% English</div>
+      </div>
+      <span class="pbadge pbadge-soon">Segera Hadir</span>
+      
+    </div>
+    <div class="paket-row" style="opacity:.5;pointer-events:none">
+      <div class="pr-num">10</div>
+      <div class="pr-info">
+        <div class="pr-title">Paket Soal 10 — Sesi 10</div>
+        <div class="pr-meta">40 soal · ~10% English</div>
+      </div>
+      <span class="pbadge pbadge-soon">Segera Hadir</span>
+      
+    </div>
+      </div>
+      <div class="info-box">
+        💡 <strong>Menambah paket soal baru?</strong>
+        Duplikat <code>soal/paket-01.html</code>, buat <code>soal/data/paket-02.json</code>,
+        lalu perbarui halaman ini. Lihat panduan di
+        <a href="../README.md">README.md</a>.
+      </div>
+    </div>
+
+  </div>
+
 <footer class="inner-footer">
-  <p>© SD Muhammadiyah 01 Kukusan · <a href="../../index.html">← Halaman Utama</a></p>
+  <p>© SD Muhammadiyah 01 Kukusan · <a href="../index.html">← Halaman Utama</a></p>
 </footer>
 </body>
 </html>
