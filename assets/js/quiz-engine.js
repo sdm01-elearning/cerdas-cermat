@@ -112,9 +112,10 @@
 
     /* Sampling */
     const doShuffle    = cfg.shuffle !== false;
-    const questionCount = (cfg.questionCount > 0 && cfg.questionCount < pool.length)
-                         ? cfg.questionCount
-                         : pool.length;
+    // Tentukan jumlah soal yang diminta (requestedCount) SEBELUM di-clamp,
+    // agar kondisi sampling bisa dibandingkan dengan ukuran pool yang sebenarnya.
+    const requestedCount = (cfg.questionCount > 0) ? cfg.questionCount : pool.length;
+    const questionCount  = Math.min(requestedCount, pool.length);
 
     const list = (doShuffle && questionCount < pool.length)
       ? stratifiedSample(pool, questionCount)
