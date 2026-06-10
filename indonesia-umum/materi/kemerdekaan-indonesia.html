@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kemerdekaan Indonesia — Materi Cerdas Cermat SDM01KKS</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    /* ── Reset ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { height: 100%; font-family: 'Nunito', sans-serif; }
+
+    /* ── Variables ── */
+    :root {
+      --red:     #c62828;
+      --red-dk:  #8e0000;
+      --red-lt:  #ffcdd2;
+      --gold:    #f9a825;
+      --navy:    #1a237e;
+      --green:   #2e7d32;
+      --cream:   #fefdf8;
+      --text:    #1a2420;
+      --muted:   #718096;
+      --card-bg: #ffffff;
+      --radius:  16px;
+      --nav-h:   58px;
+    }
+
+    /* ── Shell ── */
+    body { background: var(--cream); color: var(--text); display: flex; flex-direction: column; height: 100vh; overflow: hidden; }
+
+    /* ── Top nav ── */
+    .s-nav {
+      height: var(--nav-h); flex-shrink: 0;
+      display: flex; align-items: center; gap: 1rem;
+      padding: 0 1.5rem;
+      background: var(--red); color: #fff;
+      box-shadow: 0 2px 12px rgba(0,0,0,.25);
+      z-index: 20;
+    }
+    .s-nav a { color: rgba(255,255,255,.8); text-decoration: none; font-size: .85rem; transition: color .15s; }
+    .s-nav a:hover { color: #fff; }
+    .s-nav .sep { opacity: .4; }
+    .s-nav .s-title { flex: 1; font-weight: 800; font-size: .95rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .s-nav .s-counter { font-weight: 700; font-size: .85rem; background: rgba(255,255,255,.2); padding: .25rem .75rem; border-radius: 20px; white-space: nowrap; }
+    .btn-fs { background: rgba(255,255,255,.15); border: none; color: #fff; width: 34px; height: 34px; border-radius: 8px; font-size: 1rem; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: background .15s; }
+    .btn-fs:hover { background: rgba(255,255,255,.3); }
+
+    /* ── Progress bar ── */
+    .s-prog { height: 4px; background: rgba(255,255,255,.25); flex-shrink: 0; }
+    .s-prog-fill { height: 100%; background: var(--gold); transition: width .4s ease; }
+
+    /* ── Slides container ── */
+    .slides-wrap { flex: 1; position: relative; overflow: hidden; }
+    .slide { position: absolute; inset: 0; padding: 2.5rem 3rem; opacity: 0; transform: translateX(30px); transition: opacity .35s ease, transform .35s ease; pointer-events: none; overflow-y: auto; }
+    .slide.active { opacity: 1; transform: translateX(0); pointer-events: all; }
+    .slide.leaving { opacity: 0; transform: translateX(-30px); }
+
+    /* ── Cover slide ── */
+    .slide-cover { background: linear-gradient(145deg, var(--red) 0%, var(--red-dk) 100%); color: #fff; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; gap: 1.5rem; }
+    .cover-flag { font-size: 5rem; line-height: 1; }
+    .cover-title { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 900; text-shadow: 0 2px 16px rgba(0,0,0,.3); line-height: 1.2; }
+    .cover-sub { font-size: clamp(.9rem, 2vw, 1.2rem); opacity: .85; max-width: 540px; line-height: 1.6; }
+    .cover-tag { display: inline-flex; gap: 1rem; flex-wrap: wrap; justify-content: center; margin-top: .5rem; }
+    .cover-tag span { background: rgba(255,255,255,.18); border: 1px solid rgba(255,255,255,.35); border-radius: 20px; padding: .3rem 1rem; font-size: .8rem; font-weight: 700; }
+
+    /* ── Content slides ── */
+    .slide-content { display: flex; flex-direction: column; gap: 1.5rem; max-width: 860px; margin: 0 auto; }
+    .slide-label { font-size: .72rem; text-transform: uppercase; letter-spacing: .12em; color: var(--red); font-weight: 800; }
+    .slide-heading { font-family: 'Playfair Display', serif; font-size: clamp(1.6rem, 4vw, 2.6rem); font-weight: 700; color: var(--text); line-height: 1.2; }
+    .slide-heading .sub { font-size: .55em; color: var(--muted); display: block; font-family: 'Nunito', sans-serif; font-weight: 600; margin-top: .2rem; }
+
+    /* Highlight box */
+    .hl { border-radius: 12px; padding: 1rem 1.4rem; font-weight: 700; font-size: .95rem; display: flex; align-items: center; gap: .75rem; }
+    .hl-red   { background: #ffebee; border-left: 4px solid var(--red); color: var(--red-dk); }
+    .hl-gold  { background: #fff8e1; border-left: 4px solid var(--gold); color: #6d4c00; }
+    .hl-green { background: #e8f5e9; border-left: 4px solid var(--green); color: #1b5e20; }
+    .hl-navy  { background: #e8eaf6; border-left: 4px solid var(--navy); color: var(--navy); }
+    .hl-icon  { font-size: 1.4rem; flex-shrink: 0; }
+
+    /* Facts grid */
+    .facts { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: .85rem; }
+    .fact { background: #fff; border: 1px solid #e9ecef; border-radius: 10px; padding: .85rem 1rem; }
+    .fact-label { font-size: .68rem; text-transform: uppercase; letter-spacing: .1em; color: var(--muted); margin-bottom: .25rem; }
+    .fact-value { font-weight: 800; font-size: .95rem; color: var(--text); }
+
+    /* List styles */
+    .sl { list-style: none; display: flex; flex-direction: column; gap: .55rem; }
+    .sl li { display: flex; gap: .6rem; align-items: flex-start; font-size: .95rem; line-height: 1.55; }
+    .sl li::before { content: "▸"; color: var(--red); font-size: .75rem; margin-top: .25rem; flex-shrink: 0; }
+
+    /* Numbered list */
+    .nl { list-style: none; display: flex; flex-direction: column; gap: .65rem; counter-reset: nl; }
+    .nl li { display: flex; gap: .75rem; align-items: flex-start; font-size: .95rem; line-height: 1.55; counter-increment: nl; }
+    .nl li::before { content: counter(nl); background: var(--red); color: #fff; font-size: .72rem; font-weight: 800; min-width: 22px; height: 22px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: .15rem; }
+
+    /* Table */
+    .tbl { width: 100%; border-collapse: collapse; font-size: .88rem; }
+    .tbl th { background: var(--red); color: #fff; padding: .6rem .9rem; text-align: left; font-weight: 700; }
+    .tbl td { padding: .55rem .9rem; border-bottom: 1px solid #f0f4f8; vertical-align: top; }
+    .tbl tr:hover td { background: #fef9f9; }
+    .tbl .hl-row td { background: #fff8e1; font-weight: 700; }
+
+    /* Timeline */
+    .timeline { display: flex; flex-direction: column; gap: 0; }
+    .tl-item { display: flex; gap: 1rem; align-items: flex-start; }
+    .tl-line { display: flex; flex-direction: column; align-items: center; flex-shrink: 0; }
+    .tl-dot { width: 14px; height: 14px; border-radius: 50%; background: var(--red); flex-shrink: 0; margin-top: .35rem; }
+    .tl-connector { width: 2px; flex: 1; background: var(--red-lt); min-height: 20px; }
+    .tl-body { padding-bottom: 1.1rem; flex: 1; }
+    .tl-date { font-size: .72rem; font-weight: 800; color: var(--red); text-transform: uppercase; letter-spacing: .06em; }
+    .tl-text { font-size: .92rem; line-height: 1.55; margin-top: .15rem; }
+
+    /* CTA button */
+    .cta-btn { display: inline-flex; align-items: center; gap: .5rem; background: var(--red); color: #fff; padding: .75rem 1.75rem; border-radius: 10px; font-weight: 800; font-size: 1rem; text-decoration: none; transition: opacity .15s; align-self: flex-start; }
+    .cta-btn:hover { opacity: .85; }
+
+    /* ── Footer nav ── */
+    .s-footer { height: 64px; flex-shrink: 0; display: flex; align-items: center; justify-content: space-between; padding: 0 1.5rem; background: #fff; border-top: 1px solid #e9ecef; }
+    .nav-btn { display: flex; align-items: center; gap: .4rem; background: none; border: 1.5px solid #e9ecef; border-radius: 10px; padding: .5rem 1.2rem; font-family: inherit; font-size: .88rem; font-weight: 700; color: var(--text); cursor: pointer; transition: background .15s, border-color .15s; }
+    .nav-btn:hover { background: #f5f5f5; border-color: #ccc; }
+    .nav-btn:disabled { opacity: .3; cursor: default; }
+    .nav-btn.next-btn { background: var(--red); color: #fff; border-color: var(--red); }
+    .nav-btn.next-btn:hover { opacity: .88; }
+    .nav-btn.next-btn:disabled { background: #ccc; border-color: #ccc; opacity:.6; }
+    .s-hint { font-size: .72rem; color: var(--muted); text-align: center; }
+    .s-hint kbd { background: #f0f4f8; border: 1px solid #ddd; border-radius: 4px; padding: 1px 5px; font-family: monospace; font-size: .68rem; }
+
+    @media (max-width: 600px) {
+      .slide { padding: 1.25rem 1rem; }
+      .s-hint { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Nav bar -->
+  <header class="s-nav">
+    <a href="../index.html">← Materi</a>
+    <span class="sep">›</span>
+    <span class="s-title">Kemerdekaan Indonesia</span>
+    <span class="s-counter" id="s-counter">1 / 14</span>
+    <button class="btn-fs" id="btn-fs" title="Layar penuh (F)">⛶</button>
+  </header>
+
+  <!-- Progress -->
+  <div class="s-prog"><div class="s-prog-fill" id="s-prog" style="width:7.14%"></div></div>
+
+  <!-- Slides -->
+  <div class="slides-wrap" id="slides-wrap">
+
+    <!-- ══ SLIDE 1 — COVER ══ -->
+    <div class="slide slide-cover active" id="sl1">
+      <div class="cover-flag">🇮🇩</div>
+      <h1 class="cover-title">Kemerdekaan Indonesia</h1>
+      <p class="cover-sub">Perjalanan panjang menuju Proklamasi 17 Agustus 1945 — dari penjajahan hingga lahirnya Republik Indonesia.</p>
+      <div class="cover-tag">
+        <span>📖 14 Slide</span>
+        <span>🎯 Cerdas Cermat SD</span>
+        <span>⌨️ ← → navigasi</span>
+      </div>
+    </div>
+
+    <!-- ══ SLIDE 2 — PENJAJAHAN ══ -->
+    <div class="slide" id="sl2">
+      <div class="slide-content">
+        <div class="slide-label">Slide 2 · Latar Belakang</div>
+        <h2 class="slide-heading">Indonesia di Bawah Penjajahan</h2>
+        <div class="hl hl-red">
+          <span class="hl-icon">⛓️</span>
+          <span>Indonesia dijajah selama <strong>350 tahun oleh Belanda</strong> (VOC sejak 1602), kemudian <strong>3,5 tahun oleh Jepang</strong> (1942–1945).</span>
+        </div>
+        <ul class="sl">
+          <li>VOC (Vereenigde Oost-Indische Compagnie) masuk ke Nusantara tahun <strong>1602</strong></li>
+          <li>Belanda menguasai penuh wilayah Nusantara hingga awal abad ke-20</li>
+          <li>Jepang menduduki Indonesia mulai <strong>8 Maret 1942</strong> setelah Belanda menyerah di Kalijati</li>
+          <li>Meski menjanjikan kemerdekaan, Jepang tetap memeras rakyat melalui <strong>romusha</strong> (kerja paksa)</li>
+        </ul>
+        <div class="hl hl-gold">
+          <span class="hl-icon">💡</span>
+          <span>Penderitaan akibat penjajahan membakar semangat para pemuda untuk memperjuangkan kemerdekaan.</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ SLIDE 3 — BPUPKI ══ -->
+    <div class="slide" id="sl3">
+      <div class="slide-content">
+        <div class="slide-label">Slide 3 · Persiapan Kemerdekaan</div>
+        <h2 class="slide-heading">BPUPKI
+          <span class="sub">Badan Penyelidik Usaha-usaha Persiapan Kemerdekaan Indonesia</span>
+        </h2>
+        <div class="hl hl-navy">
+          <span class="hl-icon">📋</span>
+          <span>Dibentuk Jepang pada <strong>1 Maret 1945</strong>, diresmikan <strong>29 April 1945</strong>. Diketuai oleh <strong>Dr. Radjiman Wedyodiningrat</strong>.</span>
+        </div>
+        <div class="facts">
+          <div class="fact"><div class="fact-label">Nama Jepang</div><div class="fact-value">Dokuritsu Junbi Cosakai</div></div>
+          <div class="fact"><div class="fact-label">Jumlah Anggota</div><div class="fact-value">62 orang (kemudian ditambah 6)</div></div>
+          <div class="fact"><div class="fact-label">Sidang I</div><div class="fact-value">29 Mei – 1 Juni 1945 · merumuskan dasar negara</div></div>
+          <div class="fact"><div class="fact-label">Sidang II</div><div class="fact-value">10–17 Juli 1945 · merumuskan rancangan UUD</div></div>
+        </div>
+        <div class="hl hl-gold">
+          <span class="hl-icon">🌟</span>
+          <span>Pada Sidang I, <strong>Ir. Soekarno</strong> pertama kali mencetuskan nama <strong>"Pancasila"</strong> pada 1 Juni 1945 sebagai dasar negara.</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ SLIDE 4 — PIAGAM JAKARTA ══ -->
+    <div class="slide" id="sl4">
+      <div class="slide-content">
+        <div class="slide-label">Slide 4 · Persiapan Kemerdekaan</div>
+        <h2 class="slide-heading">Piagam Jakarta
+          <span class="sub">Cikal bakal Pembukaan UUD 1945</span>
+        </h2>
+        <div class="hl hl-red">
+          <span class="hl-icon">📜</span>
+          <span>Piagam Jakarta ditandatangani pada <strong>22 Juni 1945</strong> oleh "Panitia Sembilan" sebagai kesepakatan antara golongan nasionalis dan golongan Islam.</span>
+        </div>
+        <div class="hl hl-navy">
+          <span class="hl-icon">👥</span>
+          <span><strong>Panitia Sembilan</strong> diketuai Soekarno, beranggotakan: Hatta, Yamin, Soepomo, Wahid Hasyim, Kahar Muzakir, Agus Salim, Abikoesno, dan A.A. Maramis.</span>
+        </div>
+        <ul class="sl">
+          <li>Awalnya sila pertama berbunyi: <em>"Ketuhanan dengan kewajiban menjalankan syariat Islam bagi pemeluk-pemeluknya"</em></li>
+          <li>Pada <strong>18 Agustus 1945</strong>, kalimat tersebut diubah menjadi <strong>"Ketuhanan Yang Maha Esa"</strong> demi persatuan bangsa</li>
+          <li>Perubahan dilakukan atas usulan tokoh Indonesia bagian timur yang disampaikan kepada Bung Hatta</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- ══ SLIDE 5 — PPKI ══ -->
+    <div class="slide" id="sl5">
+      <div class="slide-content">
+        <div class="slide-label">Slide 5 · Persiapan Kemerdekaan</div>
+        <h2 class="slide-heading">PPKI
+          <span class="sub">Panitia Persiapan Kemerdekaan Indonesia</span>
+        </h2>
+        <div class="hl hl-navy">
+          <span class="hl-icon">🏛️</span>
+          <span>Dibentuk pada <strong>7 Agustus 1945</strong> untuk menggantikan BPUPKI. Diketuai <strong>Ir. Soekarno</strong>, Wakil Ketua <strong>Drs. Mohammad Hatta</strong>.</span>
+        </div>
+        <div class="facts">
+          <div class="fact"><div class="fact-label">Nama Jepang</div><div class="fact-value">Dokuritsu Junbi Iinkai</div></div>
+          <div class="fact"><div class="fact-label">Jumlah Anggota</div><div class="fact-value">21 orang (kemudian 27)</div></div>
+          <div class="fact"><div class="fact-label">Sidang I</div><div class="fact-value">18 Agustus 1945 · mengesahkan UUD & memilih Presiden</div></div>
+          <div class="fact"><div class="fact-label">Sidang II</div><div class="fact-value">19 Agustus 1945 · menetapkan 8 provinsi pertama RI</div></div>
+        </div>
+        <div class="hl hl-green">
+          <span class="hl-icon">✅</span>
+          <span>PPKI adalah lembaga yang secara resmi <strong>mengesahkan UUD 1945</strong> dan <strong>memilih Soekarno–Hatta</strong> sebagai Presiden dan Wakil Presiden RI pertama.</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ SLIDE 6 — RENGASDENGKLOK ══ -->
+    <div class="slide" id="sl6">
+      <div class="slide-content">
+        <div class="slide-label">Slide 6 · Peristiwa Penting</div>
+        <h2 class="slide-heading">Peristiwa Rengasdengklok
+          <span class="sub">15–16 Agustus 1945</span>
+        </h2>
+        <div class="hl hl-red">
+          <span class="hl-icon">⚡</span>
+          <span>Para pemuda "menculik" Soekarno dan Hatta ke Rengasdengklok, Karawang, pada <strong>16 Agustus 1945</strong> untuk mendesak proklamasi kemerdekaan segera dilakukan.</span>
+        </div>
+        <div class="facts">
+          <div class="fact"><div class="fact-label">Tanggal</div><div class="fact-value">16 Agustus 1945, pukul 04.00 WIB</div></div>
+          <div class="fact"><div class="fact-label">Lokasi</div><div class="fact-value">Rengasdengklok, Karawang, Jawa Barat</div></div>
+          <div class="fact"><div class="fact-label">Tokoh Pemuda</div><div class="fact-value">Sutan Sjahrir, Chaerul Saleh, Wikana, Sukarni</div></div>
+          <div class="fact"><div class="fact-label">Mediator</div><div class="fact-value">Ahmad Soebardjo menjamin proklamasi keesokan harinya</div></div>
+        </div>
+        <div class="hl hl-gold">
+          <span class="hl-icon">💡</span>
+          <span>Latar belakang: Jepang menyerah kepada Sekutu pada <strong>15 Agustus 1945</strong>. Para pemuda mendesak proklamasi sebelum tentara Sekutu/Belanda tiba.</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ SLIDE 7 — PERUMUSAN TEKS ══ -->
+    <div class="slide" id="sl7">
+      <div class="slide-content">
+        <div class="slide-label">Slide 7 · Peristiwa Penting</div>
+        <h2 class="slide-heading">Perumusan Teks Proklamasi
+          <span class="sub">Malam 16 Agustus 1945, Rumah Laksamana Maeda</span>
+        </h2>
+        <div class="hl hl-navy">
+          <span class="hl-icon">🏠</span>
+          <span>Teks proklamasi dirumuskan di rumah <strong>Laksamana Tadashi Maeda</strong> (perwira Jepang yang bersimpati), Jl. Imam Bonjol No. 1, Jakarta.</span>
+        </div>
+        <ul class="sl">
+          <li><strong>Ir. Soekarno</strong> menulis konsep teks proklamasi dengan tangannya sendiri</li>
+          <li><strong>Drs. Mohammad Hatta</strong> dan <strong>Ahmad Soebardjo</strong> turut menyumbang kalimat</li>
+          <li>Kalimat terakhir (<em>"Hal-hal yang mengenai pemindahan kekuasaan..."</em>) adalah usulan Hatta</li>
+          <li>Teks diketik oleh <strong>Sayuti Melik</strong>, dengan beberapa perubahan kata</li>
+          <li>Ditandatangani Soekarno–Hatta <strong>"atas nama bangsa Indonesia"</strong></li>
+        </ul>
+        <div class="hl hl-gold">
+          <span class="hl-icon">✏️</span>
+          <span>Naskah asli tulisan tangan Soekarno kini disimpan di <strong>Arsip Nasional Republik Indonesia (ANRI)</strong>.</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ SLIDE 8 — PROKLAMASI ══ -->
+    <div class="slide" id="sl8">
+      <div class="slide-content">
+        <div class="slide-label">Slide 8 · Hari Bersejarah</div>
+        <h2 class="slide-heading">Proklamasi Kemerdekaan
+          <span class="sub">17 Agustus 1945</span>
+        </h2>
+        <div class="hl hl-red">
+          <span class="hl-icon">🎙️</span>
+          <span>Proklamasi dibacakan oleh <strong>Ir. Soekarno</strong> didampingi <strong>Drs. Mohammad Hatta</strong> pada <strong>Jumat, 17 Agustus 1945, pukul 10.00 WIB</strong>.</span>
+        </div>
+        <div class="facts">
+          <div class="fact"><div class="fact-label">Lokasi</div><div class="fact-value">Jl. Pegangsaan Timur No. 56, Jakarta (kini Jl. Proklamasi)</div></div>
+          <div class="fact"><div class="fact-label">Pengibar Bendera</div><div class="fact-value">Latief Hendraningrat & Soehoed (Suhud)</div></div>
+          <div class="fact"><div class="fact-label">Penjahit Bendera</div><div class="fact-value">Ibu Fatmawati (istri Soekarno)</div></div>
+          <div class="fact"><div class="fact-label">Fotografer</div><div class="fact-value">Frans Mendur — mengabadikan momen bersejarah ini</div></div>
+        </div>
+        <div class="hl hl-green">
+          <span class="hl-icon">🏳️</span>
+          <span>Bendera Merah Putih pertama yang dikibarkan dijahit tangan oleh <strong>Ibu Fatmawati</strong> dari kain yang tersedia saat itu.</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ SLIDE 9 — TEKS PROKLAMASI ══ -->
+    <div class="slide" id="sl9">
+      <div class="slide-content">
+        <div class="slide-label">Slide 9 · Teks Proklamasi</div>
+        <h2 class="slide-heading">Isi Teks Proklamasi</h2>
+        <div style="background:#fff;border:2px solid var(--red-lt);border-radius:14px;padding:1.5rem 2rem;font-size:.97rem;line-height:2;text-align:center;box-shadow:0 2px 12px rgba(198,40,40,.08)">
+          <div style="font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:var(--red);margin-bottom:.75rem;letter-spacing:.05em">P R O K L A M A S I</div>
+          <p>Kami bangsa Indonesia dengan ini menjatakan kemerdekaan Indonesia.</p>
+          <p>Hal-hal jang mengenai pemindahan kekoeasaan d.l.l., diselenggarakan dengan tjara seksama dan dalam tempoh jang sesingkat-singkatnja.</p>
+          <div style="margin-top:1rem;font-size:.88rem;color:var(--muted)">Djakarta, hari 17 boelan 8 tahoen 05</div>
+          <div style="font-weight:800;color:var(--text);margin-top:.25rem">Atas nama bangsa Indonesia<br>Soekarno / Hatta</div>
+        </div>
+        <div class="hl hl-gold">
+          <span class="hl-icon">📅</span>
+          <span>"Tahoen 05" merujuk pada <strong>tahun 2605 kalender Jepang</strong>, yang setara dengan tahun 1945 Masehi.</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ SLIDE 10 — SOEKARNO-HATTA ══ -->
+    <div class="slide" id="sl10">
+      <div class="slide-content">
+        <div class="slide-label">Slide 10 · Tokoh Proklamasi</div>
+        <h2 class="slide-heading">Dua Proklamator Indonesia</h2>
+        <table class="tbl">
+          <thead>
+            <tr><th></th><th>Ir. Soekarno</th><th>Drs. Mohammad Hatta</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>Lahir</strong></td><td>6 Juni 1901 · Surabaya</td><td>12 Agustus 1902 · Bukittinggi</td></tr>
+            <tr><td><strong>Wafat</strong></td><td>21 Juni 1970 · Jakarta</td><td>14 Maret 1980 · Jakarta</td></tr>
+            <tr><td><strong>Jabatan</strong></td><td>Presiden RI ke-1</td><td>Wakil Presiden RI ke-1</td></tr>
+            <tr><td><strong>Julukan</strong></td><td>Bung Karno · Putra Fajar</td><td>Bung Hatta · Bapak Koperasi</td></tr>
+            <tr class="hl-row"><td><strong>Peran</strong></td><td>Membacakan teks proklamasi</td><td>Mendampingi & menandatangani</td></tr>
+          </tbody>
+        </table>
+        <div class="hl hl-red">
+          <span class="hl-icon">🤝</span>
+          <span>Soekarno dan Hatta bersama-sama menandatangani teks proklamasi <strong>"atas nama bangsa Indonesia"</strong>.</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ SLIDE 11 — SETELAH PROKLAMASI ══ -->
+    <div class="slide" id="sl11">
+      <div class="slide-content">
+        <div class="slide-label">Slide 11 · Pasca Proklamasi</div>
+        <h2 class="slide-heading">Setelah Proklamasi Dikumandangkan</h2>
+        <div class="timeline">
+          <div class="tl-item">
+            <div class="tl-line"><div class="tl-dot"></div><div class="tl-connector"></div></div>
+            <div class="tl-body">
+              <div class="tl-date">18 Agustus 1945</div>
+              <div class="tl-text">PPKI mengesahkan <strong>UUD 1945</strong> dan memilih <strong>Soekarno–Hatta</strong> sebagai Presiden & Wakil Presiden.</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-line"><div class="tl-dot"></div><div class="tl-connector"></div></div>
+            <div class="tl-body">
+              <div class="tl-date">19 Agustus 1945</div>
+              <div class="tl-text">PPKI menetapkan <strong>8 provinsi</strong> dan <strong>12 departemen (kementerian)</strong> pertama RI.</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-line"><div class="tl-dot"></div><div class="tl-connector"></div></div>
+            <div class="tl-body">
+              <div class="tl-date">22 Agustus 1945</div>
+              <div class="tl-text">PPKI menetapkan pembentukan <strong>BKR (Badan Keamanan Rakyat)</strong>, cikal bakal TNI.</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-line"><div class="tl-dot"></div><div class="tl-connector"></div></div>
+            <div class="tl-body">
+              <div class="tl-date">5 Oktober 1945</div>
+              <div class="tl-text">BKR resmi diubah menjadi <strong>TKR (Tentara Keamanan Rakyat)</strong>, kemudian menjadi TNI.</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-line"><div class="tl-dot"></div></div>
+            <div class="tl-body">
+              <div class="tl-date">27 Desember 1949</div>
+              <div class="tl-text">Belanda secara resmi mengakui <strong>kedaulatan RI</strong> melalui Konferensi Meja Bundar (KMB).</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ SLIDE 12 — PERJUANGAN MEMPERTAHANKAN ══ -->
+    <div class="slide" id="sl12">
+      <div class="slide-content">
+        <div class="slide-label">Slide 12 · Mempertahankan Kemerdekaan</div>
+        <h2 class="slide-heading">Perjuangan Mempertahankan Kemerdekaan</h2>
+        <div class="hl hl-red">
+          <span class="hl-icon">⚔️</span>
+          <span>Setelah proklamasi, Belanda berusaha kembali menguasai Indonesia melalui dua kali <strong>Agresi Militer</strong>.</span>
+        </div>
+        <table class="tbl">
+          <thead>
+            <tr><th>Peristiwa</th><th>Waktu</th><th>Keterangan</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>Pertempuran Surabaya</strong></td><td>10 November 1945</td><td>Arek-arek Suroboyo vs Sekutu; diperingati sebagai Hari Pahlawan</td></tr>
+            <tr><td><strong>Bandung Lautan Api</strong></td><td>23 Maret 1946</td><td>Rakyat Bandung membakar kota agar tidak jatuh ke tangan Sekutu</td></tr>
+            <tr><td><strong>Agresi Militer I</strong></td><td>21 Juli 1947</td><td>Belanda menyerang wilayah RI; dikecam dunia internasional</td></tr>
+            <tr><td><strong>Agresi Militer II</strong></td><td>19 Desember 1948</td><td>Belanda menduduki Yogyakarta & menangkap Soekarno–Hatta</td></tr>
+            <tr class="hl-row"><td><strong>Konferensi Meja Bundar</strong></td><td>23 Agustus 1949</td><td>Belanda mengakui kedaulatan RI pada 27 Desember 1949</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- ══ SLIDE 13 — HARI KEMERDEKAAN ══ -->
+    <div class="slide" id="sl13">
+      <div class="slide-content">
+        <div class="slide-label">Slide 13 · Peringatan</div>
+        <h2 class="slide-heading">Hari Kemerdekaan &amp; Peringatannya</h2>
+        <div class="hl hl-red">
+          <span class="hl-icon">🎉</span>
+          <span>Setiap tanggal <strong>17 Agustus</strong> diperingati sebagai <strong>Hari Kemerdekaan Republik Indonesia</strong> (Hari Ulang Tahun/HUT RI).</span>
+        </div>
+        <ul class="sl">
+          <li>Upacara bendera dilaksanakan di <strong>Istana Negara, Jakarta</strong> dipimpin Presiden RI</li>
+          <li>Upacara penurunan bendera dilaksanakan pukul 17.00 WIB (saat matahari terbenam)</li>
+          <li><strong>Pasukan Pengibar Bendera Pusaka (Paskibraka)</strong> bertugas mengibar dan menurunkan bendera</li>
+          <li>Seluruh Indonesia mengadakan upacara bendera mulai dari SD hingga instansi pemerintah</li>
+          <li>Berbagai lomba tradisional (panjat pinang, balap karung, dll.) diadakan untuk memeriahkan HUT RI</li>
+        </ul>
+        <div class="hl hl-navy">
+          <span class="hl-icon">🏴</span>
+          <span>Bendera <strong>Sang Saka Merah Putih</strong> (bendera asli dijahit Fatmawati) kini disimpan di Istana Merdeka dan tidak lagi dikibarkan untuk menjaga kelestariannya.</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ SLIDE 14 — RANGKUMAN ══ -->
+    <div class="slide" id="sl14">
+      <div class="slide-content">
+        <div class="slide-label">Slide 14 · Rangkuman</div>
+        <h2 class="slide-heading">Rangkuman Kemerdekaan Indonesia</h2>
+        <table class="tbl">
+          <thead>
+            <tr><th>Tanggal</th><th>Peristiwa</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>29 April 1945</strong></td><td>BPUPKI dibentuk (ketua: Dr. Radjiman Wedyodiningrat)</td></tr>
+            <tr><td><strong>1 Juni 1945</strong></td><td>Soekarno mencetuskan nama Pancasila</td></tr>
+            <tr><td><strong>22 Juni 1945</strong></td><td>Piagam Jakarta ditandatangani Panitia Sembilan</td></tr>
+            <tr><td><strong>7 Agustus 1945</strong></td><td>PPKI dibentuk (ketua: Soekarno)</td></tr>
+            <tr><td><strong>15 Agustus 1945</strong></td><td>Jepang menyerah kepada Sekutu</td></tr>
+            <tr><td><strong>16 Agustus 1945</strong></td><td>Peristiwa Rengasdengklok; perumusan teks di rumah Maeda</td></tr>
+            <tr class="hl-row"><td><strong>17 Agustus 1945</strong></td><td>Proklamasi dibacakan Soekarno–Hatta, pukul 10.00 WIB</td></tr>
+            <tr><td><strong>18 Agustus 1945</strong></td><td>UUD 1945 disahkan; Soekarno–Hatta dipilih sebagai Presiden & Wapres</td></tr>
+            <tr><td><strong>27 Des 1949</strong></td><td>Belanda mengakui kedaulatan RI (hasil KMB)</td></tr>
+          </tbody>
+        </table>
+        <div class="hl hl-green">
+          <span class="hl-icon">✅</span>
+          <span>Selamat! Kamu sudah mempelajari perjalanan <strong>Kemerdekaan Indonesia</strong> dari persiapan hingga proklamasi dan mempertahankannya.</span>
+        </div>
+        <a href="../soal/paket-01.html" class="cta-btn">📝 Latihan Soal Sekarang →</a>
+      </div>
+    </div>
+
+  </div><!-- /slides-wrap -->
+
+  <!-- Footer nav -->
+  <footer class="s-footer">
+    <button class="nav-btn prev-btn" id="btn-prev" onclick="prev()" disabled>◄ Sebelumnya</button>
+    <div class="s-hint">
+      <kbd>←</kbd> <kbd>→</kbd> navigasi &nbsp;·&nbsp; <kbd>F</kbd> layar penuh
+    </div>
+    <button class="nav-btn next-btn" id="btn-next" onclick="next()">Berikutnya ►</button>
+  </footer>
+
+  <script>
+    const TOTAL = 14;
+    let cur = 1;
+
+    function showSlide(n) {
+      const prev_sl = document.getElementById('sl' + cur);
+      const next_sl = document.getElementById('sl' + n);
+      if (!next_sl) return;
+
+      prev_sl.classList.add('leaving');
+      prev_sl.classList.remove('active');
+      setTimeout(() => { prev_sl.classList.remove('leaving'); }, 400);
+
+      next_sl.classList.add('active');
+      cur = n;
+
+      document.getElementById('s-counter').textContent = cur + ' / ' + TOTAL;
+      document.getElementById('s-prog').style.width = (cur / TOTAL * 100).toFixed(2) + '%';
+      document.getElementById('btn-prev').disabled = (cur === 1);
+      document.getElementById('btn-next').disabled = (cur === TOTAL);
+    }
+
+    function next() { if (cur < TOTAL) showSlide(cur + 1); }
+    function prev() { if (cur > 1)     showSlide(cur - 1); }
+
+    document.addEventListener('keydown', e => {
+      if (e.code === 'ArrowRight' || e.code === 'ArrowDown')  next();
+      if (e.code === 'ArrowLeft'  || e.code === 'ArrowUp')    prev();
+      if (e.code === 'KeyF') toggleFS();
+    });
+
+    document.getElementById('btn-fs').addEventListener('click', toggleFS);
+
+    function toggleFS() {
+      if (!document.fullscreenElement)
+        document.documentElement.requestFullscreen().catch(() => {});
+      else
+        document.exitFullscreen();
+    }
+
+    let ts = 0;
+    document.getElementById('slides-wrap').addEventListener('touchstart', e => { ts = e.touches[0].clientX; });
+    document.getElementById('slides-wrap').addEventListener('touchend', e => {
+      const dx = e.changedTouches[0].clientX - ts;
+      if (Math.abs(dx) > 50) { dx < 0 ? next() : prev(); }
+    });
+  </script>
+</body>
+</html>
