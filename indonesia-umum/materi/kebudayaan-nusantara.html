@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kebudayaan Nusantara — Materi Cerdas Cermat SDM01KKS</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { height: 100%; font-family: 'Nunito', sans-serif; }
+    :root {
+      --red:    #1b5e20; --red-dk: #003300; --red-lt: #e8f5e9;
+      --gold:   #f9a825; --navy:   #1a237e; --accent: #c62828;
+      --teal:   #00695c; --purple: #6a1b9a;
+      --cream:  #f8fdf8; --text:   #1a2420; --muted:  #718096; --nav-h: 58px;
+    }
+    body { background: var(--cream); color: var(--text); display: flex; flex-direction: column; height: 100vh; overflow: hidden; }
+    .s-nav { height: var(--nav-h); flex-shrink: 0; display: flex; align-items: center; gap: 1rem; padding: 0 1.5rem; background: var(--red); color: #fff; box-shadow: 0 2px 12px rgba(0,0,0,.25); z-index: 20; }
+    .s-nav a { color: rgba(255,255,255,.8); text-decoration: none; font-size: .85rem; transition: color .15s; }
+    .s-nav a:hover { color: #fff; }
+    .s-nav .sep { opacity: .4; }
+    .s-nav .s-title { flex: 1; font-weight: 800; font-size: .95rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .s-nav .s-counter { font-weight: 700; font-size: .85rem; background: rgba(255,255,255,.2); padding: .25rem .75rem; border-radius: 20px; white-space: nowrap; }
+    .btn-fs { background: rgba(255,255,255,.15); border: none; color: #fff; width: 34px; height: 34px; border-radius: 8px; font-size: 1rem; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: background .15s; }
+    .btn-fs:hover { background: rgba(255,255,255,.3); }
+    .s-prog { height: 4px; background: rgba(255,255,255,.25); flex-shrink: 0; }
+    .s-prog-fill { height: 100%; background: var(--gold); transition: width .4s ease; }
+    .slides-wrap { flex: 1; position: relative; overflow: hidden; }
+    .slide { position: absolute; inset: 0; padding: 2.5rem 3rem; opacity: 0; transform: translateX(30px); transition: opacity .35s ease, transform .35s ease; pointer-events: none; overflow-y: auto; }
+    .slide.active { opacity: 1; transform: translateX(0); pointer-events: all; }
+    .slide.leaving { opacity: 0; transform: translateX(-30px); }
+    /* cover */
+    .slide-cover { background: linear-gradient(145deg, var(--red) 0%, var(--red-dk) 100%); color: #fff; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; gap: 1.5rem; }
+    .cover-flag { font-size: 5rem; line-height: 1; }
+    .cover-title { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 900; text-shadow: 0 2px 16px rgba(0,0,0,.3); line-height: 1.2; }
+    .cover-sub { font-size: clamp(.9rem, 2vw, 1.2rem); opacity: .85; max-width: 540px; line-height: 1.6; }
+    .cover-tag { display: inline-flex; gap: 1rem; flex-wrap: wrap; justify-content: center; margin-top: .5rem; }
+    .cover-tag span { background: rgba(255,255,255,.18); border: 1px solid rgba(255,255,255,.35); border-radius: 20px; padding: .3rem 1rem; font-size: .8rem; font-weight: 700; }
+    /* content */
+    .slide-content { display: flex; flex-direction: column; gap: 1.5rem; max-width: 860px; margin: 0 auto; }
+    .slide-label { font-size: .72rem; text-transform: uppercase; letter-spacing: .12em; color: var(--red); font-weight: 800; }
+    .slide-heading { font-family: 'Playfair Display', serif; font-size: clamp(1.6rem, 4vw, 2.6rem); font-weight: 700; color: var(--text); line-height: 1.2; }
+    .slide-heading .sub { font-size: .55em; color: var(--muted); display: block; font-family: 'Nunito', sans-serif; font-weight: 600; margin-top: .2rem; }
+    .hl { border-radius: 12px; padding: 1rem 1.4rem; font-weight: 700; font-size: .95rem; display: flex; align-items: flex-start; gap: .75rem; line-height: 1.6; }
+    .hl-green  { background: #e8f5e9; border-left: 4px solid var(--red); color: var(--red-dk); }
+    .hl-gold   { background: #fff8e1; border-left: 4px solid var(--gold); color: #6d4c00; }
+    .hl-red    { background: #ffebee; border-left: 4px solid var(--accent); color: #8e0000; }
+    .hl-navy   { background: #e8eaf6; border-left: 4px solid var(--navy); color: var(--navy); }
+    .hl-teal   { background: #e0f2f1; border-left: 4px solid var(--teal); color: #004d40; }
+    .hl-purple { background: #f3e5f5; border-left: 4px solid var(--purple); color: #4a148c; }
+    .hl-icon   { font-size: 1.4rem; flex-shrink: 0; margin-top: .05rem; }
+    .facts { display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: .85rem; }
+    .fact { background: #fff; border: 1px solid #e9ecef; border-radius: 10px; padding: .85rem 1rem; }
+    .fact-label { font-size: .68rem; text-transform: uppercase; letter-spacing: .1em; color: var(--muted); margin-bottom: .25rem; }
+    .fact-value { font-weight: 800; font-size: .92rem; color: var(--text); line-height: 1.4; }
+    .sl { list-style: none; display: flex; flex-direction: column; gap: .55rem; }
+    .sl li { display: flex; gap: .6rem; align-items: flex-start; font-size: .95rem; line-height: 1.55; }
+    .sl li::before { content: "▸"; color: var(--red); font-size: .75rem; margin-top: .25rem; flex-shrink: 0; }
+    .tbl { width: 100%; border-collapse: collapse; font-size: .88rem; }
+    .tbl th { background: var(--red); color: #fff; padding: .6rem .9rem; text-align: left; font-weight: 700; }
+    .tbl td { padding: .55rem .9rem; border-bottom: 1px solid #f0f4f8; vertical-align: top; line-height: 1.45; }
+    .tbl tr:hover td { background: #f1f8f1; }
+    .tbl .hl-row td { background: #fff8e1; font-weight: 700; }
+    /* culture cards */
+    .culture-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: .85rem; }
+    .culture-card { background: #fff; border: 1px solid #e9ecef; border-radius: 12px; padding: .9rem 1rem; text-align: center; }
+    .cc-icon  { font-size: 2rem; margin-bottom: .4rem; }
+    .cc-name  { font-weight: 800; font-size: .85rem; color: var(--text); margin-bottom: .2rem; }
+    .cc-asal  { font-size: .72rem; color: var(--accent); font-weight: 700; margin-bottom: .2rem; }
+    .cc-desc  { font-size: .75rem; color: var(--muted); line-height: 1.45; }
+    .cta-btn { display: inline-flex; align-items: center; gap: .5rem; background: var(--red); color: #fff; padding: .75rem 1.75rem; border-radius: 10px; font-weight: 800; font-size: 1rem; text-decoration: none; transition: opacity .15s; align-self: flex-start; }
+    .cta-btn:hover { opacity: .85; }
+    .s-footer { height: 64px; flex-shrink: 0; display: flex; align-items: center; justify-content: space-between; padding: 0 1.5rem; background: #fff; border-top: 1px solid #e9ecef; }
+    .nav-btn { display: flex; align-items: center; gap: .4rem; background: none; border: 1.5px solid #e9ecef; border-radius: 10px; padding: .5rem 1.2rem; font-family: inherit; font-size: .88rem; font-weight: 700; color: var(--text); cursor: pointer; transition: background .15s, border-color .15s; }
+    .nav-btn:hover { background: #f5f5f5; border-color: #ccc; }
+    .nav-btn:disabled { opacity: .3; cursor: default; }
+    .nav-btn.next-btn { background: var(--red); color: #fff; border-color: var(--red); }
+    .nav-btn.next-btn:hover { opacity: .88; }
+    .nav-btn.next-btn:disabled { background: #ccc; border-color: #ccc; opacity: .6; }
+    .s-hint { font-size: .72rem; color: var(--muted); text-align: center; }
+    .s-hint kbd { background: #f0f4f8; border: 1px solid #ddd; border-radius: 4px; padding: 1px 5px; font-family: monospace; font-size: .68rem; }
+    @media (max-width: 600px) { .slide { padding: 1.25rem 1rem; } .s-hint { display: none; } }
+  </style>
+</head>
+<body>
+
+  <header class="s-nav">
+    <a href="../index.html">← Materi</a>
+    <span class="sep">›</span>
+    <span class="s-title">Kebudayaan Nusantara</span>
+    <span class="s-counter" id="s-counter">1 / 18</span>
+    <button class="btn-fs" id="btn-fs" title="Layar penuh (F)">⛶</button>
+  </header>
+  <div class="s-prog"><div class="s-prog-fill" id="s-prog" style="width:5.56%"></div></div>
+
+  <div class="slides-wrap" id="slides-wrap">
+
+    <!-- ══ SLIDE 1 — COVER ══ -->
+    <div class="slide slide-cover active" id="sl1">
+      <div class="cover-flag">🎭</div>
+      <h1 class="cover-title">Kebudayaan Nusantara</h1>
+      <p class="cover-sub">Mengenal kekayaan tarian, pakaian adat, alat musik, rumah adat, dan warisan budaya Indonesia dari Sabang sampai Merauke.</p>
+      <div class="cover-tag">
+        <span>📖 18 Slide</span>
+        <span>🎯 Cerdas Cermat SD</span>
+        <span>⌨️ ← → navigasi</span>
+      </div>
+    </div>
+
+    <!-- ══ SLIDE 2 — KEKAYAAN BUDAYA ══ -->
+    <div class="slide" id="sl2">
+      <div class="slide-content">
+        <div class="slide-label">Slide 2 · Kekayaan Budaya</div>
+        <h2 class="slide-heading">Indonesia, Bangsa yang Kaya Budaya</h2>
+        <div class="hl hl-green">
+          <span class="hl-icon">🌈</span>
+          <span>Indonesia adalah salah satu negara dengan <strong>keragaman budaya terkaya di dunia</strong>, dengan ratusan suku bangsa yang masing-masing memiliki tradisi unik.</span>
+        </div>
+        <div class="facts">
+          <div class="fact"><div class="fact-label">Jumlah Suku Bangsa</div><div class="fact-value">± 1.340 suku bangsa</div></div>
+          <div class="fact"><div class="fact-label">Bahasa Daerah</div><div class="fact-value">± 700 bahasa daerah</div></div>
+          <div class="fact"><div class="fact-label">Tarian Tradisional</div><div class="fact-value">Lebih dari 3.000 jenis tarian</div></div>
+          <div class="fact"><div class="fact-label">Alat Musik Tradisional</div><div class="fact-value">Lebih dari 300 jenis</div></div>
+          <div class="fact"><div class="fact-label">Warisan UNESCO</div><div class="fact-value">13 warisan budaya tak benda (2024)</div></div>
+          <div class="fact"><div class="fact-label">Rumah Adat</div><div class="fact-value">Setiap provinsi memiliki rumah adat khas</div></div>
+        </div>
+        <div class="hl hl-gold">
+          <span class="hl-icon">🏆</span>
+          <span>Batik, wayang, keris, angklung, dan noken Papua telah diakui sebagai <strong>Warisan Budaya Tak Benda UNESCO</strong>.</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ SLIDE 3 — TARIAN SUMATERA ══ -->
+    <div class="slide" id="sl3">
+      <div class="slide-content">
+        <div class="slide-label">Slide 3 · Tarian Tradisional — Sumatera</div>
+        <h2 class="slide-heading">Tarian Tradisional Sumatera</h2>
+        <div class="culture-grid">
+          <div class="culture-card">
+            <div class="cc-icon">💃</div>
+            <div class="cc-name">Tari Saman</div>
+            <div class="cc-asal">Aceh</div>
+            <div class="cc-desc">Tari massal berirama cepat; diakui UNESCO 2011. Penarinya duduk berjajar sambil tepuk tangan dan saling menepuk.</div>
+          </div>
+          <div class="culture-card">
+            <div class="cc-icon">💃</div>
+            <div class="cc-name">Tari Tor-Tor</div>
+            <div class="cc-asal">Sumatera Utara (Batak)</div>
+            <div class="cc-desc">Tarian sakral suku Batak yang diiringi gondang (alat musik khas). Gerakan tangan mengalir lembut.</div>
+          </div>
+          <div class="culture-card">
+            <div class="cc-icon">💃</div>
+            <div class="cc-name">Tari Piring</div>
+            <div class="cc-asal">Sumatera Barat (Minang)</div>
+            <div class="cc-desc">Penari membawa piring di kedua tangan; melambangkan rasa syukur atas panen yang berlimpah.</div>
+          </div>
+          <div class="culture-card">
+            <div class="cc-icon">💃</div>
+            <div class="cc-name">Tari Zapin</div>
+            <div class="cc-asal">Riau &amp; Kepulauan Riau</div>
+            <div class="cc-desc">Tari tradisional bercorak Melayu-Arab; diiringi gambus dan rebana.</div>
+          </div>
+        </div>
+        <div class="hl hl-red">
+          <span class="hl-icon">⭐</span>
+          <span>Tari Saman dari Aceh dijuluki <strong>"Tari Seribu Tangan"</strong> karena gerakannya yang kompak dan serempak dari banyak penari.</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ SLIDE 4 — TARIAN JAWA-BALI ══ -->
+    <div class="slide" id="sl4">
+      <div class="slide-content">
+        <div class="slide-label">Slide 4 · Tarian Tradisional — Jawa &amp; Bali</div>
+        <h2 class="slide-heading">Tarian Tradisional Jawa &amp; Bali</h2>
+        <div class="culture-grid">
+          <div class="culture-card">
+            <div class="cc-icon">💃</div>
+            <div class="cc-name">Tari Bedhaya</div>
+            <div class="cc-asal">Jawa Tengah &amp; DIY</div>
+            <div class="cc-desc">Tarian sakral keraton Jawa; dibawakan 7–9 penari putri. Melambangkan hubungan raja dengan Dewi Laut Selatan.</div>
+          </div>
+          <div class="culture-card">
+            <div class="cc-icon">💃</div>
+            <div class="cc-name">Tari Serimpi</div>
+            <div class="cc-asal">Yogyakarta</div>
+            <div class="cc-desc">Tari keraton Yogyakarta; dibawakan 4 penari putri melambangkan 4 unsur alam (api, air, angin, tanah).</div>
+          </div>
+          <div class="culture-card">
+            <div class="cc-icon">💃</div>
+            <div class="cc-name">Tari Kecak</div>
+            <div class="cc-asal">Bali</div>
+            <div class="cc-desc">Ratusan penari pria berseru "cak-cak-cak"; menceritakan kisah Ramayana. Diciptakan tahun 1930an.</div>
+          </div>
+          <div class="culture-card">
+            <div class="cc-icon">💃</div>
+            <div class="cc-name">Tari Pendet</div>
+            <div class="cc-asal">Bali</div>
+            <div class="cc-desc">Tari penyambutan tamu; penari membawa bokor berisi bunga yang ditaburkan sebagai tanda selamat datang.</div>
+          </div>
+        </div>
+        <div class="hl hl-teal">
+          <span class="hl-icon">🎭</span>
+          <span>Tari <strong>Kecak</strong> dari Bali unik karena tidak diiringi alat musik — iringannya hanya suara seruan "cak" dari ratusan penari pria.</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ SLIDE 5 — TARIAN KALIMANTAN-TIMUR ══ -->
+    <div class="slide" id="sl5">
+      <div class="slide-content">
+        <div class="slide-label">Slide 5 · Tarian Tradisional — Kalimantan &amp; Timur Indonesia</div>
+        <h2 class="slide-heading">Tarian dari Kalimantan &amp; Indonesia Timur</h2>
+        <div class="culture-grid">
+          <div class="culture-card">
+            <div class="cc-icon">💃</div>
+            <div class="cc-name">Tari Hudoq</div>
+            <div class="cc-asal">Kalimantan Timur (Dayak)</div>
+            <div class="cc-desc">Tari ritual suku Dayak Bahau menggunakan topeng kayu; bertujuan mengusir hama dan memohon berkah panen.</div>
+          </div>
+          <div class="culture-card">
+            <div class="cc-icon">💃</div>
+            <div class="cc-name">Tari Pakarena</div>
+            <div class="cc-asal">Sulawesi Selatan (Makassar)</div>
+            <div class="cc-desc">Tari putri yang lemah lembut dari Kerajaan Gowa; diiringi gandrang (gendang) dan puik-puik.</div>
+          </div>
+          <div class="culture-card">
+            <div class="cc-icon">💃</div>
+            <div class="cc-name">Tari Cakalele</div>
+            <div class="cc-asal">Maluku</div>
+            <div class="cc-desc">Tari perang Maluku yang gagah; penari membawa parang dan salawaku (perisai) sambil menari.</div>
+          </div>
+          <div class="culture-card">
+            <div class="cc-icon">💃</div>
+            <div class="cc-name">Tari Sajojo</div>
+            <div class="cc-asal">Papua</div>
+            <div class="cc-desc">Tari pergaulan masyarakat Papua yang riang; kini menjadi tarian populer di seluruh Indonesia.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ SLIDE 6 — PAKAIAN ADAT ══ -->
+    <div class="slide" id="sl6">
+      <div class="slide-content">
+        <div class="slide-label">Slide 6 · Pakaian Adat</div>
+        <h2 class="slide-heading">Pakaian Adat Nusantara</h2>
+        <table class="tbl">
+          <thead><tr><th>Provinsi</th><th>Nama Pakaian Adat</th><th>Keterangan Singkat</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Aceh</strong></td><td>Ulee Balang</td><td>Pakaian kebesaran bangsawan Aceh; warna hitam-emas</td></tr>
+            <tr><td><strong>Sumatera Barat</strong></td><td>Bundo Kanduang</td><td>Pakaian adat Minangkabau untuk wanita; hiasan kepala khas</td></tr>
+            <tr><td><strong>DKI Jakarta</strong></td><td>Baju Sadariah / Kebaya Betawi</td><td>Pakaian adat suku Betawi; pria: sadariah &amp; peci; wanita: kebaya encim</td></tr>
+            <tr class="hl-row"><td><strong>Jawa (Tengah/DIY)</strong></td><td>Kebaya &amp; Beskap</td><td>Kebaya untuk wanita, beskap/surjan untuk pria; dipadukan kain batik</td></tr>
+            <tr><td><strong>Bali</strong></td><td>Payas Agung</td><td>Pakaian upacara adat tertinggi Bali; mahkota &amp; perhiasan mewah</td></tr>
+            <tr><td><strong>Kalimantan (Dayak)</strong></td><td>Baju Adat Dayak</td><td>Terbuat dari kulit kayu &amp; bulu burung enggang; manik-manik warna-warni</td></tr>
+            <tr><td><strong>Sulawesi Selatan</strong></td><td>Baju Bodo</td><td>Pakaian khas Bugis-Makassar; kain tipis berbentuk kotak dengan lengan pendek</td></tr>
+            <tr><td><strong>Papua</strong></td><td>Koteka (pria) / Rok Rumbai (wanita)</td><td>Pakaian tradisional suku pedalaman Papua; kini dipadukan busana modern</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- ══ SLIDE 7 — RUMAH ADAT 1 ══ -->
+    <div class="slide" id="sl7">
+      <div class="slide-content">
+        <div class="slide-label">Slide 7 · Rumah Adat — Sumatera &amp; Jawa</div>
+        <h2 class="slide-heading">Rumah Adat Sumatera &amp; Jawa</h2>
+        <table class="tbl">
+          <thead><tr><th>Provinsi</th><th>Nama Rumah Adat</th><th>Ciri Khas</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Aceh</strong></td><td>Rumoh Aceh</td><td>Rumah panggung tinggi; atap melengkung seperti perahu terbalik</td></tr>
+            <tr><td><strong>Sumatera Utara (Batak)</strong></td><td>Rumah Bolon</td><td>Atap melengkung menjulang; banyak ukiran dan warna merah-hitam-putih</td></tr>
+            <tr class="hl-row"><td><strong>Sumatera Barat (Minang)</strong></td><td>Rumah Gadang</td><td>Atap runcing melengkung seperti tanduk kerbau (gonjong); berbentuk trapesium</td></tr>
+            <tr><td><strong>Riau (Melayu)</strong></td><td>Rumah Selaso Jatuh Kembar</td><td>Rumah panggung dengan dua selasar di kiri-kanan</td></tr>
+            <tr><td><strong>DKI Jakarta (Betawi)</strong></td><td>Rumah Kebaya</td><td>Atap berbentuk pelana; teras luas disebut "paseban"</td></tr>
+            <tr><td><strong>Jawa (Tengah/DIY)</strong></td><td>Rumah Joglo</td><td>Atap bertingkat dengan soko guru (4 tiang utama); ruang tengah = pendopo</td></tr>
+          </tbody>
+        </table>
+        <div class="hl hl-gold">
+          <span class="hl-icon">🏠</span>
+          <span>Rumah <strong>Gadang</strong> Minangkabau adalah milik kaum (komunal). Warisannya turun kepada anak perempuan karena sistem <strong>matrilineal</strong> (garis keturunan ibu).</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ SLIDE 8 — RUMAH ADAT 2 ══ -->
+    <div class="slide" id="sl8">
+      <div class="slide-content">
+        <div class="slide-label">Slide 8 · Rumah Adat — Kalimantan hingga Papua</div>
+        <h2 class="slide-heading">Rumah Adat Kalimantan hingga Papua</h2>
+        <table class="tbl">
+          <thead><tr><th>Provinsi</th><th>Nama Rumah Adat</th><th>Ciri Khas</th></tr></thead>
+          <tbody>
+            <tr class="hl-row"><td><strong>Kalimantan (Dayak)</strong></td><td>Rumah Betang (Lamin)</td><td>Rumah panjang komunal; satu rumah ditempati puluhan kepala keluarga Dayak</td></tr>
+            <tr><td><strong>Sulawesi Selatan (Toraja)</strong></td><td>Tongkonan</td><td>Atap melengkung seperti perahu; dihias tanduk kerbau; menghadap ke utara</td></tr>
+            <tr><td><strong>Sulawesi Utara (Minahasa)</strong></td><td>Rumah Pewaris</td><td>Rumah panggung kayu dengan tangga di depan; dihias ukiran khas Minahasa</td></tr>
+            <tr><td><strong>Bali</strong></td><td>Gapura Candi Bentar</td><td>Kompleks rumah adat Bali dengan tembok bata merah &amp; gerbang split (candi bentar)</td></tr>
+            <tr><td><strong>NTT (Flores)</strong></td><td>Mbaru Niang</td><td>Rumah kerucut berlantai 5 suku Manggarai Flores; UNESCO 2012</td></tr>
+            <tr><td><strong>Papua</strong></td><td>Honai</td><td>Rumah bundar beratap jerami rendah; berfungsi menghangatkan tubuh di pegunungan dingin</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- ══ SLIDE 9 — ALAT MUSIK 1 ══ -->
+    <div class="slide" id="sl9">
+      <div class="slide-content">
+        <div class="slide-label">Slide 9 · Alat Musik Tradisional — Tiup &amp; Petik</div>
+        <h2 class="slide-heading">Alat Musik Tradisional: Tiup &amp; Petik</h2>
+        <table class="tbl">
+          <thead><tr><th>Nama</th><th>Asal Daerah</th><th>Jenis</th><th>Keterangan</th></tr></thead>
+          <tbody>
+            <tr class="hl-row"><td><strong>Angklung</strong></td><td>Jawa Barat (Sunda)</td><td>Pukul/Goyangkan</td><td>Terbuat dari bambu; UNESCO 2010. Satu angklung = satu nada</td></tr>
+            <tr><td><strong>Seruling/Suling</strong></td><td>Jawa &amp; Sunda</td><td>Tiup</td><td>Terbuat dari bambu; musik gamelan &amp; lagu daerah Sunda</td></tr>
+            <tr><td><strong>Sasando</strong></td><td>NTT (Rote)</td><td>Petik</td><td>Harpa berbentuk tabung bambu dengan daun lontar; unik di dunia</td></tr>
+            <tr><td><strong>Kacapi</strong></td><td>Jawa Barat (Sunda)</td><td>Petik</td><td>Alat musik petik khas Sunda; pengiring tembang Sunda</td></tr>
+            <tr><td><strong>Sitar</strong></td><td>Kalimantan</td><td>Petik</td><td>Alat musik petik suku Dayak mirip gitar; dari bambu</td></tr>
+            <tr><td><strong>Tifa</strong></td><td>Maluku &amp; Papua</td><td>Pukul</td><td>Gendang khas Maluku &amp; Papua; digunakan dalam upacara adat</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- ══ SLIDE 10 — ALAT MUSIK 2 — GAMELAN ══ -->
+    <div class="slide" id="sl10">
+      <div class="slide-content">
+        <div class="slide-label">Slide 10 · Alat Musik Tradisional — Gamelan</div>
+        <h2 class="slide-heading">Gamelan
+          <span class="sub">Orkestra Tradisional Jawa &amp; Bali</span>
+        </h2>
+        <div class="hl hl-green">
+          <span class="hl-icon">🎶</span>
+          <span>Gamelan adalah <strong>ansambel musik tradisional</strong> dari Jawa dan Bali, terdiri dari instrumen perkusi logam. Diakui sebagai <strong>Warisan Budaya Tak Benda UNESCO</strong> pada tahun 2021.</span>
+        </div>
+        <div class="culture-grid">
+          <div class="culture-card">
+            <div class="cc-icon">🥁</div>
+            <div class="cc-name">Kenong</div>
+            <div class="cc-asal">Instrumen dasar</div>
+            <div class="cc-desc">Gong kecil yang diletakkan horizontal; memberikan aksen melodi</div>
+          </div>
+          <div class="culture-card">
+            <div class="cc-icon">🥁</div>
+            <div class="cc-name">Gong</div>
+            <div class="cc-asal">Instrumen utama</div>
+            <div class="cc-desc">Gong besar logam; pemberi tanda akhir frasa melodi gamelan</div>
+          </div>
+          <div class="culture-card">
+            <div class="cc-icon">🎵</div>
+            <div class="cc-name">Saron</div>
+            <div class="cc-asal">Melodi utama</div>
+            <div class="cc-desc">Bilah logam di atas bingkai kayu; pembawa melodi pokok gamelan</div>
+          </div>
+          <div class="culture-card">
+            <div class="cc-icon">🥁</div>
+            <div class="cc-name">Kendang</div>
+            <div class="cc-asal">Pengatur tempo</div>
+            <div class="cc-desc">Gendang dua sisi; pengatur tempo dan pemimpin ansambel gamelan</div>
+          </div>
+        </div>
+        <div class="hl hl-navy">
+          <span class="hl-icon">🌍</span>
+          <span>Gamelan kini dimainkan di universitas-universitas seluruh dunia — dari Amerika, Eropa, hingga Australia.</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ SLIDE 11 — BATIK ══ -->
+    <div class="slide" id="sl11">
+      <div class="slide-content">
+        <div class="slide-label">Slide 11 · Warisan Budaya — Batik</div>
+        <h2 class="slide-heading">Batik Indonesia
+          <span class="sub">Warisan Budaya UNESCO sejak 2009</span>
+        </h2>
+        <div class="hl hl-red">
+          <span class="hl-icon">🎨</span>
+          <span>Batik Indonesia diakui sebagai <strong>Warisan Budaya Tak Benda UNESCO</strong> pada <strong>2 Oktober 2009</strong>. Tanggal itu kini diperingati sebagai <strong>Hari Batik Nasional</strong>.</span>
+        </div>
+        <table class="tbl">
+          <thead><tr><th>Jenis Batik</th><th>Asal</th><th>Ciri Khas</th></tr></thead>
+          <tbody>
+            <tr class="hl-row"><td><strong>Batik Tulis</strong></td><td>Seluruh Indonesia</td><td>Dibuat manual dengan canting; paling bernilai tinggi</td></tr>
+            <tr><td><strong>Batik Cap</strong></td><td>Seluruh Indonesia</td><td>Menggunakan cap logam; lebih cepat &amp; harga terjangkau</td></tr>
+            <tr><td><strong>Batik Mega Mendung</strong></td><td>Cirebon, Jawa Barat</td><td>Motif awan berlapis; warna biru khas pengaruh budaya Cina</td></tr>
+            <tr><td><strong>Batik Parang</strong></td><td>Yogyakarta &amp; Solo</td><td>Motif garis diagonal; dulunya hanya boleh dipakai kalangan keraton</td></tr>
+            <tr><td><strong>Batik Pekalongan</strong></td><td>Pekalongan, Jawa Tengah</td><td>Warna cerah, motif bunga; pengaruh budaya pesisir</td></tr>
+            <tr><td><strong>Batik Kawung</strong></td><td>Yogyakarta</td><td>Motif geometris lingkaran; salah satu motif tertua di Jawa</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- ══ SLIDE 12 — WAYANG ══ -->
+    <div class="slide" id="sl12">
+      <div class="slide-content">
+        <div class="slide-label">Slide 12 · Warisan Budaya — Wayang</div>
+        <h2 class="slide-heading">Wayang
+          <span class="sub">Warisan Budaya UNESCO sejak 2003</span>
+        </h2>
+        <div class="hl hl-green">
+          <span class="hl-icon">🎭</span>
+          <span>Wayang adalah pertunjukan boneka bayangan tradisional Jawa &amp; Bali. Diakui UNESCO sejak <strong>7 November 2003</strong>. Dimainkan oleh <strong>Dalang</strong> yang ahli.</span>
+        </div>
+        <div class="facts">
+          <div class="fact"><div class="fact-label">Wayang Kulit</div><div class="fact-value">Boneka dari kulit kerbau; dimainkan di balik layar putih</div></div>
+          <div class="fact"><div class="fact-label">Wayang Golek</div><div class="fact-value">Boneka kayu tiga dimensi; populer di Jawa Barat (Sunda)</div></div>
+          <div class="fact"><div class="fact-label">Wayang Orang</div><div class="fact-value">Manusia memainkan peran wayang; kostum &amp; makeup tebal</div></div>
+          <div class="fact"><div class="fact-label">Cerita Utama</div><div class="fact-value">Mahabharata &amp; Ramayana (epik Hindu-India)</div></div>
+          <div class="fact"><div class="fact-label">Tokoh Khas Jawa</div><div class="fact-value">Punakawan: Semar, Gareng, Petruk, Bagong</div></div>
+          <div class="fact"><div class="fact-label">Durasi Pertunjukan</div><div class="fact-value">Bisa berlangsung semalam suntuk (8–10 jam)</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ SLIDE 13 — KERIS & NOKEN ══ -->
+    <div class="slide" id="sl13">
+      <div class="slide-content">
+        <div class="slide-label">Slide 13 · Warisan Budaya UNESCO Lainnya</div>
+        <h2 class="slide-heading">Keris, Noken, &amp; Warisan UNESCO Lainnya</h2>
+        <table class="tbl">
+          <thead><tr><th>Warisan Budaya</th><th>Asal</th><th>Diakui UNESCO</th><th>Keterangan</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Keris</strong></td><td>Jawa</td><td>2005</td><td>Senjata tradisional bermata dua berlekuk; simbol kehormatan &amp; spiritualitas</td></tr>
+            <tr><td><strong>Batik</strong></td><td>Jawa</td><td>2009</td><td>Kain bermotif tradisional; Hari Batik 2 Oktober</td></tr>
+            <tr><td><strong>Angklung</strong></td><td>Jawa Barat</td><td>2010</td><td>Alat musik bambu dari Sunda</td></tr>
+            <tr><td><strong>Tari Saman</strong></td><td>Aceh</td><td>2011</td><td>Tari massal khas Gayo, Aceh</td></tr>
+            <tr><td><strong>Noken Papua</strong></td><td>Papua</td><td>2012</td><td>Tas rajut tradisional multifungsi suku-suku Papua; dibawa di kepala</td></tr>
+            <tr class="hl-row"><td><strong>Gamelan</strong></td><td>Jawa &amp; Bali</td><td>2021</td><td>Ansambel musik tradisional</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- ══ SLIDE 14 — MAKANAN TRADISIONAL ══ -->
+    <div class="slide" id="sl14">
+      <div class="slide-content">
+        <div class="slide-label">Slide 14 · Kuliner Nusantara</div>
+        <h2 class="slide-heading">Makanan Tradisional Nusantara</h2>
+        <div class="hl hl-gold">
+          <span class="hl-icon">🍽️</span>
+          <span>Indonesia memiliki ribuan masakan daerah. <strong>Rendang</strong> dari Sumatera Barat pernah dinobatkan sebagai <strong>makanan terlezat di dunia</strong> versi CNN (2011 &amp; 2017).</span>
+        </div>
+        <table class="tbl">
+          <thead><tr><th>Makanan</th><th>Asal Daerah</th><th>Keterangan</th></tr></thead>
+          <tbody>
+            <tr class="hl-row"><td><strong>Rendang</strong></td><td>Sumatera Barat (Minang)</td><td>Daging sapi masak santan &amp; rempah hingga kering; makanan terlezat dunia</td></tr>
+            <tr><td><strong>Soto Betawi</strong></td><td>Jakarta (Betawi)</td><td>Soto berkuah santan; isian daging sapi, jeroan, tomat</td></tr>
+            <tr><td><strong>Gudeg</strong></td><td>Yogyakarta</td><td>Nangka muda dimasak santan berjam-jam; manis dan gurih khas Jogja</td></tr>
+            <tr><td><strong>Babi Guling</strong></td><td>Bali</td><td>Babi utuh dipanggang dengan bumbu khas Bali; hidangan upacara adat</td></tr>
+            <tr><td><strong>Coto Makassar</strong></td><td>Sulawesi Selatan</td><td>Sop jeroan sapi dengan bumbu kacang; khas Kota Makassar</td></tr>
+            <tr><td><strong>Papeda</strong></td><td>Maluku &amp; Papua</td><td>Bubur sagu khas Maluku-Papua; disantap dengan kuah ikan kuning</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- ══ SLIDE 15 — UPACARA ADAT ══ -->
+    <div class="slide" id="sl15">
+      <div class="slide-content">
+        <div class="slide-label">Slide 15 · Upacara Adat</div>
+        <h2 class="slide-heading">Upacara Adat Nusantara yang Terkenal</h2>
+        <table class="tbl">
+          <thead><tr><th>Nama Upacara</th><th>Asal Daerah</th><th>Makna &amp; Keterangan</th></tr></thead>
+          <tbody>
+            <tr class="hl-row"><td><strong>Ngaben</strong></td><td>Bali</td><td>Upacara kremasi jenazah Hindu Bali; pelepasan roh ke alam lebih baik dengan pembakaran besar</td></tr>
+            <tr><td><strong>Rambu Solo</strong></td><td>Tana Toraja, Sulsel</td><td>Upacara pemakaman mewah suku Toraja; berlangsung berhari-hari dengan ratusan kerbau &amp; babi</td></tr>
+            <tr><td><strong>Sekaten</strong></td><td>Yogyakarta &amp; Solo</td><td>Peringatan Maulid Nabi Muhammad SAW; pekan raya di alun-alun dengan gamelan sakral</td></tr>
+            <tr><td><strong>Gawai</strong></td><td>Kalimantan (Dayak)</td><td>Festival panen suku Dayak; syukuran hasil bumi dengan tari-tarian &amp; musik tradisional</td></tr>
+            <tr><td><strong>Tabuik</strong></td><td>Pariaman, Sumbar</td><td>Upacara peringatan Asyura (10 Muharram) khas masyarakat Pariaman; replika kuda bersayap diarak ke laut</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- ══ SLIDE 16 — PERMAINAN TRADISIONAL ══ -->
+    <div class="slide" id="sl16">
+      <div class="slide-content">
+        <div class="slide-label">Slide 16 · Permainan Tradisional</div>
+        <h2 class="slide-heading">Permainan Tradisional Nusantara</h2>
+        <div class="culture-grid">
+          <div class="culture-card">
+            <div class="cc-icon">🪀</div>
+            <div class="cc-name">Congklak</div>
+            <div class="cc-asal">Seluruh Indonesia</div>
+            <div class="cc-desc">Permainan papan berlubang dengan biji-bijian; melatih berhitung dan strategi.</div>
+          </div>
+          <div class="culture-card">
+            <div class="cc-icon">🏃</div>
+            <div class="cc-name">Gobak Sodor</div>
+            <div class="cc-asal">Jawa</div>
+            <div class="cc-desc">Permainan tim: satu tim menjaga garis, tim lain berusaha lolos. Melatih kecepatan dan kerja sama.</div>
+          </div>
+          <div class="culture-card">
+            <div class="cc-icon">🪁</div>
+            <div class="cc-name">Layang-layang</div>
+            <div class="cc-asal">Seluruh Indonesia</div>
+            <div class="cc-desc">Permainan menerbangkan layang-layang; ada festival layang-layang internasional di Bali.</div>
+          </div>
+          <div class="culture-card">
+            <div class="cc-icon">🌀</div>
+            <div class="cc-name">Gasing</div>
+            <div class="cc-asal">Melayu, Jawa, Madura</div>
+            <div class="cc-desc">Mainan putar dari kayu; ada lomba gasing yang pemain beradu ketahanan putar.</div>
+          </div>
+          <div class="culture-card">
+            <div class="cc-icon">🎯</div>
+            <div class="cc-name">Egrang</div>
+            <div class="cc-asal">Seluruh Indonesia</div>
+            <div class="cc-desc">Berjalan di atas dua tongkat bambu panjang; uji keseimbangan dan keberanian.</div>
+          </div>
+          <div class="culture-card">
+            <div class="cc-icon">🪃</div>
+            <div class="cc-name">Bentengan</div>
+            <div class="cc-asal">Jawa &amp; Sunda</div>
+            <div class="cc-desc">Dua tim berebut "benteng" lawan sambil mengejar dan menangkap pemain musuh.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ SLIDE 17 — BAHASA DAERAH ══ -->
+    <div class="slide" id="sl17">
+      <div class="slide-content">
+        <div class="slide-label">Slide 17 · Bahasa &amp; Sastra</div>
+        <h2 class="slide-heading">Bahasa Daerah &amp; Sastra Nusantara</h2>
+        <div class="hl hl-navy">
+          <span class="hl-icon">🗣️</span>
+          <span>Indonesia memiliki sekitar <strong>700 bahasa daerah</strong>. Bahasa Jawa adalah bahasa daerah dengan jumlah penutur terbanyak (± 80 juta orang).</span>
+        </div>
+        <table class="tbl">
+          <thead><tr><th>Bahasa / Sastra</th><th>Asal</th><th>Keterangan</th></tr></thead>
+          <tbody>
+            <tr class="hl-row"><td><strong>Bahasa Jawa</strong></td><td>Jawa Tengah, DIY, Jatim</td><td>Bahasa daerah terbanyak penuturnya; ada tingkatan bahasa (ngoko, madya, krama)</td></tr>
+            <tr><td><strong>Bahasa Sunda</strong></td><td>Jawa Barat</td><td>± 40 juta penutur; ada aksara Sunda kuno</td></tr>
+            <tr><td><strong>Bahasa Minangkabau</strong></td><td>Sumatera Barat</td><td>Banyak kosa kata serapan ke Bahasa Indonesia</td></tr>
+            <tr><td><strong>Pantun Melayu</strong></td><td>Riau &amp; Melayu</td><td>Sastra lisan berpola a-b-a-b; diakui UNESCO 2020</td></tr>
+            <tr><td><strong>Aksara Jawa (Hanacaraka)</strong></td><td>Jawa</td><td>Sistem tulisan tradisional; diajarkan di sekolah di Jawa</td></tr>
+            <tr><td><strong>Aksara Batak</strong></td><td>Sumatera Utara</td><td>Salah satu aksara Nusantara yang masih hidup dan dipelajari</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- ══ SLIDE 18 — RANGKUMAN ══ -->
+    <div class="slide" id="sl18">
+      <div class="slide-content">
+        <div class="slide-label">Slide 18 · Rangkuman</div>
+        <h2 class="slide-heading">Rangkuman Kebudayaan Nusantara</h2>
+        <table class="tbl">
+          <thead><tr><th>Kategori</th><th>Contoh Penting</th></tr></thead>
+          <tbody>
+            <tr><td><strong>🩰 Tarian</strong></td><td>Saman (Aceh), Kecak (Bali), Tor-Tor (Batak), Piring (Minang), Pendet (Bali)</td></tr>
+            <tr><td><strong>👘 Pakaian Adat</strong></td><td>Kebaya &amp; Batik (Jawa), Baju Bodo (Bugis), Bundo Kanduang (Minang), Baju Dayak</td></tr>
+            <tr><td><strong>🏠 Rumah Adat</strong></td><td>Joglo (Jawa), Gadang (Minang), Tongkonan (Toraja), Betang (Dayak), Honai (Papua)</td></tr>
+            <tr><td><strong>🎵 Alat Musik</strong></td><td>Gamelan (Jawa/Bali), Angklung (Sunda), Sasando (NTT), Tifa (Maluku/Papua)</td></tr>
+            <tr class="hl-row"><td><strong>🏆 UNESCO</strong></td><td>Wayang (2003), Keris (2005), Batik (2009), Angklung (2010), Saman (2011), Noken (2012), Gamelan (2021)</td></tr>
+          </tbody>
+        </table>
+        <div class="hl hl-green">
+          <span class="hl-icon">✅</span>
+          <span>Selamat! Kamu sudah mempelajari kekayaan <strong>kebudayaan Nusantara</strong> — dari tarian, pakaian, rumah adat, alat musik, hingga warisan UNESCO.</span>
+        </div>
+        <a href="../soal/paket-01.html" class="cta-btn">📝 Latihan Soal Sekarang →</a>
+      </div>
+    </div>
+
+  </div><!-- /slides-wrap -->
+
+  <footer class="s-footer">
+    <button class="nav-btn prev-btn" id="btn-prev" onclick="prev()" disabled>◄ Sebelumnya</button>
+    <div class="s-hint"><kbd>←</kbd> <kbd>→</kbd> navigasi &nbsp;·&nbsp; <kbd>F</kbd> layar penuh</div>
+    <button class="nav-btn next-btn" id="btn-next" onclick="next()">Berikutnya ►</button>
+  </footer>
+
+  <script>
+    const TOTAL = 18;
+    let cur = 1;
+    function showSlide(n) {
+      const pv = document.getElementById('sl' + cur);
+      const nx = document.getElementById('sl' + n);
+      if (!nx) return;
+      pv.classList.add('leaving'); pv.classList.remove('active');
+      setTimeout(() => pv.classList.remove('leaving'), 400);
+      nx.classList.add('active'); cur = n;
+      document.getElementById('s-counter').textContent = cur + ' / ' + TOTAL;
+      document.getElementById('s-prog').style.width = (cur / TOTAL * 100).toFixed(2) + '%';
+      document.getElementById('btn-prev').disabled = (cur === 1);
+      document.getElementById('btn-next').disabled = (cur === TOTAL);
+    }
+    function next() { if (cur < TOTAL) showSlide(cur + 1); }
+    function prev() { if (cur > 1)     showSlide(cur - 1); }
+    document.addEventListener('keydown', e => {
+      if (e.code === 'ArrowRight' || e.code === 'ArrowDown') next();
+      if (e.code === 'ArrowLeft'  || e.code === 'ArrowUp')   prev();
+      if (e.code === 'KeyF') toggleFS();
+    });
+    document.getElementById('btn-fs').addEventListener('click', toggleFS);
+    function toggleFS() {
+      if (!document.fullscreenElement) document.documentElement.requestFullscreen().catch(() => {});
+      else document.exitFullscreen();
+    }
+    let ts = 0;
+    document.getElementById('slides-wrap').addEventListener('touchstart', e => { ts = e.touches[0].clientX; });
+    document.getElementById('slides-wrap').addEventListener('touchend', e => {
+      const dx = e.changedTouches[0].clientX - ts;
+      if (Math.abs(dx) > 50) { dx < 0 ? next() : prev(); }
+    });
+  </script>
+</body>
+</html>
