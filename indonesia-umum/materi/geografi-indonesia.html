@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Geografi Indonesia — Materi Cerdas Cermat SDM01KKS</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { height: 100%; font-family: 'Nunito', sans-serif; }
+    :root {
+      --red:    #2e7d32; --red-dk: #1b5e20; --red-lt: #e8f5e9;
+      --gold:   #f9a825; --navy:   #1a237e; --accent: #c62828;
+      --teal:   #00695c;
+      --cream:  #f8fdf8; --text:   #1a2420; --muted:  #718096; --nav-h: 58px;
+    }
+    body { background: var(--cream); color: var(--text); display: flex; flex-direction: column; height: 100vh; overflow: hidden; }
+    .s-nav { height: var(--nav-h); flex-shrink: 0; display: flex; align-items: center; gap: 1rem; padding: 0 1.5rem; background: var(--red); color: #fff; box-shadow: 0 2px 12px rgba(0,0,0,.25); z-index: 20; }
+    .s-nav a { color: rgba(255,255,255,.8); text-decoration: none; font-size: .85rem; transition: color .15s; }
+    .s-nav a:hover { color: #fff; }
+    .s-nav .sep { opacity: .4; }
+    .s-nav .s-title { flex: 1; font-weight: 800; font-size: .95rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .s-nav .s-counter { font-weight: 700; font-size: .85rem; background: rgba(255,255,255,.2); padding: .25rem .75rem; border-radius: 20px; white-space: nowrap; }
+    .btn-fs { background: rgba(255,255,255,.15); border: none; color: #fff; width: 34px; height: 34px; border-radius: 8px; font-size: 1rem; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: background .15s; }
+    .btn-fs:hover { background: rgba(255,255,255,.3); }
+    .s-prog { height: 4px; background: rgba(255,255,255,.25); flex-shrink: 0; }
+    .s-prog-fill { height: 100%; background: var(--gold); transition: width .4s ease; }
+    .slides-wrap { flex: 1; position: relative; overflow: hidden; }
+    .slide { position: absolute; inset: 0; padding: 2.5rem 3rem; opacity: 0; transform: translateX(30px); transition: opacity .35s ease, transform .35s ease; pointer-events: none; overflow-y: auto; }
+    .slide.active { opacity: 1; transform: translateX(0); pointer-events: all; }
+    .slide.leaving { opacity: 0; transform: translateX(-30px); }
+    /* cover */
+    .slide-cover { background: linear-gradient(145deg, var(--red) 0%, var(--red-dk) 100%); color: #fff; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; gap: 1.5rem; }
+    .cover-flag { font-size: 5rem; line-height: 1; }
+    .cover-title { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 900; text-shadow: 0 2px 16px rgba(0,0,0,.3); line-height: 1.2; }
+    .cover-sub { font-size: clamp(.9rem, 2vw, 1.2rem); opacity: .85; max-width: 540px; line-height: 1.6; }
+    .cover-tag { display: inline-flex; gap: 1rem; flex-wrap: wrap; justify-content: center; margin-top: .5rem; }
+    .cover-tag span { background: rgba(255,255,255,.18); border: 1px solid rgba(255,255,255,.35); border-radius: 20px; padding: .3rem 1rem; font-size: .8rem; font-weight: 700; }
+    /* content */
+    .slide-content { display: flex; flex-direction: column; gap: 1.5rem; max-width: 860px; margin: 0 auto; }
+    .slide-label { font-size: .72rem; text-transform: uppercase; letter-spacing: .12em; color: var(--red); font-weight: 800; }
+    .slide-heading { font-family: 'Playfair Display', serif; font-size: clamp(1.6rem, 4vw, 2.6rem); font-weight: 700; color: var(--text); line-height: 1.2; }
+    .slide-heading .sub { font-size: .55em; color: var(--muted); display: block; font-family: 'Nunito', sans-serif; font-weight: 600; margin-top: .2rem; }
+    .hl { border-radius: 12px; padding: 1rem 1.4rem; font-weight: 700; font-size: .95rem; display: flex; align-items: flex-start; gap: .75rem; line-height: 1.6; }
+    .hl-green { background: #e8f5e9; border-left: 4px solid var(--red); color: var(--red-dk); }
+    .hl-gold  { background: #fff8e1; border-left: 4px solid var(--gold); color: #6d4c00; }
+    .hl-red   { background: #ffebee; border-left: 4px solid var(--accent); color: #8e0000; }
+    .hl-navy  { background: #e8eaf6; border-left: 4px solid var(--navy); color: var(--navy); }
+    .hl-teal  { background: #e0f2f1; border-left: 4px solid var(--teal); color: #004d40; }
+    .hl-icon  { font-size: 1.4rem; flex-shrink: 0; margin-top: .05rem; }
+    .facts { display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: .85rem; }
+    .fact { background: #fff; border: 1px solid #e9ecef; border-radius: 10px; padding: .85rem 1rem; }
+    .fact-label { font-size: .68rem; text-transform: uppercase; letter-spacing: .1em; color: var(--muted); margin-bottom: .25rem; }
+    .fact-value { font-weight: 800; font-size: .92rem; color: var(--text); line-height: 1.4; }
+    .sl { list-style: none; display: flex; flex-direction: column; gap: .55rem; }
+    .sl li { display: flex; gap: .6rem; align-items: flex-start; font-size: .95rem; line-height: 1.55; }
+    .sl li::before { content: "▸"; color: var(--red); font-size: .75rem; margin-top: .25rem; flex-shrink: 0; }
+    .tbl { width: 100%; border-collapse: collapse; font-size: .88rem; }
+    .tbl th { background: var(--red); color: #fff; padding: .6rem .9rem; text-align: left; font-weight: 700; }
+    .tbl td { padding: .55rem .9rem; border-bottom: 1px solid #f0f4f8; vertical-align: top; line-height: 1.45; }
+    .tbl tr:hover td { background: #f1f8f1; }
+    .tbl .hl-row td { background: #fff8e1; font-weight: 700; }
+    /* rank cards */
+    .rank-list { display: flex; flex-direction: column; gap: .6rem; }
+    .rank-item { background: #fff; border: 1px solid #e9ecef; border-radius: 10px; padding: .7rem 1rem; display: flex; align-items: center; gap: 1rem; }
+    .rank-num { font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 900; color: var(--red); min-width: 32px; text-align: center; flex-shrink: 0; }
+    .rank-body { flex: 1; }
+    .rank-name { font-weight: 800; font-size: .9rem; color: var(--text); }
+    .rank-detail { font-size: .78rem; color: var(--muted); margin-top: .1rem; }
+    .rank-badge { font-size: .72rem; font-weight: 800; background: var(--red-lt); color: var(--red-dk); padding: 2px 8px; border-radius: 8px; flex-shrink: 0; }
+    .cta-btn { display: inline-flex; align-items: center; gap: .5rem; background: var(--red); color: #fff; padding: .75rem 1.75rem; border-radius: 10px; font-weight: 800; font-size: 1rem; text-decoration: none; transition: opacity .15s; align-self: flex-start; }
+    .cta-btn:hover { opacity: .85; }
+    .s-footer { height: 64px; flex-shrink: 0; display: flex; align-items: center; justify-content: space-between; padding: 0 1.5rem; background: #fff; border-top: 1px solid #e9ecef; }
+    .nav-btn { display: flex; align-items: center; gap: .4rem; background: none; border: 1.5px solid #e9ecef; border-radius: 10px; padding: .5rem 1.2rem; font-family: inherit; font-size: .88rem; font-weight: 700; color: var(--text); cursor: pointer; transition: background .15s, border-color .15s; }
+    .nav-btn:hover { background: #f5f5f5; border-color: #ccc; }
+    .nav-btn:disabled { opacity: .3; cursor: default; }
+    .nav-btn.next-btn { background: var(--red); color: #fff; border-color: var(--red); }
+    .nav-btn.next-btn:hover { opacity: .88; }
+    .nav-btn.next-btn:disabled { background: #ccc; border-color: #ccc; opacity: .6; }
+    .s-hint { font-size: .72rem; color: var(--muted); text-align: center; }
+    .s-hint kbd { background: #f0f4f8; border: 1px solid #ddd; border-radius: 4px; padding: 1px 5px; font-family: monospace; font-size: .68rem; }
+    @media (max-width: 600px) { .slide { padding: 1.25rem 1rem; } .s-hint { display: none; } }
+  </style>
+</head>
+<body>
+
+  <header class="s-nav">
+    <a href="../index.html">← Materi</a>
+    <span class="sep">›</span>
+    <span class="s-title">Geografi Indonesia</span>
+    <span class="s-counter" id="s-counter">1 / 16</span>
+    <button class="btn-fs" id="btn-fs" title="Layar penuh (F)">⛶</button>
+  </header>
+  <div class="s-prog"><div class="s-prog-fill" id="s-prog" style="width:6.25%"></div></div>
+
+  <div class="slides-wrap" id="slides-wrap">
+
+    <!-- ══ SLIDE 1 — COVER ══ -->
+    <div class="slide slide-cover active" id="sl1">
+      <div class="cover-flag">🗺️</div>
+      <h1 class="cover-title">Geografi Indonesia</h1>
+      <p class="cover-sub">Mengenal letak, luas, pulau, gunung, sungai, danau, dan fakta geografis penting Negara Kesatuan Republik Indonesia.</p>
+      <div class="cover-tag">
+        <span>📖 16 Slide</span>
+        <span>🎯 Cerdas Cermat SD</span>
+        <span>⌨️ ← → navigasi</span>
+      </div>
+    </div>
+
+    <!-- ══ SLIDE 2 — LETAK GEOGRAFIS ══ -->
+    <div class="slide" id="sl2">
+      <div class="slide-content">
+        <div class="slide-label">Slide 2 · Letak Geografis</div>
+        <h2 class="slide-heading">Letak Geografis Indonesia</h2>
+        <div class="hl hl-green">
+          <span class="hl-icon">🌏</span>
+          <span>Indonesia terletak di <strong>Asia Tenggara</strong>, di antara dua benua (Asia &amp; Australia) dan dua samudra (Hindia &amp; Pasifik).</span>
+        </div>
+        <div class="facts">
+          <div class="fact"><div class="fact-label">Letak Astronomis</div><div class="fact-value">6°LU – 11°LS dan 95°BT – 141°BT</div></div>
+          <div class="fact"><div class="fact-label">Samudra di Barat–Selatan</div><div class="fact-value">Samudra Hindia</div></div>
+          <div class="fact"><div class="fact-label">Samudra di Timur–Utara</div><div class="fact-value">Samudra Pasifik</div></div>
+          <div class="fact"><div class="fact-label">Benua di Utara</div><div class="fact-value">Benua Asia</div></div>
+          <div class="fact"><div class="fact-label">Benua di Selatan</div><div class="fact-value">Benua Australia</div></div>
+          <div class="fact"><div class="fact-label">Posisi Khatulistiwa</div><div class="fact-value">Dilintasi garis khatulistiwa (ekuator)</div></div>
+        </div>
+        <div class="hl hl-gold">
+          <span class="hl-icon">⭐</span>
+          <span>Posisi Indonesia yang diapit dua benua dan dua samudra menjadikannya <strong>jalur perdagangan internasional</strong> yang sangat strategis sejak zaman kuno.</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ SLIDE 3 — LUAS & BATAS ══ -->
+    <div class="slide" id="sl3">
+      <div class="slide-content">
+        <div class="slide-label">Slide 3 · Luas &amp; Batas Wilayah</div>
+        <h2 class="slide-heading">Luas &amp; Batas Wilayah Indonesia</h2>
+        <div class="facts">
+          <div class="fact"><div class="fact-label">Luas Daratan</div><div class="fact-value">± 1.919.440 km²</div></div>
+          <div class="fact"><div class="fact-label">Luas Lautan</div><div class="fact-value">± 3.257.483 km²</div></div>
+          <div class="fact"><div class="fact-label">Luas Total (darat+laut)</div><div class="fact-value">± 5.176.923 km²</div></div>
+          <div class="fact"><div class="fact-label">Jumlah Pulau</div><div class="fact-value">± 17.504 pulau (yang bernama resmi)</div></div>
+          <div class="fact"><div class="fact-label">Jumlah Provinsi</div><div class="fact-value">38 provinsi (2024)</div></div>
+          <div class="fact"><div class="fact-label">Panjang Garis Pantai</div><div class="fact-value">± 81.000 km (terpanjang ke-2 dunia)</div></div>
+        </div>
+        <table class="tbl" style="margin-top:.5rem">
+          <thead><tr><th>Arah</th><th>Berbatasan dengan</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Utara</strong></td><td>Malaysia, Singapura, Filipina, Laut Cina Selatan</td></tr>
+            <tr><td><strong>Selatan</strong></td><td>Australia, Timor Leste, Samudra Hindia</td></tr>
+            <tr><td><strong>Barat</strong></td><td>Samudra Hindia</td></tr>
+            <tr><td><strong>Timur</strong></td><td>Papua Nugini, Samudra Pasifik</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- ══ SLIDE 4 — PULAU-PULAU BESAR ══ -->
+    <div class="slide" id="sl4">
+      <div class="slide-content">
+        <div class="slide-label">Slide 4 · Pulau-Pulau Besar</div>
+        <h2 class="slide-heading">5 Pulau Terbesar di Indonesia</h2>
+        <div class="rank-list">
+          <div class="rank-item">
+            <div class="rank-num">1</div>
+            <div class="rank-body">
+              <div class="rank-name">Kalimantan (Borneo)</div>
+              <div class="rank-detail">± 743.330 km² · Pulau terbesar ke-3 di dunia · berbagi dengan Malaysia &amp; Brunei</div>
+            </div>
+            <span class="rank-badge">Terbesar</span>
+          </div>
+          <div class="rank-item">
+            <div class="rank-num">2</div>
+            <div class="rank-body">
+              <div class="rank-name">Sumatera</div>
+              <div class="rank-detail">± 473.481 km² · Pulau terbesar ke-6 di dunia · terbesar yang seluruhnya milik Indonesia</div>
+            </div>
+            <span class="rank-badge">2 Terbesar</span>
+          </div>
+          <div class="rank-item">
+            <div class="rank-num">3</div>
+            <div class="rank-body">
+              <div class="rank-name">Papua (bagian barat)</div>
+              <div class="rank-detail">± 421.981 km² · Bagian barat Pulau New Guinea, berbagi dengan Papua Nugini</div>
+            </div>
+            <span class="rank-badge">3 Terbesar</span>
+          </div>
+          <div class="rank-item">
+            <div class="rank-num">4</div>
+            <div class="rank-body">
+              <div class="rank-name">Sulawesi</div>
+              <div class="rank-detail">± 174.600 km² · Pulau ke-11 terbesar di dunia · bentuk unik seperti huruf K</div>
+            </div>
+            <span class="rank-badge">4 Terbesar</span>
+          </div>
+          <div class="rank-item">
+            <div class="rank-num">5</div>
+            <div class="rank-body">
+              <div class="rank-name">Jawa</div>
+              <div class="rank-detail">± 128.297 km² · Pulau terpadat di dunia · pusat pemerintahan &amp; ekonomi RI</div>
+            </div>
+            <span class="rank-badge">5 Terbesar</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ SLIDE 5 — GUNUNG ══ -->
+    <div class="slide" id="sl5">
+      <div class="slide-content">
+        <div class="slide-label">Slide 5 · Gunung</div>
+        <h2 class="slide-heading">Gunung-Gunung Terkenal di Indonesia</h2>
+        <div class="hl hl-green">
+          <span class="hl-icon">🌋</span>
+          <span>Indonesia memiliki <strong>127 gunung berapi aktif</strong> — terbanyak di dunia. Indonesia berada di <strong>Cincin Api Pasifik (Ring of Fire)</strong>.</span>
+        </div>
+        <table class="tbl">
+          <thead><tr><th>Gunung</th><th>Lokasi</th><th>Ketinggian</th><th>Keterangan</th></tr></thead>
+          <tbody>
+            <tr class="hl-row"><td><strong>Puncak Jaya (Carstensz)</strong></td><td>Papua</td><td>4.884 m</td><td>Tertinggi di Indonesia &amp; Oseania</td></tr>
+            <tr><td><strong>Kerinci</strong></td><td>Sumatera Barat</td><td>3.805 m</td><td>Gunung berapi aktif tertinggi di Indonesia</td></tr>
+            <tr><td><strong>Semeru</strong></td><td>Jawa Timur</td><td>3.676 m</td><td>Gunung tertinggi di Pulau Jawa · "Mahameru"</td></tr>
+            <tr><td><strong>Rinjani</strong></td><td>NTB (Lombok)</td><td>3.726 m</td><td>Gunung berapi aktif dengan danau kawah Segara Anak</td></tr>
+            <tr><td><strong>Merapi</strong></td><td>Jawa Tengah / DIY</td><td>2.930 m</td><td>Gunung berapi paling aktif di Indonesia</td></tr>
+            <tr><td><strong>Krakatau</strong></td><td>Selat Sunda</td><td>813 m (Anak Krakatau)</td><td>Letusan 1883 terdengar sampai Australia</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- ══ SLIDE 6 — SUNGAI ══ -->
+    <div class="slide" id="sl6">
+      <div class="slide-content">
+        <div class="slide-label">Slide 6 · Sungai</div>
+        <h2 class="slide-heading">Sungai-Sungai Penting di Indonesia</h2>
+        <div class="rank-list">
+          <div class="rank-item">
+            <div class="rank-num">1</div>
+            <div class="rank-body">
+              <div class="rank-name">Sungai Kapuas</div>
+              <div class="rank-detail">± 1.143 km · Kalimantan Barat · Sungai terpanjang di Indonesia</div>
+            </div>
+            <span class="rank-badge">Terpanjang</span>
+          </div>
+          <div class="rank-item">
+            <div class="rank-num">2</div>
+            <div class="rank-body">
+              <div class="rank-name">Sungai Mahakam</div>
+              <div class="rank-detail">± 920 km · Kalimantan Timur · jalur transportasi utama Kaltim</div>
+            </div>
+          </div>
+          <div class="rank-item">
+            <div class="rank-num">3</div>
+            <div class="rank-body">
+              <div class="rank-name">Sungai Barito</div>
+              <div class="rank-detail">± 900 km · Kalimantan Tengah &amp; Selatan</div>
+            </div>
+          </div>
+          <div class="rank-item">
+            <div class="rank-num">4</div>
+            <div class="rank-body">
+              <div class="rank-name">Sungai Musi</div>
+              <div class="rank-detail">± 750 km · Sumatera Selatan · membelah Kota Palembang</div>
+            </div>
+          </div>
+          <div class="rank-item">
+            <div class="rank-num">5</div>
+            <div class="rank-body">
+              <div class="rank-name">Sungai Bengawan Solo</div>
+              <div class="rank-detail">± 548 km · Jawa Tengah &amp; Jawa Timur · sungai terpanjang di Pulau Jawa</div>
+            </div>
+            <span class="rank-badge">Terpanjang Jawa</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ SLIDE 7 — DANAU ══ -->
+    <div class="slide" id="sl7">
+      <div class="slide-content">
+        <div class="slide-label">Slide 7 · Danau</div>
+        <h2 class="slide-heading">Danau-Danau Terkenal di Indonesia</h2>
+        <table class="tbl">
+          <thead><tr><th>Danau</th><th>Lokasi</th><th>Luas</th><th>Keistimewaan</th></tr></thead>
+          <tbody>
+            <tr class="hl-row"><td><strong>Danau Toba</strong></td><td>Sumatera Utara</td><td>± 1.145 km²</td><td>Terbesar di Indonesia &amp; Asia Tenggara · danau vulkanik terbesar di dunia · ada Pulau Samosir di tengahnya</td></tr>
+            <tr><td><strong>Danau Poso</strong></td><td>Sulawesi Tengah</td><td>± 323 km²</td><td>Danau terdalam ke-3 di dunia (± 450 m)</td></tr>
+            <tr><td><strong>Danau Towuti</strong></td><td>Sulawesi Selatan</td><td>± 561 km²</td><td>Danau terluas di Sulawesi</td></tr>
+            <tr><td><strong>Danau Sentani</strong></td><td>Papua</td><td>± 9.360 ha</td><td>Danau terbesar di Papua · terkenal dengan Festival Danau Sentani</td></tr>
+            <tr><td><strong>Danau Maninjau</strong></td><td>Sumatera Barat</td><td>± 99,5 km²</td><td>Danau vulkanik · dekat kampung halaman Buya Hamka</td></tr>
+            <tr><td><strong>Danau Batur</strong></td><td>Bali</td><td>± 16 km²</td><td>Danau kaldera di dalam kaldera Gunung Batur</td></tr>
+          </tbody>
+        </table>
+        <div class="hl hl-gold">
+          <span class="hl-icon">🌊</span>
+          <span>Danau Toba terbentuk dari letusan <strong>supervulcano</strong> sekitar <strong>74.000 tahun lalu</strong> — salah satu letusan terbesar dalam sejarah bumi.</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ SLIDE 8 — IKLIM ══ -->
+    <div class="slide" id="sl8">
+      <div class="slide-content">
+        <div class="slide-label">Slide 8 · Iklim</div>
+        <h2 class="slide-heading">Iklim Indonesia</h2>
+        <div class="hl hl-green">
+          <span class="hl-icon">☀️</span>
+          <span>Indonesia beriklim <strong>tropis</strong> karena dilintasi garis khatulistiwa. Secara umum hanya mengenal dua musim: <strong>musim hujan</strong> dan <strong>musim kemarau</strong>.</span>
+        </div>
+        <div class="facts">
+          <div class="fact"><div class="fact-label">Tipe Iklim</div><div class="fact-value">Tropis (panas dan lembap sepanjang tahun)</div></div>
+          <div class="fact"><div class="fact-label">Musim Hujan</div><div class="fact-value">Oktober – April (angin muson barat)</div></div>
+          <div class="fact"><div class="fact-label">Musim Kemarau</div><div class="fact-value">April – Oktober (angin muson timur)</div></div>
+          <div class="fact"><div class="fact-label">Suhu Rata-rata</div><div class="fact-value">26°C – 30°C di dataran rendah</div></div>
+          <div class="fact"><div class="fact-label">Curah Hujan</div><div class="fact-value">1.500 – 3.500 mm per tahun</div></div>
+          <div class="fact"><div class="fact-label">Angin Muson</div><div class="fact-value">Angin muson barat &amp; timur menentukan musim di Indonesia</div></div>
+        </div>
+        <div class="hl hl-teal">
+          <span class="hl-icon">🌧️</span>
+          <span>Beberapa daerah di Kalimantan dan Papua <strong>tidak punya musim kemarau</strong> yang jelas — hujan turun merata sepanjang tahun.</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ SLIDE 9 — ZONA WAKTU ══ -->
+    <div class="slide" id="sl9">
+      <div class="slide-content">
+        <div class="slide-label">Slide 9 · Zona Waktu</div>
+        <h2 class="slide-heading">Tiga Zona Waktu Indonesia</h2>
+        <div class="hl hl-navy">
+          <span class="hl-icon">🕐</span>
+          <span>Wilayah Indonesia yang luas membentang dari barat ke timur menyebabkan adanya <strong>3 zona waktu</strong> yang berbeda.</span>
+        </div>
+        <table class="tbl">
+          <thead><tr><th>Zona Waktu</th><th>Singkatan</th><th>Selisih GMT</th><th>Wilayah</th></tr></thead>
+          <tbody>
+            <tr class="hl-row"><td><strong>Waktu Indonesia Barat</strong></td><td>WIB</td><td>GMT +7</td><td>Sumatera, Jawa, Madura, Kalimantan Barat &amp; Tengah</td></tr>
+            <tr><td><strong>Waktu Indonesia Tengah</strong></td><td>WITA</td><td>GMT +8</td><td>Kalimantan Timur &amp; Selatan, Bali, NTB, NTT, Sulawesi</td></tr>
+            <tr><td><strong>Waktu Indonesia Timur</strong></td><td>WIT</td><td>GMT +9</td><td>Maluku, Maluku Utara, Papua (semua provinsi)</td></tr>
+          </tbody>
+        </table>
+        <div class="hl hl-gold">
+          <span class="hl-icon">💡</span>
+          <span>Saat pukul <strong>07.00 WIB</strong> di Jakarta, di Jayapura (Papua) sudah pukul <strong>09.00 WIT</strong> — selisih 2 jam!</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ SLIDE 10 — LAUT & SELAT ══ -->
+    <div class="slide" id="sl10">
+      <div class="slide-content">
+        <div class="slide-label">Slide 10 · Laut &amp; Selat</div>
+        <h2 class="slide-heading">Laut &amp; Selat Penting di Indonesia</h2>
+        <table class="tbl">
+          <thead><tr><th>Nama</th><th>Lokasi</th><th>Keterangan</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Laut Jawa</strong></td><td>Antara Jawa &amp; Kalimantan</td><td>Laut dangkal, pusat penangkapan ikan, jalur ALKI II</td></tr>
+            <tr><td><strong>Laut Banda</strong></td><td>Maluku</td><td>Salah satu laut terdalam di Indonesia (± 7.440 m)</td></tr>
+            <tr class="hl-row"><td><strong>Selat Malaka</strong></td><td>Antara Sumatera &amp; Malaysia</td><td>Selat tersibuk di dunia — jalur perdagangan internasional utama</td></tr>
+            <tr><td><strong>Selat Sunda</strong></td><td>Antara Jawa &amp; Sumatera</td><td>Jalur pelayaran penting; lokasi Krakatau</td></tr>
+            <tr><td><strong>Selat Lombok</strong></td><td>Antara Bali &amp; Lombok</td><td>Batas Garis Wallace (batas flora-fauna Asia &amp; Australia)</td></tr>
+            <tr><td><strong>Selat Karimata</strong></td><td>Antara Sumatera &amp; Kalimantan</td><td>Jalur utama dari Laut Cina Selatan menuju Jawa</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- ══ SLIDE 11 — PROVINSI DI JAWA ══ -->
+    <div class="slide" id="sl11">
+      <div class="slide-content">
+        <div class="slide-label">Slide 11 · Provinsi</div>
+        <h2 class="slide-heading">Provinsi-Provinsi di Pulau Jawa</h2>
+        <div class="hl hl-green">
+          <span class="hl-icon">🏙️</span>
+          <span>Pulau Jawa hanya mencakup <strong>7% luas daratan Indonesia</strong>, namun dihuni oleh <strong>lebih dari 57% penduduk Indonesia</strong>.</span>
+        </div>
+        <table class="tbl">
+          <thead><tr><th>Provinsi</th><th>Ibukota</th><th>Keterangan</th></tr></thead>
+          <tbody>
+            <tr class="hl-row"><td><strong>DKI Jakarta</strong></td><td>Jakarta</td><td>Ibukota negara (sebelum pindah ke Nusantara)</td></tr>
+            <tr><td><strong>Banten</strong></td><td>Serang</td><td>Provinsi paling barat di Pulau Jawa</td></tr>
+            <tr><td><strong>Jawa Barat</strong></td><td>Bandung</td><td>Provinsi dengan penduduk terbanyak di Indonesia</td></tr>
+            <tr><td><strong>Jawa Tengah</strong></td><td>Semarang</td><td>Pusat budaya Jawa; ada Candi Borobudur &amp; Prambanan</td></tr>
+            <tr><td><strong>DI Yogyakarta</strong></td><td>Yogyakarta</td><td>Daerah Istimewa; pusat pendidikan &amp; budaya Jawa</td></tr>
+            <tr><td><strong>Jawa Timur</strong></td><td>Surabaya</td><td>Kota terbesar ke-2 RI; Gunung Semeru &amp; Bromo</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- ══ SLIDE 12 — IBUKOTA BARU ══ -->
+    <div class="slide" id="sl12">
+      <div class="slide-content">
+        <div class="slide-label">Slide 12 · Ibukota Negara</div>
+        <h2 class="slide-heading">Ibukota Indonesia: Jakarta &amp; Nusantara</h2>
+        <div class="hl hl-red">
+          <span class="hl-icon">🏛️</span>
+          <span>Indonesia sedang memindahkan ibukotanya dari <strong>Jakarta</strong> ke <strong>Nusantara</strong> di Kalimantan Timur.</span>
+        </div>
+        <div class="facts">
+          <div class="fact"><div class="fact-label">Ibukota Lama</div><div class="fact-value">Jakarta (DKI Jakarta) · sejak kemerdekaan 1945</div></div>
+          <div class="fact"><div class="fact-label">Ibukota Baru</div><div class="fact-value">Nusantara · Penajam Paser Utara, Kalimantan Timur</div></div>
+          <div class="fact"><div class="fact-label">Dasar Hukum</div><div class="fact-value">UU No. 3 Tahun 2022 tentang Ibukota Negara</div></div>
+          <div class="fact"><div class="fact-label">Alasan Pemindahan</div><div class="fact-value">Jakarta rawan banjir, macet, dan tanah ambles (subsidence)</div></div>
+        </div>
+        <ul class="sl">
+          <li>Nusantara terletak di <strong>Kabupaten Penajam Paser Utara</strong> dan <strong>Kabupaten Kutai Kartanegara</strong></li>
+          <li>Dirancang sebagai kota <strong>hijau, cerdas, dan berkelanjutan</strong></li>
+          <li>Luas wilayah Nusantara: <strong>256.142 hektar</strong></li>
+          <li>Jakarta tetap menjadi pusat bisnis dan ekonomi Indonesia</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- ══ SLIDE 13 — KEPULAUAN TERKENAL ══ -->
+    <div class="slide" id="sl13">
+      <div class="slide-content">
+        <div class="slide-label">Slide 13 · Kepulauan &amp; Wilayah Khusus</div>
+        <h2 class="slide-heading">Kepulauan &amp; Wilayah Terkenal</h2>
+        <table class="tbl">
+          <thead><tr><th>Wilayah</th><th>Lokasi</th><th>Keistimewaan</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Kepulauan Raja Ampat</strong></td><td>Papua Barat Daya</td><td>Keanekaragaman hayati laut terkaya di dunia; surga penyelam</td></tr>
+            <tr><td><strong>Pulau Komodo</strong></td><td>NTT</td><td>Habitat komodo (kadal terbesar di dunia); UNESCO World Heritage</td></tr>
+            <tr class="hl-row"><td><strong>Pulau Bali</strong></td><td>Bali</td><td>Pulau Dewata; destinasi wisata internasional terkemuka Indonesia</td></tr>
+            <tr><td><strong>Kepulauan Banda</strong></td><td>Maluku</td><td>"Spice Islands" — pusat rempah pala dan cengkeh dunia abad ke-16</td></tr>
+            <tr><td><strong>Pulau Natuna</strong></td><td>Kepulauan Riau</td><td>Pulau terluar di Laut Cina Selatan; kaya cadangan gas alam</td></tr>
+            <tr><td><strong>Pulau Sabang</strong></td><td>Aceh</td><td>Titik paling barat Indonesia (Sabang–Merauke)</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- ══ SLIDE 14 — SABANG–MERAUKE ══ -->
+    <div class="slide" id="sl14">
+      <div class="slide-content">
+        <div class="slide-label">Slide 14 · Ujung-Ujung Indonesia</div>
+        <h2 class="slide-heading">Dari Sabang sampai Merauke</h2>
+        <div class="hl hl-green">
+          <span class="hl-icon">📍</span>
+          <span>"Dari Sabang sampai Merauke" adalah ungkapan yang menggambarkan <strong>betapa luasnya wilayah Indonesia</strong> dari ujung barat hingga ujung timur.</span>
+        </div>
+        <table class="tbl">
+          <thead><tr><th>Titik</th><th>Lokasi</th><th>Keterangan</th></tr></thead>
+          <tbody>
+            <tr class="hl-row"><td><strong>Ujung Barat</strong></td><td>Sabang, Aceh</td><td>Pulau Weh — titik paling barat Indonesia</td></tr>
+            <tr class="hl-row"><td><strong>Ujung Timur</strong></td><td>Merauke, Papua Selatan</td><td>Berbatasan langsung dengan Papua Nugini</td></tr>
+            <tr><td><strong>Ujung Utara</strong></td><td>Pulau Miangas, Sulut</td><td>Berbatasan dengan Filipina</td></tr>
+            <tr><td><strong>Ujung Selatan</strong></td><td>Pulau Rote, NTT</td><td>Pulau paling selatan Indonesia; dekat Australia</td></tr>
+          </tbody>
+        </table>
+        <div class="hl hl-gold">
+          <span class="hl-icon">📏</span>
+          <span>Jarak dari Sabang (Aceh) ke Merauke (Papua) adalah sekitar <strong>5.120 km</strong> — setara dengan jarak London ke Tehran!</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ SLIDE 15 — RING OF FIRE ══ -->
+    <div class="slide" id="sl15">
+      <div class="slide-content">
+        <div class="slide-label">Slide 15 · Keistimewaan Geologi</div>
+        <h2 class="slide-heading">Indonesia &amp; Cincin Api Pasifik</h2>
+        <div class="hl hl-red">
+          <span class="hl-icon">🌋</span>
+          <span>Indonesia berada di <strong>pertemuan tiga lempeng tektonik</strong>: Lempeng Eurasia, Lempeng Indo-Australia, dan Lempeng Pasifik.</span>
+        </div>
+        <ul class="sl">
+          <li>Indonesia memiliki <strong>127 gunung berapi aktif</strong> — terbanyak di dunia</li>
+          <li>Terletak di <strong>Cincin Api Pasifik (Ring of Fire)</strong> yang membentang mengelilingi Samudra Pasifik</li>
+          <li>Aktivitas tektonik menyebabkan Indonesia rawan <strong>gempa bumi dan tsunami</strong></li>
+          <li>Tanah vulkanik yang subur menjadikan Indonesia kaya hasil pertanian</li>
+          <li>Letusan <strong>Gunung Krakatau (1883)</strong> mengubah iklim global selama beberapa tahun</li>
+          <li>Letusan <strong>Gunung Tambora (1815)</strong> di NTB adalah letusan terdahsyat dalam sejarah modern — menyebabkan "Tahun Tanpa Musim Panas" di Eropa</li>
+        </ul>
+        <div class="hl hl-teal">
+          <span class="hl-icon">🌿</span>
+          <span>Sisi positifnya: abu vulkanik menjadikan tanah di Jawa dan Bali <strong>sangat subur</strong> untuk pertanian padi dan berbagai tanaman.</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ SLIDE 16 — RANGKUMAN ══ -->
+    <div class="slide" id="sl16">
+      <div class="slide-content">
+        <div class="slide-label">Slide 16 · Rangkuman</div>
+        <h2 class="slide-heading">Rangkuman Geografi Indonesia</h2>
+        <table class="tbl">
+          <thead><tr><th>Kategori</th><th>Juara / Terbesar / Terpanjang</th></tr></thead>
+          <tbody>
+            <tr class="hl-row"><td><strong>Pulau Terbesar</strong></td><td>Kalimantan (Borneo) — ± 743.330 km²</td></tr>
+            <tr><td><strong>Sungai Terpanjang</strong></td><td>Sungai Kapuas — ± 1.143 km (Kalimantan Barat)</td></tr>
+            <tr><td><strong>Danau Terbesar</strong></td><td>Danau Toba — ± 1.145 km² (Sumatera Utara)</td></tr>
+            <tr><td><strong>Gunung Tertinggi</strong></td><td>Puncak Jaya — 4.884 m (Papua)</td></tr>
+            <tr><td><strong>Gunung Berapi Tertinggi</strong></td><td>Kerinci — 3.805 m (Sumatera Barat)</td></tr>
+            <tr><td><strong>Gunung Berapi Teraktif</strong></td><td>Gunung Merapi (Jawa Tengah / DIY)</td></tr>
+            <tr><td><strong>Selat Tersibuk</strong></td><td>Selat Malaka (antara Sumatera &amp; Malaysia)</td></tr>
+            <tr><td><strong>Ujung Barat–Timur</strong></td><td>Sabang (Aceh) – Merauke (Papua Selatan)</td></tr>
+          </tbody>
+        </table>
+        <div class="hl hl-green">
+          <span class="hl-icon">✅</span>
+          <span>Selamat! Kamu sudah mempelajari geografi Indonesia — dari letak, pulau, gunung, sungai, danau, hingga fakta-fakta geologi penting.</span>
+        </div>
+        <a href="../soal/paket-01.html" class="cta-btn">📝 Latihan Soal Sekarang →</a>
+      </div>
+    </div>
+
+  </div><!-- /slides-wrap -->
+
+  <footer class="s-footer">
+    <button class="nav-btn prev-btn" id="btn-prev" onclick="prev()" disabled>◄ Sebelumnya</button>
+    <div class="s-hint"><kbd>←</kbd> <kbd>→</kbd> navigasi &nbsp;·&nbsp; <kbd>F</kbd> layar penuh</div>
+    <button class="nav-btn next-btn" id="btn-next" onclick="next()">Berikutnya ►</button>
+  </footer>
+
+  <script>
+    const TOTAL = 16;
+    let cur = 1;
+    function showSlide(n) {
+      const pv = document.getElementById('sl' + cur);
+      const nx = document.getElementById('sl' + n);
+      if (!nx) return;
+      pv.classList.add('leaving'); pv.classList.remove('active');
+      setTimeout(() => pv.classList.remove('leaving'), 400);
+      nx.classList.add('active'); cur = n;
+      document.getElementById('s-counter').textContent = cur + ' / ' + TOTAL;
+      document.getElementById('s-prog').style.width = (cur / TOTAL * 100).toFixed(2) + '%';
+      document.getElementById('btn-prev').disabled = (cur === 1);
+      document.getElementById('btn-next').disabled = (cur === TOTAL);
+    }
+    function next() { if (cur < TOTAL) showSlide(cur + 1); }
+    function prev() { if (cur > 1)     showSlide(cur - 1); }
+    document.addEventListener('keydown', e => {
+      if (e.code === 'ArrowRight' || e.code === 'ArrowDown') next();
+      if (e.code === 'ArrowLeft'  || e.code === 'ArrowUp')   prev();
+      if (e.code === 'KeyF') toggleFS();
+    });
+    document.getElementById('btn-fs').addEventListener('click', toggleFS);
+    function toggleFS() {
+      if (!document.fullscreenElement) document.documentElement.requestFullscreen().catch(() => {});
+      else document.exitFullscreen();
+    }
+    let ts = 0;
+    document.getElementById('slides-wrap').addEventListener('touchstart', e => { ts = e.touches[0].clientX; });
+    document.getElementById('slides-wrap').addEventListener('touchend', e => {
+      const dx = e.changedTouches[0].clientX - ts;
+      if (Math.abs(dx) > 50) { dx < 0 ? next() : prev(); }
+    });
+  </script>
+</body>
+</html>
