@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kimia Dasar — Materi Cerdas Cermat SDM01KKS</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { height: 100%; font-family: 'Nunito', sans-serif; }
+    :root {
+      --red:    #6a1b9a; --red-dk: #38006b; --red-lt: #f3e5f5;
+      --gold:   #f9a825; --green:  #2e7d32; --navy:   #1a237e;
+      --teal:   #00695c; --blue:   #1565c0; --orange: #e65100;
+      --cream:  #fdf8ff; --text:   #1a2420; --muted:  #718096; --nav-h: 58px;
+    }
+    body { background: var(--cream); color: var(--text); display: flex; flex-direction: column; height: 100vh; overflow: hidden; }
+    .s-nav { height: var(--nav-h); flex-shrink: 0; display: flex; align-items: center; gap: 1rem; padding: 0 1.5rem; background: var(--red); color: #fff; box-shadow: 0 2px 12px rgba(0,0,0,.25); z-index: 20; }
+    .s-nav a { color: rgba(255,255,255,.8); text-decoration: none; font-size: .85rem; }
+    .s-nav a:hover { color: #fff; }
+    .s-nav .sep { opacity: .4; }
+    .s-nav .s-title { flex: 1; font-weight: 800; font-size: .95rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .s-nav .s-counter { font-weight: 700; font-size: .85rem; background: rgba(255,255,255,.2); padding: .25rem .75rem; border-radius: 20px; white-space: nowrap; }
+    .btn-fs { background: rgba(255,255,255,.15); border: none; color: #fff; width: 34px; height: 34px; border-radius: 8px; font-size: 1rem; cursor: pointer; display: flex; align-items: center; justify-content: center; }
+    .btn-fs:hover { background: rgba(255,255,255,.3); }
+    .s-prog { height: 4px; background: rgba(255,255,255,.25); flex-shrink: 0; }
+    .s-prog-fill { height: 100%; background: var(--gold); transition: width .4s ease; }
+    .slides-wrap { flex: 1; position: relative; overflow: hidden; }
+    .slide { position: absolute; inset: 0; padding: 2.5rem 3rem; opacity: 0; transform: translateX(30px); transition: opacity .35s ease, transform .35s ease; pointer-events: none; overflow-y: auto; }
+    .slide.active { opacity: 1; transform: translateX(0); pointer-events: all; }
+    .slide.leaving { opacity: 0; transform: translateX(-30px); }
+    .slide-cover { background: linear-gradient(145deg, var(--red) 0%, var(--red-dk) 100%); color: #fff; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; gap: 1.5rem; }
+    .cover-flag { font-size: 5rem; line-height: 1; }
+    .cover-title { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 900; text-shadow: 0 2px 16px rgba(0,0,0,.3); line-height: 1.2; }
+    .cover-sub { font-size: clamp(.9rem, 2vw, 1.2rem); opacity: .85; max-width: 540px; line-height: 1.6; }
+    .cover-tag { display: inline-flex; gap: 1rem; flex-wrap: wrap; justify-content: center; margin-top: .5rem; }
+    .cover-tag span { background: rgba(255,255,255,.18); border: 1px solid rgba(255,255,255,.35); border-radius: 20px; padding: .3rem 1rem; font-size: .8rem; font-weight: 700; }
+    .slide-content { display: flex; flex-direction: column; gap: 1.5rem; max-width: 860px; margin: 0 auto; }
+    .slide-label { font-size: .72rem; text-transform: uppercase; letter-spacing: .12em; color: var(--red); font-weight: 800; }
+    .slide-heading { font-family: 'Playfair Display', serif; font-size: clamp(1.6rem, 4vw, 2.6rem); font-weight: 700; color: var(--text); line-height: 1.2; }
+    .slide-heading .sub { font-size: .55em; color: var(--muted); display: block; font-family: 'Nunito', sans-serif; font-weight: 600; margin-top: .2rem; }
+    .hl { border-radius: 12px; padding: 1rem 1.4rem; font-weight: 700; font-size: .95rem; display: flex; align-items: flex-start; gap: .75rem; line-height: 1.6; }
+    .hl-purple { background: #f3e5f5; border-left: 4px solid var(--red); color: var(--red-dk); }
+    .hl-gold   { background: #fff8e1; border-left: 4px solid var(--gold); color: #6d4c00; }
+    .hl-green  { background: #e8f5e9; border-left: 4px solid var(--green); color: #1b5e20; }
+    .hl-navy   { background: #e8eaf6; border-left: 4px solid var(--navy); color: var(--navy); }
+    .hl-teal   { background: #e0f2f1; border-left: 4px solid var(--teal); color: #004d40; }
+    .hl-blue   { background: #e3f2fd; border-left: 4px solid var(--blue); color: #0d47a1; }
+    .hl-orange { background: #fff3e0; border-left: 4px solid var(--orange); color: #8d3100; }
+    .hl-icon   { font-size: 1.4rem; flex-shrink: 0; margin-top: .05rem; }
+    .facts { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: .85rem; }
+    .fact { background: #fff; border: 1px solid #e9ecef; border-radius: 10px; padding: .85rem 1rem; }
+    .fact-label { font-size: .68rem; text-transform: uppercase; letter-spacing: .1em; color: var(--muted); margin-bottom: .25rem; }
+    .fact-value { font-weight: 800; font-size: .92rem; color: var(--text); line-height: 1.4; }
+    .tbl { width: 100%; border-collapse: collapse; font-size: .88rem; }
+    .tbl th { background: var(--red); color: #fff; padding: .6rem .9rem; text-align: left; font-weight: 700; }
+    .tbl td { padding: .55rem .9rem; border-bottom: 1px solid #f0f4f8; vertical-align: top; line-height: 1.45; }
+    .tbl tr:hover td { background: #fdf5ff; }
+    .tbl .hl-row td { background: #fff8e1; font-weight: 700; }
+    .zat-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(185px, 1fr)); gap: .85rem; }
+    .zat-card { background: #fff; border: 1px solid #e9ecef; border-radius: 12px; padding: .9rem 1rem; border-top: 3px solid var(--zc, #6a1b9a); }
+    .zc-icon { font-size: 1.8rem; margin-bottom: .3rem; }
+    .zc-name { font-weight: 800; font-size: .9rem; color: var(--text); margin-bottom: .15rem; }
+    .zc-sub  { font-size: .7rem; color: var(--red); font-weight: 700; margin-bottom: .25rem; }
+    .zc-desc { font-size: .76rem; color: #4a5568; line-height: 1.5; }
+    .sl { list-style: none; display: flex; flex-direction: column; gap: .55rem; }
+    .sl li { display: flex; gap: .6rem; align-items: flex-start; font-size: .93rem; line-height: 1.55; }
+    .sl li::before { content: "▸"; color: var(--red); font-size: .75rem; margin-top: .25rem; flex-shrink: 0; }
+    .cta-btn { display: inline-flex; align-items: center; gap: .5rem; background: var(--red); color: #fff; padding: .75rem 1.75rem; border-radius: 10px; font-weight: 800; font-size: 1rem; text-decoration: none; transition: opacity .15s; align-self: flex-start; }
+    .cta-btn:hover { opacity: .85; }
+    .s-footer { height: 64px; flex-shrink: 0; display: flex; align-items: center; justify-content: space-between; padding: 0 1.5rem; background: #fff; border-top: 1px solid #e9ecef; }
+    .nav-btn { display: flex; align-items: center; gap: .4rem; background: none; border: 1.5px solid #e9ecef; border-radius: 10px; padding: .5rem 1.2rem; font-family: inherit; font-size: .88rem; font-weight: 700; color: var(--text); cursor: pointer; transition: background .15s, border-color .15s; }
+    .nav-btn:hover { background: #f5f5f5; border-color: #ccc; }
+    .nav-btn:disabled { opacity: .3; cursor: default; }
+    .nav-btn.next-btn { background: var(--red); color: #fff; border-color: var(--red); }
+    .nav-btn.next-btn:hover { opacity: .88; }
+    .nav-btn.next-btn:disabled { background: #ccc; border-color: #ccc; opacity: .6; }
+    .s-hint { font-size: .72rem; color: var(--muted); text-align: center; }
+    .s-hint kbd { background: #f0f4f8; border: 1px solid #ddd; border-radius: 4px; padding: 1px 5px; font-family: monospace; font-size: .68rem; }
+    @media (max-width: 600px) { .slide { padding: 1.25rem 1rem; } .s-hint { display: none; } }
+  </style>
+</head>
+<body>
+  <header class="s-nav">
+    <a href="../index.html">← Materi</a>
+    <span class="sep">›</span>
+    <span class="s-title">Kimia Dasar</span>
+    <span class="s-counter" id="s-counter">1 / 12</span>
+    <button class="btn-fs" id="btn-fs" title="Layar penuh (F)">⛶</button>
+  </header>
+  <div class="s-prog"><div class="s-prog-fill" id="s-prog" style="width:8.33%"></div></div>
+
+  <div class="slides-wrap" id="slides-wrap">
+
+    <!-- ══ SLIDE 1 — COVER ══ -->
+    <div class="slide slide-cover active" id="sl1">
+      <div class="cover-flag">⚗️</div>
+      <h1 class="cover-title">Kimia Dasar</h1>
+      <p class="cover-sub">Mengenal zat dan perubahannya, unsur, senyawa, campuran, asam-basa, serta reaksi kimia dalam kehidupan sehari-hari.</p>
+      <div class="cover-tag">
+        <span>📖 12 Slide</span>
+        <span>🔬 Sains SD</span>
+        <span>⌨️ ← → navigasi</span>
+      </div>
+    </div>
+
+    <!-- ══ SLIDE 2 — MATERI & ZAT ══ -->
+    <div class="slide" id="sl2">
+      <div class="slide-content">
+        <div class="slide-label">Slide 2 · Materi &amp; Zat</div>
+        <h2 class="slide-heading">Materi &amp; Zat — Dasar Kimia</h2>
+        <div class="hl hl-purple">
+          <span class="hl-icon">🔬</span>
+          <span><strong>Materi</strong> adalah segala sesuatu yang memiliki massa dan menempati ruang. Kimia adalah ilmu yang mempelajari materi — susunan, sifat, dan perubahannya.</span>
+        </div>
+        <div class="zat-grid">
+          <div class="zat-card" style="--zc:#6a1b9a">
+            <div class="zc-icon">⚛️</div>
+            <div class="zc-name">Atom</div>
+            <div class="zc-sub">Unit terkecil materi</div>
+            <div class="zc-desc">Partikel terkecil suatu unsur yang masih memiliki sifat unsur tersebut. Terdiri dari proton, neutron, dan elektron.</div>
+          </div>
+          <div class="zat-card" style="--zc:#1565c0">
+            <div class="zc-icon">🔗</div>
+            <div class="zc-name">Molekul</div>
+            <div class="zc-sub">Gabungan atom-atom</div>
+            <div class="zc-desc">Gabungan dua atau lebih atom yang terikat secara kimia. Contoh: H₂O (air) = 2 atom H + 1 atom O.</div>
+          </div>
+          <div class="zat-card" style="--zc:#2e7d32">
+            <div class="zc-icon">🧪</div>
+            <div class="zc-name">Unsur</div>
+            <div class="zc-sub">Zat tunggal tak dapat diurai</div>
+            <div class="zc-desc">Zat murni yang tidak bisa diuraikan lagi menjadi zat yang lebih sederhana. Contoh: emas (Au), besi (Fe), oksigen (O).</div>
+          </div>
+          <div class="zat-card" style="--zc:#e65100">
+            <div class="zc-icon">⚗️</div>
+            <div class="zc-name">Senyawa</div>
+            <div class="zc-sub">Gabungan dua unsur atau lebih</div>
+            <div class="zc-desc">Dua atau lebih unsur yang bergabung secara kimia dengan perbandingan tetap. Contoh: air (H₂O), garam (NaCl).</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ SLIDE 3 — WUJUD ZAT ══ -->
+    <div class="slide" id="sl3">
+      <div class="slide-content">
+        <div class="slide-label">Slide 3 · Wujud Zat</div>
+        <h2 class="slide-heading">Tiga Wujud Zat</h2>
+        <div class="hl hl-purple">
+          <span class="hl-icon">💧</span>
+          <span>Materi dapat berada dalam tiga wujud (fase): <strong>padat, cair, dan gas</strong> — tergantung suhu dan tekanan yang dialaminya.</span>
+        </div>
+        <table class="tbl">
+          <thead><tr><th></th><th>🧊 Padat (Solid)</th><th>💧 Cair (Liquid)</th><th>💨 Gas</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Bentuk</strong></td><td>Tetap</td><td>Mengikuti wadah</td><td>Mengisi seluruh ruang</td></tr>
+            <tr><td><strong>Volume</strong></td><td>Tetap</td><td>Tetap</td><td>Berubah sesuai wadah</td></tr>
+            <tr><td><strong>Partikel</strong></td><td>Rapat &amp; teratur; bergetar</td><td>Rapat; bergerak bebas terbatas</td><td>Sangat renggang; bergerak bebas</td></tr>
+            <tr class="hl-row"><td><strong>Contoh</strong></td><td>Es, batu, besi, kayu</td><td>Air, minyak, alkohol</td><td>Udara, uap air, CO₂</td></tr>
+          </tbody>
+        </table>
+        <div class="hl hl-gold">
+          <span class="hl-icon">🔥</span>
+          <span>Perubahan wujud zat: <strong>Mencair</strong> (padat→cair) · <strong>Membeku</strong> (cair→padat) · <strong>Menguap</strong> (cair→gas) · <strong>Mengembun</strong> (gas→cair) · <strong>Menyublim</strong> (padat→gas) · <strong>Mengkristal</strong> (gas→padat).</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ SLIDE 4 — UNSUR & SENYAWA ══ -->
+    <div class="slide" id="sl4">
+      <div class="slide-content">
+        <div class="slide-label">Slide 4 · Unsur &amp; Senyawa</div>
+        <h2 class="slide-heading">Unsur &amp; Senyawa Penting dalam Kehidupan</h2>
+        <table class="tbl">
+          <thead><tr><th>Nama</th><th>Lambang</th><th>Jenis</th><th>Kegunaan</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Oksigen</strong></td><td>O₂</td><td>Unsur (gas)</td><td>Pernapasan makhluk hidup; pembakaran</td></tr>
+            <tr><td><strong>Hidrogen</strong></td><td>H₂</td><td>Unsur (gas)</td><td>Bahan bakar roket; komponen air</td></tr>
+            <tr><td><strong>Emas</strong></td><td>Au</td><td>Unsur (logam)</td><td>Perhiasan, elektronik, cadangan devisa</td></tr>
+            <tr><td><strong>Besi</strong></td><td>Fe</td><td>Unsur (logam)</td><td>Konstruksi, kendaraan, alat masak</td></tr>
+            <tr class="hl-row"><td><strong>Air</strong></td><td>H₂O</td><td>Senyawa (cair)</td><td>Pelarut universal; komponen tubuh makhluk hidup</td></tr>
+            <tr><td><strong>Garam Dapur</strong></td><td>NaCl</td><td>Senyawa (padat)</td><td>Bumbu masak; pengawet; bahan industri</td></tr>
+            <tr><td><strong>Karbon Dioksida</strong></td><td>CO₂</td><td>Senyawa (gas)</td><td>Fotosintesis tumbuhan; minuman berkarbonasi</td></tr>
+            <tr><td><strong>Glukosa</strong></td><td>C₆H₁₂O₆</td><td>Senyawa (padat)</td><td>Sumber energi utama sel tubuh</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- ══ SLIDE 5 — CAMPURAN ══ -->
+    <div class="slide" id="sl5">
+      <div class="slide-content">
+        <div class="slide-label">Slide 5 · Campuran</div>
+        <h2 class="slide-heading">Campuran — Homogen &amp; Heterogen</h2>
+        <div class="hl hl-navy">
+          <span class="hl-icon">🥤</span>
+          <span><strong>Campuran</strong> adalah gabungan dua atau lebih zat yang tidak bereaksi secara kimia — masing-masing zat masih mempertahankan sifat aslinya dan dapat dipisahkan kembali.</span>
+        </div>
+        <table class="tbl">
+          <thead><tr><th></th><th>Campuran Homogen</th><th>Campuran Heterogen</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Ciri</strong></td><td>Serba sama; komponen tidak terlihat terpisah</td><td>Tidak serba sama; komponen terlihat terpisah</td></tr>
+            <tr><td><strong>Contoh</strong></td><td>Larutan gula, air garam, udara, sirop, paduan logam (kuningan)</td><td>Pasir + air, minyak + air, campuran kacang + beras</td></tr>
+            <tr class="hl-row"><td><strong>Cara Pisah</strong></td><td>Distilasi, penguapan, kromatografi</td><td>Penyaringan, pengendapan, dekantasi</td></tr>
+          </tbody>
+        </table>
+        <div class="hl hl-gold">
+          <span class="hl-icon">💡</span>
+          <span><strong>Suspensi</strong> = campuran heterogen dengan partikel kasar yang bisa mengendap (contoh: air + tanah). <strong>Koloid</strong> = antara larutan dan suspensi — partikel tersebar merata tapi tidak larut (contoh: susu, asap, awan, agar-agar).</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ SLIDE 6 — PERUBAHAN KIMIA & FISIKA ══ -->
+    <div class="slide" id="sl6">
+      <div class="slide-content">
+        <div class="slide-label">Slide 6 · Perubahan Zat</div>
+        <h2 class="slide-heading">Perubahan Fisika &amp; Perubahan Kimia</h2>
+        <table class="tbl">
+          <thead><tr><th></th><th>Perubahan Fisika</th><th>Perubahan Kimia</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Definisi</strong></td><td>Perubahan wujud atau bentuk zat tanpa menghasilkan zat baru</td><td>Perubahan yang menghasilkan zat baru dengan sifat berbeda</td></tr>
+            <tr><td><strong>Zat Baru</strong></td><td>Tidak ada</td><td>Ada (sifat berbeda dari semula)</td></tr>
+            <tr><td><strong>Dapat Dikembalikan</strong></td><td>Umumnya bisa (reversibel)</td><td>Umumnya tidak bisa (ireversibel)</td></tr>
+            <tr class="hl-row"><td><strong>Contoh</strong></td><td>Es mencair, air menguap, beras ditumbuk jadi tepung, kertas digunting, gelas pecah</td><td>Kayu terbakar, besi berkarat, singkong menjadi tape, telur dimasak, makanan membusuk</td></tr>
+          </tbody>
+        </table>
+        <div class="hl hl-orange">
+          <span class="hl-icon">🔥</span>
+          <span>Tanda-tanda perubahan kimia: timbul <strong>gas</strong> (gelembung), timbul <strong>endapan</strong>, terjadi <strong>perubahan warna</strong>, terjadi <strong>perubahan suhu</strong> yang signifikan, atau timbul <strong>cahaya</strong>.</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ SLIDE 7 — ASAM & BASA ══ -->
+    <div class="slide" id="sl7">
+      <div class="slide-content">
+        <div class="slide-label">Slide 7 · Asam &amp; Basa</div>
+        <h2 class="slide-heading">Asam, Basa, &amp; Skala pH</h2>
+        <div class="hl hl-purple">
+          <span class="hl-icon">🧪</span>
+          <span>Zat dapat bersifat <strong>asam</strong> (pH &lt; 7), <strong>netral</strong> (pH = 7), atau <strong>basa/alkali</strong> (pH &gt; 7). Skala pH berkisar dari 0 (sangat asam) hingga 14 (sangat basa).</span>
+        </div>
+        <table class="tbl">
+          <thead><tr><th>Sifat</th><th>Ciri</th><th>Contoh dalam Kehidupan</th><th>pH</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Asam Kuat</strong></td><td>Sangat korosif; berbahaya</td><td>Asam klorida (HCl) di lambung, asam sulfat (aki)</td><td>0–3</td></tr>
+            <tr><td><strong>Asam Lemah</strong></td><td>Rasa masam; tidak korosif</td><td>Asam cuka (CH₃COOH), asam sitrat (jeruk), asam laktat (yoghurt)</td><td>3–6</td></tr>
+            <tr class="hl-row"><td><strong>Netral</strong></td><td>Tidak asam, tidak basa</td><td>Air murni (H₂O)</td><td>7</td></tr>
+            <tr><td><strong>Basa Lemah</strong></td><td>Rasa pahit; licin di tangan</td><td>Sabun, deterjen, soda kue (NaHCO₃), air kapur</td><td>8–11</td></tr>
+            <tr><td><strong>Basa Kuat</strong></td><td>Sangat korosif; berbahaya</td><td>Natrium hidroksida (NaOH) untuk sabun industri</td><td>12–14</td></tr>
+          </tbody>
+        </table>
+        <div class="hl hl-gold">
+          <span class="hl-icon">🌸</span>
+          <span><strong>Indikator alami</strong> untuk menguji asam-basa: ekstrak kol ungu (merah di asam, hijau di basa), kunyit, dan bunga kembang sepatu. Indikator buatan: kertas lakmus merah (biru di basa) dan lakmus biru (merah di asam).</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ SLIDE 8 — REAKSI KIMIA ══ -->
+    <div class="slide" id="sl8">
+      <div class="slide-content">
+        <div class="slide-label">Slide 8 · Reaksi Kimia</div>
+        <h2 class="slide-heading">Reaksi Kimia dalam Kehidupan Sehari-hari</h2>
+        <div class="hl hl-blue">
+          <span class="hl-icon">⚡</span>
+          <span>Reaksi kimia terjadi ketika zat-zat bereaksi membentuk zat baru. Ada reaksi yang <strong>melepas panas (eksotermik)</strong> dan yang <strong>menyerap panas (endotermik)</strong>.</span>
+        </div>
+        <table class="tbl">
+          <thead><tr><th>Reaksi</th><th>Jenis</th><th>Penjelasan</th></tr></thead>
+          <tbody>
+            <tr class="hl-row"><td><strong>🔥 Pembakaran</strong></td><td>Eksotermik</td><td>Bahan + O₂ → CO₂ + H₂O + energi. Contoh: kayu terbakar, lilin menyala, bensin di mesin</td></tr>
+            <tr><td><strong>🧪 Fermentasi</strong></td><td>Biokimia</td><td>Gula + ragi → alkohol + CO₂. Contoh: tapai singkong, tempe, yoghurt, roti mengembang</td></tr>
+            <tr><td><strong>🟤 Korosi (Karat)</strong></td><td>Oksidasi</td><td>Besi + O₂ + H₂O → Fe₂O₃ (karat). Dicegah dengan cat, galvanisasi, atau bahan anti karat</td></tr>
+            <tr><td><strong>🌿 Fotosintesis</strong></td><td>Endotermik</td><td>CO₂ + H₂O + cahaya → glukosa + O₂. Menyerap energi cahaya Matahari</td></tr>
+            <tr><td><strong>💨 Respirasi Sel</strong></td><td>Eksotermik</td><td>Glukosa + O₂ → CO₂ + H₂O + energi (ATP). Kebalikan fotosintesis; terjadi di sel semua makhluk hidup</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- ══ SLIDE 9 — UNSUR TABEL PERIODIK ══ -->
+    <div class="slide" id="sl9">
+      <div class="slide-content">
+        <div class="slide-label">Slide 9 · Tabel Periodik</div>
+        <h2 class="slide-heading">Unsur-Unsur Penting dalam Tabel Periodik</h2>
+        <div class="hl hl-navy">
+          <span class="hl-icon">📋</span>
+          <span>Tabel Periodik disusun oleh <strong>Dmitri Mendeleev</strong> (Rusia, 1869). Berisi <strong>118 unsur</strong> yang tersusun berdasarkan nomor atom dan sifat kimianya.</span>
+        </div>
+        <table class="tbl">
+          <thead><tr><th>Unsur</th><th>Lambang</th><th>Nomor Atom</th><th>Sifat &amp; Kegunaan</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Hidrogen</strong></td><td>H</td><td>1</td><td>Unsur teringan; komponen air; bahan bakar masa depan</td></tr>
+            <tr><td><strong>Karbon</strong></td><td>C</td><td>6</td><td>Dasar kehidupan organik; intan, grafit, arang</td></tr>
+            <tr><td><strong>Nitrogen</strong></td><td>N</td><td>7</td><td>78% atmosfer Bumi; pupuk; protein</td></tr>
+            <tr><td><strong>Oksigen</strong></td><td>O</td><td>8</td><td>Pernapasan; pembakaran; 21% atmosfer Bumi</td></tr>
+            <tr class="hl-row"><td><strong>Natrium</strong></td><td>Na</td><td>11</td><td>Komponen garam dapur (NaCl); penting untuk saraf</td></tr>
+            <tr><td><strong>Besi</strong></td><td>Fe</td><td>26</td><td>Logam terbanyak digunakan; komponen hemoglobin darah</td></tr>
+            <tr><td><strong>Emas</strong></td><td>Au</td><td>79</td><td>Logam mulia; tidak berkarat; konduktor listrik baik</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- ══ SLIDE 10 — KIMIA DAPUR ══ -->
+    <div class="slide" id="sl10">
+      <div class="slide-content">
+        <div class="slide-label">Slide 10 · Kimia dalam Kehidupan</div>
+        <h2 class="slide-heading">Kimia di Dapur &amp; Kehidupan Sehari-hari</h2>
+        <div class="hl hl-orange">
+          <span class="hl-icon">🍳</span>
+          <span>Kimia ada di mana-mana dalam kehidupan sehari-hari — dari memasak, membersihkan, hingga bernapas. Kita adalah "pabrik kimia" berjalan!</span>
+        </div>
+        <div class="zat-grid">
+          <div class="zat-card" style="--zc:#f9a825">
+            <div class="zc-icon">🧂</div>
+            <div class="zc-name">Garam Dapur</div>
+            <div class="zc-sub">NaCl — Natrium Klorida</div>
+            <div class="zc-desc">Penyedap rasa, pengawet alami, cairan infus. Dihasilkan dari penguapan air laut.</div>
+          </div>
+          <div class="zat-card" style="--zc:#c8a84b">
+            <div class="zc-icon">🍚</div>
+            <div class="zc-name">Gula</div>
+            <div class="zc-sub">C₁₂H₂₂O₁₁ — Sukrosa</div>
+            <div class="zc-desc">Pemanis; sumber energi cepat. Dari tebu atau bit gula. Dipecah jadi glukosa dan fruktosa saat dicerna.</div>
+          </div>
+          <div class="zat-card" style="--zc:#2e7d32">
+            <div class="zc-icon">🥤</div>
+            <div class="zc-name">Soda Kue</div>
+            <div class="zc-sub">NaHCO₃ — Natrium Bikarbonat</div>
+            <div class="zc-desc">Membuat kue mengembang. Bereaksi dengan asam (cuka/sari jeruk) menghasilkan CO₂ yang membuat adonan ringan.</div>
+          </div>
+          <div class="zat-card" style="--zc:#1565c0">
+            <div class="zc-icon">🧹</div>
+            <div class="zc-name">Sabun</div>
+            <div class="zc-sub">Garam asam lemak</div>
+            <div class="zc-desc">Membersihkan kotoran berlemak karena punya bagian yang suka air (hidrofilik) dan suka minyak (hidrofobik) sekaligus.</div>
+          </div>
+        </div>
+        <div class="hl hl-teal">
+          <span class="hl-icon">🍋</span>
+          <span>Mengapa roti mengembang? Ragi memfermentasi gula → menghasilkan CO₂ → gelembung CO₂ terperangkap dalam adonan → roti mengembang dan berpori!</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ SLIDE 11 — BAHAN BERBAHAYA ══ -->
+    <div class="slide" id="sl11">
+      <div class="slide-content">
+        <div class="slide-label">Slide 11 · Keselamatan Kimia</div>
+        <h2 class="slide-heading">Bahan Kimia Berbahaya &amp; Keselamatan</h2>
+        <div class="hl hl-orange">
+          <span class="hl-icon">⚠️</span>
+          <span>Beberapa bahan kimia berbahaya jika salah digunakan. Kenali simbol bahaya dan selalu ikuti aturan keselamatan saat bereksperimen!</span>
+        </div>
+        <table class="tbl">
+          <thead><tr><th>Simbol</th><th>Artinya</th><th>Contoh Bahan</th><th>Tindakan Aman</th></tr></thead>
+          <tbody>
+            <tr><td><strong>🔥 Mudah Terbakar</strong></td><td>Flammable</td><td>Alkohol, bensin, eter</td><td>Jauhkan dari api; simpan di tempat sejuk</td></tr>
+            <tr><td><strong>☠️ Beracun</strong></td><td>Toxic</td><td>Merkuri (Hg), pestisida, klorin</td><td>Hindari kontak; gunakan APD (masker, sarung tangan)</td></tr>
+            <tr class="hl-row"><td><strong>⚡ Korosif</strong></td><td>Corrosive</td><td>Asam klorida (HCl), asam sulfat (H₂SO₄)</td><td>Pakai sarung tangan dan kacamata; jangan dihirup</td></tr>
+            <tr><td><strong>💥 Mudah Meledak</strong></td><td>Explosive</td><td>Bubuk mesiu, hidrogen peroksida pekat</td><td>Simpan terpisah; hindari gesekan dan panas</td></tr>
+          </tbody>
+        </table>
+        <div class="hl hl-green">
+          <span class="hl-icon">🧤</span>
+          <span>Aturan keselamatan di laboratorium: selalu pakai <strong>jas lab, kacamata pelindung, dan sarung tangan</strong>. Jangan mencium atau mencicipi bahan kimia sembarangan. Cuci tangan setelah bereksperimen.</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ SLIDE 12 — RANGKUMAN ══ -->
+    <div class="slide" id="sl12">
+      <div class="slide-content">
+        <div class="slide-label">Slide 12 · Rangkuman</div>
+        <h2 class="slide-heading">Rangkuman Kimia Dasar</h2>
+        <table class="tbl">
+          <thead><tr><th>Topik</th><th>Poin Kunci</th></tr></thead>
+          <tbody>
+            <tr><td><strong>⚛️ Materi</strong></td><td>Atom → Molekul → Unsur / Senyawa / Campuran</td></tr>
+            <tr><td><strong>🧊 Wujud Zat</strong></td><td>Padat (tetap), Cair (mengikuti wadah), Gas (mengisi ruang) · perubahan wujud: mencair, membeku, menguap, mengembun, menyublim</td></tr>
+            <tr><td><strong>🥤 Campuran</strong></td><td>Homogen (serba sama, contoh: sirop) vs Heterogen (tidak serba sama, contoh: pasir+air)</td></tr>
+            <tr class="hl-row"><td><strong>🔥 Perubahan</strong></td><td>Fisika (tidak terbentuk zat baru, bisa balik) vs Kimia (terbentuk zat baru, umumnya tidak bisa balik)</td></tr>
+            <tr><td><strong>🧪 Asam-Basa</strong></td><td>Asam (pH &lt; 7, rasa masam) · Netral (pH = 7, air murni) · Basa (pH &gt; 7, rasa pahit, licin)</td></tr>
+            <tr><td><strong>⚗️ Reaksi Kimia</strong></td><td>Pembakaran, fermentasi, korosi, fotosintesis, respirasi sel</td></tr>
+          </tbody>
+        </table>
+        <div class="hl hl-green">
+          <span class="hl-icon">✅</span>
+          <span>Selamat! Kamu sudah mempelajari <strong>kimia dasar</strong> — dari wujud zat, unsur, senyawa, campuran, asam-basa, hingga reaksi kimia dalam kehidupan sehari-hari.</span>
+        </div>
+        <a href="../soal/paket-01.html" class="cta-btn">📝 Latihan Soal Sekarang →</a>
+      </div>
+    </div>
+
+  </div><!-- /slides-wrap -->
+
+  <footer class="s-footer">
+    <button class="nav-btn prev-btn" id="btn-prev" onclick="prev()" disabled>◄ Sebelumnya</button>
+    <div class="s-hint"><kbd>←</kbd> <kbd>→</kbd> navigasi &nbsp;·&nbsp; <kbd>F</kbd> layar penuh</div>
+    <button class="nav-btn next-btn" id="btn-next" onclick="next()">Berikutnya ►</button>
+  </footer>
+
+  <script>
+    const TOTAL = 12;
+    let cur = 1;
+    function showSlide(n) {
+      const pv = document.getElementById('sl' + cur);
+      const nx = document.getElementById('sl' + n);
+      if (!nx) return;
+      pv.classList.add('leaving'); pv.classList.remove('active');
+      setTimeout(() => pv.classList.remove('leaving'), 400);
+      nx.classList.add('active'); cur = n;
+      document.getElementById('s-counter').textContent = cur + ' / ' + TOTAL;
+      document.getElementById('s-prog').style.width = (cur / TOTAL * 100).toFixed(2) + '%';
+      document.getElementById('btn-prev').disabled = (cur === 1);
+      document.getElementById('btn-next').disabled = (cur === TOTAL);
+    }
+    function next() { if (cur < TOTAL) showSlide(cur + 1); }
+    function prev() { if (cur > 1)     showSlide(cur - 1); }
+    document.addEventListener('keydown', e => {
+      if (e.code === 'ArrowRight' || e.code === 'ArrowDown') next();
+      if (e.code === 'ArrowLeft'  || e.code === 'ArrowUp')   prev();
+      if (e.code === 'KeyF') toggleFS();
+    });
+    document.getElementById('btn-fs').addEventListener('click', toggleFS);
+    function toggleFS() {
+      if (!document.fullscreenElement) document.documentElement.requestFullscreen().catch(() => {});
+      else document.exitFullscreen();
+    }
+    let ts = 0;
+    document.getElementById('slides-wrap').addEventListener('touchstart', e => { ts = e.touches[0].clientX; });
+    document.getElementById('slides-wrap').addEventListener('touchend', e => {
+      const dx = e.changedTouches[0].clientX - ts;
+      if (Math.abs(dx) > 50) { dx < 0 ? next() : prev(); }
+    });
+  </script>
+</body>
+</html>
