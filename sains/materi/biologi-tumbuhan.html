@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Biologi Tumbuhan — Materi Cerdas Cermat SDM01KKS</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { height: 100%; font-family: 'Nunito', sans-serif; }
+    :root {
+      --red:    #2e7d32; --red-dk: #005005; --red-lt: #e8f5e9;
+      --gold:   #f9a825; --navy:   #1a237e; --blue:   #1565c0;
+      --teal:   #00695c; --orange: #e65100; --brown:  #4e342e;
+      --cream:  #f8fdf8; --text:   #1a2420; --muted:  #718096; --nav-h: 58px;
+    }
+    body { background: var(--cream); color: var(--text); display: flex; flex-direction: column; height: 100vh; overflow: hidden; }
+    .s-nav { height: var(--nav-h); flex-shrink: 0; display: flex; align-items: center; gap: 1rem; padding: 0 1.5rem; background: var(--red); color: #fff; box-shadow: 0 2px 12px rgba(0,0,0,.25); z-index: 20; }
+    .s-nav a { color: rgba(255,255,255,.8); text-decoration: none; font-size: .85rem; }
+    .s-nav a:hover { color: #fff; }
+    .s-nav .sep { opacity: .4; }
+    .s-nav .s-title { flex: 1; font-weight: 800; font-size: .95rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .s-nav .s-counter { font-weight: 700; font-size: .85rem; background: rgba(255,255,255,.2); padding: .25rem .75rem; border-radius: 20px; white-space: nowrap; }
+    .btn-fs { background: rgba(255,255,255,.15); border: none; color: #fff; width: 34px; height: 34px; border-radius: 8px; font-size: 1rem; cursor: pointer; display: flex; align-items: center; justify-content: center; }
+    .btn-fs:hover { background: rgba(255,255,255,.3); }
+    .s-prog { height: 4px; background: rgba(255,255,255,.25); flex-shrink: 0; }
+    .s-prog-fill { height: 100%; background: var(--gold); transition: width .4s ease; }
+    .slides-wrap { flex: 1; position: relative; overflow: hidden; }
+    .slide { position: absolute; inset: 0; padding: 2.5rem 3rem; opacity: 0; transform: translateX(30px); transition: opacity .35s ease, transform .35s ease; pointer-events: none; overflow-y: auto; }
+    .slide.active { opacity: 1; transform: translateX(0); pointer-events: all; }
+    .slide.leaving { opacity: 0; transform: translateX(-30px); }
+    .slide-cover { background: linear-gradient(145deg, var(--red) 0%, var(--red-dk) 100%); color: #fff; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; gap: 1.5rem; }
+    .cover-flag { font-size: 5rem; line-height: 1; }
+    .cover-title { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 900; text-shadow: 0 2px 16px rgba(0,0,0,.3); line-height: 1.2; }
+    .cover-sub { font-size: clamp(.9rem, 2vw, 1.2rem); opacity: .85; max-width: 540px; line-height: 1.6; }
+    .cover-tag { display: inline-flex; gap: 1rem; flex-wrap: wrap; justify-content: center; margin-top: .5rem; }
+    .cover-tag span { background: rgba(255,255,255,.18); border: 1px solid rgba(255,255,255,.35); border-radius: 20px; padding: .3rem 1rem; font-size: .8rem; font-weight: 700; }
+    .slide-content { display: flex; flex-direction: column; gap: 1.5rem; max-width: 860px; margin: 0 auto; }
+    .slide-label { font-size: .72rem; text-transform: uppercase; letter-spacing: .12em; color: var(--red); font-weight: 800; }
+    .slide-heading { font-family: 'Playfair Display', serif; font-size: clamp(1.6rem, 4vw, 2.6rem); font-weight: 700; color: var(--text); line-height: 1.2; }
+    .slide-heading .sub { font-size: .55em; color: var(--muted); display: block; font-family: 'Nunito', sans-serif; font-weight: 600; margin-top: .2rem; }
+    .hl { border-radius: 12px; padding: 1rem 1.4rem; font-weight: 700; font-size: .95rem; display: flex; align-items: flex-start; gap: .75rem; line-height: 1.6; }
+    .hl-green  { background: #e8f5e9; border-left: 4px solid var(--red); color: var(--red-dk); }
+    .hl-gold   { background: #fff8e1; border-left: 4px solid var(--gold); color: #6d4c00; }
+    .hl-navy   { background: #e8eaf6; border-left: 4px solid var(--navy); color: var(--navy); }
+    .hl-teal   { background: #e0f2f1; border-left: 4px solid var(--teal); color: #004d40; }
+    .hl-blue   { background: #e3f2fd; border-left: 4px solid var(--blue); color: #0d47a1; }
+    .hl-orange { background: #fff3e0; border-left: 4px solid var(--orange); color: #8d3100; }
+    .hl-brown  { background: #efebe9; border-left: 4px solid var(--brown); color: #3e2723; }
+    .hl-icon   { font-size: 1.4rem; flex-shrink: 0; margin-top: .05rem; }
+    .facts { display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: .85rem; }
+    .fact { background: #fff; border: 1px solid #e9ecef; border-radius: 10px; padding: .85rem 1rem; }
+    .fact-label { font-size: .68rem; text-transform: uppercase; letter-spacing: .1em; color: var(--muted); margin-bottom: .25rem; }
+    .fact-value { font-weight: 800; font-size: .92rem; color: var(--text); line-height: 1.4; }
+    .tbl { width: 100%; border-collapse: collapse; font-size: .88rem; }
+    .tbl th { background: var(--red); color: #fff; padding: .6rem .9rem; text-align: left; font-weight: 700; }
+    .tbl td { padding: .55rem .9rem; border-bottom: 1px solid #f0f4f8; vertical-align: top; line-height: 1.45; }
+    .tbl tr:hover td { background: #f1f8f1; }
+    .tbl .hl-row td { background: #fff8e1; font-weight: 700; }
+    .part-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(175px, 1fr)); gap: .85rem; }
+    .part-card { background: #fff; border: 1px solid #e9ecef; border-radius: 12px; padding: .9rem 1rem; border-left: 4px solid var(--pc, #2e7d32); }
+    .pc-icon { font-size: 1.6rem; margin-bottom: .3rem; }
+    .pc-name { font-weight: 800; font-size: .88rem; color: var(--text); margin-bottom: .2rem; }
+    .pc-desc { font-size: .76rem; color: #4a5568; line-height: 1.5; }
+    .sl { list-style: none; display: flex; flex-direction: column; gap: .55rem; }
+    .sl li { display: flex; gap: .6rem; align-items: flex-start; font-size: .93rem; line-height: 1.55; }
+    .sl li::before { content: "▸"; color: var(--red); font-size: .75rem; margin-top: .25rem; flex-shrink: 0; }
+    .cta-btn { display: inline-flex; align-items: center; gap: .5rem; background: var(--red); color: #fff; padding: .75rem 1.75rem; border-radius: 10px; font-weight: 800; font-size: 1rem; text-decoration: none; transition: opacity .15s; align-self: flex-start; }
+    .cta-btn:hover { opacity: .85; }
+    .s-footer { height: 64px; flex-shrink: 0; display: flex; align-items: center; justify-content: space-between; padding: 0 1.5rem; background: #fff; border-top: 1px solid #e9ecef; }
+    .nav-btn { display: flex; align-items: center; gap: .4rem; background: none; border: 1.5px solid #e9ecef; border-radius: 10px; padding: .5rem 1.2rem; font-family: inherit; font-size: .88rem; font-weight: 700; color: var(--text); cursor: pointer; transition: background .15s, border-color .15s; }
+    .nav-btn:hover { background: #f5f5f5; border-color: #ccc; }
+    .nav-btn:disabled { opacity: .3; cursor: default; }
+    .nav-btn.next-btn { background: var(--red); color: #fff; border-color: var(--red); }
+    .nav-btn.next-btn:hover { opacity: .88; }
+    .nav-btn.next-btn:disabled { background: #ccc; border-color: #ccc; opacity: .6; }
+    .s-hint { font-size: .72rem; color: var(--muted); text-align: center; }
+    .s-hint kbd { background: #f0f4f8; border: 1px solid #ddd; border-radius: 4px; padding: 1px 5px; font-family: monospace; font-size: .68rem; }
+    @media (max-width: 600px) { .slide { padding: 1.25rem 1rem; } .s-hint { display: none; } }
+  </style>
+</head>
+<body>
+  <header class="s-nav">
+    <a href="../index.html">← Materi</a>
+    <span class="sep">›</span>
+    <span class="s-title">Biologi Tumbuhan</span>
+    <span class="s-counter" id="s-counter">1 / 12</span>
+    <button class="btn-fs" id="btn-fs" title="Layar penuh (F)">⛶</button>
+  </header>
+  <div class="s-prog"><div class="s-prog-fill" id="s-prog" style="width:8.33%"></div></div>
+
+  <div class="slides-wrap" id="slides-wrap">
+
+    <!-- ══ SLIDE 1 — COVER ══ -->
+    <div class="slide slide-cover active" id="sl1">
+      <div class="cover-flag">🌱</div>
+      <h1 class="cover-title">Biologi Tumbuhan</h1>
+      <p class="cover-sub">Mengenal bagian-bagian tumbuhan, fotosintesis, reproduksi, klasifikasi, dan peran vital tumbuhan bagi kehidupan di Bumi.</p>
+      <div class="cover-tag">
+        <span>📖 12 Slide</span>
+        <span>🔬 Sains SD</span>
+        <span>⌨️ ← → navigasi</span>
+      </div>
+    </div>
+
+    <!-- ══ SLIDE 2 — BAGIAN TUMBUHAN ══ -->
+    <div class="slide" id="sl2">
+      <div class="slide-content">
+        <div class="slide-label">Slide 2 · Bagian-Bagian Tumbuhan</div>
+        <h2 class="slide-heading">Bagian-Bagian Tumbuhan &amp; Fungsinya</h2>
+        <div class="part-grid">
+          <div class="part-card" style="--pc:#795548">
+            <div class="pc-icon">🌱</div>
+            <div class="pc-name">Akar</div>
+            <div class="pc-desc">Menyerap air dan mineral dari tanah; menopang tubuh tumbuhan; menyimpan cadangan makanan (pada beberapa tumbuhan).</div>
+          </div>
+          <div class="part-card" style="--pc:#795548">
+            <div class="pc-icon">🪵</div>
+            <div class="pc-name">Batang</div>
+            <div class="pc-desc">Menopang daun dan bunga; menyalurkan air & mineral (xilem) dari akar ke daun; menyalurkan hasil fotosintesis (floem) ke seluruh tubuh.</div>
+          </div>
+          <div class="part-card" style="--pc:#2e7d32">
+            <div class="pc-icon">🍃</div>
+            <div class="pc-name">Daun</div>
+            <div class="pc-desc">Tempat utama fotosintesis; mengandung klorofil (zat hijau); pertukaran gas (O₂ dan CO₂) melalui stomata.</div>
+          </div>
+          <div class="part-card" style="--pc:#e91e63">
+            <div class="pc-icon">🌸</div>
+            <div class="pc-name">Bunga</div>
+            <div class="pc-desc">Alat reproduksi tumbuhan; menghasilkan serbuk sari (jantan) dan sel telur (betina); menarik serangga penyerbuk.</div>
+          </div>
+          <div class="part-card" style="--pc:#f44336">
+            <div class="pc-icon">🍎</div>
+            <div class="pc-name">Buah</div>
+            <div class="pc-desc">Terbentuk dari bunga yang telah dibuahi; melindungi biji; menarik hewan untuk membantu penyebaran biji.</div>
+          </div>
+          <div class="part-card" style="--pc:#795548">
+            <div class="pc-icon">🌰</div>
+            <div class="pc-name">Biji</div>
+            <div class="pc-desc">Bakal tumbuhan baru; mengandung cadangan makanan (endosperma) untuk pertumbuhan awal; dilindungi kulit biji.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ SLIDE 3 — FOTOSINTESIS ══ -->
+    <div class="slide" id="sl3">
+      <div class="slide-content">
+        <div class="slide-label">Slide 3 · Proses Kehidupan Tumbuhan</div>
+        <h2 class="slide-heading">Fotosintesis
+          <span class="sub">Proses tumbuhan membuat makanannya sendiri</span>
+        </h2>
+        <div class="hl hl-green">
+          <span class="hl-icon">☀️</span>
+          <span>Fotosintesis adalah proses tumbuhan mengubah <strong>cahaya Matahari, air, dan CO₂</strong> menjadi <strong>glukosa (gula)</strong> dan <strong>oksigen</strong> dengan bantuan klorofil.</span>
+        </div>
+        <div style="background:#fff;border:2px solid #c8e6c9;border-radius:14px;padding:1.25rem 1.75rem;text-align:center;font-size:.95rem;">
+          <div style="font-weight:800;color:#2e7d32;margin-bottom:.75rem;font-family:'Playfair Display',serif;">Persamaan Fotosintesis</div>
+          <p style="line-height:2.2;font-size:1rem;">
+            <span style="background:#e3f2fd;padding:.2rem .6rem;border-radius:6px;font-weight:700;">6CO₂</span>
+            + <span style="background:#e3f2fd;padding:.2rem .6rem;border-radius:6px;font-weight:700;">6H₂O</span>
+            + <strong>Cahaya Matahari</strong>
+            <span style="font-size:1.3rem;margin:0 .5rem">→</span>
+            <span style="background:#e8f5e9;padding:.2rem .6rem;border-radius:6px;font-weight:700;">C₆H₁₂O₆</span>
+            + <span style="background:#e8f5e9;padding:.2rem .6rem;border-radius:6px;font-weight:700;">6O₂</span>
+          </p>
+          <p style="font-size:.82rem;color:#718096;margin-top:.5rem">Karbon dioksida + Air + Cahaya → Glukosa + Oksigen</p>
+        </div>
+        <div class="facts">
+          <div class="fact"><div class="fact-label">Tempat Berlangsung</div><div class="fact-value">Kloroplas di dalam sel daun</div></div>
+          <div class="fact"><div class="fact-label">Zat yang Diperlukan</div><div class="fact-value">CO₂, H₂O, cahaya Matahari, klorofil</div></div>
+          <div class="fact"><div class="fact-label">Hasil Fotosintesis</div><div class="fact-value">Glukosa (makanan) + O₂ (dilepas ke udara)</div></div>
+          <div class="fact"><div class="fact-label">Klorofil</div><div class="fact-value">Zat hijau daun yang menyerap cahaya</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ SLIDE 4 — TRANSPORTASI AIR ══ -->
+    <div class="slide" id="sl4">
+      <div class="slide-content">
+        <div class="slide-label">Slide 4 · Sistem Transportasi Tumbuhan</div>
+        <h2 class="slide-heading">Xilem &amp; Floem — Transportasi Tumbuhan</h2>
+        <div class="hl hl-blue">
+          <span class="hl-icon">💧</span>
+          <span>Tumbuhan memiliki dua jenis pembuluh angkut yang berfungsi seperti sistem peredaran darah pada manusia: <strong>Xilem</strong> dan <strong>Floem</strong>.</span>
+        </div>
+        <table class="tbl">
+          <thead><tr><th></th><th>Xilem</th><th>Floem</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Fungsi</strong></td><td>Mengangkut air dan mineral dari akar ke daun (ke atas)</td><td>Mengangkut hasil fotosintesis (glukosa) dari daun ke seluruh tubuh (ke atas dan bawah)</td></tr>
+            <tr><td><strong>Arah Aliran</strong></td><td>Satu arah: akar → batang → daun</td><td>Dua arah: dari daun ke seluruh bagian tumbuhan</td></tr>
+            <tr class="hl-row"><td><strong>Isi</strong></td><td>Air dan mineral terlarut</td><td>Larutan gula (hasil fotosintesis)</td></tr>
+          </tbody>
+        </table>
+        <div class="hl hl-gold">
+          <span class="hl-icon">🌳</span>
+          <span>Air naik dari akar ke pucuk pohon yang tinggi karena <strong>daya hisap daun (transpirasi)</strong> dan <strong>daya kapilaritas</strong> pembuluh xilem yang sangat sempit. Pohon raksasa bisa menaikkan air hingga 100 meter!</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ SLIDE 5 — REPRODUKSI GENERATIF ══ -->
+    <div class="slide" id="sl5">
+      <div class="slide-content">
+        <div class="slide-label">Slide 5 · Reproduksi Tumbuhan</div>
+        <h2 class="slide-heading">Reproduksi Generatif (Melalui Biji)</h2>
+        <div class="hl hl-green">
+          <span class="hl-icon">🌸</span>
+          <span>Reproduksi generatif adalah perkembangbiakan melalui <strong>penyerbukan dan pembuahan</strong> — serbuk sari bertemu sel telur di putik, menghasilkan biji dan buah.</span>
+        </div>
+        <table class="tbl">
+          <thead><tr><th>Cara Penyerbukan</th><th>Perantara</th><th>Contoh Tumbuhan</th></tr></thead>
+          <tbody>
+            <tr class="hl-row"><td><strong>Entomogami</strong></td><td>Serangga (lebah, kupu-kupu)</td><td>Bunga mawar, mangga, rambutan, durian</td></tr>
+            <tr><td><strong>Anemogami</strong></td><td>Angin</td><td>Padi, jagung, rumput, kelapa sawit</td></tr>
+            <tr><td><strong>Ornitogami</strong></td><td>Burung</td><td>Pisang, pepaya, bunga sepatu</td></tr>
+            <tr><td><strong>Hidrogami</strong></td><td>Air</td><td>Teratai, hydrilla, ganggang</td></tr>
+            <tr><td><strong>Antropogami</strong></td><td>Manusia (buatan)</td><td>Vanili, anggrek, padi hibrida</td></tr>
+          </tbody>
+        </table>
+        <div class="hl hl-gold">
+          <span class="hl-icon">🐝</span>
+          <span>Lebah madu adalah penyerbuk terpenting di dunia — bertanggung jawab atas penyerbukan sekitar <strong>1/3 seluruh tanaman pangan</strong> yang dikonsumsi manusia.</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ SLIDE 6 — REPRODUKSI VEGETATIF ══ -->
+    <div class="slide" id="sl6">
+      <div class="slide-content">
+        <div class="slide-label">Slide 6 · Reproduksi Tumbuhan</div>
+        <h2 class="slide-heading">Reproduksi Vegetatif (Tanpa Biji)</h2>
+        <div class="hl hl-teal">
+          <span class="hl-icon">🌿</span>
+          <span>Reproduksi vegetatif adalah perkembangbiakan tanpa melalui biji — menggunakan bagian tubuh tumbuhan seperti akar, batang, atau daun. Menghasilkan tanaman baru yang identik dengan induknya.</span>
+        </div>
+        <table class="tbl">
+          <thead><tr><th>Cara</th><th>Contoh Tumbuhan</th><th>Bagian yang Digunakan</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Stek</strong></td><td>Singkong, mawar, tebu</td><td>Potongan batang ditanam langsung di tanah</td></tr>
+            <tr><td><strong>Cangkok</strong></td><td>Mangga, jambu, rambutan</td><td>Batang dikupas dan dibungkus tanah sampai berakar</td></tr>
+            <tr><td><strong>Tunas</strong></td><td>Pisang, bambu, nanas</td><td>Tunas yang tumbuh di pangkal batang induk</td></tr>
+            <tr class="hl-row"><td><strong>Rhizoma (Akar Rimpang)</strong></td><td>Jahe, kunyit, lengkuas</td><td>Batang yang menjalar di bawah tanah</td></tr>
+            <tr><td><strong>Umbi Lapis</strong></td><td>Bawang merah, bawang putih</td><td>Lapisan-lapisan di pangkal batang yang membengkak</td></tr>
+            <tr><td><strong>Stolon (Geragih)</strong></td><td>Stroberi, rumput teki</td><td>Batang menjalar di permukaan tanah</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- ══ SLIDE 7 — KLASIFIKASI TUMBUHAN ══ -->
+    <div class="slide" id="sl7">
+      <div class="slide-content">
+        <div class="slide-label">Slide 7 · Klasifikasi Tumbuhan</div>
+        <h2 class="slide-heading">Klasifikasi Tumbuhan</h2>
+        <div class="hl hl-navy">
+          <span class="hl-icon">🌿</span>
+          <span>Tumbuhan diklasifikasikan berdasarkan ada tidaknya pembuluh angkut, cara berkembang biak, dan ciri-ciri lainnya.</span>
+        </div>
+        <table class="tbl">
+          <thead><tr><th>Kelompok</th><th>Ciri Utama</th><th>Contoh</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Lumut (Bryophyta)</strong></td><td>Tidak punya pembuluh angkut; tidak berbunga; hidup di tempat lembap</td><td>Lumut daun, lumut hati</td></tr>
+            <tr><td><strong>Paku-pakuan (Pteridophyta)</strong></td><td>Punya pembuluh angkut; tidak berbunga; berkembang biak dengan spora</td><td>Pakis, paku tanduk rusa, suplir</td></tr>
+            <tr class="hl-row"><td><strong>Berbiji Terbuka (Gymnospermae)</strong></td><td>Biji tidak terbungkus buah; berupa tumbuhan berdaun jarum</td><td>Pinus, cemara, melinjo, pakis haji</td></tr>
+            <tr><td><strong>Berbiji Tertutup (Angiospermae)</strong></td><td>Biji terbungkus buah; paling banyak jenisnya</td><td>Mangga, padi, jagung, mawar (hampir semua tumbuhan sehari-hari)</td></tr>
+          </tbody>
+        </table>
+        <div class="hl hl-gold">
+          <span class="hl-icon">💡</span>
+          <span>Angiospermae (berbiji tertutup) dibagi dua: <strong>Monokotil</strong> (biji berkeping satu, tulang daun sejajar) contoh: padi, jagung, kelapa — dan <strong>Dikotil</strong> (biji berkeping dua, tulang daun menjari) contoh: mangga, kedelai, kacang.</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ SLIDE 8 — GERAK TUMBUHAN ══ -->
+    <div class="slide" id="sl8">
+      <div class="slide-content">
+        <div class="slide-label">Slide 8 · Gerak Tumbuhan</div>
+        <h2 class="slide-heading">Gerak pada Tumbuhan</h2>
+        <div class="hl hl-green">
+          <span class="hl-icon">🌻</span>
+          <span>Meskipun tidak bisa berpindah tempat, tumbuhan dapat bergerak dalam merespons rangsangan dari lingkungan. Gerak ini disebut <strong>tropisme, taksis, dan nasti</strong>.</span>
+        </div>
+        <table class="tbl">
+          <thead><tr><th>Jenis Gerak</th><th>Rangsangan</th><th>Contoh</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Fototropisme (+)</strong></td><td>Cahaya — batang tumbuh ke arah cahaya</td><td>Bunga matahari menghadap Matahari; tunas bengkok ke jendela</td></tr>
+            <tr><td><strong>Geotropisme (+)</strong></td><td>Gravitasi — akar tumbuh ke bawah (menuju gravitasi)</td><td>Akar selalu tumbuh ke dalam tanah</td></tr>
+            <tr class="hl-row"><td><strong>Tigmotropisme</strong></td><td>Sentuhan — batang membelit penopang</td><td>Sulur anggur, kacang panjang membelit tiang</td></tr>
+            <tr><td><strong>Seismonasti</strong></td><td>Sentuhan/getaran — gerak spontan</td><td>Daun putri malu (Mimosa pudica) menguncup saat disentuh</td></tr>
+            <tr><td><strong>Fotonasti</strong></td><td>Intensitas cahaya — bukan arah</td><td>Bunga tulip mekar siang hari, menutup malam hari</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- ══ SLIDE 9 — ADAPTASI TUMBUHAN ══ -->
+    <div class="slide" id="sl9">
+      <div class="slide-content">
+        <div class="slide-label">Slide 9 · Adaptasi Tumbuhan</div>
+        <h2 class="slide-heading">Adaptasi Tumbuhan terhadap Lingkungan</h2>
+        <div class="part-grid">
+          <div class="part-card" style="--pc:#795548">
+            <div class="pc-icon">🌵</div>
+            <div class="pc-name">Kaktus (Xerofit)</div>
+            <div class="pc-desc">Hidup di gurun kering. Daun berubah jadi duri (mengurangi penguapan), batang tebal menyimpan air, akar panjang menyebar luas.</div>
+          </div>
+          <div class="part-card" style="--pc:#1565c0">
+            <div class="pc-icon">🪷</div>
+            <div class="pc-name">Teratai (Hidrofit)</div>
+            <div class="pc-desc">Hidup di air. Daun lebar mengapung di permukaan air untuk fotosintesis. Batang berongga untuk menyalurkan udara ke akar.</div>
+          </div>
+          <div class="part-card" style="--pc:#2e7d32">
+            <div class="pc-icon">🌿</div>
+            <div class="pc-name">Tumbuhan Tropis (Mesofit)</div>
+            <div class="pc-desc">Hidup di lingkungan sedang. Daun lebar dan banyak untuk memaksimalkan fotosintesis. Contoh: mangga, jambu, pepaya.</div>
+          </div>
+          <div class="part-card" style="--pc:#546e7a">
+            <div class="pc-icon">🌾</div>
+            <div class="pc-name">Mangrove (Halofit)</div>
+            <div class="pc-desc">Hidup di air payau/asin. Akar napas (pneumatofor) muncul ke permukaan untuk menyerap oksigen dari udara.</div>
+          </div>
+        </div>
+        <div class="hl hl-orange">
+          <span class="hl-icon">🌺</span>
+          <span>Tumbuhan <strong>karnivora</strong> (pemakan serangga) beradaptasi di tanah miskin nitrogen — contoh: <em>Dionaea muscipula</em> (Venus flytrap), Kantong Semar, dan Sundew. Mereka mendapat nitrogen dari serangga yang ditangkap!</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ SLIDE 10 — PERAN TUMBUHAN ══ -->
+    <div class="slide" id="sl10">
+      <div class="slide-content">
+        <div class="slide-label">Slide 10 · Peran Tumbuhan</div>
+        <h2 class="slide-heading">Peran Penting Tumbuhan bagi Kehidupan</h2>
+        <div class="hl hl-green">
+          <span class="hl-icon">🌳</span>
+          <span>Tumbuhan adalah <strong>produsen utama</strong> dalam ekosistem — satu-satunya organisme yang bisa membuat makanan sendiri dari sumber anorganik melalui fotosintesis.</span>
+        </div>
+        <table class="tbl">
+          <thead><tr><th>Peran</th><th>Penjelasan</th><th>Contoh</th></tr></thead>
+          <tbody>
+            <tr class="hl-row"><td><strong>Penghasil O₂</strong></td><td>Fotosintesis menghasilkan oksigen yang dihirup semua makhluk hidup</td><td>Hutan Amazon menghasilkan 20% oksigen Bumi</td></tr>
+            <tr><td><strong>Sumber Pangan</strong></td><td>Menyediakan karbohidrat, protein, vitamin, dan mineral</td><td>Padi, jagung, sayuran, buah-buahan</td></tr>
+            <tr><td><strong>Obat-obatan</strong></td><td>Bahan aktif obat banyak berasal dari tumbuhan</td><td>Kina (antimalaria), jahe, temulawak, lidah buaya</td></tr>
+            <tr><td><strong>Penyerap CO₂</strong></td><td>Menyerap karbon dioksida — mengurangi efek rumah kaca</td><td>Hutan tropis Indonesia menyerap jutaan ton CO₂/tahun</td></tr>
+            <tr><td><strong>Pencegah Erosi</strong></td><td>Akar tumbuhan mencengkeram tanah, mencegah longsor dan banjir</td><td>Hutan mangrove melindungi pantai dari abrasi</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- ══ SLIDE 11 — TANAMAN PANGAN ══ -->
+    <div class="slide" id="sl11">
+      <div class="slide-content">
+        <div class="slide-label">Slide 11 · Tanaman Pangan &amp; Obat</div>
+        <h2 class="slide-heading">Tanaman Pangan &amp; Obat Tradisional Indonesia</h2>
+        <table class="tbl">
+          <thead><tr><th>Tanaman</th><th>Nama Ilmiah</th><th>Manfaat</th></tr></thead>
+          <tbody>
+            <tr class="hl-row"><td><strong>🌾 Padi</strong></td><td>Oryza sativa</td><td>Makanan pokok 3,5 miliar orang di dunia; beras putih, merah, hitam</td></tr>
+            <tr><td><strong>🌽 Jagung</strong></td><td>Zea mays</td><td>Pangan, pakan ternak, tepung, minyak; tanaman C4 yang efisien</td></tr>
+            <tr><td><strong>🫚 Kelapa Sawit</strong></td><td>Elaeis guineensis</td><td>Minyak goreng, margarin; Indonesia penghasil terbesar dunia</td></tr>
+            <tr><td><strong>🫚 Jahe</strong></td><td>Zingiber officinale</td><td>Rempah sekaligus obat tradisional; menghangatkan, anti-mual, anti-inflamasi</td></tr>
+            <tr><td><strong>🌿 Kunyit</strong></td><td>Curcuma longa</td><td>Pewarna alami kuning; antibakteri; bahan jamu; curcumin bersifat anti-kanker</td></tr>
+            <tr><td><strong>🌿 Lidah Buaya</strong></td><td>Aloe vera</td><td>Gel menyembuhkan luka bakar, melembabkan kulit, menyuburkan rambut</td></tr>
+            <tr><td><strong>🌿 Temulawak</strong></td><td>Curcuma zanthorrhiza</td><td>Meningkatkan nafsu makan; melindungi hati (hepatoprotektor)</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- ══ SLIDE 12 — RANGKUMAN ══ -->
+    <div class="slide" id="sl12">
+      <div class="slide-content">
+        <div class="slide-label">Slide 12 · Rangkuman</div>
+        <h2 class="slide-heading">Rangkuman Biologi Tumbuhan</h2>
+        <table class="tbl">
+          <thead><tr><th>Topik</th><th>Poin Kunci</th></tr></thead>
+          <tbody>
+            <tr><td><strong>🌱 Bagian Tumbuhan</strong></td><td>Akar (serap air), batang (angkut & penyangga), daun (fotosintesis), bunga (reproduksi), buah (pelindung biji)</td></tr>
+            <tr class="hl-row"><td><strong>☀️ Fotosintesis</strong></td><td>CO₂ + H₂O + cahaya → glukosa + O₂ · berlangsung di kloroplas · menggunakan klorofil</td></tr>
+            <tr><td><strong>💧 Transportasi</strong></td><td>Xilem: air & mineral (akar→daun) · Floem: glukosa (daun→seluruh tubuh)</td></tr>
+            <tr><td><strong>🌸 Reproduksi</strong></td><td>Generatif (biji, penyerbukan) · Vegetatif (stek, cangkok, tunas, rhizoma, umbi)</td></tr>
+            <tr><td><strong>🌿 Klasifikasi</strong></td><td>Lumut → Paku → Gymnospermae → Angiospermae (Monokotil & Dikotil)</td></tr>
+            <tr><td><strong>🌻 Gerak</strong></td><td>Fototropisme (cahaya) · Geotropisme (gravitasi) · Seismonasti (sentuhan: putri malu)</td></tr>
+          </tbody>
+        </table>
+        <div class="hl hl-green">
+          <span class="hl-icon">✅</span>
+          <span>Selamat! Kamu sudah mempelajari <strong>biologi tumbuhan</strong> — dari bagian-bagian, fotosintesis, reproduksi, gerak, adaptasi, hingga peran tumbuhan bagi kehidupan.</span>
+        </div>
+        <a href="../soal/paket-01.html" class="cta-btn">📝 Latihan Soal Sekarang →</a>
+      </div>
+    </div>
+
+  </div><!-- /slides-wrap -->
+
+  <footer class="s-footer">
+    <button class="nav-btn prev-btn" id="btn-prev" onclick="prev()" disabled>◄ Sebelumnya</button>
+    <div class="s-hint"><kbd>←</kbd> <kbd>→</kbd> navigasi &nbsp;·&nbsp; <kbd>F</kbd> layar penuh</div>
+    <button class="nav-btn next-btn" id="btn-next" onclick="next()">Berikutnya ►</button>
+  </footer>
+
+  <script>
+    const TOTAL = 12;
+    let cur = 1;
+    function showSlide(n) {
+      const pv = document.getElementById('sl' + cur);
+      const nx = document.getElementById('sl' + n);
+      if (!nx) return;
+      pv.classList.add('leaving'); pv.classList.remove('active');
+      setTimeout(() => pv.classList.remove('leaving'), 400);
+      nx.classList.add('active'); cur = n;
+      document.getElementById('s-counter').textContent = cur + ' / ' + TOTAL;
+      document.getElementById('s-prog').style.width = (cur / TOTAL * 100).toFixed(2) + '%';
+      document.getElementById('btn-prev').disabled = (cur === 1);
+      document.getElementById('btn-next').disabled = (cur === TOTAL);
+    }
+    function next() { if (cur < TOTAL) showSlide(cur + 1); }
+    function prev() { if (cur > 1)     showSlide(cur - 1); }
+    document.addEventListener('keydown', e => {
+      if (e.code === 'ArrowRight' || e.code === 'ArrowDown') next();
+      if (e.code === 'ArrowLeft'  || e.code === 'ArrowUp')   prev();
+      if (e.code === 'KeyF') toggleFS();
+    });
+    document.getElementById('btn-fs').addEventListener('click', toggleFS);
+    function toggleFS() {
+      if (!document.fullscreenElement) document.documentElement.requestFullscreen().catch(() => {});
+      else document.exitFullscreen();
+    }
+    let ts = 0;
+    document.getElementById('slides-wrap').addEventListener('touchstart', e => { ts = e.touches[0].clientX; });
+    document.getElementById('slides-wrap').addEventListener('touchend', e => {
+      const dx = e.changedTouches[0].clientX - ts;
+      if (Math.abs(dx) > 50) { dx < 0 ? next() : prev(); }
+    });
+  </script>
+</body>
+</html>
