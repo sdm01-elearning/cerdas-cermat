@@ -1,0 +1,3872 @@
+{
+  "meta": {
+    "versi": "1.0",
+    "totalSoal": 300,
+    "jumlahSoalPerKuis": 30,
+    "persenInggris": 10
+  },
+  "soal": [
+    {
+      "id": 1,
+      "teks": "Planet apakah yang paling besar dalam tata surya kita?",
+      "bahasa": "id",
+      "jawaban": "Jupiter",
+      "alternatif_jawaban": [],
+      "pembahasan": "Jupiter adalah planet terbesar di tata surya dengan diameter ±139.820 km — lebih dari 11 kali diameter Bumi. Jupiter adalah planet gas raksasa dengan lebih dari 90 bulan, termasuk Ganymede, bulan terbesar di tata surya.",
+      "topik": "Tata Surya",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 2,
+      "teks": "Planet manakah yang paling dekat dengan Matahari?",
+      "bahasa": "id",
+      "jawaban": "Merkurius",
+      "alternatif_jawaban": [
+        "Mercury"
+      ],
+      "pembahasan": "Merkurius adalah planet pertama dan terdekat dari Matahari, berjarak rata-rata ±58 juta km. Merkurius juga merupakan planet terkecil di tata surya dan tidak memiliki atmosfer yang berarti, sehingga suhunya ekstrem: 430°C siang hari dan -180°C malam hari.",
+      "topik": "Tata Surya",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 3,
+      "teks": "Planet manakah yang paling jauh dari Matahari?",
+      "bahasa": "id",
+      "jawaban": "Neptunus",
+      "alternatif_jawaban": [
+        "Neptune"
+      ],
+      "pembahasan": "Neptunus adalah planet kedelapan dan terjauh dari Matahari, berjarak ±4,5 miliar km. Planet ini berwarna biru karena kandungan gas metana di atmosfernya dan memiliki angin tercepat di tata surya, mencapai 2.100 km/jam.",
+      "topik": "Tata Surya",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 4,
+      "teks": "Berapa jumlah planet dalam tata surya kita saat ini?",
+      "bahasa": "id",
+      "jawaban": "8",
+      "alternatif_jawaban": [
+        "delapan"
+      ],
+      "pembahasan": "Tata surya kita memiliki 8 planet: Merkurius, Venus, Bumi, Mars, Jupiter, Saturnus, Uranus, dan Neptunus. Sejak 2006, IAU mengklasifikasikan ulang Pluto sebagai 'planet kerdil', sehingga jumlah planet resmi menjadi 8.",
+      "topik": "Tata Surya",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 5,
+      "teks": "Planet manakah yang dijuluki 'Planet Merah'?",
+      "bahasa": "id",
+      "jawaban": "Mars",
+      "alternatif_jawaban": [],
+      "pembahasan": "Mars dijuluki 'Planet Merah' karena permukaannya kaya oksida besi (karat) yang memberi warna kemerahan. Mars adalah planet keempat dari Matahari. Di Mars terdapat gunung berapi terbesar di tata surya, Olympus Mons (±21 km tingginya).",
+      "topik": "Tata Surya",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 6,
+      "teks": "Planet manakah yang memiliki sistem cincin paling indah dan mencolok?",
+      "bahasa": "id",
+      "jawaban": "Saturnus",
+      "alternatif_jawaban": [
+        "Saturn"
+      ],
+      "pembahasan": "Saturnus dikenal dengan cincinnya yang luar biasa, terbuat dari jutaan partikel es dan batuan. Saturnus adalah planet keenam dari Matahari. Meski planet lain juga punya cincin, cincin Saturnus jauh lebih besar dan lebih terang.",
+      "topik": "Tata Surya",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 7,
+      "teks": "Benda langit yang mengelilingi Matahari dan memiliki ekor panjang bercahaya disebut?",
+      "bahasa": "id",
+      "jawaban": "Komet",
+      "alternatif_jawaban": [],
+      "pembahasan": "Komet terdiri dari es, debu, dan batu. Ketika mendekati Matahari, bagian esnya menguap membentuk koma dan ekor panjang yang selalu mengarah menjauhi Matahari. Ekor komet bisa mencapai panjang jutaan kilometer.",
+      "topik": "Tata Surya",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 8,
+      "teks": "Satelit alami yang mengelilingi Bumi adalah?",
+      "bahasa": "id",
+      "jawaban": "Bulan",
+      "alternatif_jawaban": [
+        "Moon",
+        "Luna"
+      ],
+      "pembahasan": "Bulan adalah satu-satunya satelit alami Bumi, berdiameter ±3.474 km. Jarak rata-rata Bulan dari Bumi ±384.400 km. Bulan membutuhkan ±27,3 hari untuk revolusi dan 29,5 hari untuk satu siklus fase lunar.",
+      "topik": "Tata Surya",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 9,
+      "teks": "Berapa lama waktu yang dibutuhkan Bumi untuk sekali revolusi mengelilingi Matahari?",
+      "bahasa": "id",
+      "jawaban": "365 hari",
+      "alternatif_jawaban": [
+        "365 hari 6 jam",
+        "1 tahun"
+      ],
+      "pembahasan": "Bumi membutuhkan ±365 hari 6 jam untuk satu kali revolusi. Karena ada 6 jam lebih setiap tahun, setiap 4 tahun sekali terjadi tahun kabisat dengan 366 hari (Februari menjadi 29 hari).",
+      "topik": "Tata Surya",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 10,
+      "teks": "Berapa lama waktu yang dibutuhkan Bumi untuk sekali berotasi (berputar pada porosnya)?",
+      "bahasa": "id",
+      "jawaban": "24 jam",
+      "alternatif_jawaban": [
+        "1 hari",
+        "23 jam 56 menit"
+      ],
+      "pembahasan": "Bumi membutuhkan ±24 jam untuk sekali berotasi. Rotasi Bumi inilah yang menyebabkan terjadinya siang dan malam. Wilayah yang menghadap Matahari mengalami siang, sedangkan yang membelakangi mengalami malam.",
+      "topik": "Tata Surya",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 11,
+      "teks": "What is the name of the star at the center of our solar system?",
+      "bahasa": "en",
+      "jawaban": "The Sun",
+      "alternatif_jawaban": [
+        "Sun",
+        "Matahari"
+      ],
+      "pembahasan": "The Sun (Matahari) is the star at the center of our solar system. It provides light and heat to all planets. The Sun is a medium-sized star made mostly of hydrogen and helium, producing energy through nuclear fusion at its core.",
+      "topik": "Tata Surya",
+      "level": "mudah",
+      "waktu": 15
+    },
+    {
+      "id": 12,
+      "teks": "Gerhana Matahari terjadi ketika Bulan berada tepat di antara...",
+      "bahasa": "id",
+      "jawaban": "Bumi dan Matahari",
+      "alternatif_jawaban": [
+        "Matahari dan Bumi"
+      ],
+      "pembahasan": "Gerhana Matahari terjadi saat Bulan berada tepat di antara Bumi dan Matahari sehingga cahaya Matahari terhalang. Gerhana Matahari total hanya terjadi di area umbra (bayangan inti) Bulan yang sangat sempit dan berlangsung hanya beberapa menit.",
+      "topik": "Tata Surya",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 13,
+      "teks": "Gerhana Bulan terjadi ketika posisi Bumi berada di antara Matahari dan...",
+      "bahasa": "id",
+      "jawaban": "Bulan",
+      "alternatif_jawaban": [
+        "Bulan dan Matahari"
+      ],
+      "pembahasan": "Gerhana Bulan terjadi saat Bumi tepat di antara Matahari dan Bulan, sehingga bayangan Bumi jatuh ke permukaan Bulan. Berbeda dengan gerhana Matahari, gerhana Bulan dapat terlihat dari seluruh belahan Bumi yang menghadap Bulan.",
+      "topik": "Tata Surya",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 14,
+      "teks": "Komet paling terkenal yang mengorbit Matahari setiap ±76 tahun disebut Komet...",
+      "bahasa": "id",
+      "jawaban": "Halley",
+      "alternatif_jawaban": [
+        "Komet Halley"
+      ],
+      "pembahasan": "Komet Halley adalah komet paling terkenal, dapat dilihat dari Bumi setiap ±75-76 tahun. Terakhir terlihat tahun 1986 dan diperkirakan akan terlihat lagi sekitar 2061. Dinamakan dari astronom Edmond Halley yang memprediksi kedatangannya.",
+      "topik": "Tata Surya",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 15,
+      "teks": "Planet yang ukurannya hampir sama dengan Bumi dan sering disebut 'kembaran Bumi' adalah?",
+      "bahasa": "id",
+      "jawaban": "Venus",
+      "alternatif_jawaban": [],
+      "pembahasan": "Venus sering disebut 'kembaran Bumi' karena ukurannya hampir sama (diameter 12.104 km vs Bumi 12.742 km). Namun Venus sangat berbeda: suhunya ±465°C akibat efek rumah kaca ekstrem, dan rotasinya berlawanan arah dengan kebanyakan planet.",
+      "topik": "Tata Surya",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 16,
+      "teks": "Perputaran Bumi pada porosnya sendiri disebut?",
+      "bahasa": "id",
+      "jawaban": "Rotasi",
+      "alternatif_jawaban": [],
+      "pembahasan": "Rotasi adalah gerak berputar benda pada porosnya. Bumi berotasi dari barat ke timur (berlawanan jarum jam dari Kutub Utara), menyebabkan Matahari tampak terbit di timur dan terbenam di barat. Rotasi juga memengaruhi pembelokan angin dan arus laut.",
+      "topik": "Tata Surya",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 17,
+      "teks": "Perputaran Bumi mengelilingi Matahari dalam orbitnya disebut?",
+      "bahasa": "id",
+      "jawaban": "Revolusi",
+      "alternatif_jawaban": [],
+      "pembahasan": "Revolusi Bumi adalah pergerakan Bumi mengelilingi Matahari dalam orbit elips. Revolusi Bumi menyebabkan pergantian musim di daerah beriklim sedang dan perubahan lamanya siang-malam sepanjang tahun.",
+      "topik": "Tata Surya",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 18,
+      "teks": "Rotasi Bumi menyebabkan terjadinya?",
+      "bahasa": "id",
+      "jawaban": "Siang dan malam",
+      "alternatif_jawaban": [
+        "Pergantian siang dan malam"
+      ],
+      "pembahasan": "Rotasi Bumi menyebabkan terjadinya siang dan malam. Bagian Bumi yang menghadap Matahari mengalami siang, bagian yang membelakangi mengalami malam. Rotasi juga menyebabkan perbedaan waktu di berbagai belahan dunia.",
+      "topik": "Tata Surya",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 19,
+      "teks": "What do we call a rocky body from space that survives its fall through Earth's atmosphere and lands on the surface?",
+      "bahasa": "en",
+      "jawaban": "Meteorite",
+      "alternatif_jawaban": [
+        "Meteorit"
+      ],
+      "pembahasan": "A meteorite (meteorit) is a space rock that survives passage through Earth's atmosphere and lands on the surface. Before entering the atmosphere it is called a meteoroid; when it burns and glows in the atmosphere it is called a meteor or 'shooting star'. If it reaches the ground, it is a meteorite.",
+      "topik": "Tata Surya",
+      "level": "sedang",
+      "waktu": 15
+    },
+    {
+      "id": 20,
+      "teks": "Planet apakah yang ukurannya paling kecil dalam tata surya?",
+      "bahasa": "id",
+      "jawaban": "Merkurius",
+      "alternatif_jawaban": [
+        "Mercury"
+      ],
+      "pembahasan": "Merkurius adalah planet terkecil di tata surya setelah Pluto diturunkan statusnya. Diameter Merkurius hanya ±4.879 km, bahkan lebih kecil dari beberapa bulan di tata surya seperti Ganymede dan Titan milik Saturnus.",
+      "topik": "Tata Surya",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 21,
+      "teks": "Lapisan terluar Matahari yang tampak seperti mahkota dan hanya terlihat saat gerhana total disebut?",
+      "bahasa": "id",
+      "jawaban": "Korona",
+      "alternatif_jawaban": [
+        "Corona"
+      ],
+      "pembahasan": "Korona adalah lapisan atmosfer terluar Matahari yang tampak sebagai cahaya putih berkilau saat gerhana total. Suhunya mencapai jutaan derajat Celsius — jauh lebih panas dari permukaan Matahari (6.000°C). Fenomena ini disebut 'paradoks korona'.",
+      "topik": "Tata Surya",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 22,
+      "teks": "Kumpulan miliaran bintang beserta gas dan debu yang terikat gravitasi membentuk?",
+      "bahasa": "id",
+      "jawaban": "Galaksi",
+      "alternatif_jawaban": [],
+      "pembahasan": "Galaksi adalah kumpulan miliaran bintang, gas antarbintang, debu kosmik, dan materi gelap yang terikat gravitasi. Alam semesta diperkirakan mengandung ratusan miliar galaksi. Contoh: Bimasakti, Andromeda, dan Triangulum.",
+      "topik": "Tata Surya",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 23,
+      "teks": "Galaksi tempat tata surya kita berada dinamakan?",
+      "bahasa": "id",
+      "jawaban": "Bimasakti",
+      "alternatif_jawaban": [
+        "Milky Way",
+        "Galaksi Bimasakti"
+      ],
+      "pembahasan": "Tata surya kita berada di galaksi Bimasakti (Milky Way), sebuah galaksi spiral berlengan. Tata surya terletak di Lengan Orion, sekitar 26.000 tahun cahaya dari pusat galaksi. Galaksi ini berdiameter ±100.000 tahun cahaya.",
+      "topik": "Tata Surya",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 24,
+      "teks": "Benda kecil tata surya yang mengorbit Matahari terutama di antara Mars dan Jupiter disebut?",
+      "bahasa": "id",
+      "jawaban": "Asteroid",
+      "alternatif_jawaban": [],
+      "pembahasan": "Asteroid adalah batuan kecil yang mengorbit Matahari, sebagian besar terkonsentrasi di Sabuk Asteroid antara Mars dan Jupiter. Ada jutaan asteroid di tata surya. Asteroid terbesar adalah Ceres (diameter ±940 km) yang kini diklasifikasikan sebagai planet kerdil.",
+      "topik": "Tata Surya",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 25,
+      "teks": "Planet yang dikenal memiliki 'Bintik Merah Raksasa', yaitu badai yang sudah berlangsung ratusan tahun, adalah?",
+      "bahasa": "id",
+      "jawaban": "Jupiter",
+      "alternatif_jawaban": [],
+      "pembahasan": "Bintik Merah Raksasa (Great Red Spot) di Jupiter adalah badai antisiklonik yang berlangsung setidaknya 350 tahun. Diameternya sekitar 1,3 kali diameter Bumi, meskipun ukurannya terus mengecil dalam beberapa dekade terakhir.",
+      "topik": "Tata Surya",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 26,
+      "teks": "What is the smallest planet in our solar system?",
+      "bahasa": "en",
+      "jawaban": "Mercury",
+      "alternatif_jawaban": [
+        "Merkurius"
+      ],
+      "pembahasan": "Mercury (Merkurius) is the smallest planet in our solar system, with a diameter of only about 4,879 km. It is also the closest planet to the Sun. Mercury has no atmosphere, so its temperature swings from -180°C at night to 430°C during the day.",
+      "topik": "Tata Surya",
+      "level": "mudah",
+      "waktu": 15
+    },
+    {
+      "id": 27,
+      "teks": "Berapa rata-rata jarak Bumi ke Matahari dalam kilometer?",
+      "bahasa": "id",
+      "jawaban": "150 juta kilometer",
+      "alternatif_jawaban": [
+        "±150 juta km",
+        "1 AU"
+      ],
+      "pembahasan": "Jarak rata-rata Bumi ke Matahari adalah ±150 juta km (149,6 juta km). Jarak ini dijadikan satuan ukur dalam astronomi: 1 Satuan Astronomi (AU). Cahaya Matahari memerlukan ±8 menit 20 detik untuk mencapai Bumi.",
+      "topik": "Tata Surya",
+      "level": "sulit",
+      "waktu": 10
+    },
+    {
+      "id": 28,
+      "teks": "Planet yang rotasinya sangat miring sehingga seolah-olah berputar sambil 'terbaring' pada sisinya adalah?",
+      "bahasa": "id",
+      "jawaban": "Uranus",
+      "alternatif_jawaban": [],
+      "pembahasan": "Uranus memiliki kemiringan sumbu rotasi sekitar 98°, hampir berbaring miring. Akibatnya, kutubnya bergantian menghadap Matahari selama ±42 tahun siang dan 42 tahun malam dalam satu kali revolusinya.",
+      "topik": "Tata Surya",
+      "level": "sulit",
+      "waktu": 10
+    },
+    {
+      "id": 29,
+      "teks": "Bintang jatuh yang berhasil mencapai permukaan Bumi tanpa habis terbakar di atmosfer disebut?",
+      "bahasa": "id",
+      "jawaban": "Meteorit",
+      "alternatif_jawaban": [],
+      "pembahasan": "Meteorit adalah sisa batu angkasa yang bertahan melewati atmosfer dan mendarat di permukaan Bumi. Saat masih di ruang angkasa disebut meteoroid; saat terbakar membentuk cahaya di atmosfer disebut meteor; jika sampai ke permukaan disebut meteorit.",
+      "topik": "Tata Surya",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 30,
+      "teks": "Akibat revolusi Bumi, Indonesia yang berada di daerah tropis mengalami dua musim, yaitu?",
+      "bahasa": "id",
+      "jawaban": "Musim hujan dan musim kemarau",
+      "alternatif_jawaban": [
+        "Hujan dan kemarau"
+      ],
+      "pembahasan": "Indonesia mengalami dua musim: musim hujan dan musim kemarau, dipengaruhi revolusi Bumi dan pergerakan angin muson. Daerah beriklim sedang (jauh dari khatulistiwa) mengalami 4 musim: semi, panas, gugur, dan dingin.",
+      "topik": "Tata Surya",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 31,
+      "teks": "Organ yang memompa darah ke seluruh tubuh manusia adalah?",
+      "bahasa": "id",
+      "jawaban": "Jantung",
+      "alternatif_jawaban": [],
+      "pembahasan": "Jantung adalah organ berotot seukuran kepalan tangan yang berfungsi sebagai pompa darah. Jantung memiliki 4 ruang: serambi kanan, bilik kanan, serambi kiri, dan bilik kiri. Jantung memompa darah ke paru-paru (untuk oksigenasi) dan ke seluruh tubuh.",
+      "topik": "Tubuh Manusia",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 32,
+      "teks": "Organ pernapasan utama pada manusia adalah?",
+      "bahasa": "id",
+      "jawaban": "Paru-paru",
+      "alternatif_jawaban": [
+        "Pulmo"
+      ],
+      "pembahasan": "Paru-paru adalah organ utama sistem pernapasan. Di dalamnya terdapat jutaan alveolus (kantung udara kecil) tempat pertukaran gas: oksigen diserap ke darah dan karbon dioksida dikeluarkan. Manusia memiliki dua paru-paru di dalam rongga dada.",
+      "topik": "Tubuh Manusia",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 33,
+      "teks": "Organ pencernaan yang menggunakan asam kuat untuk mencerna makanan adalah?",
+      "bahasa": "id",
+      "jawaban": "Lambung",
+      "alternatif_jawaban": [
+        "Perut"
+      ],
+      "pembahasan": "Lambung menghasilkan asam klorida (HCl) dan enzim pepsin untuk mencerna protein. Asam lambung sangat kuat (pH ±2) sehingga dapat membunuh bakteri. Makanan diubah menjadi bubur (chyme) sebelum diteruskan ke usus halus.",
+      "topik": "Tubuh Manusia",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 34,
+      "teks": "Organ pencernaan yang paling panjang dalam tubuh manusia, tempat penyerapan sari makanan, adalah?",
+      "bahasa": "id",
+      "jawaban": "Usus halus",
+      "alternatif_jawaban": [],
+      "pembahasan": "Usus halus sepanjang 6–7 meter adalah tempat utama penyerapan sari makanan melalui jutaan vili (tonjolan kecil) di dindingnya. Terbagi menjadi duodenum (usus 12 jari), jejunum, dan ileum.",
+      "topik": "Tubuh Manusia",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 35,
+      "teks": "Berapa jumlah tulang pada tubuh manusia dewasa?",
+      "bahasa": "id",
+      "jawaban": "206 tulang",
+      "alternatif_jawaban": [
+        "206"
+      ],
+      "pembahasan": "Tubuh manusia dewasa memiliki 206 tulang. Bayi lahir dengan sekitar 270–350 tulang rawan yang sebagian besar menyatu seiring pertumbuhan. Tulang terkecil adalah stirrup (stapes) di telinga; tulang terpanjang adalah tulang paha (femur).",
+      "topik": "Tubuh Manusia",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 36,
+      "teks": "Sel darah yang bertugas membawa oksigen ke seluruh tubuh adalah?",
+      "bahasa": "id",
+      "jawaban": "Sel darah merah",
+      "alternatif_jawaban": [
+        "Eritrosit"
+      ],
+      "pembahasan": "Sel darah merah (eritrosit) mengandung hemoglobin yang mengikat oksigen. Berbentuk cakram bikonkaf dan tidak memiliki inti sel. Jumlahnya ±5 juta per mm³ darah dan masa hidupnya ±120 hari.",
+      "topik": "Tubuh Manusia",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 37,
+      "teks": "Sel darah yang berfungsi melawan kuman dan penyakit di dalam tubuh adalah?",
+      "bahasa": "id",
+      "jawaban": "Sel darah putih",
+      "alternatif_jawaban": [
+        "Leukosit"
+      ],
+      "pembahasan": "Sel darah putih (leukosit) adalah bagian sistem imun yang melindungi tubuh dari infeksi. Jenisnya beragam: neutrofil, limfosit, monosit, eosinofil, basofil — masing-masing dengan fungsi pertahanan yang berbeda.",
+      "topik": "Tubuh Manusia",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 38,
+      "teks": "Organ yang menghasilkan insulin untuk mengatur kadar gula darah adalah?",
+      "bahasa": "id",
+      "jawaban": "Pankreas",
+      "alternatif_jawaban": [],
+      "pembahasan": "Pankreas adalah kelenjar dengan dua fungsi: eksokrin (menghasilkan enzim pencernaan) dan endokrin (menghasilkan hormon insulin dan glukagon). Insulin menurunkan gula darah; glukagon menaikkannya. Kekurangan insulin menyebabkan diabetes mellitus.",
+      "topik": "Tubuh Manusia",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 39,
+      "teks": "Kekurangan vitamin C dapat menyebabkan penyakit?",
+      "bahasa": "id",
+      "jawaban": "Skorbut",
+      "alternatif_jawaban": [
+        "Scurvy"
+      ],
+      "pembahasan": "Skorbut (scurvy) disebabkan kekurangan vitamin C, yang penting untuk pembentukan kolagen. Gejalanya: gusi berdarah, luka sulit sembuh, nyeri sendi. Sumber vitamin C: jeruk, jambu biji, paprika, dan sayuran hijau.",
+      "topik": "Tubuh Manusia",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 40,
+      "teks": "Vitamin yang dibutuhkan tubuh untuk penyerapan kalsium dan menjaga kesehatan tulang adalah?",
+      "bahasa": "id",
+      "jawaban": "Vitamin D",
+      "alternatif_jawaban": [],
+      "pembahasan": "Vitamin D membantu penyerapan kalsium dan fosfor untuk pembentukan tulang dan gigi. Kekurangan vitamin D menyebabkan rakhitis pada anak-anak dan osteoporosis pada orang dewasa. Tubuh dapat memproduksi vitamin D sendiri saat terkena sinar matahari.",
+      "topik": "Tubuh Manusia",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 41,
+      "teks": "What is the largest organ of the human body?",
+      "bahasa": "en",
+      "jawaban": "Skin",
+      "alternatif_jawaban": [
+        "Kulit",
+        "The skin"
+      ],
+      "pembahasan": "The skin (kulit) is the largest organ of the human body, covering an area of about 1.5–2 square meters. It protects the body from harmful substances, regulates temperature, prevents water loss, and acts as a sensory organ for touch, pain, and temperature.",
+      "topik": "Tubuh Manusia",
+      "level": "sedang",
+      "waktu": 15
+    },
+    {
+      "id": 42,
+      "teks": "Organ yang menyaring darah dan menghasilkan urin adalah?",
+      "bahasa": "id",
+      "jawaban": "Ginjal",
+      "alternatif_jawaban": [],
+      "pembahasan": "Ginjal menyaring darah dari zat sisa metabolisme dan menghasilkan urin. Manusia memiliki dua ginjal. Setiap hari ginjal menyaring ±180 liter darah menghasilkan ±1–2 liter urin. Gangguan ginjal berat memerlukan cuci darah (hemodialisis).",
+      "topik": "Tubuh Manusia",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 43,
+      "teks": "Tulang yang membentuk sangkar pelindung bagi jantung dan paru-paru adalah?",
+      "bahasa": "id",
+      "jawaban": "Tulang rusuk",
+      "alternatif_jawaban": [
+        "Tulang iga",
+        "Iga"
+      ],
+      "pembahasan": "Tulang rusuk (iga) membentuk sangkar tulang di sekitar rongga dada untuk melindungi jantung dan paru-paru. Manusia memiliki 12 pasang tulang rusuk (24 tulang). Tiga pasang terbawah disebut 'tulang rusuk mengambang' karena tidak terhubung langsung ke tulang dada.",
+      "topik": "Tubuh Manusia",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 44,
+      "teks": "Bagian otak yang mengatur keseimbangan tubuh dan koordinasi gerak otot disebut?",
+      "bahasa": "id",
+      "jawaban": "Otak kecil",
+      "alternatif_jawaban": [
+        "Serebelum",
+        "Cerebellum"
+      ],
+      "pembahasan": "Otak kecil (serebelum) bertanggung jawab mengkoordinasikan gerakan otot, menjaga keseimbangan, dan mengontrol postur tubuh. Terletak di bagian belakang bawah otak. Kerusakan serebelum menyebabkan gangguan koordinasi dan keseimbangan.",
+      "topik": "Tubuh Manusia",
+      "level": "sulit",
+      "waktu": 10
+    },
+    {
+      "id": 45,
+      "teks": "Bagian telinga yang bergetar pertama kali ketika menangkap gelombang suara disebut?",
+      "bahasa": "id",
+      "jawaban": "Gendang telinga",
+      "alternatif_jawaban": [
+        "Membran timpani"
+      ],
+      "pembahasan": "Gendang telinga (membran timpani) adalah selaput tipis yang bergetar saat menerima gelombang suara. Getaran diteruskan melalui tiga tulang kecil (martil, landasan, sanggurdi) ke koklea di telinga dalam, tempat sinyal suara diterjemahkan menjadi sinyal saraf.",
+      "topik": "Tubuh Manusia",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 46,
+      "teks": "Zat gizi yang menjadi sumber energi utama bagi tubuh manusia adalah?",
+      "bahasa": "id",
+      "jawaban": "Karbohidrat",
+      "alternatif_jawaban": [],
+      "pembahasan": "Karbohidrat adalah sumber energi tercepat yang digunakan tubuh. Dicerna menjadi glukosa, lalu dibakar sel untuk energi melalui respirasi seluler. Sumber: nasi, roti, jagung, singkong. 1 gram karbohidrat menghasilkan ±4 kalori.",
+      "topik": "Tubuh Manusia",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 47,
+      "teks": "What organ produces bile to help digest fats?",
+      "bahasa": "en",
+      "jawaban": "Liver",
+      "alternatif_jawaban": [
+        "Hati"
+      ],
+      "pembahasan": "The liver (hati) produces bile (empedu), a digestive fluid stored in the gallbladder, which emulsifies fats in the small intestine. The liver also detoxifies harmful substances, stores glycogen for energy, and produces important blood proteins. It is the largest internal organ.",
+      "topik": "Tubuh Manusia",
+      "level": "sedang",
+      "waktu": 15
+    },
+    {
+      "id": 48,
+      "teks": "Lapisan kulit paling luar yang dapat kita lihat dan sentuh langsung disebut?",
+      "bahasa": "id",
+      "jawaban": "Epidermis",
+      "alternatif_jawaban": [],
+      "pembahasan": "Epidermis adalah lapisan kulit terluar yang terus-menerus diperbarui. Mengandung melanosit (sel pemberi warna kulit) dan keratinosit. Di bawahnya terdapat dermis yang mengandung kelenjar keringat, folikel rambut, dan pembuluh darah.",
+      "topik": "Tubuh Manusia",
+      "level": "sulit",
+      "waktu": 10
+    },
+    {
+      "id": 49,
+      "teks": "Sistem organ yang mengatur koordinasi tubuh secara cepat melalui sinyal listrik (impuls saraf) disebut?",
+      "bahasa": "id",
+      "jawaban": "Sistem saraf",
+      "alternatif_jawaban": [],
+      "pembahasan": "Sistem saraf menggunakan impuls elektrokimia untuk mengatur semua fungsi tubuh. Terdiri dari sistem saraf pusat (otak dan sumsum tulang belakang) dan sistem saraf perifer (saraf yang tersebar ke seluruh tubuh). Sel sarafnya disebut neuron.",
+      "topik": "Tubuh Manusia",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 50,
+      "teks": "Bagian mata yang berupa lubang di tengah iris, berfungsi mengatur banyaknya cahaya masuk, adalah?",
+      "bahasa": "id",
+      "jawaban": "Pupil",
+      "alternatif_jawaban": [],
+      "pembahasan": "Pupil adalah lubang di tengah iris yang mengatur cahaya masuk. Iris mengontrol ukuran pupil: melebar di tempat gelap agar lebih banyak cahaya masuk; mengecil di tempat terang untuk melindungi retina. Bayangan terbentuk di retina.",
+      "topik": "Tubuh Manusia",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 51,
+      "teks": "Berapa jumlah gigi sulung (gigi susu) yang dimiliki anak-anak?",
+      "bahasa": "id",
+      "jawaban": "20 gigi",
+      "alternatif_jawaban": [
+        "20"
+      ],
+      "pembahasan": "Gigi sulung berjumlah 20 buah: 8 gigi seri, 4 gigi taring, dan 8 gigi geraham kecil. Mulai tumbuh pada bayi usia 6 bulan dan mulai diganti gigi tetap pada usia 6–7 tahun. Gigi tetap dewasa berjumlah 32 buah (termasuk gigi bungsu).",
+      "topik": "Tubuh Manusia",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 52,
+      "teks": "Otot yang cara kerjanya dapat dikendalikan sesuai kemauan kita disebut otot?",
+      "bahasa": "id",
+      "jawaban": "Otot lurik",
+      "alternatif_jawaban": [
+        "Otot rangka",
+        "Otot serat lintang"
+      ],
+      "pembahasan": "Otot lurik (otot rangka) bekerja secara sadar (volunter), bisa dikendalikan kemauan. Berbeda dengan otot polos (organ dalam, tidak sadar) dan otot jantung (bekerja otomatis). Otot lurik melekat pada tulang melalui tendon dan menggerakkan rangka.",
+      "topik": "Tubuh Manusia",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 53,
+      "teks": "What is the process by which the body takes in oxygen and releases carbon dioxide called?",
+      "bahasa": "en",
+      "jawaban": "Respiration",
+      "alternatif_jawaban": [
+        "Breathing",
+        "Pernapasan"
+      ],
+      "pembahasan": "Respiration (pernapasan) is the process of inhaling oxygen (O₂) and exhaling carbon dioxide (CO₂). In cellular respiration, cells use oxygen to break down glucose and produce energy (ATP), releasing CO₂ and water as byproducts. This occurs continuously in every living cell.",
+      "topik": "Tubuh Manusia",
+      "level": "mudah",
+      "waktu": 15
+    },
+    {
+      "id": 54,
+      "teks": "Cairan yang dihasilkan oleh hati untuk membantu mencerna lemak di usus halus disebut?",
+      "bahasa": "id",
+      "jawaban": "Empedu",
+      "alternatif_jawaban": [
+        "Cairan empedu"
+      ],
+      "pembahasan": "Empedu adalah cairan kehijauan yang diproduksi hati dan disimpan di kantung empedu. Dikeluarkan ke usus halus (duodenum) saat ada lemak. Empedu mengemulsikan lemak (memecahnya menjadi butiran kecil) agar lebih mudah dicerna enzim lipase.",
+      "topik": "Tubuh Manusia",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 55,
+      "teks": "Berapa jumlah ruas tulang belakang (vertebra) pada tubuh manusia?",
+      "bahasa": "id",
+      "jawaban": "33 ruas",
+      "alternatif_jawaban": [
+        "33"
+      ],
+      "pembahasan": "Tulang belakang terdiri dari 33 ruas vertebra: 7 serviks (leher), 12 toraks (dada), 5 lumbar (pinggang), 5 sakrum (menyatu), dan 4 koksiks/ekor (menyatu). Sumsum tulang belakang berjalan melalui kanal di dalam vertebra.",
+      "topik": "Tubuh Manusia",
+      "level": "sulit",
+      "waktu": 10
+    },
+    {
+      "id": 56,
+      "teks": "Kekurangan vitamin A dapat menyebabkan gangguan pada organ?",
+      "bahasa": "id",
+      "jawaban": "Mata",
+      "alternatif_jawaban": [
+        "Penglihatan"
+      ],
+      "pembahasan": "Kekurangan vitamin A menyebabkan rabun senja (sulit melihat di tempat gelap) yang jika berlanjut bisa menyebabkan kebutaan. Vitamin A juga penting untuk kesehatan kulit dan sistem imun. Sumber: hati, wortel, ubi jalar, bayam.",
+      "topik": "Tubuh Manusia",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 57,
+      "teks": "Pembuluh darah yang membawa darah dari jantung ke seluruh tubuh disebut?",
+      "bahasa": "id",
+      "jawaban": "Arteri",
+      "alternatif_jawaban": [
+        "Pembuluh nadi"
+      ],
+      "pembahasan": "Arteri (pembuluh nadi) membawa darah dari jantung ke seluruh tubuh. Dinding arteri tebal dan elastis karena harus menahan tekanan tinggi saat jantung memompa. Darah di arteri umumnya kaya oksigen (kecuali arteri pulmonar ke paru-paru).",
+      "topik": "Tubuh Manusia",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 58,
+      "teks": "Pembuluh darah yang membawa darah kembali menuju jantung disebut?",
+      "bahasa": "id",
+      "jawaban": "Vena",
+      "alternatif_jawaban": [
+        "Pembuluh balik"
+      ],
+      "pembahasan": "Vena (pembuluh balik) membawa darah dari seluruh tubuh kembali ke jantung. Dinding vena lebih tipis dari arteri dan memiliki katup untuk mencegah darah mengalir balik. Darah di vena umumnya rendah oksigen dan kaya CO₂.",
+      "topik": "Tubuh Manusia",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 59,
+      "teks": "Hormon yang dihasilkan pankreas untuk menurunkan kadar gula darah disebut?",
+      "bahasa": "id",
+      "jawaban": "Insulin",
+      "alternatif_jawaban": [],
+      "pembahasan": "Insulin dihasilkan sel beta pankreas. Fungsinya menurunkan kadar glukosa darah dengan mendorong sel-sel tubuh menyerap glukosa. Kekurangan insulin atau resistensi terhadap insulin menyebabkan diabetes mellitus (kencing manis).",
+      "topik": "Tubuh Manusia",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 60,
+      "teks": "Protein dalam sel darah merah yang mengangkut oksigen ke seluruh tubuh disebut?",
+      "bahasa": "id",
+      "jawaban": "Hemoglobin",
+      "alternatif_jawaban": [],
+      "pembahasan": "Hemoglobin adalah protein dalam sel darah merah yang mengandung zat besi (Fe) dan mampu mengikat oksigen. Kekurangan hemoglobin menyebabkan anemia (kurang darah): tubuh terasa lemas karena sel-sel kekurangan oksigen. Sumber zat besi: daging merah, bayam, kacang-kacangan.",
+      "topik": "Tubuh Manusia",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 61,
+      "teks": "Proses tumbuhan membuat makanannya sendiri menggunakan cahaya matahari disebut?",
+      "bahasa": "id",
+      "jawaban": "Fotosintesis",
+      "alternatif_jawaban": [
+        "Photosynthesis"
+      ],
+      "pembahasan": "Fotosintesis adalah proses kimia mengubah CO₂ dan H₂O menjadi glukosa dan O₂ dengan bantuan cahaya dan klorofil. Reaksi: 6CO₂ + 6H₂O + cahaya → C₆H₁₂O₆ + 6O₂. Berlangsung di kloroplas dalam sel daun.",
+      "topik": "Biologi Tumbuhan",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 62,
+      "teks": "Zat hijau pada daun yang berperan dalam menangkap cahaya untuk fotosintesis disebut?",
+      "bahasa": "id",
+      "jawaban": "Klorofil",
+      "alternatif_jawaban": [
+        "Chlorophyll"
+      ],
+      "pembahasan": "Klorofil adalah pigmen hijau di dalam kloroplas. Menyerap cahaya merah dan biru untuk diubah menjadi energi kimia dalam fotosintesis, dan memantulkan cahaya hijau (itulah mengapa daun tampak hijau).",
+      "topik": "Biologi Tumbuhan",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 63,
+      "teks": "Gas yang dihasilkan tumbuhan hijau sebagai hasil fotosintesis dan dimanfaatkan makhluk hidup lain untuk bernapas adalah?",
+      "bahasa": "id",
+      "jawaban": "Oksigen",
+      "alternatif_jawaban": [
+        "O₂",
+        "O2"
+      ],
+      "pembahasan": "Tumbuhan menghasilkan oksigen (O₂) sebagai produk sampingan fotosintesis dari pemecahan air (H₂O). Oksigen yang dilepaskan ke udara inilah yang kita hirup. Itulah mengapa tumbuhan hijau sangat penting bagi kelangsungan hidup di Bumi.",
+      "topik": "Biologi Tumbuhan",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 64,
+      "teks": "Bagian tumbuhan yang bertugas menyerap air dan mineral dari dalam tanah adalah?",
+      "bahasa": "id",
+      "jawaban": "Akar",
+      "alternatif_jawaban": [],
+      "pembahasan": "Akar berfungsi menyerap air dan mineral dari tanah, menjangkarkan tumbuhan, dan menyimpan cadangan makanan (pada beberapa jenis). Rambut akar memperluas permukaan penyerapan. Akar tumbuh ke bawah mengikuti gravitasi (geotropisme positif).",
+      "topik": "Biologi Tumbuhan",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 65,
+      "teks": "Jaringan pengangkut air dan mineral dari akar ke daun pada tumbuhan disebut?",
+      "bahasa": "id",
+      "jawaban": "Xilem",
+      "alternatif_jawaban": [
+        "Xylem"
+      ],
+      "pembahasan": "Xilem adalah jaringan pembuluh yang mengangkut air dan mineral dari akar ke daun (gerakan ke atas). Terdiri dari sel-sel mati yang membentuk tabung panjang. Selain mengangkut air, xilem juga memberikan kekuatan struktural pada batang.",
+      "topik": "Biologi Tumbuhan",
+      "level": "sulit",
+      "waktu": 10
+    },
+    {
+      "id": 66,
+      "teks": "Jaringan pengangkut hasil fotosintesis dari daun ke seluruh bagian tumbuhan adalah?",
+      "bahasa": "id",
+      "jawaban": "Floem",
+      "alternatif_jawaban": [
+        "Phloem"
+      ],
+      "pembahasan": "Floem mengangkut hasil fotosintesis (gula/sukrosa) dari daun ke seluruh bagian tumbuhan yang membutuhkan. Berbeda dengan xilem, floem terdiri dari sel-sel hidup. Arah aliran floem bisa ke atas maupun ke bawah sesuai kebutuhan tumbuhan.",
+      "topik": "Biologi Tumbuhan",
+      "level": "sulit",
+      "waktu": 10
+    },
+    {
+      "id": 67,
+      "teks": "Proses penguapan air dari permukaan daun melalui stomata (mulut daun) disebut?",
+      "bahasa": "id",
+      "jawaban": "Transpirasi",
+      "alternatif_jawaban": [],
+      "pembahasan": "Transpirasi adalah penguapan air dari daun melalui stomata. Menciptakan 'tarikan' yang membantu mengangkut air dari akar ke daun melalui xilem. Transpirasi juga mendinginkan tumbuhan, seperti keringat pada hewan.",
+      "topik": "Biologi Tumbuhan",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 68,
+      "teks": "Perkembangbiakan tumbuhan menggunakan spora, tunas, atau setek tanpa proses pembuahan disebut?",
+      "bahasa": "id",
+      "jawaban": "Perkembangbiakan vegetatif",
+      "alternatif_jawaban": [
+        "Vegetatif"
+      ],
+      "pembahasan": "Perkembangbiakan vegetatif adalah reproduksi tanpa melibatkan sel kelamin. Contoh alami: tunas (pisang, bambu), umbi (kentang, bawang), spora (paku, lumut). Contoh buatan: setek, cangkok, okulasi. Keturunannya identik secara genetik dengan induknya.",
+      "topik": "Biologi Tumbuhan",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 69,
+      "teks": "Perkembangbiakan tumbuhan yang melibatkan proses pembuahan antara sel kelamin jantan dan betina disebut?",
+      "bahasa": "id",
+      "jawaban": "Perkembangbiakan generatif",
+      "alternatif_jawaban": [
+        "Generatif"
+      ],
+      "pembahasan": "Perkembangbiakan generatif (seksual) melibatkan pembuahan antara serbuk sari dan sel telur. Prosesnya: penyerbukan → pembuahan → pembentukan biji dan buah. Keturunannya memiliki variasi genetik (tidak identik dengan induk).",
+      "topik": "Biologi Tumbuhan",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 70,
+      "teks": "Proses bertemunya serbuk sari (pollen) dengan kepala putik bunga disebut?",
+      "bahasa": "id",
+      "jawaban": "Penyerbukan",
+      "alternatif_jawaban": [
+        "Polinasi",
+        "Pollination"
+      ],
+      "pembahasan": "Penyerbukan (polinasi) adalah jatuhnya serbuk sari ke kepala putik. Berdasarkan perantaranya: entomogami (serangga), anemogami (angin), ornithogami (burung), hidrogami (air). Penyerbukan adalah syarat sebelum pembuahan.",
+      "topik": "Biologi Tumbuhan",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 71,
+      "teks": "What is the process called when pollen fertilizes the egg cell inside a flower to form a seed?",
+      "bahasa": "en",
+      "jawaban": "Fertilization",
+      "alternatif_jawaban": [
+        "Pembuahan"
+      ],
+      "pembahasan": "Fertilization (pembuahan) is when a male pollen grain fuses with a female egg cell (ovule) inside the flower's pistil to form a zygote that develops into a seed. This is different from pollination, which is just the transfer of pollen to the stigma. After fertilization, the ovary develops into a fruit.",
+      "topik": "Biologi Tumbuhan",
+      "level": "sedang",
+      "waktu": 15
+    },
+    {
+      "id": 72,
+      "teks": "Bagian bunga yang menghasilkan serbuk sari (pollen) adalah?",
+      "bahasa": "id",
+      "jawaban": "Benang sari",
+      "alternatif_jawaban": [
+        "Stamen",
+        "Kepala sari"
+      ],
+      "pembahasan": "Benang sari (stamen) adalah organ kelamin jantan bunga, terdiri dari tangkai sari (filamen) dan kepala sari (antera) yang menghasilkan serbuk sari. Putik (pistil) adalah organ kelamin betina yang menerima serbuk sari saat penyerbukan.",
+      "topik": "Biologi Tumbuhan",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 73,
+      "teks": "Tumbuhan yang menghasilkan biji tetapi bijinya tidak terbungkus buah (berbiji terbuka) disebut?",
+      "bahasa": "id",
+      "jawaban": "Gymnospermae",
+      "alternatif_jawaban": [
+        "Tumbuhan berbiji terbuka"
+      ],
+      "pembahasan": "Gymnospermae adalah tumbuhan berbiji terbuka yang bijinya tidak terbungkus daun buah. Contoh: cemara, pinus, melinjo, pakis haji. Tumbuhan berbiji tertutup (Angiospermae) memiliki biji yang terbungkus buah sejati.",
+      "topik": "Biologi Tumbuhan",
+      "level": "sulit",
+      "waktu": 10
+    },
+    {
+      "id": 74,
+      "teks": "Tumbuhan yang dapat menjebak dan mencerna serangga untuk mendapatkan nutrisi nitrogen disebut tumbuhan?",
+      "bahasa": "id",
+      "jawaban": "Karnivora (pemakan serangga)",
+      "alternatif_jawaban": [
+        "Kantong semar",
+        "Insektivora",
+        "Karnivora"
+      ],
+      "pembahasan": "Tumbuhan karnivora menangkap dan mencerna serangga atau hewan kecil untuk memperoleh nitrogen di tanah miskin hara. Contoh di Indonesia: Nepenthes (kantong semar). Contoh lain yang terkenal: Venus Flytrap dari Amerika Utara.",
+      "topik": "Biologi Tumbuhan",
+      "level": "sulit",
+      "waktu": 10
+    },
+    {
+      "id": 75,
+      "teks": "Tumbuhan yang menempel pada tumbuhan lain dan mengambil air serta mineral langsung dari inangnya disebut?",
+      "bahasa": "id",
+      "jawaban": "Tumbuhan parasit",
+      "alternatif_jawaban": [
+        "Parasit"
+      ],
+      "pembahasan": "Tumbuhan parasit mengambil air dan mineral dari inangnya melalui haustorium (alat penghisap). Contoh: tali putri (Cuscuta), benalu (Loranthus). Berbeda dengan epifit (tumbuhan menempel tanpa mengambil nutrisi dari inang, seperti anggrek liar).",
+      "topik": "Biologi Tumbuhan",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 76,
+      "teks": "What is the green pigment in plants that captures light energy for photosynthesis?",
+      "bahasa": "en",
+      "jawaban": "Chlorophyll",
+      "alternatif_jawaban": [
+        "Klorofil"
+      ],
+      "pembahasan": "Chlorophyll (klorofil) is the green pigment in chloroplasts of plant cells. It absorbs red and blue light wavelengths for photosynthesis while reflecting green light, which is why leaves appear green. Without chlorophyll, plants cannot produce food and will eventually die.",
+      "topik": "Biologi Tumbuhan",
+      "level": "mudah",
+      "waktu": 15
+    },
+    {
+      "id": 77,
+      "teks": "Proses pertumbuhan biji yang mulai berkecambah menjadi tanaman kecil disebut?",
+      "bahasa": "id",
+      "jawaban": "Perkecambahan",
+      "alternatif_jawaban": [
+        "Germinasi"
+      ],
+      "pembahasan": "Perkecambahan (germinasi) adalah proses biji mulai tumbuh menjadi tanaman baru. Dimulai dari penyerapan air (imbibisi), aktivasi enzim, lalu muncul radikula (calon akar) dan plumula (calon tunas). Membutuhkan air, suhu tepat, dan oksigen.",
+      "topik": "Biologi Tumbuhan",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 78,
+      "teks": "Tumbuhan yang tidak memiliki akar, batang, dan daun sejati serta berkembang biak dengan spora adalah?",
+      "bahasa": "id",
+      "jawaban": "Lumut",
+      "alternatif_jawaban": [
+        "Tumbuhan lumut",
+        "Bryophyta"
+      ],
+      "pembahasan": "Lumut (Bryophyta) tidak memiliki jaringan pembuluh (xilem/floem) dan belum memiliki organ sejati. Hidup di tempat lembab. Reproduksi melalui spora. Lumut penting sebagai pelopor ekosistem dan penyerap air di hutan.",
+      "topik": "Biologi Tumbuhan",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 79,
+      "teks": "Bagian biji yang berisi calon tumbuhan baru, terdiri dari calon akar dan calon tunas, disebut?",
+      "bahasa": "id",
+      "jawaban": "Embrio",
+      "alternatif_jawaban": [
+        "Lembaga"
+      ],
+      "pembahasan": "Embrio (lembaga) adalah inti biji yang berisi calon tumbuhan: radikula (calon akar), plumula (calon tunas), dan kotiledon (daun lembaga/cadangan makanan). Embrio berkembang menjadi tanaman lengkap saat perkecambahan.",
+      "topik": "Biologi Tumbuhan",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 80,
+      "teks": "Tumbuhan paku memiliki jaringan pembuluh tetapi tidak menghasilkan?",
+      "bahasa": "id",
+      "jawaban": "Biji",
+      "alternatif_jawaban": [
+        "Bunga dan biji"
+      ],
+      "pembahasan": "Tumbuhan paku (Pteridophyta) sudah memiliki akar, batang, daun sejati serta jaringan pembuluh (xilem-floem), tetapi tidak menghasilkan biji. Berkembang biak dengan spora. Contoh: pakis, suplir, paku ekor kuda.",
+      "topik": "Biologi Tumbuhan",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 81,
+      "teks": "What part of the plant is responsible for producing food through photosynthesis?",
+      "bahasa": "en",
+      "jawaban": "Leaf",
+      "alternatif_jawaban": [
+        "Leaves",
+        "Daun"
+      ],
+      "pembahasan": "The leaf (daun) is the main organ for photosynthesis. Its flat shape maximizes sunlight capture. Leaves contain chloroplasts with chlorophyll that absorb light to convert CO₂ and water into glucose and oxygen. Stomata (tiny pores) on leaves allow gas exchange.",
+      "topik": "Biologi Tumbuhan",
+      "level": "mudah",
+      "waktu": 15
+    },
+    {
+      "id": 82,
+      "teks": "Akar khusus yang tumbuh dari batang ke tanah untuk memperkokoh tumbuhan besar di daerah pesisir disebut?",
+      "bahasa": "id",
+      "jawaban": "Akar tunjang",
+      "alternatif_jawaban": [],
+      "pembahasan": "Akar tunjang tumbuh dari batang atau cabang ke tanah untuk menopang tumbuhan di tanah lumpur atau tidak stabil. Ditemukan pada pohon bakau (mangrove), pandan, dan beberapa pohon besar di hutan hujan tropis.",
+      "topik": "Biologi Tumbuhan",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 83,
+      "teks": "Proses penyerbukan yang perantaranya adalah angin disebut?",
+      "bahasa": "id",
+      "jawaban": "Anemogami",
+      "alternatif_jawaban": [
+        "Penyerbukan oleh angin"
+      ],
+      "pembahasan": "Anemogami adalah penyerbukan berbantuan angin. Tumbuhan dengan penyerbukan angin biasanya memiliki serbuk sari ringan, kering, dan berjumlah banyak, serta bunga tidak mencolok. Contoh: padi, jagung, rumput, dan kebanyakan pohon konifer.",
+      "topik": "Biologi Tumbuhan",
+      "level": "sulit",
+      "waktu": 10
+    },
+    {
+      "id": 84,
+      "teks": "Gerak daun putri malu yang menutup saat disentuh merupakan contoh gerak tumbuhan yang disebut?",
+      "bahasa": "id",
+      "jawaban": "Tigmonasti (seismonasti)",
+      "alternatif_jawaban": [
+        "Seismonasti",
+        "Nasti"
+      ],
+      "pembahasan": "Tigmonasti/seismonasti adalah gerak nasti (tidak bergantung arah rangsang) karena sentuhan atau getaran. Daun putri malu (Mimosa pudica) menutup karena perubahan tekanan air (turgor) di sel, sebagai mekanisme pertahanan dari herbivora.",
+      "topik": "Biologi Tumbuhan",
+      "level": "sulit",
+      "waktu": 10
+    },
+    {
+      "id": 85,
+      "teks": "Tumbuhan yang beradaptasi di daerah sangat kering dengan menyimpan air dalam batang atau daun yang tebal disebut?",
+      "bahasa": "id",
+      "jawaban": "Tumbuhan sukulen",
+      "alternatif_jawaban": [
+        "Sukulen",
+        "Xerofit",
+        "Kaktus"
+      ],
+      "pembahasan": "Tumbuhan sukulen (xerofit) menyimpan air dalam jaringan batang, daun, atau akar yang tebal berdaging untuk bertahan di lingkungan kering. Contoh: kaktus (batang tebal), lidah buaya (daun tebal). Kaktus juga memiliki duri untuk mengurangi penguapan.",
+      "topik": "Biologi Tumbuhan",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 86,
+      "teks": "Tahapan metamorfosis sempurna pada kupu-kupu secara berurutan adalah?",
+      "bahasa": "id",
+      "jawaban": "Telur, larva (ulat), pupa (kepompong), imago",
+      "alternatif_jawaban": [
+        "Telur, larva, pupa, imago"
+      ],
+      "pembahasan": "Metamorfosis sempurna (holometabolisme) memiliki 4 tahap: telur → larva (ulat) → pupa (kepompong) → imago (dewasa). Selain kupu-kupu, hewan yang mengalaminya: nyamuk, lalat, lebah, semut, dan kumbang.",
+      "topik": "Biologi Hewan",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 87,
+      "teks": "Kelompok hewan yang memiliki tulang belakang disebut?",
+      "bahasa": "id",
+      "jawaban": "Vertebrata",
+      "alternatif_jawaban": [],
+      "pembahasan": "Vertebrata adalah hewan bertulang belakang. Terbagi menjadi 5 kelas: Pisces (ikan), Amphibia (katak), Reptilia (reptil), Aves (burung), dan Mammalia (mamalia). Masing-masing kelas memiliki ciri khas tersendiri.",
+      "topik": "Biologi Hewan",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 88,
+      "teks": "Kelompok hewan yang tidak memiliki tulang belakang dan merupakan kelompok hewan terbesar disebut?",
+      "bahasa": "id",
+      "jawaban": "Invertebrata",
+      "alternatif_jawaban": [
+        "Avertebrata"
+      ],
+      "pembahasan": "Invertebrata (hewan tanpa tulang belakang) merupakan >97% dari semua spesies hewan. Meliputi: serangga, laba-laba, udang (Arthropoda), cumi-cumi, keong (Moluska), bintang laut (Echinodermata), cacing (Annelida), dan spons.",
+      "topik": "Biologi Hewan",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 89,
+      "teks": "Tahapan metamorfosis tidak sempurna pada belalang secara berurutan adalah?",
+      "bahasa": "id",
+      "jawaban": "Telur, nimfa, dewasa",
+      "alternatif_jawaban": [
+        "Telur, nimfa, imago"
+      ],
+      "pembahasan": "Metamorfosis tidak sempurna (hemimetabolisme) memiliki 3 tahap: telur → nimfa (mirip dewasa tapi lebih kecil, belum bersayap sempurna) → dewasa. Contoh: belalang, jangkrik, kecoa, kutu, dan capung.",
+      "topik": "Biologi Hewan",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 90,
+      "teks": "Kemampuan hewan untuk menyesuaikan diri dengan lingkungannya agar dapat bertahan hidup disebut?",
+      "bahasa": "id",
+      "jawaban": "Adaptasi",
+      "alternatif_jawaban": [],
+      "pembahasan": "Adaptasi adalah penyesuaian diri makhluk hidup dengan lingkungan. Ada tiga jenis: morfologi (bentuk tubuh), fisiologi (fungsi tubuh), dan tingkah laku. Contoh: bebek punya selaput kaki (morfologi), unta menyimpan lemak di punuk (fisiologi).",
+      "topik": "Biologi Hewan",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 91,
+      "teks": "What do we call animals that eat only plants?",
+      "bahasa": "en",
+      "jawaban": "Herbivores",
+      "alternatif_jawaban": [
+        "Herbivora"
+      ],
+      "pembahasan": "Herbivores (herbivora) are animals that eat only plants. Examples: cows, rabbits, deer, elephants, horses. They usually have flat teeth for grinding plants and longer digestive tracts to break down plant fibers. In a food chain, herbivores are primary consumers.",
+      "topik": "Biologi Hewan",
+      "level": "mudah",
+      "waktu": 15
+    },
+    {
+      "id": 92,
+      "teks": "Hewan yang hanya memakan tumbuhan disebut?",
+      "bahasa": "id",
+      "jawaban": "Herbivora",
+      "alternatif_jawaban": [],
+      "pembahasan": "Herbivora adalah pemakan tumbuhan: sapi, kambing, kerbau, kelinci, kuda, gajah. Herbivora biasanya memiliki gigi geraham lebar untuk menghancurkan tumbuhan berserat. Sistem pencernaannya lebih panjang untuk mencerna selulosa.",
+      "topik": "Biologi Hewan",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 93,
+      "teks": "Hewan yang hanya memakan daging hewan lain disebut?",
+      "bahasa": "id",
+      "jawaban": "Karnivora",
+      "alternatif_jawaban": [],
+      "pembahasan": "Karnivora adalah pemakan daging: singa, harimau, serigala, buaya, elang, hiu. Memiliki gigi taring tajam untuk merobek daging. Mereka umumnya berada di puncak rantai makanan sebagai predator puncak.",
+      "topik": "Biologi Hewan",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 94,
+      "teks": "Hewan yang memakan tumbuhan sekaligus daging hewan lain disebut?",
+      "bahasa": "id",
+      "jawaban": "Omnivora",
+      "alternatif_jawaban": [],
+      "pembahasan": "Omnivora adalah pemakan segalanya: manusia, babi, beruang, ayam, tikus, musang. Memiliki gigi seri, taring, dan geraham yang berfungsi baik untuk berbagai jenis makanan nabati maupun hewani.",
+      "topik": "Biologi Hewan",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 95,
+      "teks": "Kemampuan bunglon mengubah warna kulitnya sebagai respons terhadap lingkungan disebut?",
+      "bahasa": "id",
+      "jawaban": "Mimikri",
+      "alternatif_jawaban": [],
+      "pembahasan": "Mimikri bunglon menggunakan sel pigmen khusus (kromatofor) untuk mengubah warna kulit. Perubahan warna bunglon terutama untuk komunikasi dan termoregulasi. Gurita dan cumi-cumi juga mengubah warna kulit untuk kamuflase dari predator.",
+      "topik": "Biologi Hewan",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 96,
+      "teks": "Hewan yang aktif mencari makan pada malam hari disebut?",
+      "bahasa": "id",
+      "jawaban": "Nokturnal",
+      "alternatif_jawaban": [],
+      "pembahasan": "Hewan nokturnal beraktivitas malam hari dan beristirahat di siang hari, biasanya dengan mata besar yang sensitif terhadap cahaya rendah. Contoh: burung hantu, kelelawar, musang, tikus. Kebalikannya disebut diurnal (aktif siang hari).",
+      "topik": "Biologi Hewan",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 97,
+      "teks": "Katak dewasa bernapas menggunakan apa?",
+      "bahasa": "id",
+      "jawaban": "Paru-paru dan kulit",
+      "alternatif_jawaban": [
+        "Kulit dan paru-paru"
+      ],
+      "pembahasan": "Katak dewasa bernapas dengan paru-paru di darat dan menggunakan kulit saat berada di air atau lingkungan lembab. Kulit katak tipis dan selalu lembap untuk pertukaran gas. Berudu (kecebong) bernapas dengan insang.",
+      "topik": "Biologi Hewan",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 98,
+      "teks": "Hewan yang menggunakan gelombang suara ultrasonik untuk navigasi dan mencari mangsa dalam kegelapan disebut?",
+      "bahasa": "id",
+      "jawaban": "Kelelawar",
+      "alternatif_jawaban": [],
+      "pembahasan": "Kelelawar menggunakan ekolokasi: memancarkan gelombang ultrasonik, lalu menangkap pantulannya untuk mendeteksi objek dalam gelap. Lumba-lumba dan paus juga menggunakan ekolokasi di air. Teknologi sonar pada kapal selam terinspirasi dari kemampuan ini.",
+      "topik": "Biologi Hewan",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 99,
+      "teks": "What is the largest animal on Earth that has ever existed?",
+      "bahasa": "en",
+      "jawaban": "Blue whale",
+      "alternatif_jawaban": [
+        "Paus biru",
+        "Balaenoptera musculus"
+      ],
+      "pembahasan": "The blue whale (paus biru) is the largest animal ever known to exist, reaching up to 33 meters in length and 200 tons. Despite its enormous size, it feeds mainly on tiny krill, consuming up to 4 tons per day. Blue whales are mammals that breathe air through a blowhole.",
+      "topik": "Biologi Hewan",
+      "level": "sedang",
+      "waktu": 15
+    },
+    {
+      "id": 100,
+      "teks": "Kelompok hewan berdarah panas yang menyusui anaknya menggunakan kelenjar susu disebut?",
+      "bahasa": "id",
+      "jawaban": "Mamalia",
+      "alternatif_jawaban": [],
+      "pembahasan": "Mamalia adalah hewan bertulang belakang berdarah panas, memiliki kelenjar susu, tubuh berbulu/berambut, dan sebagian besar melahirkan anak. Contoh: kucing, anjing, gajah, lumba-lumba, kelelawar, dan manusia.",
+      "topik": "Biologi Hewan",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 101,
+      "teks": "Hewan unik yang termasuk mamalia tetapi bertelur adalah?",
+      "bahasa": "id",
+      "jawaban": "Platipus",
+      "alternatif_jawaban": [
+        "Platypus",
+        "Echidna"
+      ],
+      "pembahasan": "Platipus dan Echidna adalah satu-satunya mamalia bertelur (monotremata). Platipus memiliki paruh seperti bebek, kaki berselaput, dan racun di taji tumitnya. Ditemukan di Australia dan Tasmania — sangat unik dalam dunia mamalia.",
+      "topik": "Biologi Hewan",
+      "level": "sulit",
+      "waktu": 10
+    },
+    {
+      "id": 102,
+      "teks": "Cumi-cumi melindungi diri dari predator dengan cara?",
+      "bahasa": "id",
+      "jawaban": "Menyemprotkan tinta hitam",
+      "alternatif_jawaban": [
+        "Tinta hitam"
+      ],
+      "pembahasan": "Cumi-cumi menyemprotkan tinta (mengandung melanin) untuk membuat awan hitam di air, mengaburkan pandangan predator dan memberi waktu melarikan diri. Gurita juga memiliki kemampuan serupa. Tinta cumi dahulu digunakan sebagai tinta tulis.",
+      "topik": "Biologi Hewan",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 103,
+      "teks": "Hewan yang melakukan hibernasi (tidur panjang) selama musim dingin untuk menghemat energi adalah?",
+      "bahasa": "id",
+      "jawaban": "Beruang",
+      "alternatif_jawaban": [],
+      "pembahasan": "Beruang melakukan hibernasi di musim dingin: metabolisme sangat lambat, suhu tubuh turun, detak jantung berkurang drastis, dan tidak makan. Hewan hibernasi lain: landak, kelelawar, dan beberapa marmot.",
+      "topik": "Biologi Hewan",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 104,
+      "teks": "Kelompok hewan serangga (insekta) memiliki berapa pasang kaki?",
+      "bahasa": "id",
+      "jawaban": "3 pasang kaki",
+      "alternatif_jawaban": [
+        "6 kaki",
+        "Tiga pasang"
+      ],
+      "pembahasan": "Serangga memiliki 3 pasang kaki (6 kaki), tubuh 3 bagian (kepala, dada, perut), dan umumnya 1-2 pasang sayap. Ini membedakannya dari laba-laba (4 pasang kaki/arachnida) dan udang (lebih dari 5 pasang/krustasea).",
+      "topik": "Biologi Hewan",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 105,
+      "teks": "What type of animal is a dolphin?",
+      "bahasa": "en",
+      "jawaban": "Mammal",
+      "alternatif_jawaban": [
+        "Mamalia"
+      ],
+      "pembahasan": "A dolphin (lumba-lumba) is a mammal, not a fish. Despite living in the ocean, dolphins breathe air through a blowhole, are warm-blooded, give birth to live young, and nurse their calves with milk — all characteristics of mammals. Whales are also mammals.",
+      "topik": "Biologi Hewan",
+      "level": "sedang",
+      "waktu": 15
+    },
+    {
+      "id": 106,
+      "teks": "Hewan yang termasuk golongan Amfibi (dua alam) adalah?",
+      "bahasa": "id",
+      "jawaban": "Katak",
+      "alternatif_jawaban": [
+        "Kodok",
+        "Salamander"
+      ],
+      "pembahasan": "Amfibi (Amphibia) hidup di dua alam: air dan darat. Ciri khas: kulit lembap tanpa sisik, berdarah dingin, bertelur di air, larvanya bernapas dengan insang. Contoh: katak, kodok, salamander, dan sesilian.",
+      "topik": "Biologi Hewan",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 107,
+      "teks": "Kemampuan cicak memutuskan ekornya sendiri saat terancam predator disebut?",
+      "bahasa": "id",
+      "jawaban": "Autotomi",
+      "alternatif_jawaban": [],
+      "pembahasan": "Autotomi adalah kemampuan hewan memutuskan bagian tubuh tertentu sebagai strategi pertahanan. Ekor cicak yang lepas masih bergerak-gerak untuk mengalihkan perhatian predator. Ekor akan tumbuh kembali meski tidak sama persis dengan aslinya.",
+      "topik": "Biologi Hewan",
+      "level": "sulit",
+      "waktu": 10
+    },
+    {
+      "id": 108,
+      "teks": "Rantai makanan yang benar di ekosistem sawah adalah?",
+      "bahasa": "id",
+      "jawaban": "Padi → tikus → ular → elang",
+      "alternatif_jawaban": [
+        "Padi, tikus, ular, elang"
+      ],
+      "pembahasan": "Rantai makanan selalu dimulai dari produsen (padi) → konsumen 1 (tikus/herbivora) → konsumen 2 (ular/karnivora) → konsumen 3 (elang/karnivora puncak). Panah menunjukkan arah aliran energi.",
+      "topik": "Biologi Hewan",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 109,
+      "teks": "Ulat sutra yang digunakan dalam industri tekstil merupakan larva dari?",
+      "bahasa": "id",
+      "jawaban": "Ngengat sutra (Bombyx mori)",
+      "alternatif_jawaban": [
+        "Bombyx mori",
+        "Ngengat sutra"
+      ],
+      "pembahasan": "Ulat sutra adalah larva ngengat sutra Bombyx mori. Satu kepompong menghasilkan benang sutra sepanjang 300–900 meter. Industri menghasilkan sutra dari kepompong disebut serikultur. Tiongkok adalah produsen sutra terbesar di dunia.",
+      "topik": "Biologi Hewan",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 110,
+      "teks": "Hewan yang hidup bergantian di dua alam (air dan darat) dalam siklus hidupnya disebut?",
+      "bahasa": "id",
+      "jawaban": "Amfibi",
+      "alternatif_jawaban": [
+        "Amphibia"
+      ],
+      "pembahasan": "Amfibi hidup bergantian di air dan darat. Fase larva (berudu) hidup di air bernapas dengan insang. Setelah metamorfosis, katak dewasa hidup di darat namun tetap perlu air untuk kelembaban kulit dan reproduksi.",
+      "topik": "Biologi Hewan",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 111,
+      "teks": "Tarikan atau dorongan yang dapat mengubah gerak, bentuk, atau kedudukan suatu benda disebut?",
+      "bahasa": "id",
+      "jawaban": "Gaya",
+      "alternatif_jawaban": [
+        "Force"
+      ],
+      "pembahasan": "Gaya adalah dorongan atau tarikan pada suatu benda. Dapat mengubah kecepatan gerak (mempercepat/memperlambat), arah gerak, atau bentuk benda. Satuan gaya adalah Newton (N), dinamakan dari Isaac Newton.",
+      "topik": "Fisika Dasar",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 112,
+      "teks": "Gaya tarik Bumi yang menarik semua benda ke pusat Bumi disebut?",
+      "bahasa": "id",
+      "jawaban": "Gravitasi",
+      "alternatif_jawaban": [
+        "Gaya gravitasi",
+        "Gravity"
+      ],
+      "pembahasan": "Gravitasi adalah gaya tarik-menarik antara dua benda bermassa. Gravitasi Bumi menarik semua benda ke bawah, menyebabkan benda jatuh ketika dilepaskan. Isaac Newton merumuskan hukum gravitasi universal setelah mengamati apel jatuh dari pohon.",
+      "topik": "Fisika Dasar",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 113,
+      "teks": "Alat yang digunakan untuk mengukur panjang suatu benda adalah?",
+      "bahasa": "id",
+      "jawaban": "Penggaris",
+      "alternatif_jawaban": [
+        "Mistar",
+        "Meteran"
+      ],
+      "pembahasan": "Penggaris/mistar adalah alat ukur panjang dasar. Untuk panjang lebih besar digunakan meteran pita. Satuan internasional panjang adalah meter (m). Alat ukur presisi tinggi: jangka sorong dan mikrometer sekrup.",
+      "topik": "Fisika Dasar",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 114,
+      "teks": "Alat yang digunakan untuk mengukur suhu benda atau lingkungan adalah?",
+      "bahasa": "id",
+      "jawaban": "Termometer",
+      "alternatif_jawaban": [],
+      "pembahasan": "Termometer mengukur suhu. Jenisnya: termometer klinis (suhu tubuh), ruangan, dan laboratorium. Skala suhu: Celsius (°C), Fahrenheit (°F), Kelvin (K). Indonesia umumnya menggunakan Celsius.",
+      "topik": "Fisika Dasar",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 115,
+      "teks": "Jenis gaya yang muncul antara dua permukaan yang bersentuhan dan menghambat gerak benda disebut?",
+      "bahasa": "id",
+      "jawaban": "Gaya gesek",
+      "alternatif_jawaban": [
+        "Gesekan",
+        "Friction"
+      ],
+      "pembahasan": "Gaya gesek muncul saat dua permukaan bersentuhan dan bergerak relatif satu sama lain. Bisa merugikan (mengurangi efisiensi mesin) tapi juga menguntungkan (membantu berjalan kaki, pengereman kendaraan).",
+      "topik": "Fisika Dasar",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 116,
+      "teks": "Bayangan yang terbentuk pada cermin datar memiliki sifat?",
+      "bahasa": "id",
+      "jawaban": "Maya, tegak, dan sama besar",
+      "alternatif_jawaban": [
+        "Bayangan maya tegak sama besar"
+      ],
+      "pembahasan": "Cermin datar menghasilkan bayangan maya (tidak bisa ditangkap layar), tegak (tidak terbalik atas-bawah), dan sama besar. Namun tampak terbalik kiri-kanan. Jarak benda ke cermin sama dengan jarak bayangan ke cermin.",
+      "topik": "Fisika Dasar",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 117,
+      "teks": "What unit is used to measure temperature in the metric system?",
+      "bahasa": "en",
+      "jawaban": "Celsius",
+      "alternatif_jawaban": [
+        "Degrees Celsius",
+        "°C"
+      ],
+      "pembahasan": "Celsius (°C) is the temperature unit in the metric system. Water freezes at 0°C and boils at 100°C at sea level. The Fahrenheit scale (°F) is mainly used in the USA. The Kelvin scale (K) is used in science: absolute zero = 0 K = -273.15°C.",
+      "topik": "Fisika Dasar",
+      "level": "mudah",
+      "waktu": 15
+    },
+    {
+      "id": 118,
+      "teks": "Bunyi dapat merambat melalui medium apa saja?",
+      "bahasa": "id",
+      "jawaban": "Benda padat, cair, dan gas",
+      "alternatif_jawaban": [
+        "Padat, cair, gas"
+      ],
+      "pembahasan": "Bunyi merambat melalui zat perantara: padat, cair, maupun gas. Paling cepat di benda padat, lebih lambat di zat cair, paling lambat di gas. Di udara (20°C) kecepatan bunyi ±343 m/s. Bunyi TIDAK bisa merambat di ruang hampa (vakum).",
+      "topik": "Fisika Dasar",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 119,
+      "teks": "Bunyi tidak dapat merambat melalui?",
+      "bahasa": "id",
+      "jawaban": "Ruang hampa",
+      "alternatif_jawaban": [
+        "Vakum",
+        "Hampa udara"
+      ],
+      "pembahasan": "Bunyi adalah gelombang mekanik yang membutuhkan medium untuk merambat. Di ruang hampa (vakum) tidak ada partikel, sehingga bunyi tidak bisa merambat. Itulah mengapa di luar angkasa tidak ada suara.",
+      "topik": "Fisika Dasar",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 120,
+      "teks": "Benda yang dapat menarik benda-benda dari bahan logam tertentu seperti besi dan nikel disebut?",
+      "bahasa": "id",
+      "jawaban": "Magnet",
+      "alternatif_jawaban": [],
+      "pembahasan": "Magnet memiliki medan magnet dan dapat menarik bahan feromagnetik (besi, baja, nikel, kobalt). Setiap magnet memiliki dua kutub: utara (N) dan selatan (S). Kutub sejenis tolak-menolak; kutub berbeda tarik-menarik.",
+      "topik": "Fisika Dasar",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 121,
+      "teks": "Dua kutub magnet yang sama jika didekatkan akan...",
+      "bahasa": "id",
+      "jawaban": "Saling tolak-menolak",
+      "alternatif_jawaban": [
+        "Menolak",
+        "Bertolakan"
+      ],
+      "pembahasan": "Hukum magnet: kutub sejenis (U-U atau S-S) saling tolak-menolak; kutub berbeda (U-S) tarik-menarik. Prinsip ini dimanfaatkan dalam teknologi MagLev (kereta levitasi magnetik) dan motor listrik.",
+      "topik": "Fisika Dasar",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 122,
+      "teks": "Bahan yang dapat menghantarkan arus listrik dengan baik disebut?",
+      "bahasa": "id",
+      "jawaban": "Konduktor",
+      "alternatif_jawaban": [],
+      "pembahasan": "Konduktor memiliki hambatan listrik rendah sehingga mudah menghantarkan arus. Contoh terbaik: tembaga, perak, emas, aluminium. Kabel listrik dibuat dari tembaga karena konduktor yang baik, murah, dan mudah dibentuk.",
+      "topik": "Fisika Dasar",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 123,
+      "teks": "Bahan yang tidak dapat menghantarkan arus listrik disebut?",
+      "bahasa": "id",
+      "jawaban": "Isolator",
+      "alternatif_jawaban": [],
+      "pembahasan": "Isolator tidak dapat menghantarkan listrik (hambatan sangat tinggi). Contoh: karet, plastik, kayu kering, keramik, kaca. Pegangan plastik pada kabel listrik berfungsi sebagai isolator untuk melindungi orang dari sengatan listrik.",
+      "topik": "Fisika Dasar",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 124,
+      "teks": "Cahaya putih yang melewati prisma kaca akan terurai menjadi?",
+      "bahasa": "id",
+      "jawaban": "Spektrum warna (pelangi)",
+      "alternatif_jawaban": [
+        "Spektrum warna",
+        "Pelangi"
+      ],
+      "pembahasan": "Dispersi cahaya adalah terurainya cahaya putih oleh prisma karena setiap warna memiliki panjang gelombang berbeda dan dibiaskan dengan sudut berbeda. Urutan warna: Merah, Jingga, Kuning, Hijau, Biru, Nila, Ungu (MeJiKuHiBiNiU).",
+      "topik": "Fisika Dasar",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 125,
+      "teks": "Perubahan energi yang terjadi pada panel surya adalah?",
+      "bahasa": "id",
+      "jawaban": "Energi cahaya menjadi energi listrik",
+      "alternatif_jawaban": [
+        "Cahaya → listrik"
+      ],
+      "pembahasan": "Panel surya (sel fotovoltaik) mengubah energi cahaya (foton) menjadi energi listrik melalui efek fotovoltaik menggunakan bahan semikonduktor. Teknologi energi terbarukan yang bersih dan semakin terjangkau.",
+      "topik": "Fisika Dasar",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 126,
+      "teks": "What force causes objects to fall toward the ground?",
+      "bahasa": "en",
+      "jawaban": "Gravity",
+      "alternatif_jawaban": [
+        "Gravitasi",
+        "Gravitational force"
+      ],
+      "pembahasan": "Gravity (gravitasi) is the attractive force between any two objects with mass. Earth's gravity pulls all objects toward its center, causing them to fall when released. Isaac Newton described gravity in his Universal Law of Gravitation after observing an apple fall from a tree.",
+      "topik": "Fisika Dasar",
+      "level": "mudah",
+      "waktu": 15
+    },
+    {
+      "id": 127,
+      "teks": "Frekuensi bunyi yang dapat didengar oleh manusia berkisar antara?",
+      "bahasa": "id",
+      "jawaban": "20 Hz – 20.000 Hz",
+      "alternatif_jawaban": [
+        "20 - 20.000 Hz",
+        "20 Hz sampai 20 kHz"
+      ],
+      "pembahasan": "Telinga manusia mendengar bunyi berfrekuensi 20–20.000 Hz. Di bawah 20 Hz = infrasonik (tidak terdengar manusia). Di atas 20.000 Hz = ultrasonik (digunakan kelelawar, lumba-lumba, dan teknologi sonar).",
+      "topik": "Fisika Dasar",
+      "level": "sulit",
+      "waktu": 10
+    },
+    {
+      "id": 128,
+      "teks": "Bunyi dengan frekuensi di atas 20.000 Hz yang digunakan dalam teknologi sonar dan USG medis disebut?",
+      "bahasa": "id",
+      "jawaban": "Ultrasonik",
+      "alternatif_jawaban": [
+        "Gelombang ultrasonik"
+      ],
+      "pembahasan": "Ultrasonik adalah bunyi >20.000 Hz (di atas batas pendengaran manusia). Digunakan dalam: sonar (deteksi kapal selam), USG/ultrasonografi (pencitraan medis janin dan organ), pembersih ultrasonik, dan navigasi kelelawar.",
+      "topik": "Fisika Dasar",
+      "level": "sulit",
+      "waktu": 10
+    },
+    {
+      "id": 129,
+      "teks": "Cermin yang permukaan pantulnya melengkung ke luar (cembung) digunakan sebagai?",
+      "bahasa": "id",
+      "jawaban": "Spion kendaraan",
+      "alternatif_jawaban": [
+        "Kaca spion"
+      ],
+      "pembahasan": "Cermin cembung menghasilkan bayangan maya, tegak, dan diperkecil sehingga memberikan pandangan sudut yang lebih luas. Digunakan sebagai spion kendaraan, cermin tikungan jalan, dan cermin pengawas di toko.",
+      "topik": "Fisika Dasar",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 130,
+      "teks": "What type of lens is used in a magnifying glass?",
+      "bahasa": "en",
+      "jawaban": "Convex lens",
+      "alternatif_jawaban": [
+        "Lensa cembung",
+        "Converging lens"
+      ],
+      "pembahasan": "A magnifying glass uses a convex lens (lensa cembung) — thicker in the middle, thinner at the edges. It converges light rays and produces a magnified, upright, virtual image when an object is placed within its focal length. Convex lenses are also used in cameras and reading glasses.",
+      "topik": "Fisika Dasar",
+      "level": "sedang",
+      "waktu": 15
+    },
+    {
+      "id": 131,
+      "teks": "Lensa yang tebal di tengah dan tipis di tepi yang digunakan untuk membesarkan gambar disebut lensa?",
+      "bahasa": "id",
+      "jawaban": "Cembung",
+      "alternatif_jawaban": [
+        "Konveks",
+        "Lensa konvergen"
+      ],
+      "pembahasan": "Lensa cembung (konveks) mengumpulkan berkas cahaya ke satu titik fokus. Digunakan pada: kaca pembesar, kamera, teleskop, kacamata rabun dekat (hipermetropi). Lensa cekung (konkav) menyebarkan cahaya, untuk rabun jauh (miopi).",
+      "topik": "Fisika Dasar",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 132,
+      "teks": "Sumber energi bunyi pada gitar adalah?",
+      "bahasa": "id",
+      "jawaban": "Senar yang bergetar",
+      "alternatif_jawaban": [
+        "Getaran senar"
+      ],
+      "pembahasan": "Bunyi gitar dihasilkan getaran senar yang dipetik. Getaran menghasilkan gelombang suara yang diperkuat oleh tubuh gitar (resonator). Senar lebih tegang/pendek/tipis menghasilkan nada lebih tinggi.",
+      "topik": "Fisika Dasar",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 133,
+      "teks": "Kecepatan rambat cahaya di ruang hampa adalah sekitar?",
+      "bahasa": "id",
+      "jawaban": "300.000 km/s",
+      "alternatif_jawaban": [
+        "3 × 10⁸ m/s",
+        "299.792 km/s"
+      ],
+      "pembahasan": "Cahaya bergerak dengan kecepatan ±299.792 km/s (≈300.000 km/s atau 3×10⁸ m/s) di ruang hampa. Ini adalah kecepatan tertinggi di alam semesta. Cahaya Matahari membutuhkan ±8 menit 20 detik untuk mencapai Bumi.",
+      "topik": "Fisika Dasar",
+      "level": "sulit",
+      "waktu": 10
+    },
+    {
+      "id": 134,
+      "teks": "Peristiwa pembelokan cahaya saat berpindah dari satu medium ke medium lain disebut?",
+      "bahasa": "id",
+      "jawaban": "Pembiasan",
+      "alternatif_jawaban": [
+        "Refraksi"
+      ],
+      "pembahasan": "Pembiasan (refraksi) terjadi saat cahaya berpindah medium dan berubah kecepatannya sehingga arahnya berbelok. Contoh: pensil tampak patah di dalam gelas berair, terbentuknya pelangi, dan fungsi lensa kacamata.",
+      "topik": "Fisika Dasar",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 135,
+      "teks": "Energi yang dimiliki benda karena posisi atau ketinggiannya disebut?",
+      "bahasa": "id",
+      "jawaban": "Energi potensial",
+      "alternatif_jawaban": [
+        "Energi potensial gravitasi"
+      ],
+      "pembahasan": "Energi potensial adalah energi tersimpan karena posisi benda. Makin tinggi posisi benda, makin besar energi potensial gravitasinya. Contoh: air waduk di tempat tinggi, pegas yang diregangkan (energi potensial elastis).",
+      "topik": "Fisika Dasar",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 136,
+      "teks": "Energi yang dimiliki benda karena gerakannya disebut?",
+      "bahasa": "id",
+      "jawaban": "Energi kinetik",
+      "alternatif_jawaban": [],
+      "pembahasan": "Energi kinetik dimiliki benda yang sedang bergerak. Semakin cepat bergerak dan semakin besar massanya, semakin besar energi kinetiknya. Contoh: bola yang dilempar, angin yang menggerakkan turbin, dan kendaraan bergerak.",
+      "topik": "Fisika Dasar",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 137,
+      "teks": "Alat yang mengubah energi listrik menjadi energi cahaya adalah?",
+      "bahasa": "id",
+      "jawaban": "Lampu listrik",
+      "alternatif_jawaban": [
+        "Lampu",
+        "Bohlam"
+      ],
+      "pembahasan": "Lampu listrik mengubah energi listrik menjadi cahaya (dan panas). Lampu pijar menggunakan filamen wolfram yang dipanaskan hingga berpijar. Lampu LED lebih efisien karena sebagian besar energi diubah menjadi cahaya dengan sedikit panas terbuang.",
+      "topik": "Fisika Dasar",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 138,
+      "teks": "Alat yang mengubah energi gerak (mekanik) menjadi energi listrik disebut?",
+      "bahasa": "id",
+      "jawaban": "Generator",
+      "alternatif_jawaban": [
+        "Dinamo"
+      ],
+      "pembahasan": "Generator mengubah energi mekanik (gerak) menjadi energi listrik berdasarkan prinsip induksi elektromagnetik. Semua pembangkit listrik (PLTA, PLTU, PLTG) menggunakan generator. Dinamo adalah generator sederhana yang menghasilkan arus searah (DC).",
+      "topik": "Fisika Dasar",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 139,
+      "teks": "Makin tinggi frekuensi suatu bunyi, makin tinggi pula ... bunyi tersebut.",
+      "bahasa": "id",
+      "jawaban": "Nada (pitch)",
+      "alternatif_jawaban": [
+        "Nada",
+        "Tinggi nada"
+      ],
+      "pembahasan": "Frekuensi bunyi menentukan tinggi rendah nada. Frekuensi tinggi → nada tinggi (seruling, soprano). Frekuensi rendah → nada rendah (gong besar, bass). Perbedaan nada inilah yang menciptakan melodi dalam musik.",
+      "topik": "Fisika Dasar",
+      "level": "sulit",
+      "waktu": 10
+    },
+    {
+      "id": 140,
+      "teks": "Hukum Newton yang menyatakan setiap benda cenderung mempertahankan keadaan geraknya (inersia) adalah Hukum Newton ke?",
+      "bahasa": "id",
+      "jawaban": "Pertama",
+      "alternatif_jawaban": [
+        "I",
+        "Satu",
+        "1"
+      ],
+      "pembahasan": "Hukum Newton I (hukum inersia): suatu benda tetap diam atau bergerak lurus beraturan jika tidak ada resultan gaya yang bekerja padanya. Contoh: penumpang bus terdorong ke belakang saat bus tiba-tiba maju karena badan 'mempertahankan' keadaan diam.",
+      "topik": "Fisika Dasar",
+      "level": "sulit",
+      "waktu": 10
+    },
+    {
+      "id": 141,
+      "teks": "Apa rumus kimia dari air?",
+      "bahasa": "id",
+      "jawaban": "H₂O",
+      "alternatif_jawaban": [
+        "H2O"
+      ],
+      "pembahasan": "H₂O adalah rumus kimia air: 2 atom Hidrogen (H) dan 1 atom Oksigen (O). Air memiliki titik didih 100°C dan titik beku 0°C pada tekanan normal. Air adalah pelarut universal dan sangat penting bagi kehidupan.",
+      "topik": "Kimia Dasar",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 142,
+      "teks": "Rumus kimia garam dapur adalah?",
+      "bahasa": "id",
+      "jawaban": "NaCl",
+      "alternatif_jawaban": [
+        "Natrium klorida"
+      ],
+      "pembahasan": "Garam dapur adalah Natrium Klorida (NaCl) — senyawa ionik dari ion Na⁺ dan Cl⁻. Dihasilkan dari penguapan air laut atau penambangan. Selain bumbu masakan, digunakan sebagai pengawet makanan dan bahan kimia industri.",
+      "topik": "Kimia Dasar",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 143,
+      "teks": "Rumus kimia gas oksigen yang kita hirup adalah?",
+      "bahasa": "id",
+      "jawaban": "O₂",
+      "alternatif_jawaban": [
+        "O2"
+      ],
+      "pembahasan": "Gas oksigen di udara berbentuk molekul diatomik O₂. Membentuk sekitar 21% atmosfer Bumi. Diperlukan untuk respirasi aerob sel tubuh dalam membakar glukosa menghasilkan energi.",
+      "topik": "Kimia Dasar",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 144,
+      "teks": "Perubahan yang tidak menghasilkan zat baru dan dapat dikembalikan ke bentuk semula disebut?",
+      "bahasa": "id",
+      "jawaban": "Perubahan fisika",
+      "alternatif_jawaban": [
+        "Perubahan fisik"
+      ],
+      "pembahasan": "Perubahan fisika tidak menghasilkan zat baru; hanya wujud, bentuk, atau ukurannya berubah. Contoh: es mencair (tetap air), kayu dipotong (tetap kayu), gula larut dalam air (masih bisa dipisahkan dengan penguapan).",
+      "topik": "Kimia Dasar",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 145,
+      "teks": "Perubahan yang menghasilkan zat baru dengan sifat yang berbeda dari zat semula disebut?",
+      "bahasa": "id",
+      "jawaban": "Perubahan kimia",
+      "alternatif_jawaban": [
+        "Reaksi kimia"
+      ],
+      "pembahasan": "Perubahan kimia (reaksi kimia) menghasilkan zat baru. Tanda-tandanya: perubahan warna, pembentukan gas, endapan, perubahan suhu, atau bau. Contoh: kayu terbakar, nasi membusuk, karat besi, fermentasi.",
+      "topik": "Kimia Dasar",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 146,
+      "teks": "Contoh perubahan kimia dalam kehidupan sehari-hari adalah?",
+      "bahasa": "id",
+      "jawaban": "Kayu terbakar",
+      "alternatif_jawaban": [
+        "Nasi membusuk",
+        "Besi berkarat"
+      ],
+      "pembahasan": "Kayu yang terbakar menghasilkan abu, gas CO₂, uap air, dan energi panas/cahaya — zat-zat yang berbeda dari kayu awal. Tidak bisa dikembalikan menjadi kayu lagi. Ini berbeda dengan kayu dipotong (perubahan fisika).",
+      "topik": "Kimia Dasar",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 147,
+      "teks": "Contoh perubahan fisika dalam kehidupan sehari-hari adalah?",
+      "bahasa": "id",
+      "jawaban": "Es mencair",
+      "alternatif_jawaban": [
+        "Gula larut",
+        "Air mendidih",
+        "Kayu dipotong"
+      ],
+      "pembahasan": "Es mencair adalah perubahan fisika: wujud berubah padat → cair, tapi zat tetap air (H₂O) dan bisa dikembalikan dengan didinginkan. Perubahan fisika lain: gula larut, air mendidih jadi uap.",
+      "topik": "Kimia Dasar",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 148,
+      "teks": "Campuran yang zat-zatnya tercampur merata sehingga tidak dapat dibedakan bagian-bagiannya disebut?",
+      "bahasa": "id",
+      "jawaban": "Larutan (campuran homogen)",
+      "alternatif_jawaban": [
+        "Campuran homogen",
+        "Larutan"
+      ],
+      "pembahasan": "Larutan/campuran homogen adalah campuran serba sama di setiap bagian. Contoh: air gula, air garam, udara, perunggu (campuran tembaga-timah). Zat lebih banyak = pelarut (solvent); zat lebih sedikit = terlarut (solute).",
+      "topik": "Kimia Dasar",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 149,
+      "teks": "Campuran yang zat-zatnya tidak tercampur merata dan dapat dibedakan bagian-bagiannya disebut?",
+      "bahasa": "id",
+      "jawaban": "Campuran heterogen",
+      "alternatif_jawaban": [],
+      "pembahasan": "Campuran heterogen tidak serba sama; komponen-komponennya masih dapat dibedakan. Contoh: pasir + air, minyak + air, tepung + air. Lebih mudah dipisahkan dengan penyaringan, dekantasi, atau sentrifugasi.",
+      "topik": "Kimia Dasar",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 150,
+      "teks": "What is the chemical symbol for gold?",
+      "bahasa": "en",
+      "jawaban": "Au",
+      "alternatif_jawaban": [
+        "Gold"
+      ],
+      "pembahasan": "The chemical symbol for gold is Au, from the Latin word 'Aurum'. Gold (atomic number 79) is a dense, shiny, highly malleable metal that does not rust or corrode, which is why it has been used as currency and jewelry throughout human history.",
+      "topik": "Kimia Dasar",
+      "level": "sedang",
+      "waktu": 15
+    },
+    {
+      "id": 151,
+      "teks": "Lambang unsur kimia untuk besi adalah?",
+      "bahasa": "id",
+      "jawaban": "Fe",
+      "alternatif_jawaban": [],
+      "pembahasan": "Lambang kimia besi adalah Fe, dari bahasa Latin 'Ferrum'. Besi (nomor atom 26) adalah logam paling banyak digunakan di dunia. Dalam kondisi lembap, besi teroksidasi membentuk oksida besi (Fe₂O₃) atau karat.",
+      "topik": "Kimia Dasar",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 152,
+      "teks": "Kertas lakmus merah yang dicelupkan ke dalam larutan basa akan berubah menjadi warna?",
+      "bahasa": "id",
+      "jawaban": "Biru",
+      "alternatif_jawaban": [],
+      "pembahasan": "Lakmus merah berubah biru dalam larutan basa (pH > 7). Lakmus biru sebaliknya berubah merah dalam larutan asam (pH < 7). Dalam larutan netral (pH = 7), warna lakmus tidak berubah. Contoh basa: sabun, air kapur, larutan NaOH.",
+      "topik": "Kimia Dasar",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 153,
+      "teks": "Kertas lakmus biru yang dicelupkan ke dalam larutan asam akan berubah menjadi warna?",
+      "bahasa": "id",
+      "jawaban": "Merah",
+      "alternatif_jawaban": [],
+      "pembahasan": "Lakmus biru berubah merah dalam larutan asam (pH < 7). Contoh larutan asam: cuka (asam asetat), jus jeruk (asam sitrat), larutan HCl. Asam terasa masam dan korosif. Basa terasa licin dan pahit.",
+      "topik": "Kimia Dasar",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 154,
+      "teks": "What is the chemical formula for carbon dioxide?",
+      "bahasa": "en",
+      "jawaban": "CO₂",
+      "alternatif_jawaban": [
+        "CO2"
+      ],
+      "pembahasan": "Carbon dioxide (karbon dioksida) has formula CO₂: one carbon (C) bonded to two oxygen (O) atoms. It is produced by burning fuels, animal respiration, and volcanoes. Plants use CO₂ in photosynthesis. It is also a greenhouse gas contributing to global warming.",
+      "topik": "Kimia Dasar",
+      "level": "mudah",
+      "waktu": 15
+    },
+    {
+      "id": 155,
+      "teks": "Besi yang terkena air dan udara secara terus-menerus akan mengalami?",
+      "bahasa": "id",
+      "jawaban": "Korosi (karat)",
+      "alternatif_jawaban": [
+        "Berkarat",
+        "Karat"
+      ],
+      "pembahasan": "Korosi/karat adalah reaksi kimia antara besi (Fe), air (H₂O), dan oksigen (O₂) membentuk oksida besi (Fe₂O₃·xH₂O) berwarna merah-coklat. Pencegahan: pengecatan, galvanisasi (pelapisan seng), atau baja tahan karat (stainless steel).",
+      "topik": "Kimia Dasar",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 156,
+      "teks": "Proses pemisahan campuran cair berdasarkan perbedaan titik didih disebut?",
+      "bahasa": "id",
+      "jawaban": "Distilasi",
+      "alternatif_jawaban": [
+        "Penyulingan"
+      ],
+      "pembahasan": "Distilasi (penyulingan) memisahkan campuran berdasarkan perbedaan titik didih. Campuran dipanaskan; komponen titik didih lebih rendah menguap lebih dulu, lalu dikondensasikan. Digunakan untuk memurnikan air, membuat minyak atsiri, dan kilang minyak.",
+      "topik": "Kimia Dasar",
+      "level": "sulit",
+      "waktu": 10
+    },
+    {
+      "id": 157,
+      "teks": "What happens when an acid and a base are mixed together?",
+      "bahasa": "en",
+      "jawaban": "Neutralization",
+      "alternatif_jawaban": [
+        "Reaksi netralisasi",
+        "Netralisasi"
+      ],
+      "pembahasan": "When an acid and base mix, a neutralization reaction occurs, producing salt (garam) and water. Example: HCl (acid) + NaOH (base) → NaCl (salt) + H₂O (water). This principle is used in antacid medicine to neutralize excess stomach acid.",
+      "topik": "Kimia Dasar",
+      "level": "sedang",
+      "waktu": 15
+    },
+    {
+      "id": 158,
+      "teks": "Campuran pasir dan besi dapat dipisahkan menggunakan?",
+      "bahasa": "id",
+      "jawaban": "Magnet",
+      "alternatif_jawaban": [],
+      "pembahasan": "Serbuk besi bersifat magnetis, pasir tidak. Dengan magnet, besi tertarik sementara pasir tidak. Metode ini disebut pemisahan magnetik. Digunakan juga di industri daur ulang untuk memisahkan logam dari sampah.",
+      "topik": "Kimia Dasar",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 159,
+      "teks": "Gas yang terbentuk saat pembakaran tidak sempurna bahan bakar dan sangat berbahaya bagi pernapasan adalah?",
+      "bahasa": "id",
+      "jawaban": "Karbon monoksida (CO)",
+      "alternatif_jawaban": [
+        "CO",
+        "Karbon monoksida"
+      ],
+      "pembahasan": "Karbon monoksida (CO) adalah gas tidak berwarna dan tidak berbau yang sangat beracun. Dihasilkan dari pembakaran tidak sempurna (kendaraan, kompor, generator). CO mengikat hemoglobin lebih kuat dari oksigen, mencegah darah membawa oksigen ke sel.",
+      "topik": "Kimia Dasar",
+      "level": "sulit",
+      "waktu": 10
+    },
+    {
+      "id": 160,
+      "teks": "Larutan yang memiliki pH lebih dari 7 bersifat?",
+      "bahasa": "id",
+      "jawaban": "Basa",
+      "alternatif_jawaban": [
+        "Alkali"
+      ],
+      "pembahasan": "Skala pH: pH < 7 = asam, pH = 7 = netral, pH > 7 = basa. Basa terasa licin di kulit dan pahit. Contoh: sabun (pH ±9-10), air kapur, baking soda. Lambung memiliki pH 1-3 (sangat asam untuk mencerna makanan).",
+      "topik": "Kimia Dasar",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 161,
+      "teks": "Proses pemisahan campuran dengan cara menyaring menggunakan kertas saring disebut?",
+      "bahasa": "id",
+      "jawaban": "Filtrasi",
+      "alternatif_jawaban": [
+        "Penyaringan"
+      ],
+      "pembahasan": "Filtrasi memisahkan campuran padat-cair berdasarkan ukuran partikel. Partikel padat tertahan di kertas saring sebagai residu; cairan lolos sebagai filtrat. Contoh aplikasi: menyaring air keruh, membuat kopi/teh, sistem pengolahan air bersih.",
+      "topik": "Kimia Dasar",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 162,
+      "teks": "Rumus kimia karbon dioksida yang dihasilkan saat kita bernapas adalah?",
+      "bahasa": "id",
+      "jawaban": "CO₂",
+      "alternatif_jawaban": [
+        "CO2"
+      ],
+      "pembahasan": "Karbon dioksida (CO₂) dihasilkan saat tubuh membakar glukosa untuk energi (respirasi selular). CO₂ dibawa darah ke paru-paru dan dikeluarkan saat menghembuskan napas. Gas ini juga dihasilkan saat pembakaran bahan bakar dan fermentasi.",
+      "topik": "Kimia Dasar",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 163,
+      "teks": "Unsur kimia yang paling melimpah di kerak Bumi adalah?",
+      "bahasa": "id",
+      "jawaban": "Oksigen",
+      "alternatif_jawaban": [
+        "O"
+      ],
+      "pembahasan": "Oksigen adalah unsur paling melimpah di kerak Bumi (±46% beratnya), hadir dalam mineral silikat, karbonat, dan oksida. Di atmosfer Bumi, oksigen membentuk 21% dalam bentuk gas O₂. Silikon adalah unsur kedua terbanyak di kerak Bumi.",
+      "topik": "Kimia Dasar",
+      "level": "sulit",
+      "waktu": 10
+    },
+    {
+      "id": 164,
+      "teks": "Lambang unsur kimia untuk oksigen adalah?",
+      "bahasa": "id",
+      "jawaban": "O",
+      "alternatif_jawaban": [],
+      "pembahasan": "Lambang unsur oksigen adalah O (dari Oxygen). Gas oksigen (O₂) membentuk 21% atmosfer Bumi. Sangat penting untuk respirasi aerob. Ozon (O₃) adalah bentuk lain oksigen yang melindungi Bumi dari sinar UV di stratosfer.",
+      "topik": "Kimia Dasar",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 165,
+      "teks": "Lambang unsur kimia untuk hidrogen adalah?",
+      "bahasa": "id",
+      "jawaban": "H",
+      "alternatif_jawaban": [],
+      "pembahasan": "Lambang unsur hidrogen adalah H (dari Hydrogen). Hidrogen adalah unsur paling ringan dan paling melimpah di alam semesta. Gas hidrogen (H₂) adalah bahan bakar masa depan yang ramah lingkungan karena hanya menghasilkan air saat dibakar.",
+      "topik": "Kimia Dasar",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 166,
+      "teks": "Hubungan makan-dimakan antara makhluk hidup dalam suatu ekosistem membentuk?",
+      "bahasa": "id",
+      "jawaban": "Rantai makanan",
+      "alternatif_jawaban": [],
+      "pembahasan": "Rantai makanan adalah urutan transfer energi melalui proses makan-dimakan. Selalu dimulai dari produsen (tumbuhan) → konsumen 1 → konsumen 2 → dst. Energi berkurang sekitar 90% di setiap tingkatan.",
+      "topik": "Ekosistem & Lingkungan",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 167,
+      "teks": "Beberapa rantai makanan yang saling berkaitan dalam suatu ekosistem membentuk?",
+      "bahasa": "id",
+      "jawaban": "Jaring-jaring makanan",
+      "alternatif_jawaban": [],
+      "pembahasan": "Jaring-jaring makanan adalah kumpulan rantai makanan yang saling bersilangan. Karena satu hewan biasanya memakan lebih dari satu jenis makanan. Jaring-jaring makanan mencerminkan kompleksitas ekosistem yang sesungguhnya.",
+      "topik": "Ekosistem & Lingkungan",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 168,
+      "teks": "Dalam rantai makanan, organisme yang menghasilkan makanan sendiri melalui fotosintesis disebut?",
+      "bahasa": "id",
+      "jawaban": "Produsen",
+      "alternatif_jawaban": [
+        "Tumbuhan hijau"
+      ],
+      "pembahasan": "Produsen adalah organisme autotrof yang membuat makanan sendiri melalui fotosintesis (tumbuhan hijau, alga, bakteri fotosintetik). Selalu berada di dasar/awal rantai dan jaring-jaring makanan.",
+      "topik": "Ekosistem & Lingkungan",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 169,
+      "teks": "Organisme yang mengurai sisa-sisa makhluk hidup yang telah mati menjadi zat anorganik disebut?",
+      "bahasa": "id",
+      "jawaban": "Pengurai (dekomposer)",
+      "alternatif_jawaban": [
+        "Dekomposer"
+      ],
+      "pembahasan": "Pengurai (dekomposer) menguraikan bahan organik dari makhluk hidup mati menjadi zat anorganik (mineral, CO₂, air) yang bisa digunakan kembali oleh produsen. Contoh: bakteri dan jamur. Sangat penting dalam daur materi ekosistem.",
+      "topik": "Ekosistem & Lingkungan",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 170,
+      "teks": "Penanaman pohon kembali di lahan-lahan yang telah gundul akibat penebangan disebut?",
+      "bahasa": "id",
+      "jawaban": "Reboisasi",
+      "alternatif_jawaban": [
+        "Penghijauan kembali"
+      ],
+      "pembahasan": "Reboisasi adalah penanaman pohon kembali di lahan yang telah kehilangan vegetasi hutan. Tujuannya: mencegah erosi tanah, memulihkan sumber air, menyerap CO₂, dan mengembalikan habitat hewan.",
+      "topik": "Ekosistem & Lingkungan",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 171,
+      "teks": "Pemanasan global terjadi akibat meningkatnya konsentrasi gas apa di atmosfer?",
+      "bahasa": "id",
+      "jawaban": "Gas rumah kaca",
+      "alternatif_jawaban": [
+        "Karbon dioksida",
+        "CO₂"
+      ],
+      "pembahasan": "Gas rumah kaca (CO₂, metana CH₄, uap air) memerangkap panas Bumi di atmosfer. Akibat aktivitas manusia (pembakaran fosil, deforestasi), konsentrasi gas ini meningkat dan menyebabkan pemanasan global (kenaikan suhu rata-rata Bumi).",
+      "topik": "Ekosistem & Lingkungan",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 172,
+      "teks": "Hewan dan tumbuhan yang hanya ditemukan di satu wilayah geografis tertentu dan tidak ada di tempat lain disebut?",
+      "bahasa": "id",
+      "jawaban": "Endemik",
+      "alternatif_jawaban": [
+        "Spesies endemik"
+      ],
+      "pembahasan": "Spesies endemik hanya ditemukan di suatu wilayah tertentu. Indonesia kaya endemik: komodo (endemik Pulau Komodo dan Flores), anoa (endemik Sulawesi), tarsius (endemik Sulawesi-Filipina), bunga Rafflesia arnoldii (Sumatra-Kalimantan).",
+      "topik": "Ekosistem & Lingkungan",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 173,
+      "teks": "Kawasan yang dilindungi untuk melestarikan satwa liar beserta habitatnya disebut?",
+      "bahasa": "id",
+      "jawaban": "Suaka margasatwa",
+      "alternatif_jawaban": [
+        "Cagar alam"
+      ],
+      "pembahasan": "Suaka margasatwa melindungi satwa liar beserta habitatnya dari kepunahan. Contoh di Indonesia: Suaka Margasatwa Gunung Leuser (harimau Sumatra, orangutan), Taman Nasional Ujung Kulon (badak Jawa). Cagar alam lebih fokus pada flora dan ekosistem.",
+      "topik": "Ekosistem & Lingkungan",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 174,
+      "teks": "What do we call the variety of all living things in an area?",
+      "bahasa": "en",
+      "jawaban": "Biodiversity",
+      "alternatif_jawaban": [
+        "Keanekaragaman hayati"
+      ],
+      "pembahasan": "Biodiversity (keanekaragaman hayati) is the variety of life on Earth, including diversity of species, genes, and ecosystems. Indonesia is one of the world's most biodiverse countries (megadiversity), home to thousands of unique species found nowhere else on Earth.",
+      "topik": "Ekosistem & Lingkungan",
+      "level": "sedang",
+      "waktu": 15
+    },
+    {
+      "id": 175,
+      "teks": "Hujan yang bersifat asam dan merusak ekosistem akibat polusi gas SO₂ dan NOx disebut?",
+      "bahasa": "id",
+      "jawaban": "Hujan asam",
+      "alternatif_jawaban": [],
+      "pembahasan": "Hujan asam terjadi ketika gas sulfur dioksida (SO₂) dan nitrogen oksida (NOx) dari pembangkit listrik dan kendaraan bereaksi dengan air di atmosfer membentuk asam sulfat dan asam nitrat. Hujan asam merusak tanaman, mengasamkan danau, dan merusak bangunan.",
+      "topik": "Ekosistem & Lingkungan",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 176,
+      "teks": "Daur air dimulai dengan proses penguapan air dari permukaan laut, danau, dan sungai yang disebut?",
+      "bahasa": "id",
+      "jawaban": "Evaporasi",
+      "alternatif_jawaban": [
+        "Penguapan"
+      ],
+      "pembahasan": "Daur air: evaporasi (penguapan) → kondensasi (terbentuk awan) → presipitasi (hujan/salju) → infiltrasi (meresap) atau aliran sungai → kembali ke laut. Evaporasi adalah tahap pertama yang mengangkat air ke atmosfer.",
+      "topik": "Ekosistem & Lingkungan",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 177,
+      "teks": "Hubungan antara lebah dan bunga yang saling menguntungkan adalah contoh simbiosis?",
+      "bahasa": "id",
+      "jawaban": "Mutualisme",
+      "alternatif_jawaban": [],
+      "pembahasan": "Mutualisme adalah simbiosis di mana kedua pihak saling mendapat keuntungan. Lebah mendapat nektar (makanan); bunga terbantu penyerbukannya. Contoh lain: bakteri Rhizobium dengan akar kacang-kacangan — bakteri dapat karbon, akar dapat nitrogen.",
+      "topik": "Ekosistem & Lingkungan",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 178,
+      "teks": "Hubungan di mana satu pihak mendapat keuntungan dan pihak lain dirugikan disebut simbiosis?",
+      "bahasa": "id",
+      "jawaban": "Parasitisme",
+      "alternatif_jawaban": [],
+      "pembahasan": "Parasitisme: satu organisme (parasit) untung, organisme lain (inang/host) rugi. Contoh: tali putri mengambil nutrisi dari inangnya; benalu di pohon; cacing pita dalam usus manusia; nyamuk yang menghisap darah manusia.",
+      "topik": "Ekosistem & Lingkungan",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 179,
+      "teks": "Hubungan di mana satu pihak mendapat keuntungan dan pihak lain tidak diuntungkan maupun dirugikan disebut simbiosis?",
+      "bahasa": "id",
+      "jawaban": "Komensalisme",
+      "alternatif_jawaban": [],
+      "pembahasan": "Komensalisme: satu organisme untung, yang lain tidak terpengaruh. Contoh: ikan remora menempel di tubuh hiu mendapat sisa makanan, hiu tidak terpengaruh. Tumbuhan epifit (anggrek liar) menempel di pohon untuk mendapat cahaya tanpa merugikan pohon.",
+      "topik": "Ekosistem & Lingkungan",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 180,
+      "teks": "What is the name for the relationship where both organisms benefit from each other?",
+      "bahasa": "en",
+      "jawaban": "Mutualism",
+      "alternatif_jawaban": [
+        "Mutualisme"
+      ],
+      "pembahasan": "Mutualism (mutualisme) is a symbiotic relationship where both organisms benefit. Classic examples: bees and flowers (bee gets nectar, flower gets pollinated), clownfish and sea anemones (fish gets protection, anemone gets cleaned), and gut bacteria helping with human digestion.",
+      "topik": "Ekosistem & Lingkungan",
+      "level": "mudah",
+      "waktu": 15
+    },
+    {
+      "id": 181,
+      "teks": "Penipisan lapisan ozon di stratosfer disebabkan antara lain oleh gas?",
+      "bahasa": "id",
+      "jawaban": "CFC (chlorofluorocarbon)",
+      "alternatif_jawaban": [
+        "Freon",
+        "Klorofluorokarbon"
+      ],
+      "pembahasan": "CFC (klorofluorokarbon/freon) yang dulu digunakan dalam lemari es, AC, dan aerosol, ketika mencapai stratosfer memecah molekul ozon. Lubang ozon di Antartika ditemukan pada 1980-an. Sejak Protokol Montreal 1987, penggunaan CFC dibatasi.",
+      "topik": "Ekosistem & Lingkungan",
+      "level": "sulit",
+      "waktu": 10
+    },
+    {
+      "id": 182,
+      "teks": "Gas yang paling banyak terdapat dalam udara atmosfer Bumi adalah?",
+      "bahasa": "id",
+      "jawaban": "Nitrogen",
+      "alternatif_jawaban": [
+        "N₂",
+        "N2"
+      ],
+      "pembahasan": "Komposisi udara kering: Nitrogen (N₂) 78%, Oksigen (O₂) 21%, Argon (Ar) 0,9%, Karbon Dioksida (CO₂) 0,04%. Nitrogen bersifat tidak reaktif secara kimia dalam kondisi normal dan berfungsi sebagai 'pengencer' oksigen.",
+      "topik": "Ekosistem & Lingkungan",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 183,
+      "teks": "Ekosistem pesisir yang didominasi pohon bakau dan berfungsi melindungi pantai dari abrasi disebut?",
+      "bahasa": "id",
+      "jawaban": "Hutan mangrove",
+      "alternatif_jawaban": [
+        "Mangrove",
+        "Hutan bakau"
+      ],
+      "pembahasan": "Hutan mangrove tumbuh di daerah pasang-surut. Akar yang rapat melindungi pantai dari erosi, menjadi tempat bertelur ikan, dan menyerap karbon efisien. Indonesia memiliki hutan mangrove terluas di dunia.",
+      "topik": "Ekosistem & Lingkungan",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 184,
+      "teks": "Pencemaran air sungai akibat pembuangan limbah pabrik tanpa pengolahan disebut jenis pencemaran?",
+      "bahasa": "id",
+      "jawaban": "Pencemaran air",
+      "alternatif_jawaban": [
+        "Polusi air"
+      ],
+      "pembahasan": "Pencemaran air terjadi ketika zat berbahaya masuk ke badan air dan merusak kualitasnya. Sumber: limbah industri, rumah tangga, dan pertanian. Dampak: kematian biota air, air minum tidak aman, dan kerusakan ekosistem perairan.",
+      "topik": "Ekosistem & Lingkungan",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 185,
+      "teks": "Penggunaan pupuk dan pestisida kimia secara berlebihan di lahan pertanian dapat menyebabkan?",
+      "bahasa": "id",
+      "jawaban": "Pencemaran tanah dan air",
+      "alternatif_jawaban": [
+        "Polusi tanah",
+        "Kerusakan lingkungan"
+      ],
+      "pembahasan": "Pupuk kimia dan pestisida berlebihan meresap ke tanah, mencemari air tanah dan sungai. Dampak: kematian organisme tanah yang bermanfaat, bioakumulasi racun dalam rantai makanan, dan kerusakan ekosistem perairan.",
+      "topik": "Ekosistem & Lingkungan",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 186,
+      "teks": "Kemampuan suatu ekosistem untuk pulih ke kondisi normal setelah mengalami gangguan disebut?",
+      "bahasa": "id",
+      "jawaban": "Daya lenting (resiliensi)",
+      "alternatif_jawaban": [
+        "Resiliensi",
+        "Daya lenting"
+      ],
+      "pembahasan": "Daya lenting (resiliensi) ekosistem adalah kemampuan pulih dari gangguan seperti kebakaran, banjir, atau pencemaran. Ekosistem dengan keanekaragaman hayati tinggi lebih resiliens karena memiliki lebih banyak spesies alternatif dalam jaring makanannya.",
+      "topik": "Ekosistem & Lingkungan",
+      "level": "sulit",
+      "waktu": 10
+    },
+    {
+      "id": 187,
+      "teks": "Proses penguraian sampah organik oleh mikroorganisme untuk menghasilkan pupuk organik disebut?",
+      "bahasa": "id",
+      "jawaban": "Pengomposan (kompos)",
+      "alternatif_jawaban": [
+        "Kompos",
+        "Composting"
+      ],
+      "pembahasan": "Pengomposan adalah penguraian bahan organik (sisa makanan, daun kering) oleh mikroorganisme aerob menghasilkan kompos — pupuk organik yang kaya humus. Memperbaiki struktur dan kesuburan tanah. Cara mendaur ulang sampah organik yang ramah lingkungan.",
+      "topik": "Ekosistem & Lingkungan",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 188,
+      "teks": "Indonesia memiliki keanekaragaman hayati yang sangat tinggi karena terletak di?",
+      "bahasa": "id",
+      "jawaban": "Daerah tropis (khatulistiwa)",
+      "alternatif_jawaban": [
+        "Tropis",
+        "Khatulistiwa"
+      ],
+      "pembahasan": "Indonesia terletak di sekitar garis khatulistiwa (0°), menerima sinar matahari sepanjang tahun. Kondisi ini menciptakan hutan hujan tropis yang kaya nutrisi, mendukung kehidupan ribuan spesies unik. Indonesia adalah salah satu negara megabiodiversitas dunia.",
+      "topik": "Ekosistem & Lingkungan",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 189,
+      "teks": "Proses pengambilan ikan dengan cara yang merusak terumbu karang dan ekosistem laut disebut?",
+      "bahasa": "id",
+      "jawaban": "Penangkapan ikan yang destruktif",
+      "alternatif_jawaban": [
+        "Penangkapan ikan ilegal",
+        "Illegal fishing"
+      ],
+      "pembahasan": "Praktik merusak seperti pengeboman ikan, penggunaan racun sianida, dan pukat harimau merusak terumbu karang dan ekosistem laut. Merusak habitat dan mengancam kepunahan spesies. Di Indonesia hal ini dilarang oleh hukum.",
+      "topik": "Ekosistem & Lingkungan",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 190,
+      "teks": "Tumbuhan dan hewan yang terancam punah perlu dilindungi agar tidak mengalami?",
+      "bahasa": "id",
+      "jawaban": "Kepunahan",
+      "alternatif_jawaban": [
+        "Punah",
+        "Extinctions"
+      ],
+      "pembahasan": "Kepunahan adalah hilangnya seluruh populasi suatu spesies secara permanen. Penyebab utama: perusakan habitat (deforestasi), perburuan liar, polusi, dan perubahan iklim. Kepunahan bersifat tidak dapat dibalikkan, karenanya upaya konservasi sangat penting.",
+      "topik": "Ekosistem & Lingkungan",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 191,
+      "teks": "Sumber energi utama bagi kehidupan di Bumi yang berasal dari luar angkasa adalah?",
+      "bahasa": "id",
+      "jawaban": "Matahari",
+      "alternatif_jawaban": [
+        "Energi matahari",
+        "Surya"
+      ],
+      "pembahasan": "Matahari adalah sumber energi utama kehidupan di Bumi dalam bentuk cahaya dan panas. Energi matahari mendukung fotosintesis, menggerakkan cuaca dan arus laut, serta bisa diubah menjadi listrik melalui panel surya.",
+      "topik": "Energi & Sumber Daya Alam",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 192,
+      "teks": "Energi yang berasal dari panas dalam perut Bumi disebut?",
+      "bahasa": "id",
+      "jawaban": "Energi panas bumi (geothermal)",
+      "alternatif_jawaban": [
+        "Geothermal",
+        "Panas bumi"
+      ],
+      "pembahasan": "Energi geothermal berasal dari panas inti Bumi yang keluar melalui gunung berapi, mata air panas, dan geyser. Indonesia memiliki potensi panas bumi terbesar di dunia (~40% cadangan global) karena berada di 'Cincin Api Pasifik'.",
+      "topik": "Energi & Sumber Daya Alam",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 193,
+      "teks": "Batubara, minyak bumi, dan gas alam yang terbentuk dari sisa makhluk hidup purba jutaan tahun lalu disebut?",
+      "bahasa": "id",
+      "jawaban": "Bahan bakar fosil",
+      "alternatif_jawaban": [
+        "Fossil fuel"
+      ],
+      "pembahasan": "Bahan bakar fosil terbentuk dari sisa organisme yang terpendam selama jutaan tahun, mengalami tekanan dan panas tinggi. Minyak bumi dan gas alam dari mikroorganisme laut; batubara dari tumbuhan purba. Pembakaran menghasilkan CO₂ penyebab pemanasan global.",
+      "topik": "Energi & Sumber Daya Alam",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 194,
+      "teks": "Pembangkit listrik yang memanfaatkan energi air terjun atau aliran air disebut?",
+      "bahasa": "id",
+      "jawaban": "PLTA (Pembangkit Listrik Tenaga Air)",
+      "alternatif_jawaban": [
+        "Hidroelektrik",
+        "PLTA"
+      ],
+      "pembahasan": "PLTA memanfaatkan energi potensial dan kinetik air untuk menggerakkan turbin dan generator. Indonesia memiliki banyak PLTA, termasuk PLTA Jatiluhur dan Saguling di Jawa Barat. PLTA menghasilkan energi bersih tanpa emisi CO₂.",
+      "topik": "Energi & Sumber Daya Alam",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 195,
+      "teks": "Sumber energi yang dapat diperbarui secara alami dalam waktu singkat (renewable) adalah?",
+      "bahasa": "id",
+      "jawaban": "Matahari, angin, dan air",
+      "alternatif_jawaban": [
+        "Energi terbarukan",
+        "Matahari dan angin"
+      ],
+      "pembahasan": "Energi terbarukan berasal dari sumber yang diisi ulang oleh alam: energi surya (matahari selalu bersinar), angin (selalu bertiup), air (siklus hujan), panas bumi, dan biomassa. Berbeda dengan bahan bakar fosil yang akan habis setelah dipakai.",
+      "topik": "Energi & Sumber Daya Alam",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 196,
+      "teks": "Panel surya mengubah energi matahari menjadi bentuk energi apa?",
+      "bahasa": "id",
+      "jawaban": "Energi listrik",
+      "alternatif_jawaban": [
+        "Listrik"
+      ],
+      "pembahasan": "Panel surya (sel fotovoltaik) mengubah energi cahaya (foton matahari) langsung menjadi listrik melalui efek fotovoltaik menggunakan semikonduktor (umumnya silikon). Teknologi energi terbarukan yang bersih dan semakin terjangkau.",
+      "topik": "Energi & Sumber Daya Alam",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 197,
+      "teks": "What type of energy does a rock sitting at the top of a hill have?",
+      "bahasa": "en",
+      "jawaban": "Potential energy",
+      "alternatif_jawaban": [
+        "Energi potensial",
+        "Gravitational potential energy"
+      ],
+      "pembahasan": "A rock at the top of a hill has gravitational potential energy (energi potensial gravitasi) — stored energy due to its position and height. When the rock rolls down, this potential energy converts to kinetic energy (energy of motion). The higher the hill, the more potential energy the rock has.",
+      "topik": "Energi & Sumber Daya Alam",
+      "level": "sedang",
+      "waktu": 15
+    },
+    {
+      "id": 198,
+      "teks": "Biogas yang digunakan sebagai bahan bakar memasak terutama berasal dari?",
+      "bahasa": "id",
+      "jawaban": "Kotoran hewan atau sampah organik",
+      "alternatif_jawaban": [
+        "Kotoran sapi",
+        "Biomassa"
+      ],
+      "pembahasan": "Biogas dihasilkan dari fermentasi anaerobik bahan organik (kotoran hewan, sampah organik, limbah pertanian). Komponen utama: metana (CH₄, ~60-70%) yang bisa dibakar untuk memasak dan menghasilkan listrik. Energi terbarukan yang mengurangi polusi.",
+      "topik": "Energi & Sumber Daya Alam",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 199,
+      "teks": "Contoh sumber daya alam yang tidak dapat diperbarui karena pembentukannya memerlukan jutaan tahun adalah?",
+      "bahasa": "id",
+      "jawaban": "Minyak bumi",
+      "alternatif_jawaban": [
+        "Batubara",
+        "Gas alam",
+        "Bahan bakar fosil"
+      ],
+      "pembahasan": "Minyak bumi terbentuk dari sisa organisme laut yang terpendam dan mengalami tekanan & panas selama jutaan tahun. Bersifat tidak terbarukan karena dipakai jauh lebih cepat dari proses pembentukannya. Cadangan minyak bumi terbatas.",
+      "topik": "Energi & Sumber Daya Alam",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 200,
+      "teks": "Energi yang tersimpan dalam ikatan kimia makanan (karbohidrat, lemak, protein) disebut?",
+      "bahasa": "id",
+      "jawaban": "Energi kimia",
+      "alternatif_jawaban": [],
+      "pembahasan": "Energi kimia tersimpan dalam ikatan antar atom dalam molekul. Makanan, bahan bakar, baterai, dan bahan peledak semuanya menyimpan energi kimia. Tubuh melepaskan energi kimia dari makanan melalui respirasi selular untuk menggerakkan semua proses kehidupan.",
+      "topik": "Energi & Sumber Daya Alam",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 201,
+      "teks": "What is the name for energy produced from organic materials such as plants or animal waste?",
+      "bahasa": "en",
+      "jawaban": "Biomass energy",
+      "alternatif_jawaban": [
+        "Bioenergy",
+        "Energi biomassa"
+      ],
+      "pembahasan": "Biomass energy (energi biomassa) is energy from organic materials: wood, crop residues, and animal waste. It is renewable since plants can be regrown. Biomass can be burned for heat, converted to biogas, or processed into biofuels like bioethanol and biodiesel.",
+      "topik": "Energi & Sumber Daya Alam",
+      "level": "sedang",
+      "waktu": 15
+    },
+    {
+      "id": 202,
+      "teks": "Ketika bola dilempar ke atas, terjadi perubahan energi dari energi kinetik menjadi?",
+      "bahasa": "id",
+      "jawaban": "Energi potensial",
+      "alternatif_jawaban": [
+        "Energi potensial gravitasi"
+      ],
+      "pembahasan": "Saat bola naik ke atas, energi kinetik (gerak) berangsur berubah menjadi energi potensial gravitasi (ketinggian bertambah) hingga bola di titik tertinggi (kinetik = 0). Saat jatuh kembali, energi potensial berubah lagi menjadi kinetik.",
+      "topik": "Energi & Sumber Daya Alam",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 203,
+      "teks": "Batu bara terbentuk dari sisa apa yang terpendam dan mengalami tekanan selama jutaan tahun?",
+      "bahasa": "id",
+      "jawaban": "Tumbuhan purba",
+      "alternatif_jawaban": [
+        "Fosil tumbuhan",
+        "Tumbuhan fosil"
+      ],
+      "pembahasan": "Batu bara terbentuk dari sisa tumbuhan purba (pakis raksasa, pohon kayu) yang hidup ~300 juta tahun lalu, terpendam di rawa, tertimbun sedimen, dan mengalami proses coalification (panas-tekanan jutaan tahun). Indonesia punya cadangan batu bara besar di Kalimantan dan Sumatra.",
+      "topik": "Energi & Sumber Daya Alam",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 204,
+      "teks": "Dalam rangkaian listrik, alat yang melindungi dari arus listrik berlebih dengan memutus aliran listrik disebut?",
+      "bahasa": "id",
+      "jawaban": "Sekring",
+      "alternatif_jawaban": [
+        "Fuse",
+        "Pemutus arus"
+      ],
+      "pembahasan": "Sekring (fuse) terbuat dari kawat tipis yang meleleh dan memutus aliran listrik jika arus melebihi batas aman, melindungi peralatan listrik dan mencegah kebakaran. Dalam sistem modern digunakan MCB (Miniature Circuit Breaker) yang bisa direset.",
+      "topik": "Energi & Sumber Daya Alam",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 205,
+      "teks": "Air, hutan, dan tanah yang dapat dipulihkan melalui proses alam termasuk sumber daya alam?",
+      "bahasa": "id",
+      "jawaban": "Terbarukan",
+      "alternatif_jawaban": [
+        "Yang dapat diperbarui"
+      ],
+      "pembahasan": "Sumber daya alam terbarukan dapat dipulihkan secara alami dalam waktu yang relatif singkat: air (daur air), hutan (pohon bisa ditanam kembali), tanah (terbentuk dari pelapukan), ikan (berkembangbiak). Harus dikelola secara berkelanjutan agar tidak habis.",
+      "topik": "Energi & Sumber Daya Alam",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 206,
+      "teks": "Turbin angin mengubah energi angin menjadi?",
+      "bahasa": "id",
+      "jawaban": "Energi listrik",
+      "alternatif_jawaban": [
+        "Listrik"
+      ],
+      "pembahasan": "Turbin angin mengubah energi kinetik angin → energi mekanik (putaran turbin) → energi listrik (oleh generator). Teknologi energi terbarukan ramah lingkungan. Negara terkemuka dalam energi angin: Tiongkok, Amerika Serikat, dan Denmark.",
+      "topik": "Energi & Sumber Daya Alam",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 207,
+      "teks": "Energi panas yang dilepaskan ketika kayu atau bahan bakar dibakar disebut?",
+      "bahasa": "id",
+      "jawaban": "Energi panas (kalor)",
+      "alternatif_jawaban": [
+        "Kalor",
+        "Energi thermal"
+      ],
+      "pembahasan": "Pembakaran bahan bakar mengubah energi kimia menjadi energi panas (kalor) dan cahaya. Kalor adalah energi yang berpindah karena perbedaan suhu. Satuan kalor: joule (J) atau kalori (kal). 1 kalori = 4,184 joule.",
+      "topik": "Energi & Sumber Daya Alam",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 208,
+      "teks": "Mengapa Indonesia berpotensi menjadi penghasil energi surya terbesar di dunia?",
+      "bahasa": "id",
+      "jawaban": "Karena Indonesia berada di khatulistiwa yang mendapat sinar matahari sepanjang tahun",
+      "alternatif_jawaban": [
+        "Dekat khatulistiwa",
+        "Sinar matahari sepanjang tahun"
+      ],
+      "pembahasan": "Indonesia menerima sinar matahari hampir sepanjang tahun dengan intensitas tinggi karena berada di sekitar khatulistiwa. Potensi energi surya Indonesia diperkirakan 207 GWp — jauh melebihi kebutuhan listrik nasional saat ini.",
+      "topik": "Energi & Sumber Daya Alam",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 209,
+      "teks": "Alat yang mengubah energi listrik menjadi energi gerak (mekanik) adalah?",
+      "bahasa": "id",
+      "jawaban": "Motor listrik",
+      "alternatif_jawaban": [
+        "Electric motor"
+      ],
+      "pembahasan": "Motor listrik mengubah energi listrik menjadi energi mekanik (putaran). Digunakan pada: kipas angin, blender, mesin cuci, pompa air, dan kendaraan listrik (EV). Motor listrik adalah kebalikan dari generator yang mengubah energi mekanik menjadi listrik.",
+      "topik": "Energi & Sumber Daya Alam",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 210,
+      "teks": "Penghematan energi listrik di rumah dapat dilakukan dengan cara?",
+      "bahasa": "id",
+      "jawaban": "Mematikan lampu dan peralatan listrik yang tidak digunakan",
+      "alternatif_jawaban": [
+        "Hemat listrik",
+        "Matikan lampu saat tidak dipakai"
+      ],
+      "pembahasan": "Penghematan energi mengurangi konsumsi listrik, biaya, dan emisi CO₂. Cara-cara: mematikan lampu saat keluar ruangan, mencabut charger tidak terpakai (standby power), menggunakan lampu LED hemat energi, dan mengoptimalkan penggunaan AC.",
+      "topik": "Energi & Sumber Daya Alam",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 211,
+      "teks": "Alat yang digunakan untuk melihat benda-benda yang sangat kecil yang tidak tampak mata biasa disebut?",
+      "bahasa": "id",
+      "jawaban": "Mikroskop",
+      "alternatif_jawaban": [],
+      "pembahasan": "Mikroskop menggunakan lensa untuk memperbesar gambar objek mikroskopis. Mikroskop cahaya biasa mampu memperbesar hingga 1.000×. Mikroskop elektron mampu hingga 1.000.000×, digunakan untuk melihat virus dan struktur sel. Ditemukan dan dikembangkan oleh Antonie van Leeuwenhoek pada abad ke-17.",
+      "topik": "Teknologi & Sains Terapan",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 212,
+      "teks": "Alat yang digunakan untuk mengamati benda-benda sangat jauh di luar angkasa seperti bintang dan planet disebut?",
+      "bahasa": "id",
+      "jawaban": "Teleskop",
+      "alternatif_jawaban": [],
+      "pembahasan": "Teleskop mengumpulkan dan memfokuskan cahaya dari benda-benda jauh sehingga tampak lebih besar dan terang. Teleskop pertama dikembangkan Galileo Galilei pada 1609. Teleskop modern mencakup teleskop radio dan teleskop luar angkasa Hubble/James Webb yang mampu melihat galaksi jauh.",
+      "topik": "Teknologi & Sains Terapan",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 213,
+      "teks": "Siapakah ilmuwan yang menemukan lampu pijar listrik yang pertama kali dapat digunakan secara praktis?",
+      "bahasa": "id",
+      "jawaban": "Thomas Alva Edison",
+      "alternatif_jawaban": [
+        "Thomas Edison"
+      ],
+      "pembahasan": "Thomas Alva Edison (1847–1931) menemukan lampu pijar listrik yang praktis pada 1879 menggunakan filamen karbon. Edison juga menemukan fonograf dan sistem distribusi listrik. Ia mendaftarkan lebih dari 1.000 paten sepanjang hidupnya.",
+      "topik": "Teknologi & Sains Terapan",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 214,
+      "teks": "Siapakah penemu telepon pertama yang berhasil dipatenkan?",
+      "bahasa": "id",
+      "jawaban": "Alexander Graham Bell",
+      "alternatif_jawaban": [
+        "Graham Bell"
+      ],
+      "pembahasan": "Alexander Graham Bell (1847–1922), ilmuwan Skotlandia-Amerika, mempatenkan telepon pada 1876. Telepon memungkinkan transmisi suara melalui kabel listrik. Namanya diabadikan sebagai satuan kuat suara: desibel (dB, dari 'Bell').",
+      "topik": "Teknologi & Sains Terapan",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 215,
+      "teks": "Siapakah yang berhasil membuat dan menerbangkan pesawat bermesin pertama di dunia pada tahun 1903?",
+      "bahasa": "id",
+      "jawaban": "Wright Bersaudara (Orville dan Wilbur Wright)",
+      "alternatif_jawaban": [
+        "Wright bersaudara",
+        "Orville dan Wilbur Wright"
+      ],
+      "pembahasan": "Orville dan Wilbur Wright melakukan penerbangan bermesin pertama yang berhasil pada 17 Desember 1903 di Kitty Hawk, Carolina Utara, AS. Pesawat 'Flyer I' terbang sejauh 37 meter selama 12 detik — mengubah sejarah transportasi manusia.",
+      "topik": "Teknologi & Sains Terapan",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 216,
+      "teks": "Ilmuwan yang menemukan antibiotik pertama (Penicillin) pada tahun 1928 adalah?",
+      "bahasa": "id",
+      "jawaban": "Alexander Fleming",
+      "alternatif_jawaban": [],
+      "pembahasan": "Alexander Fleming, ilmuwan Skotlandia, menemukan penisilin secara tidak sengaja pada 1928 ketika jamur Penicillium notatum menghambat pertumbuhan bakteri di cawan petrinya. Penisilin menyelamatkan jutaan nyawa dari infeksi bakteri. Fleming meraih Nobel Kedokteran 1945.",
+      "topik": "Teknologi & Sains Terapan",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 217,
+      "teks": "Who invented the World Wide Web (WWW) that forms the basis of the modern internet?",
+      "bahasa": "en",
+      "jawaban": "Tim Berners-Lee",
+      "alternatif_jawaban": [],
+      "pembahasan": "Tim Berners-Lee, a British computer scientist, invented the World Wide Web in 1989 while working at CERN. He created HTML, HTTP, and the URL system. The WWW allows documents and resources to be linked and shared globally over the internet, fundamentally changing how the world communicates.",
+      "topik": "Teknologi & Sains Terapan",
+      "level": "sedang",
+      "waktu": 15
+    },
+    {
+      "id": 218,
+      "teks": "Teknologi yang menggunakan gelombang suara untuk mendeteksi kedalaman laut dan posisi kapal selam disebut?",
+      "bahasa": "id",
+      "jawaban": "Sonar",
+      "alternatif_jawaban": [],
+      "pembahasan": "Sonar (Sound Navigation And Ranging) memancarkan gelombang suara ke dalam air dan mendeteksi pantulannya untuk menentukan jarak dan posisi benda bawah air. Terinspirasi dari ekolokasi kelelawar dan lumba-lumba. Digunakan kapal selam dan kapal nelayan.",
+      "topik": "Teknologi & Sains Terapan",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 219,
+      "teks": "Ilmuwan yang merumuskan hukum gravitasi dan hukum gerak benda adalah?",
+      "bahasa": "id",
+      "jawaban": "Isaac Newton",
+      "alternatif_jawaban": [],
+      "pembahasan": "Isaac Newton (1643–1727), fisikawan Inggris, merumuskan tiga hukum gerak (Hukum Newton I, II, III) dan Hukum Gravitasi Universal. Ia juga menemukan kalkulus dan menyelidiki sifat cahaya. Karyanya Principia Mathematica (1687) menjadi fondasi fisika klasik.",
+      "topik": "Teknologi & Sains Terapan",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 220,
+      "teks": "Manusia pertama yang mendarat di Bulan pada misi Apollo 11 tahun 1969 adalah?",
+      "bahasa": "id",
+      "jawaban": "Neil Armstrong",
+      "alternatif_jawaban": [],
+      "pembahasan": "Neil Armstrong menjadi manusia pertama yang menginjakkan kaki di Bulan pada 20 Juli 1969 dalam misi Apollo 11 NASA. Ia berucap: 'That's one small step for a man, one giant leap for mankind.' Rekannya Buzz Aldrin juga mendarat; Michael Collins mengorbit di atas.",
+      "topik": "Teknologi & Sains Terapan",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 221,
+      "teks": "Teknologi pemindaian gambar medis yang menggunakan gelombang suara ultrasonik untuk melihat organ dalam atau janin disebut?",
+      "bahasa": "id",
+      "jawaban": "USG (Ultrasonografi)",
+      "alternatif_jawaban": [
+        "Ultrasonografi",
+        "Ultrasound"
+      ],
+      "pembahasan": "USG menggunakan gelombang ultrasonik (>20.000 Hz) yang dipancarkan ke dalam tubuh dan pantulannya membentuk gambar organ. Digunakan untuk memeriksa janin, organ dalam, dan mendeteksi penyakit. Aman karena tidak menggunakan radiasi ionisasi seperti sinar-X.",
+      "topik": "Teknologi & Sains Terapan",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 222,
+      "teks": "What is the name of the theory that explains the origin and expansion of the universe?",
+      "bahasa": "en",
+      "jawaban": "The Big Bang Theory",
+      "alternatif_jawaban": [
+        "Big Bang"
+      ],
+      "pembahasan": "The Big Bang Theory (Teori Big Bang) is the prevailing model explaining how the universe began about 13.8 billion years ago from an extremely hot, dense point (singularity) and has been expanding ever since. Evidence includes: the expanding universe, cosmic microwave background radiation, and the abundance of light elements.",
+      "topik": "Teknologi & Sains Terapan",
+      "level": "sedang",
+      "waktu": 15
+    },
+    {
+      "id": 223,
+      "teks": "Teknologi yang menggunakan serat kaca untuk mentransmisikan data berkecepatan tinggi dalam bentuk cahaya disebut?",
+      "bahasa": "id",
+      "jawaban": "Fiber optik",
+      "alternatif_jawaban": [
+        "Serat optik"
+      ],
+      "pembahasan": "Fiber optik (serat optik) mentransmisikan data menggunakan gelombang cahaya di dalam serat kaca atau plastik sangat tipis. Kecepatannya sangat tinggi (Gbps) dan tidak terpengaruh gangguan elektromagnetik. Digunakan untuk internet kecepatan tinggi dan komunikasi internasional.",
+      "topik": "Teknologi & Sains Terapan",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 224,
+      "teks": "Satelit buatan manusia pertama yang berhasil mengorbit Bumi, diluncurkan tahun 1957, adalah?",
+      "bahasa": "id",
+      "jawaban": "Sputnik 1",
+      "alternatif_jawaban": [
+        "Sputnik"
+      ],
+      "pembahasan": "Sputnik 1 diluncurkan Uni Soviet pada 4 Oktober 1957, menjadi satelit buatan pertama yang berhasil mengorbit Bumi. Ini memulai 'era luar angkasa' (Space Age) dan persaingan antariksa antara AS dan Uni Soviet. Sputnik seukuran bola basket, mengorbit setiap 98 menit.",
+      "topik": "Teknologi & Sains Terapan",
+      "level": "sulit",
+      "waktu": 10
+    },
+    {
+      "id": 225,
+      "teks": "Teknologi GPS (Global Positioning System) memanfaatkan sinyal dari apa untuk menentukan posisi?",
+      "bahasa": "id",
+      "jawaban": "Satelit",
+      "alternatif_jawaban": [
+        "Satelit GPS"
+      ],
+      "pembahasan": "GPS bekerja dengan menerima sinyal dari minimal 4 satelit GPS yang mengorbit Bumi (±31 satelit GPS aktif milik Amerika Serikat). Dengan menghitung perbedaan waktu sinyal dari tiap satelit, perangkat GPS menentukan posisi dengan akurasi beberapa meter.",
+      "topik": "Teknologi & Sains Terapan",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 226,
+      "teks": "Antibiotik tidak efektif untuk mengobati penyakit yang disebabkan oleh?",
+      "bahasa": "id",
+      "jawaban": "Virus",
+      "alternatif_jawaban": [],
+      "pembahasan": "Antibiotik membunuh atau menghambat bakteri, bukan virus. Penyakit virus (flu, COVID-19, demam berdarah, cacar) tidak bisa diobati antibiotik. Pemberian antibiotik sembarangan menyebabkan resistensi bakteri — bakteri menjadi kebal terhadap antibiotik.",
+      "topik": "Teknologi & Sains Terapan",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 227,
+      "teks": "Sinar-X yang digunakan dalam rontgen medis untuk melihat tulang dalam tubuh tanpa operasi ditemukan oleh?",
+      "bahasa": "id",
+      "jawaban": "Wilhelm Röntgen",
+      "alternatif_jawaban": [
+        "Roentgen",
+        "Wilhelm Roentgen"
+      ],
+      "pembahasan": "Wilhelm Conrad Röntgen (1845–1923), fisikawan Jerman, menemukan sinar-X pada 1895. Sinar-X dapat menembus jaringan lunak tetapi diserap tulang, sehingga digunakan untuk pencitraan tulang. Röntgen menerima Nobel Fisika pertama pada 1901.",
+      "topik": "Teknologi & Sains Terapan",
+      "level": "sulit",
+      "waktu": 10
+    },
+    {
+      "id": 228,
+      "teks": "Vaksinasi bekerja dengan cara memasukkan apa ke dalam tubuh untuk merangsang sistem imun membentuk antibodi?",
+      "bahasa": "id",
+      "jawaban": "Antigen (patogen yang dilemahkan atau bagian patogen)",
+      "alternatif_jawaban": [
+        "Bibit penyakit dilemahkan",
+        "Antigen"
+      ],
+      "pembahasan": "Vaksin mengandung antigen (bibit penyakit yang dilemahkan/dimatikan atau bagian tertentu patogen) yang merangsang sistem imun membentuk antibodi. Jika kemudian terpapar penyakit sungguhan, tubuh sudah siap. Vaksinasi berhasil memberantas cacar di dunia.",
+      "topik": "Teknologi & Sains Terapan",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 229,
+      "teks": "Ilmu yang mempelajari benda-benda langit, galaksi, dan struktur alam semesta disebut?",
+      "bahasa": "id",
+      "jawaban": "Astronomi",
+      "alternatif_jawaban": [],
+      "pembahasan": "Astronomi adalah cabang ilmu pengetahuan alam yang mempelajari benda-benda langit (bintang, planet, galaksi, nebula) serta fenomena yang terjadi di luar atmosfer Bumi. Astrofisika adalah sub-bidang yang fokus pada sifat fisika benda langit.",
+      "topik": "Teknologi & Sains Terapan",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 230,
+      "teks": "Teknologi yang digunakan untuk mengambil gambar permukaan Bumi dari luar angkasa menggunakan satelit disebut?",
+      "bahasa": "id",
+      "jawaban": "Penginderaan jauh (remote sensing)",
+      "alternatif_jawaban": [
+        "Remote sensing",
+        "Satelit pemetaan"
+      ],
+      "pembahasan": "Penginderaan jauh (remote sensing) memperoleh informasi tentang permukaan Bumi dari jarak jauh menggunakan sensor satelit atau pesawat. Hasilnya digunakan untuk pembuatan peta, pemantauan lingkungan, perkiraan cuaca, dan deteksi bencana alam.",
+      "topik": "Teknologi & Sains Terapan",
+      "level": "sulit",
+      "waktu": 10
+    },
+    {
+      "id": 231,
+      "teks": "Lapisan atmosfer paling bawah dan paling dekat dengan permukaan Bumi, tempat terjadinya semua fenomena cuaca, adalah?",
+      "bahasa": "id",
+      "jawaban": "Troposfer",
+      "alternatif_jawaban": [],
+      "pembahasan": "Troposfer adalah lapisan atmosfer terendah (0–12 km), tempat hampir semua cuaca terjadi: awan, hujan, angin, badai, dan tornado. Mengandung 75% massa atmosfer. Suhu di troposfer menurun seiring ketinggian, rata-rata 6,5°C per 1.000 m.",
+      "topik": "Atmosfer & Cuaca",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 232,
+      "teks": "Lapisan atmosfer yang mengandung lapisan ozon dan melindungi Bumi dari sinar ultraviolet berbahaya adalah?",
+      "bahasa": "id",
+      "jawaban": "Stratosfer",
+      "alternatif_jawaban": [],
+      "pembahasan": "Stratosfer berada di ketinggian 12–50 km. Di dalamnya terdapat lapisan ozon (15–35 km) yang menyerap sinar UV berbahaya dari Matahari. Pesawat jet terbang di bagian bawah stratosfer karena udaranya stabil dan tidak ada cuaca.",
+      "topik": "Atmosfer & Cuaca",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 233,
+      "teks": "Gas yang paling banyak terdapat dalam udara atmosfer Bumi adalah?",
+      "bahasa": "id",
+      "jawaban": "Nitrogen",
+      "alternatif_jawaban": [
+        "N₂",
+        "N2"
+      ],
+      "pembahasan": "Komposisi udara kering: Nitrogen (N₂) 78%, Oksigen (O₂) 21%, Argon (Ar) 0,9%, Karbon Dioksida (CO₂) 0,04%. Nitrogen bersifat tidak reaktif dalam kondisi normal dan berfungsi sebagai 'pengencer' oksigen agar tidak terlalu reaktif.",
+      "topik": "Atmosfer & Cuaca",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 234,
+      "teks": "Berapa persen kandungan oksigen (O₂) dalam udara atmosfer Bumi?",
+      "bahasa": "id",
+      "jawaban": "21%",
+      "alternatif_jawaban": [
+        "Sekitar 21 persen",
+        "±21%"
+      ],
+      "pembahasan": "Oksigen membentuk sekitar 21% atmosfer Bumi. Kadar ini optimal untuk kehidupan: cukup untuk respirasi, tetapi tidak terlalu tinggi yang dapat menyebabkan kebakaran spontan. Di puncak gunung tinggi kadar oksigen lebih rendah karena tekanan udara berkurang.",
+      "topik": "Atmosfer & Cuaca",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 235,
+      "teks": "Fenomena badai angin berbentuk spiral berputar sangat kuat dengan pusat bertekanan rendah disebut?",
+      "bahasa": "id",
+      "jawaban": "Siklon tropis (topan)",
+      "alternatif_jawaban": [
+        "Topan",
+        "Badai tropis",
+        "Siklon"
+      ],
+      "pembahasan": "Siklon tropis adalah sistem badai berputar kencang yang terbentuk di atas lautan tropis yang hangat. Disebut Taifun di Pasifik Barat, Hurikan di Atlantik, dan Siklon di Samudra Hindia. Indonesia jarang terkena langsung karena dekat khatulistiwa.",
+      "topik": "Atmosfer & Cuaca",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 236,
+      "teks": "Alat yang digunakan untuk mengukur tekanan udara (atmosfer) disebut?",
+      "bahasa": "id",
+      "jawaban": "Barometer",
+      "alternatif_jawaban": [],
+      "pembahasan": "Barometer mengukur tekanan atmosfer. Tekanan udara tinggi (>1013 hPa) biasanya menandakan cuaca cerah; tekanan rendah menandakan cuaca buruk/hujan. Tekanan standar permukaan laut: 1013,25 hPa. Ditemukan oleh Evangelista Torricelli pada 1643.",
+      "topik": "Atmosfer & Cuaca",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 237,
+      "teks": "Alat yang digunakan untuk mengukur kelembaban udara (kadar uap air di udara) disebut?",
+      "bahasa": "id",
+      "jawaban": "Higrometer",
+      "alternatif_jawaban": [],
+      "pembahasan": "Higrometer mengukur kelembaban relatif udara (persentase uap air terhadap kapasitas maksimumnya pada suhu tersebut). Indonesia memiliki kelembaban rata-rata 70–90% karena dikelilingi laut dan beriklim tropis.",
+      "topik": "Atmosfer & Cuaca",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 238,
+      "teks": "What instrument is used to measure atmospheric pressure?",
+      "bahasa": "en",
+      "jawaban": "Barometer",
+      "alternatif_jawaban": [],
+      "pembahasan": "A barometer measures atmospheric pressure (tekanan udara). High pressure (above 1013 hPa) typically indicates clear, fair weather, while low pressure indicates cloudy and rainy conditions. Barometers are essential tools in weather forecasting. The barometer was invented by Evangelista Torricelli in 1643.",
+      "topik": "Atmosfer & Cuaca",
+      "level": "sedang",
+      "waktu": 15
+    },
+    {
+      "id": 239,
+      "teks": "Proses pembentukan awan yang terjadi ketika uap air di atmosfer mendingin dan berubah menjadi titik-titik air kecil disebut?",
+      "bahasa": "id",
+      "jawaban": "Kondensasi",
+      "alternatif_jawaban": [],
+      "pembahasan": "Kondensasi adalah proses uap air berubah menjadi cairan saat mendingin hingga titik embun. Ketika udara lembap naik dan mendingin di ketinggian, uap air mengembun membentuk awan. Semakin tinggi dan dingin, semakin besar tetes air berkumpul hingga menjadi hujan.",
+      "topik": "Atmosfer & Cuaca",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 240,
+      "teks": "Fenomena optik berupa busur berwarna di langit yang muncul setelah hujan disebut?",
+      "bahasa": "id",
+      "jawaban": "Pelangi",
+      "alternatif_jawaban": [
+        "Rainbow"
+      ],
+      "pembahasan": "Pelangi terbentuk ketika sinar matahari masuk ke tetes air hujan, dibiaskan, dipantulkan di dalam tetes, lalu dibiaskan lagi saat keluar — memisahkan cahaya putih menjadi spektrum warna. Urutan dari luar ke dalam: merah, jingga, kuning, hijau, biru, nila, ungu.",
+      "topik": "Atmosfer & Cuaca",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 241,
+      "teks": "What do we call the layer of gases surrounding the Earth?",
+      "bahasa": "en",
+      "jawaban": "Atmosphere",
+      "alternatif_jawaban": [
+        "Atmosfer"
+      ],
+      "pembahasan": "The atmosphere (atmosfer) is the layer of gases surrounding the Earth, held in place by gravity. It consists of layers: troposphere (weather), stratosphere (ozone layer), mesosphere, thermosphere, and exosphere. The atmosphere protects life from harmful radiation and maintains temperatures suitable for life.",
+      "topik": "Atmosfer & Cuaca",
+      "level": "mudah",
+      "waktu": 15
+    },
+    {
+      "id": 242,
+      "teks": "Lapisan atmosfer yang melindungi Bumi dari meteor-meteor kecil yang terbakar habis di sana disebut?",
+      "bahasa": "id",
+      "jawaban": "Mesosfer",
+      "alternatif_jawaban": [],
+      "pembahasan": "Mesosfer berada di ketinggian 50–80 km. Di sinilah sebagian besar meteor terbakar habis saat memasuki atmosfer Bumi, menghasilkan fenomena bintang jatuh. Mesosfer adalah lapisan atmosfer terdingin, suhunya bisa mencapai -90°C.",
+      "topik": "Atmosfer & Cuaca",
+      "level": "sulit",
+      "waktu": 10
+    },
+    {
+      "id": 243,
+      "teks": "Pemanasan Bumi akibat gas-gas di atmosfer yang memerangkap panas Bumi disebut?",
+      "bahasa": "id",
+      "jawaban": "Efek rumah kaca",
+      "alternatif_jawaban": [
+        "Greenhouse effect"
+      ],
+      "pembahasan": "Efek rumah kaca alami penting untuk kehidupan (menjaga suhu Bumi ±15°C rata-rata). Namun peningkatan gas rumah kaca akibat aktivitas manusia memperkuat efek ini, menyebabkan pemanasan global. Jika tidak dikendalikan, mengancam ekosistem dan kehidupan di Bumi.",
+      "topik": "Atmosfer & Cuaca",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 244,
+      "teks": "Fenomena cahaya berwarna-warni di langit kutub yang disebabkan partikel bermuatan dari Matahari disebut?",
+      "bahasa": "id",
+      "jawaban": "Aurora",
+      "alternatif_jawaban": [
+        "Aurora borealis",
+        "Aurora australis"
+      ],
+      "pembahasan": "Aurora (Borealis di Kutub Utara, Australis di Kutub Selatan) adalah fenomena cahaya berwarna-warni di langit malam daerah kutub. Terjadi ketika partikel bermuatan dari angin surya berinteraksi dengan gas-gas di lapisan atas atmosfer Bumi (ionosfer), memancarkan cahaya.",
+      "topik": "Atmosfer & Cuaca",
+      "level": "sulit",
+      "waktu": 10
+    },
+    {
+      "id": 245,
+      "teks": "Angin yang berbalik arah setiap pergantian musim dan membawa hujan ke Indonesia disebut angin?",
+      "bahasa": "id",
+      "jawaban": "Muson (monsun)",
+      "alternatif_jawaban": [
+        "Angin muson",
+        "Monsun"
+      ],
+      "pembahasan": "Angin muson (monsun) berbalik arah setiap enam bulan karena perbedaan pemanasan antara daratan dan lautan. Muson barat (Oktober–April) membawa hujan dari Samudra Hindia ke Indonesia. Muson timur (April–Oktober) membawa udara kering dari Australia.",
+      "topik": "Atmosfer & Cuaca",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 246,
+      "teks": "Gas yang dihasilkan aktivitas manusia dan menjadi gas rumah kaca utama penyebab pemanasan global adalah?",
+      "bahasa": "id",
+      "jawaban": "Karbon dioksida (CO₂)",
+      "alternatif_jawaban": [
+        "CO₂",
+        "CO2"
+      ],
+      "pembahasan": "CO₂ adalah gas rumah kaca utama yang dihasilkan pembakaran bahan bakar fosil (kendaraan, pembangkit listrik), deforestasi, dan industri. Konsentrasinya terus meningkat sejak era industri dari ±280 ppm menjadi >420 ppm saat ini, menyebabkan pemanasan global.",
+      "topik": "Atmosfer & Cuaca",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 247,
+      "teks": "Kilat dan petir terjadi karena?",
+      "bahasa": "id",
+      "jawaban": "Perpindahan muatan listrik antara awan bermuatan dan tanah",
+      "alternatif_jawaban": [
+        "Listrik statis di awan",
+        "Muatan listrik"
+      ],
+      "pembahasan": "Kilat terjadi akibat perpindahan muatan listrik yang sangat besar antara awan bermuatan dan tanah (atau antar awan). Penumpukan muatan listrik statis di awan awan cumulonimbus menyebabkan pelepasan energi yang sangat besar sebagai kilat, disertai suara petir.",
+      "topik": "Atmosfer & Cuaca",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 248,
+      "teks": "Lapisan tipis ozon di stratosfer yang rusak akibat bahan kimia CFC berfungsi untuk?",
+      "bahasa": "id",
+      "jawaban": "Melindungi Bumi dari sinar ultraviolet (UV) berbahaya",
+      "alternatif_jawaban": [
+        "Menyerap sinar UV",
+        "Pelindung sinar UV"
+      ],
+      "pembahasan": "Lapisan ozon menyerap sebagian besar sinar UV-B dan UV-C yang berbahaya dari Matahari. Paparan UV berlebihan dapat menyebabkan kanker kulit, katarak, dan kerusakan ekosistem laut. Penipisan ozon terutama disebabkan CFC, dilarang sejak Protokol Montreal 1987.",
+      "topik": "Atmosfer & Cuaca",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 249,
+      "teks": "Proses jatuhnya air dari atmosfer ke permukaan Bumi dalam berbagai bentuk (hujan, salju, hujan es) disebut?",
+      "bahasa": "id",
+      "jawaban": "Presipitasi",
+      "alternatif_jawaban": [
+        "Hujan"
+      ],
+      "pembahasan": "Presipitasi adalah jatuhnya air dari atmosfer ke permukaan Bumi: hujan (cair), salju (padat di daerah dingin), hujan es, dan embun beku. Terjadi ketika awan menjadi cukup berat. Presipitasi adalah bagian penting dari siklus air (daur hidrologi).",
+      "topik": "Atmosfer & Cuaca",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 250,
+      "teks": "Alat yang digunakan oleh BMKG untuk mengukur dan mencatat arah serta kecepatan angin adalah?",
+      "bahasa": "id",
+      "jawaban": "Anemometer",
+      "alternatif_jawaban": [],
+      "pembahasan": "Anemometer mengukur kecepatan angin (dalam km/jam atau m/s). Umumnya memiliki tiga atau empat mangkuk yang berputar saat angin bertiup. Bersama alat ukur arah angin (wind vane), anemometer penting untuk prakiraan cuaca dan penerbangan.",
+      "topik": "Atmosfer & Cuaca",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 251,
+      "teks": "Tiga wujud materi yang ada di alam adalah?",
+      "bahasa": "id",
+      "jawaban": "Padat, cair, dan gas",
+      "alternatif_jawaban": [
+        "Solid, liquid, gas"
+      ],
+      "pembahasan": "Materi dapat berwujud: padat (bentuk dan volume tetap), cair (volume tetap, bentuk mengikuti wadah), dan gas (bentuk dan volume mengikuti wadah). Perbedaan wujud berkaitan dengan susunan dan gerak partikelnya. Ada pula wujud plasma, tapi jarang dipelajari di SD.",
+      "topik": "Materi & Perubahan Wujud",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 252,
+      "teks": "Perubahan wujud dari benda padat menjadi cair disebut?",
+      "bahasa": "id",
+      "jawaban": "Mencair (meleleh)",
+      "alternatif_jawaban": [
+        "Meleleh",
+        "Fusi"
+      ],
+      "pembahasan": "Mencair (meleleh) adalah perubahan wujud padat → cair akibat peningkatan suhu. Terjadi saat energi panas melemahkan ikatan antar partikel dalam zat padat. Contoh: es batu mencair, lilin meleleh, besi melebur di pabrik baja.",
+      "topik": "Materi & Perubahan Wujud",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 253,
+      "teks": "Perubahan wujud dari benda cair menjadi gas disebut?",
+      "bahasa": "id",
+      "jawaban": "Menguap (evaporasi)",
+      "alternatif_jawaban": [
+        "Menguap",
+        "Evaporasi",
+        "Vaporisasi"
+      ],
+      "pembahasan": "Menguap adalah perubahan wujud cair → gas akibat peningkatan suhu. Partikel cairan yang mendapat cukup energi dapat melepaskan diri dari ikatan dan menjadi gas. Contoh: air yang dipanaskan menguap, pakaian basah mengering di bawah sinar matahari.",
+      "topik": "Materi & Perubahan Wujud",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 254,
+      "teks": "Perubahan wujud dari gas menjadi cair disebut?",
+      "bahasa": "id",
+      "jawaban": "Mengembun (kondensasi)",
+      "alternatif_jawaban": [
+        "Mengembun",
+        "Kondensasi"
+      ],
+      "pembahasan": "Mengembun adalah perubahan wujud gas → cair akibat penurunan suhu. Partikel gas melambat dan berkumpul membentuk cairan. Contoh: embun di rumput pagi hari, tetes air di luar gelas minuman dingin, uap air yang mengembun membentuk awan.",
+      "topik": "Materi & Perubahan Wujud",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 255,
+      "teks": "Perubahan wujud dari benda cair menjadi padat disebut?",
+      "bahasa": "id",
+      "jawaban": "Membeku",
+      "alternatif_jawaban": [
+        "Solidifikasi"
+      ],
+      "pembahasan": "Membeku adalah perubahan wujud cair → padat akibat penurunan suhu hingga titik beku. Partikel cairan melambat hingga membentuk susunan teratur. Contoh: air membeku menjadi es pada suhu 0°C, lilin cair membeku saat didinginkan.",
+      "topik": "Materi & Perubahan Wujud",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 256,
+      "teks": "Perubahan wujud dari benda padat langsung menjadi gas tanpa melalui wujud cair disebut?",
+      "bahasa": "id",
+      "jawaban": "Menyublim (sublimasi)",
+      "alternatif_jawaban": [
+        "Sublimasi",
+        "Menyublim"
+      ],
+      "pembahasan": "Sublimasi adalah perubahan wujud padat → gas secara langsung. Terjadi pada tekanan rendah atau zat tertentu. Contoh: kapur barus yang lama-lama mengecil dan menghilang, dry ice (CO₂ padat) yang langsung menguap menjadi gas.",
+      "topik": "Materi & Perubahan Wujud",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 257,
+      "teks": "Perubahan wujud dari gas langsung menjadi padat tanpa melalui wujud cair disebut?",
+      "bahasa": "id",
+      "jawaban": "Deposisi (mengkristal)",
+      "alternatif_jawaban": [
+        "Deposisi",
+        "Mengkristal"
+      ],
+      "pembahasan": "Deposisi (desublimasi/mengkristal) adalah perubahan wujud gas → padat secara langsung, kebalikan dari sublimasi. Contoh: salju terbentuk dari uap air yang langsung membeku menjadi kristal es di atmosfer dingin; embun beku (frost) di musim dingin.",
+      "topik": "Materi & Perubahan Wujud",
+      "level": "sulit",
+      "waktu": 10
+    },
+    {
+      "id": 258,
+      "teks": "What is the process called when a liquid turns into a gas?",
+      "bahasa": "en",
+      "jawaban": "Evaporation",
+      "alternatif_jawaban": [
+        "Vaporization",
+        "Menguap",
+        "Boiling"
+      ],
+      "pembahasan": "Evaporation (penguapan/evaporasi) is the process when a liquid changes into a gas. It can occur at any temperature from the surface of a liquid. When it happens throughout the liquid at boiling point, it is called boiling (mendidih). Example: puddles of water disappear after rain due to evaporation.",
+      "topik": "Materi & Perubahan Wujud",
+      "level": "mudah",
+      "waktu": 15
+    },
+    {
+      "id": 259,
+      "teks": "Contoh zat yang dapat menyublim (berubah langsung dari padat ke gas) dalam kehidupan sehari-hari adalah?",
+      "bahasa": "id",
+      "jawaban": "Kapur barus",
+      "alternatif_jawaban": [
+        "Naphthalene",
+        "Dry ice",
+        "Kamper"
+      ],
+      "pembahasan": "Kapur barus (kamfer/naftalen) adalah contoh zat yang menyublim pada suhu ruang. Lama-kelamaan kapur barus mengecil dan hilang karena partikelnya langsung berubah menjadi gas aromatik. Dry ice (CO₂ padat) juga menyublim secara langsung menjadi gas CO₂.",
+      "topik": "Materi & Perubahan Wujud",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 260,
+      "teks": "Titik didih air pada tekanan normal (1 atm, permukaan laut) adalah?",
+      "bahasa": "id",
+      "jawaban": "100°C",
+      "alternatif_jawaban": [
+        "100 derajat Celsius"
+      ],
+      "pembahasan": "Air mendidih pada 100°C di tekanan 1 atm (permukaan laut). Di tempat tinggi seperti puncak gunung, tekanan udara lebih rendah sehingga air mendidih pada suhu lebih rendah dari 100°C. Sebaliknya, dalam panci presto (tekanan tinggi), air mendidih di atas 100°C.",
+      "topik": "Materi & Perubahan Wujud",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 261,
+      "teks": "Titik beku air pada tekanan normal adalah?",
+      "bahasa": "id",
+      "jawaban": "0°C",
+      "alternatif_jawaban": [
+        "0 derajat Celsius"
+      ],
+      "pembahasan": "Air membeku (menjadi es) pada suhu 0°C di tekanan normal. Ini juga merupakan titik cair es. Penambahan garam ke air menurunkan titik bekunya (di bawah 0°C), itulah mengapa garam ditaburkan di jalan bersalju untuk mencegah pembekuan.",
+      "topik": "Materi & Perubahan Wujud",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 262,
+      "teks": "Benda yang memiliki bentuk tetap dan volume tetap, serta partikel-partikelnya tersusun rapat dan teratur, adalah benda?",
+      "bahasa": "id",
+      "jawaban": "Padat",
+      "alternatif_jawaban": [
+        "Solid"
+      ],
+      "pembahasan": "Benda padat memiliki bentuk dan volume tetap karena partikel-partikelnya tersusun rapat dan teratur dengan ikatan yang kuat. Partikel benda padat hanya bergetar di tempat. Contoh: batu, kayu, besi, es batu.",
+      "topik": "Materi & Perubahan Wujud",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 263,
+      "teks": "Benda yang volume dan bentuknya selalu mengikuti wadah karena partikel-partikelnya sangat bebas bergerak adalah benda?",
+      "bahasa": "id",
+      "jawaban": "Gas",
+      "alternatif_jawaban": [],
+      "pembahasan": "Gas memiliki bentuk dan volume yang selalu mengikuti wadah karena partikel-partikelnya bergerak sangat cepat dan bebas, hampir tidak ada ikatan antar partikel. Contoh: udara, uap air, gas elpiji, oksigen dalam tabung.",
+      "topik": "Materi & Perubahan Wujud",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 264,
+      "teks": "What is the process in which solid ice turns directly into water vapor without becoming liquid first?",
+      "bahasa": "en",
+      "jawaban": "Sublimation",
+      "alternatif_jawaban": [
+        "Sublimasi",
+        "Menyublim"
+      ],
+      "pembahasan": "Sublimation (sublimasi) is the direct phase change from solid to gas, skipping the liquid state. Examples: dry ice (solid CO₂) turns directly into CO₂ gas; mothballs (kapur barus) slowly disappear by turning into gas; and water ice can sublimate in cold, dry conditions.",
+      "topik": "Materi & Perubahan Wujud",
+      "level": "sedang",
+      "waktu": 15
+    },
+    {
+      "id": 265,
+      "teks": "Campuran pasir dan air dapat dipisahkan dengan cara?",
+      "bahasa": "id",
+      "jawaban": "Penyaringan (filtrasi)",
+      "alternatif_jawaban": [
+        "Filtrasi",
+        "Menyaring"
+      ],
+      "pembahasan": "Penyaringan (filtrasi) memisahkan campuran padat-cair berdasarkan perbedaan ukuran partikel. Kertas saring menahan butiran pasir (residu) sementara air lolos sebagai filtrat. Prinsip ini digunakan dalam pengolahan air bersih dan industri.",
+      "topik": "Materi & Perubahan Wujud",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 266,
+      "teks": "Campuran garam dan air dapat dipisahkan dengan cara?",
+      "bahasa": "id",
+      "jawaban": "Penguapan (evaporasi) atau distilasi",
+      "alternatif_jawaban": [
+        "Evaporasi",
+        "Penguapan"
+      ],
+      "pembahasan": "Garam larut sempurna dalam air (campuran homogen), sehingga tidak bisa dipisahkan dengan penyaringan. Cara memisahkannya: penguapan/evaporasi (air menguap, garam tertinggal) — seperti pembuatan garam dari air laut; atau distilasi untuk mendapatkan air murni.",
+      "topik": "Materi & Perubahan Wujud",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 267,
+      "teks": "Kertas yang disobek adalah contoh perubahan?",
+      "bahasa": "id",
+      "jawaban": "Fisika",
+      "alternatif_jawaban": [
+        "Perubahan fisika"
+      ],
+      "pembahasan": "Kertas yang disobek mengalami perubahan fisika: bentuk dan ukurannya berubah, tetapi zat penyusunnya (selulosa) tidak berubah. Kertas tetap kertas, hanya jadi potongan lebih kecil. Berbeda dengan kertas yang dibakar (perubahan kimia menghasilkan abu dan gas).",
+      "topik": "Materi & Perubahan Wujud",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 268,
+      "teks": "Lilin yang terbakar mengalami dua jenis perubahan, yaitu?",
+      "bahasa": "id",
+      "jawaban": "Perubahan fisika (lilin meleleh) dan perubahan kimia (lilin terbakar)",
+      "alternatif_jawaban": [
+        "Fisika dan kimia"
+      ],
+      "pembahasan": "Lilin yang terbakar mengalami dua perubahan: fisika (lilin meleleh saat dipanaskan — wujud berubah, zat tetap sama) dan kimia (lilin terbakar menghasilkan CO₂, uap air, dan cahaya — zat baru terbentuk). Ini contoh menarik dua perubahan dalam satu peristiwa.",
+      "topik": "Materi & Perubahan Wujud",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 269,
+      "teks": "Larutan gula dalam air termasuk jenis campuran?",
+      "bahasa": "id",
+      "jawaban": "Homogen",
+      "alternatif_jawaban": [
+        "Larutan"
+      ],
+      "pembahasan": "Larutan gula dalam air adalah campuran homogen (serba sama) karena gula larut sempurna dan tersebar merata di seluruh bagian larutan. Tidak tampak batas pemisah antara gula dan air. Contoh campuran homogen lain: air garam, minuman bersoda, udara.",
+      "topik": "Materi & Perubahan Wujud",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 270,
+      "teks": "Air dan minyak goreng yang dikocok bersama termasuk jenis campuran?",
+      "bahasa": "id",
+      "jawaban": "Heterogen",
+      "alternatif_jawaban": [
+        "Campuran heterogen",
+        "Suspensi"
+      ],
+      "pembahasan": "Air dan minyak tidak dapat bercampur karena air bersifat polar dan minyak bersifat nonpolar. Saat dikocok membentuk emulsi sementara, tetapi segera memisah kembali. Campuran ini bersifat heterogen karena tidak serba sama dan tampak ada batas pemisah.",
+      "topik": "Materi & Perubahan Wujud",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 271,
+      "teks": "Besi yang mengalami karat adalah contoh perubahan?",
+      "bahasa": "id",
+      "jawaban": "Kimia",
+      "alternatif_jawaban": [
+        "Perubahan kimia"
+      ],
+      "pembahasan": "Karat besi adalah perubahan kimia: besi (Fe) bereaksi dengan oksigen dan air membentuk oksida besi (Fe₂O₃·xH₂O) yang berwarna kemerahan dan memiliki sifat berbeda dari besi aslinya. Tidak dapat dikembalikan ke besi semula dengan cara sederhana.",
+      "topik": "Materi & Perubahan Wujud",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 272,
+      "teks": "Partikel-partikel pada zat padat tersusun dalam kondisi?",
+      "bahasa": "id",
+      "jawaban": "Rapat, teratur, dan terikat kuat",
+      "alternatif_jawaban": [
+        "Rapat dan teratur",
+        "Tersusun rapat"
+      ],
+      "pembahasan": "Dalam zat padat, partikel tersusun sangat rapat, teratur (dalam pola kristal atau amorf), dan terikat oleh gaya antar partikel yang kuat. Partikel hanya dapat bergetar di posisinya masing-masing. Inilah yang menyebabkan zat padat memiliki bentuk dan volume tetap.",
+      "topik": "Materi & Perubahan Wujud",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 273,
+      "teks": "Peristiwa mengembun yang sering kita lihat dalam kehidupan sehari-hari adalah?",
+      "bahasa": "id",
+      "jawaban": "Embun di rumput pagi hari",
+      "alternatif_jawaban": [
+        "Tetes air di gelas dingin",
+        "Uap air mengembun"
+      ],
+      "pembahasan": "Embun di rumput pagi hari terjadi karena uap air di udara malam yang dingin mencapai titik embun dan mengembun menjadi tetes air di permukaan rumput. Contoh lain: tetes air di luar gelas berisi es karena uap air di udara sekitar mengembun di permukaan gelas yang dingin.",
+      "topik": "Materi & Perubahan Wujud",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 274,
+      "teks": "Proses fermentasi pada pembuatan tempe adalah contoh perubahan?",
+      "bahasa": "id",
+      "jawaban": "Kimia",
+      "alternatif_jawaban": [
+        "Perubahan kimia",
+        "Biokimia"
+      ],
+      "pembahasan": "Fermentasi pada pembuatan tempe adalah perubahan kimia: kapang Rhizopus oligosporus mengubah kacang kedelai menjadi tempe dengan sifat fisik, kimia, dan nutrisi yang berbeda dari kedelai awal. Menghasilkan zat baru (protein, enzim). Tidak dapat dikembalikan ke bentuk kedelai semula.",
+      "topik": "Materi & Perubahan Wujud",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 275,
+      "teks": "Mengapa air di dalam panci mendidih lebih cepat saat ditutup?",
+      "bahasa": "id",
+      "jawaban": "Karena uap panas terperangkap sehingga tekanan meningkat dan suhu naik lebih cepat",
+      "alternatif_jawaban": [
+        "Tekanan meningkat",
+        "Panas terkumpul"
+      ],
+      "pembahasan": "Panci tertutup memerangkap uap panas sehingga tekanan di dalam panci meningkat. Tekanan tinggi menaikkan titik didih air, tetapi juga membuat panas lebih efisien tidak terbuang ke udara. Akibatnya air matang lebih cepat dan hemat bahan bakar.",
+      "topik": "Materi & Perubahan Wujud",
+      "level": "sulit",
+      "waktu": 10
+    },
+    {
+      "id": 276,
+      "teks": "Satuan dasar penyusun semua makhluk hidup adalah?",
+      "bahasa": "id",
+      "jawaban": "Sel",
+      "alternatif_jawaban": [
+        "Cell"
+      ],
+      "pembahasan": "Sel adalah unit terkecil kehidupan yang mampu melaksanakan fungsi-fungsi dasar kehidupan (metabolisme, reproduksi, respons). Semua makhluk hidup tersusun dari sel — dari bakteri bersel satu hingga manusia yang tersusun dari ±37 triliun sel.",
+      "topik": "Biologi Sel",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 277,
+      "teks": "Bagian sel yang berfungsi sebagai pusat pengendali seluruh kegiatan sel adalah?",
+      "bahasa": "id",
+      "jawaban": "Inti sel (nukleus)",
+      "alternatif_jawaban": [
+        "Nukleus",
+        "Nucleus"
+      ],
+      "pembahasan": "Inti sel (nukleus) adalah 'otak' sel yang mengandung materi genetik (DNA) dalam bentuk kromosom. Nukleus mengatur semua aktivitas sel, termasuk pembelahan sel dan sintesis protein. Dikelilingi oleh membran inti (membran nukleus).",
+      "topik": "Biologi Sel",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 278,
+      "teks": "Organel sel yang bertugas menghasilkan energi melalui respirasi seluler disebut?",
+      "bahasa": "id",
+      "jawaban": "Mitokondria",
+      "alternatif_jawaban": [
+        "Mitochondria"
+      ],
+      "pembahasan": "Mitokondria adalah 'pembangkit listrik' sel yang menghasilkan ATP (energi) melalui respirasi aerob. Sel-sel yang aktif (seperti sel otot) memiliki lebih banyak mitokondria. Mitokondria memiliki DNA sendiri, mendukung teori bahwa dulunya mereka adalah bakteri simbiosis.",
+      "topik": "Biologi Sel",
+      "level": "sulit",
+      "waktu": 10
+    },
+    {
+      "id": 279,
+      "teks": "Organel sel yang berfungsi dalam fotosintesis dan hanya ditemukan pada sel tumbuhan adalah?",
+      "bahasa": "id",
+      "jawaban": "Kloroplas",
+      "alternatif_jawaban": [
+        "Chloroplast"
+      ],
+      "pembahasan": "Kloroplas adalah organel yang mengandung klorofil dan tempat berlangsungnya fotosintesis. Hanya ada pada sel tumbuhan dan alga. Seperti mitokondria, kloroplas juga memiliki DNA sendiri. Tumbuhan hijau warnanya karena kloroplas di sel-sel daunnya.",
+      "topik": "Biologi Sel",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 280,
+      "teks": "Dinding sel pada tumbuhan yang berfungsi memberikan bentuk dan kekuatan sel terbuat dari?",
+      "bahasa": "id",
+      "jawaban": "Selulosa",
+      "alternatif_jawaban": [],
+      "pembahasan": "Dinding sel tumbuhan terbuat dari selulosa, polisakarida yang sangat kuat dan kaku. Memberikan bentuk tetap pada sel tumbuhan dan perlindungan mekanis. Dinding sel tidak ditemukan pada sel hewan. Sel bakteri memiliki dinding sel dari peptidoglikan.",
+      "topik": "Biologi Sel",
+      "level": "sulit",
+      "waktu": 10
+    },
+    {
+      "id": 281,
+      "teks": "Membran tipis yang melingkupi sel dan mengatur keluar-masuknya zat disebut?",
+      "bahasa": "id",
+      "jawaban": "Membran sel (membran plasma)",
+      "alternatif_jawaban": [
+        "Membran plasma",
+        "Membran sel"
+      ],
+      "pembahasan": "Membran sel (membran plasma) adalah lapisan ganda fosfolipid yang mengatur keluar-masuknya zat dari dan ke dalam sel secara selektif (semipermeabel). Mengandung protein untuk transportasi dan komunikasi sel. Dimiliki oleh semua jenis sel.",
+      "topik": "Biologi Sel",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 282,
+      "teks": "Cairan kental yang mengisi bagian dalam sel dan tempat berlangsungnya berbagai reaksi kimia disebut?",
+      "bahasa": "id",
+      "jawaban": "Sitoplasma",
+      "alternatif_jawaban": [
+        "Cytoplasm"
+      ],
+      "pembahasan": "Sitoplasma adalah cairan kental (seperti gel) yang mengisi sel di antara membran sel dan inti sel. Mengandung berbagai organel sel (mitokondria, ribosom, aparatus Golgi, dll.) dan merupakan tempat banyak reaksi metabolisme berlangsung.",
+      "topik": "Biologi Sel",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 283,
+      "teks": "Sel yang tidak memiliki membran inti (materi genetik tersebar di sitoplasma) disebut sel?",
+      "bahasa": "id",
+      "jawaban": "Prokariotik",
+      "alternatif_jawaban": [
+        "Prokariot"
+      ],
+      "pembahasan": "Sel prokariotik tidak memiliki membran inti; DNA-nya tersebar bebas di sitoplasma dalam daerah yang disebut nukleoid. Organisme prokariotik: semua bakteri dan arkea. Sel eukariotik (tumbuhan, hewan, jamur, protista) memiliki membran inti.",
+      "topik": "Biologi Sel",
+      "level": "sulit",
+      "waktu": 10
+    },
+    {
+      "id": 284,
+      "teks": "What is the basic unit of life?",
+      "bahasa": "en",
+      "jawaban": "Cell",
+      "alternatif_jawaban": [
+        "Sel",
+        "The cell"
+      ],
+      "pembahasan": "The cell (sel) is the basic unit of life. All living things are made of cells, from single-celled bacteria to complex multicellular organisms. The cell theory states: (1) all living things are made of cells, (2) cells are the basic unit of life, and (3) all cells come from pre-existing cells.",
+      "topik": "Biologi Sel",
+      "level": "mudah",
+      "waktu": 15
+    },
+    {
+      "id": 285,
+      "teks": "Organel sel yang bertugas mensintesis (membuat) protein disebut?",
+      "bahasa": "id",
+      "jawaban": "Ribosom",
+      "alternatif_jawaban": [
+        "Ribosome"
+      ],
+      "pembahasan": "Ribosom adalah organel terkecil dalam sel yang berfungsi sebagai 'pabrik protein' — mensintesis protein berdasarkan instruksi dari mRNA (messenger RNA). Ribosom ditemukan di sitoplasma atau menempel pada retikulum endoplasma. Ada pada semua jenis sel (prokariot dan eukariot).",
+      "topik": "Biologi Sel",
+      "level": "sulit",
+      "waktu": 10
+    },
+    {
+      "id": 286,
+      "teks": "Materi genetik yang terdapat dalam inti sel dan mengandung informasi untuk semua sifat makhluk hidup disebut?",
+      "bahasa": "id",
+      "jawaban": "DNA",
+      "alternatif_jawaban": [
+        "Deoxyribonucleic Acid",
+        "Asam Deoksiribonukleat"
+      ],
+      "pembahasan": "DNA (Deoxyribonucleic Acid / Asam Deoksiribonukleat) adalah molekul yang membawa informasi genetik untuk semua fungsi dan sifat makhluk hidup. DNA tersimpan dalam kromosom di inti sel. Struktur heliks ganda DNA ditemukan oleh Watson dan Crick pada 1953.",
+      "topik": "Biologi Sel",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 287,
+      "teks": "Kromosom manusia yang normal berjumlah?",
+      "bahasa": "id",
+      "jawaban": "46 kromosom (23 pasang)",
+      "alternatif_jawaban": [
+        "46",
+        "23 pasang"
+      ],
+      "pembahasan": "Sel tubuh manusia normal memiliki 46 kromosom (23 pasang): 22 pasang autosom dan 1 pasang kromosom seks (XX untuk perempuan, XY untuk laki-laki). Kelainan jumlah kromosom menyebabkan kondisi seperti Sindrom Down (trisomi 21, 47 kromosom).",
+      "topik": "Biologi Sel",
+      "level": "sulit",
+      "waktu": 10
+    },
+    {
+      "id": 288,
+      "teks": "What organelle is known as the 'powerhouse of the cell' because it produces energy?",
+      "bahasa": "en",
+      "jawaban": "Mitochondria",
+      "alternatif_jawaban": [
+        "Mitokondria"
+      ],
+      "pembahasan": "The mitochondria (mitokondria) is called the 'powerhouse of the cell' because it produces ATP (adenosine triphosphate), the cell's energy currency, through cellular respiration. Cells that require a lot of energy (muscle cells, liver cells) have many mitochondria. Mitochondria have their own DNA.",
+      "topik": "Biologi Sel",
+      "level": "sulit",
+      "waktu": 15
+    },
+    {
+      "id": 289,
+      "teks": "Proses pembelahan sel yang menghasilkan dua sel anak identik dengan sel induk disebut?",
+      "bahasa": "id",
+      "jawaban": "Mitosis",
+      "alternatif_jawaban": [],
+      "pembahasan": "Mitosis adalah pembelahan sel untuk pertumbuhan, perbaikan jaringan, dan reproduksi aseksual. Menghasilkan 2 sel anak yang identik dengan sel induk (jumlah kromosom sama). Berbeda dengan meiosis yang menghasilkan 4 sel kelamin dengan setengah jumlah kromosom.",
+      "topik": "Biologi Sel",
+      "level": "sulit",
+      "waktu": 10
+    },
+    {
+      "id": 290,
+      "teks": "Jenis sel darah yang tidak memiliki inti sel saat dewasa adalah?",
+      "bahasa": "id",
+      "jawaban": "Sel darah merah (eritrosit)",
+      "alternatif_jawaban": [
+        "Eritrosit",
+        "Sel darah merah"
+      ],
+      "pembahasan": "Sel darah merah (eritrosit) manusia yang matang tidak memiliki inti sel, sehingga tidak dapat membelah. Tidak adanya inti memberikan lebih banyak ruang untuk hemoglobin (pengikat oksigen). Sel darah merah hidup ±120 hari, lalu dihancurkan di limpa dan hati.",
+      "topik": "Biologi Sel",
+      "level": "sulit",
+      "waktu": 10
+    },
+    {
+      "id": 291,
+      "teks": "Bakteri merupakan organisme bersel satu yang termasuk kelompok?",
+      "bahasa": "id",
+      "jawaban": "Prokariot",
+      "alternatif_jawaban": [
+        "Prokariotik"
+      ],
+      "pembahasan": "Bakteri adalah organisme prokariotik: bersel satu tanpa membran inti. DNA bakteri terdapat di nukleoid (daerah di sitoplasma). Bakteri adalah organisme yang paling beragam dan melimpah di Bumi. Ada bakteri yang menguntungkan (menghasilkan yogurt, antibiotik) dan merugikan (penyebab penyakit).",
+      "topik": "Biologi Sel",
+      "level": "sulit",
+      "waktu": 10
+    },
+    {
+      "id": 292,
+      "teks": "Virus berbeda dari sel makhluk hidup karena virus?",
+      "bahasa": "id",
+      "jawaban": "Tidak memiliki sel dan tidak dapat hidup mandiri tanpa inang",
+      "alternatif_jawaban": [
+        "Bukan sel hidup",
+        "Tidak bersel"
+      ],
+      "pembahasan": "Virus bukan organisme seluler: tidak memiliki membran sel, sitoplasma, atau organel. Hanya terdiri dari materi genetik (DNA atau RNA) yang terbungkus protein (kapsid). Virus hanya dapat bereplikasi di dalam sel inang yang hidup. Karenanya virus dianggap berada di 'batas kehidupan'.",
+      "topik": "Biologi Sel",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 293,
+      "teks": "Kumpulan sel-sel yang sama jenisnya dan menjalankan fungsi yang sama disebut?",
+      "bahasa": "id",
+      "jawaban": "Jaringan",
+      "alternatif_jawaban": [
+        "Tissue"
+      ],
+      "pembahasan": "Jaringan adalah sekumpulan sel sejenis yang bekerja bersama untuk melaksanakan fungsi tertentu. Contoh jaringan pada manusia: jaringan otot (bergerak), jaringan epitel (melapisi permukaan), jaringan saraf (menghantarkan impuls), jaringan ikat (menyokong dan menghubungkan).",
+      "topik": "Biologi Sel",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 294,
+      "teks": "Kumpulan beberapa jaringan yang bekerja sama untuk menjalankan fungsi tertentu disebut?",
+      "bahasa": "id",
+      "jawaban": "Organ",
+      "alternatif_jawaban": [],
+      "pembahasan": "Organ adalah kumpulan beberapa jaringan berbeda yang terorganisir untuk menjalankan fungsi spesifik. Contoh: jantung (tersusun dari jaringan otot jantung, jaringan ikat, jaringan saraf, dan pembuluh darah), paru-paru, lambung, dan otak.",
+      "topik": "Biologi Sel",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 295,
+      "teks": "Kumpulan organ yang bekerja sama untuk menjalankan fungsi tubuh tertentu disebut?",
+      "bahasa": "id",
+      "jawaban": "Sistem organ",
+      "alternatif_jawaban": [
+        "Sistem"
+      ],
+      "pembahasan": "Sistem organ adalah sekelompok organ yang bekerja sama untuk fungsi tertentu. Contoh: sistem pencernaan (mulut, kerongkongan, lambung, usus), sistem pernapasan (hidung, tenggorokan, paru-paru), sistem peredaran darah (jantung dan pembuluh darah).",
+      "topik": "Biologi Sel",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 296,
+      "teks": "Sel yang memiliki membran inti sehingga materi genetiknya terlindungi dalam inti sel disebut sel?",
+      "bahasa": "id",
+      "jawaban": "Eukariotik",
+      "alternatif_jawaban": [
+        "Eukariot"
+      ],
+      "pembahasan": "Sel eukariotik memiliki membran inti yang memisahkan materi genetik (DNA) dari sitoplasma. Organisme eukariotik: tumbuhan, hewan, jamur, dan protista. Lebih kompleks dan umumnya lebih besar dari sel prokariotik. 'Eukaryote' berasal dari bahasa Yunani: eu (sejati) + karyon (inti).",
+      "topik": "Biologi Sel",
+      "level": "sulit",
+      "waktu": 10
+    },
+    {
+      "id": 297,
+      "teks": "Virus HIV yang menyebabkan AIDS menyerang sel apa dalam tubuh manusia?",
+      "bahasa": "id",
+      "jawaban": "Sel darah putih (limfosit T)",
+      "alternatif_jawaban": [
+        "Limfosit T",
+        "Sel T",
+        "CD4"
+      ],
+      "pembahasan": "HIV (Human Immunodeficiency Virus) secara spesifik menyerang limfosit T (sel T CD4+), yaitu sel darah putih kunci dalam sistem imun. Dengan hancurnya sel T, sistem imun melemah drastis sehingga tubuh tidak dapat melawan infeksi dan kanker — kondisi ini disebut AIDS.",
+      "topik": "Biologi Sel",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 298,
+      "teks": "Organisme bersel satu yang termasuk eukariot dan bergerak menggunakan pseudopod (kaki semu) adalah?",
+      "bahasa": "id",
+      "jawaban": "Amoeba",
+      "alternatif_jawaban": [
+        "Amuba"
+      ],
+      "pembahasan": "Amoeba adalah protozoa (protista) bersel satu eukariotik yang bergerak dengan menjulurkan pseudopod (kaki semu) — ekstensi sitoplasma. Amoeba tidak memiliki bentuk tetap. Beberapa jenis amoeba dapat menyebabkan penyakit (seperti Entamoeba histolytica penyebab disentri ameba).",
+      "topik": "Biologi Sel",
+      "level": "sulit",
+      "waktu": 10
+    },
+    {
+      "id": 299,
+      "teks": "Proses di mana sel-sel berkembang menjadi berbagai jenis sel dengan fungsi yang berbeda-beda disebut?",
+      "bahasa": "id",
+      "jawaban": "Diferensiasi sel",
+      "alternatif_jawaban": [
+        "Diferensiasi"
+      ],
+      "pembahasan": "Diferensiasi sel adalah proses di mana sel-sel berkembang dan mengkhususkan diri menjadi berbagai jenis sel (sel otot, sel saraf, sel darah, dll.) meskipun semua memiliki DNA yang sama. Ini terjadi selama perkembangan organisme dari zigot menjadi individu dewasa.",
+      "topik": "Biologi Sel",
+      "level": "sulit",
+      "waktu": 10
+    },
+    {
+      "id": 300,
+      "teks": "Dalam tingkatan organisasi kehidupan, urutan dari yang terkecil ke terbesar adalah?",
+      "bahasa": "id",
+      "jawaban": "Sel → jaringan → organ → sistem organ → organisme",
+      "alternatif_jawaban": [
+        "Sel, jaringan, organ, sistem organ, organisme"
+      ],
+      "pembahasan": "Hierarki organisasi kehidupan dari terkecil ke terbesar: sel (unit dasar) → jaringan (kumpulan sel sejenis) → organ (kumpulan jaringan) → sistem organ (kumpulan organ) → organisme (makhluk hidup utuh). Memahami hierarki ini penting untuk memahami bagaimana tubuh bekerja secara terpadu.",
+      "topik": "Biologi Sel",
+      "level": "sedang",
+      "waktu": 10
+    }
+  ]
+}
