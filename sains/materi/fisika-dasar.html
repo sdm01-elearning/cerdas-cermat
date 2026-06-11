@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fisika Dasar — Materi Cerdas Cermat SDM01KKS</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { height: 100%; font-family: 'Nunito', sans-serif; }
+    :root {
+      --red:    #00695c; --red-dk: #003d33; --red-lt: #e0f2f1;
+      --gold:   #f9a825; --green:  #2e7d32; --navy:   #1a237e;
+      --blue:   #1565c0; --orange: #e65100; --purple: #6a1b9a;
+      --cream:  #f8fdfc; --text:   #1a2420; --muted:  #718096; --nav-h: 58px;
+    }
+    body { background: var(--cream); color: var(--text); display: flex; flex-direction: column; height: 100vh; overflow: hidden; }
+    .s-nav { height: var(--nav-h); flex-shrink: 0; display: flex; align-items: center; gap: 1rem; padding: 0 1.5rem; background: var(--red); color: #fff; box-shadow: 0 2px 12px rgba(0,0,0,.25); z-index: 20; }
+    .s-nav a { color: rgba(255,255,255,.8); text-decoration: none; font-size: .85rem; }
+    .s-nav a:hover { color: #fff; }
+    .s-nav .sep { opacity: .4; }
+    .s-nav .s-title { flex: 1; font-weight: 800; font-size: .95rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .s-nav .s-counter { font-weight: 700; font-size: .85rem; background: rgba(255,255,255,.2); padding: .25rem .75rem; border-radius: 20px; white-space: nowrap; }
+    .btn-fs { background: rgba(255,255,255,.15); border: none; color: #fff; width: 34px; height: 34px; border-radius: 8px; font-size: 1rem; cursor: pointer; display: flex; align-items: center; justify-content: center; }
+    .btn-fs:hover { background: rgba(255,255,255,.3); }
+    .s-prog { height: 4px; background: rgba(255,255,255,.25); flex-shrink: 0; }
+    .s-prog-fill { height: 100%; background: var(--gold); transition: width .4s ease; }
+    .slides-wrap { flex: 1; position: relative; overflow: hidden; }
+    .slide { position: absolute; inset: 0; padding: 2.5rem 3rem; opacity: 0; transform: translateX(30px); transition: opacity .35s ease, transform .35s ease; pointer-events: none; overflow-y: auto; }
+    .slide.active { opacity: 1; transform: translateX(0); pointer-events: all; }
+    .slide.leaving { opacity: 0; transform: translateX(-30px); }
+    .slide-cover { background: linear-gradient(145deg, var(--red) 0%, var(--red-dk) 100%); color: #fff; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; gap: 1.5rem; }
+    .cover-flag { font-size: 5rem; line-height: 1; }
+    .cover-title { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 900; text-shadow: 0 2px 16px rgba(0,0,0,.3); line-height: 1.2; }
+    .cover-sub { font-size: clamp(.9rem, 2vw, 1.2rem); opacity: .85; max-width: 540px; line-height: 1.6; }
+    .cover-tag { display: inline-flex; gap: 1rem; flex-wrap: wrap; justify-content: center; margin-top: .5rem; }
+    .cover-tag span { background: rgba(255,255,255,.18); border: 1px solid rgba(255,255,255,.35); border-radius: 20px; padding: .3rem 1rem; font-size: .8rem; font-weight: 700; }
+    .slide-content { display: flex; flex-direction: column; gap: 1.5rem; max-width: 860px; margin: 0 auto; }
+    .slide-label { font-size: .72rem; text-transform: uppercase; letter-spacing: .12em; color: var(--red); font-weight: 800; }
+    .slide-heading { font-family: 'Playfair Display', serif; font-size: clamp(1.6rem, 4vw, 2.6rem); font-weight: 700; color: var(--text); line-height: 1.2; }
+    .slide-heading .sub { font-size: .55em; color: var(--muted); display: block; font-family: 'Nunito', sans-serif; font-weight: 600; margin-top: .2rem; }
+    .hl { border-radius: 12px; padding: 1rem 1.4rem; font-weight: 700; font-size: .95rem; display: flex; align-items: flex-start; gap: .75rem; line-height: 1.6; }
+    .hl-teal   { background: #e0f2f1; border-left: 4px solid var(--red); color: var(--red-dk); }
+    .hl-gold   { background: #fff8e1; border-left: 4px solid var(--gold); color: #6d4c00; }
+    .hl-green  { background: #e8f5e9; border-left: 4px solid var(--green); color: #1b5e20; }
+    .hl-navy   { background: #e8eaf6; border-left: 4px solid var(--navy); color: var(--navy); }
+    .hl-blue   { background: #e3f2fd; border-left: 4px solid var(--blue); color: #0d47a1; }
+    .hl-orange { background: #fff3e0; border-left: 4px solid var(--orange); color: #8d3100; }
+    .hl-purple { background: #f3e5f5; border-left: 4px solid var(--purple); color: #4a148c; }
+    .hl-icon   { font-size: 1.4rem; flex-shrink: 0; margin-top: .05rem; }
+    .facts { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: .85rem; }
+    .fact { background: #fff; border: 1px solid #e9ecef; border-radius: 10px; padding: .85rem 1rem; }
+    .fact-label { font-size: .68rem; text-transform: uppercase; letter-spacing: .1em; color: var(--muted); margin-bottom: .25rem; }
+    .fact-value { font-weight: 800; font-size: .92rem; color: var(--text); line-height: 1.4; }
+    .tbl { width: 100%; border-collapse: collapse; font-size: .88rem; }
+    .tbl th { background: var(--red); color: #fff; padding: .6rem .9rem; text-align: left; font-weight: 700; }
+    .tbl td { padding: .55rem .9rem; border-bottom: 1px solid #f0f4f8; vertical-align: top; line-height: 1.45; }
+    .tbl tr:hover td { background: #f0faf8; }
+    .tbl .hl-row td { background: #fff8e1; font-weight: 700; }
+    .pesawat-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(185px, 1fr)); gap: .85rem; }
+    .pesawat-card { background: #fff; border: 1px solid #e9ecef; border-radius: 12px; padding: .9rem 1rem; border-top: 3px solid var(--pc, #00695c); }
+    .pc-icon { font-size: 1.8rem; margin-bottom: .3rem; }
+    .pc-name { font-weight: 800; font-size: .88rem; color: var(--text); margin-bottom: .15rem; }
+    .pc-prinsip { font-size: .7rem; color: var(--red); font-weight: 700; margin-bottom: .2rem; }
+    .pc-desc { font-size: .76rem; color: #4a5568; line-height: 1.5; }
+    .sl { list-style: none; display: flex; flex-direction: column; gap: .55rem; }
+    .sl li { display: flex; gap: .6rem; align-items: flex-start; font-size: .93rem; line-height: 1.55; }
+    .sl li::before { content: "▸"; color: var(--red); font-size: .75rem; margin-top: .25rem; flex-shrink: 0; }
+    .cta-btn { display: inline-flex; align-items: center; gap: .5rem; background: var(--red); color: #fff; padding: .75rem 1.75rem; border-radius: 10px; font-weight: 800; font-size: 1rem; text-decoration: none; transition: opacity .15s; align-self: flex-start; }
+    .cta-btn:hover { opacity: .85; }
+    .s-footer { height: 64px; flex-shrink: 0; display: flex; align-items: center; justify-content: space-between; padding: 0 1.5rem; background: #fff; border-top: 1px solid #e9ecef; }
+    .nav-btn { display: flex; align-items: center; gap: .4rem; background: none; border: 1.5px solid #e9ecef; border-radius: 10px; padding: .5rem 1.2rem; font-family: inherit; font-size: .88rem; font-weight: 700; color: var(--text); cursor: pointer; transition: background .15s, border-color .15s; }
+    .nav-btn:hover { background: #f5f5f5; border-color: #ccc; }
+    .nav-btn:disabled { opacity: .3; cursor: default; }
+    .nav-btn.next-btn { background: var(--red); color: #fff; border-color: var(--red); }
+    .nav-btn.next-btn:hover { opacity: .88; }
+    .nav-btn.next-btn:disabled { background: #ccc; border-color: #ccc; opacity: .6; }
+    .s-hint { font-size: .72rem; color: var(--muted); text-align: center; }
+    .s-hint kbd { background: #f0f4f8; border: 1px solid #ddd; border-radius: 4px; padding: 1px 5px; font-family: monospace; font-size: .68rem; }
+    @media (max-width: 600px) { .slide { padding: 1.25rem 1rem; } .s-hint { display: none; } }
+  </style>
+</head>
+<body>
+  <header class="s-nav">
+    <a href="../index.html">← Materi</a>
+    <span class="sep">›</span>
+    <span class="s-title">Fisika Dasar</span>
+    <span class="s-counter" id="s-counter">1 / 13</span>
+    <button class="btn-fs" id="btn-fs" title="Layar penuh (F)">⛶</button>
+  </header>
+  <div class="s-prog"><div class="s-prog-fill" id="s-prog" style="width:7.69%"></div></div>
+
+  <div class="slides-wrap" id="slides-wrap">
+
+    <!-- ══ SLIDE 1 — COVER ══ -->
+    <div class="slide slide-cover active" id="sl1">
+      <div class="cover-flag">⚡</div>
+      <h1 class="cover-title">Fisika Dasar</h1>
+      <p class="cover-sub">Mengenal gaya, gerak, energi, cahaya, bunyi, listrik, magnet, dan pesawat sederhana yang ada di sekitar kita setiap hari.</p>
+      <div class="cover-tag">
+        <span>📖 13 Slide</span>
+        <span>🔬 Sains SD</span>
+        <span>⌨️ ← → navigasi</span>
+      </div>
+    </div>
+
+    <!-- ══ SLIDE 2 — GAYA ══ -->
+    <div class="slide" id="sl2">
+      <div class="slide-content">
+        <div class="slide-label">Slide 2 · Gaya</div>
+        <h2 class="slide-heading">Gaya — Tarikan atau Dorongan</h2>
+        <div class="hl hl-teal">
+          <span class="hl-icon">💪</span>
+          <span><strong>Gaya</strong> adalah tarikan atau dorongan yang dapat mengubah bentuk, posisi, atau kecepatan suatu benda. Satuan gaya adalah <strong>Newton (N)</strong>.</span>
+        </div>
+        <table class="tbl">
+          <thead><tr><th>Jenis Gaya</th><th>Penjelasan</th><th>Contoh</th></tr></thead>
+          <tbody>
+            <tr class="hl-row"><td><strong>Gaya Gravitasi</strong></td><td>Gaya tarik Bumi terhadap semua benda; arah ke pusat Bumi</td><td>Buah jatuh dari pohon; kita tidak melayang di udara</td></tr>
+            <tr><td><strong>Gaya Gesek</strong></td><td>Gaya yang menghambat gerak benda pada permukaan</td><td>Rem sepeda, sol sepatu tidak licin, menulis dengan pensil</td></tr>
+            <tr><td><strong>Gaya Pegas</strong></td><td>Gaya pada pegas yang ditekan atau diregangkan</td><td>Trampolin, kasur pegas, pulpen ballpoint</td></tr>
+            <tr><td><strong>Gaya Magnet</strong></td><td>Gaya tarik-menarik atau tolak-menolak magnet</td><td>Magnet menarik besi; kompas menunjuk utara</td></tr>
+            <tr><td><strong>Gaya Listrik</strong></td><td>Gaya antara benda bermuatan listrik</td><td>Balon digosok menarik potongan kertas kecil</td></tr>
+            <tr><td><strong>Gaya Otot</strong></td><td>Gaya dari kontraksi otot makhluk hidup</td><td>Mendorong meja, mengangkat buku, menendang bola</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- ══ SLIDE 3 — GERAK ══ -->
+    <div class="slide" id="sl3">
+      <div class="slide-content">
+        <div class="slide-label">Slide 3 · Gerak</div>
+        <h2 class="slide-heading">Gerak &amp; Hukum Newton</h2>
+        <div class="hl hl-navy">
+          <span class="hl-icon">🍎</span>
+          <span>Isaac Newton merumuskan tiga hukum gerak yang menjadi dasar mekanika klasik dan menjelaskan hampir semua gerak benda di sekitar kita.</span>
+        </div>
+        <table class="tbl">
+          <thead><tr><th>Hukum</th><th>Bunyi</th><th>Contoh</th></tr></thead>
+          <tbody>
+            <tr class="hl-row"><td><strong>Hukum I Newton (Inersia)</strong></td><td>"Benda diam tetap diam, benda bergerak tetap bergerak lurus beraturan, selama tidak ada gaya luar yang bekerja."</td><td>Penumpang bus terdorong ke belakang saat bus mendadak maju; buku di meja tidak bergerak sendiri</td></tr>
+            <tr><td><strong>Hukum II Newton</strong></td><td>"Percepatan benda sebanding dengan gaya yang bekerja dan berbanding terbalik dengan massanya." (F = m × a)</td><td>Truk lebih sulit direm daripada sepeda karena massanya lebih besar</td></tr>
+            <tr><td><strong>Hukum III Newton (Aksi-Reaksi)</strong></td><td>"Setiap aksi menimbulkan reaksi yang sama besar tapi berlawanan arah."</td><td>Roket meluncur ke atas karena gas didorong ke bawah; saat berenang, tangan mendorong air ke belakang → badan maju</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- ══ SLIDE 4 — ENERGI ══ -->
+    <div class="slide" id="sl4">
+      <div class="slide-content">
+        <div class="slide-label">Slide 4 · Energi</div>
+        <h2 class="slide-heading">Energi &amp; Bentuk-Bentuknya</h2>
+        <div class="hl hl-gold">
+          <span class="hl-icon">⚡</span>
+          <span><strong>Energi</strong> adalah kemampuan untuk melakukan usaha atau kerja. Energi tidak dapat diciptakan atau dimusnahkan, hanya dapat berubah bentuk — inilah <strong>Hukum Kekekalan Energi</strong>.</span>
+        </div>
+        <div class="facts">
+          <div class="fact"><div class="fact-label">Energi Kinetik</div><div class="fact-value">Energi gerak · contoh: mobil melaju, air mengalir, angin berhembus</div></div>
+          <div class="fact"><div class="fact-label">Energi Potensial</div><div class="fact-value">Energi simpanan karena posisi · contoh: batu di ketinggian, pegas tertekan</div></div>
+          <div class="fact"><div class="fact-label">Energi Panas (Kalor)</div><div class="fact-value">Energi dari suhu · contoh: api, Matahari, gesekan benda</div></div>
+          <div class="fact"><div class="fact-label">Energi Cahaya</div><div class="fact-value">Energi dari gelombang elektromagnetik · contoh: sinar Matahari, lampu</div></div>
+          <div class="fact"><div class="fact-label">Energi Listrik</div><div class="fact-value">Energi dari aliran elektron · contoh: PLN, baterai, petir</div></div>
+          <div class="fact"><div class="fact-label">Energi Kimia</div><div class="fact-value">Energi tersimpan dalam ikatan kimia · contoh: makanan, bahan bakar, baterai</div></div>
+        </div>
+        <div class="hl hl-teal">
+          <span class="hl-icon">💡</span>
+          <span>Contoh perubahan energi: Baterai (kimia) → Lampu senter (cahaya + panas). Kincir angin (kinetik) → Generator (listrik). Makanan (kimia) → Otot (gerak/kinetik).</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ SLIDE 5 — CAHAYA ══ -->
+    <div class="slide" id="sl5">
+      <div class="slide-content">
+        <div class="slide-label">Slide 5 · Cahaya</div>
+        <h2 class="slide-heading">Sifat-Sifat Cahaya</h2>
+        <div class="hl hl-gold">
+          <span class="hl-icon">☀️</span>
+          <span>Cahaya adalah gelombang elektromagnetik yang dapat merambat tanpa medium. Kecepatan cahaya di ruang hampa adalah <strong>± 300.000 km/detik</strong> — tercepat di alam semesta.</span>
+        </div>
+        <table class="tbl">
+          <thead><tr><th>Sifat Cahaya</th><th>Penjelasan</th><th>Contoh</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Merambat Lurus</strong></td><td>Cahaya bergerak dalam garis lurus</td><td>Berkas sinar matahari masuk lewat celah; bayangan benda selalu berlawanan arah sumber cahaya</td></tr>
+            <tr class="hl-row"><td><strong>Dapat Dipantulkan</strong></td><td>Cahaya memantul saat mengenai permukaan benda</td><td>Cermin memantulkan gambar; benda terlihat karena memantulkan cahaya</td></tr>
+            <tr><td><strong>Dapat Dibiaskan</strong></td><td>Cahaya membelok saat melewati dua medium berbeda</td><td>Sendok dalam air tampak bengkok; ikan dalam akuarium tampak lebih dekat dari sebenarnya</td></tr>
+            <tr><td><strong>Dapat Diuraikan</strong></td><td>Cahaya putih dapat diurai menjadi spektrum warna</td><td>Pelangi terbentuk dari pembiasan cahaya Matahari oleh tetes air hujan</td></tr>
+            <tr><td><strong>Merambat Tanpa Medium</strong></td><td>Dapat merambat di ruang hampa udara</td><td>Cahaya Matahari sampai ke Bumi melewati luar angkasa yang hampa</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- ══ SLIDE 6 — BUNYI ══ -->
+    <div class="slide" id="sl6">
+      <div class="slide-content">
+        <div class="slide-label">Slide 6 · Bunyi</div>
+        <h2 class="slide-heading">Bunyi &amp; Sifat-Sifatnya</h2>
+        <div class="hl hl-blue">
+          <span class="hl-icon">🔊</span>
+          <span>Bunyi adalah gelombang mekanik yang merambat melalui medium (zat padat, cair, atau gas). Berbeda dengan cahaya, <strong>bunyi tidak dapat merambat di ruang hampa</strong>.</span>
+        </div>
+        <div class="facts">
+          <div class="fact"><div class="fact-label">Kecepatan Bunyi di Udara</div><div class="fact-value">± 340 m/detik (pada suhu 20°C)</div></div>
+          <div class="fact"><div class="fact-label">Kecepatan di Air</div><div class="fact-value">± 1.500 m/detik (lebih cepat dari udara)</div></div>
+          <div class="fact"><div class="fact-label">Kecepatan di Baja</div><div class="fact-value">± 5.000 m/detik (paling cepat di padat)</div></div>
+          <div class="fact"><div class="fact-label">Frekuensi Pendengaran Manusia</div><div class="fact-value">20 Hz – 20.000 Hz (audiosonik)</div></div>
+          <div class="fact"><div class="fact-label">Infrasonik</div><div class="fact-value">&lt; 20 Hz · contoh: gempa bumi, gelombang gajah</div></div>
+          <div class="fact"><div class="fact-label">Ultrasonik</div><div class="fact-value">&gt; 20.000 Hz · contoh: kelelawar, USG, sonar kapal</div></div>
+        </div>
+        <div class="hl hl-gold">
+          <span class="hl-icon">⚡</span>
+          <span>Saat petir, kita melihat <strong>kilat lebih dulu</strong> baru mendengar <strong>guntur</strong> — karena cahaya (300.000 km/s) jauh lebih cepat dari bunyi (340 m/s). Jarak petir = waktu × 340 meter.</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ SLIDE 7 — LISTRIK ══ -->
+    <div class="slide" id="sl7">
+      <div class="slide-content">
+        <div class="slide-label">Slide 7 · Listrik</div>
+        <h2 class="slide-heading">Listrik Statis &amp; Listrik Dinamis</h2>
+        <table class="tbl">
+          <thead><tr><th></th><th>Listrik Statis</th><th>Listrik Dinamis (Arus Listrik)</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Definisi</strong></td><td>Muatan listrik yang diam/tidak mengalir</td><td>Aliran muatan listrik (elektron) yang bergerak</td></tr>
+            <tr><td><strong>Penyebab</strong></td><td>Gesekan benda sehingga terjadi perpindahan elektron</td><td>Beda potensial (tegangan) dari sumber listrik</td></tr>
+            <tr class="hl-row"><td><strong>Contoh</strong></td><td>Balon digosok menarik rambut; sambaran petir; pakaian menempel setelah dicuci pengering</td><td>Listrik PLN, baterai, aki — mengalirkan arus ke lampu, TV, kulkas</td></tr>
+          </tbody>
+        </table>
+        <div class="hl hl-teal">
+          <span class="hl-icon">🔌</span>
+          <span>Rangkaian listrik ada dua jenis: <strong>Seri</strong> (komponen terhubung berurutan — jika satu mati, semua mati) dan <strong>Paralel</strong> (komponen terhubung bercabang — jika satu mati, yang lain tetap menyala). Rumah menggunakan rangkaian <strong>paralel</strong>.</span>
+        </div>
+        <div class="facts">
+          <div class="fact"><div class="fact-label">Tegangan (Voltase)</div><div class="fact-value">Volt (V) · beda potensial listrik</div></div>
+          <div class="fact"><div class="fact-label">Kuat Arus</div><div class="fact-value">Ampere (A) · jumlah muatan per satuan waktu</div></div>
+          <div class="fact"><div class="fact-label">Hambatan</div><div class="fact-value">Ohm (Ω) · penghambat aliran arus</div></div>
+          <div class="fact"><div class="fact-label">Hukum Ohm</div><div class="fact-value">V = I × R (Tegangan = Arus × Hambatan)</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ SLIDE 8 — MAGNET ══ -->
+    <div class="slide" id="sl8">
+      <div class="slide-content">
+        <div class="slide-label">Slide 8 · Magnet</div>
+        <h2 class="slide-heading">Magnet &amp; Kemagnetan</h2>
+        <div class="hl hl-navy">
+          <span class="hl-icon">🧲</span>
+          <span>Magnet adalah benda yang dapat menarik benda-benda dari besi, baja, nikel, dan kobalt. Setiap magnet memiliki dua kutub: <strong>Kutub Utara (U)</strong> dan <strong>Kutub Selatan (S)</strong>.</span>
+        </div>
+        <div class="facts">
+          <div class="fact"><div class="fact-label">Hukum Magnet</div><div class="fact-value">Kutub sejenis tolak-menolak; kutub berbeda tarik-menarik</div></div>
+          <div class="fact"><div class="fact-label">Bahan Magnetik</div><div class="fact-value">Besi, baja, nikel, kobalt (feromagnetik)</div></div>
+          <div class="fact"><div class="fact-label">Bahan Non-Magnetik</div><div class="fact-value">Kayu, plastik, kertas, kaca, aluminium, tembaga</div></div>
+          <div class="fact"><div class="fact-label">Kompas</div><div class="fact-value">Jarum kompas adalah magnet kecil yang selalu menunjuk Kutub Utara Bumi</div></div>
+        </div>
+        <table class="tbl" style="margin-top:.3rem">
+          <thead><tr><th>Jenis Magnet</th><th>Contoh</th><th>Sifat</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Magnet Alam</strong></td><td>Batu magnetit (lodestone)</td><td>Terbentuk alami; ditemukan pertama kali di Magnesia, Yunani</td></tr>
+            <tr class="hl-row"><td><strong>Magnet Buatan Tetap</strong></td><td>Magnet batang, magnet U, magnet jarum</td><td>Terbuat dari baja; sifat magnetnya permanen (lama)</td></tr>
+            <tr><td><strong>Elektromagnet</strong></td><td>Solenoid, magnet pada speaker, MRI rumah sakit</td><td>Magnet dari arus listrik; dapat dimatikan dan dinyalakan</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- ══ SLIDE 9 — PANAS & SUHU ══ -->
+    <div class="slide" id="sl9">
+      <div class="slide-content">
+        <div class="slide-label">Slide 9 · Panas &amp; Suhu</div>
+        <h2 class="slide-heading">Panas, Suhu, &amp; Perpindahan Kalor</h2>
+        <div class="hl hl-orange">
+          <span class="hl-icon">🌡️</span>
+          <span><strong>Suhu</strong> adalah ukuran derajat panas dinginnya suatu benda. <strong>Kalor</strong> adalah energi panas yang berpindah dari benda bersuhu tinggi ke benda bersuhu rendah.</span>
+        </div>
+        <table class="tbl">
+          <thead><tr><th>Cara Perpindahan Kalor</th><th>Definisi</th><th>Contoh</th></tr></thead>
+          <tbody>
+            <tr class="hl-row"><td><strong>Konduksi</strong></td><td>Perpindahan kalor melalui zat padat tanpa perpindahan zat itu sendiri</td><td>Sendok logam panas saat digunakan mengaduk sup; gagang wajan panas</td></tr>
+            <tr><td><strong>Konveksi</strong></td><td>Perpindahan kalor melalui aliran zat (cair atau gas)</td><td>Air mendidih dalam panci; angin darat-laut; AC mendinginkan ruangan</td></tr>
+            <tr><td><strong>Radiasi</strong></td><td>Perpindahan kalor tanpa melalui medium/zat perantara</td><td>Panas Matahari sampai ke Bumi; panas api unggun terasa dari jarak jauh</td></tr>
+          </tbody>
+        </table>
+        <div class="hl hl-gold">
+          <span class="hl-icon">💡</span>
+          <span><strong>Konduktor</strong> = bahan yang mudah menghantarkan panas (logam: besi, tembaga, aluminium). <strong>Isolator</strong> = bahan yang buruk menghantarkan panas (kayu, plastik, karet, kaca). Itulah mengapa gagang panci dibuat dari plastik/kayu.</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ SLIDE 10 — PESAWAT SEDERHANA ══ -->
+    <div class="slide" id="sl10">
+      <div class="slide-content">
+        <div class="slide-label">Slide 10 · Pesawat Sederhana</div>
+        <h2 class="slide-heading">Pesawat Sederhana</h2>
+        <div class="hl hl-teal">
+          <span class="hl-icon">⚙️</span>
+          <span><strong>Pesawat sederhana</strong> adalah alat yang memudahkan pekerjaan manusia dengan mengubah besar atau arah gaya. Ada 4 jenis utama pesawat sederhana.</span>
+        </div>
+        <div class="pesawat-grid">
+          <div class="pesawat-card" style="--pc:#00695c">
+            <div class="pc-icon">⚖️</div>
+            <div class="pc-name">Tuas (Pengungkit)</div>
+            <div class="pc-prinsip">Titik tumpu, beban, kuasa</div>
+            <div class="pc-desc">Tuas kelas 1: gunting, jungkat-jungkit, tang. Tuas kelas 2: gerobak dorong, pembuka botol. Tuas kelas 3: sekop, pinset.</div>
+          </div>
+          <div class="pesawat-card" style="--pc:#1565c0">
+            <div class="pc-icon">🛞</div>
+            <div class="pc-name">Roda &amp; Poros</div>
+            <div class="pc-prinsip">Roda besar + poros kecil</div>
+            <div class="pc-desc">Roda sepeda, setir mobil, gerobak, roda ember sumur, obeng. Roda besar memudahkan gerak poros kecil.</div>
+          </div>
+          <div class="pesawat-card" style="--pc:#6a1b9a">
+            <div class="pc-icon">🪜</div>
+            <div class="pc-name">Bidang Miring</div>
+            <div class="pc-prinsip">Permukaan miring landai</div>
+            <div class="pc-desc">Jalur memutar di pegunungan, tangga, papan luncur memindahkan barang, pisau, baji, sekrup, paku.</div>
+          </div>
+          <div class="pesawat-card" style="--pc:#e65100">
+            <div class="pc-icon">🏗️</div>
+            <div class="pc-name">Katrol</div>
+            <div class="pc-prinsip">Roda dengan tali/rantai</div>
+            <div class="pc-desc">Katrol tetap (tiang bendera), katrol bergerak (timba sumur modern), katrol majemuk (derek). Mengubah arah atau memperkecil gaya.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ SLIDE 11 — TEKANAN ══ -->
+    <div class="slide" id="sl11">
+      <div class="slide-content">
+        <div class="slide-label">Slide 11 · Tekanan</div>
+        <h2 class="slide-heading">Tekanan Zat Padat, Cair, &amp; Gas</h2>
+        <div class="hl hl-blue">
+          <span class="hl-icon">🌊</span>
+          <span><strong>Tekanan</strong> adalah gaya yang bekerja pada suatu luas permukaan tertentu. Rumusnya: <strong>P = F ÷ A</strong> (Tekanan = Gaya ÷ Luas). Satuan: Pascal (Pa) atau N/m².</span>
+        </div>
+        <table class="tbl">
+          <thead><tr><th>Hukum / Prinsip</th><th>Isi</th><th>Penerapan</th></tr></thead>
+          <tbody>
+            <tr class="hl-row"><td><strong>Hukum Archimedes</strong></td><td>"Benda dalam fluida mendapat gaya apung ke atas sebesar fluida yang dipindahkannya."</td><td>Kapal besi bisa mengapung; balon udara terbang; ikan mengatur kedalaman dengan kantung udara</td></tr>
+            <tr><td><strong>Hukum Pascal</strong></td><td>"Tekanan yang diberikan pada fluida dalam ruang tertutup diteruskan sama besar ke segala arah."</td><td>Dongkrak hidrolik mengangkat mobil; rem cakram kendaraan; alat suntik</td></tr>
+            <tr><td><strong>Tekanan Udara (Atmosfer)</strong></td><td>Udara memiliki berat dan menekan segala arah. Tekanan udara berkurang dengan ketinggian.</td><td>Sedotan minuman; ban mobil; suhu air mendidih lebih rendah di pegunungan</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- ══ SLIDE 12 — OPTIK ══ -->
+    <div class="slide" id="sl12">
+      <div class="slide-content">
+        <div class="slide-label">Slide 12 · Optik</div>
+        <h2 class="slide-heading">Cermin &amp; Lensa</h2>
+        <table class="tbl">
+          <thead><tr><th>Alat Optik</th><th>Jenis</th><th>Sifat Bayangan</th><th>Kegunaan</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Cermin Datar</strong></td><td>—</td><td>Maya, tegak, sama besar, kanan-kiri terbalik</td><td>Cermin rias, kaca spion datar</td></tr>
+            <tr><td><strong>Cermin Cekung</strong></td><td>Cermin lengkung ke dalam</td><td>Bayangan bisa nyata/maya tergantung jarak</td><td>Lampu sorot, antena parabola, teleskop</td></tr>
+            <tr><td><strong>Cermin Cembung</strong></td><td>Cermin lengkung ke luar</td><td>Maya, tegak, diperkecil · jangkauan pandang luas</td><td>Kaca spion kendaraan, cermin tikungan jalan</td></tr>
+            <tr class="hl-row"><td><strong>Lensa Cembung (Konvergen)</strong></td><td>Tebal tengah</td><td>Mengumpulkan cahaya (konvergen)</td><td>Kacamata plus (+), lup/kaca pembesar, teropong, kamera</td></tr>
+            <tr><td><strong>Lensa Cekung (Divergen)</strong></td><td>Tipis tengah</td><td>Menyebarkan cahaya (divergen)</td><td>Kacamata minus (-) untuk miopi/rabun jauh</td></tr>
+          </tbody>
+        </table>
+        <div class="hl hl-gold">
+          <span class="hl-icon">👁️</span>
+          <span>Mata adalah alat optik alami. <strong>Miopi</strong> (rabun jauh) dikoreksi dengan lensa cekung. <strong>Hipermetropi</strong> (rabun dekat) dikoreksi dengan lensa cembung. <strong>Presbiopi</strong> (mata tua) dikoreksi dengan lensa bifokus.</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ SLIDE 13 — RANGKUMAN ══ -->
+    <div class="slide" id="sl13">
+      <div class="slide-content">
+        <div class="slide-label">Slide 13 · Rangkuman</div>
+        <h2 class="slide-heading">Rangkuman Fisika Dasar</h2>
+        <table class="tbl">
+          <thead><tr><th>Topik</th><th>Poin Kunci</th></tr></thead>
+          <tbody>
+            <tr><td><strong>💪 Gaya</strong></td><td>Tarikan/dorongan · jenis: gravitasi, gesek, pegas, magnet, listrik, otot · satuan: Newton (N)</td></tr>
+            <tr><td><strong>🍎 Hukum Newton</strong></td><td>I: Inersia · II: F=ma · III: Aksi-Reaksi</td></tr>
+            <tr><td><strong>⚡ Energi</strong></td><td>Tidak dapat diciptakan/dimusnahkan · bentuk: kinetik, potensial, panas, cahaya, listrik, kimia</td></tr>
+            <tr><td><strong>☀️ Cahaya</strong></td><td>Merambat lurus, dipantulkan, dibiaskan, diuraikan · kecepatan 300.000 km/s</td></tr>
+            <tr><td><strong>🔊 Bunyi</strong></td><td>Butuh medium · tidak merambat di ruang hampa · kecepatan di udara 340 m/s</td></tr>
+            <tr class="hl-row"><td><strong>🧲 Magnet</strong></td><td>Kutub U & S · sejenis tolak, beda tarik · elektromagnet dari arus listrik</td></tr>
+            <tr><td><strong>⚙️ Pesawat Sederhana</strong></td><td>Tuas, roda & poros, bidang miring, katrol — memudahkan pekerjaan</td></tr>
+          </tbody>
+        </table>
+        <div class="hl hl-green">
+          <span class="hl-icon">✅</span>
+          <span>Selamat! Kamu sudah mempelajari <strong>fisika dasar</strong> — dari gaya, gerak, energi, cahaya, bunyi, listrik, magnet, pesawat sederhana, hingga tekanan dan optik.</span>
+        </div>
+        <a href="../soal/paket-01.html" class="cta-btn">📝 Latihan Soal Sekarang →</a>
+      </div>
+    </div>
+
+  </div><!-- /slides-wrap -->
+
+  <footer class="s-footer">
+    <button class="nav-btn prev-btn" id="btn-prev" onclick="prev()" disabled>◄ Sebelumnya</button>
+    <div class="s-hint"><kbd>←</kbd> <kbd>→</kbd> navigasi &nbsp;·&nbsp; <kbd>F</kbd> layar penuh</div>
+    <button class="nav-btn next-btn" id="btn-next" onclick="next()">Berikutnya ►</button>
+  </footer>
+
+  <script>
+    const TOTAL = 13;
+    let cur = 1;
+    function showSlide(n) {
+      const pv = document.getElementById('sl' + cur);
+      const nx = document.getElementById('sl' + n);
+      if (!nx) return;
+      pv.classList.add('leaving'); pv.classList.remove('active');
+      setTimeout(() => pv.classList.remove('leaving'), 400);
+      nx.classList.add('active'); cur = n;
+      document.getElementById('s-counter').textContent = cur + ' / ' + TOTAL;
+      document.getElementById('s-prog').style.width = (cur / TOTAL * 100).toFixed(2) + '%';
+      document.getElementById('btn-prev').disabled = (cur === 1);
+      document.getElementById('btn-next').disabled = (cur === TOTAL);
+    }
+    function next() { if (cur < TOTAL) showSlide(cur + 1); }
+    function prev() { if (cur > 1)     showSlide(cur - 1); }
+    document.addEventListener('keydown', e => {
+      if (e.code === 'ArrowRight' || e.code === 'ArrowDown') next();
+      if (e.code === 'ArrowLeft'  || e.code === 'ArrowUp')   prev();
+      if (e.code === 'KeyF') toggleFS();
+    });
+    document.getElementById('btn-fs').addEventListener('click', toggleFS);
+    function toggleFS() {
+      if (!document.fullscreenElement) document.documentElement.requestFullscreen().catch(() => {});
+      else document.exitFullscreen();
+    }
+    let ts = 0;
+    document.getElementById('slides-wrap').addEventListener('touchstart', e => { ts = e.touches[0].clientX; });
+    document.getElementById('slides-wrap').addEventListener('touchend', e => {
+      const dx = e.changedTouches[0].clientX - ts;
+      if (Math.abs(dx) > 50) { dx < 0 ? next() : prev(); }
+    });
+  </script>
+</body>
+</html>
