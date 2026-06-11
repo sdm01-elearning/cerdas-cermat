@@ -5,49 +5,205 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pengetahuan Sains — Cerdas Cermat SDM01KKS</title>
   <link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/style.css">
   <style>
     :root { --hero-color: #1565c0; }
+
+    .qnav {
+      display:flex; gap:.75rem; flex-wrap:wrap;
+      padding:1rem 2rem; background:#fff;
+      border-bottom:1px solid #e9ecef;
+      position:sticky; top:60px; z-index:40;
+    }
+    .qnav a {
+      display:inline-flex; align-items:center; gap:.4rem;
+      font-size:.85rem; font-weight:700;
+      color:#1565c0; background:#e3f2fd;
+      border:1.5px solid #90caf9; border-radius:20px;
+      padding:.35rem 1rem; transition:background .15s;
+    }
+    .qnav a:hover { background:#90caf9; }
+
+    .sec-head { display:flex; align-items:baseline; gap:1rem; margin-bottom:1.5rem; }
+    .sec-head h2 { font-family:var(--font-display); font-size:1.5rem; color:#1565c0; margin:0; }
+    .sec-head .sec-sub { font-size:.82rem; color:#718096; }
+
+    .materi-grid {
+      display:grid;
+      grid-template-columns:repeat(auto-fill,minmax(210px,1fr));
+      gap:1rem; margin-bottom:3rem;
+    }
+    .materi-card {
+      background:#fff; border-radius:14px; border:1px solid #e9ecef;
+      display:flex; flex-direction:column; text-decoration:none; color:inherit;
+      overflow:hidden; box-shadow:0 2px 8px rgba(0,0,0,.06);
+      transition:transform .18s, box-shadow .18s;
+    }
+    .materi-card:hover { transform:translateY(-3px); box-shadow:0 8px 24px rgba(0,0,0,.12); }
+    .mc-accent { height:4px; background:var(--mc); }
+    .mc-icon  { font-size:2rem; padding:.9rem 1rem .3rem; line-height:1; }
+    .mc-title { font-weight:800; font-size:.9rem; padding:0 1rem .35rem; color:#1a2420; }
+    .mc-desc  { font-size:.78rem; color:#718096; padding:0 1rem; line-height:1.55; flex:1; }
+    .mc-foot  { display:flex; align-items:center; justify-content:space-between; padding:.6rem 1rem; margin-top:.5rem; border-top:1px solid #f0f4f8; }
+    .mc-slides { font-size:.72rem; color:#a0aec0; }
+    .mbadge { font-size:.65rem; font-weight:800; letter-spacing:.03em; padding:2px 7px; border-radius:10px; }
+    .mbadge-avail { background:#e6f4ea; color:#2e7d32; }
+    .mbadge-soon  { background:#fff3e0; color:#e65100; }
+
+    .soal-single {
+      background:#fff; border-radius:14px; border:1px solid #e9ecef;
+      padding:1.5rem 1.75rem; box-shadow:0 2px 8px rgba(0,0,0,.06);
+      display:flex; align-items:center; gap:1.5rem; margin-bottom:1.5rem;
+    }
+    .soal-icon { font-size:2.5rem; flex-shrink:0; }
+    .soal-info { flex:1; }
+    .soal-title { font-weight:800; font-size:1rem; color:#1a2420; margin-bottom:.3rem; }
+    .soal-meta  { font-size:.82rem; color:#718096; line-height:1.6; }
+    .soal-meta strong { color:#1565c0; }
+    .btn-mulai {
+      display:inline-flex; align-items:center; gap:.3rem;
+      background:#1565c0; color:#fff; padding:.55rem 1.3rem; border-radius:8px;
+      font-weight:700; font-size:.88rem; transition:opacity .15s; white-space:nowrap; text-decoration:none;
+    }
+    .btn-mulai:hover { opacity:.85; }
+
+    .info-box {
+      background:#e3f2fd; border:1px solid #90caf9; border-radius:10px;
+      padding:1rem 1.25rem; font-size:.83rem; color:#0d47a1;
+      margin-top:1.5rem; line-height:1.65;
+    }
+    .info-box a { color:#1565c0; font-weight:700; }
   </style>
 </head>
 <body class="page-inner">
+
   <nav class="inner-nav">
-  <a href="../../index.html" class="nav-brand">🏆 Cerdas Cermat</a>
-  <span class="nav-sep">›</span>
-  <span class="nav-current">Pengetahuan Sains</span>
+    <a href="../index.html" class="nav-brand">🏆 Cerdas Cermat</a>
+    <span class="nav-sep">›</span>
+    <span class="nav-current">🔬 Pengetahuan Sains</span>
   </nav>
 
   <div class="cat-hero">
     <div class="cat-hero-icon">🔬</div>
     <h1 class="cat-hero-title">Pengetahuan Sains</h1>
-    <p class="cat-hero-desc">Ilmu pengetahuan alam, fisika dasar, biologi, kimia, tata surya, dan teknologi.</p>
+    <p class="cat-hero-desc">
+      Hub materi dan soal latihan · <strong>8 topik materi</strong> · <strong>1 paket soal</strong>
+      · <strong>300+ soal dalam bank soal</strong>
+    </p>
   </div>
 
-  <div class="content-area">
-    <h2 class="section-heading">Pilih Mode</h2>
-    <div class="menu-grid">
-      <a href="soal/index.html" class="menu-card">
-        <div class="menu-card-icon">📝</div>
-        <div class="menu-card-title">Soal Latihan</div>
-        <div class="menu-card-desc">
-          Paket soal isian singkat dengan timer countdown dan pembahasan detail.
-          Cocok untuk sesi latihan bersama menggunakan proyektor.
-        </div>
-        <div class="menu-card-link">Lihat paket soal →</div>
-      </a>
-      <a href="materi/index.html" class="menu-card">
-        <div class="menu-card-icon">📚</div>
-        <div class="menu-card-title">Materi Belajar</div>
-        <div class="menu-card-desc">
-          Ringkasan materi pembelajaran berbasis slideshow,
-          siap ditampilkan di infokus sebelum sesi latihan soal.
-        </div>
-        <div class="menu-card-link">Lihat materi →</div>
-      </a>
-    </div>
+  <div class="qnav">
+    <a href="#materi">📚 Materi Pembelajaran</a>
+    <a href="#soal">📝 Soal Latihan</a>
+    <a href="materi/index.html">Lihat Semua Materi →</a>
   </div>
-<footer class="inner-footer">
-  <p>© SD Muhammadiyah 01 Kukusan · <a href="../../index.html">← Halaman Utama</a></p>
-</footer>
+
+  <div class="content-area" style="max-width:1100px">
+
+    <!-- ══ MATERI ══ -->
+    <div id="materi" style="scroll-margin-top:120px">
+      <div class="sec-head">
+        <h2>📚 Materi Pembelajaran</h2>
+        <span class="sec-sub">8 topik · klik untuk membuka</span>
+      </div>
+      <div class="materi-grid">
+
+        <a href="materi/tata-surya.html" class="materi-card" style="--mc:#1565c0">
+          <div class="mc-accent"></div>
+          <div class="mc-icon">🪐</div>
+          <div class="mc-title">Tata Surya</div>
+          <div class="mc-desc">Planet-planet, Matahari, Bulan, gerhana, asteroid, komet, dan fakta luar angkasa.</div>
+          <div class="mc-foot"><span class="mc-slides">📖 14 slide</span><span class="mbadge mbadge-soon">Segera Hadir</span></div>
+        </a>
+
+        <a href="materi/tubuh-manusia.html" class="materi-card" style="--mc:#c62828">
+          <div class="mc-accent"></div>
+          <div class="mc-icon">🫀</div>
+          <div class="mc-title">Tubuh Manusia</div>
+          <div class="mc-desc">Organ-organ tubuh, sistem pernapasan, peredaran darah, pencernaan, dan panca indera.</div>
+          <div class="mc-foot"><span class="mc-slides">📖 14 slide</span><span class="mbadge mbadge-soon">Segera Hadir</span></div>
+        </a>
+
+        <a href="materi/biologi-tumbuhan.html" class="materi-card" style="--mc:#2e7d32">
+          <div class="mc-accent"></div>
+          <div class="mc-icon">🌱</div>
+          <div class="mc-title">Biologi Tumbuhan</div>
+          <div class="mc-desc">Fotosintesis, bagian-bagian tumbuhan, reproduksi tumbuhan, dan klasifikasi.</div>
+          <div class="mc-foot"><span class="mc-slides">📖 12 slide</span><span class="mbadge mbadge-soon">Segera Hadir</span></div>
+        </a>
+
+        <a href="materi/biologi-hewan.html" class="materi-card" style="--mc:#e65100">
+          <div class="mc-accent"></div>
+          <div class="mc-icon">🦋</div>
+          <div class="mc-title">Biologi Hewan</div>
+          <div class="mc-desc">Metamorfosis, klasifikasi hewan, rantai makanan, ekosistem, dan adaptasi.</div>
+          <div class="mc-foot"><span class="mc-slides">📖 13 slide</span><span class="mbadge mbadge-soon">Segera Hadir</span></div>
+        </a>
+
+        <a href="materi/kimia-dasar.html" class="materi-card" style="--mc:#6a1b9a">
+          <div class="mc-accent"></div>
+          <div class="mc-icon">⚗️</div>
+          <div class="mc-title">Kimia Dasar</div>
+          <div class="mc-desc">Zat dan perubahannya, unsur, senyawa, campuran, asam-basa, dan reaksi kimia sederhana.</div>
+          <div class="mc-foot"><span class="mc-slides">📖 12 slide</span><span class="mbadge mbadge-soon">Segera Hadir</span></div>
+        </a>
+
+        <a href="materi/fisika-dasar.html" class="materi-card" style="--mc:#00695c">
+          <div class="mc-accent"></div>
+          <div class="mc-icon">⚡</div>
+          <div class="mc-title">Fisika Dasar</div>
+          <div class="mc-desc">Gaya, gerak, energi, cahaya, bunyi, listrik, magnet, dan pesawat sederhana.</div>
+          <div class="mc-foot"><span class="mc-slides">📖 13 slide</span><span class="mbadge mbadge-soon">Segera Hadir</span></div>
+        </a>
+
+        <a href="materi/bumi-atmosfer.html" class="materi-card" style="--mc:#1a237e">
+          <div class="mc-accent"></div>
+          <div class="mc-icon">🌍</div>
+          <div class="mc-title">Bumi &amp; Atmosfer</div>
+          <div class="mc-desc">Lapisan bumi, lapisan atmosfer, cuaca, iklim, siklus air, dan fenomena alam.</div>
+          <div class="mc-foot"><span class="mc-slides">📖 12 slide</span><span class="mbadge mbadge-soon">Segera Hadir</span></div>
+        </a>
+
+        <a href="materi/teknologi-sains.html" class="materi-card" style="--mc:#37474f">
+          <div class="mc-accent"></div>
+          <div class="mc-icon">🤖</div>
+          <div class="mc-title">Teknologi &amp; Sains</div>
+          <div class="mc-desc">Alat-alat sains, teknologi modern, energi terbarukan, dan penerapan sains dalam kehidupan.</div>
+          <div class="mc-foot"><span class="mc-slides">📖 11 slide</span><span class="mbadge mbadge-soon">Segera Hadir</span></div>
+        </a>
+
+      </div>
+    </div>
+
+    <!-- ══ SOAL ══ -->
+    <div id="soal" style="scroll-margin-top:120px">
+      <div class="sec-head">
+        <h2>📝 Soal Latihan</h2>
+        <span class="sec-sub">Bank soal 300+ pertanyaan · 30 soal acak per sesi</span>
+      </div>
+      <div class="soal-single">
+        <div class="soal-icon">🔬</div>
+        <div class="soal-info">
+          <div class="soal-title">Latihan Cerdas Cermat — Pengetahuan Sains</div>
+          <div class="soal-meta">
+            Setiap sesi menampilkan <strong>30 soal acak</strong> dari bank soal <strong>300+ pertanyaan</strong>.
+            Soal mencakup seluruh 8 topik materi · ~10% soal berbahasa Inggris.
+            Mainkan berulang untuk variasi soal yang berbeda setiap kali!
+          </div>
+        </div>
+        <a href="soal/paket-01.html" class="btn-mulai">▶ Mulai Latihan</a>
+      </div>
+      <div class="info-box">
+        💡 <strong>Bank soal terus diperbarui.</strong>
+        Soal diambil secara acak dari <code>soal/data/pool.json</code> yang berisi 300+ pertanyaan lintas topik.
+        Lihat panduan kontribusi di <a href="../README.md">README.md</a>.
+      </div>
+    </div>
+
+  </div>
+
+  <footer class="inner-footer">
+    <p>© SD Muhammadiyah 01 Kukusan · <a href="../index.html">← Halaman Utama</a></p>
+  </footer>
 </body>
 </html>
