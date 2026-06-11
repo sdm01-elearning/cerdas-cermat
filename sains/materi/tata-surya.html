@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tata Surya — Materi Cerdas Cermat SDM01KKS</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { height: 100%; font-family: 'Nunito', sans-serif; }
+    :root {
+      --red:    #1565c0; --red-dk: #003c8f; --red-lt: #e3f2fd;
+      --gold:   #f9a825; --green:  #2e7d32; --teal:   #00695c;
+      --purple: #6a1b9a; --orange: #e65100;
+      --cream:  #f8fbff; --text:   #1a2420; --muted:  #718096; --nav-h: 58px;
+    }
+    body { background: var(--cream); color: var(--text); display: flex; flex-direction: column; height: 100vh; overflow: hidden; }
+    .s-nav { height: var(--nav-h); flex-shrink: 0; display: flex; align-items: center; gap: 1rem; padding: 0 1.5rem; background: var(--red); color: #fff; box-shadow: 0 2px 12px rgba(0,0,0,.25); z-index: 20; }
+    .s-nav a { color: rgba(255,255,255,.8); text-decoration: none; font-size: .85rem; transition: color .15s; }
+    .s-nav a:hover { color: #fff; }
+    .s-nav .sep { opacity: .4; }
+    .s-nav .s-title { flex: 1; font-weight: 800; font-size: .95rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .s-nav .s-counter { font-weight: 700; font-size: .85rem; background: rgba(255,255,255,.2); padding: .25rem .75rem; border-radius: 20px; white-space: nowrap; }
+    .btn-fs { background: rgba(255,255,255,.15); border: none; color: #fff; width: 34px; height: 34px; border-radius: 8px; font-size: 1rem; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: background .15s; }
+    .btn-fs:hover { background: rgba(255,255,255,.3); }
+    .s-prog { height: 4px; background: rgba(255,255,255,.25); flex-shrink: 0; }
+    .s-prog-fill { height: 100%; background: var(--gold); transition: width .4s ease; }
+    .slides-wrap { flex: 1; position: relative; overflow: hidden; }
+    .slide { position: absolute; inset: 0; padding: 2.5rem 3rem; opacity: 0; transform: translateX(30px); transition: opacity .35s ease, transform .35s ease; pointer-events: none; overflow-y: auto; }
+    .slide.active { opacity: 1; transform: translateX(0); pointer-events: all; }
+    .slide.leaving { opacity: 0; transform: translateX(-30px); }
+    .slide-cover { background: linear-gradient(145deg, #0d1b4b 0%, #1a237e 50%, #1565c0 100%); color: #fff; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; gap: 1.5rem; }
+    .cover-flag { font-size: 5rem; line-height: 1; }
+    .cover-title { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 900; text-shadow: 0 2px 16px rgba(0,0,0,.4); line-height: 1.2; }
+    .cover-sub { font-size: clamp(.9rem, 2vw, 1.2rem); opacity: .85; max-width: 540px; line-height: 1.6; }
+    .cover-tag { display: inline-flex; gap: 1rem; flex-wrap: wrap; justify-content: center; margin-top: .5rem; }
+    .cover-tag span { background: rgba(255,255,255,.18); border: 1px solid rgba(255,255,255,.35); border-radius: 20px; padding: .3rem 1rem; font-size: .8rem; font-weight: 700; }
+    .slide-content { display: flex; flex-direction: column; gap: 1.5rem; max-width: 860px; margin: 0 auto; }
+    .slide-label { font-size: .72rem; text-transform: uppercase; letter-spacing: .12em; color: var(--red); font-weight: 800; }
+    .slide-heading { font-family: 'Playfair Display', serif; font-size: clamp(1.6rem, 4vw, 2.6rem); font-weight: 700; color: var(--text); line-height: 1.2; }
+    .slide-heading .sub { font-size: .55em; color: var(--muted); display: block; font-family: 'Nunito', sans-serif; font-weight: 600; margin-top: .2rem; }
+    .hl { border-radius: 12px; padding: 1rem 1.4rem; font-weight: 700; font-size: .95rem; display: flex; align-items: flex-start; gap: .75rem; line-height: 1.6; }
+    .hl-blue   { background: #e3f2fd; border-left: 4px solid var(--red); color: var(--red-dk); }
+    .hl-gold   { background: #fff8e1; border-left: 4px solid var(--gold); color: #6d4c00; }
+    .hl-green  { background: #e8f5e9; border-left: 4px solid var(--green); color: #1b5e20; }
+    .hl-purple { background: #f3e5f5; border-left: 4px solid var(--purple); color: #4a148c; }
+    .hl-orange { background: #fff3e0; border-left: 4px solid var(--orange); color: #8d3100; }
+    .hl-icon   { font-size: 1.4rem; flex-shrink: 0; margin-top: .05rem; }
+    .facts { display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: .85rem; }
+    .fact { background: #fff; border: 1px solid #e9ecef; border-radius: 10px; padding: .85rem 1rem; }
+    .fact-label { font-size: .68rem; text-transform: uppercase; letter-spacing: .1em; color: var(--muted); margin-bottom: .25rem; }
+    .fact-value { font-weight: 800; font-size: .92rem; color: var(--text); line-height: 1.4; }
+    .tbl { width: 100%; border-collapse: collapse; font-size: .88rem; }
+    .tbl th { background: var(--red); color: #fff; padding: .6rem .9rem; text-align: left; font-weight: 700; }
+    .tbl td { padding: .55rem .9rem; border-bottom: 1px solid #f0f4f8; vertical-align: top; line-height: 1.45; }
+    .tbl tr:hover td { background: #f0f6ff; }
+    .tbl .hl-row td { background: #fff8e1; font-weight: 700; }
+    /* planet cards */
+    .planet-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: .85rem; }
+    .planet-card { background: #fff; border: 1px solid #e9ecef; border-radius: 12px; padding: .9rem 1rem; border-top: 3px solid var(--pc); }
+    .pc-icon  { font-size: 1.8rem; margin-bottom: .3rem; }
+    .pc-name  { font-weight: 800; font-size: .9rem; color: var(--text); margin-bottom: .15rem; }
+    .pc-order { font-size: .7rem; color: var(--red); font-weight: 700; margin-bottom: .2rem; }
+    .pc-desc  { font-size: .76rem; color: #4a5568; line-height: 1.5; }
+    .sl { list-style: none; display: flex; flex-direction: column; gap: .55rem; }
+    .sl li { display: flex; gap: .6rem; align-items: flex-start; font-size: .93rem; line-height: 1.55; }
+    .sl li::before { content: "▸"; color: var(--red); font-size: .75rem; margin-top: .25rem; flex-shrink: 0; }
+    .cta-btn { display: inline-flex; align-items: center; gap: .5rem; background: var(--red); color: #fff; padding: .75rem 1.75rem; border-radius: 10px; font-weight: 800; font-size: 1rem; text-decoration: none; transition: opacity .15s; align-self: flex-start; }
+    .cta-btn:hover { opacity: .85; }
+    .s-footer { height: 64px; flex-shrink: 0; display: flex; align-items: center; justify-content: space-between; padding: 0 1.5rem; background: #fff; border-top: 1px solid #e9ecef; }
+    .nav-btn { display: flex; align-items: center; gap: .4rem; background: none; border: 1.5px solid #e9ecef; border-radius: 10px; padding: .5rem 1.2rem; font-family: inherit; font-size: .88rem; font-weight: 700; color: var(--text); cursor: pointer; transition: background .15s, border-color .15s; }
+    .nav-btn:hover { background: #f5f5f5; border-color: #ccc; }
+    .nav-btn:disabled { opacity: .3; cursor: default; }
+    .nav-btn.next-btn { background: var(--red); color: #fff; border-color: var(--red); }
+    .nav-btn.next-btn:hover { opacity: .88; }
+    .nav-btn.next-btn:disabled { background: #ccc; border-color: #ccc; opacity: .6; }
+    .s-hint { font-size: .72rem; color: var(--muted); text-align: center; }
+    .s-hint kbd { background: #f0f4f8; border: 1px solid #ddd; border-radius: 4px; padding: 1px 5px; font-family: monospace; font-size: .68rem; }
+    @media (max-width: 600px) { .slide { padding: 1.25rem 1rem; } .s-hint { display: none; } }
+  </style>
+</head>
+<body>
+  <header class="s-nav">
+    <a href="../index.html">← Materi</a>
+    <span class="sep">›</span>
+    <span class="s-title">Tata Surya</span>
+    <span class="s-counter" id="s-counter">1 / 14</span>
+    <button class="btn-fs" id="btn-fs" title="Layar penuh (F)">⛶</button>
+  </header>
+  <div class="s-prog"><div class="s-prog-fill" id="s-prog" style="width:7.14%"></div></div>
+
+  <div class="slides-wrap" id="slides-wrap">
+
+    <!-- ══ SLIDE 1 — COVER ══ -->
+    <div class="slide slide-cover active" id="sl1">
+      <div class="cover-flag">🪐</div>
+      <h1 class="cover-title">Tata Surya</h1>
+      <p class="cover-sub">Mengenal Matahari, delapan planet, bulan, asteroid, komet, dan berbagai benda langit dalam sistem tata surya kita.</p>
+      <div class="cover-tag">
+        <span>📖 14 Slide</span>
+        <span>🔬 Sains SD</span>
+        <span>⌨️ ← → navigasi</span>
+      </div>
+    </div>
+
+    <!-- ══ SLIDE 2 — TATA SURYA ══ -->
+    <div class="slide" id="sl2">
+      <div class="slide-content">
+        <div class="slide-label">Slide 2 · Mengenal Tata Surya</div>
+        <h2 class="slide-heading">Apa itu Tata Surya?</h2>
+        <div class="hl hl-blue">
+          <span class="hl-icon">🌌</span>
+          <span>Tata Surya adalah sistem yang terdiri dari <strong>Matahari</strong> sebagai pusatnya, beserta semua benda langit yang mengorbitnya — planet, bulan, asteroid, komet, dan lainnya.</span>
+        </div>
+        <div class="facts">
+          <div class="fact"><div class="fact-label">Pusat Tata Surya</div><div class="fact-value">Matahari (bintang)</div></div>
+          <div class="fact"><div class="fact-label">Jumlah Planet</div><div class="fact-value">8 planet resmi (sejak 2006)</div></div>
+          <div class="fact"><div class="fact-label">Galaksi Kita</div><div class="fact-value">Bima Sakti (Milky Way)</div></div>
+          <div class="fact"><div class="fact-label">Usia Tata Surya</div><div class="fact-value">± 4,6 miliar tahun</div></div>
+          <div class="fact"><div class="fact-label">Jarak Bumi–Matahari</div><div class="fact-value">± 150 juta km (1 AU)</div></div>
+          <div class="fact"><div class="fact-label">Cahaya Matahari ke Bumi</div><div class="fact-value">± 8 menit 20 detik</div></div>
+        </div>
+        <div class="hl hl-gold">
+          <span class="hl-icon">💡</span>
+          <span>Kata <strong>"tata surya"</strong> berasal dari bahasa Sansekerta: <em>surya</em> = matahari. Dalam bahasa Inggris disebut <em>Solar System</em> (solar = matahari dalam bahasa Latin).</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ SLIDE 3 — MATAHARI ══ -->
+    <div class="slide" id="sl3">
+      <div class="slide-content">
+        <div class="slide-label">Slide 3 · Bintang Pusat</div>
+        <h2 class="slide-heading">Matahari
+          <span class="sub">Bintang pusat tata surya kita</span>
+        </h2>
+        <div class="hl hl-gold">
+          <span class="hl-icon">☀️</span>
+          <span>Matahari adalah <strong>bintang</strong> berupa bola gas raksasa (hidrogen &amp; helium) yang menghasilkan energi melalui reaksi <strong>fusi nuklir</strong> di intinya.</span>
+        </div>
+        <div class="facts">
+          <div class="fact"><div class="fact-label">Diameter</div><div class="fact-value">± 1.392.000 km (109× diameter Bumi)</div></div>
+          <div class="fact"><div class="fact-label">Suhu Permukaan</div><div class="fact-value">± 5.500°C</div></div>
+          <div class="fact"><div class="fact-label">Suhu Inti</div><div class="fact-value">± 15 juta°C</div></div>
+          <div class="fact"><div class="fact-label">Komposisi</div><div class="fact-value">74% Hidrogen, 24% Helium, 2% unsur lain</div></div>
+          <div class="fact"><div class="fact-label">Massa</div><div class="fact-value">99,86% massa seluruh tata surya</div></div>
+          <div class="fact"><div class="fact-label">Sumber Energi Bumi</div><div class="fact-value">Cahaya &amp; panas untuk fotosintesis dan iklim</div></div>
+        </div>
+        <div class="hl hl-blue">
+          <span class="hl-icon">🌟</span>
+          <span>Matahari adalah bintang <strong>kelas G</strong> — bintang berukuran sedang. Ada bintang yang jutaan kali lebih besar dari Matahari di galaksi kita!</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ SLIDE 4 — PLANET DALAM ══ -->
+    <div class="slide" id="sl4">
+      <div class="slide-content">
+        <div class="slide-label">Slide 4 · Planet Dalam</div>
+        <h2 class="slide-heading">4 Planet Dalam (Terrestrial)</h2>
+        <div class="hl hl-blue">
+          <span class="hl-icon">🪨</span>
+          <span>Planet dalam adalah planet berbatu yang letaknya dekat dengan Matahari — berada di dalam sabuk asteroid. Terdiri dari 4 planet.</span>
+        </div>
+        <div class="planet-grid">
+          <div class="planet-card" style="--pc:#a0522d">
+            <div class="pc-icon">🟤</div>
+            <div class="pc-name">Merkurius</div>
+            <div class="pc-order">Planet ke-1 · Terdekat Matahari</div>
+            <div class="pc-desc">Planet terkecil. Satu hari di Merkurius = 59 hari Bumi. Suhu: -180°C hingga +430°C.</div>
+          </div>
+          <div class="planet-card" style="--pc:#e8c47a">
+            <div class="pc-icon">🟡</div>
+            <div class="pc-name">Venus</div>
+            <div class="pc-order">Planet ke-2 · Terpanas</div>
+            <div class="pc-desc">Planet terpanas (465°C) karena efek rumah kaca. Disebut "bintang senja/fajar". Berotasi terbalik.</div>
+          </div>
+          <div class="planet-card" style="--pc:#1565c0">
+            <div class="pc-icon">🔵</div>
+            <div class="pc-name">Bumi</div>
+            <div class="pc-order">Planet ke-3 · Satu-satunya berpenghuni</div>
+            <div class="pc-desc">Satu-satunya planet dengan kehidupan. Memiliki 1 bulan alami. 71% permukaannya tertutup air.</div>
+          </div>
+          <div class="planet-card" style="--pc:#c0392b">
+            <div class="pc-icon">🔴</div>
+            <div class="pc-name">Mars</div>
+            <div class="pc-order">Planet ke-4 · Planet Merah</div>
+            <div class="pc-desc">Disebut "Planet Merah" karena tanah beroksida besi. Gunung Olympus Mons: gunung tertinggi di tata surya (21 km).</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ SLIDE 5 — PLANET LUAR ══ -->
+    <div class="slide" id="sl5">
+      <div class="slide-content">
+        <div class="slide-label">Slide 5 · Planet Luar</div>
+        <h2 class="slide-heading">4 Planet Luar (Gas &amp; Es Raksasa)</h2>
+        <div class="planet-grid">
+          <div class="planet-card" style="--pc:#c8a84b">
+            <div class="pc-icon">🟠</div>
+            <div class="pc-name">Jupiter</div>
+            <div class="pc-order">Planet ke-5 · Terbesar</div>
+            <div class="pc-desc">Planet terbesar (11× Bumi). Punya 95+ bulan termasuk Ganymede (bulan terbesar di tata surya). Ada Bintik Merah Besar (badai raksasa).</div>
+          </div>
+          <div class="planet-card" style="--pc:#c8b560">
+            <div class="pc-icon">🪐</div>
+            <div class="pc-name">Saturnus</div>
+            <div class="pc-order">Planet ke-6 · Bercincin Indah</div>
+            <div class="pc-desc">Terkenal dengan cincin es &amp; debu. Planet paling ringan — bisa mengapung di air! Punya 146+ bulan (terbanyak).</div>
+          </div>
+          <div class="planet-card" style="--pc:#4fc3f7">
+            <div class="pc-icon">🔵</div>
+            <div class="pc-name">Uranus</div>
+            <div class="pc-order">Planet ke-7 · Terdingin</div>
+            <div class="pc-desc">Planet es raksasa berwarna biru-hijau. Berotasi miring 98° — "tidur miring". Suhu minimum: -224°C (terdingin).</div>
+          </div>
+          <div class="planet-card" style="--pc:#1565c0">
+            <div class="pc-icon">🔵</div>
+            <div class="pc-name">Neptunus</div>
+            <div class="pc-order">Planet ke-8 · Terjauh</div>
+            <div class="pc-desc">Planet terjauh dari Matahari. Angin tercepat di tata surya (2.100 km/jam). 1 tahun Neptunus = 165 tahun Bumi.</div>
+          </div>
+        </div>
+        <div class="hl hl-gold">
+          <span class="hl-icon">💡</span>
+          <span>Cara mudah mengingat urutan planet: <strong>"My Very Excellent Mother Just Served Us Noodles"</strong> → Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus, Neptune.</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ SLIDE 6 — URUTAN PLANET ══ -->
+    <div class="slide" id="sl6">
+      <div class="slide-content">
+        <div class="slide-label">Slide 6 · Tabel Perbandingan Planet</div>
+        <h2 class="slide-heading">Perbandingan 8 Planet Tata Surya</h2>
+        <table class="tbl">
+          <thead><tr><th>Planet</th><th>Urutan</th><th>Jenis</th><th>Jumlah Bulan</th><th>Keistimewaan</th></tr></thead>
+          <tbody>
+            <tr><td>Merkurius</td><td>1</td><td>Berbatu</td><td>0</td><td>Terkecil &amp; terdekat Matahari</td></tr>
+            <tr><td>Venus</td><td>2</td><td>Berbatu</td><td>0</td><td>Terpanas (efek rumah kaca)</td></tr>
+            <tr class="hl-row"><td>Bumi</td><td>3</td><td>Berbatu</td><td>1</td><td>Satu-satunya berpenghuni</td></tr>
+            <tr><td>Mars</td><td>4</td><td>Berbatu</td><td>2</td><td>Planet Merah; gunung tertinggi</td></tr>
+            <tr><td>Jupiter</td><td>5</td><td>Gas Raksasa</td><td>95+</td><td>Terbesar di tata surya</td></tr>
+            <tr><td>Saturnus</td><td>6</td><td>Gas Raksasa</td><td>146+</td><td>Cincin es; bulan terbanyak</td></tr>
+            <tr><td>Uranus</td><td>7</td><td>Es Raksasa</td><td>27</td><td>Berotasi miring 98°; terdingin</td></tr>
+            <tr><td>Neptunus</td><td>8</td><td>Es Raksasa</td><td>16</td><td>Terjauh; angin tercepat</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- ══ SLIDE 7 — BULAN ══ -->
+    <div class="slide" id="sl7">
+      <div class="slide-content">
+        <div class="slide-label">Slide 7 · Satelit Alami Bumi</div>
+        <h2 class="slide-heading">Bulan — Satelit Alami Bumi</h2>
+        <div class="hl hl-blue">
+          <span class="hl-icon">🌕</span>
+          <span>Bulan adalah <strong>satelit alami</strong> satu-satunya milik Bumi. Bulan tidak menghasilkan cahaya sendiri — ia memantulkan cahaya Matahari.</span>
+        </div>
+        <div class="facts">
+          <div class="fact"><div class="fact-label">Jarak Bumi–Bulan</div><div class="fact-value">± 384.400 km</div></div>
+          <div class="fact"><div class="fact-label">Diameter</div><div class="fact-value">± 3.474 km (¼ diameter Bumi)</div></div>
+          <div class="fact"><div class="fact-label">Periode Orbit</div><div class="fact-value">± 27,3 hari (sideris)</div></div>
+          <div class="fact"><div class="fact-label">Gravitasi</div><div class="fact-value">1/6 gravitasi Bumi</div></div>
+          <div class="fact"><div class="fact-label">Manusia Pertama</div><div class="fact-value">Neil Armstrong, 20 Juli 1969 (Apollo 11)</div></div>
+          <div class="fact"><div class="fact-label">Fase Bulan</div><div class="fact-value">Baru → Sabit → Separuh → Cembung → Purnama (dan kembali)</div></div>
+        </div>
+        <div class="hl hl-gold">
+          <span class="hl-icon">🌊</span>
+          <span>Gravitasi Bulan menyebabkan <strong>pasang surut air laut</strong> di Bumi. Saat Bulan purnama dan bulan baru, pasang air laut mencapai ketinggian maksimum.</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ SLIDE 8 — GERHANA ══ -->
+    <div class="slide" id="sl8">
+      <div class="slide-content">
+        <div class="slide-label">Slide 8 · Fenomena Astronomi</div>
+        <h2 class="slide-heading">Gerhana Matahari &amp; Gerhana Bulan</h2>
+        <table class="tbl">
+          <thead><tr><th></th><th>Gerhana Matahari</th><th>Gerhana Bulan</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Terjadi saat</strong></td><td>Bulan berada di antara Bumi dan Matahari</td><td>Bumi berada di antara Matahari dan Bulan</td></tr>
+            <tr><td><strong>Posisi</strong></td><td>Matahari – Bulan – Bumi (satu garis)</td><td>Matahari – Bumi – Bulan (satu garis)</td></tr>
+            <tr><td><strong>Waktu</strong></td><td>Siang hari (Bulan baru)</td><td>Malam hari (Bulan purnama)</td></tr>
+            <tr><td><strong>Yang gelap</strong></td><td>Matahari tertutup Bulan</td><td>Bulan masuk bayangan Bumi</td></tr>
+            <tr class="hl-row"><td><strong>Jenis</strong></td><td>Total, sebagian, cincin (annular)</td><td>Total, sebagian, penumbra</td></tr>
+            <tr><td><strong>Bahaya</strong></td><td>Jangan menatap langsung (merusak mata)</td><td>Aman dilihat dengan mata telanjang</td></tr>
+          </tbody>
+        </table>
+        <div class="hl hl-blue">
+          <span class="hl-icon">🌑</span>
+          <span>Gerhana Matahari Total adalah peristiwa langka dan menakjubkan. Pada gerhana total, langit menjadi gelap di siang hari dan bintang-bintang dapat terlihat!</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ SLIDE 9 — ASTEROID & KOMET ══ -->
+    <div class="slide" id="sl9">
+      <div class="slide-content">
+        <div class="slide-label">Slide 9 · Benda Langit Kecil</div>
+        <h2 class="slide-heading">Asteroid, Komet, &amp; Meteor</h2>
+        <table class="tbl">
+          <thead><tr><th>Benda Langit</th><th>Deskripsi</th><th>Lokasi / Fakta</th></tr></thead>
+          <tbody>
+            <tr class="hl-row"><td><strong>☄️ Asteroid</strong></td><td>Batu-batuan kecil sisa pembentukan tata surya</td><td>Sabuk Asteroid antara Mars &amp; Jupiter; ribuan asteroid ada di sana</td></tr>
+            <tr><td><strong>☄️ Komet</strong></td><td>Bola es dan debu yang mengorbit Matahari; membentuk ekor cahaya saat dekat Matahari</td><td>Komet Halley terlihat dari Bumi setiap ± 75 tahun; terakhir 1986, berikutnya 2061</td></tr>
+            <tr><td><strong>🌠 Meteor</strong></td><td>Batu luar angkasa yang terbakar memasuki atmosfer Bumi (bintang jatuh)</td><td>Hujan meteor Perseid terjadi setiap Agustus</td></tr>
+            <tr><td><strong>🪨 Meteorit</strong></td><td>Meteor yang berhasil mencapai permukaan Bumi tanpa habis terbakar</td><td>Kawah meteor terbesar: Barringer Crater, Arizona, AS (diameter 1,2 km)</td></tr>
+            <tr><td><strong>🪐 Planet Kerdil</strong></td><td>Benda langit yang mengorbit Matahari tapi terlalu kecil untuk disebut planet</td><td>Pluto diturunkan statusnya menjadi planet kerdil pada 2006 oleh IAU</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- ══ SLIDE 10 — PLUTO ══ -->
+    <div class="slide" id="sl10">
+      <div class="slide-content">
+        <div class="slide-label">Slide 10 · Planet Kerdil</div>
+        <h2 class="slide-heading">Pluto — Mengapa Bukan Planet Lagi?</h2>
+        <div class="hl hl-blue">
+          <span class="hl-icon">🪨</span>
+          <span>Pluto ditemukan tahun 1930 dan dianggap planet ke-9 selama 76 tahun. Pada <strong>24 Agustus 2006</strong>, IAU (Persatuan Astronomi Internasional) menurunkan statusnya menjadi <strong>planet kerdil</strong>.</span>
+        </div>
+        <ul class="sl">
+          <li>Menurut IAU, sebuah planet harus memenuhi 3 syarat: <strong>mengorbit Matahari</strong>, <strong>berbentuk bulat</strong>, dan <strong>mendominasi orbitnya</strong> (membersihkan benda langit lain di sekitarnya)</li>
+          <li>Pluto gagal memenuhi syarat ke-3 karena orbitnya dipenuhi benda-benda langit lain di Sabuk Kuiper</li>
+          <li>Pluto kini masuk kategori <strong>planet kerdil</strong> bersama Eris, Makemake, Haumea, dan Ceres</li>
+          <li>Jarak Pluto dari Matahari ± 5,9 miliar km — sangat jauh sehingga 1 tahun Pluto = 248 tahun Bumi</li>
+        </ul>
+        <div class="hl hl-gold">
+          <span class="hl-icon">🛸</span>
+          <span>Wahana <strong>New Horizons</strong> milik NASA melintasi Pluto pada Juli 2015 dan mengirimkan foto-foto pertama Pluto secara detail — menunjukkan pegunungan es setinggi 3.500 m!</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ SLIDE 11 — ROTASI & REVOLUSI ══ -->
+    <div class="slide" id="sl11">
+      <div class="slide-content">
+        <div class="slide-label">Slide 11 · Gerak Bumi</div>
+        <h2 class="slide-heading">Rotasi &amp; Revolusi Bumi</h2>
+        <table class="tbl">
+          <thead><tr><th></th><th>Rotasi Bumi</th><th>Revolusi Bumi</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Definisi</strong></td><td>Perputaran Bumi pada porosnya sendiri</td><td>Perputaran Bumi mengelilingi Matahari</td></tr>
+            <tr><td><strong>Waktu</strong></td><td>± 24 jam (1 hari)</td><td>± 365¼ hari (1 tahun)</td></tr>
+            <tr><td><strong>Arah</strong></td><td>Barat ke timur (berlawanan jarum jam dilihat dari kutub utara)</td><td>Berlawanan jarum jam dilihat dari kutub utara</td></tr>
+            <tr class="hl-row"><td><strong>Akibat</strong></td><td>Siang &amp; malam; gerak semu harian Matahari</td><td>Pergantian musim; gerak semu tahunan Matahari; tahun kabisat</td></tr>
+          </tbody>
+        </table>
+        <div class="hl hl-green">
+          <span class="hl-icon">📅</span>
+          <span>Karena 1 tahun = 365¼ hari, setiap 4 tahun dikumpulkan ¼ hari × 4 = 1 hari ekstra → jadilah <strong>tahun kabisat</strong> (366 hari). Tahun kabisat: 2024, 2028, 2032, dst.</span>
+        </div>
+        <div class="hl hl-gold">
+          <span class="hl-icon">🌦️</span>
+          <span>Indonesia tidak mengalami 4 musim karena terletak di <strong>garis khatulistiwa</strong> — mendapat sinar Matahari yang hampir seragam sepanjang tahun.</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ SLIDE 12 — GALAKSI ══ -->
+    <div class="slide" id="sl12">
+      <div class="slide-content">
+        <div class="slide-label">Slide 12 · Alam Semesta</div>
+        <h2 class="slide-heading">Galaksi &amp; Alam Semesta</h2>
+        <div class="hl hl-blue">
+          <span class="hl-icon">🌌</span>
+          <span>Tata Surya kita berada dalam galaksi bernama <strong>Bima Sakti (Milky Way)</strong>. Galaksi adalah kumpulan miliaran bintang yang terikat gravitasi.</span>
+        </div>
+        <div class="facts">
+          <div class="fact"><div class="fact-label">Nama Galaksi Kita</div><div class="fact-value">Bima Sakti (Milky Way)</div></div>
+          <div class="fact"><div class="fact-label">Jumlah Bintang di Bima Sakti</div><div class="fact-value">± 200–400 miliar bintang</div></div>
+          <div class="fact"><div class="fact-label">Bentuk Galaksi Bima Sakti</div><div class="fact-value">Spiral berlengan</div></div>
+          <div class="fact"><div class="fact-label">Galaksi Terdekat</div><div class="fact-value">Andromeda (± 2,5 juta tahun cahaya)</div></div>
+          <div class="fact"><div class="fact-label">Jumlah Galaksi di Alam Semesta</div><div class="fact-value">± 2 triliun galaksi</div></div>
+          <div class="fact"><div class="fact-label">Usia Alam Semesta</div><div class="fact-value">± 13,8 miliar tahun (sejak Big Bang)</div></div>
+        </div>
+        <div class="hl hl-gold">
+          <span class="hl-icon">⭐</span>
+          <span>Bintang terdekat dari Matahari adalah <strong>Proxima Centauri</strong> — berjarak 4,24 tahun cahaya. Cahayanya butuh 4,24 tahun untuk mencapai Bumi!</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ SLIDE 13 — EKSPLORASI LUAR ANGKASA ══ -->
+    <div class="slide" id="sl13">
+      <div class="slide-content">
+        <div class="slide-label">Slide 13 · Eksplorasi Luar Angkasa</div>
+        <h2 class="slide-heading">Tonggak Eksplorasi Luar Angkasa</h2>
+        <table class="tbl">
+          <thead><tr><th>Tahun</th><th>Peristiwa</th><th>Negara / Misi</th></tr></thead>
+          <tbody>
+            <tr><td><strong>1957</strong></td><td>Satelit buatan manusia pertama diluncurkan</td><td>🇷🇺 Uni Soviet · Sputnik 1</td></tr>
+            <tr><td><strong>1961</strong></td><td>Manusia pertama ke luar angkasa</td><td>🇷🇺 Yuri Gagarin · Vostok 1</td></tr>
+            <tr><td><strong>1969</strong></td><td>Manusia pertama mendarat di Bulan</td><td>🇺🇸 Neil Armstrong · Apollo 11</td></tr>
+            <tr><td><strong>1977</strong></td><td>Wahana terluar tata surya diluncurkan</td><td>🇺🇸 Voyager 1 (kini di luar tata surya)</td></tr>
+            <tr><td><strong>1990</strong></td><td>Teleskop luar angkasa Hubble diluncurkan</td><td>🇺🇸 NASA · foto galaksi jutaan cahaya</td></tr>
+            <tr class="hl-row"><td><strong>1998–kini</strong></td><td>Stasiun Luar Angkasa Internasional (ISS)</td><td>🌍 16 negara · selalu berpenghuni sejak 2000</td></tr>
+            <tr><td><strong>2021</strong></td><td>Pendaratan di Mars</td><td>🇺🇸 NASA · Perseverance Rover</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- ══ SLIDE 14 — RANGKUMAN ══ -->
+    <div class="slide" id="sl14">
+      <div class="slide-content">
+        <div class="slide-label">Slide 14 · Rangkuman</div>
+        <h2 class="slide-heading">Rangkuman Tata Surya</h2>
+        <table class="tbl">
+          <thead><tr><th>Topik</th><th>Poin Kunci</th></tr></thead>
+          <tbody>
+            <tr><td><strong>🪐 Urutan Planet</strong></td><td>Merkurius → Venus → Bumi → Mars → Jupiter → Saturnus → Uranus → Neptunus</td></tr>
+            <tr><td><strong>☀️ Matahari</strong></td><td>Bintang (bola gas); 99,86% massa tata surya; cahaya tiba di Bumi dalam 8 menit 20 detik</td></tr>
+            <tr><td><strong>🌕 Bulan</strong></td><td>Satelit alami Bumi; jarak 384.400 km; manusia pertama: Neil Armstrong, 1969</td></tr>
+            <tr><td><strong>🌑 Gerhana Matahari</strong></td><td>Bulan di antara Bumi–Matahari · siang hari · Bulan baru</td></tr>
+            <tr><td><strong>🌕 Gerhana Bulan</strong></td><td>Bumi di antara Matahari–Bulan · malam hari · Bulan purnama</td></tr>
+            <tr class="hl-row"><td><strong>🪨 Pluto</strong></td><td>Bukan lagi planet sejak 2006 → planet kerdil</td></tr>
+            <tr><td><strong>🔄 Rotasi &amp; Revolusi</strong></td><td>Rotasi = 24 jam (siang–malam) · Revolusi = 365¼ hari (1 tahun)</td></tr>
+          </tbody>
+        </table>
+        <div class="hl hl-green">
+          <span class="hl-icon">✅</span>
+          <span>Selamat! Kamu sudah mempelajari <strong>Tata Surya</strong> — dari Matahari, delapan planet, Bulan, gerhana, hingga eksplorasi luar angkasa.</span>
+        </div>
+        <a href="../soal/paket-01.html" class="cta-btn">📝 Latihan Soal Sekarang →</a>
+      </div>
+    </div>
+
+  </div><!-- /slides-wrap -->
+
+  <footer class="s-footer">
+    <button class="nav-btn prev-btn" id="btn-prev" onclick="prev()" disabled>◄ Sebelumnya</button>
+    <div class="s-hint"><kbd>←</kbd> <kbd>→</kbd> navigasi &nbsp;·&nbsp; <kbd>F</kbd> layar penuh</div>
+    <button class="nav-btn next-btn" id="btn-next" onclick="next()">Berikutnya ►</button>
+  </footer>
+
+  <script>
+    const TOTAL = 14;
+    let cur = 1;
+    function showSlide(n) {
+      const pv = document.getElementById('sl' + cur);
+      const nx = document.getElementById('sl' + n);
+      if (!nx) return;
+      pv.classList.add('leaving'); pv.classList.remove('active');
+      setTimeout(() => pv.classList.remove('leaving'), 400);
+      nx.classList.add('active'); cur = n;
+      document.getElementById('s-counter').textContent = cur + ' / ' + TOTAL;
+      document.getElementById('s-prog').style.width = (cur / TOTAL * 100).toFixed(2) + '%';
+      document.getElementById('btn-prev').disabled = (cur === 1);
+      document.getElementById('btn-next').disabled = (cur === TOTAL);
+    }
+    function next() { if (cur < TOTAL) showSlide(cur + 1); }
+    function prev() { if (cur > 1)     showSlide(cur - 1); }
+    document.addEventListener('keydown', e => {
+      if (e.code === 'ArrowRight' || e.code === 'ArrowDown') next();
+      if (e.code === 'ArrowLeft'  || e.code === 'ArrowUp')   prev();
+      if (e.code === 'KeyF') toggleFS();
+    });
+    document.getElementById('btn-fs').addEventListener('click', toggleFS);
+    function toggleFS() {
+      if (!document.fullscreenElement) document.documentElement.requestFullscreen().catch(() => {});
+      else document.exitFullscreen();
+    }
+    let ts = 0;
+    document.getElementById('slides-wrap').addEventListener('touchstart', e => { ts = e.touches[0].clientX; });
+    document.getElementById('slides-wrap').addEventListener('touchend', e => {
+      const dx = e.changedTouches[0].clientX - ts;
+      if (Math.abs(dx) > 50) { dx < 0 ? next() : prev(); }
+    });
+  </script>
+</body>
+</html>
