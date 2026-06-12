@@ -4,20 +4,83 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Paket 01 — Pengetahuan Matematika | Cerdas Cermat SDM01KKS</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../../assets/css/style.css">
+
+  <!-- KaTeX CSS — harus di <head> agar tidak terjadi FOUC -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+
+  <style>
+    /* ── Penyesuaian ukuran KaTeX agar terbaca di layar proyektor ── */
+    #qe-teks      .katex { font-size: 1.25em; }
+    #qe-jawaban   .katex { font-size: 1.35em; }
+    #qe-pembahasan .katex { font-size: 1.05em; }
+
+    /* Pastikan display math tidak meluap di layar sempit */
+    .katex-display { overflow-x: auto; overflow-y: hidden; padding: .25em 0; }
+    .katex-display > .katex { max-width: 100%; }
+
+    /* Fraksi dan ekspresi panjang tampil baris baru bila perlu */
+    .katex .mfrac .mfrac { font-size: .95em; }
+  </style>
 </head>
 <body class="page-quiz">
 
-  <!-- Quiz engine akan me-render seluruh konten di sini -->
   <div id="quiz-root"></div>
 
   <script>
     window.QUIZ_CONFIG = {
-      dataUrl: 'data/paket-01.json'
+      dataUrl:       'data/pool.json',
+      questionCount: 30,   /* 30 soal acak dari pool 300 */
+      shuffle:       true,
     };
   </script>
   <script src="../../assets/js/quiz-engine.js"></script>
+
+  <!-- KaTeX JS — dimuat setelah quiz-engine -->
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
+
+  <script>
+  (function () {
+    /* Elemen target yang mengandung LaTeX dari quiz-engine */
+    var TARGETS = ['#qe-teks', '#qe-jawaban', '#qe-pembahasan'];
+
+    var KR_OPTS = {
+      delimiters: [
+        { left: '$$', right: '$$', display: true  },
+        { left: '$',  right: '$',  display: false }
+      ],
+      throwOnError: false,
+      trust: false
+    };
+
+    /* Render ulang semua target */
+    function renderMath () {
+      if (!window.renderMathInElement) return;
+      TARGETS.forEach(function (sel) {
+        var el = document.querySelector(sel);
+        if (el) renderMathInElement(el, KR_OPTS);
+      });
+    }
+
+    /* MutationObserver — dipicu setiap kali quiz-engine menulis konten baru */
+    var timer;
+    var obs = new MutationObserver(function () {
+      clearTimeout(timer);
+      timer = setTimeout(renderMath, 80);   /* debounce 80 ms */
+    });
+
+    /* Mulai observasi saat DOM siap */
+    document.addEventListener('DOMContentLoaded', function () {
+      var root = document.getElementById('quiz-root');
+      if (root) {
+        obs.observe(root, { childList: true, subtree: true, characterData: true });
+      }
+    });
+  })();
+  </script>
 
 </body>
 </html>
