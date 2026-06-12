@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bilangan Bulat — Materi Cerdas Cermat SDM01KKS</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { height: 100%; font-family: 'Nunito', sans-serif; }
+    :root {
+      --red: #6a1b9a; --red-dk: #38006b; --red-lt: #f3e5f5;
+      --gold: #f9a825; --green: #2e7d32; --blue: #1565c0;
+      --teal: #00695c; --orange: #e65100;
+      --cream: #fdf8ff; --text: #1a2420; --muted: #718096; --nav-h: 58px;
+    }
+    body { background: var(--cream); color: var(--text); display: flex; flex-direction: column; height: 100vh; overflow: hidden; }
+    .s-nav { height: var(--nav-h); flex-shrink: 0; display: flex; align-items: center; gap: 1rem; padding: 0 1.5rem; background: var(--red); color: #fff; box-shadow: 0 2px 12px rgba(0,0,0,.25); z-index: 20; }
+    .s-nav a { color: rgba(255,255,255,.8); text-decoration: none; font-size: .85rem; }
+    .s-nav a:hover { color: #fff; }
+    .s-nav .sep { opacity: .4; }
+    .s-nav .s-title { flex: 1; font-weight: 800; font-size: .95rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .s-nav .s-counter { font-weight: 700; font-size: .85rem; background: rgba(255,255,255,.2); padding: .25rem .75rem; border-radius: 20px; white-space: nowrap; }
+    .btn-fs { background: rgba(255,255,255,.15); border: none; color: #fff; width: 34px; height: 34px; border-radius: 8px; font-size: 1rem; cursor: pointer; display: flex; align-items: center; justify-content: center; }
+    .btn-fs:hover { background: rgba(255,255,255,.3); }
+    .s-prog { height: 4px; background: rgba(255,255,255,.25); flex-shrink: 0; }
+    .s-prog-fill { height: 100%; background: var(--gold); transition: width .4s ease; }
+    .slides-wrap { flex: 1; position: relative; overflow: hidden; }
+    .slide { position: absolute; inset: 0; padding: 2.5rem 3rem; opacity: 0; transform: translateX(30px); transition: opacity .35s ease, transform .35s ease; pointer-events: none; overflow-y: auto; }
+    .slide.active { opacity: 1; transform: translateX(0); pointer-events: all; }
+    .slide.leaving { opacity: 0; transform: translateX(-30px); }
+    .slide-cover { background: linear-gradient(145deg, var(--red) 0%, var(--red-dk) 100%); color: #fff; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; gap: 1.5rem; }
+    .cover-flag { font-size: 5rem; line-height: 1; }
+    .cover-title { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 900; text-shadow: 0 2px 16px rgba(0,0,0,.3); line-height: 1.2; }
+    .cover-sub { font-size: clamp(.9rem, 2vw, 1.2rem); opacity: .85; max-width: 540px; line-height: 1.6; }
+    .cover-tag { display: inline-flex; gap: 1rem; flex-wrap: wrap; justify-content: center; margin-top: .5rem; }
+    .cover-tag span { background: rgba(255,255,255,.18); border: 1px solid rgba(255,255,255,.35); border-radius: 20px; padding: .3rem 1rem; font-size: .8rem; font-weight: 700; }
+    .slide-content { display: flex; flex-direction: column; gap: 1.5rem; max-width: 860px; margin: 0 auto; }
+    .slide-label { font-size: .72rem; text-transform: uppercase; letter-spacing: .12em; color: var(--red); font-weight: 800; }
+    .slide-heading { font-family: 'Playfair Display', serif; font-size: clamp(1.6rem, 4vw, 2.6rem); font-weight: 700; color: var(--text); line-height: 1.2; }
+    .slide-heading .sub { font-size: .55em; color: var(--muted); display: block; font-family: 'Nunito', sans-serif; font-weight: 600; margin-top: .2rem; }
+    .hl { border-radius: 12px; padding: 1rem 1.4rem; font-weight: 700; font-size: .95rem; display: flex; align-items: flex-start; gap: .75rem; line-height: 1.6; }
+    .hl-purple { background: #f3e5f5; border-left: 4px solid var(--red); color: var(--red-dk); }
+    .hl-gold   { background: #fff8e1; border-left: 4px solid var(--gold); color: #6d4c00; }
+    .hl-green  { background: #e8f5e9; border-left: 4px solid var(--green); color: #1b5e20; }
+    .hl-blue   { background: #e3f2fd; border-left: 4px solid var(--blue); color: #0d47a1; }
+    .hl-teal   { background: #e0f2f1; border-left: 4px solid var(--teal); color: #004d40; }
+    .hl-orange { background: #fff3e0; border-left: 4px solid var(--orange); color: #8d3100; }
+    .hl-icon   { font-size: 1.4rem; flex-shrink: 0; margin-top: .05rem; }
+    .facts { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: .85rem; }
+    .fact { background: #fff; border: 1px solid #e9ecef; border-radius: 10px; padding: .85rem 1rem; }
+    .fact-label { font-size: .68rem; text-transform: uppercase; letter-spacing: .1em; color: var(--muted); margin-bottom: .25rem; }
+    .fact-value { font-weight: 800; font-size: .92rem; color: var(--text); line-height: 1.4; }
+    .tbl { width: 100%; border-collapse: collapse; font-size: .88rem; }
+    .tbl th { background: var(--red); color: #fff; padding: .6rem .9rem; text-align: left; font-weight: 700; }
+    .tbl td { padding: .55rem .9rem; border-bottom: 1px solid #f0f4f8; vertical-align: top; line-height: 1.45; }
+    .tbl tr:hover td { background: #fdf5ff; }
+    .tbl .hl-row td { background: #fff8e1; font-weight: 700; }
+    /* kotak rumus */
+    .rumus-box { background: #fff; border: 2px solid var(--red-lt); border-radius: 14px; padding: 1.25rem 1.75rem; text-align: center; box-shadow: 0 2px 10px rgba(106,27,154,.08); }
+    .rumus-title { font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 700; color: var(--red); margin-bottom: .75rem; letter-spacing: .05em; }
+    .rumus-body { font-size: 1.1rem; font-weight: 800; color: var(--text); line-height: 2.2; }
+    .rumus-note { font-size: .8rem; color: var(--muted); margin-top: .5rem; }
+    /* contoh soal */
+    .contoh { background: #f8f0ff; border-radius: 10px; padding: .9rem 1.2rem; font-size: .92rem; line-height: 1.7; }
+    .contoh-label { font-size: .7rem; text-transform: uppercase; letter-spacing: .1em; color: var(--red); font-weight: 800; margin-bottom: .4rem; }
+    .jawaban { background: #e8f5e9; border-radius: 8px; padding: .6rem 1rem; margin-top: .5rem; font-weight: 800; color: #1b5e20; font-size: .92rem; }
+    .sl { list-style: none; display: flex; flex-direction: column; gap: .55rem; }
+    .sl li { display: flex; gap: .6rem; align-items: flex-start; font-size: .93rem; line-height: 1.55; }
+    .sl li::before { content: "▸"; color: var(--red); font-size: .75rem; margin-top: .25rem; flex-shrink: 0; }
+    .cta-btn { display: inline-flex; align-items: center; gap: .5rem; background: var(--red); color: #fff; padding: .75rem 1.75rem; border-radius: 10px; font-weight: 800; font-size: 1rem; text-decoration: none; transition: opacity .15s; align-self: flex-start; }
+    .cta-btn:hover { opacity: .85; }
+    .s-footer { height: 64px; flex-shrink: 0; display: flex; align-items: center; justify-content: space-between; padding: 0 1.5rem; background: #fff; border-top: 1px solid #e9ecef; }
+    .nav-btn { display: flex; align-items: center; gap: .4rem; background: none; border: 1.5px solid #e9ecef; border-radius: 10px; padding: .5rem 1.2rem; font-family: inherit; font-size: .88rem; font-weight: 700; color: var(--text); cursor: pointer; transition: background .15s, border-color .15s; }
+    .nav-btn:hover { background: #f5f5f5; border-color: #ccc; }
+    .nav-btn:disabled { opacity: .3; cursor: default; }
+    .nav-btn.next-btn { background: var(--red); color: #fff; border-color: var(--red); }
+    .nav-btn.next-btn:hover { opacity: .88; }
+    .nav-btn.next-btn:disabled { background: #ccc; border-color: #ccc; opacity: .6; }
+    .s-hint { font-size: .72rem; color: var(--muted); text-align: center; }
+    .s-hint kbd { background: #f0f4f8; border: 1px solid #ddd; border-radius: 4px; padding: 1px 5px; font-family: monospace; font-size: .68rem; }
+    @media (max-width: 600px) { .slide { padding: 1.25rem 1rem; } .s-hint { display: none; } }
+  </style>
+</head>
+<body>
+  <header class="s-nav">
+    <a href="../index.html">← Materi</a>
+    <span class="sep">›</span>
+    <span class="s-title">Bilangan Bulat</span>
+    <span class="s-counter" id="s-counter">1 / 13</span>
+    <button class="btn-fs" id="btn-fs" title="Layar penuh (F)">⛶</button>
+  </header>
+  <div class="s-prog"><div class="s-prog-fill" id="s-prog" style="width:7.69%"></div></div>
+
+  <div class="slides-wrap" id="slides-wrap">
+
+    <!-- ══ SLIDE 1 — COVER ══ -->
+    <div class="slide slide-cover active" id="sl1">
+      <div class="cover-flag">🔢</div>
+      <h1 class="cover-title">Bilangan Bulat</h1>
+      <p class="cover-sub">Mengenal jenis bilangan, operasi hitung, faktor, kelipatan, FPB, KPK, dan sifat-sifat bilangan bulat dalam matematika SD.</p>
+      <div class="cover-tag">
+        <span>📖 13 Slide</span>
+        <span>🔢 Matematika SD</span>
+        <span>⌨️ ← → navigasi</span>
+      </div>
+    </div>
+
+    <!-- ══ SLIDE 2 — JENIS BILANGAN ══ -->
+    <div class="slide" id="sl2">
+      <div class="slide-content">
+        <div class="slide-label">Slide 2 · Jenis-Jenis Bilangan</div>
+        <h2 class="slide-heading">Jenis-Jenis Bilangan</h2>
+        <div class="hl hl-purple">
+          <span class="hl-icon">🔢</span>
+          <span>Bilangan adalah simbol yang menyatakan banyaknya sesuatu. Ada berbagai jenis bilangan yang perlu diketahui dalam matematika dasar.</span>
+        </div>
+        <table class="tbl">
+          <thead><tr><th>Jenis Bilangan</th><th>Definisi</th><th>Contoh</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Bilangan Asli</strong></td><td>Bilangan cacah mulai dari 1 ke atas</td><td>1, 2, 3, 4, 5, 6, …</td></tr>
+            <tr><td><strong>Bilangan Cacah</strong></td><td>Bilangan asli ditambah nol</td><td>0, 1, 2, 3, 4, 5, …</td></tr>
+            <tr class="hl-row"><td><strong>Bilangan Bulat</strong></td><td>Bilangan cacah + bilangan negatif</td><td>…, -3, -2, -1, 0, 1, 2, 3, …</td></tr>
+            <tr><td><strong>Bilangan Prima</strong></td><td>Bilangan &gt; 1 yang hanya habis dibagi 1 dan dirinya sendiri</td><td>2, 3, 5, 7, 11, 13, 17, 19, 23, …</td></tr>
+            <tr><td><strong>Bilangan Komposit</strong></td><td>Bilangan &gt; 1 yang bukan bilangan prima (punya faktor lain)</td><td>4, 6, 8, 9, 10, 12, 14, 15, …</td></tr>
+            <tr><td><strong>Bilangan Ganjil</strong></td><td>Bilangan yang tidak habis dibagi 2</td><td>1, 3, 5, 7, 9, 11, …</td></tr>
+            <tr><td><strong>Bilangan Genap</strong></td><td>Bilangan yang habis dibagi 2</td><td>2, 4, 6, 8, 10, 12, …</td></tr>
+          </tbody>
+        </table>
+        <div class="hl hl-gold">
+          <span class="hl-icon">💡</span>
+          <span>Angka <strong>1 bukan bilangan prima</strong> dan bukan komposit — ia punya kategori tersendiri. Bilangan prima terkecil adalah <strong>2</strong> (satu-satunya bilangan prima genap).</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ SLIDE 3 — OPERASI HITUNG ══ -->
+    <div class="slide" id="sl3">
+      <div class="slide-content">
+        <div class="slide-label">Slide 3 · Operasi Hitung</div>
+        <h2 class="slide-heading">Empat Operasi Hitung Dasar</h2>
+        <table class="tbl">
+          <thead><tr><th>Operasi</th><th>Simbol</th><th>Nama Hasil</th><th>Contoh</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Penjumlahan</strong></td><td>+</td><td>Jumlah / Total</td><td>456 + 378 = 834</td></tr>
+            <tr><td><strong>Pengurangan</strong></td><td>−</td><td>Selisih</td><td>1.000 − 347 = 653</td></tr>
+            <tr class="hl-row"><td><strong>Perkalian</strong></td><td>× atau ·</td><td>Hasil Kali</td><td>125 × 8 = 1.000</td></tr>
+            <tr><td><strong>Pembagian</strong></td><td>÷ atau /</td><td>Hasil Bagi (Kuosien)</td><td>1.000 ÷ 25 = 40</td></tr>
+          </tbody>
+        </table>
+        <div class="hl hl-blue">
+          <span class="hl-icon">📋</span>
+          <span><strong>Urutan operasi hitung (KUPAS):</strong> Kurung → Pangkat → Akar → Perkalian/Pembagian (dari kiri ke kanan) → Penjumlahan/Pengurangan (dari kiri ke kanan).</span>
+        </div>
+        <div class="contoh">
+          <div class="contoh-label">Contoh Soal</div>
+          Hitung: 3 + 4 × 2 − (10 ÷ 5)
+          <div class="jawaban">= 3 + 4 × 2 − 2 &nbsp;[Kurung dulu] = 3 + 8 − 2 &nbsp;[Kali dulu] = 9 ✓</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ SLIDE 4 — SIFAT OPERASI ══ -->
+    <div class="slide" id="sl4">
+      <div class="slide-content">
+        <div class="slide-label">Slide 4 · Sifat-Sifat Operasi</div>
+        <h2 class="slide-heading">Sifat-Sifat Operasi Hitung</h2>
+        <table class="tbl">
+          <thead><tr><th>Sifat</th><th>Berlaku Pada</th><th>Penjelasan</th><th>Contoh</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Komutatif</strong></td><td>+ dan ×</td><td>Urutan bilangan tidak mempengaruhi hasil</td><td>5 + 3 = 3 + 5 = 8<br>4 × 6 = 6 × 4 = 24</td></tr>
+            <tr><td><strong>Asosiatif</strong></td><td>+ dan ×</td><td>Pengelompokan tidak mempengaruhi hasil</td><td>(2+3)+4 = 2+(3+4) = 9<br>(2×3)×4 = 2×(3×4) = 24</td></tr>
+            <tr class="hl-row"><td><strong>Distributif</strong></td><td>× terhadap + atau −</td><td>Perkalian dapat didistribusikan ke penjumlahan</td><td>3×(4+5) = 3×4 + 3×5 = 27</td></tr>
+            <tr><td><strong>Identitas Penjumlahan</strong></td><td>+</td><td>Menambah 0 tidak mengubah nilai</td><td>25 + 0 = 25</td></tr>
+            <tr><td><strong>Identitas Perkalian</strong></td><td>×</td><td>Mengalikan 1 tidak mengubah nilai</td><td>25 × 1 = 25</td></tr>
+          </tbody>
+        </table>
+        <div class="hl hl-gold">
+          <span class="hl-icon">💡</span>
+          <span>Sifat <strong>distributif</strong> sangat berguna untuk menghitung perkalian besar secara mental. Contoh: 6 × 98 = 6 × (100 − 2) = 600 − 12 = <strong>588</strong> (lebih mudah!)</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ SLIDE 5 — FAKTOR & KELIPATAN ══ -->
+    <div class="slide" id="sl5">
+      <div class="slide-content">
+        <div class="slide-label">Slide 5 · Faktor &amp; Kelipatan</div>
+        <h2 class="slide-heading">Faktor &amp; Kelipatan Bilangan</h2>
+        <div class="facts">
+          <div class="fact">
+            <div class="fact-label">Faktor</div>
+            <div class="fact-value">Bilangan yang habis membagi bilangan lain (pembagi). Faktor dari 12: 1, 2, 3, 4, 6, 12</div>
+          </div>
+          <div class="fact">
+            <div class="fact-label">Kelipatan</div>
+            <div class="fact-value">Hasil mengalikan bilangan dengan bilangan asli. Kelipatan dari 3: 3, 6, 9, 12, 15, 18, …</div>
+          </div>
+        </div>
+        <div class="contoh">
+          <div class="contoh-label">Mencari Semua Faktor dari 24</div>
+          Faktor dari 24 adalah semua bilangan yang habis membagi 24:<br>
+          24 ÷ 1 = 24 ✓ &nbsp; 24 ÷ 2 = 12 ✓ &nbsp; 24 ÷ 3 = 8 ✓ &nbsp; 24 ÷ 4 = 6 ✓ &nbsp; 24 ÷ 5 = 4,8 ✗ &nbsp; 24 ÷ 6 = 4 ✓
+          <div class="jawaban">Faktor dari 24 = {1, 2, 3, 4, 6, 8, 12, 24}</div>
+        </div>
+        <div class="hl hl-blue">
+          <span class="hl-icon">🔍</span>
+          <span><strong>Faktorisasi prima</strong> adalah menyatakan bilangan sebagai perkalian faktor-faktor prima. Contoh: 24 = 2 × 2 × 2 × 3 = 2³ × 3. Cara mudah: gunakan pohon faktor!</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ SLIDE 6 — FPB ══ -->
+    <div class="slide" id="sl6">
+      <div class="slide-content">
+        <div class="slide-label">Slide 6 · FPB</div>
+        <h2 class="slide-heading">FPB — Faktor Persekutuan Terbesar</h2>
+        <div class="hl hl-purple">
+          <span class="hl-icon">⬆️</span>
+          <span><strong>FPB</strong> adalah bilangan bulat positif terbesar yang menjadi faktor (membagi habis) dari dua bilangan atau lebih sekaligus.</span>
+        </div>
+        <div class="rumus-box">
+          <div class="rumus-title">Cara Mencari FPB dengan Faktorisasi Prima</div>
+          <div class="rumus-body">Ambil faktor prima yang <strong>SAMA</strong>, dengan pangkat <strong>TERKECIL</strong></div>
+        </div>
+        <div class="contoh">
+          <div class="contoh-label">Contoh: Cari FPB dari 24 dan 36</div>
+          <strong>24</strong> = 2³ × 3¹<br>
+          <strong>36</strong> = 2² × 3²<br>
+          Faktor prima sama: 2 dan 3. Pangkat terkecil: 2² dan 3¹
+          <div class="jawaban">FPB (24, 36) = 2² × 3 = 4 × 3 = <strong>12</strong></div>
+        </div>
+        <div class="hl hl-gold">
+          <span class="hl-icon">🎯</span>
+          <span>FPB digunakan untuk: <strong>menyederhanakan pecahan</strong> (½, ¾), membagi benda ke kelompok sama rata, dan soal cerita tentang "terbanyak" atau "terbesar".</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ SLIDE 7 — KPK ══ -->
+    <div class="slide" id="sl7">
+      <div class="slide-content">
+        <div class="slide-label">Slide 7 · KPK</div>
+        <h2 class="slide-heading">KPK — Kelipatan Persekutuan Terkecil</h2>
+        <div class="hl hl-purple">
+          <span class="hl-icon">⬇️</span>
+          <span><strong>KPK</strong> adalah bilangan bulat positif terkecil yang merupakan kelipatan dari dua bilangan atau lebih sekaligus.</span>
+        </div>
+        <div class="rumus-box">
+          <div class="rumus-title">Cara Mencari KPK dengan Faktorisasi Prima</div>
+          <div class="rumus-body">Ambil faktor prima yang <strong>MUNCUL</strong> (sama maupun tidak), dengan pangkat <strong>TERBESAR</strong></div>
+        </div>
+        <div class="contoh">
+          <div class="contoh-label">Contoh: Cari KPK dari 4 dan 6</div>
+          <strong>4</strong> = 2²<br>
+          <strong>6</strong> = 2¹ × 3¹<br>
+          Semua faktor prima: 2 dan 3. Pangkat terbesar: 2² dan 3¹
+          <div class="jawaban">KPK (4, 6) = 2² × 3 = 4 × 3 = <strong>12</strong></div>
+        </div>
+        <div class="hl hl-gold">
+          <span class="hl-icon">🎯</span>
+          <span>KPK digunakan untuk: <strong>menyamakan penyebut pecahan</strong>, soal cerita tentang "bertemu kembali", dan "setiap berapa hari" atau "kapan bersamaan lagi".</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ SLIDE 8 — FPB vs KPK ══ -->
+    <div class="slide" id="sl8">
+      <div class="slide-content">
+        <div class="slide-label">Slide 8 · Perbandingan FPB &amp; KPK</div>
+        <h2 class="slide-heading">FPB vs KPK — Perbedaan &amp; Kapan Digunakan</h2>
+        <table class="tbl">
+          <thead><tr><th></th><th>FPB</th><th>KPK</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Kepanjangan</strong></td><td>Faktor Persekutuan Terbesar</td><td>Kelipatan Persekutuan Terkecil</td></tr>
+            <tr><td><strong>Dari</strong></td><td>Faktor (pembagi) bilangan</td><td>Kelipatan bilangan</td></tr>
+            <tr><td><strong>Cara (faktorisasi prima)</strong></td><td>Faktor SAMA, pangkat TERKECIL</td><td>Faktor SEMUA, pangkat TERBESAR</td></tr>
+            <tr class="hl-row"><td><strong>Contoh (24 &amp; 36)</strong></td><td>FPB = 12</td><td>KPK = 72</td></tr>
+            <tr><td><strong>Kata kunci soal cerita</strong></td><td>"terbanyak", "sama rata", "terbesar", "menyederhanakan"</td><td>"bersama-sama lagi", "bertemu kembali", "setiap … hari"</td></tr>
+          </tbody>
+        </table>
+        <div class="contoh">
+          <div class="contoh-label">Latihan: FPB atau KPK?</div>
+          "Lampu merah menyala tiap 4 menit, lampu hijau tiap 6 menit. Keduanya menyala bersama pukul 07.00. Kapan keduanya menyala bersama lagi?"
+          <div class="jawaban">Kata kunci "bersama-sama lagi" → <strong>KPK</strong> (4, 6) = 12 menit → pukul 07.12</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ SLIDE 9 — BILANGAN PRIMA ══ -->
+    <div class="slide" id="sl9">
+      <div class="slide-content">
+        <div class="slide-label">Slide 9 · Bilangan Prima</div>
+        <h2 class="slide-heading">Bilangan Prima &amp; Cara Menemukannya</h2>
+        <div class="hl hl-blue">
+          <span class="hl-icon">🔑</span>
+          <span><strong>Bilangan prima</strong> adalah bilangan yang lebih dari 1 dan hanya memiliki tepat 2 faktor: 1 dan bilangan itu sendiri.</span>
+        </div>
+        <div class="hl hl-purple">
+          <span class="hl-icon">📋</span>
+          <span>Bilangan prima antara 1–100: <strong>2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97</strong> (ada 25 bilangan prima).</span>
+        </div>
+        <table class="tbl">
+          <thead><tr><th>Cara Cek Prima</th><th>Langkah</th></tr></thead>
+          <tbody>
+            <tr class="hl-row"><td><strong>Cara Cepat</strong></td><td>Bagi bilangan dengan semua prima hingga √n. Jika tidak habis dibagi satupun → prima</td></tr>
+            <tr><td><strong>Contoh: 97 prima?</strong></td><td>√97 ≈ 9,8 → cek prima ≤ 9: 2, 3, 5, 7. Tidak habis dibagi satupun → <strong>97 prima!</strong></td></tr>
+            <tr><td><strong>Contoh: 91 prima?</strong></td><td>91 ÷ 7 = 13 (habis dibagi!) → 91 = 7 × 13 → <strong>91 BUKAN prima</strong></td></tr>
+          </tbody>
+        </table>
+        <div class="hl hl-gold">
+          <span class="hl-icon">💡</span>
+          <span>Trik cepat: semua bilangan prima &gt; 3 berbentuk <strong>6k ± 1</strong> (kelipatan 6 ditambah atau dikurangi 1). Contoh: 5=6×1-1, 7=6×1+1, 11=6×2-1, 13=6×2+1.</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ SLIDE 10 — OPERASI BILANGAN NEGATIF ══ -->
+    <div class="slide" id="sl10">
+      <div class="slide-content">
+        <div class="slide-label">Slide 10 · Bilangan Bulat Negatif</div>
+        <h2 class="slide-heading">Operasi Hitung dengan Bilangan Negatif</h2>
+        <div class="hl hl-purple">
+          <span class="hl-icon">➖</span>
+          <span>Bilangan negatif adalah bilangan yang nilainya di bawah nol — berada di sebelah kiri nol pada garis bilangan.</span>
+        </div>
+        <table class="tbl">
+          <thead><tr><th>Operasi</th><th>Aturan</th><th>Contoh</th></tr></thead>
+          <tbody>
+            <tr><td><strong>+ × + = +</strong></td><td>Positif × Positif = Positif</td><td>5 × 3 = 15</td></tr>
+            <tr><td><strong>− × − = +</strong></td><td>Negatif × Negatif = Positif</td><td>(−5) × (−3) = 15</td></tr>
+            <tr class="hl-row"><td><strong>+ × − = −</strong></td><td>Positif × Negatif = Negatif</td><td>5 × (−3) = −15</td></tr>
+            <tr><td><strong>− × + = −</strong></td><td>Negatif × Positif = Negatif</td><td>(−5) × 3 = −15</td></tr>
+            <tr><td><strong>Pengurangan</strong></td><td>a − (−b) = a + b</td><td>8 − (−3) = 8 + 3 = 11</td></tr>
+          </tbody>
+        </table>
+        <div class="contoh">
+          <div class="contoh-label">Contoh Soal</div>
+          Suhu di puncak gunung −5°C. Setelah turun 500 meter, suhu naik 8°C. Berapakah suhu sekarang?
+          <div class="jawaban">−5 + 8 = <strong>3°C</strong></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ SLIDE 11 — PEMBULATAN & TAKSIRAN ══ -->
+    <div class="slide" id="sl11">
+      <div class="slide-content">
+        <div class="slide-label">Slide 11 · Pembulatan &amp; Taksiran</div>
+        <h2 class="slide-heading">Pembulatan &amp; Taksiran Bilangan</h2>
+        <div class="hl hl-teal">
+          <span class="hl-icon">🎯</span>
+          <span><strong>Pembulatan</strong> menyederhanakan bilangan ke nilai terdekat. <strong>Taksiran</strong> adalah perkiraan hasil operasi menggunakan bilangan bulat yang sudah dibulatkan.</span>
+        </div>
+        <div class="rumus-box">
+          <div class="rumus-title">Aturan Pembulatan</div>
+          <div class="rumus-body">Angka &lt; 5 → <strong>dibulatkan ke bawah</strong> (dihapus)<br>Angka ≥ 5 → <strong>dibulatkan ke atas</strong> (ditambah 1 ke depannya)</div>
+        </div>
+        <table class="tbl" style="margin-top:.5rem">
+          <thead><tr><th>Bilangan</th><th>Ke Puluhan Terdekat</th><th>Ke Ratusan Terdekat</th></tr></thead>
+          <tbody>
+            <tr><td>347</td><td>350</td><td>300</td></tr>
+            <tr><td>865</td><td>870</td><td>900</td></tr>
+            <tr class="hl-row"><td>2.450</td><td>2.450</td><td>2.500</td></tr>
+            <tr><td>7.849</td><td>7.850</td><td>7.800</td></tr>
+          </tbody>
+        </table>
+        <div class="contoh">
+          <div class="contoh-label">Taksiran: 389 × 21 ≈ ?</div>
+          Taksiran atas: 400 × 30 = 12.000 &nbsp;|&nbsp; Taksiran bawah: 300 × 20 = 6.000
+          <div class="jawaban">Hasil sebenarnya: 389 × 21 = 8.169 (di antara taksiran atas dan bawah ✓)</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ SLIDE 12 — SOAL CERITA FPB & KPK ══ -->
+    <div class="slide" id="sl12">
+      <div class="slide-content">
+        <div class="slide-label">Slide 12 · Soal Cerita</div>
+        <h2 class="slide-heading">Latihan Soal Cerita FPB &amp; KPK</h2>
+        <div class="contoh">
+          <div class="contoh-label">Soal 1 (FPB)</div>
+          Pak Budi memiliki 48 buku dan 36 pensil. Ia ingin membagi buku dan pensil tersebut ke beberapa siswa secara merata tanpa sisa. Berapa siswa terbanyak yang bisa mendapat bagian?
+          <div class="jawaban">FPB(48, 36): 48 = 2⁴ × 3; 36 = 2² × 3² → FPB = 2² × 3 = <strong>12 siswa</strong><br>Tiap siswa mendapat 48÷12 = 4 buku dan 36÷12 = 3 pensil.</div>
+        </div>
+        <div class="contoh">
+          <div class="contoh-label">Soal 2 (KPK)</div>
+          Bus A berangkat setiap 15 menit, Bus B setiap 20 menit. Keduanya berangkat bersama pukul 06.00. Pukul berapa keduanya berangkat bersama lagi?
+          <div class="jawaban">KPK(15, 20): 15 = 3 × 5; 20 = 2² × 5 → KPK = 2² × 3 × 5 = <strong>60 menit</strong><br>Jadi keduanya berangkat bersama lagi pukul <strong>07.00</strong>.</div>
+        </div>
+        <div class="contoh">
+          <div class="contoh-label">Soal 3 (Operasi Campuran)</div>
+          Hasil dari 24 + 36 ÷ 4 × 3 − 15 = ?
+          <div class="jawaban">= 24 + (36 ÷ 4) × 3 − 15 = 24 + 9 × 3 − 15 = 24 + 27 − 15 = <strong>36</strong></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ SLIDE 13 — RANGKUMAN ══ -->
+    <div class="slide" id="sl13">
+      <div class="slide-content">
+        <div class="slide-label">Slide 13 · Rangkuman</div>
+        <h2 class="slide-heading">Rangkuman Bilangan Bulat</h2>
+        <table class="tbl">
+          <thead><tr><th>Topik</th><th>Poin Kunci</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Jenis Bilangan</strong></td><td>Prima (hanya 2 faktor) · Komposit · Ganjil · Genap · Negatif</td></tr>
+            <tr><td><strong>Operasi Hitung</strong></td><td>Urutan: Kurung → Pangkat/Akar → × / ÷ → + −</td></tr>
+            <tr><td><strong>Sifat Operasi</strong></td><td>Komutatif (a+b=b+a) · Asosiatif · Distributif (a×(b+c)=ab+ac)</td></tr>
+            <tr class="hl-row"><td><strong>FPB</strong></td><td>Faktor prima SAMA, pangkat TERKECIL · kata kunci: "sama rata", "terbanyak"</td></tr>
+            <tr class="hl-row"><td><strong>KPK</strong></td><td>Faktor prima SEMUA, pangkat TERBESAR · kata kunci: "bersama-sama lagi", "bertemu kembali"</td></tr>
+            <tr><td><strong>Bilangan Negatif</strong></td><td>(−) × (−) = (+) · (+) × (−) = (−) · a−(−b) = a+b</td></tr>
+            <tr><td><strong>Pembulatan</strong></td><td>Angka &lt;5 → ke bawah · Angka ≥5 → ke atas</td></tr>
+          </tbody>
+        </table>
+        <div class="hl hl-green">
+          <span class="hl-icon">✅</span>
+          <span>Selamat! Kamu sudah mempelajari <strong>Bilangan Bulat</strong> — dari jenis bilangan, operasi hitung, FPB, KPK, bilangan negatif, hingga pembulatan dan taksiran.</span>
+        </div>
+        <a href="../soal/paket-01.html" class="cta-btn">📝 Latihan Soal Sekarang →</a>
+      </div>
+    </div>
+
+  </div><!-- /slides-wrap -->
+
+  <footer class="s-footer">
+    <button class="nav-btn prev-btn" id="btn-prev" onclick="prev()" disabled>◄ Sebelumnya</button>
+    <div class="s-hint"><kbd>←</kbd> <kbd>→</kbd> navigasi &nbsp;·&nbsp; <kbd>F</kbd> layar penuh</div>
+    <button class="nav-btn next-btn" id="btn-next" onclick="next()">Berikutnya ►</button>
+  </footer>
+
+  <script>
+    const TOTAL = 13;
+    let cur = 1;
+    function showSlide(n) {
+      const pv = document.getElementById('sl' + cur);
+      const nx = document.getElementById('sl' + n);
+      if (!nx) return;
+      pv.classList.add('leaving'); pv.classList.remove('active');
+      setTimeout(() => pv.classList.remove('leaving'), 400);
+      nx.classList.add('active'); cur = n;
+      document.getElementById('s-counter').textContent = cur + ' / ' + TOTAL;
+      document.getElementById('s-prog').style.width = (cur / TOTAL * 100).toFixed(2) + '%';
+      document.getElementById('btn-prev').disabled = (cur === 1);
+      document.getElementById('btn-next').disabled = (cur === TOTAL);
+    }
+    function next() { if (cur < TOTAL) showSlide(cur + 1); }
+    function prev() { if (cur > 1)     showSlide(cur - 1); }
+    document.addEventListener('keydown', e => {
+      if (e.code === 'ArrowRight' || e.code === 'ArrowDown') next();
+      if (e.code === 'ArrowLeft'  || e.code === 'ArrowUp')   prev();
+      if (e.code === 'KeyF') toggleFS();
+    });
+    document.getElementById('btn-fs').addEventListener('click', toggleFS);
+    function toggleFS() {
+      if (!document.fullscreenElement) document.documentElement.requestFullscreen().catch(() => {});
+      else document.exitFullscreen();
+    }
+    let ts = 0;
+    document.getElementById('slides-wrap').addEventListener('touchstart', e => { ts = e.touches[0].clientX; });
+    document.getElementById('slides-wrap').addEventListener('touchend', e => {
+      const dx = e.changedTouches[0].clientX - ts;
+      if (Math.abs(dx) > 50) { dx < 0 ? next() : prev(); }
+    });
+  </script>
+</body>
+</html>
