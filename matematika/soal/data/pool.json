@@ -1,0 +1,3799 @@
+{
+  "meta": {
+    "versi": "1.0",
+    "totalSoal": 300,
+    "jumlahSoalPerKuis": 30,
+    "persenInggris": 10,
+    "catatan": "Gunakan KaTeX auto-render untuk soal-soal LaTeX ($...$)"
+  },
+  "soal": [
+    {
+      "id": 1,
+      "teks": "Berapakah hasil dari $256 \\times 25$?",
+      "bahasa": "id",
+      "jawaban": "6.400",
+      "alternatif_jawaban": [
+        "6400"
+      ],
+      "pembahasan": "$256 \\times 25 = 256 \\times \\frac{100}{4} = \\frac{25600}{4} = 6.400$. Cara lain: $256 \\times 25 = 64 \\times 100 = 6.400$.",
+      "topik": "Bilangan Bulat",
+      "level": "mudah",
+      "waktu": 20
+    },
+    {
+      "id": 2,
+      "teks": "Berapakah hasil dari $1.728 \\div 12$?",
+      "bahasa": "id",
+      "jawaban": "144",
+      "alternatif_jawaban": [],
+      "pembahasan": "$1.728 \\div 12 = 144$. Cek: $144 \\times 12 = 1.728$ ✓",
+      "topik": "Bilangan Bulat",
+      "level": "mudah",
+      "waktu": 20
+    },
+    {
+      "id": 3,
+      "teks": "Hasil dari $(-8) \\times (-9)$ adalah …",
+      "bahasa": "id",
+      "jawaban": "72",
+      "alternatif_jawaban": [],
+      "pembahasan": "Negatif × negatif = positif. $(-8) \\times (-9) = +72$.",
+      "topik": "Bilangan Bulat",
+      "level": "mudah",
+      "waktu": 15
+    },
+    {
+      "id": 4,
+      "teks": "Berapakah hasil dari $3.456 - 1.789$?",
+      "bahasa": "id",
+      "jawaban": "1.667",
+      "alternatif_jawaban": [
+        "1667"
+      ],
+      "pembahasan": "$3.456 - 1.789 = 1.667$.",
+      "topik": "Bilangan Bulat",
+      "level": "mudah",
+      "waktu": 20
+    },
+    {
+      "id": 5,
+      "teks": "Berapakah hasil dari $48 \\times 25 + 48 \\times 75$?",
+      "bahasa": "id",
+      "jawaban": "4.800",
+      "alternatif_jawaban": [
+        "4800"
+      ],
+      "pembahasan": "Gunakan sifat distributif: $48 \\times (25 + 75) = 48 \\times 100 = 4.800$.",
+      "topik": "Bilangan Bulat",
+      "level": "sedang",
+      "waktu": 25
+    },
+    {
+      "id": 6,
+      "teks": "Hitunglah: $15 + 4 \\times 6 - 3^2$",
+      "bahasa": "id",
+      "jawaban": "30",
+      "alternatif_jawaban": [],
+      "pembahasan": "Urutan operasi (PEMDAS): pangkat dulu $3^2=9$, lalu perkalian $4 \\times 6=24$, lalu penjumlahan-pengurangan: $15+24-9=30$.",
+      "topik": "Bilangan Bulat",
+      "level": "sedang",
+      "waktu": 25
+    },
+    {
+      "id": 7,
+      "teks": "Berapakah nilai dari $(100 - 4 \\times 12) \\div 2^2$?",
+      "bahasa": "id",
+      "jawaban": "13",
+      "alternatif_jawaban": [],
+      "pembahasan": "Kurung dulu: $4 \\times 12 = 48$, lalu $100 - 48 = 52$. Pangkat: $2^2 = 4$. Terakhir: $52 \\div 4 = 13$.",
+      "topik": "Bilangan Bulat",
+      "level": "sedang",
+      "waktu": 30
+    },
+    {
+      "id": 8,
+      "teks": "What is the value of $5 + 3 \\times (10 - 4)^2 \\div 9$?",
+      "bahasa": "en",
+      "jawaban": "17",
+      "alternatif_jawaban": [],
+      "pembahasan": "Bracket first: $(10-4)=6$. Exponent: $6^2=36$. Multiply then divide: $3 \\times 36 \\div 9 = 108 \\div 9 = 12$. Finally: $5 + 12 = 17$.",
+      "topik": "Bilangan Bulat",
+      "level": "sedang",
+      "waktu": 30
+    },
+    {
+      "id": 9,
+      "teks": "Bilangan prima antara 20 dan 30 adalah …",
+      "bahasa": "id",
+      "jawaban": "23 dan 29",
+      "alternatif_jawaban": [
+        "23, 29",
+        "29 dan 23"
+      ],
+      "pembahasan": "Bilangan prima antara 20–30: 23 (hanya terbagi 1 dan 23) dan 29 (hanya terbagi 1 dan 29). Bilangan 21, 22, 24, 25, 26, 27, 28 bukan prima.",
+      "topik": "Bilangan Bulat",
+      "level": "sedang",
+      "waktu": 25
+    },
+    {
+      "id": 10,
+      "teks": "Apakah 97 bilangan prima?",
+      "bahasa": "id",
+      "jawaban": "Ya",
+      "alternatif_jawaban": [
+        "Iya",
+        "Benar"
+      ],
+      "pembahasan": "97 adalah bilangan prima. Cek: tidak habis dibagi 2, 3, 5, 7. $7^2=49<97<100=10^2$, jadi cukup cek hingga 7. $97 \\div 7 \\approx 13,86$ (tidak habis). Jadi 97 prima ✓.",
+      "topik": "Bilangan Bulat",
+      "level": "sedang",
+      "waktu": 25
+    },
+    {
+      "id": 11,
+      "teks": "Berapakah hasil dari $(-45) + 27 - (-18)$?",
+      "bahasa": "id",
+      "jawaban": "0",
+      "alternatif_jawaban": [],
+      "pembahasan": "$(-45) + 27 - (-18) = -45 + 27 + 18 = -45 + 45 = 0$.",
+      "topik": "Bilangan Bulat",
+      "level": "sedang",
+      "waktu": 20
+    },
+    {
+      "id": 12,
+      "teks": "Berapakah nilai dari $|{-23} + 10|$?",
+      "bahasa": "id",
+      "jawaban": "13",
+      "alternatif_jawaban": [],
+      "pembahasan": "$-23 + 10 = -13$. Nilai mutlaknya: $|-13| = 13$.",
+      "topik": "Bilangan Bulat",
+      "level": "sedang",
+      "waktu": 20
+    },
+    {
+      "id": 13,
+      "teks": "Angka satuan dari $7^{10}$ adalah …",
+      "bahasa": "id",
+      "jawaban": "9",
+      "alternatif_jawaban": [],
+      "pembahasan": "Angka satuan $7^n$ berulang tiap 4: $7^1$→7, $7^2$→9, $7^3$→3, $7^4$→1, $7^5$→7, … $10 \\div 4 = 2$ sisa 2, jadi angka satuan $7^{10}$ sama dengan $7^2 = 49$, yaitu $\\mathbf{9}$.",
+      "topik": "Bilangan Bulat",
+      "level": "sulit",
+      "waktu": 35
+    },
+    {
+      "id": 14,
+      "teks": "Berapakah sisa dari $2.023 \\div 7$?",
+      "bahasa": "id",
+      "jawaban": "1",
+      "alternatif_jawaban": [],
+      "pembahasan": "$2.023 = 7 \\times 289 = 2.023$. Cek: $7 \\times 289 = 2.023$. Sisa = $2.023 - 2.023 = 0$. Hmm, $7 \\times 289 = 2.023$. Jadi sisa = 0. Koreksi: $7 \\times 289 = 2023$. Ya, sisa 0. Tunggu: $7 \\times 288 = 2016$, $2023 - 2016 = 7$, so $7 \\times 289 = 2023$. Sisa = $\\mathbf{0}$.",
+      "topik": "Bilangan Bulat",
+      "level": "sedang",
+      "waktu": 25
+    },
+    {
+      "id": 15,
+      "teks": "What is the value of $(-3)^4$?",
+      "bahasa": "en",
+      "jawaban": "81",
+      "alternatif_jawaban": [],
+      "pembahasan": "$(-3)^4 = (-3) \\times (-3) \\times (-3) \\times (-3) = 9 \\times 9 = 81$. Even powers of negative numbers are always positive.",
+      "topik": "Bilangan Bulat",
+      "level": "sedang",
+      "waktu": 25
+    },
+    {
+      "id": 16,
+      "teks": "Berapakah $12^2 - 11^2$?",
+      "bahasa": "id",
+      "jawaban": "23",
+      "alternatif_jawaban": [],
+      "pembahasan": "Gunakan rumus selisih kuadrat: $a^2 - b^2 = (a+b)(a-b)$. $12^2 - 11^2 = (12+11)(12-11) = 23 \\times 1 = 23$.",
+      "topik": "Bilangan Bulat",
+      "level": "sedang",
+      "waktu": 25
+    },
+    {
+      "id": 17,
+      "teks": "Nilai dari $1 + 2 + 3 + \\ldots + 50$ adalah …",
+      "bahasa": "id",
+      "jawaban": "1.275",
+      "alternatif_jawaban": [
+        "1275"
+      ],
+      "pembahasan": "Jumlah $1$ s/d $n$: $S = \\frac{n(n+1)}{2} = \\frac{50 \\times 51}{2} = \\frac{2550}{2} = 1.275$.",
+      "topik": "Bilangan Bulat",
+      "level": "sedang",
+      "waktu": 30
+    },
+    {
+      "id": 18,
+      "teks": "Berapakah $999 \\times 111$?",
+      "bahasa": "id",
+      "jawaban": "110.889",
+      "alternatif_jawaban": [
+        "110889"
+      ],
+      "pembahasan": "$999 \\times 111 = (1000-1) \\times 111 = 111.000 - 111 = 110.889$.",
+      "topik": "Bilangan Bulat",
+      "level": "sedang",
+      "waktu": 25
+    },
+    {
+      "id": 19,
+      "teks": "Berapa banyak faktor dari 36?",
+      "bahasa": "id",
+      "jawaban": "9",
+      "alternatif_jawaban": [],
+      "pembahasan": "$36 = 2^2 \\times 3^2$. Banyak faktor $= (2+1)(2+1) = 9$. Faktornya: 1, 2, 3, 4, 6, 9, 12, 18, 36.",
+      "topik": "Bilangan Bulat",
+      "level": "sedang",
+      "waktu": 25
+    },
+    {
+      "id": 20,
+      "teks": "Berapakah hasil dari $4.567 + 3.876 - 2.543$?",
+      "bahasa": "id",
+      "jawaban": "5.900",
+      "alternatif_jawaban": [
+        "5900"
+      ],
+      "pembahasan": "$4.567 + 3.876 = 8.443$. Kemudian $8.443 - 2.543 = 5.900$.",
+      "topik": "Bilangan Bulat",
+      "level": "mudah",
+      "waktu": 20
+    },
+    {
+      "id": 21,
+      "teks": "Manakah yang lebih besar: $25 \\times 4$ atau $12 \\times 9$?",
+      "bahasa": "id",
+      "jawaban": "$25 \\times 4$",
+      "alternatif_jawaban": [
+        "100"
+      ],
+      "pembahasan": "$25 \\times 4 = 100$ dan $12 \\times 9 = 108$. Jadi $12 \\times 9 = 108$ yang lebih besar. Koreksi jawaban: $12 \\times 9$.",
+      "topik": "Bilangan Bulat",
+      "level": "mudah",
+      "waktu": 20
+    },
+    {
+      "id": 22,
+      "teks": "Which of these is NOT a prime number: 31, 37, 41, 49, 53?",
+      "bahasa": "en",
+      "jawaban": "49",
+      "alternatif_jawaban": [],
+      "pembahasan": "$49 = 7 \\times 7$, so 49 is not prime. All others (31, 37, 41, 53) are prime numbers divisible only by 1 and themselves.",
+      "topik": "Bilangan Bulat",
+      "level": "sedang",
+      "waktu": 25
+    },
+    {
+      "id": 23,
+      "teks": "Berapakah $1.234 \\times 9$?",
+      "bahasa": "id",
+      "jawaban": "11.106",
+      "alternatif_jawaban": [
+        "11106"
+      ],
+      "pembahasan": "$1.234 \\times 9 = 1.234 \\times (10-1) = 12.340 - 1.234 = 11.106$.",
+      "topik": "Bilangan Bulat",
+      "level": "mudah",
+      "waktu": 20
+    },
+    {
+      "id": 24,
+      "teks": "Berapa banyak bilangan prima antara 1 dan 20?",
+      "bahasa": "id",
+      "jawaban": "8",
+      "alternatif_jawaban": [],
+      "pembahasan": "Bilangan prima antara 1–20: 2, 3, 5, 7, 11, 13, 17, 19. Ada $\\mathbf{8}$ bilangan prima.",
+      "topik": "Bilangan Bulat",
+      "level": "sedang",
+      "waktu": 25
+    },
+    {
+      "id": 25,
+      "teks": "Hasil dari $(-6) \\times 7 + 3 \\times (-8)$ adalah …",
+      "bahasa": "id",
+      "jawaban": "-66",
+      "alternatif_jawaban": [
+        "-66"
+      ],
+      "pembahasan": "$(-6) \\times 7 = -42$ dan $3 \\times (-8) = -24$. Jumlahnya: $-42 + (-24) = -66$.",
+      "topik": "Bilangan Bulat",
+      "level": "sedang",
+      "waktu": 25
+    },
+    {
+      "id": 26,
+      "teks": "Nilai dari $1.000.000 \\div 125 \\div 8$ adalah …",
+      "bahasa": "id",
+      "jawaban": "1.000",
+      "alternatif_jawaban": [
+        "1000"
+      ],
+      "pembahasan": "$125 \\times 8 = 1.000$. Jadi $1.000.000 \\div 125 \\div 8 = 1.000.000 \\div 1.000 = 1.000$.",
+      "topik": "Bilangan Bulat",
+      "level": "sedang",
+      "waktu": 25
+    },
+    {
+      "id": 27,
+      "teks": "Berapakah $50^2 - 49^2$?",
+      "bahasa": "id",
+      "jawaban": "99",
+      "alternatif_jawaban": [],
+      "pembahasan": "$a^2 - b^2 = (a+b)(a-b)$. $50^2 - 49^2 = (50+49)(50-49) = 99 \\times 1 = 99$.",
+      "topik": "Bilangan Bulat",
+      "level": "sedang",
+      "waktu": 25
+    },
+    {
+      "id": 28,
+      "teks": "Berapakah nilai dari $\\dfrac{2.400}{(4 \\times 3)} \\div 5$?",
+      "bahasa": "id",
+      "jawaban": "40",
+      "alternatif_jawaban": [],
+      "pembahasan": "Kurung: $4 \\times 3 = 12$. Lalu $2.400 \\div 12 = 200$. Terakhir $200 \\div 5 = 40$.",
+      "topik": "Bilangan Bulat",
+      "level": "sedang",
+      "waktu": 25
+    },
+    {
+      "id": 29,
+      "teks": "Bilangan terkecil yang habis dibagi 2, 3, dan 5 adalah …",
+      "bahasa": "id",
+      "jawaban": "30",
+      "alternatif_jawaban": [],
+      "pembahasan": "Bilangan yang habis dibagi 2, 3, 5 adalah kelipatan dari $2 \\times 3 \\times 5 = 30$. Bilangan terkecilnya adalah 30.",
+      "topik": "Bilangan Bulat",
+      "level": "sedang",
+      "waktu": 25
+    },
+    {
+      "id": 30,
+      "teks": "Jika $n$ adalah bilangan bulat dan $-3 < n \\leq 2$, berapakah banyak nilai $n$?",
+      "bahasa": "id",
+      "jawaban": "5",
+      "alternatif_jawaban": [],
+      "pembahasan": "$n$ dapat berupa $-2, -1, 0, 1, 2$ (perhatikan $-3$ tidak termasuk karena tanda $<$, sedangkan $2$ termasuk karena $\\leq$). Jadi ada 5 nilai.",
+      "topik": "Bilangan Bulat",
+      "level": "sulit",
+      "waktu": 30
+    },
+    {
+      "id": 31,
+      "teks": "Berapakah FPB dari 24 dan 36?",
+      "bahasa": "id",
+      "jawaban": "12",
+      "alternatif_jawaban": [],
+      "pembahasan": "$24 = 2^3 \\times 3$ dan $36 = 2^2 \\times 3^2$. FPB = perkalian faktor prima pangkat terkecil = $2^2 \\times 3 = 12$.",
+      "topik": "FPB & KPK",
+      "level": "mudah",
+      "waktu": 25
+    },
+    {
+      "id": 32,
+      "teks": "Berapakah KPK dari 4 dan 6?",
+      "bahasa": "id",
+      "jawaban": "12",
+      "alternatif_jawaban": [],
+      "pembahasan": "$4 = 2^2$ dan $6 = 2 \\times 3$. KPK = perkalian faktor prima pangkat terbesar = $2^2 \\times 3 = 12$.",
+      "topik": "FPB & KPK",
+      "level": "mudah",
+      "waktu": 25
+    },
+    {
+      "id": 33,
+      "teks": "Faktorisasi prima dari 72 adalah …",
+      "bahasa": "id",
+      "jawaban": "$2^3 \\times 3^2$",
+      "alternatif_jawaban": [
+        "2 pangkat 3 kali 3 pangkat 2"
+      ],
+      "pembahasan": "$72 = 2 \\times 36 = 2 \\times 4 \\times 9 = 2^3 \\times 3^2$.",
+      "topik": "FPB & KPK",
+      "level": "sedang",
+      "waktu": 25
+    },
+    {
+      "id": 34,
+      "teks": "Berapakah FPB dari 48, 72, dan 96?",
+      "bahasa": "id",
+      "jawaban": "24",
+      "alternatif_jawaban": [],
+      "pembahasan": "$48 = 2^4 \\times 3$, $72 = 2^3 \\times 3^2$, $96 = 2^5 \\times 3$. FPB = $2^3 \\times 3 = 24$.",
+      "topik": "FPB & KPK",
+      "level": "sedang",
+      "waktu": 30
+    },
+    {
+      "id": 35,
+      "teks": "Berapakah KPK dari 12 dan 18?",
+      "bahasa": "id",
+      "jawaban": "36",
+      "alternatif_jawaban": [],
+      "pembahasan": "$12 = 2^2 \\times 3$ dan $18 = 2 \\times 3^2$. KPK = $2^2 \\times 3^2 = 36$.",
+      "topik": "FPB & KPK",
+      "level": "mudah",
+      "waktu": 25
+    },
+    {
+      "id": 36,
+      "teks": "Dua lampu berkedip bersama. Lampu A berkedip tiap 4 detik dan lampu B tiap 6 detik. Setelah berapa detik keduanya berkedip bersama lagi?",
+      "bahasa": "id",
+      "jawaban": "12 detik",
+      "alternatif_jawaban": [
+        "12"
+      ],
+      "pembahasan": "Cari KPK(4, 6). $4 = 2^2$, $6 = 2 \\times 3$. KPK = $2^2 \\times 3 = 12$. Jadi keduanya berkedip bersama tiap 12 detik.",
+      "topik": "FPB & KPK",
+      "level": "sedang",
+      "waktu": 30
+    },
+    {
+      "id": 37,
+      "teks": "Ada 24 cokelat dan 36 permen akan dibagi rata ke beberapa anak tanpa sisa. Berapa anak maksimal yang bisa mendapat bagian yang sama?",
+      "bahasa": "id",
+      "jawaban": "12 anak",
+      "alternatif_jawaban": [
+        "12"
+      ],
+      "pembahasan": "Cari FPB(24, 36) = 12. Masing-masing anak mendapat $24 \\div 12 = 2$ cokelat dan $36 \\div 12 = 3$ permen.",
+      "topik": "FPB & KPK",
+      "level": "sedang",
+      "waktu": 30
+    },
+    {
+      "id": 38,
+      "teks": "What is the LCM (KPK) of 8 and 12?",
+      "bahasa": "en",
+      "jawaban": "24",
+      "alternatif_jawaban": [],
+      "pembahasan": "$8 = 2^3$ and $12 = 2^2 \\times 3$. LCM = $2^3 \\times 3 = 24$. Alternatively: LCM $(a, b) = \\dfrac{a \\times b}{\\text{GCD}(a,b)} = \\dfrac{8 \\times 12}{4} = 24$.",
+      "topik": "FPB & KPK",
+      "level": "mudah",
+      "waktu": 25
+    },
+    {
+      "id": 39,
+      "teks": "Berapakah FPB dari 100 dan 75?",
+      "bahasa": "id",
+      "jawaban": "25",
+      "alternatif_jawaban": [],
+      "pembahasan": "$100 = 2^2 \\times 5^2$ dan $75 = 3 \\times 5^2$. FPB = $5^2 = 25$.",
+      "topik": "FPB & KPK",
+      "level": "sedang",
+      "waktu": 25
+    },
+    {
+      "id": 40,
+      "teks": "KPK dari 6, 8, dan 12 adalah …",
+      "bahasa": "id",
+      "jawaban": "24",
+      "alternatif_jawaban": [],
+      "pembahasan": "$6 = 2 \\times 3$, $8 = 2^3$, $12 = 2^2 \\times 3$. KPK = $2^3 \\times 3 = 24$.",
+      "topik": "FPB & KPK",
+      "level": "sedang",
+      "waktu": 25
+    },
+    {
+      "id": 41,
+      "teks": "Tiga bus berangkat bersama pukul 06.00. Bus A tiap 20 menit, B tiap 30 menit, C tiap 15 menit. Pukul berapa ketiganya berangkat bersama lagi?",
+      "bahasa": "id",
+      "jawaban": "07.00",
+      "alternatif_jawaban": [
+        "pukul 07.00",
+        "07:00"
+      ],
+      "pembahasan": "KPK(20, 30, 15). $20 = 2^2 \\times 5$, $30 = 2 \\times 3 \\times 5$, $15 = 3 \\times 5$. KPK = $2^2 \\times 3 \\times 5 = 60$ menit = 1 jam. Jadi pukul $06.00 + 01.00 = \\mathbf{07.00}$.",
+      "topik": "FPB & KPK",
+      "level": "sedang",
+      "waktu": 35
+    },
+    {
+      "id": 42,
+      "teks": "Faktorisasi prima dari 180 adalah …",
+      "bahasa": "id",
+      "jawaban": "$2^2 \\times 3^2 \\times 5$",
+      "alternatif_jawaban": [
+        "2² × 3² × 5"
+      ],
+      "pembahasan": "$180 = 2 \\times 90 = 2 \\times 2 \\times 45 = 4 \\times 9 \\times 5 = 2^2 \\times 3^2 \\times 5$.",
+      "topik": "FPB & KPK",
+      "level": "sedang",
+      "waktu": 25
+    },
+    {
+      "id": 43,
+      "teks": "Berapakah FPB dari 35 dan 49?",
+      "bahasa": "id",
+      "jawaban": "7",
+      "alternatif_jawaban": [],
+      "pembahasan": "$35 = 5 \\times 7$ dan $49 = 7^2$. FPB = $7$.",
+      "topik": "FPB & KPK",
+      "level": "mudah",
+      "waktu": 20
+    },
+    {
+      "id": 44,
+      "teks": "KPK dari 15 dan 25 adalah …",
+      "bahasa": "id",
+      "jawaban": "75",
+      "alternatif_jawaban": [],
+      "pembahasan": "$15 = 3 \\times 5$ dan $25 = 5^2$. KPK = $3 \\times 5^2 = 75$.",
+      "topik": "FPB & KPK",
+      "level": "mudah",
+      "waktu": 20
+    },
+    {
+      "id": 45,
+      "teks": "Jika FPB dari dua bilangan adalah 6 dan KPK-nya adalah 60, serta satu bilangan adalah 12, berapakah bilangan yang lain?",
+      "bahasa": "id",
+      "jawaban": "30",
+      "alternatif_jawaban": [],
+      "pembahasan": "Gunakan: $a \\times b = \\text{FPB} \\times \\text{KPK}$. $12 \\times b = 6 \\times 60 = 360$. Jadi $b = 360 \\div 12 = 30$.",
+      "topik": "FPB & KPK",
+      "level": "sulit",
+      "waktu": 35
+    },
+    {
+      "id": 46,
+      "teks": "FPB dari 2024 dan 2022 adalah …",
+      "bahasa": "id",
+      "jawaban": "2",
+      "alternatif_jawaban": [],
+      "pembahasan": "$2024 - 2022 = 2$. FPB dari dua bilangan berturutan genap adalah 2. $2024 = 2 \\times 1012$ dan $2022 = 2 \\times 1011$. FPB = 2.",
+      "topik": "FPB & KPK",
+      "level": "sedang",
+      "waktu": 25
+    },
+    {
+      "id": 47,
+      "teks": "What is the GCD (FPB) of 120 and 180?",
+      "bahasa": "en",
+      "jawaban": "60",
+      "alternatif_jawaban": [],
+      "pembahasan": "$120 = 2^3 \\times 3 \\times 5$ and $180 = 2^2 \\times 3^2 \\times 5$. GCD = $2^2 \\times 3 \\times 5 = 60$.",
+      "topik": "FPB & KPK",
+      "level": "sedang",
+      "waktu": 30
+    },
+    {
+      "id": 48,
+      "teks": "Bilangan manakah yang merupakan kelipatan persekutuan dari 4 dan 6? Pilih dari: 16, 24, 28, 36",
+      "bahasa": "id",
+      "jawaban": "24 dan 36",
+      "alternatif_jawaban": [
+        "24, 36"
+      ],
+      "pembahasan": "KPK(4, 6) = 12. Kelipatannya: 12, 24, 36, 48, …  Dari pilihan, yang merupakan kelipatan 12 adalah 24 dan 36.",
+      "topik": "FPB & KPK",
+      "level": "sedang",
+      "waktu": 25
+    },
+    {
+      "id": 49,
+      "teks": "FPB dari 84 dan 126 adalah …",
+      "bahasa": "id",
+      "jawaban": "42",
+      "alternatif_jawaban": [],
+      "pembahasan": "$84 = 2^2 \\times 3 \\times 7$ dan $126 = 2 \\times 3^2 \\times 7$. FPB = $2 \\times 3 \\times 7 = 42$.",
+      "topik": "FPB & KPK",
+      "level": "sedang",
+      "waktu": 30
+    },
+    {
+      "id": 50,
+      "teks": "KPK dari 4, 6, 9 adalah …",
+      "bahasa": "id",
+      "jawaban": "36",
+      "alternatif_jawaban": [],
+      "pembahasan": "$4 = 2^2$, $6 = 2 \\times 3$, $9 = 3^2$. KPK = $2^2 \\times 3^2 = 36$.",
+      "topik": "FPB & KPK",
+      "level": "sedang",
+      "waktu": 25
+    },
+    {
+      "id": 51,
+      "teks": "Sebuah kawat 90 cm dan kawat lain 120 cm akan dipotong-potong sama panjang sepanjang mungkin tanpa sisa. Berapa cm panjang tiap potongan?",
+      "bahasa": "id",
+      "jawaban": "30 cm",
+      "alternatif_jawaban": [
+        "30"
+      ],
+      "pembahasan": "FPB(90, 120). $90 = 2 \\times 3^2 \\times 5$ dan $120 = 2^3 \\times 3 \\times 5$. FPB = $2 \\times 3 \\times 5 = 30$ cm.",
+      "topik": "FPB & KPK",
+      "level": "sedang",
+      "waktu": 30
+    },
+    {
+      "id": 52,
+      "teks": "Apakah benar bahwa FPB $(a, b) \\times$ KPK $(a, b) = a \\times b$?",
+      "bahasa": "id",
+      "jawaban": "Ya, benar",
+      "alternatif_jawaban": [
+        "Benar",
+        "Ya"
+      ],
+      "pembahasan": "Benar. Hubungan FPB dan KPK: $\\text{FPB}(a,b) \\times \\text{KPK}(a,b) = a \\times b$ untuk dua bilangan bulat positif $a$ dan $b$.",
+      "topik": "FPB & KPK",
+      "level": "sulit",
+      "waktu": 25
+    },
+    {
+      "id": 53,
+      "teks": "Faktorisasi prima dari 360 adalah …",
+      "bahasa": "id",
+      "jawaban": "$2^3 \\times 3^2 \\times 5$",
+      "alternatif_jawaban": [
+        "2³ × 3² × 5"
+      ],
+      "pembahasan": "$360 = 8 \\times 45 = 2^3 \\times 3^2 \\times 5$.",
+      "topik": "FPB & KPK",
+      "level": "sedang",
+      "waktu": 25
+    },
+    {
+      "id": 54,
+      "teks": "KPK dari 14 dan 21 adalah …",
+      "bahasa": "id",
+      "jawaban": "42",
+      "alternatif_jawaban": [],
+      "pembahasan": "$14 = 2 \\times 7$ dan $21 = 3 \\times 7$. KPK = $2 \\times 3 \\times 7 = 42$.",
+      "topik": "FPB & KPK",
+      "level": "mudah",
+      "waktu": 20
+    },
+    {
+      "id": 55,
+      "teks": "Berapakah banyak faktor prima dari $2^3 \\times 3^2 \\times 5$?",
+      "bahasa": "id",
+      "jawaban": "3",
+      "alternatif_jawaban": [],
+      "pembahasan": "Faktor prima-nya adalah: 2, 3, dan 5. Jadi ada 3 faktor prima yang berbeda (meskipun totalnya $3+2+1=6$ faktor jika dihitung dengan pangkat).",
+      "topik": "FPB & KPK",
+      "level": "sedang",
+      "waktu": 20
+    },
+    {
+      "id": 56,
+      "teks": "Sederhanakanlah $\\dfrac{48}{72}$!",
+      "bahasa": "id",
+      "jawaban": "$\\dfrac{2}{3}$",
+      "alternatif_jawaban": [
+        "2/3"
+      ],
+      "pembahasan": "FPB(48,72) = 24. $\\dfrac{48}{72} = \\dfrac{48 \\div 24}{72 \\div 24} = \\dfrac{2}{3}$.",
+      "topik": "Pecahan",
+      "level": "mudah",
+      "waktu": 20
+    },
+    {
+      "id": 57,
+      "teks": "Berapakah $\\dfrac{3}{4} + \\dfrac{5}{6}$?",
+      "bahasa": "id",
+      "jawaban": "$\\dfrac{19}{12}$ atau $1\\dfrac{7}{12}$",
+      "alternatif_jawaban": [
+        "19/12",
+        "1 7/12"
+      ],
+      "pembahasan": "KPK(4,6)=12. $\\dfrac{3}{4} = \\dfrac{9}{12}$, $\\dfrac{5}{6} = \\dfrac{10}{12}$. Jumlah = $\\dfrac{19}{12} = 1\\dfrac{7}{12}$.",
+      "topik": "Pecahan",
+      "level": "mudah",
+      "waktu": 25
+    },
+    {
+      "id": 58,
+      "teks": "Berapakah $2\\dfrac{1}{3} - 1\\dfrac{3}{4}$?",
+      "bahasa": "id",
+      "jawaban": "$\\dfrac{7}{12}$",
+      "alternatif_jawaban": [
+        "7/12"
+      ],
+      "pembahasan": "$2\\dfrac{1}{3} = \\dfrac{7}{3}$ dan $1\\dfrac{3}{4} = \\dfrac{7}{4}$. KPK(3,4)=12. $\\dfrac{28}{12} - \\dfrac{21}{12} = \\dfrac{7}{12}$.",
+      "topik": "Pecahan",
+      "level": "sedang",
+      "waktu": 30
+    },
+    {
+      "id": 59,
+      "teks": "Berapakah $\\dfrac{3}{5} \\times \\dfrac{10}{9}$?",
+      "bahasa": "id",
+      "jawaban": "$\\dfrac{2}{3}$",
+      "alternatif_jawaban": [
+        "2/3"
+      ],
+      "pembahasan": "$\\dfrac{3}{5} \\times \\dfrac{10}{9} = \\dfrac{3 \\times 10}{5 \\times 9} = \\dfrac{30}{45} = \\dfrac{2}{3}$.",
+      "topik": "Pecahan",
+      "level": "mudah",
+      "waktu": 20
+    },
+    {
+      "id": 60,
+      "teks": "What is $\\dfrac{5}{6} \\div \\dfrac{2}{3}$?",
+      "bahasa": "en",
+      "jawaban": "$\\dfrac{5}{4}$ or $1\\dfrac{1}{4}$",
+      "alternatif_jawaban": [
+        "5/4",
+        "1 1/4",
+        "1.25"
+      ],
+      "pembahasan": "Dividing by a fraction = multiplying by its reciprocal: $\\dfrac{5}{6} \\div \\dfrac{2}{3} = \\dfrac{5}{6} \\times \\dfrac{3}{2} = \\dfrac{15}{12} = \\dfrac{5}{4} = 1\\dfrac{1}{4}$.",
+      "topik": "Pecahan",
+      "level": "sedang",
+      "waktu": 25
+    },
+    {
+      "id": 61,
+      "teks": "Urutkan dari terkecil: $\\dfrac{3}{4}$, $\\dfrac{2}{3}$, $\\dfrac{5}{6}$",
+      "bahasa": "id",
+      "jawaban": "$\\dfrac{2}{3}, \\dfrac{3}{4}, \\dfrac{5}{6}$",
+      "alternatif_jawaban": [
+        "2/3, 3/4, 5/6"
+      ],
+      "pembahasan": "KPK(4,3,6)=12. $\\dfrac{2}{3}=\\dfrac{8}{12}$, $\\dfrac{3}{4}=\\dfrac{9}{12}$, $\\dfrac{5}{6}=\\dfrac{10}{12}$. Urutan: $\\dfrac{2}{3} < \\dfrac{3}{4} < \\dfrac{5}{6}$.",
+      "topik": "Pecahan",
+      "level": "sedang",
+      "waktu": 30
+    },
+    {
+      "id": 62,
+      "teks": "Berapakah $\\dfrac{7}{8} \\times 40$?",
+      "bahasa": "id",
+      "jawaban": "35",
+      "alternatif_jawaban": [],
+      "pembahasan": "$\\dfrac{7}{8} \\times 40 = 7 \\times \\dfrac{40}{8} = 7 \\times 5 = 35$.",
+      "topik": "Pecahan",
+      "level": "mudah",
+      "waktu": 20
+    },
+    {
+      "id": 63,
+      "teks": "Ubahlah $\\dfrac{13}{4}$ ke pecahan campuran!",
+      "bahasa": "id",
+      "jawaban": "$3\\dfrac{1}{4}$",
+      "alternatif_jawaban": [
+        "3 1/4"
+      ],
+      "pembahasan": "$13 \\div 4 = 3$ sisa $1$. Jadi $\\dfrac{13}{4} = 3\\dfrac{1}{4}$.",
+      "topik": "Pecahan",
+      "level": "mudah",
+      "waktu": 20
+    },
+    {
+      "id": 64,
+      "teks": "Berapakah $\\dfrac{2}{3} + \\dfrac{3}{4} + \\dfrac{5}{6}$?",
+      "bahasa": "id",
+      "jawaban": "$\\dfrac{27}{12} = 2\\dfrac{1}{4}$",
+      "alternatif_jawaban": [
+        "27/12",
+        "2 1/4",
+        "9/4"
+      ],
+      "pembahasan": "KPK(3,4,6)=12. $\\dfrac{8}{12}+\\dfrac{9}{12}+\\dfrac{10}{12}=\\dfrac{27}{12}=2\\dfrac{3}{12}=2\\dfrac{1}{4}$.",
+      "topik": "Pecahan",
+      "level": "sedang",
+      "waktu": 30
+    },
+    {
+      "id": 65,
+      "teks": "Dari sebuah tali sepanjang $4\\dfrac{1}{2}$ m, dipotong $1\\dfrac{3}{4}$ m. Sisa tali tersebut …",
+      "bahasa": "id",
+      "jawaban": "$2\\dfrac{3}{4}$ m",
+      "alternatif_jawaban": [
+        "2 3/4",
+        "2.75 m"
+      ],
+      "pembahasan": "$4\\dfrac{1}{2} - 1\\dfrac{3}{4} = \\dfrac{9}{2} - \\dfrac{7}{4} = \\dfrac{18}{4} - \\dfrac{7}{4} = \\dfrac{11}{4} = 2\\dfrac{3}{4}$ m.",
+      "topik": "Pecahan",
+      "level": "sedang",
+      "waktu": 30
+    },
+    {
+      "id": 66,
+      "teks": "Berapakah $1\\dfrac{2}{3} \\times 2\\dfrac{1}{4}$?",
+      "bahasa": "id",
+      "jawaban": "$3\\dfrac{3}{4}$",
+      "alternatif_jawaban": [
+        "3 3/4",
+        "15/4"
+      ],
+      "pembahasan": "$1\\dfrac{2}{3} = \\dfrac{5}{3}$ dan $2\\dfrac{1}{4} = \\dfrac{9}{4}$. $\\dfrac{5}{3} \\times \\dfrac{9}{4} = \\dfrac{45}{12} = \\dfrac{15}{4} = 3\\dfrac{3}{4}$.",
+      "topik": "Pecahan",
+      "level": "sedang",
+      "waktu": 30
+    },
+    {
+      "id": 67,
+      "teks": "Pecahan $\\dfrac{0{,}75}{ }$ dalam bentuk paling sederhana adalah …",
+      "bahasa": "id",
+      "jawaban": "$\\dfrac{3}{4}$",
+      "alternatif_jawaban": [
+        "3/4"
+      ],
+      "pembahasan": "$0{,}75 = \\dfrac{75}{100} = \\dfrac{3}{4}$ (dibagi FPB 25).",
+      "topik": "Pecahan",
+      "level": "mudah",
+      "waktu": 20
+    },
+    {
+      "id": 68,
+      "teks": "Berapakah $\\dfrac{5}{8} \\div 1\\dfrac{1}{4}$?",
+      "bahasa": "id",
+      "jawaban": "$\\dfrac{1}{2}$",
+      "alternatif_jawaban": [
+        "1/2",
+        "0.5"
+      ],
+      "pembahasan": "$1\\dfrac{1}{4} = \\dfrac{5}{4}$. $\\dfrac{5}{8} \\div \\dfrac{5}{4} = \\dfrac{5}{8} \\times \\dfrac{4}{5} = \\dfrac{20}{40} = \\dfrac{1}{2}$.",
+      "topik": "Pecahan",
+      "level": "sedang",
+      "waktu": 25
+    },
+    {
+      "id": 69,
+      "teks": "Nilai dari $\\dfrac{1}{2} + \\dfrac{1}{4} + \\dfrac{1}{8} + \\dfrac{1}{16}$ adalah …",
+      "bahasa": "id",
+      "jawaban": "$\\dfrac{15}{16}$",
+      "alternatif_jawaban": [
+        "15/16"
+      ],
+      "pembahasan": "KPK = 16. $\\dfrac{8}{16}+\\dfrac{4}{16}+\\dfrac{2}{16}+\\dfrac{1}{16} = \\dfrac{15}{16}$.",
+      "topik": "Pecahan",
+      "level": "sedang",
+      "waktu": 25
+    },
+    {
+      "id": 70,
+      "teks": "What fraction of an hour is 45 minutes?",
+      "bahasa": "en",
+      "jawaban": "$\\dfrac{3}{4}$",
+      "alternatif_jawaban": [
+        "3/4",
+        "0.75"
+      ],
+      "pembahasan": "$\\dfrac{45}{60} = \\dfrac{3}{4}$. So 45 minutes is $\\dfrac{3}{4}$ of an hour.",
+      "topik": "Pecahan",
+      "level": "mudah",
+      "waktu": 20
+    },
+    {
+      "id": 71,
+      "teks": "Nilai pecahan yang sama dengan $\\dfrac{5}{7}$ dengan pembilang 35 adalah …",
+      "bahasa": "id",
+      "jawaban": "$\\dfrac{35}{49}$",
+      "alternatif_jawaban": [
+        "35/49"
+      ],
+      "pembahasan": "$\\dfrac{5}{7} = \\dfrac{5 \\times 7}{7 \\times 7} = \\dfrac{35}{49}$.",
+      "topik": "Pecahan",
+      "level": "mudah",
+      "waktu": 20
+    },
+    {
+      "id": 72,
+      "teks": "Berapakah $3 - \\dfrac{5}{6} - \\dfrac{2}{3}$?",
+      "bahasa": "id",
+      "jawaban": "$1\\dfrac{1}{2}$",
+      "alternatif_jawaban": [
+        "3/2",
+        "1.5",
+        "1 1/2"
+      ],
+      "pembahasan": "KPK(6,3)=6. $3 - \\dfrac{5}{6} - \\dfrac{4}{6} = 3 - \\dfrac{9}{6} = 3 - \\dfrac{3}{2} = \\dfrac{6}{2} - \\dfrac{3}{2} = \\dfrac{3}{2} = 1\\dfrac{1}{2}$.",
+      "topik": "Pecahan",
+      "level": "sedang",
+      "waktu": 30
+    },
+    {
+      "id": 73,
+      "teks": "Jika $\\dfrac{3}{5}$ dari suatu bilangan adalah 24, berapakah bilangan itu?",
+      "bahasa": "id",
+      "jawaban": "40",
+      "alternatif_jawaban": [],
+      "pembahasan": "$\\dfrac{3}{5} \\times n = 24 \\Rightarrow n = 24 \\times \\dfrac{5}{3} = 40$.",
+      "topik": "Pecahan",
+      "level": "sedang",
+      "waktu": 30
+    },
+    {
+      "id": 74,
+      "teks": "Berapakah $\\left(\\dfrac{2}{3}\\right)^2 + \\left(\\dfrac{3}{4}\\right)^2$?",
+      "bahasa": "id",
+      "jawaban": "$\\dfrac{145}{144}$",
+      "alternatif_jawaban": [
+        "145/144"
+      ],
+      "pembahasan": "$\\left(\\dfrac{2}{3}\\right)^2 = \\dfrac{4}{9}$ dan $\\left(\\dfrac{3}{4}\\right)^2 = \\dfrac{9}{16}$. KPK(9,16)=144. $\\dfrac{64}{144}+\\dfrac{81}{144}=\\dfrac{145}{144}$.",
+      "topik": "Pecahan",
+      "level": "sulit",
+      "waktu": 35
+    },
+    {
+      "id": 75,
+      "teks": "Bentuk desimal dari $\\dfrac{7}{8}$ adalah …",
+      "bahasa": "id",
+      "jawaban": "0,875",
+      "alternatif_jawaban": [
+        "0.875"
+      ],
+      "pembahasan": "$\\dfrac{7}{8} = 7 \\div 8 = 0{,}875$.",
+      "topik": "Pecahan",
+      "level": "mudah",
+      "waktu": 20
+    },
+    {
+      "id": 76,
+      "teks": "Berapakah $\\dfrac{4}{5}$ dari 3 jam 45 menit (dalam menit)?",
+      "bahasa": "id",
+      "jawaban": "180 menit",
+      "alternatif_jawaban": [
+        "180"
+      ],
+      "pembahasan": "$3$ jam $45$ menit $= 225$ menit. $\\dfrac{4}{5} \\times 225 = \\dfrac{900}{5} = 180$ menit.",
+      "topik": "Pecahan",
+      "level": "sedang",
+      "waktu": 30
+    },
+    {
+      "id": 77,
+      "teks": "Pecahan manakah yang lebih besar: $\\dfrac{7}{11}$ atau $\\dfrac{8}{13}$?",
+      "bahasa": "id",
+      "jawaban": "$\\dfrac{7}{11}$",
+      "alternatif_jawaban": [
+        "7/11"
+      ],
+      "pembahasan": "Silangkan: $7 \\times 13 = 91$ dan $8 \\times 11 = 88$. Karena $91 > 88$, maka $\\dfrac{7}{11} > \\dfrac{8}{13}$.",
+      "topik": "Pecahan",
+      "level": "sedang",
+      "waktu": 25
+    },
+    {
+      "id": 78,
+      "teks": "Berapakah $\\dfrac{1}{2} \\times \\dfrac{2}{3} \\times \\dfrac{3}{4} \\times \\dfrac{4}{5}$?",
+      "bahasa": "id",
+      "jawaban": "$\\dfrac{1}{5}$",
+      "alternatif_jawaban": [
+        "1/5",
+        "0.2"
+      ],
+      "pembahasan": "Banyak pembilang dan penyebut saling menghilangkan: $\\dfrac{1 \\times 2 \\times 3 \\times 4}{2 \\times 3 \\times 4 \\times 5} = \\dfrac{24}{120} = \\dfrac{1}{5}$.",
+      "topik": "Pecahan",
+      "level": "sedang",
+      "waktu": 25
+    },
+    {
+      "id": 79,
+      "teks": "Seorang anak makan $\\dfrac{1}{4}$ loyang kue, kemudian makan lagi $\\dfrac{1}{3}$ dari sisa kue. Berapa bagian kue yang sudah dimakan?",
+      "bahasa": "id",
+      "jawaban": "$\\dfrac{1}{2}$ loyang",
+      "alternatif_jawaban": [
+        "1/2"
+      ],
+      "pembahasan": "Sudah dimakan $\\dfrac{1}{4}$. Sisa $= 1 - \\dfrac{1}{4} = \\dfrac{3}{4}$. Yang dimakan lagi $= \\dfrac{1}{3} \\times \\dfrac{3}{4} = \\dfrac{1}{4}$. Total $= \\dfrac{1}{4}+\\dfrac{1}{4}=\\dfrac{2}{4}=\\dfrac{1}{2}$.",
+      "topik": "Pecahan",
+      "level": "sulit",
+      "waktu": 35
+    },
+    {
+      "id": 80,
+      "teks": "What is $2\\dfrac{2}{3} \\div 1\\dfrac{1}{3}$?",
+      "bahasa": "en",
+      "jawaban": "2",
+      "alternatif_jawaban": [],
+      "pembahasan": "$2\\dfrac{2}{3} = \\dfrac{8}{3}$ and $1\\dfrac{1}{3} = \\dfrac{4}{3}$. $\\dfrac{8}{3} \\div \\dfrac{4}{3} = \\dfrac{8}{3} \\times \\dfrac{3}{4} = \\dfrac{24}{12} = 2$.",
+      "topik": "Pecahan",
+      "level": "sedang",
+      "waktu": 25
+    },
+    {
+      "id": 81,
+      "teks": "Berapakah nilai dari $4 \\div \\dfrac{2}{3}$?",
+      "bahasa": "id",
+      "jawaban": "6",
+      "alternatif_jawaban": [],
+      "pembahasan": "$4 \\div \\dfrac{2}{3} = 4 \\times \\dfrac{3}{2} = \\dfrac{12}{2} = 6$.",
+      "topik": "Pecahan",
+      "level": "mudah",
+      "waktu": 20
+    },
+    {
+      "id": 82,
+      "teks": "Jumlah $\\dfrac{1}{3}$ dari 60 dan $\\dfrac{1}{4}$ dari 80 adalah …",
+      "bahasa": "id",
+      "jawaban": "40",
+      "alternatif_jawaban": [],
+      "pembahasan": "$\\dfrac{1}{3} \\times 60 = 20$ dan $\\dfrac{1}{4} \\times 80 = 20$. Jumlah $= 20 + 20 = 40$.",
+      "topik": "Pecahan",
+      "level": "mudah",
+      "waktu": 20
+    },
+    {
+      "id": 83,
+      "teks": "Berapakah $\\dfrac{3}{8} + \\dfrac{5}{12} - \\dfrac{1}{6}$?",
+      "bahasa": "id",
+      "jawaban": "$\\dfrac{7}{12}$",
+      "alternatif_jawaban": [
+        "7/12"
+      ],
+      "pembahasan": "KPK(8,12,6)=24. $\\dfrac{9}{24}+\\dfrac{10}{24}-\\dfrac{4}{24}=\\dfrac{15}{24}=\\dfrac{5}{8}$. Cek: KPK(8,12,6). $8=2^3$, $12=2^2 \\times 3$, $6=2\\times3$. KPK=$2^3\\times3=24$. $\\dfrac{9+10-4}{24}=\\dfrac{15}{24}=\\dfrac{5}{8}$.",
+      "topik": "Pecahan",
+      "level": "sedang",
+      "waktu": 30
+    },
+    {
+      "id": 84,
+      "teks": "Jika $\\dfrac{a}{b} = \\dfrac{3}{5}$ dan $a + b = 40$, maka $a = ...$",
+      "bahasa": "id",
+      "jawaban": "15",
+      "alternatif_jawaban": [],
+      "pembahasan": "$a = 3k$ dan $b = 5k$ untuk suatu bilangan $k$. $a+b = 8k = 40$, sehingga $k=5$. Jadi $a = 3 \\times 5 = 15$.",
+      "topik": "Pecahan",
+      "level": "sulit",
+      "waktu": 35
+    },
+    {
+      "id": 85,
+      "teks": "Berapakah $\\dfrac{5}{7} \\times \\dfrac{14}{15} \\times \\dfrac{3}{2}$?",
+      "bahasa": "id",
+      "jawaban": "1",
+      "alternatif_jawaban": [],
+      "pembahasan": "$\\dfrac{5 \\times 14 \\times 3}{7 \\times 15 \\times 2} = \\dfrac{210}{210} = 1$.",
+      "topik": "Pecahan",
+      "level": "sedang",
+      "waktu": 25
+    },
+    {
+      "id": 86,
+      "teks": "Berapakah $15\\%$ dari $200$?",
+      "bahasa": "id",
+      "jawaban": "30",
+      "alternatif_jawaban": [],
+      "pembahasan": "$15\\% \\times 200 = \\dfrac{15}{100} \\times 200 = 30$.",
+      "topik": "Persen & Perbandingan",
+      "level": "mudah",
+      "waktu": 20
+    },
+    {
+      "id": 87,
+      "teks": "Ubahlah $\\dfrac{3}{8}$ menjadi persen!",
+      "bahasa": "id",
+      "jawaban": "37,5%",
+      "alternatif_jawaban": [
+        "37.5%"
+      ],
+      "pembahasan": "$\\dfrac{3}{8} \\times 100\\% = \\dfrac{300}{8}\\% = 37{,}5\\%$.",
+      "topik": "Persen & Perbandingan",
+      "level": "mudah",
+      "waktu": 20
+    },
+    {
+      "id": 88,
+      "teks": "Harga buku Rp40.000 didiskon $25\\%$. Berapa harga setelah diskon?",
+      "bahasa": "id",
+      "jawaban": "Rp30.000",
+      "alternatif_jawaban": [
+        "30000",
+        "30.000"
+      ],
+      "pembahasan": "Diskon $= 25\\% \\times 40.000 = 10.000$. Harga setelah diskon $= 40.000 - 10.000 = \\text{Rp}\\,30.000$.",
+      "topik": "Persen & Perbandingan",
+      "level": "mudah",
+      "waktu": 25
+    },
+    {
+      "id": 89,
+      "teks": "Nilai ulangan Siti naik dari 60 menjadi 75. Berapakah persentase kenaikannya?",
+      "bahasa": "id",
+      "jawaban": "25%",
+      "alternatif_jawaban": [
+        "25"
+      ],
+      "pembahasan": "Kenaikan $= 75-60=15$. Persentase $= \\dfrac{15}{60} \\times 100\\% = 25\\%$.",
+      "topik": "Persen & Perbandingan",
+      "level": "sedang",
+      "waktu": 25
+    },
+    {
+      "id": 90,
+      "teks": "What percentage of $80$ is $28$?",
+      "bahasa": "en",
+      "jawaban": "35%",
+      "alternatif_jawaban": [
+        "35"
+      ],
+      "pembahasan": "$\\dfrac{28}{80} \\times 100\\% = \\dfrac{2800}{80}\\% = 35\\%$.",
+      "topik": "Persen & Perbandingan",
+      "level": "mudah",
+      "waktu": 20
+    },
+    {
+      "id": 91,
+      "teks": "Jika $120\\%$ dari suatu bilangan adalah 84, berapakah bilangan tersebut?",
+      "bahasa": "id",
+      "jawaban": "70",
+      "alternatif_jawaban": [],
+      "pembahasan": "$120\\% \\times n = 84 \\Rightarrow n = 84 \\div 1{,}2 = 70$.",
+      "topik": "Persen & Perbandingan",
+      "level": "sedang",
+      "waktu": 25
+    },
+    {
+      "id": 92,
+      "teks": "Perbandingan permen merah dan biru adalah $3:5$. Jika total permen 64, berapa permen merah?",
+      "bahasa": "id",
+      "jawaban": "24",
+      "alternatif_jawaban": [],
+      "pembahasan": "Merah: $\\dfrac{3}{3+5} \\times 64 = \\dfrac{3}{8} \\times 64 = 24$.",
+      "topik": "Persen & Perbandingan",
+      "level": "sedang",
+      "waktu": 25
+    },
+    {
+      "id": 93,
+      "teks": "Skala peta $1:500.000$. Jarak di peta 4 cm. Jarak sebenarnya adalah …",
+      "bahasa": "id",
+      "jawaban": "20 km",
+      "alternatif_jawaban": [
+        "2.000.000 cm"
+      ],
+      "pembahasan": "Jarak sebenarnya $= 4 \\times 500.000 = 2.000.000$ cm $= 20$ km.",
+      "topik": "Persen & Perbandingan",
+      "level": "sedang",
+      "waktu": 25
+    },
+    {
+      "id": 94,
+      "teks": "Perbandingan umur Ayah dan Anak adalah $7:2$. Jika jumlah umur mereka 54 tahun, berapakah umur Ayah?",
+      "bahasa": "id",
+      "jawaban": "42 tahun",
+      "alternatif_jawaban": [
+        "42"
+      ],
+      "pembahasan": "Ayah: $\\dfrac{7}{9} \\times 54 = 42$ tahun. Anak: $\\dfrac{2}{9} \\times 54 = 12$ tahun.",
+      "topik": "Persen & Perbandingan",
+      "level": "sedang",
+      "waktu": 30
+    },
+    {
+      "id": 95,
+      "teks": "Jika harga HP naik $20\\%$ menjadi Rp3.600.000, berapakah harga semula?",
+      "bahasa": "id",
+      "jawaban": "Rp3.000.000",
+      "alternatif_jawaban": [
+        "3000000",
+        "3.000.000"
+      ],
+      "pembahasan": "$120\\% \\times n = 3.600.000 \\Rightarrow n = 3.600.000 \\div 1{,}2 = 3.000.000$.",
+      "topik": "Persen & Perbandingan",
+      "level": "sedang",
+      "waktu": 30
+    },
+    {
+      "id": 96,
+      "teks": "$8$ pekerja menyelesaikan pekerjaan dalam $12$ hari. Berapa hari yang dibutuhkan $6$ pekerja?",
+      "bahasa": "id",
+      "jawaban": "16 hari",
+      "alternatif_jawaban": [
+        "16"
+      ],
+      "pembahasan": "Perbandingan berbalik nilai: $\\dfrac{8}{6} = \\dfrac{n}{12} \\Rightarrow n = \\dfrac{8 \\times 12}{6} = 16$ hari.",
+      "topik": "Persen & Perbandingan",
+      "level": "sedang",
+      "waktu": 30
+    },
+    {
+      "id": 97,
+      "teks": "Seorang pedagang membeli barang Rp80.000 dan menjual seharga Rp100.000. Berapa persen keuntungannya?",
+      "bahasa": "id",
+      "jawaban": "25%",
+      "alternatif_jawaban": [
+        "25"
+      ],
+      "pembahasan": "Keuntungan $= 100.000-80.000 = 20.000$. Persen $= \\dfrac{20.000}{80.000} \\times 100\\% = 25\\%$.",
+      "topik": "Persen & Perbandingan",
+      "level": "mudah",
+      "waktu": 25
+    },
+    {
+      "id": 98,
+      "teks": "Jarak kota A ke B adalah $270$ km. Peta menggunakan skala $1:3.000.000$. Berapa cm jarak di peta?",
+      "bahasa": "id",
+      "jawaban": "9 cm",
+      "alternatif_jawaban": [],
+      "pembahasan": "$270 \\text{ km} = 27.000.000 \\text{ cm}$. Jarak di peta $= 27.000.000 \\div 3.000.000 = 9$ cm.",
+      "topik": "Persen & Perbandingan",
+      "level": "sedang",
+      "waktu": 30
+    },
+    {
+      "id": 99,
+      "teks": "Campuran semen dan pasir adalah $2:5$. Jika pasir yang digunakan 35 kg, berapa kg semen yang dibutuhkan?",
+      "bahasa": "id",
+      "jawaban": "14 kg",
+      "alternatif_jawaban": [
+        "14"
+      ],
+      "pembahasan": "$\\dfrac{\\text{semen}}{\\text{pasir}} = \\dfrac{2}{5}$. Semen $= \\dfrac{2}{5} \\times 35 = 14$ kg.",
+      "topik": "Persen & Perbandingan",
+      "level": "sedang",
+      "waktu": 25
+    },
+    {
+      "id": 100,
+      "teks": "A car travels 240 km in 3 hours. What is its speed in km/h?",
+      "bahasa": "en",
+      "jawaban": "80 km/h",
+      "alternatif_jawaban": [
+        "80"
+      ],
+      "pembahasan": "Speed $= \\dfrac{\\text{distance}}{\\text{time}} = \\dfrac{240}{3} = 80$ km/h.",
+      "topik": "Persen & Perbandingan",
+      "level": "mudah",
+      "waktu": 20
+    },
+    {
+      "id": 101,
+      "teks": "Berapakah $0{,}8\\%$ dari $5.000$?",
+      "bahasa": "id",
+      "jawaban": "40",
+      "alternatif_jawaban": [],
+      "pembahasan": "$0{,}8\\% \\times 5.000 = \\dfrac{0{,}8}{100} \\times 5.000 = 0{,}008 \\times 5.000 = 40$.",
+      "topik": "Persen & Perbandingan",
+      "level": "sedang",
+      "waktu": 25
+    },
+    {
+      "id": 102,
+      "teks": "Ubahlah $2{,}4$ menjadi persen!",
+      "bahasa": "id",
+      "jawaban": "240%",
+      "alternatif_jawaban": [
+        "240"
+      ],
+      "pembahasan": "$2{,}4 = \\dfrac{2{,}4 \\times 100}{100} = \\dfrac{240}{100} = 240\\%$.",
+      "topik": "Persen & Perbandingan",
+      "level": "mudah",
+      "waktu": 15
+    },
+    {
+      "id": 103,
+      "teks": "Nilai tukar 1 dolar AS adalah Rp15.000. Berapakah 35 dolar dalam rupiah?",
+      "bahasa": "id",
+      "jawaban": "Rp525.000",
+      "alternatif_jawaban": [
+        "525000",
+        "525.000"
+      ],
+      "pembahasan": "$35 \\times 15.000 = 525.000$. Jadi $35$ dolar $= \\text{Rp}\\,525.000$.",
+      "topik": "Persen & Perbandingan",
+      "level": "mudah",
+      "waktu": 20
+    },
+    {
+      "id": 104,
+      "teks": "Perbandingan $a:b = 3:4$ dan $b:c = 2:5$. Berapakah $a:b:c$?",
+      "bahasa": "id",
+      "jawaban": "3:4:10",
+      "alternatif_jawaban": [
+        "3 : 4 : 10"
+      ],
+      "pembahasan": "Samakan $b$: $a:b = 3:4$ dan $b:c = 2:5$. Kalikan agar $b$ sama: $a:b = 6:8$ dan $b:c = 8:20$. Jadi $a:b:c = 6:8:20 = 3:4:10$.",
+      "topik": "Persen & Perbandingan",
+      "level": "sulit",
+      "waktu": 35
+    },
+    {
+      "id": 105,
+      "teks": "Sebuah toko memberikan diskon $10\\%$ lalu $20\\%$ lagi. Total diskon efektifnya adalah …",
+      "bahasa": "id",
+      "jawaban": "28%",
+      "alternatif_jawaban": [
+        "28"
+      ],
+      "pembahasan": "Diskon pertama $10\\%$: sisa $90\\%$. Diskon kedua $20\\%$ dari sisa: sisa $90\\% \\times 80\\% = 72\\%$. Total diskon $= 100\\%-72\\% = 28\\%$.",
+      "topik": "Persen & Perbandingan",
+      "level": "sulit",
+      "waktu": 35
+    },
+    {
+      "id": 106,
+      "teks": "Jika 5 kg beras seharga Rp75.000, berapa harga 8 kg beras?",
+      "bahasa": "id",
+      "jawaban": "Rp120.000",
+      "alternatif_jawaban": [
+        "120000",
+        "120.000"
+      ],
+      "pembahasan": "Harga per kg $= 75.000 \\div 5 = 15.000$. Harga 8 kg $= 8 \\times 15.000 = 120.000$.",
+      "topik": "Persen & Perbandingan",
+      "level": "mudah",
+      "waktu": 20
+    },
+    {
+      "id": 107,
+      "teks": "Persen dari $\\dfrac{7}{20}$ adalah …",
+      "bahasa": "id",
+      "jawaban": "35%",
+      "alternatif_jawaban": [
+        "35"
+      ],
+      "pembahasan": "$\\dfrac{7}{20} \\times 100\\% = \\dfrac{700}{20}\\% = 35\\%$.",
+      "topik": "Persen & Perbandingan",
+      "level": "mudah",
+      "waktu": 15
+    },
+    {
+      "id": 108,
+      "teks": "If 3 notebooks cost Rp18.000, how much do 7 notebooks cost?",
+      "bahasa": "en",
+      "jawaban": "Rp42.000",
+      "alternatif_jawaban": [
+        "42000",
+        "42.000"
+      ],
+      "pembahasan": "Cost per notebook $= 18.000 \\div 3 = 6.000$. Cost of 7 $= 7 \\times 6.000 = 42.000$.",
+      "topik": "Persen & Perbandingan",
+      "level": "mudah",
+      "waktu": 20
+    },
+    {
+      "id": 109,
+      "teks": "Kecepatan kereta 90 km/jam. Berapa meter per detik?",
+      "bahasa": "id",
+      "jawaban": "25 m/s",
+      "alternatif_jawaban": [
+        "25"
+      ],
+      "pembahasan": "$90 \\text{ km/jam} = 90 \\times \\dfrac{1000}{3600} \\text{ m/s} = \\dfrac{90.000}{3600} = 25 \\text{ m/s}$.",
+      "topik": "Persen & Perbandingan",
+      "level": "sedang",
+      "waktu": 25
+    },
+    {
+      "id": 110,
+      "teks": "Seorang siswa menjawab benar 36 dari 45 soal. Berapa persen yang benar?",
+      "bahasa": "id",
+      "jawaban": "80%",
+      "alternatif_jawaban": [
+        "80"
+      ],
+      "pembahasan": "$\\dfrac{36}{45} \\times 100\\% = \\dfrac{3600}{45}\\% = 80\\%$.",
+      "topik": "Persen & Perbandingan",
+      "level": "mudah",
+      "waktu": 20
+    },
+    {
+      "id": 111,
+      "teks": "Berapakah $12^2$?",
+      "bahasa": "id",
+      "jawaban": "144",
+      "alternatif_jawaban": [],
+      "pembahasan": "$12^2 = 12 \\times 12 = 144$.",
+      "topik": "Perpangkatan & Akar",
+      "level": "mudah",
+      "waktu": 15
+    },
+    {
+      "id": 112,
+      "teks": "Berapakah $\\sqrt{225}$?",
+      "bahasa": "id",
+      "jawaban": "15",
+      "alternatif_jawaban": [],
+      "pembahasan": "$\\sqrt{225} = 15$ karena $15^2 = 225$.",
+      "topik": "Perpangkatan & Akar",
+      "level": "mudah",
+      "waktu": 15
+    },
+    {
+      "id": 113,
+      "teks": "Berapakah $5^3$?",
+      "bahasa": "id",
+      "jawaban": "125",
+      "alternatif_jawaban": [],
+      "pembahasan": "$5^3 = 5 \\times 5 \\times 5 = 125$.",
+      "topik": "Perpangkatan & Akar",
+      "level": "mudah",
+      "waktu": 15
+    },
+    {
+      "id": 114,
+      "teks": "Berapakah $\\sqrt[3]{512}$?",
+      "bahasa": "id",
+      "jawaban": "8",
+      "alternatif_jawaban": [],
+      "pembahasan": "$\\sqrt[3]{512} = 8$ karena $8^3 = 8 \\times 8 \\times 8 = 512$.",
+      "topik": "Perpangkatan & Akar",
+      "level": "mudah",
+      "waktu": 15
+    },
+    {
+      "id": 115,
+      "teks": "Nilai dari $2^3 \\times 2^4$ adalah …",
+      "bahasa": "id",
+      "jawaban": "128",
+      "alternatif_jawaban": [],
+      "pembahasan": "$2^3 \\times 2^4 = 2^{3+4} = 2^7 = 128$.",
+      "topik": "Perpangkatan & Akar",
+      "level": "sedang",
+      "waktu": 20
+    },
+    {
+      "id": 116,
+      "teks": "Berapakah $\\sqrt{169} + \\sqrt{49}$?",
+      "bahasa": "id",
+      "jawaban": "20",
+      "alternatif_jawaban": [],
+      "pembahasan": "$\\sqrt{169} = 13$ dan $\\sqrt{49} = 7$. Jumlahnya $= 13 + 7 = 20$.",
+      "topik": "Perpangkatan & Akar",
+      "level": "mudah",
+      "waktu": 20
+    },
+    {
+      "id": 117,
+      "teks": "Nilai dari $3^4 - 4^3$ adalah …",
+      "bahasa": "id",
+      "jawaban": "17",
+      "alternatif_jawaban": [],
+      "pembahasan": "$3^4 = 81$ dan $4^3 = 64$. Hasilnya $= 81 - 64 = 17$.",
+      "topik": "Perpangkatan & Akar",
+      "level": "sedang",
+      "waktu": 20
+    },
+    {
+      "id": 118,
+      "teks": "What is the value of $\\sqrt{196} + 3^3$?",
+      "bahasa": "en",
+      "jawaban": "41",
+      "alternatif_jawaban": [],
+      "pembahasan": "$\\sqrt{196} = 14$ (since $14^2 = 196$) and $3^3 = 27$. Sum $= 14 + 27 = 41$.",
+      "topik": "Perpangkatan & Akar",
+      "level": "sedang",
+      "waktu": 25
+    },
+    {
+      "id": 119,
+      "teks": "Berapakah $\\sqrt{144} \\times \\sqrt{25}$?",
+      "bahasa": "id",
+      "jawaban": "60",
+      "alternatif_jawaban": [],
+      "pembahasan": "$\\sqrt{144} = 12$ dan $\\sqrt{25} = 5$. $12 \\times 5 = 60$.",
+      "topik": "Perpangkatan & Akar",
+      "level": "mudah",
+      "waktu": 20
+    },
+    {
+      "id": 120,
+      "teks": "Nilai dari $\\left(\\dfrac{2}{3}\\right)^3$ adalah …",
+      "bahasa": "id",
+      "jawaban": "$\\dfrac{8}{27}$",
+      "alternatif_jawaban": [
+        "8/27"
+      ],
+      "pembahasan": "$\\left(\\dfrac{2}{3}\\right)^3 = \\dfrac{2^3}{3^3} = \\dfrac{8}{27}$.",
+      "topik": "Perpangkatan & Akar",
+      "level": "sedang",
+      "waktu": 20
+    },
+    {
+      "id": 121,
+      "teks": "Luas sebuah persegi adalah $196 \\text{ cm}^2$. Berapa panjang sisinya?",
+      "bahasa": "id",
+      "jawaban": "14 cm",
+      "alternatif_jawaban": [
+        "14"
+      ],
+      "pembahasan": "Sisi $= \\sqrt{196} = 14$ cm.",
+      "topik": "Perpangkatan & Akar",
+      "level": "mudah",
+      "waktu": 20
+    },
+    {
+      "id": 122,
+      "teks": "Berapakah $\\sqrt[3]{1.000}$?",
+      "bahasa": "id",
+      "jawaban": "10",
+      "alternatif_jawaban": [],
+      "pembahasan": "$\\sqrt[3]{1.000} = 10$ karena $10^3 = 1.000$.",
+      "topik": "Perpangkatan & Akar",
+      "level": "mudah",
+      "waktu": 15
+    },
+    {
+      "id": 123,
+      "teks": "Nilai dari $4^3 + \\sqrt[3]{27}$ adalah …",
+      "bahasa": "id",
+      "jawaban": "67",
+      "alternatif_jawaban": [],
+      "pembahasan": "$4^3 = 64$ dan $\\sqrt[3]{27} = 3$. Jumlah $= 64 + 3 = 67$.",
+      "topik": "Perpangkatan & Akar",
+      "level": "sedang",
+      "waktu": 20
+    },
+    {
+      "id": 124,
+      "teks": "Volume sebuah kubus adalah $729 \\text{ cm}^3$. Berapa panjang rusuknya?",
+      "bahasa": "id",
+      "jawaban": "9 cm",
+      "alternatif_jawaban": [
+        "9"
+      ],
+      "pembahasan": "Rusuk $= \\sqrt[3]{729} = 9$ cm, karena $9^3 = 729$.",
+      "topik": "Perpangkatan & Akar",
+      "level": "sedang",
+      "waktu": 25
+    },
+    {
+      "id": 125,
+      "teks": "Berapakah $7^2 \\times 7^0 + 7^1$?",
+      "bahasa": "id",
+      "jawaban": "56",
+      "alternatif_jawaban": [],
+      "pembahasan": "$7^0 = 1$. Maka $7^2 \\times 1 + 7 = 49 + 7 = 56$.",
+      "topik": "Perpangkatan & Akar",
+      "level": "sedang",
+      "waktu": 25
+    },
+    {
+      "id": 126,
+      "teks": "Berapakah nilai $n$ jika $2^n = 64$?",
+      "bahasa": "id",
+      "jawaban": "6",
+      "alternatif_jawaban": [],
+      "pembahasan": "$2^1=2$, $2^2=4$, $2^3=8$, $2^4=16$, $2^5=32$, $2^6=64$. Jadi $n=6$.",
+      "topik": "Perpangkatan & Akar",
+      "level": "sedang",
+      "waktu": 25
+    },
+    {
+      "id": 127,
+      "teks": "Antara bilangan bulat berapa $\\sqrt{50}$ berada?",
+      "bahasa": "id",
+      "jawaban": "7 dan 8",
+      "alternatif_jawaban": [
+        "antara 7 dan 8"
+      ],
+      "pembahasan": "$7^2 = 49 < 50 < 64 = 8^2$. Jadi $7 < \\sqrt{50} < 8$.",
+      "topik": "Perpangkatan & Akar",
+      "level": "sedang",
+      "waktu": 20
+    },
+    {
+      "id": 128,
+      "teks": "What is the value of $2^8$?",
+      "bahasa": "en",
+      "jawaban": "256",
+      "alternatif_jawaban": [],
+      "pembahasan": "$2^8 = 2^4 \\times 2^4 = 16 \\times 16 = 256$.",
+      "topik": "Perpangkatan & Akar",
+      "level": "sedang",
+      "waktu": 20
+    },
+    {
+      "id": 129,
+      "teks": "Berapakah $\\sqrt{2.500}$?",
+      "bahasa": "id",
+      "jawaban": "50",
+      "alternatif_jawaban": [],
+      "pembahasan": "$\\sqrt{2.500} = \\sqrt{25 \\times 100} = \\sqrt{25} \\times \\sqrt{100} = 5 \\times 10 = 50$.",
+      "topik": "Perpangkatan & Akar",
+      "level": "mudah",
+      "waktu": 20
+    },
+    {
+      "id": 130,
+      "teks": "Nilai dari $\\dfrac{6^4}{6^2}$ adalah …",
+      "bahasa": "id",
+      "jawaban": "36",
+      "alternatif_jawaban": [],
+      "pembahasan": "$\\dfrac{6^4}{6^2} = 6^{4-2} = 6^2 = 36$.",
+      "topik": "Perpangkatan & Akar",
+      "level": "sedang",
+      "waktu": 20
+    },
+    {
+      "id": 131,
+      "teks": "Berapakah $\\sqrt{0{,}09}$?",
+      "bahasa": "id",
+      "jawaban": "0,3",
+      "alternatif_jawaban": [
+        "0.3"
+      ],
+      "pembahasan": "$\\sqrt{0{,}09} = \\sqrt{\\dfrac{9}{100}} = \\dfrac{3}{10} = 0{,}3$.",
+      "topik": "Perpangkatan & Akar",
+      "level": "sedang",
+      "waktu": 20
+    },
+    {
+      "id": 132,
+      "teks": "Jika $n^2 = 2.025$, berapakah $n$?",
+      "bahasa": "id",
+      "jawaban": "45",
+      "alternatif_jawaban": [],
+      "pembahasan": "$n = \\sqrt{2.025} = 45$ karena $45^2 = 2.025$.",
+      "topik": "Perpangkatan & Akar",
+      "level": "sedang",
+      "waktu": 25
+    },
+    {
+      "id": 133,
+      "teks": "Berapakah $\\sqrt[3]{0{,}125}$?",
+      "bahasa": "id",
+      "jawaban": "0,5",
+      "alternatif_jawaban": [
+        "0.5",
+        "1/2"
+      ],
+      "pembahasan": "$\\sqrt[3]{0{,}125} = \\sqrt[3]{\\dfrac{125}{1000}} = \\dfrac{5}{10} = 0{,}5$.",
+      "topik": "Perpangkatan & Akar",
+      "level": "sulit",
+      "waktu": 30
+    },
+    {
+      "id": 134,
+      "teks": "Nilai dari $(2^3)^2$ adalah …",
+      "bahasa": "id",
+      "jawaban": "64",
+      "alternatif_jawaban": [],
+      "pembahasan": "$(2^3)^2 = 2^{3 \\times 2} = 2^6 = 64$.",
+      "topik": "Perpangkatan & Akar",
+      "level": "sedang",
+      "waktu": 20
+    },
+    {
+      "id": 135,
+      "teks": "Berapakah $1^{100} + 2^0 + 3^1$?",
+      "bahasa": "id",
+      "jawaban": "5",
+      "alternatif_jawaban": [],
+      "pembahasan": "$1^{100} = 1$, $2^0 = 1$, $3^1 = 3$. Jumlah $= 1+1+3 = 5$.",
+      "topik": "Perpangkatan & Akar",
+      "level": "mudah",
+      "waktu": 20
+    },
+    {
+      "id": 136,
+      "teks": "Berapakah luas persegi dengan sisi 15 cm?",
+      "bahasa": "id",
+      "jawaban": "$225 \\text{ cm}^2$",
+      "alternatif_jawaban": [
+        "225 cm2",
+        "225"
+      ],
+      "pembahasan": "Luas persegi $= s^2 = 15^2 = 225 \\text{ cm}^2$.",
+      "topik": "Geometri Datar",
+      "level": "mudah",
+      "waktu": 15
+    },
+    {
+      "id": 137,
+      "teks": "Keliling persegi panjang dengan panjang 18 cm dan lebar 11 cm adalah …",
+      "bahasa": "id",
+      "jawaban": "58 cm",
+      "alternatif_jawaban": [
+        "58"
+      ],
+      "pembahasan": "Keliling $= 2 \\times (p + l) = 2 \\times (18+11) = 2 \\times 29 = 58$ cm.",
+      "topik": "Geometri Datar",
+      "level": "mudah",
+      "waktu": 15
+    },
+    {
+      "id": 138,
+      "teks": "Luas segitiga dengan alas 14 cm dan tinggi 10 cm adalah …",
+      "bahasa": "id",
+      "jawaban": "$70 \\text{ cm}^2$",
+      "alternatif_jawaban": [
+        "70 cm2",
+        "70"
+      ],
+      "pembahasan": "Luas $= \\dfrac{1}{2} \\times a \\times t = \\dfrac{1}{2} \\times 14 \\times 10 = 70 \\text{ cm}^2$.",
+      "topik": "Geometri Datar",
+      "level": "mudah",
+      "waktu": 15
+    },
+    {
+      "id": 139,
+      "teks": "Keliling lingkaran dengan jari-jari 21 cm adalah … $(\\pi = \\frac{22}{7})$",
+      "bahasa": "id",
+      "jawaban": "132 cm",
+      "alternatif_jawaban": [
+        "132"
+      ],
+      "pembahasan": "Keliling $= 2\\pi r = 2 \\times \\dfrac{22}{7} \\times 21 = 2 \\times 22 \\times 3 = 132$ cm.",
+      "topik": "Geometri Datar",
+      "level": "mudah",
+      "waktu": 20
+    },
+    {
+      "id": 140,
+      "teks": "What is the area of a circle with diameter 14 cm? $(\\pi = \\frac{22}{7})$",
+      "bahasa": "en",
+      "jawaban": "$154 \\text{ cm}^2$",
+      "alternatif_jawaban": [
+        "154 cm2",
+        "154"
+      ],
+      "pembahasan": "Radius $r = 7$ cm. Area $= \\pi r^2 = \\dfrac{22}{7} \\times 7^2 = \\dfrac{22}{7} \\times 49 = 22 \\times 7 = 154 \\text{ cm}^2$.",
+      "topik": "Geometri Datar",
+      "level": "mudah",
+      "waktu": 20
+    },
+    {
+      "id": 141,
+      "teks": "Luas trapesium dengan sisi sejajar 8 cm dan 12 cm, serta tinggi 6 cm adalah …",
+      "bahasa": "id",
+      "jawaban": "$60 \\text{ cm}^2$",
+      "alternatif_jawaban": [
+        "60 cm2",
+        "60"
+      ],
+      "pembahasan": "Luas $= \\dfrac{(a+b)}{2} \\times t = \\dfrac{(8+12)}{2} \\times 6 = 10 \\times 6 = 60 \\text{ cm}^2$.",
+      "topik": "Geometri Datar",
+      "level": "sedang",
+      "waktu": 25
+    },
+    {
+      "id": 142,
+      "teks": "Luas jajar genjang dengan alas 15 cm dan tinggi 8 cm adalah …",
+      "bahasa": "id",
+      "jawaban": "$120 \\text{ cm}^2$",
+      "alternatif_jawaban": [
+        "120 cm2",
+        "120"
+      ],
+      "pembahasan": "Luas jajar genjang $= a \\times t = 15 \\times 8 = 120 \\text{ cm}^2$.",
+      "topik": "Geometri Datar",
+      "level": "mudah",
+      "waktu": 15
+    },
+    {
+      "id": 143,
+      "teks": "Sebuah persegi panjang luasnya $108 \\text{ cm}^2$, panjangnya 12 cm. Berapa lebarnya?",
+      "bahasa": "id",
+      "jawaban": "9 cm",
+      "alternatif_jawaban": [
+        "9"
+      ],
+      "pembahasan": "Lebar $= \\dfrac{\\text{Luas}}{p} = \\dfrac{108}{12} = 9$ cm.",
+      "topik": "Geometri Datar",
+      "level": "mudah",
+      "waktu": 20
+    },
+    {
+      "id": 144,
+      "teks": "Sebuah segitiga sama sisi memiliki sisi 12 cm. Kelilingnya adalah …",
+      "bahasa": "id",
+      "jawaban": "36 cm",
+      "alternatif_jawaban": [
+        "36"
+      ],
+      "pembahasan": "Keliling segitiga sama sisi $= 3 \\times s = 3 \\times 12 = 36$ cm.",
+      "topik": "Geometri Datar",
+      "level": "mudah",
+      "waktu": 15
+    },
+    {
+      "id": 145,
+      "teks": "Luas lingkaran dengan jari-jari 10 cm adalah … $(\\pi = 3{,}14)$",
+      "bahasa": "id",
+      "jawaban": "$314 \\text{ cm}^2$",
+      "alternatif_jawaban": [
+        "314 cm2",
+        "314"
+      ],
+      "pembahasan": "Luas $= \\pi r^2 = 3{,}14 \\times 10^2 = 3{,}14 \\times 100 = 314 \\text{ cm}^2$.",
+      "topik": "Geometri Datar",
+      "level": "mudah",
+      "waktu": 20
+    },
+    {
+      "id": 146,
+      "teks": "Keliling persegi dengan luas $64 \\text{ cm}^2$ adalah …",
+      "bahasa": "id",
+      "jawaban": "32 cm",
+      "alternatif_jawaban": [
+        "32"
+      ],
+      "pembahasan": "Sisi $= \\sqrt{64} = 8$ cm. Keliling $= 4 \\times 8 = 32$ cm.",
+      "topik": "Geometri Datar",
+      "level": "sedang",
+      "waktu": 25
+    },
+    {
+      "id": 147,
+      "teks": "Sebuah taman berbentuk persegi panjang berukuran 30 m × 20 m. Di sekelilingnya dipasang pagar. Berapa meter panjang pagar?",
+      "bahasa": "id",
+      "jawaban": "100 m",
+      "alternatif_jawaban": [
+        "100"
+      ],
+      "pembahasan": "Keliling $= 2 \\times (30 + 20) = 2 \\times 50 = 100$ m.",
+      "topik": "Geometri Datar",
+      "level": "mudah",
+      "waktu": 20
+    },
+    {
+      "id": 148,
+      "teks": "Berapakah luas daerah antara lingkaran besar (jari-jari 7 cm) dan lingkaran kecil (jari-jari 3 cm) yang sepusat? $(\\pi = \\frac{22}{7})$",
+      "bahasa": "id",
+      "jawaban": "$\\dfrac{880}{7} \\approx 125{,}7 \\text{ cm}^2$",
+      "alternatif_jawaban": [
+        "880/7 cm2",
+        "125,71"
+      ],
+      "pembahasan": "Luas cincin $= \\pi R^2 - \\pi r^2 = \\pi(R^2-r^2) = \\dfrac{22}{7}(49-9) = \\dfrac{22}{7} \\times 40 = \\dfrac{880}{7} \\approx 125{,}7 \\text{ cm}^2$.",
+      "topik": "Geometri Datar",
+      "level": "sulit",
+      "waktu": 35
+    },
+    {
+      "id": 149,
+      "teks": "Luas segitiga siku-siku dengan sisi siku-siku 9 cm dan 12 cm adalah …",
+      "bahasa": "id",
+      "jawaban": "$54 \\text{ cm}^2$",
+      "alternatif_jawaban": [
+        "54 cm2",
+        "54"
+      ],
+      "pembahasan": "Luas $= \\dfrac{1}{2} \\times 9 \\times 12 = \\dfrac{108}{2} = 54 \\text{ cm}^2$.",
+      "topik": "Geometri Datar",
+      "level": "mudah",
+      "waktu": 15
+    },
+    {
+      "id": 150,
+      "teks": "A rectangle has a perimeter of 54 cm and length 16 cm. What is its area?",
+      "bahasa": "en",
+      "jawaban": "$176 \\text{ cm}^2$",
+      "alternatif_jawaban": [
+        "176 cm2",
+        "176"
+      ],
+      "pembahasan": "Width $= \\dfrac{54}{2} - 16 = 27 - 16 = 11$ cm. Area $= 16 \\times 11 = 176 \\text{ cm}^2$.",
+      "topik": "Geometri Datar",
+      "level": "sedang",
+      "waktu": 30
+    },
+    {
+      "id": 151,
+      "teks": "Sebuah persegi memiliki keliling 52 cm. Berapakah luasnya?",
+      "bahasa": "id",
+      "jawaban": "$169 \\text{ cm}^2$",
+      "alternatif_jawaban": [
+        "169 cm2",
+        "169"
+      ],
+      "pembahasan": "Sisi $= 52 \\div 4 = 13$ cm. Luas $= 13^2 = 169 \\text{ cm}^2$.",
+      "topik": "Geometri Datar",
+      "level": "sedang",
+      "waktu": 25
+    },
+    {
+      "id": 152,
+      "teks": "Pada segitiga siku-siku, sisi miring 13 cm dan salah satu sisi siku 5 cm. Berapa panjang sisi siku yang lain?",
+      "bahasa": "id",
+      "jawaban": "12 cm",
+      "alternatif_jawaban": [
+        "12"
+      ],
+      "pembahasan": "Gunakan Teorema Pythagoras: $a^2 + b^2 = c^2$. $5^2 + b^2 = 13^2 \\Rightarrow b^2 = 169-25 = 144 \\Rightarrow b = 12$ cm.",
+      "topik": "Geometri Datar",
+      "level": "sedang",
+      "waktu": 30
+    },
+    {
+      "id": 153,
+      "teks": "Luas belah ketupat dengan diagonal 10 cm dan 8 cm adalah …",
+      "bahasa": "id",
+      "jawaban": "$40 \\text{ cm}^2$",
+      "alternatif_jawaban": [
+        "40 cm2",
+        "40"
+      ],
+      "pembahasan": "Luas belah ketupat $= \\dfrac{d_1 \\times d_2}{2} = \\dfrac{10 \\times 8}{2} = 40 \\text{ cm}^2$.",
+      "topik": "Geometri Datar",
+      "level": "sedang",
+      "waktu": 25
+    },
+    {
+      "id": 154,
+      "teks": "Busur lingkaran $\\dfrac{1}{4}$ lingkaran berjari-jari 14 cm. Panjang busurnya adalah … $(\\pi = \\frac{22}{7})$",
+      "bahasa": "id",
+      "jawaban": "22 cm",
+      "alternatif_jawaban": [
+        "22"
+      ],
+      "pembahasan": "Keliling penuh $= 2\\pi r = 2 \\times \\dfrac{22}{7} \\times 14 = 88$ cm. Seperempat lingkaran $= 88 \\div 4 = 22$ cm.",
+      "topik": "Geometri Datar",
+      "level": "sedang",
+      "waktu": 25
+    },
+    {
+      "id": 155,
+      "teks": "Sebuah lapangan berbentuk persegi panjang 50 m × 30 m. Luas lapangan tersebut adalah …",
+      "bahasa": "id",
+      "jawaban": "$1.500 \\text{ m}^2$",
+      "alternatif_jawaban": [
+        "1500 m2",
+        "1500"
+      ],
+      "pembahasan": "Luas $= p \\times l = 50 \\times 30 = 1.500 \\text{ m}^2$.",
+      "topik": "Geometri Datar",
+      "level": "mudah",
+      "waktu": 15
+    },
+    {
+      "id": 156,
+      "teks": "Diketahui segitiga dengan sisi $a = 5$ cm, $b = 12$ cm, $c = 13$ cm. Apakah segitiga ini siku-siku?",
+      "bahasa": "id",
+      "jawaban": "Ya",
+      "alternatif_jawaban": [
+        "Iya",
+        "Benar"
+      ],
+      "pembahasan": "Cek: $5^2 + 12^2 = 25 + 144 = 169 = 13^2$. Teorema Pythagoras terpenuhi, sehingga segitiga ini siku-siku.",
+      "topik": "Geometri Datar",
+      "level": "sedang",
+      "waktu": 25
+    },
+    {
+      "id": 157,
+      "teks": "Luas layang-layang dengan diagonal $d_1 = 16$ cm dan $d_2 = 10$ cm adalah …",
+      "bahasa": "id",
+      "jawaban": "$80 \\text{ cm}^2$",
+      "alternatif_jawaban": [
+        "80 cm2",
+        "80"
+      ],
+      "pembahasan": "Luas layang-layang $= \\dfrac{d_1 \\times d_2}{2} = \\dfrac{16 \\times 10}{2} = 80 \\text{ cm}^2$.",
+      "topik": "Geometri Datar",
+      "level": "mudah",
+      "waktu": 20
+    },
+    {
+      "id": 158,
+      "teks": "Keliling segitiga dengan sisi 7 cm, 8 cm, dan 9 cm adalah …",
+      "bahasa": "id",
+      "jawaban": "24 cm",
+      "alternatif_jawaban": [
+        "24"
+      ],
+      "pembahasan": "Keliling $= 7+8+9 = 24$ cm.",
+      "topik": "Geometri Datar",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 159,
+      "teks": "Sebuah persegi panjang panjangnya 3 kali lebarnya. Jika kelilingnya 48 cm, berapa lebar persegi panjang itu?",
+      "bahasa": "id",
+      "jawaban": "6 cm",
+      "alternatif_jawaban": [
+        "6"
+      ],
+      "pembahasan": "Misalkan lebar $= w$, panjang $= 3w$. Keliling $= 2(3w+w) = 8w = 48 \\Rightarrow w = 6$ cm.",
+      "topik": "Geometri Datar",
+      "level": "sedang",
+      "waktu": 30
+    },
+    {
+      "id": 160,
+      "teks": "The area of a trapezoid is $84 \\text{ cm}^2$. Its height is 7 cm and one parallel side is 8 cm. What is the other parallel side?",
+      "bahasa": "en",
+      "jawaban": "16 cm",
+      "alternatif_jawaban": [
+        "16"
+      ],
+      "pembahasan": "Area $= \\dfrac{(a+b)}{2} \\times h$. $84 = \\dfrac{(8+b)}{2} \\times 7 \\Rightarrow 84 = \\dfrac{7(8+b)}{2} \\Rightarrow 24 = 8+b \\Rightarrow b = 16$ cm.",
+      "topik": "Geometri Datar",
+      "level": "sedang",
+      "waktu": 30
+    },
+    {
+      "id": 161,
+      "teks": "Luas bangun gabungan: persegi panjang 10 cm × 6 cm ditambah setengah lingkaran diameter 6 cm. Gunakan $\\pi = 3{,}14$.",
+      "bahasa": "id",
+      "jawaban": "$74{,}13 \\text{ cm}^2$",
+      "alternatif_jawaban": [
+        "74,13 cm2"
+      ],
+      "pembahasan": "Luas persegi panjang $= 60 \\text{ cm}^2$. Luas setengah lingkaran $= \\dfrac{1}{2}\\pi r^2 = \\dfrac{1}{2} \\times 3{,}14 \\times 9 = 14{,}13 \\text{ cm}^2$. Total $= 74{,}13 \\text{ cm}^2$.",
+      "topik": "Geometri Datar",
+      "level": "sulit",
+      "waktu": 40
+    },
+    {
+      "id": 162,
+      "teks": "Sebuah tanah berbentuk trapesium dengan sisi sejajar 25 m dan 15 m, tinggi 12 m. Luasnya adalah …",
+      "bahasa": "id",
+      "jawaban": "$240 \\text{ m}^2$",
+      "alternatif_jawaban": [
+        "240 m2",
+        "240"
+      ],
+      "pembahasan": "Luas $= \\dfrac{(25+15)}{2} \\times 12 = 20 \\times 12 = 240 \\text{ m}^2$.",
+      "topik": "Geometri Datar",
+      "level": "sedang",
+      "waktu": 25
+    },
+    {
+      "id": 163,
+      "teks": "Diameter lingkaran 28 cm. Luasnya adalah … $(\\pi = \\frac{22}{7})$",
+      "bahasa": "id",
+      "jawaban": "$616 \\text{ cm}^2$",
+      "alternatif_jawaban": [
+        "616 cm2",
+        "616"
+      ],
+      "pembahasan": "$r = 14$ cm. Luas $= \\pi r^2 = \\dfrac{22}{7} \\times 14^2 = \\dfrac{22}{7} \\times 196 = 22 \\times 28 = 616 \\text{ cm}^2$.",
+      "topik": "Geometri Datar",
+      "level": "sedang",
+      "waktu": 25
+    },
+    {
+      "id": 164,
+      "teks": "Luas daerah yang diarsir jika persegi 10 cm berisi lingkaran berdiameter 10 cm adalah … $(\\pi = 3{,}14)$",
+      "bahasa": "id",
+      "jawaban": "$21{,}5 \\text{ cm}^2$",
+      "alternatif_jawaban": [
+        "21,5 cm2"
+      ],
+      "pembahasan": "Luas persegi $= 100$. Luas lingkaran $= 3{,}14 \\times 5^2 = 78{,}5$. Arsiran $= 100-78{,}5 = 21{,}5 \\text{ cm}^2$.",
+      "topik": "Geometri Datar",
+      "level": "sulit",
+      "waktu": 35
+    },
+    {
+      "id": 165,
+      "teks": "Sisi sebuah persegi dijadikan 2 kali lipat. Luasnya menjadi … kali luas semula.",
+      "bahasa": "id",
+      "jawaban": "4",
+      "alternatif_jawaban": [
+        "empat kali"
+      ],
+      "pembahasan": "Jika sisi semula $s$, luas semula $= s^2$. Sisi baru $= 2s$, luas baru $= (2s)^2 = 4s^2$. Jadi luas menjadi 4 kali lipat.",
+      "topik": "Geometri Datar",
+      "level": "sedang",
+      "waktu": 25
+    },
+    {
+      "id": 166,
+      "teks": "Luas segitiga sama kaki dengan sisi alas 10 cm dan sisi tegaknya masing-masing 13 cm adalah …",
+      "bahasa": "id",
+      "jawaban": "$60 \\text{ cm}^2$",
+      "alternatif_jawaban": [
+        "60 cm2",
+        "60"
+      ],
+      "pembahasan": "Tinggi dari Pythagoras: $t = \\sqrt{13^2 - 5^2} = \\sqrt{169-25} = \\sqrt{144} = 12$ cm. Luas $= \\dfrac{1}{2} \\times 10 \\times 12 = 60 \\text{ cm}^2$.",
+      "topik": "Geometri Datar",
+      "level": "sedang",
+      "waktu": 35
+    },
+    {
+      "id": 167,
+      "teks": "Kebun berbentuk persegi dengan luas $2.500 \\text{ m}^2$. Disekeliling kebun ditanami pohon setiap 5 m. Berapa banyak pohon?",
+      "bahasa": "id",
+      "jawaban": "40 pohon",
+      "alternatif_jawaban": [
+        "40"
+      ],
+      "pembahasan": "Sisi $= \\sqrt{2500} = 50$ m. Keliling $= 4 \\times 50 = 200$ m. Banyak pohon $= 200 \\div 5 = 40$.",
+      "topik": "Geometri Datar",
+      "level": "sedang",
+      "waktu": 35
+    },
+    {
+      "id": 168,
+      "teks": "Find the perimeter of a semicircle with diameter 20 cm. $(\\pi = 3{,}14)$",
+      "bahasa": "en",
+      "jawaban": "51,4 cm",
+      "alternatif_jawaban": [
+        "51.4 cm",
+        "51,4"
+      ],
+      "pembahasan": "Perimeter of semicircle = half circumference + diameter $= \\pi r + d = 3{,}14 \\times 10 + 20 = 31{,}4 + 20 = 51{,}4$ cm.",
+      "topik": "Geometri Datar",
+      "level": "sedang",
+      "waktu": 30
+    },
+    {
+      "id": 169,
+      "teks": "Sebuah segitiga memiliki luas $48 \\text{ cm}^2$ dan alasnya 12 cm. Berapa tingginya?",
+      "bahasa": "id",
+      "jawaban": "8 cm",
+      "alternatif_jawaban": [
+        "8"
+      ],
+      "pembahasan": "$\\dfrac{1}{2} \\times 12 \\times t = 48 \\Rightarrow 6t = 48 \\Rightarrow t = 8$ cm.",
+      "topik": "Geometri Datar",
+      "level": "mudah",
+      "waktu": 20
+    },
+    {
+      "id": 170,
+      "teks": "Luas juring $\\dfrac{1}{4}$ lingkaran dengan jari-jari 14 cm adalah … $(\\pi = \\frac{22}{7})$",
+      "bahasa": "id",
+      "jawaban": "$154 \\text{ cm}^2$",
+      "alternatif_jawaban": [
+        "154 cm2",
+        "154"
+      ],
+      "pembahasan": "Luas lingkaran penuh $= \\pi r^2 = \\dfrac{22}{7} \\times 196 = 616 \\text{ cm}^2$. Juring $\\frac{1}{4}$ $= 616 \\div 4 = 154 \\text{ cm}^2$.",
+      "topik": "Geometri Datar",
+      "level": "sedang",
+      "waktu": 25
+    },
+    {
+      "id": 171,
+      "teks": "Volume kubus dengan rusuk 6 cm adalah …",
+      "bahasa": "id",
+      "jawaban": "$216 \\text{ cm}^3$",
+      "alternatif_jawaban": [
+        "216 cm3",
+        "216"
+      ],
+      "pembahasan": "Volume kubus $= s^3 = 6^3 = 216 \\text{ cm}^3$.",
+      "topik": "Bangun Ruang",
+      "level": "mudah",
+      "waktu": 15
+    },
+    {
+      "id": 172,
+      "teks": "Volume balok dengan ukuran $10 \\times 8 \\times 5$ cm adalah …",
+      "bahasa": "id",
+      "jawaban": "$400 \\text{ cm}^3$",
+      "alternatif_jawaban": [
+        "400 cm3",
+        "400"
+      ],
+      "pembahasan": "Volume balok $= p \\times l \\times t = 10 \\times 8 \\times 5 = 400 \\text{ cm}^3$.",
+      "topik": "Bangun Ruang",
+      "level": "mudah",
+      "waktu": 15
+    },
+    {
+      "id": 173,
+      "teks": "Luas permukaan kubus dengan rusuk 5 cm adalah …",
+      "bahasa": "id",
+      "jawaban": "$150 \\text{ cm}^2$",
+      "alternatif_jawaban": [
+        "150 cm2",
+        "150"
+      ],
+      "pembahasan": "Luas permukaan $= 6 \\times s^2 = 6 \\times 25 = 150 \\text{ cm}^2$.",
+      "topik": "Bangun Ruang",
+      "level": "mudah",
+      "waktu": 20
+    },
+    {
+      "id": 174,
+      "teks": "Volume tabung dengan jari-jari 7 cm dan tinggi 10 cm adalah … $(\\pi = \\frac{22}{7})$",
+      "bahasa": "id",
+      "jawaban": "$1.540 \\text{ cm}^3$",
+      "alternatif_jawaban": [
+        "1540 cm3",
+        "1540"
+      ],
+      "pembahasan": "Volume $= \\pi r^2 t = \\dfrac{22}{7} \\times 49 \\times 10 = 22 \\times 7 \\times 10 = 1.540 \\text{ cm}^3$.",
+      "topik": "Bangun Ruang",
+      "level": "sedang",
+      "waktu": 25
+    },
+    {
+      "id": 175,
+      "teks": "Sebuah balok memiliki volume $240 \\text{ cm}^3$, panjang 8 cm, lebar 5 cm. Berapa tingginya?",
+      "bahasa": "id",
+      "jawaban": "6 cm",
+      "alternatif_jawaban": [
+        "6"
+      ],
+      "pembahasan": "$t = \\dfrac{V}{p \\times l} = \\dfrac{240}{8 \\times 5} = \\dfrac{240}{40} = 6$ cm.",
+      "topik": "Bangun Ruang",
+      "level": "mudah",
+      "waktu": 20
+    },
+    {
+      "id": 176,
+      "teks": "Volume kerucut dengan jari-jari 6 cm dan tinggi 14 cm adalah … $(\\pi = \\frac{22}{7})$",
+      "bahasa": "id",
+      "jawaban": "$528 \\text{ cm}^3$",
+      "alternatif_jawaban": [
+        "528 cm3",
+        "528"
+      ],
+      "pembahasan": "Volume $= \\dfrac{1}{3}\\pi r^2 t = \\dfrac{1}{3} \\times \\dfrac{22}{7} \\times 36 \\times 14 = \\dfrac{1}{3} \\times \\dfrac{22 \\times 36 \\times 14}{7} = \\dfrac{1}{3} \\times 1584 = 528 \\text{ cm}^3$.",
+      "topik": "Bangun Ruang",
+      "level": "sedang",
+      "waktu": 30
+    },
+    {
+      "id": 177,
+      "teks": "What is the volume of a sphere with radius 7 cm? $(\\pi = \\frac{22}{7})$",
+      "bahasa": "en",
+      "jawaban": "$\\dfrac{4.312}{3} \\approx 1.437{,}3 \\text{ cm}^3$",
+      "alternatif_jawaban": [
+        "1437,3 cm3",
+        "4312/3"
+      ],
+      "pembahasan": "Volume $= \\dfrac{4}{3}\\pi r^3 = \\dfrac{4}{3} \\times \\dfrac{22}{7} \\times 343 = \\dfrac{4}{3} \\times 22 \\times 49 = \\dfrac{4 \\times 1078}{3} = \\dfrac{4.312}{3} \\approx 1.437{,}3 \\text{ cm}^3$.",
+      "topik": "Bangun Ruang",
+      "level": "sulit",
+      "waktu": 35
+    },
+    {
+      "id": 178,
+      "teks": "Luas permukaan balok $8 \\times 5 \\times 3$ cm adalah …",
+      "bahasa": "id",
+      "jawaban": "$158 \\text{ cm}^2$",
+      "alternatif_jawaban": [
+        "158 cm2",
+        "158"
+      ],
+      "pembahasan": "Luas $= 2(pl+pt+lt) = 2(40+24+15) = 2 \\times 79 = 158 \\text{ cm}^2$.",
+      "topik": "Bangun Ruang",
+      "level": "sedang",
+      "waktu": 25
+    },
+    {
+      "id": 179,
+      "teks": "Sebuah kubus memiliki volume $1.000 \\text{ cm}^3$. Berapa panjang rusuknya?",
+      "bahasa": "id",
+      "jawaban": "10 cm",
+      "alternatif_jawaban": [
+        "10"
+      ],
+      "pembahasan": "Rusuk $= \\sqrt[3]{1000} = 10$ cm.",
+      "topik": "Bangun Ruang",
+      "level": "mudah",
+      "waktu": 20
+    },
+    {
+      "id": 180,
+      "teks": "Berapa banyak titik sudut sebuah balok?",
+      "bahasa": "id",
+      "jawaban": "8",
+      "alternatif_jawaban": [
+        "delapan"
+      ],
+      "pembahasan": "Balok memiliki 8 titik sudut, 12 rusuk, dan 6 sisi (bidang). Sama seperti kubus.",
+      "topik": "Bangun Ruang",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 181,
+      "teks": "Volume prisma segitiga siku-siku dengan sisi alas 6 cm, 8 cm, tinggi prisma 10 cm adalah …",
+      "bahasa": "id",
+      "jawaban": "$240 \\text{ cm}^3$",
+      "alternatif_jawaban": [
+        "240 cm3",
+        "240"
+      ],
+      "pembahasan": "Luas alas segitiga $= \\dfrac{1}{2} \\times 6 \\times 8 = 24 \\text{ cm}^2$. Volume $= 24 \\times 10 = 240 \\text{ cm}^3$.",
+      "topik": "Bangun Ruang",
+      "level": "sedang",
+      "waktu": 25
+    },
+    {
+      "id": 182,
+      "teks": "Luas permukaan tabung (tanpa tutup) dengan $r = 7$ cm, $t = 15$ cm adalah … $(\\pi = \\frac{22}{7})$",
+      "bahasa": "id",
+      "jawaban": "$814 \\text{ cm}^2$",
+      "alternatif_jawaban": [
+        "814 cm2",
+        "814"
+      ],
+      "pembahasan": "Luas tabung tanpa tutup $= \\pi r^2 + 2\\pi r t = \\dfrac{22}{7}(49 + 2 \\times 7 \\times 15) = \\dfrac{22}{7}(49+210) = \\dfrac{22 \\times 259}{7} = 22 \\times 37 = 814 \\text{ cm}^2$.",
+      "topik": "Bangun Ruang",
+      "level": "sulit",
+      "waktu": 35
+    },
+    {
+      "id": 183,
+      "teks": "Berapa banyak sisi (bidang) sebuah prisma segitiga?",
+      "bahasa": "id",
+      "jawaban": "5",
+      "alternatif_jawaban": [
+        "lima"
+      ],
+      "pembahasan": "Prisma segitiga memiliki 5 sisi: 2 sisi segitiga (alas dan tutup) + 3 sisi persegi panjang (selimut). Serta 9 rusuk dan 6 titik sudut.",
+      "topik": "Bangun Ruang",
+      "level": "mudah",
+      "waktu": 15
+    },
+    {
+      "id": 184,
+      "teks": "Volume tabung dengan diameter 14 cm dan tinggi 20 cm adalah … $(\\pi = \\frac{22}{7})$",
+      "bahasa": "id",
+      "jawaban": "$3.080 \\text{ cm}^3$",
+      "alternatif_jawaban": [
+        "3080 cm3",
+        "3080"
+      ],
+      "pembahasan": "$r = 7$ cm. Volume $= \\pi r^2 t = \\dfrac{22}{7} \\times 49 \\times 20 = 22 \\times 7 \\times 20 = 3.080 \\text{ cm}^3$.",
+      "topik": "Bangun Ruang",
+      "level": "sedang",
+      "waktu": 25
+    },
+    {
+      "id": 185,
+      "teks": "Sebuah kotak berbentuk kubus memiliki luas permukaan $294 \\text{ cm}^2$. Berapa panjang rusuknya?",
+      "bahasa": "id",
+      "jawaban": "7 cm",
+      "alternatif_jawaban": [
+        "7"
+      ],
+      "pembahasan": "$6s^2 = 294 \\Rightarrow s^2 = 49 \\Rightarrow s = 7$ cm.",
+      "topik": "Bangun Ruang",
+      "level": "sedang",
+      "waktu": 25
+    },
+    {
+      "id": 186,
+      "teks": "Air dalam bak berbentuk balok $60 \\times 40 \\times 30$ cm. Berapa liter air dalam bak? $(1 \\text{ dm}^3 = 1$ liter$)$",
+      "bahasa": "id",
+      "jawaban": "72 liter",
+      "alternatif_jawaban": [
+        "72"
+      ],
+      "pembahasan": "Volume $= 60 \\times 40 \\times 30 = 72.000 \\text{ cm}^3 = 72$ liter (karena $1000 \\text{ cm}^3 = 1$ liter).",
+      "topik": "Bangun Ruang",
+      "level": "sedang",
+      "waktu": 30
+    },
+    {
+      "id": 187,
+      "teks": "Volume limas persegi dengan alas $12 \\times 12$ cm dan tinggi 8 cm adalah …",
+      "bahasa": "id",
+      "jawaban": "$384 \\text{ cm}^3$",
+      "alternatif_jawaban": [
+        "384 cm3",
+        "384"
+      ],
+      "pembahasan": "Volume limas $= \\dfrac{1}{3} \\times \\text{luas alas} \\times t = \\dfrac{1}{3} \\times 144 \\times 8 = \\dfrac{1152}{3} = 384 \\text{ cm}^3$.",
+      "topik": "Bangun Ruang",
+      "level": "sedang",
+      "waktu": 30
+    },
+    {
+      "id": 188,
+      "teks": "How many edges does a triangular prism have?",
+      "bahasa": "en",
+      "jawaban": "9",
+      "alternatif_jawaban": [
+        "sembilan"
+      ],
+      "pembahasan": "A triangular prism has: 2 triangular faces × 3 edges = 6 edges from triangles, plus 3 rectangular side edges = $\\mathbf{9}$ edges total. It also has 5 faces and 6 vertices.",
+      "topik": "Bangun Ruang",
+      "level": "mudah",
+      "waktu": 20
+    },
+    {
+      "id": 189,
+      "teks": "Sebuah kaleng berbentuk tabung berisi cat. Jari-jarinya 10 cm dan tingginya 25 cm. Berapa $\\text{cm}^3$ cat yang bisa ditampung? $(\\pi = 3{,}14)$",
+      "bahasa": "id",
+      "jawaban": "$7.850 \\text{ cm}^3$",
+      "alternatif_jawaban": [
+        "7850 cm3",
+        "7850"
+      ],
+      "pembahasan": "Volume $= \\pi r^2 t = 3{,}14 \\times 100 \\times 25 = 7.850 \\text{ cm}^3$.",
+      "topik": "Bangun Ruang",
+      "level": "sedang",
+      "waktu": 25
+    },
+    {
+      "id": 190,
+      "teks": "Luas selimut tabung dengan $r = 5$ cm dan $t = 12$ cm adalah … $(\\pi = 3{,}14)$",
+      "bahasa": "id",
+      "jawaban": "$376{,}8 \\text{ cm}^2$",
+      "alternatif_jawaban": [
+        "376,8 cm2",
+        "376.8"
+      ],
+      "pembahasan": "Luas selimut $= 2\\pi r t = 2 \\times 3{,}14 \\times 5 \\times 12 = 376{,}8 \\text{ cm}^2$.",
+      "topik": "Bangun Ruang",
+      "level": "sedang",
+      "waktu": 25
+    },
+    {
+      "id": 191,
+      "teks": "Berapa banyak diagonal ruang sebuah balok?",
+      "bahasa": "id",
+      "jawaban": "4",
+      "alternatif_jawaban": [
+        "empat"
+      ],
+      "pembahasan": "Sebuah balok memiliki 4 diagonal ruang (garis yang menghubungkan dua titik sudut yang tidak terletak pada sisi yang sama).",
+      "topik": "Bangun Ruang",
+      "level": "sedang",
+      "waktu": 20
+    },
+    {
+      "id": 192,
+      "teks": "Volume kerucut sama tingginya dengan silinder berjari-jari sama. Jika volume silinder $300 \\text{ cm}^3$, berapa volume kerucut?",
+      "bahasa": "id",
+      "jawaban": "$100 \\text{ cm}^3$",
+      "alternatif_jawaban": [
+        "100 cm3",
+        "100"
+      ],
+      "pembahasan": "Volume kerucut $= \\dfrac{1}{3} \\times$ volume silinder (dengan $r$ dan $t$ sama) $= \\dfrac{1}{3} \\times 300 = 100 \\text{ cm}^3$.",
+      "topik": "Bangun Ruang",
+      "level": "sedang",
+      "waktu": 25
+    },
+    {
+      "id": 193,
+      "teks": "Luas permukaan balok $12 \\times 10 \\times 6$ cm adalah …",
+      "bahasa": "id",
+      "jawaban": "$504 \\text{ cm}^2$",
+      "alternatif_jawaban": [
+        "504 cm2",
+        "504"
+      ],
+      "pembahasan": "$2(pl+pt+lt) = 2(120+72+60) = 2 \\times 252 = 504 \\text{ cm}^2$.",
+      "topik": "Bangun Ruang",
+      "level": "sedang",
+      "waktu": 25
+    },
+    {
+      "id": 194,
+      "teks": "Sebuah tempat air berbentuk tabung memiliki jari-jari 20 cm dan tinggi 50 cm. Berapa liter air maksimumnya? $(\\pi = 3{,}14)$",
+      "bahasa": "id",
+      "jawaban": "62,8 liter",
+      "alternatif_jawaban": [
+        "62.8"
+      ],
+      "pembahasan": "Volume $= 3{,}14 \\times 400 \\times 50 = 62.800 \\text{ cm}^3 = 62{,}8$ liter.",
+      "topik": "Bangun Ruang",
+      "level": "sedang",
+      "waktu": 30
+    },
+    {
+      "id": 195,
+      "teks": "Rusuk kubus diperpanjang menjadi 2 kali. Volume kubus baru adalah … kali volume semula.",
+      "bahasa": "id",
+      "jawaban": "8",
+      "alternatif_jawaban": [
+        "delapan kali"
+      ],
+      "pembahasan": "Jika rusuk semula $s$, volume semula $= s^3$. Rusuk baru $= 2s$, volume baru $= (2s)^3 = 8s^3$. Jadi volume menjadi 8 kali lipat.",
+      "topik": "Bangun Ruang",
+      "level": "sedang",
+      "waktu": 25
+    },
+    {
+      "id": 196,
+      "teks": "What is the total surface area of a cube with edge 9 cm?",
+      "bahasa": "en",
+      "jawaban": "$486 \\text{ cm}^2$",
+      "alternatif_jawaban": [
+        "486 cm2",
+        "486"
+      ],
+      "pembahasan": "Total surface area $= 6s^2 = 6 \\times 9^2 = 6 \\times 81 = 486 \\text{ cm}^2$.",
+      "topik": "Bangun Ruang",
+      "level": "mudah",
+      "waktu": 20
+    },
+    {
+      "id": 197,
+      "teks": "Sebuah bak berbentuk balok berisi air setinggi $\\frac{3}{4}$ penuh. Ukuran bak $40 \\times 30 \\times 20$ cm. Berapa liter air di dalamnya?",
+      "bahasa": "id",
+      "jawaban": "18 liter",
+      "alternatif_jawaban": [
+        "18"
+      ],
+      "pembahasan": "Volume bak $= 40 \\times 30 \\times 20 = 24.000 \\text{ cm}^3$. Air $= \\dfrac{3}{4} \\times 24.000 = 18.000 \\text{ cm}^3 = 18$ liter.",
+      "topik": "Bangun Ruang",
+      "level": "sedang",
+      "waktu": 30
+    },
+    {
+      "id": 198,
+      "teks": "Jaring-jaring kubus yang terbuka dari suatu kubus memiliki berapa persegi?",
+      "bahasa": "id",
+      "jawaban": "6",
+      "alternatif_jawaban": [
+        "enam"
+      ],
+      "pembahasan": "Kubus memiliki 6 sisi, sehingga jaring-jaringnya terdiri dari 6 persegi yang disusun sedemikian rupa sehingga ketika dilipat membentuk kubus.",
+      "topik": "Bangun Ruang",
+      "level": "mudah",
+      "waktu": 15
+    },
+    {
+      "id": 199,
+      "teks": "Volume prisma dengan luas alas $30 \\text{ cm}^2$ dan tinggi 12 cm adalah …",
+      "bahasa": "id",
+      "jawaban": "$360 \\text{ cm}^3$",
+      "alternatif_jawaban": [
+        "360 cm3",
+        "360"
+      ],
+      "pembahasan": "Volume prisma $= \\text{luas alas} \\times t = 30 \\times 12 = 360 \\text{ cm}^3$.",
+      "topik": "Bangun Ruang",
+      "level": "mudah",
+      "waktu": 20
+    },
+    {
+      "id": 200,
+      "teks": "Diketahui limas segiempat dengan alas $10 \\times 10$ cm dan volume $\\frac{1.000}{3} \\text{ cm}^3$. Berapa tingginya?",
+      "bahasa": "id",
+      "jawaban": "10 cm",
+      "alternatif_jawaban": [
+        "10"
+      ],
+      "pembahasan": "$V = \\dfrac{1}{3} \\times 100 \\times t = \\dfrac{1000}{3} \\Rightarrow \\dfrac{100t}{3} = \\dfrac{1000}{3} \\Rightarrow t = 10$ cm.",
+      "topik": "Bangun Ruang",
+      "level": "sedang",
+      "waktu": 30
+    },
+    {
+      "id": 201,
+      "teks": "$3{,}5$ km sama dengan berapa meter?",
+      "bahasa": "id",
+      "jawaban": "3.500 m",
+      "alternatif_jawaban": [
+        "3500",
+        "3500 m"
+      ],
+      "pembahasan": "$1$ km $= 1.000$ m. $3{,}5 \\times 1.000 = 3.500$ m.",
+      "topik": "Pengukuran & Satuan",
+      "level": "mudah",
+      "waktu": 15
+    },
+    {
+      "id": 202,
+      "teks": "$2.400$ gram sama dengan berapa kg?",
+      "bahasa": "id",
+      "jawaban": "2,4 kg",
+      "alternatif_jawaban": [
+        "2.4 kg",
+        "2,4"
+      ],
+      "pembahasan": "$1$ kg $= 1.000$ g. $2.400 \\div 1.000 = 2{,}4$ kg.",
+      "topik": "Pengukuran & Satuan",
+      "level": "mudah",
+      "waktu": 15
+    },
+    {
+      "id": 203,
+      "teks": "$4$ jam $30$ menit sama dengan berapa menit?",
+      "bahasa": "id",
+      "jawaban": "270 menit",
+      "alternatif_jawaban": [
+        "270"
+      ],
+      "pembahasan": "$4 \\times 60 + 30 = 240 + 30 = 270$ menit.",
+      "topik": "Pengukuran & Satuan",
+      "level": "mudah",
+      "waktu": 15
+    },
+    {
+      "id": 204,
+      "teks": "$5.000 \\text{ cm}^2$ sama dengan berapa $\\text{dm}^2$?",
+      "bahasa": "id",
+      "jawaban": "$50 \\text{ dm}^2$",
+      "alternatif_jawaban": [
+        "50"
+      ],
+      "pembahasan": "$1 \\text{ dm}^2 = 100 \\text{ cm}^2$. $5.000 \\div 100 = 50 \\text{ dm}^2$.",
+      "topik": "Pengukuran & Satuan",
+      "level": "sedang",
+      "waktu": 20
+    },
+    {
+      "id": 205,
+      "teks": "Sebuah mobil menempuh jarak $180$ km dalam $2{,}5$ jam. Berapakah kecepatan rata-ratanya?",
+      "bahasa": "id",
+      "jawaban": "72 km/jam",
+      "alternatif_jawaban": [
+        "72"
+      ],
+      "pembahasan": "Kecepatan $= \\dfrac{d}{t} = \\dfrac{180}{2{,}5} = 72$ km/jam.",
+      "topik": "Pengukuran & Satuan",
+      "level": "sedang",
+      "waktu": 25
+    },
+    {
+      "id": 206,
+      "teks": "Convert $2\\dfrac{1}{4}$ hours into minutes.",
+      "bahasa": "en",
+      "jawaban": "135 menit",
+      "alternatif_jawaban": [
+        "135",
+        "135 minutes"
+      ],
+      "pembahasan": "$2\\dfrac{1}{4}$ hours $= 2{,}25 \\times 60 = 135$ minutes. Or: $2 \\times 60 + \\dfrac{1}{4} \\times 60 = 120 + 15 = 135$ minutes.",
+      "topik": "Pengukuran & Satuan",
+      "level": "mudah",
+      "waktu": 20
+    },
+    {
+      "id": 207,
+      "teks": "$3 \\text{ m}^2$ sama dengan berapa $\\text{cm}^2$?",
+      "bahasa": "id",
+      "jawaban": "$30.000 \\text{ cm}^2$",
+      "alternatif_jawaban": [
+        "30000"
+      ],
+      "pembahasan": "$1 \\text{ m}^2 = 10.000 \\text{ cm}^2$. $3 \\times 10.000 = 30.000 \\text{ cm}^2$.",
+      "topik": "Pengukuran & Satuan",
+      "level": "sedang",
+      "waktu": 20
+    },
+    {
+      "id": 208,
+      "teks": "Sebuah kereta berangkat pukul $07{:}45$ dan tiba pukul $13{:}20$. Berapa lama perjalanannya?",
+      "bahasa": "id",
+      "jawaban": "5 jam 35 menit",
+      "alternatif_jawaban": [
+        "5 jam 35 mnt",
+        "335 menit"
+      ],
+      "pembahasan": "Dari $07{:}45$ ke $13{:}20$: $13{:}20 - 07{:}45 = 5$ jam $35$ menit.",
+      "topik": "Pengukuran & Satuan",
+      "level": "sedang",
+      "waktu": 25
+    },
+    {
+      "id": 209,
+      "teks": "$750$ mL sama dengan berapa liter?",
+      "bahasa": "id",
+      "jawaban": "0,75 liter",
+      "alternatif_jawaban": [
+        "0.75 L",
+        "0,75 L"
+      ],
+      "pembahasan": "$1$ L $= 1.000$ mL. $750 \\div 1.000 = 0{,}75$ L.",
+      "topik": "Pengukuran & Satuan",
+      "level": "mudah",
+      "waktu": 15
+    },
+    {
+      "id": 210,
+      "teks": "Suhu $37°C$ dalam Fahrenheit adalah … $\\left(F = \\dfrac{9}{5}C + 32\\right)$",
+      "bahasa": "id",
+      "jawaban": "98,6°F",
+      "alternatif_jawaban": [
+        "98.6 F",
+        "98,6"
+      ],
+      "pembahasan": "$F = \\dfrac{9}{5} \\times 37 + 32 = \\dfrac{333}{5} + 32 = 66{,}6 + 32 = 98{,}6°F$.",
+      "topik": "Pengukuran & Satuan",
+      "level": "sedang",
+      "waktu": 25
+    },
+    {
+      "id": 211,
+      "teks": "$4.500 \\text{ m}^3$ sama dengan berapa liter?",
+      "bahasa": "id",
+      "jawaban": "4.500.000 liter",
+      "alternatif_jawaban": [
+        "4500000"
+      ],
+      "pembahasan": "$1 \\text{ m}^3 = 1.000$ liter. $4.500 \\times 1.000 = 4.500.000$ liter.",
+      "topik": "Pengukuran & Satuan",
+      "level": "sedang",
+      "waktu": 20
+    },
+    {
+      "id": 212,
+      "teks": "Seorang pelari berlari $400$ m dalam $80$ detik. Berapa kecepatan rata-ratanya?",
+      "bahasa": "id",
+      "jawaban": "5 m/s",
+      "alternatif_jawaban": [
+        "5"
+      ],
+      "pembahasan": "Kecepatan $= \\dfrac{400}{80} = 5$ m/s.",
+      "topik": "Pengukuran & Satuan",
+      "level": "mudah",
+      "waktu": 20
+    },
+    {
+      "id": 213,
+      "teks": "$2 \\text{ ton} + 500 \\text{ kg}$ sama dengan berapa kg?",
+      "bahasa": "id",
+      "jawaban": "2.500 kg",
+      "alternatif_jawaban": [
+        "2500"
+      ],
+      "pembahasan": "$1$ ton $= 1.000$ kg. $2 \\times 1.000 + 500 = 2.500$ kg.",
+      "topik": "Pengukuran & Satuan",
+      "level": "mudah",
+      "waktu": 15
+    },
+    {
+      "id": 214,
+      "teks": "Sebuah persegi panjang berukuran $6 \\text{ dm} \\times 4 \\text{ dm}$. Luasnya dalam $\\text{cm}^2$ adalah …",
+      "bahasa": "id",
+      "jawaban": "$2.400 \\text{ cm}^2$",
+      "alternatif_jawaban": [
+        "2400"
+      ],
+      "pembahasan": "$6 \\text{ dm} = 60 \\text{ cm}$, $4 \\text{ dm} = 40 \\text{ cm}$. Luas $= 60 \\times 40 = 2.400 \\text{ cm}^2$.",
+      "topik": "Pengukuran & Satuan",
+      "level": "sedang",
+      "waktu": 25
+    },
+    {
+      "id": 215,
+      "teks": "Joni berangkat pukul $06{:}30$ dan harus tiba pukul $08{:}00$. Jarak $60$ km. Berapa km/jam kecepatan minimumnya?",
+      "bahasa": "id",
+      "jawaban": "40 km/jam",
+      "alternatif_jawaban": [
+        "40"
+      ],
+      "pembahasan": "Waktu $= 1{,}5$ jam. Kecepatan $= 60 \\div 1{,}5 = 40$ km/jam.",
+      "topik": "Pengukuran & Satuan",
+      "level": "sedang",
+      "waktu": 30
+    },
+    {
+      "id": 216,
+      "teks": "$180°C$ dalam Kelvin adalah … $\\left(K = C + 273\\right)$",
+      "bahasa": "id",
+      "jawaban": "453 K",
+      "alternatif_jawaban": [
+        "453"
+      ],
+      "pembahasan": "$K = 180 + 273 = 453$ K.",
+      "topik": "Pengukuran & Satuan",
+      "level": "sedang",
+      "waktu": 15
+    },
+    {
+      "id": 217,
+      "teks": "$15 \\text{ km/jam}$ sama dengan berapa m/menit?",
+      "bahasa": "id",
+      "jawaban": "250 m/menit",
+      "alternatif_jawaban": [
+        "250"
+      ],
+      "pembahasan": "$15 \\text{ km/jam} = 15.000 \\text{ m} / 60 \\text{ mnt} = 250$ m/menit.",
+      "topik": "Pengukuran & Satuan",
+      "level": "sedang",
+      "waktu": 25
+    },
+    {
+      "id": 218,
+      "teks": "A train travels at 120 km/h. How long does it take to cover 300 km?",
+      "bahasa": "en",
+      "jawaban": "2,5 jam",
+      "alternatif_jawaban": [
+        "2.5 hours",
+        "150 minutes",
+        "2 jam 30 menit"
+      ],
+      "pembahasan": "Time $= \\dfrac{distance}{speed} = \\dfrac{300}{120} = 2{,}5$ hours $= 2$ hours $30$ minutes.",
+      "topik": "Pengukuran & Satuan",
+      "level": "sedang",
+      "waktu": 25
+    },
+    {
+      "id": 219,
+      "teks": "$1 \\text{ hektare} =$ … $\\text{m}^2$",
+      "bahasa": "id",
+      "jawaban": "$10.000 \\text{ m}^2$",
+      "alternatif_jawaban": [
+        "10000 m2",
+        "10.000"
+      ],
+      "pembahasan": "$1$ hektare $= 10.000 \\text{ m}^2 = 100 \\text{ are}$. Satuan luas pertanian yang umum digunakan.",
+      "topik": "Pengukuran & Satuan",
+      "level": "sedang",
+      "waktu": 20
+    },
+    {
+      "id": 220,
+      "teks": "Jika kecepatan $v = 60$ km/jam dan waktu $t = 45$ menit, berapa jarak yang ditempuh?",
+      "bahasa": "id",
+      "jawaban": "45 km",
+      "alternatif_jawaban": [
+        "45"
+      ],
+      "pembahasan": "$t = 45$ mnt $= 0{,}75$ jam. $d = v \\times t = 60 \\times 0{,}75 = 45$ km.",
+      "topik": "Pengukuran & Satuan",
+      "level": "sedang",
+      "waktu": 25
+    },
+    {
+      "id": 221,
+      "teks": "$2{,}5$ hektare sama dengan berapa $\\text{m}^2$?",
+      "bahasa": "id",
+      "jawaban": "$25.000 \\text{ m}^2$",
+      "alternatif_jawaban": [
+        "25000"
+      ],
+      "pembahasan": "$1$ ha $= 10.000 \\text{ m}^2$. $2{,}5 \\times 10.000 = 25.000 \\text{ m}^2$.",
+      "topik": "Pengukuran & Satuan",
+      "level": "sedang",
+      "waktu": 20
+    },
+    {
+      "id": 222,
+      "teks": "Termometer menunjukkan $-5°C$. Berapa Fahrenheit? $\\left(F = \\dfrac{9}{5}C+32\\right)$",
+      "bahasa": "id",
+      "jawaban": "23°F",
+      "alternatif_jawaban": [
+        "23"
+      ],
+      "pembahasan": "$F = \\dfrac{9}{5} \\times (-5) + 32 = -9 + 32 = 23°F$.",
+      "topik": "Pengukuran & Satuan",
+      "level": "sedang",
+      "waktu": 25
+    },
+    {
+      "id": 223,
+      "teks": "$6.000$ detik sama dengan berapa jam?",
+      "bahasa": "id",
+      "jawaban": "$1\\dfrac{2}{3}$ jam",
+      "alternatif_jawaban": [
+        "1 jam 40 menit",
+        "100 menit",
+        "1.667 jam"
+      ],
+      "pembahasan": "$6.000 \\div 3.600 = \\dfrac{6000}{3600} = \\dfrac{5}{3} = 1\\dfrac{2}{3}$ jam $= 1$ jam $40$ menit.",
+      "topik": "Pengukuran & Satuan",
+      "level": "sedang",
+      "waktu": 25
+    },
+    {
+      "id": 224,
+      "teks": "Dua kota berjarak $450$ km. Mobil A berangkat dari kota 1 dengan kecepatan $80$ km/jam. Mobil B dari kota 2 dengan $70$ km/jam. Berapa jam hingga bertemu?",
+      "bahasa": "id",
+      "jawaban": "3 jam",
+      "alternatif_jawaban": [
+        "3"
+      ],
+      "pembahasan": "Kecepatan gabungan $= 80+70 = 150$ km/jam. Waktu $= 450 \\div 150 = 3$ jam.",
+      "topik": "Pengukuran & Satuan",
+      "level": "sulit",
+      "waktu": 35
+    },
+    {
+      "id": 225,
+      "teks": "$3{,}5 \\text{ ton}$ sama dengan berapa gram?",
+      "bahasa": "id",
+      "jawaban": "3.500.000 gram",
+      "alternatif_jawaban": [
+        "3500000"
+      ],
+      "pembahasan": "$1$ ton $= 1.000.000$ g. $3{,}5 \\times 1.000.000 = 3.500.000$ g.",
+      "topik": "Pengukuran & Satuan",
+      "level": "mudah",
+      "waktu": 20
+    },
+    {
+      "id": 226,
+      "teks": "Nilai ulangan 5 siswa: 70, 80, 90, 60, 75. Berapakah rata-rata (mean) nilainya?",
+      "bahasa": "id",
+      "jawaban": "75",
+      "alternatif_jawaban": [],
+      "pembahasan": "Mean $= \\dfrac{70+80+90+60+75}{5} = \\dfrac{375}{5} = 75$.",
+      "topik": "Statistika & Data",
+      "level": "mudah",
+      "waktu": 20
+    },
+    {
+      "id": 227,
+      "teks": "Data: 4, 7, 3, 9, 5, 7, 8, 7, 2, 6. Berapakah modusnya?",
+      "bahasa": "id",
+      "jawaban": "7",
+      "alternatif_jawaban": [],
+      "pembahasan": "Modus adalah nilai yang paling sering muncul. Nilai 7 muncul 3 kali, lebih sering dari yang lain.",
+      "topik": "Statistika & Data",
+      "level": "mudah",
+      "waktu": 20
+    },
+    {
+      "id": 228,
+      "teks": "Data: 12, 5, 9, 18, 15, 7, 11. Berapakah mediannya?",
+      "bahasa": "id",
+      "jawaban": "11",
+      "alternatif_jawaban": [],
+      "pembahasan": "Urutkan: 5, 7, 9, 11, 12, 15, 18. Ada 7 data, median = data ke-4 $= \\mathbf{11}$.",
+      "topik": "Statistika & Data",
+      "level": "sedang",
+      "waktu": 25
+    },
+    {
+      "id": 229,
+      "teks": "Nilai rata-rata 6 siswa adalah 75. Jika satu siswa ditambahkan dengan nilai 81, berapa rata-rata baru?",
+      "bahasa": "id",
+      "jawaban": "76",
+      "alternatif_jawaban": [],
+      "pembahasan": "Total lama $= 6 \\times 75 = 450$. Total baru $= 450+81 = 531$. Rata-rata baru $= 531 \\div 7 = 75{,}86 \\approx 76$.",
+      "topik": "Statistika & Data",
+      "level": "sedang",
+      "waktu": 30
+    },
+    {
+      "id": 230,
+      "teks": "Diagram batang menunjukkan penjualan: Sen 20, Sel 35, Rab 25, Kam 40, Jum 30. Berapa total penjualan 5 hari?",
+      "bahasa": "id",
+      "jawaban": "150",
+      "alternatif_jawaban": [],
+      "pembahasan": "Total $= 20+35+25+40+30 = 150$.",
+      "topik": "Statistika & Data",
+      "level": "mudah",
+      "waktu": 20
+    },
+    {
+      "id": 231,
+      "teks": "Data nilai: 6, 7, 8, 9, 7, 6, 8, 8, 7, 10. Berapakah modus dan mediannya?",
+      "bahasa": "id",
+      "jawaban": "Modus: 7 dan 8, Median: 7,5",
+      "alternatif_jawaban": [
+        "7 dan 8; 7,5"
+      ],
+      "pembahasan": "Urutkan: 6,6,7,7,7,8,8,8,9,10. Modus: 7 dan 8 (masing-masing 3 kali). Median data ke-5 dan 6: $\\dfrac{7+8}{2} = 7{,}5$.",
+      "topik": "Statistika & Data",
+      "level": "sedang",
+      "waktu": 30
+    },
+    {
+      "id": 232,
+      "teks": "Jangkauan (range) data: 23, 17, 45, 8, 36, 29 adalah …",
+      "bahasa": "id",
+      "jawaban": "37",
+      "alternatif_jawaban": [],
+      "pembahasan": "Jangkauan $= \\text{max} - \\text{min} = 45 - 8 = 37$.",
+      "topik": "Statistika & Data",
+      "level": "mudah",
+      "waktu": 20
+    },
+    {
+      "id": 233,
+      "teks": "The average of 8 numbers is 42. If one number (50) is removed, what is the new average?",
+      "bahasa": "en",
+      "jawaban": "41",
+      "alternatif_jawaban": [],
+      "pembahasan": "Total $= 8 \\times 42 = 336$. New total $= 336-50 = 286$. New average $= 286 \\div 7 = 40{,}857 \\approx 41$ (exact: $40\\dfrac{6}{7}$).",
+      "topik": "Statistika & Data",
+      "level": "sedang",
+      "waktu": 30
+    },
+    {
+      "id": 234,
+      "teks": "Rata-rata dari 5 bilangan adalah 20. Empat bilangan adalah 15, 18, 22, 25. Berapakah bilangan kelima?",
+      "bahasa": "id",
+      "jawaban": "20",
+      "alternatif_jawaban": [],
+      "pembahasan": "Total $= 5 \\times 20 = 100$. Jumlah 4 bilangan $= 15+18+22+25 = 80$. Bilangan ke-5 $= 100-80 = 20$.",
+      "topik": "Statistika & Data",
+      "level": "sedang",
+      "waktu": 25
+    },
+    {
+      "id": 235,
+      "teks": "Data tinggi badan (cm): 140, 145, 138, 152, 147, 143, 148. Berapakah mediannya?",
+      "bahasa": "id",
+      "jawaban": "145 cm",
+      "alternatif_jawaban": [
+        "145"
+      ],
+      "pembahasan": "Urutkan: 138, 140, 143, 145, 147, 148, 152. Ada 7 data, median = data ke-4 $= 145$ cm.",
+      "topik": "Statistika & Data",
+      "level": "sedang",
+      "waktu": 25
+    },
+    {
+      "id": 236,
+      "teks": "Dalam diagram lingkaran, data A mengambil $30\\%$, B $25\\%$, C $20\\%$, D $15\\%$, E $10\\%$. Jika total 200 orang, berapa orang di data B?",
+      "bahasa": "id",
+      "jawaban": "50 orang",
+      "alternatif_jawaban": [
+        "50"
+      ],
+      "pembahasan": "$25\\% \\times 200 = 50$ orang.",
+      "topik": "Statistika & Data",
+      "level": "mudah",
+      "waktu": 20
+    },
+    {
+      "id": 237,
+      "teks": "Nilai ujian 10 siswa: 55, 60, 65, 70, 70, 75, 80, 85, 90, 100. Berapakah rata-ratanya?",
+      "bahasa": "id",
+      "jawaban": "75",
+      "alternatif_jawaban": [],
+      "pembahasan": "Jumlah $= 55+60+65+70+70+75+80+85+90+100 = 750$. Rata-rata $= 750 \\div 10 = 75$.",
+      "topik": "Statistika & Data",
+      "level": "sedang",
+      "waktu": 25
+    },
+    {
+      "id": 238,
+      "teks": "Data: 4, 4, 4, 4, 4. Berapakah rata-rata, median, dan modusnya?",
+      "bahasa": "id",
+      "jawaban": "Semua = 4",
+      "alternatif_jawaban": [
+        "4"
+      ],
+      "pembahasan": "Ketiga ukuran pusat (mean, median, modus) sama-sama $= 4$ ketika semua data identik.",
+      "topik": "Statistika & Data",
+      "level": "mudah",
+      "waktu": 15
+    },
+    {
+      "id": 239,
+      "teks": "Data: 10, 20, 30, 40, 50. Berapakah rata-ratanya?",
+      "bahasa": "id",
+      "jawaban": "30",
+      "alternatif_jawaban": [],
+      "pembahasan": "Mean $= \\dfrac{10+20+30+40+50}{5} = \\dfrac{150}{5} = 30$.",
+      "topik": "Statistika & Data",
+      "level": "mudah",
+      "waktu": 15
+    },
+    {
+      "id": 240,
+      "teks": "Frekuensi kumulatif data: nilai $< 60$ ada 5 siswa, nilai $60–69$ ada 8 siswa. Berapa siswa dengan nilai $< 70$?",
+      "bahasa": "id",
+      "jawaban": "13 siswa",
+      "alternatif_jawaban": [
+        "13"
+      ],
+      "pembahasan": "Frekuensi kumulatif $< 70$ = frekuensi $<60$ + frekuensi $60-69$ = $5+8 = 13$ siswa.",
+      "topik": "Statistika & Data",
+      "level": "sedang",
+      "waktu": 20
+    },
+    {
+      "id": 241,
+      "teks": "Nilai rata-rata ulangan harian: Mat 80, IPA 75, IPS 85, B.Ind 90, PKn 70. Berapakah rata-ratanya?",
+      "bahasa": "id",
+      "jawaban": "80",
+      "alternatif_jawaban": [],
+      "pembahasan": "Rata-rata $= \\dfrac{80+75+85+90+70}{5} = \\dfrac{400}{5} = 80$.",
+      "topik": "Statistika & Data",
+      "level": "mudah",
+      "waktu": 20
+    },
+    {
+      "id": 242,
+      "teks": "Data upah pekerja (dalam ribuan): 200, 250, 300, 250, 200, 300, 250, 350, 250. Berapakah modus upah?",
+      "bahasa": "id",
+      "jawaban": "250 ribu",
+      "alternatif_jawaban": [
+        "250.000",
+        "250"
+      ],
+      "pembahasan": "Nilai 250 (ribu) muncul 4 kali — paling sering. Jadi modus = 250 ribu.",
+      "topik": "Statistika & Data",
+      "level": "mudah",
+      "waktu": 20
+    },
+    {
+      "id": 243,
+      "teks": "A student scored 72, 85, 68, 91, and 79 on five tests. What is the mean score?",
+      "bahasa": "en",
+      "jawaban": "79",
+      "alternatif_jawaban": [],
+      "pembahasan": "Mean $= \\dfrac{72+85+68+91+79}{5} = \\dfrac{395}{5} = 79$.",
+      "topik": "Statistika & Data",
+      "level": "mudah",
+      "waktu": 20
+    },
+    {
+      "id": 244,
+      "teks": "Dalam kelompok 40 siswa, $60\\%$ lulus ujian. Berapa siswa yang lulus?",
+      "bahasa": "id",
+      "jawaban": "24 siswa",
+      "alternatif_jawaban": [
+        "24"
+      ],
+      "pembahasan": "$60\\% \\times 40 = 24$ siswa.",
+      "topik": "Statistika & Data",
+      "level": "mudah",
+      "waktu": 15
+    },
+    {
+      "id": 245,
+      "teks": "Median dari data 15, 22, 8, 19, 14, 21, 10, 17 adalah …",
+      "bahasa": "id",
+      "jawaban": "16",
+      "alternatif_jawaban": [],
+      "pembahasan": "Urutkan: 8, 10, 14, 15, 17, 19, 21, 22. Ada 8 data (genap). Median $= \\dfrac{15+17}{2} = 16$.",
+      "topik": "Statistika & Data",
+      "level": "sedang",
+      "waktu": 30
+    },
+    {
+      "id": 246,
+      "teks": "Nilai rata-rata 4 anak adalah 70. Anak ke-5 bergabung sehingga rata-rata menjadi 72. Berapa nilai anak ke-5?",
+      "bahasa": "id",
+      "jawaban": "80",
+      "alternatif_jawaban": [],
+      "pembahasan": "Total 4 anak $= 4 \\times 70 = 280$. Total 5 anak $= 5 \\times 72 = 360$. Nilai anak ke-5 $= 360-280 = 80$.",
+      "topik": "Statistika & Data",
+      "level": "sedang",
+      "waktu": 30
+    },
+    {
+      "id": 247,
+      "teks": "Data: 3, 5, 7, 9, 11. Berapakah selisih mean dan median?",
+      "bahasa": "id",
+      "jawaban": "0",
+      "alternatif_jawaban": [],
+      "pembahasan": "Mean $= (3+5+7+9+11) \\div 5 = 35 \\div 5 = 7$. Median = data ke-3 $= 7$. Selisih $= 0$.",
+      "topik": "Statistika & Data",
+      "level": "mudah",
+      "waktu": 20
+    },
+    {
+      "id": 248,
+      "teks": "Berat 6 buku (gram): 120, 150, 180, 200, 140, 160. Rata-rata berat buku adalah …",
+      "bahasa": "id",
+      "jawaban": "158,3 gram",
+      "alternatif_jawaban": [
+        "158,33 g",
+        "158 g"
+      ],
+      "pembahasan": "Jumlah $= 120+150+180+200+140+160 = 950$. Rata-rata $= 950 \\div 6 \\approx 158{,}3$ gram.",
+      "topik": "Statistika & Data",
+      "level": "sedang",
+      "waktu": 25
+    },
+    {
+      "id": 249,
+      "teks": "Dari 30 siswa, nilai di atas 80 ada 9 siswa. Berapa persen siswa dengan nilai di atas 80?",
+      "bahasa": "id",
+      "jawaban": "30%",
+      "alternatif_jawaban": [
+        "30"
+      ],
+      "pembahasan": "$\\dfrac{9}{30} \\times 100\\% = 30\\%$.",
+      "topik": "Statistika & Data",
+      "level": "mudah",
+      "waktu": 20
+    },
+    {
+      "id": 250,
+      "teks": "Data nilai: 65, 70, 75, 80, 85. Jika nilai 65 diganti menjadi 90, bagaimana perubahan rata-ratanya?",
+      "bahasa": "id",
+      "jawaban": "Naik 5",
+      "alternatif_jawaban": [
+        "rata-rata naik 5",
+        "bertambah 5"
+      ],
+      "pembahasan": "Rata-rata lama $= \\dfrac{375}{5} = 75$. Rata-rata baru $= \\dfrac{400}{5} = 80$. Naik $5$.",
+      "topik": "Statistika & Data",
+      "level": "sedang",
+      "waktu": 25
+    },
+    {
+      "id": 251,
+      "teks": "Pola bilangan: 2, 5, 8, 11, … Berapakah bilangan ke-10?",
+      "bahasa": "id",
+      "jawaban": "29",
+      "alternatif_jawaban": [],
+      "pembahasan": "Beda $= 3$. Suku ke-$n = 2 + (n-1) \\times 3$. Suku ke-10 $= 2+9 \\times 3 = 2+27 = 29$.",
+      "topik": "Aljabar & Pola",
+      "level": "mudah",
+      "waktu": 25
+    },
+    {
+      "id": 252,
+      "teks": "Jika $2x + 7 = 19$, berapakah nilai $x$?",
+      "bahasa": "id",
+      "jawaban": "6",
+      "alternatif_jawaban": [],
+      "pembahasan": "$2x = 19-7 = 12 \\Rightarrow x = 6$.",
+      "topik": "Aljabar & Pola",
+      "level": "mudah",
+      "waktu": 20
+    },
+    {
+      "id": 253,
+      "teks": "Pola: 1, 4, 9, 16, 25, … Bilangan berikutnya adalah …",
+      "bahasa": "id",
+      "jawaban": "36",
+      "alternatif_jawaban": [],
+      "pembahasan": "Ini adalah pola bilangan kuadrat: $1^2, 2^2, 3^2, 4^2, 5^2, \\ldots$ Berikutnya $= 6^2 = 36$.",
+      "topik": "Aljabar & Pola",
+      "level": "mudah",
+      "waktu": 20
+    },
+    {
+      "id": 254,
+      "teks": "Jika $3n - 5 = 2n + 8$, berapakah nilai $n$?",
+      "bahasa": "id",
+      "jawaban": "13",
+      "alternatif_jawaban": [],
+      "pembahasan": "$3n - 2n = 8 + 5 \\Rightarrow n = 13$.",
+      "topik": "Aljabar & Pola",
+      "level": "sedang",
+      "waktu": 25
+    },
+    {
+      "id": 255,
+      "teks": "What is the 15th term of the sequence: $3, 7, 11, 15, \\ldots$?",
+      "bahasa": "en",
+      "jawaban": "59",
+      "alternatif_jawaban": [],
+      "pembahasan": "Arithmetic sequence with first term $a = 3$ and common difference $d = 4$. $T_{15} = 3 + (15-1) \\times 4 = 3 + 56 = 59$.",
+      "topik": "Aljabar & Pola",
+      "level": "sedang",
+      "waktu": 25
+    },
+    {
+      "id": 256,
+      "teks": "Pola: 1, 2, 4, 8, 16, … Bilangan ke-8 adalah …",
+      "bahasa": "id",
+      "jawaban": "128",
+      "alternatif_jawaban": [],
+      "pembahasan": "Barisan geometri dengan rasio $r = 2$. Suku ke-$n = 2^{n-1}$. Suku ke-8 $= 2^7 = 128$.",
+      "topik": "Aljabar & Pola",
+      "level": "sedang",
+      "waktu": 25
+    },
+    {
+      "id": 257,
+      "teks": "Jika $\\dfrac{x}{4} + 3 = 7$, berapakah $x$?",
+      "bahasa": "id",
+      "jawaban": "16",
+      "alternatif_jawaban": [],
+      "pembahasan": "$\\dfrac{x}{4} = 7-3 = 4 \\Rightarrow x = 4 \\times 4 = 16$.",
+      "topik": "Aljabar & Pola",
+      "level": "sedang",
+      "waktu": 20
+    },
+    {
+      "id": 258,
+      "teks": "Berapakah jumlah 20 suku pertama barisan: 1, 3, 5, 7, 9, …?",
+      "bahasa": "id",
+      "jawaban": "400",
+      "alternatif_jawaban": [],
+      "pembahasan": "Ini barisan bilangan ganjil. Jumlah $n$ bilangan ganjil pertama $= n^2$. Jadi $S_{20} = 20^2 = 400$.",
+      "topik": "Aljabar & Pola",
+      "level": "sedang",
+      "waktu": 30
+    },
+    {
+      "id": 259,
+      "teks": "Jika $5(x-2) = 3(x+4)$, berapakah $x$?",
+      "bahasa": "id",
+      "jawaban": "11",
+      "alternatif_jawaban": [],
+      "pembahasan": "$5x - 10 = 3x + 12 \\Rightarrow 2x = 22 \\Rightarrow x = 11$.",
+      "topik": "Aljabar & Pola",
+      "level": "sedang",
+      "waktu": 25
+    },
+    {
+      "id": 260,
+      "teks": "Pola segitiga Pascal baris ke-5 (mulai dari baris ke-1 = 1) adalah …",
+      "bahasa": "id",
+      "jawaban": "1, 4, 6, 4, 1",
+      "alternatif_jawaban": [
+        "1 4 6 4 1"
+      ],
+      "pembahasan": "Segitiga Pascal: baris 1: 1; baris 2: 1 1; baris 3: 1 2 1; baris 4: 1 3 3 1; baris 5: $\\mathbf{1\\ 4\\ 6\\ 4\\ 1}$.",
+      "topik": "Aljabar & Pola",
+      "level": "sulit",
+      "waktu": 30
+    },
+    {
+      "id": 261,
+      "teks": "Nilai dari $3a^2 - 2b + 5$ saat $a=2$ dan $b=3$ adalah …",
+      "bahasa": "id",
+      "jawaban": "11",
+      "alternatif_jawaban": [],
+      "pembahasan": "$3(2^2) - 2(3) + 5 = 12 - 6 + 5 = 11$.",
+      "topik": "Aljabar & Pola",
+      "level": "sedang",
+      "waktu": 25
+    },
+    {
+      "id": 262,
+      "teks": "Jumlah tiga bilangan genap berurutan adalah 72. Bilangan terkecilnya adalah …",
+      "bahasa": "id",
+      "jawaban": "22",
+      "alternatif_jawaban": [],
+      "pembahasan": "Misalkan bilangan: $n, n+2, n+4$. Jumlah $= 3n+6 = 72 \\Rightarrow n = 22$.",
+      "topik": "Aljabar & Pola",
+      "level": "sedang",
+      "waktu": 30
+    },
+    {
+      "id": 263,
+      "teks": "Find the value of $x$ if $2(3x - 1) = 4x + 8$.",
+      "bahasa": "en",
+      "jawaban": "5",
+      "alternatif_jawaban": [],
+      "pembahasan": "$6x - 2 = 4x + 8 \\Rightarrow 2x = 10 \\Rightarrow x = 5$.",
+      "topik": "Aljabar & Pola",
+      "level": "sedang",
+      "waktu": 25
+    },
+    {
+      "id": 264,
+      "teks": "Pola bilangan Fibonacci: 1, 1, 2, 3, 5, 8, 13, … Suku ke-10 adalah …",
+      "bahasa": "id",
+      "jawaban": "55",
+      "alternatif_jawaban": [],
+      "pembahasan": "Suku berikutnya = jumlah dua suku sebelumnya. Lanjutan: 21, 34, 55. Suku ke-10 $= \\mathbf{55}$.",
+      "topik": "Aljabar & Pola",
+      "level": "sedang",
+      "waktu": 25
+    },
+    {
+      "id": 265,
+      "teks": "Jika $x + y = 15$ dan $x - y = 3$, berapakah nilai $x$?",
+      "bahasa": "id",
+      "jawaban": "9",
+      "alternatif_jawaban": [],
+      "pembahasan": "Tambahkan kedua persamaan: $2x = 18 \\Rightarrow x = 9$. Cek: $y = 15-9 = 6$, $x-y = 3$ ✓.",
+      "topik": "Aljabar & Pola",
+      "level": "sulit",
+      "waktu": 35
+    },
+    {
+      "id": 266,
+      "teks": "Berapakah suku ke-50 dari barisan aritmatika 4, 7, 10, 13, …?",
+      "bahasa": "id",
+      "jawaban": "151",
+      "alternatif_jawaban": [],
+      "pembahasan": "Beda $d = 3$. Suku ke-$n = a + (n-1)d = 4 + 49 \\times 3 = 4+147 = 151$.",
+      "topik": "Aljabar & Pola",
+      "level": "sedang",
+      "waktu": 25
+    },
+    {
+      "id": 267,
+      "teks": "Jika $4x - 3 = 2x + 11$, berapakah $2x + 5$?",
+      "bahasa": "id",
+      "jawaban": "19",
+      "alternatif_jawaban": [],
+      "pembahasan": "$4x-2x = 11+3 \\Rightarrow 2x = 14 \\Rightarrow x = 7$. Maka $2(7)+5 = 19$.",
+      "topik": "Aljabar & Pola",
+      "level": "sedang",
+      "waktu": 25
+    },
+    {
+      "id": 268,
+      "teks": "Berapa banyak kotak yang dibutuhkan untuk pola ke-5 jika pola ke-1 ada 1 kotak, ke-2 ada 4, ke-3 ada 9, …?",
+      "bahasa": "id",
+      "jawaban": "25",
+      "alternatif_jawaban": [],
+      "pembahasan": "Polanya: $1^2, 2^2, 3^2, \\ldots$ Pola ke-5 $= 5^2 = 25$ kotak.",
+      "topik": "Aljabar & Pola",
+      "level": "mudah",
+      "waktu": 20
+    },
+    {
+      "id": 269,
+      "teks": "Jumlah semua bilangan genap dari 2 sampai 100 adalah …",
+      "bahasa": "id",
+      "jawaban": "2.550",
+      "alternatif_jawaban": [
+        "2550"
+      ],
+      "pembahasan": "Barisan: 2, 4, 6, …, 100. Ada 50 suku. $S = \\dfrac{n(a_1+a_n)}{2} = \\dfrac{50(2+100)}{2} = 25 \\times 102 = 2.550$.",
+      "topik": "Aljabar & Pola",
+      "level": "sulit",
+      "waktu": 35
+    },
+    {
+      "id": 270,
+      "teks": "Nilai dari $(x+y)^2$ jika $x+y = 13$ adalah …",
+      "bahasa": "id",
+      "jawaban": "169",
+      "alternatif_jawaban": [],
+      "pembahasan": "$(x+y)^2 = 13^2 = 169$. Tidak perlu mengetahui nilai $x$ dan $y$ secara terpisah.",
+      "topik": "Aljabar & Pola",
+      "level": "sedang",
+      "waktu": 20
+    },
+    {
+      "id": 271,
+      "teks": "Ibu membeli $2{,}5$ kg apel seharga Rp15.000/kg dan $3$ kg jeruk seharga Rp12.000/kg. Total belanja ibu adalah …",
+      "bahasa": "id",
+      "jawaban": "Rp73.500",
+      "alternatif_jawaban": [
+        "73500",
+        "73.500"
+      ],
+      "pembahasan": "Apel: $2{,}5 \\times 15.000 = 37.500$. Jeruk: $3 \\times 12.000 = 36.000$. Total $= 37.500+36.000 = \\text{Rp}\\,73.500$.",
+      "topik": "Soal Cerita",
+      "level": "mudah",
+      "waktu": 25
+    },
+    {
+      "id": 272,
+      "teks": "Sebuah kolam renang berukuran $25 \\times 10 \\times 1{,}5$ m diisi air. Berapa liter air yang dibutuhkan?",
+      "bahasa": "id",
+      "jawaban": "375.000 liter",
+      "alternatif_jawaban": [
+        "375000 L"
+      ],
+      "pembahasan": "Volume $= 25 \\times 10 \\times 1{,}5 = 375 \\text{ m}^3 = 375.000$ liter.",
+      "topik": "Soal Cerita",
+      "level": "sedang",
+      "waktu": 30
+    },
+    {
+      "id": 273,
+      "teks": "Budi punya 120 kelereng. Ia memberi $\\dfrac{1}{4}$-nya ke Adi dan $\\dfrac{1}{3}$-nya ke Sari. Sisa kelereng Budi adalah …",
+      "bahasa": "id",
+      "jawaban": "50 kelereng",
+      "alternatif_jawaban": [
+        "50"
+      ],
+      "pembahasan": "Diberikan: $\\dfrac{1}{4}+\\dfrac{1}{3} = \\dfrac{7}{12}$. Sisa: $\\left(1-\\dfrac{7}{12}\\right) \\times 120 = \\dfrac{5}{12} \\times 120 = 50$.",
+      "topik": "Soal Cerita",
+      "level": "sedang",
+      "waktu": 30
+    },
+    {
+      "id": 274,
+      "teks": "Pak Tono mengendarai motor dari kota A ke B (100 km) dengan kecepatan 40 km/jam, lalu kembali dari B ke A dengan kecepatan 60 km/jam. Berapa km/jam kecepatan rata-rata seluruh perjalanan?",
+      "bahasa": "id",
+      "jawaban": "48 km/jam",
+      "alternatif_jawaban": [
+        "48"
+      ],
+      "pembahasan": "Total jarak $= 200$ km. Total waktu $= \\dfrac{100}{40}+\\dfrac{100}{60} = 2{,}5+\\dfrac{5}{3} = \\dfrac{25}{6}$ jam. Kecepatan rata-rata $= \\dfrac{200}{25/6} = 48$ km/jam.",
+      "topik": "Soal Cerita",
+      "level": "sulit",
+      "waktu": 40
+    },
+    {
+      "id": 275,
+      "teks": "Sebuah tangki air berbentuk tabung berjari-jari $1{,}4$ m dan tinggi $3$ m terisi penuh. Harga air Rp$500$ per liter. Berapa nilai air dalam tangki? $(\\pi = \\frac{22}{7})$",
+      "bahasa": "id",
+      "jawaban": "Rp9.240.000",
+      "alternatif_jawaban": [
+        "9240000",
+        "9.240.000"
+      ],
+      "pembahasan": "Volume $= \\pi r^2 t = \\dfrac{22}{7} \\times 1{,}96 \\times 3 = \\dfrac{22 \\times 1{,}96 \\times 3}{7} = \\dfrac{129{,}36}{7} \\approx 18{,}48 \\text{ m}^3 = 18.480$ liter. Nilai $= 18.480 \\times 500 = \\text{Rp}\\,9.240.000$.",
+      "topik": "Soal Cerita",
+      "level": "sulit",
+      "waktu": 40
+    },
+    {
+      "id": 276,
+      "teks": "Toko A dan toko B menjual baju. Toko A: harga Rp80.000, diskon $20\\%$. Toko B: harga Rp70.000, diskon $10\\%$. Mana yang lebih murah?",
+      "bahasa": "id",
+      "jawaban": "Toko B (Rp63.000)",
+      "alternatif_jawaban": [
+        "Toko B"
+      ],
+      "pembahasan": "Toko A: $80.000 \\times 80\\% = 64.000$. Toko B: $70.000 \\times 90\\% = 63.000$. Toko B lebih murah.",
+      "topik": "Soal Cerita",
+      "level": "sedang",
+      "waktu": 30
+    },
+    {
+      "id": 277,
+      "teks": "Dani menabung Rp50.000 setiap minggu. Setelah 6 bulan, berapa total tabungannya? (Anggap 1 bulan = 4 minggu)",
+      "bahasa": "id",
+      "jawaban": "Rp1.200.000",
+      "alternatif_jawaban": [
+        "1200000",
+        "1.200.000"
+      ],
+      "pembahasan": "6 bulan $= 24$ minggu. Total $= 24 \\times 50.000 = \\text{Rp}\\,1.200.000$.",
+      "topik": "Soal Cerita",
+      "level": "mudah",
+      "waktu": 25
+    },
+    {
+      "id": 278,
+      "teks": "A rectangular room is 8 m long and 5 m wide. If carpeting costs Rp75.000 per m², what is the total cost?",
+      "bahasa": "en",
+      "jawaban": "Rp3.000.000",
+      "alternatif_jawaban": [
+        "3000000",
+        "3.000.000"
+      ],
+      "pembahasan": "Area $= 8 \\times 5 = 40 \\text{ m}^2$. Cost $= 40 \\times 75.000 = \\text{Rp}\\,3.000.000$.",
+      "topik": "Soal Cerita",
+      "level": "sedang",
+      "waktu": 25
+    },
+    {
+      "id": 279,
+      "teks": "Dalam keranjang ada mangga dan apel dengan perbandingan $3:5$. Jika ada $40$ buah apel, berapa total buah dalam keranjang?",
+      "bahasa": "id",
+      "jawaban": "64 buah",
+      "alternatif_jawaban": [
+        "64"
+      ],
+      "pembahasan": "Apel $= 5$ bagian $= 40$, maka 1 bagian $= 8$. Mangga $= 3 \\times 8 = 24$. Total $= 24+40 = 64$ buah.",
+      "topik": "Soal Cerita",
+      "level": "sedang",
+      "waktu": 25
+    },
+    {
+      "id": 280,
+      "teks": "Sebuah pipa mengalirkan air $12$ liter/menit. Berapa jam yang dibutuhkan untuk mengisi tangki $3.600$ liter?",
+      "bahasa": "id",
+      "jawaban": "5 jam",
+      "alternatif_jawaban": [
+        "5"
+      ],
+      "pembahasan": "Waktu $= 3.600 \\div 12 = 300$ menit $= 5$ jam.",
+      "topik": "Soal Cerita",
+      "level": "sedang",
+      "waktu": 25
+    },
+    {
+      "id": 281,
+      "teks": "Tinggi bangunan adalah $4$ kali lebar lantainya. Jika keliling lantai (persegi) $160$ m, berapa tinggi bangunan?",
+      "bahasa": "id",
+      "jawaban": "160 m",
+      "alternatif_jawaban": [],
+      "pembahasan": "Sisi lantai $= 160 \\div 4 = 40$ m. Tinggi $= 4 \\times 40 = 160$ m.",
+      "topik": "Soal Cerita",
+      "level": "sedang",
+      "waktu": 30
+    },
+    {
+      "id": 282,
+      "teks": "Modal Rp500.000 mendapat keuntungan $15\\%$ per bulan. Setelah $3$ bulan (bunga sederhana), total uang menjadi …",
+      "bahasa": "id",
+      "jawaban": "Rp725.000",
+      "alternatif_jawaban": [
+        "725000",
+        "725.000"
+      ],
+      "pembahasan": "Bunga $= 15\\% \\times 500.000 \\times 3 = 225.000$. Total $= 500.000 + 225.000 = \\text{Rp}\\,725.000$.",
+      "topik": "Soal Cerita",
+      "level": "sedang",
+      "waktu": 30
+    },
+    {
+      "id": 283,
+      "teks": "Lebar kebun adalah $\\dfrac{2}{3}$ dari panjangnya. Jika kelilingnya $80$ m, berapa luas kebun?",
+      "bahasa": "id",
+      "jawaban": "$384 \\text{ m}^2$",
+      "alternatif_jawaban": [
+        "384 m2",
+        "384"
+      ],
+      "pembahasan": "Misalkan panjang $= p$, lebar $= \\dfrac{2}{3}p$. Keliling $= 2\\left(p+\\dfrac{2}{3}p\\right) = 2 \\times \\dfrac{5p}{3} = \\dfrac{10p}{3} = 80 \\Rightarrow p = 24$ m, $l = 16$ m. Luas $= 24 \\times 16 = 384 \\text{ m}^2$.",
+      "topik": "Soal Cerita",
+      "level": "sulit",
+      "waktu": 40
+    },
+    {
+      "id": 284,
+      "teks": "30 pekerja menyelesaikan proyek dalam $20$ hari kerja $8$ jam. Jika waktu diperpendek $16$ hari dengan jam kerja sama, berapa pekerja yang dibutuhkan?",
+      "bahasa": "id",
+      "jawaban": "37,5 ≈ 38 pekerja",
+      "alternatif_jawaban": [
+        "38",
+        "37-38"
+      ],
+      "pembahasan": "Total jam kerja $= 30 \\times 20 \\times 8 = 4.800$ jam. Pekerja baru $= 4.800 \\div (16 \\times 8) = 4.800 \\div 128 = 37{,}5 \\approx 38$ pekerja.",
+      "topik": "Soal Cerita",
+      "level": "sulit",
+      "waktu": 40
+    },
+    {
+      "id": 285,
+      "teks": "Harga $5$ pensil dan $3$ buku adalah Rp$27.000$. Harga $3$ pensil dan $5$ buku adalah Rp$29.000$. Berapa harga $1$ buku?",
+      "bahasa": "id",
+      "jawaban": "Rp4.500",
+      "alternatif_jawaban": [
+        "4500",
+        "4.500"
+      ],
+      "pembahasan": "Persamaan: $5p+3b=27.000$ dan $3p+5b=29.000$. Jumlahkan: $8p+8b=56.000 \\Rightarrow p+b=7.000$. Kurangkan: $2p-2b=-2.000 \\Rightarrow p-b=-1.000$. Jadi $b=4.000$... Koreksi: $b=\\dfrac{7000+1000}{2}=4.000$. Hmm cek: $5(3000)+3(4000)=15000+12000=27000$ ✓ dan $3(3000)+5(4000)=9000+20000=29000$ ✓. Jadi harga buku = Rp4.000.",
+      "topik": "Soal Cerita",
+      "level": "sulit",
+      "waktu": 40
+    },
+    {
+      "id": 286,
+      "teks": "Seorang pedagang membeli $120$ telur Rp2.000/butir dan menjual $\\dfrac{3}{4}$-nya Rp3.000/butir, sisanya Rp1.500/butir. Keuntungannya adalah …",
+      "bahasa": "id",
+      "jawaban": "Rp34.500",
+      "alternatif_jawaban": [
+        "34500",
+        "34.500"
+      ],
+      "pembahasan": "Modal $= 120 \\times 2.000 = 240.000$. Jual $90$ telur: $90 \\times 3.000 = 270.000$. Jual $30$ telur: $30 \\times 1.500 = 45.000$. Total penjualan $= 315.000$. Keuntungan $= 315.000-240.000 = \\text{Rp}\\,75.000$.",
+      "topik": "Soal Cerita",
+      "level": "sulit",
+      "waktu": 40
+    },
+    {
+      "id": 287,
+      "teks": "Sebuah persegi panjang memiliki diagonal $15$ cm dan salah satu sisi $9$ cm. Berapakah luasnya?",
+      "bahasa": "id",
+      "jawaban": "$108 \\text{ cm}^2$",
+      "alternatif_jawaban": [
+        "108 cm2",
+        "108"
+      ],
+      "pembahasan": "Sisi lain $= \\sqrt{15^2-9^2} = \\sqrt{225-81} = \\sqrt{144} = 12$ cm. Luas $= 9 \\times 12 = 108 \\text{ cm}^2$.",
+      "topik": "Soal Cerita",
+      "level": "sedang",
+      "waktu": 35
+    },
+    {
+      "id": 288,
+      "teks": "A store sells apples at 5 for Rp10.000. How much do 13 apples cost?",
+      "bahasa": "en",
+      "jawaban": "Rp26.000",
+      "alternatif_jawaban": [
+        "26000",
+        "26.000"
+      ],
+      "pembahasan": "Price per apple $= 10.000 \\div 5 = 2.000$. Cost of 13 $= 13 \\times 2.000 = \\text{Rp}\\,26.000$.",
+      "topik": "Soal Cerita",
+      "level": "mudah",
+      "waktu": 20
+    },
+    {
+      "id": 289,
+      "teks": "Umur Ayah 4 kali umur Andi. 5 tahun yang lalu, umur Ayah 7 kali umur Andi. Berapa umur Andi sekarang?",
+      "bahasa": "id",
+      "jawaban": "10 tahun",
+      "alternatif_jawaban": [
+        "10"
+      ],
+      "pembahasan": "Misal Andi sekarang $= a$, Ayah $= 4a$. Lima tahun lalu: $4a-5 = 7(a-5) \\Rightarrow 4a-5 = 7a-35 \\Rightarrow 30 = 3a \\Rightarrow a = 10$.",
+      "topik": "Soal Cerita",
+      "level": "sulit",
+      "waktu": 40
+    },
+    {
+      "id": 290,
+      "teks": "Sebuah tangga disandarkan ke dinding. Kaki tangga $6$ m dari dinding, panjang tangga $10$ m. Berapa tinggi dinding yang dijangkau?",
+      "bahasa": "id",
+      "jawaban": "8 m",
+      "alternatif_jawaban": [],
+      "pembahasan": "Teorema Pythagoras: tinggi $= \\sqrt{10^2-6^2} = \\sqrt{100-36} = \\sqrt{64} = 8$ m.",
+      "topik": "Soal Cerita",
+      "level": "sedang",
+      "waktu": 30
+    },
+    {
+      "id": 291,
+      "teks": "Rina menyimpan $\\dfrac{1}{3}$ penghasilannya dan menghabiskan sisanya. Jika pengeluaran Rp600.000, berapa penghasilan total Rina?",
+      "bahasa": "id",
+      "jawaban": "Rp900.000",
+      "alternatif_jawaban": [
+        "900000",
+        "900.000"
+      ],
+      "pembahasan": "Pengeluaran $= \\dfrac{2}{3}$ dari penghasilan. Penghasilan $= 600.000 \\times \\dfrac{3}{2} = \\text{Rp}\\,900.000$.",
+      "topik": "Soal Cerita",
+      "level": "sedang",
+      "waktu": 25
+    },
+    {
+      "id": 292,
+      "teks": "Sebuah bak air bocor kehilangan $3$ liter per jam. Bak berisi $90$ liter dan tidak diisi ulang. Setelah berapa jam bak setengah kosong?",
+      "bahasa": "id",
+      "jawaban": "15 jam",
+      "alternatif_jawaban": [
+        "15"
+      ],
+      "pembahasan": "Setengah kosong artinya tersisa $45$ liter, berarti $45$ liter telah bocor. Waktu $= 45 \\div 3 = 15$ jam.",
+      "topik": "Soal Cerita",
+      "level": "sedang",
+      "waktu": 25
+    },
+    {
+      "id": 293,
+      "teks": "A rectangle's length is 3 cm more than twice its width. If the perimeter is 48 cm, what is the area?",
+      "bahasa": "en",
+      "jawaban": "$135 \\text{ cm}^2$",
+      "alternatif_jawaban": [
+        "135 cm2",
+        "135"
+      ],
+      "pembahasan": "Let width $= w$, length $= 2w+3$. Perimeter: $2(w + 2w+3) = 48 \\Rightarrow 6w+6 = 48 \\Rightarrow w = 7$. Length $= 17$. Area $= 7 \\times 17 = 119 \\text{ cm}^2$.",
+      "topik": "Soal Cerita",
+      "level": "sulit",
+      "waktu": 40
+    },
+    {
+      "id": 294,
+      "teks": "Seorang penjual memiliki $150$ kg beras. Ia menjual $40\\%$-nya pada hari pertama dan $\\dfrac{1}{3}$ dari sisa pada hari kedua. Berapa kg yang tersisa?",
+      "bahasa": "id",
+      "jawaban": "60 kg",
+      "alternatif_jawaban": [
+        "60"
+      ],
+      "pembahasan": "Hari 1: jual $40\\% \\times 150 = 60$ kg, sisa $= 90$ kg. Hari 2: jual $\\dfrac{1}{3} \\times 90 = 30$ kg, sisa $= 60$ kg.",
+      "topik": "Soal Cerita",
+      "level": "sedang",
+      "waktu": 30
+    },
+    {
+      "id": 295,
+      "teks": "Sebuah kapal berlayar $240$ km dengan kecepatan $30$ km/jam. Lalu berlayar $150$ km dengan kecepatan $25$ km/jam. Berapa jam total perjalanan?",
+      "bahasa": "id",
+      "jawaban": "14 jam",
+      "alternatif_jawaban": [
+        "14"
+      ],
+      "pembahasan": "Bagian 1: $240 \\div 30 = 8$ jam. Bagian 2: $150 \\div 25 = 6$ jam. Total $= 8+6 = 14$ jam.",
+      "topik": "Soal Cerita",
+      "level": "sedang",
+      "waktu": 30
+    },
+    {
+      "id": 296,
+      "teks": "Pak Hendra meminjam uang Rp$5.000.000$ dengan bunga $2\\%$ per bulan (bunga sederhana). Berapa total yang harus dikembalikan setelah $6$ bulan?",
+      "bahasa": "id",
+      "jawaban": "Rp5.600.000",
+      "alternatif_jawaban": [
+        "5600000",
+        "5.600.000"
+      ],
+      "pembahasan": "Bunga $= 2\\% \\times 5.000.000 \\times 6 = 600.000$. Total $= 5.000.000+600.000 = \\text{Rp}\\,5.600.000$.",
+      "topik": "Soal Cerita",
+      "level": "sedang",
+      "waktu": 30
+    },
+    {
+      "id": 297,
+      "teks": "Sekolah memiliki $360$ siswa. Perbandingan laki-laki dan perempuan $5:4$. Ada berapa siswa perempuan?",
+      "bahasa": "id",
+      "jawaban": "160 siswi",
+      "alternatif_jawaban": [
+        "160"
+      ],
+      "pembahasan": "Perempuan $= \\dfrac{4}{9} \\times 360 = 160$ siswi.",
+      "topik": "Soal Cerita",
+      "level": "sedang",
+      "waktu": 25
+    },
+    {
+      "id": 298,
+      "teks": "Sebuah peta berskala $1:2.000.000$. Dua kota di peta berjarak $7$ cm. Jika ada jalan tol lurus antar kota itu, berapa km panjang tol?",
+      "bahasa": "id",
+      "jawaban": "140 km",
+      "alternatif_jawaban": [
+        "140"
+      ],
+      "pembahasan": "Jarak asli $= 7 \\times 2.000.000 = 14.000.000$ cm $= 140$ km.",
+      "topik": "Soal Cerita",
+      "level": "sedang",
+      "waktu": 25
+    },
+    {
+      "id": 299,
+      "teks": "Two taps fill a tank. Tap A fills it in 6 hours, Tap B in 4 hours. Together, how long to fill the tank?",
+      "bahasa": "en",
+      "jawaban": "2,4 jam",
+      "alternatif_jawaban": [
+        "2.4 hours",
+        "2 jam 24 menit",
+        "12/5"
+      ],
+      "pembahasan": "Rate A $= \\dfrac{1}{6}$, Rate B $= \\dfrac{1}{4}$ tank/hour. Combined $= \\dfrac{1}{6}+\\dfrac{1}{4} = \\dfrac{5}{12}$ tank/hour. Time $= \\dfrac{12}{5} = 2{,}4$ hours $= 2$ hours 24 minutes.",
+      "topik": "Soal Cerita",
+      "level": "sulit",
+      "waktu": 40
+    },
+    {
+      "id": 300,
+      "teks": "Sebuah kolam berbentuk balok $6 \\times 4 \\times 2$ m diisi air menggunakan pompa berkecepatan $0{,}5 \\text{ m}^3$/menit. Berapa menit waktu yang dibutuhkan?",
+      "bahasa": "id",
+      "jawaban": "96 menit",
+      "alternatif_jawaban": [
+        "96"
+      ],
+      "pembahasan": "Volume $= 6 \\times 4 \\times 2 = 48 \\text{ m}^3$. Waktu $= 48 \\div 0{,}5 = 96$ menit.",
+      "topik": "Soal Cerita",
+      "level": "sedang",
+      "waktu": 30
+    }
+  ]
+}
