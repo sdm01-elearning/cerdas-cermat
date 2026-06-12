@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Teknologi &amp; Sains — Materi Cerdas Cermat SDM01KKS</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { height: 100%; font-family: 'Nunito', sans-serif; }
+    :root {
+      --red:    #37474f; --red-dk: #102027; --red-lt: #eceff1;
+      --gold:   #f9a825; --green:  #2e7d32; --navy:   #1a237e;
+      --teal:   #00695c; --blue:   #1565c0; --orange: #e65100;
+      --cream:  #f8f9fa; --text:   #1a2420; --muted:  #718096; --nav-h: 58px;
+    }
+    body { background: var(--cream); color: var(--text); display: flex; flex-direction: column; height: 100vh; overflow: hidden; }
+    .s-nav { height: var(--nav-h); flex-shrink: 0; display: flex; align-items: center; gap: 1rem; padding: 0 1.5rem; background: var(--red); color: #fff; box-shadow: 0 2px 12px rgba(0,0,0,.25); z-index: 20; }
+    .s-nav a { color: rgba(255,255,255,.8); text-decoration: none; font-size: .85rem; }
+    .s-nav a:hover { color: #fff; }
+    .s-nav .sep { opacity: .4; }
+    .s-nav .s-title { flex: 1; font-weight: 800; font-size: .95rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .s-nav .s-counter { font-weight: 700; font-size: .85rem; background: rgba(255,255,255,.2); padding: .25rem .75rem; border-radius: 20px; white-space: nowrap; }
+    .btn-fs { background: rgba(255,255,255,.15); border: none; color: #fff; width: 34px; height: 34px; border-radius: 8px; font-size: 1rem; cursor: pointer; display: flex; align-items: center; justify-content: center; }
+    .btn-fs:hover { background: rgba(255,255,255,.3); }
+    .s-prog { height: 4px; background: rgba(255,255,255,.25); flex-shrink: 0; }
+    .s-prog-fill { height: 100%; background: var(--gold); transition: width .4s ease; }
+    .slides-wrap { flex: 1; position: relative; overflow: hidden; }
+    .slide { position: absolute; inset: 0; padding: 2.5rem 3rem; opacity: 0; transform: translateX(30px); transition: opacity .35s ease, transform .35s ease; pointer-events: none; overflow-y: auto; }
+    .slide.active { opacity: 1; transform: translateX(0); pointer-events: all; }
+    .slide.leaving { opacity: 0; transform: translateX(-30px); }
+    .slide-cover { background: linear-gradient(145deg, #263238 0%, var(--red) 60%, #455a64 100%); color: #fff; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; gap: 1.5rem; }
+    .cover-flag { font-size: 5rem; line-height: 1; }
+    .cover-title { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 900; text-shadow: 0 2px 16px rgba(0,0,0,.3); line-height: 1.2; }
+    .cover-sub { font-size: clamp(.9rem, 2vw, 1.2rem); opacity: .85; max-width: 540px; line-height: 1.6; }
+    .cover-tag { display: inline-flex; gap: 1rem; flex-wrap: wrap; justify-content: center; margin-top: .5rem; }
+    .cover-tag span { background: rgba(255,255,255,.18); border: 1px solid rgba(255,255,255,.35); border-radius: 20px; padding: .3rem 1rem; font-size: .8rem; font-weight: 700; }
+    .slide-content { display: flex; flex-direction: column; gap: 1.5rem; max-width: 860px; margin: 0 auto; }
+    .slide-label { font-size: .72rem; text-transform: uppercase; letter-spacing: .12em; color: var(--red); font-weight: 800; }
+    .slide-heading { font-family: 'Playfair Display', serif; font-size: clamp(1.6rem, 4vw, 2.6rem); font-weight: 700; color: var(--text); line-height: 1.2; }
+    .slide-heading .sub { font-size: .55em; color: var(--muted); display: block; font-family: 'Nunito', sans-serif; font-weight: 600; margin-top: .2rem; }
+    .hl { border-radius: 12px; padding: 1rem 1.4rem; font-weight: 700; font-size: .95rem; display: flex; align-items: flex-start; gap: .75rem; line-height: 1.6; }
+    .hl-slate  { background: #eceff1; border-left: 4px solid var(--red); color: var(--red-dk); }
+    .hl-gold   { background: #fff8e1; border-left: 4px solid var(--gold); color: #6d4c00; }
+    .hl-green  { background: #e8f5e9; border-left: 4px solid var(--green); color: #1b5e20; }
+    .hl-navy   { background: #e8eaf6; border-left: 4px solid var(--navy); color: var(--navy); }
+    .hl-teal   { background: #e0f2f1; border-left: 4px solid var(--teal); color: #004d40; }
+    .hl-blue   { background: #e3f2fd; border-left: 4px solid var(--blue); color: #0d47a1; }
+    .hl-orange { background: #fff3e0; border-left: 4px solid var(--orange); color: #8d3100; }
+    .hl-icon   { font-size: 1.4rem; flex-shrink: 0; margin-top: .05rem; }
+    .facts { display: grid; grid-template-columns: repeat(auto-fill, minmax(205px, 1fr)); gap: .85rem; }
+    .fact { background: #fff; border: 1px solid #e9ecef; border-radius: 10px; padding: .85rem 1rem; }
+    .fact-label { font-size: .68rem; text-transform: uppercase; letter-spacing: .1em; color: var(--muted); margin-bottom: .25rem; }
+    .fact-value { font-weight: 800; font-size: .92rem; color: var(--text); line-height: 1.4; }
+    .tbl { width: 100%; border-collapse: collapse; font-size: .88rem; }
+    .tbl th { background: var(--red); color: #fff; padding: .6rem .9rem; text-align: left; font-weight: 700; }
+    .tbl td { padding: .55rem .9rem; border-bottom: 1px solid #f0f4f8; vertical-align: top; line-height: 1.45; }
+    .tbl tr:hover td { background: #f5f7f8; }
+    .tbl .hl-row td { background: #fff8e1; font-weight: 700; }
+    .alat-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(185px, 1fr)); gap: .85rem; }
+    .alat-card { background: #fff; border: 1px solid #e9ecef; border-radius: 12px; padding: .9rem 1rem; border-top: 3px solid var(--ac, #37474f); }
+    .ac-icon { font-size: 1.8rem; margin-bottom: .3rem; }
+    .ac-name { font-weight: 800; font-size: .88rem; color: var(--text); margin-bottom: .15rem; }
+    .ac-fn   { font-size: .7rem; color: var(--red); font-weight: 700; margin-bottom: .2rem; }
+    .ac-desc { font-size: .76rem; color: #4a5568; line-height: 1.5; }
+    .sl { list-style: none; display: flex; flex-direction: column; gap: .55rem; }
+    .sl li { display: flex; gap: .6rem; align-items: flex-start; font-size: .93rem; line-height: 1.55; }
+    .sl li::before { content: "▸"; color: var(--red); font-size: .75rem; margin-top: .25rem; flex-shrink: 0; }
+    .cta-btn { display: inline-flex; align-items: center; gap: .5rem; background: var(--red); color: #fff; padding: .75rem 1.75rem; border-radius: 10px; font-weight: 800; font-size: 1rem; text-decoration: none; transition: opacity .15s; align-self: flex-start; }
+    .cta-btn:hover { opacity: .85; }
+    .s-footer { height: 64px; flex-shrink: 0; display: flex; align-items: center; justify-content: space-between; padding: 0 1.5rem; background: #fff; border-top: 1px solid #e9ecef; }
+    .nav-btn { display: flex; align-items: center; gap: .4rem; background: none; border: 1.5px solid #e9ecef; border-radius: 10px; padding: .5rem 1.2rem; font-family: inherit; font-size: .88rem; font-weight: 700; color: var(--text); cursor: pointer; transition: background .15s, border-color .15s; }
+    .nav-btn:hover { background: #f5f5f5; border-color: #ccc; }
+    .nav-btn:disabled { opacity: .3; cursor: default; }
+    .nav-btn.next-btn { background: var(--red); color: #fff; border-color: var(--red); }
+    .nav-btn.next-btn:hover { opacity: .88; }
+    .nav-btn.next-btn:disabled { background: #ccc; border-color: #ccc; opacity: .6; }
+    .s-hint { font-size: .72rem; color: var(--muted); text-align: center; }
+    .s-hint kbd { background: #f0f4f8; border: 1px solid #ddd; border-radius: 4px; padding: 1px 5px; font-family: monospace; font-size: .68rem; }
+    @media (max-width: 600px) { .slide { padding: 1.25rem 1rem; } .s-hint { display: none; } }
+  </style>
+</head>
+<body>
+  <header class="s-nav">
+    <a href="../index.html">← Materi</a>
+    <span class="sep">›</span>
+    <span class="s-title">Teknologi &amp; Sains</span>
+    <span class="s-counter" id="s-counter">1 / 11</span>
+    <button class="btn-fs" id="btn-fs" title="Layar penuh (F)">⛶</button>
+  </header>
+  <div class="s-prog"><div class="s-prog-fill" id="s-prog" style="width:9.09%"></div></div>
+
+  <div class="slides-wrap" id="slides-wrap">
+
+    <!-- ══ SLIDE 1 — COVER ══ -->
+    <div class="slide slide-cover active" id="sl1">
+      <div class="cover-flag">🤖</div>
+      <h1 class="cover-title">Teknologi &amp; Sains</h1>
+      <p class="cover-sub">Mengenal alat-alat ilmu pengetahuan, teknologi modern, energi terbarukan, dan penerapan sains dalam kehidupan sehari-hari.</p>
+      <div class="cover-tag">
+        <span>📖 11 Slide</span>
+        <span>🔬 Sains SD</span>
+        <span>⌨️ ← → navigasi</span>
+      </div>
+    </div>
+
+    <!-- ══ SLIDE 2 — ALAT UKUR ══ -->
+    <div class="slide" id="sl2">
+      <div class="slide-content">
+        <div class="slide-label">Slide 2 · Alat-Alat Pengukuran</div>
+        <h2 class="slide-heading">Alat Ukur dalam Sains</h2>
+        <div class="hl hl-slate">
+          <span class="hl-icon">📏</span>
+          <span>Pengukuran adalah dasar dari ilmu pengetahuan. Setiap besaran fisika memiliki alat ukur khusus dengan satuan yang ditetapkan dalam <strong>Sistem Internasional (SI)</strong>.</span>
+        </div>
+        <div class="alat-grid">
+          <div class="alat-card" style="--ac:#1565c0">
+            <div class="ac-icon">🌡️</div>
+            <div class="ac-name">Termometer</div>
+            <div class="ac-fn">Mengukur Suhu</div>
+            <div class="ac-desc">Satuan: °C (Celsius), °F (Fahrenheit), K (Kelvin). Jenis: air raksa, digital, inframerah, klinis.</div>
+          </div>
+          <div class="alat-card" style="--ac:#2e7d32">
+            <div class="ac-icon">⚖️</div>
+            <div class="ac-name">Neraca / Timbangan</div>
+            <div class="ac-fn">Mengukur Massa</div>
+            <div class="ac-desc">Satuan: gram (g), kilogram (kg). Jenis: neraca Ohaus (laboratorium), neraca lengan, timbangan digital.</div>
+          </div>
+          <div class="alat-card" style="--ac:#e65100">
+            <div class="ac-icon">📏</div>
+            <div class="ac-name">Penggaris / Jangka Sorong</div>
+            <div class="ac-fn">Mengukur Panjang</div>
+            <div class="ac-desc">Satuan: mm, cm, m, km. Jangka sorong mengukur hingga 0,1 mm (lebih presisi dari penggaris biasa).</div>
+          </div>
+          <div class="alat-card" style="--ac:#6a1b9a">
+            <div class="ac-icon">⏱️</div>
+            <div class="ac-name">Stopwatch</div>
+            <div class="ac-fn">Mengukur Waktu</div>
+            <div class="ac-desc">Satuan: detik (s), menit, jam. Stopwatch digital dapat mengukur hingga 0,01 detik.</div>
+          </div>
+          <div class="alat-card" style="--ac:#00695c">
+            <div class="ac-icon">🔬</div>
+            <div class="ac-name">Mikroskop</div>
+            <div class="ac-fn">Memperbesar Objek Kecil</div>
+            <div class="ac-desc">Memperbesar objek 40–1.000× (optik) hingga jutaan× (elektron). Untuk mengamati sel, bakteri, dan mikroorganisme.</div>
+          </div>
+          <div class="alat-card" style="--ac:#37474f">
+            <div class="ac-icon">🧪</div>
+            <div class="ac-name">Gelas Ukur / Pipet</div>
+            <div class="ac-fn">Mengukur Volume Cairan</div>
+            <div class="ac-desc">Satuan: mL, L. Gelas ukur untuk volume kasar; pipet untuk volume presisi di laboratorium kimia.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ SLIDE 3 — ENERGI TERBARUKAN ══ -->
+    <div class="slide" id="sl3">
+      <div class="slide-content">
+        <div class="slide-label">Slide 3 · Energi</div>
+        <h2 class="slide-heading">Energi Terbarukan vs Tidak Terbarukan</h2>
+        <table class="tbl">
+          <thead><tr><th></th><th>Energi Tidak Terbarukan</th><th>Energi Terbarukan</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Sumber</strong></td><td>Bahan bakar fosil (minyak bumi, batu bara, gas alam)</td><td>Alam yang terus tersedia (Matahari, angin, air, panas bumi)</td></tr>
+            <tr><td><strong>Ketersediaan</strong></td><td>Terbatas, akan habis</td><td>Tidak terbatas, terus diperbarui alam</td></tr>
+            <tr class="hl-row"><td><strong>Dampak Lingkungan</strong></td><td>Menghasilkan CO₂; polusi udara; pemanasan global</td><td>Bersih; ramah lingkungan; emisi sangat rendah</td></tr>
+            <tr><td><strong>Contoh</strong></td><td>PLTU (batu bara), PLTD (solar), kilang minyak</td><td>PLTS (surya), PLTB (angin), PLTA (air), PLTPB (panas bumi)</td></tr>
+          </tbody>
+        </table>
+        <div class="alat-grid" style="margin-top:.3rem">
+          <div class="alat-card" style="--ac:#f9a825">
+            <div class="ac-icon">☀️</div>
+            <div class="ac-name">Panel Surya (PLTS)</div>
+            <div class="ac-fn">Energi Matahari → Listrik</div>
+            <div class="ac-desc">Sel fotovoltaik mengubah cahaya Matahari langsung menjadi listrik. Indonesia berpotensi besar karena intensitas Matahari tinggi.</div>
+          </div>
+          <div class="alat-card" style="--ac:#1565c0">
+            <div class="ac-icon">💨</div>
+            <div class="ac-name">Turbin Angin (PLTB)</div>
+            <div class="ac-fn">Energi Angin → Listrik</div>
+            <div class="ac-desc">Angin memutar baling-baling yang menggerakkan generator. NTT dan Sulsel memiliki potensi angin besar.</div>
+          </div>
+          <div class="alat-card" style="--ac:#2e7d32">
+            <div class="ac-icon">💧</div>
+            <div class="ac-name">PLTA (Bendungan)</div>
+            <div class="ac-fn">Energi Air → Listrik</div>
+            <div class="ac-desc">Air mengalir dari ketinggian memutar turbin. PLTA Jatiluhur dan Saguling adalah yang terbesar di Indonesia.</div>
+          </div>
+          <div class="alat-card" style="--ac:#c62828">
+            <div class="ac-icon">🌋</div>
+            <div class="ac-name">Panas Bumi (PLTPB)</div>
+            <div class="ac-fn">Energi Geothermal → Listrik</div>
+            <div class="ac-desc">Uap panas dari dalam bumi menggerakkan turbin. Indonesia punya cadangan panas bumi terbesar ke-2 dunia.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ SLIDE 4 — TEKNOLOGI KOMUNIKASI ══ -->
+    <div class="slide" id="sl4">
+      <div class="slide-content">
+        <div class="slide-label">Slide 4 · Teknologi Komunikasi</div>
+        <h2 class="slide-heading">Perkembangan Teknologi Komunikasi</h2>
+        <div class="hl hl-blue">
+          <span class="hl-icon">📱</span>
+          <span>Teknologi komunikasi berkembang sangat pesat — dari surat dan telegraf hingga internet dan smartphone dalam waktu kurang dari 200 tahun.</span>
+        </div>
+        <table class="tbl">
+          <thead><tr><th>Era</th><th>Teknologi</th><th>Tokoh / Keterangan</th></tr></thead>
+          <tbody>
+            <tr><td><strong>1840-an</strong></td><td>Telegraf (kode Morse)</td><td>Samuel Morse · komunikasi jarak jauh pertama melalui kabel</td></tr>
+            <tr><td><strong>1876</strong></td><td>Telepon</td><td>Alexander Graham Bell · suara bisa dikirim jarak jauh</td></tr>
+            <tr><td><strong>1895</strong></td><td>Radio nirkabel</td><td>Guglielmo Marconi · komunikasi tanpa kabel</td></tr>
+            <tr><td><strong>1927</strong></td><td>Televisi</td><td>John Logie Baird · gambar bergerak bisa disiarkan</td></tr>
+            <tr class="hl-row"><td><strong>1989</strong></td><td>World Wide Web (Internet)</td><td>Tim Berners-Lee · revolusi informasi global</td></tr>
+            <tr><td><strong>2007</strong></td><td>Smartphone (iPhone)</td><td>Apple · komputer dalam genggaman tangan</td></tr>
+            <tr><td><strong>2020-an</strong></td><td>5G &amp; AI Generatif</td><td>Jaringan super cepat; kecerdasan buatan yang bisa bercakap</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- ══ SLIDE 5 — TEKNOLOGI KESEHATAN ══ -->
+    <div class="slide" id="sl5">
+      <div class="slide-content">
+        <div class="slide-label">Slide 5 · Teknologi Kesehatan</div>
+        <h2 class="slide-heading">Teknologi dalam Dunia Kesehatan</h2>
+        <div class="alat-grid">
+          <div class="alat-card" style="--ac:#c62828">
+            <div class="ac-icon">🩻</div>
+            <div class="ac-name">Sinar-X (Rontgen)</div>
+            <div class="ac-fn">Pencitraan tulang</div>
+            <div class="ac-desc">Gelombang elektromagnetik berenergi tinggi menembus jaringan lunak tapi diserap tulang. Menemukan patah tulang, infeksi paru.</div>
+          </div>
+          <div class="alat-card" style="--ac:#1565c0">
+            <div class="ac-icon">🔊</div>
+            <div class="ac-name">USG (Ultrasonografi)</div>
+            <div class="ac-fn">Pencitraan organ dalam</div>
+            <div class="ac-desc">Menggunakan gelombang ultrasonik untuk mencitrakan organ. Aman tanpa radiasi; digunakan untuk memeriksa kandungan ibu hamil.</div>
+          </div>
+          <div class="alat-card" style="--ac:#2e7d32">
+            <div class="ac-icon">🧲</div>
+            <div class="ac-name">MRI</div>
+            <div class="ac-fn">Pencitraan jaringan lunak</div>
+            <div class="ac-desc">Magnetic Resonance Imaging — menggunakan magnet kuat untuk mencitrakan otak, otot, dan jaringan lunak secara detail.</div>
+          </div>
+          <div class="alat-card" style="--ac:#6a1b9a">
+            <div class="ac-icon">💉</div>
+            <div class="ac-name">Vaksin &amp; Bioteknologi</div>
+            <div class="ac-fn">Pencegahan penyakit</div>
+            <div class="ac-desc">Vaksin mRNA (COVID-19) adalah terobosan bioteknologi terbaru. Rekayasa genetika memungkinkan produksi insulin dan obat-obatan.</div>
+          </div>
+        </div>
+        <div class="hl hl-gold">
+          <span class="hl-icon">🧬</span>
+          <span>Proyek Genom Manusia selesai tahun 2003 — memetakan semua 3 miliar pasang basa DNA manusia. Kini, pengurutan DNA satu orang hanya butuh <strong>beberapa jam dan ratusan dolar</strong>, padahal tahun 2000 butuh 13 tahun dan 3 miliar dolar!</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ SLIDE 6 — TEKNOLOGI TRANSPORTASI ══ -->
+    <div class="slide" id="sl6">
+      <div class="slide-content">
+        <div class="slide-label">Slide 6 · Teknologi Transportasi</div>
+        <h2 class="slide-heading">Inovasi Teknologi Transportasi</h2>
+        <table class="tbl">
+          <thead><tr><th>Teknologi</th><th>Prinsip Sains</th><th>Contoh &amp; Keterangan</th></tr></thead>
+          <tbody>
+            <tr><td><strong>✈️ Pesawat Terbang</strong></td><td>Gaya angkat (lift) dari sayap; Hukum Bernoulli</td><td>Udara mengalir lebih cepat di atas sayap → tekanan lebih rendah → pesawat terangkat</td></tr>
+            <tr><td><strong>🚢 Kapal Laut</strong></td><td>Hukum Archimedes (gaya apung)</td><td>Besi padat tenggelam, tapi kapal besi mengapung karena bentuknya yang berongga</td></tr>
+            <tr class="hl-row"><td><strong>🚄 Kereta Maglev</strong></td><td>Elektromagnet tolak-menolak</td><td>Melayang di atas rel tanpa kontak — tidak ada gesekan. Kecepatan hingga 600 km/jam (Shanghai Maglev)</td></tr>
+            <tr><td><strong>🚗 Mobil Listrik</strong></td><td>Motor listrik; baterai litium</td><td>Nol emisi langsung; lebih efisien dari mesin bensin; Tesla, Hyundai Ioniq, BYD</td></tr>
+            <tr><td><strong>🚀 Roket</strong></td><td>Hukum III Newton (aksi-reaksi)</td><td>Gas didorong ke bawah → roket terdorong ke atas. SpaceX Falcon 9 bisa mendarat kembali</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- ══ SLIDE 7 — KOMPUTER & INTERNET ══ -->
+    <div class="slide" id="sl7">
+      <div class="slide-content">
+        <div class="slide-label">Slide 7 · Teknologi Digital</div>
+        <h2 class="slide-heading">Komputer, Internet, &amp; Kecerdasan Buatan</h2>
+        <div class="hl hl-navy">
+          <span class="hl-icon">💻</span>
+          <span>Komputer bekerja dengan sistem <strong>biner (0 dan 1)</strong> — semua data, gambar, suara, dan video di komputer akhirnya adalah deretan angka 0 dan 1.</span>
+        </div>
+        <div class="facts">
+          <div class="fact"><div class="fact-label">Bit &amp; Byte</div><div class="fact-value">1 byte = 8 bit · 1 KB = 1.024 byte · 1 MB = 1.024 KB · 1 GB = 1.024 MB</div></div>
+          <div class="fact"><div class="fact-label">CPU (Prosesor)</div><div class="fact-value">Otak komputer; melakukan miliaran perhitungan per detik (GHz)</div></div>
+          <div class="fact"><div class="fact-label">RAM</div><div class="fact-value">Memori kerja sementara; makin besar RAM makin lancar komputer multitasking</div></div>
+          <div class="fact"><div class="fact-label">Internet</div><div class="fact-value">Jaringan komputer global yang terhubung melalui protokol TCP/IP</div></div>
+        </div>
+        <div class="hl hl-gold">
+          <span class="hl-icon">🤖</span>
+          <span><strong>Kecerdasan Buatan (AI)</strong> adalah teknologi yang memungkinkan komputer "belajar" dari data dan membuat keputusan layaknya manusia. Contoh: asisten suara (Siri, Alexa), rekomendasi YouTube, deteksi wajah, mobil otonom, dan ChatGPT.</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ SLIDE 8 — PERTANIAN & PANGAN ══ -->
+    <div class="slide" id="sl8">
+      <div class="slide-content">
+        <div class="slide-label">Slide 8 · Teknologi Pangan &amp; Pertanian</div>
+        <h2 class="slide-heading">Teknologi dalam Pertanian &amp; Pangan</h2>
+        <table class="tbl">
+          <thead><tr><th>Teknologi</th><th>Penjelasan</th><th>Manfaat</th></tr></thead>
+          <tbody>
+            <tr class="hl-row"><td><strong>🌾 Bibit Unggul</strong></td><td>Pemuliaan tanaman untuk mendapatkan varietas terbaik (produktivitas tinggi, tahan hama)</td><td>Revolusi Hijau tahun 1960–70an berhasil melipatgandakan produksi padi dunia</td></tr>
+            <tr><td><strong>🧪 Pupuk &amp; Pestisida</strong></td><td>Pupuk kimia menambah unsur hara; pestisida membunuh hama</td><td>Meningkatkan produktivitas pertanian; namun penggunaan berlebihan merusak lingkungan</td></tr>
+            <tr><td><strong>💧 Irigasi Modern</strong></td><td>Sistem pengairan terstruktur dari bendungan, saluran, dan drip irrigation</td><td>Menghemat air 30–50%; memungkinkan pertanian di daerah kering</td></tr>
+            <tr><td><strong>🧬 Rekayasa Genetika</strong></td><td>Memodifikasi gen tanaman untuk sifat yang diinginkan (GMO)</td><td>Tanaman Bt jagung tahan hama; padi emas kaya vitamin A; tomat tahan lama</td></tr>
+            <tr><td><strong>🤖 Pertanian Presisi</strong></td><td>Menggunakan drone, sensor, dan AI untuk memantau tanaman</td><td>Efisiensi pupuk dan air; deteksi dini penyakit tanaman; meningkatkan hasil panen</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- ══ SLIDE 9 — TEKNOLOGI MATERIAL ══ -->
+    <div class="slide" id="sl9">
+      <div class="slide-content">
+        <div class="slide-label">Slide 9 · Material &amp; Bahan</div>
+        <h2 class="slide-heading">Teknologi Material Modern</h2>
+        <div class="hl hl-teal">
+          <span class="hl-icon">⚗️</span>
+          <span>Material modern lahir dari pemahaman mendalam tentang kimia dan fisika. Bahan-bahan baru yang lebih kuat, ringan, dan fungsional terus ditemukan.</span>
+        </div>
+        <div class="alat-grid">
+          <div class="alat-card" style="--ac:#37474f">
+            <div class="ac-icon">🕸️</div>
+            <div class="ac-name">Serat Karbon</div>
+            <div class="ac-fn">Kuat, ringan, tahan panas</div>
+            <div class="ac-desc">5× lebih kuat dari baja tetapi 5× lebih ringan. Digunakan pada pesawat, mobil F1, sepeda balap, dan roket.</div>
+          </div>
+          <div class="alat-card" style="--ac:#1565c0">
+            <div class="ac-icon">🔬</div>
+            <div class="ac-name">Graphene</div>
+            <div class="ac-fn">Material terkuat di dunia</div>
+            <div class="ac-desc">Lapisan atom karbon setebal 1 atom; 200× lebih kuat dari baja; konduktor listrik sempurna. Nobel Fisika 2010.</div>
+          </div>
+          <div class="alat-card" style="--ac:#2e7d32">
+            <div class="ac-icon">♻️</div>
+            <div class="ac-name">Bioplastik</div>
+            <div class="ac-fn">Plastik ramah lingkungan</div>
+            <div class="ac-desc">Terbuat dari pati jagung, tebu, atau alga. Dapat terurai secara alami, tidak seperti plastik konvensional.</div>
+          </div>
+          <div class="alat-card" style="--ac:#f9a825">
+            <div class="ac-icon">⚡</div>
+            <div class="ac-name">Baterai Solid-State</div>
+            <div class="ac-fn">Penyimpan energi masa depan</div>
+            <div class="ac-desc">Lebih aman, lebih padat energi, dan lebih cepat mengisi daya dibanding baterai litium-ion. Teknologi kunci mobil listrik masa depan.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ SLIDE 10 — METODE ILMIAH ══ -->
+    <div class="slide" id="sl10">
+      <div class="slide-content">
+        <div class="slide-label">Slide 10 · Metode Ilmiah</div>
+        <h2 class="slide-heading">Metode Ilmiah — Cara Kerja Sains</h2>
+        <div class="hl hl-slate">
+          <span class="hl-icon">🔭</span>
+          <span><strong>Metode ilmiah</strong> adalah cara sistematis untuk menjawab pertanyaan tentang alam. Semua ilmuwan di seluruh dunia menggunakan langkah-langkah yang sama.</span>
+        </div>
+        <table class="tbl">
+          <thead><tr><th>Langkah</th><th>Penjelasan</th><th>Contoh</th></tr></thead>
+          <tbody>
+            <tr><td><strong>1. Observasi</strong></td><td>Mengamati gejala alam dengan cermat</td><td>"Tanaman di dekat jendela tumbuh miring ke arah cahaya"</td></tr>
+            <tr><td><strong>2. Rumusan Masalah</strong></td><td>Membuat pertanyaan yang akan diteliti</td><td>"Apakah cahaya mempengaruhi arah tumbuh tanaman?"</td></tr>
+            <tr class="hl-row"><td><strong>3. Hipotesis</strong></td><td>Jawaban sementara yang bisa diuji</td><td>"Tanaman tumbuh ke arah sumber cahaya (fototropisme)"</td></tr>
+            <tr><td><strong>4. Eksperimen</strong></td><td>Menguji hipotesis secara terkontrol</td><td>Menempatkan tanaman dengan sumber cahaya dari satu arah saja</td></tr>
+            <tr><td><strong>5. Analisis Data</strong></td><td>Mengolah dan menginterpretasikan hasil</td><td>Mengukur sudut kemiringan batang tiap hari</td></tr>
+            <tr><td><strong>6. Kesimpulan</strong></td><td>Menjawab hipotesis berdasarkan data</td><td>"Hipotesis terbukti benar — tanaman tumbuh ke arah cahaya"</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- ══ SLIDE 11 — RANGKUMAN ══ -->
+    <div class="slide" id="sl11">
+      <div class="slide-content">
+        <div class="slide-label">Slide 11 · Rangkuman</div>
+        <h2 class="slide-heading">Rangkuman Teknologi &amp; Sains</h2>
+        <table class="tbl">
+          <thead><tr><th>Topik</th><th>Poin Kunci</th></tr></thead>
+          <tbody>
+            <tr><td><strong>📏 Alat Ukur</strong></td><td>Termometer (suhu) · Neraca (massa) · Penggaris (panjang) · Stopwatch (waktu) · Mikroskop (benda kecil)</td></tr>
+            <tr><td><strong>⚡ Energi Terbarukan</strong></td><td>PLTS (surya), PLTB (angin), PLTA (air), PLTPB (panas bumi) — bersih &amp; tidak habis</td></tr>
+            <tr class="hl-row"><td><strong>📱 Teknologi Komunikasi</strong></td><td>Telegraf → Telepon → Radio → TV → Internet → Smartphone → AI (dalam 200 tahun)</td></tr>
+            <tr><td><strong>🚄 Transportasi</strong></td><td>Pesawat (Bernoulli), kapal (Archimedes), kereta maglev (elektromagnet), mobil listrik</td></tr>
+            <tr><td><strong>🤖 AI</strong></td><td>Kecerdasan Buatan belajar dari data; contoh: rekomendasi YouTube, asisten suara, deteksi wajah</td></tr>
+            <tr><td><strong>🔬 Metode Ilmiah</strong></td><td>Observasi → Rumusan Masalah → Hipotesis → Eksperimen → Analisis → Kesimpulan</td></tr>
+          </tbody>
+        </table>
+        <div class="hl hl-green">
+          <span class="hl-icon">✅</span>
+          <span>Selamat! Kamu telah menyelesaikan seluruh <strong>8 topik materi Pengetahuan Sains</strong> — dari Tata Surya, Tubuh Manusia, Biologi Tumbuhan &amp; Hewan, Kimia, Fisika, Bumi &amp; Atmosfer, hingga Teknologi &amp; Sains!</span>
+        </div>
+        <a href="../soal/paket-01.html" class="cta-btn">📝 Latihan Soal Sekarang →</a>
+      </div>
+    </div>
+
+  </div><!-- /slides-wrap -->
+
+  <footer class="s-footer">
+    <button class="nav-btn prev-btn" id="btn-prev" onclick="prev()" disabled>◄ Sebelumnya</button>
+    <div class="s-hint"><kbd>←</kbd> <kbd>→</kbd> navigasi &nbsp;·&nbsp; <kbd>F</kbd> layar penuh</div>
+    <button class="nav-btn next-btn" id="btn-next" onclick="next()">Berikutnya ►</button>
+  </footer>
+
+  <script>
+    const TOTAL = 11;
+    let cur = 1;
+    function showSlide(n) {
+      const pv = document.getElementById('sl' + cur);
+      const nx = document.getElementById('sl' + n);
+      if (!nx) return;
+      pv.classList.add('leaving'); pv.classList.remove('active');
+      setTimeout(() => pv.classList.remove('leaving'), 400);
+      nx.classList.add('active'); cur = n;
+      document.getElementById('s-counter').textContent = cur + ' / ' + TOTAL;
+      document.getElementById('s-prog').style.width = (cur / TOTAL * 100).toFixed(2) + '%';
+      document.getElementById('btn-prev').disabled = (cur === 1);
+      document.getElementById('btn-next').disabled = (cur === TOTAL);
+    }
+    function next() { if (cur < TOTAL) showSlide(cur + 1); }
+    function prev() { if (cur > 1)     showSlide(cur - 1); }
+    document.addEventListener('keydown', e => {
+      if (e.code === 'ArrowRight' || e.code === 'ArrowDown') next();
+      if (e.code === 'ArrowLeft'  || e.code === 'ArrowUp')   prev();
+      if (e.code === 'KeyF') toggleFS();
+    });
+    document.getElementById('btn-fs').addEventListener('click', toggleFS);
+    function toggleFS() {
+      if (!document.fullscreenElement) document.documentElement.requestFullscreen().catch(() => {});
+      else document.exitFullscreen();
+    }
+    let ts = 0;
+    document.getElementById('slides-wrap').addEventListener('touchstart', e => { ts = e.touches[0].clientX; });
+    document.getElementById('slides-wrap').addEventListener('touchend', e => {
+      const dx = e.changedTouches[0].clientX - ts;
+      if (Math.abs(dx) > 50) { dx < 0 ? next() : prev(); }
+    });
+  </script>
+</body>
+</html>

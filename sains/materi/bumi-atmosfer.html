@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bumi &amp; Atmosfer — Materi Cerdas Cermat SDM01KKS</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { height: 100%; font-family: 'Nunito', sans-serif; }
+    :root {
+      --red:    #1a237e; --red-dk: #000051; --red-lt: #e8eaf6;
+      --gold:   #f9a825; --green:  #2e7d32; --teal:   #00695c;
+      --blue:   #1565c0; --orange: #e65100; --accent: #c62828;
+      --cream:  #f8f9ff; --text:   #1a2420; --muted:  #718096; --nav-h: 58px;
+    }
+    body { background: var(--cream); color: var(--text); display: flex; flex-direction: column; height: 100vh; overflow: hidden; }
+    .s-nav { height: var(--nav-h); flex-shrink: 0; display: flex; align-items: center; gap: 1rem; padding: 0 1.5rem; background: var(--red); color: #fff; box-shadow: 0 2px 12px rgba(0,0,0,.25); z-index: 20; }
+    .s-nav a { color: rgba(255,255,255,.8); text-decoration: none; font-size: .85rem; }
+    .s-nav a:hover { color: #fff; }
+    .s-nav .sep { opacity: .4; }
+    .s-nav .s-title { flex: 1; font-weight: 800; font-size: .95rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .s-nav .s-counter { font-weight: 700; font-size: .85rem; background: rgba(255,255,255,.2); padding: .25rem .75rem; border-radius: 20px; white-space: nowrap; }
+    .btn-fs { background: rgba(255,255,255,.15); border: none; color: #fff; width: 34px; height: 34px; border-radius: 8px; font-size: 1rem; cursor: pointer; display: flex; align-items: center; justify-content: center; }
+    .btn-fs:hover { background: rgba(255,255,255,.3); }
+    .s-prog { height: 4px; background: rgba(255,255,255,.25); flex-shrink: 0; }
+    .s-prog-fill { height: 100%; background: var(--gold); transition: width .4s ease; }
+    .slides-wrap { flex: 1; position: relative; overflow: hidden; }
+    .slide { position: absolute; inset: 0; padding: 2.5rem 3rem; opacity: 0; transform: translateX(30px); transition: opacity .35s ease, transform .35s ease; pointer-events: none; overflow-y: auto; }
+    .slide.active { opacity: 1; transform: translateX(0); pointer-events: all; }
+    .slide.leaving { opacity: 0; transform: translateX(-30px); }
+    .slide-cover { background: linear-gradient(145deg, #0d1b4b 0%, var(--red) 60%, #1565c0 100%); color: #fff; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; gap: 1.5rem; }
+    .cover-flag { font-size: 5rem; line-height: 1; }
+    .cover-title { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 900; text-shadow: 0 2px 16px rgba(0,0,0,.3); line-height: 1.2; }
+    .cover-sub { font-size: clamp(.9rem, 2vw, 1.2rem); opacity: .85; max-width: 540px; line-height: 1.6; }
+    .cover-tag { display: inline-flex; gap: 1rem; flex-wrap: wrap; justify-content: center; margin-top: .5rem; }
+    .cover-tag span { background: rgba(255,255,255,.18); border: 1px solid rgba(255,255,255,.35); border-radius: 20px; padding: .3rem 1rem; font-size: .8rem; font-weight: 700; }
+    .slide-content { display: flex; flex-direction: column; gap: 1.5rem; max-width: 860px; margin: 0 auto; }
+    .slide-label { font-size: .72rem; text-transform: uppercase; letter-spacing: .12em; color: var(--red); font-weight: 800; }
+    .slide-heading { font-family: 'Playfair Display', serif; font-size: clamp(1.6rem, 4vw, 2.6rem); font-weight: 700; color: var(--text); line-height: 1.2; }
+    .slide-heading .sub { font-size: .55em; color: var(--muted); display: block; font-family: 'Nunito', sans-serif; font-weight: 600; margin-top: .2rem; }
+    .hl { border-radius: 12px; padding: 1rem 1.4rem; font-weight: 700; font-size: .95rem; display: flex; align-items: flex-start; gap: .75rem; line-height: 1.6; }
+    .hl-navy   { background: #e8eaf6; border-left: 4px solid var(--red); color: var(--red-dk); }
+    .hl-gold   { background: #fff8e1; border-left: 4px solid var(--gold); color: #6d4c00; }
+    .hl-green  { background: #e8f5e9; border-left: 4px solid var(--green); color: #1b5e20; }
+    .hl-teal   { background: #e0f2f1; border-left: 4px solid var(--teal); color: #004d40; }
+    .hl-blue   { background: #e3f2fd; border-left: 4px solid var(--blue); color: #0d47a1; }
+    .hl-orange { background: #fff3e0; border-left: 4px solid var(--orange); color: #8d3100; }
+    .hl-red    { background: #ffebee; border-left: 4px solid var(--accent); color: #8e0000; }
+    .hl-icon   { font-size: 1.4rem; flex-shrink: 0; margin-top: .05rem; }
+    .facts { display: grid; grid-template-columns: repeat(auto-fill, minmax(205px, 1fr)); gap: .85rem; }
+    .fact { background: #fff; border: 1px solid #e9ecef; border-radius: 10px; padding: .85rem 1rem; }
+    .fact-label { font-size: .68rem; text-transform: uppercase; letter-spacing: .1em; color: var(--muted); margin-bottom: .25rem; }
+    .fact-value { font-weight: 800; font-size: .92rem; color: var(--text); line-height: 1.4; }
+    .tbl { width: 100%; border-collapse: collapse; font-size: .88rem; }
+    .tbl th { background: var(--red); color: #fff; padding: .6rem .9rem; text-align: left; font-weight: 700; }
+    .tbl td { padding: .55rem .9rem; border-bottom: 1px solid #f0f4f8; vertical-align: top; line-height: 1.45; }
+    .tbl tr:hover td { background: #f0f2ff; }
+    .tbl .hl-row td { background: #fff8e1; font-weight: 700; }
+    /* lapisan bumi / atmosfer cards */
+    .layer-list { display: flex; flex-direction: column; gap: .6rem; }
+    .layer-item { display: flex; align-items: flex-start; gap: 1rem; background: #fff; border: 1px solid #e9ecef; border-radius: 10px; padding: .75rem 1rem; border-left: 4px solid var(--lc, #1a237e); }
+    .li-depth { font-size: .72rem; font-weight: 800; color: var(--muted); min-width: 90px; flex-shrink: 0; margin-top: .1rem; }
+    .li-name  { font-weight: 800; font-size: .9rem; color: var(--text); margin-bottom: .15rem; }
+    .li-desc  { font-size: .78rem; color: #4a5568; line-height: 1.5; }
+    .sl { list-style: none; display: flex; flex-direction: column; gap: .55rem; }
+    .sl li { display: flex; gap: .6rem; align-items: flex-start; font-size: .93rem; line-height: 1.55; }
+    .sl li::before { content: "▸"; color: var(--red); font-size: .75rem; margin-top: .25rem; flex-shrink: 0; }
+    .cta-btn { display: inline-flex; align-items: center; gap: .5rem; background: var(--red); color: #fff; padding: .75rem 1.75rem; border-radius: 10px; font-weight: 800; font-size: 1rem; text-decoration: none; transition: opacity .15s; align-self: flex-start; }
+    .cta-btn:hover { opacity: .85; }
+    .s-footer { height: 64px; flex-shrink: 0; display: flex; align-items: center; justify-content: space-between; padding: 0 1.5rem; background: #fff; border-top: 1px solid #e9ecef; }
+    .nav-btn { display: flex; align-items: center; gap: .4rem; background: none; border: 1.5px solid #e9ecef; border-radius: 10px; padding: .5rem 1.2rem; font-family: inherit; font-size: .88rem; font-weight: 700; color: var(--text); cursor: pointer; transition: background .15s, border-color .15s; }
+    .nav-btn:hover { background: #f5f5f5; border-color: #ccc; }
+    .nav-btn:disabled { opacity: .3; cursor: default; }
+    .nav-btn.next-btn { background: var(--red); color: #fff; border-color: var(--red); }
+    .nav-btn.next-btn:hover { opacity: .88; }
+    .nav-btn.next-btn:disabled { background: #ccc; border-color: #ccc; opacity: .6; }
+    .s-hint { font-size: .72rem; color: var(--muted); text-align: center; }
+    .s-hint kbd { background: #f0f4f8; border: 1px solid #ddd; border-radius: 4px; padding: 1px 5px; font-family: monospace; font-size: .68rem; }
+    @media (max-width: 600px) { .slide { padding: 1.25rem 1rem; } .s-hint { display: none; } }
+  </style>
+</head>
+<body>
+  <header class="s-nav">
+    <a href="../index.html">← Materi</a>
+    <span class="sep">›</span>
+    <span class="s-title">Bumi &amp; Atmosfer</span>
+    <span class="s-counter" id="s-counter">1 / 12</span>
+    <button class="btn-fs" id="btn-fs" title="Layar penuh (F)">⛶</button>
+  </header>
+  <div class="s-prog"><div class="s-prog-fill" id="s-prog" style="width:8.33%"></div></div>
+
+  <div class="slides-wrap" id="slides-wrap">
+
+    <!-- ══ SLIDE 1 — COVER ══ -->
+    <div class="slide slide-cover active" id="sl1">
+      <div class="cover-flag">🌍</div>
+      <h1 class="cover-title">Bumi &amp; Atmosfer</h1>
+      <p class="cover-sub">Mengenal lapisan bumi, lapisan atmosfer, cuaca, iklim, siklus air, dan berbagai fenomena alam yang terjadi di planet kita.</p>
+      <div class="cover-tag">
+        <span>📖 12 Slide</span>
+        <span>🔬 Sains SD</span>
+        <span>⌨️ ← → navigasi</span>
+      </div>
+    </div>
+
+    <!-- ══ SLIDE 2 — STRUKTUR BUMI ══ -->
+    <div class="slide" id="sl2">
+      <div class="slide-content">
+        <div class="slide-label">Slide 2 · Struktur Bumi</div>
+        <h2 class="slide-heading">Lapisan-Lapisan Bumi</h2>
+        <div class="hl hl-navy">
+          <span class="hl-icon">🌍</span>
+          <span>Bumi tersusun dari <strong>empat lapisan utama</strong> yang berbeda komposisi dan sifatnya, dari lapisan paling luar (kerak) hingga yang paling dalam (inti dalam).</span>
+        </div>
+        <div class="layer-list">
+          <div class="layer-item" style="--lc:#8d6e63">
+            <div class="li-depth">0 – 70 km</div>
+            <div>
+              <div class="li-name">🪨 Kerak Bumi (Litosfer)</div>
+              <div class="li-desc">Lapisan terluar tempat kita berdiri. Terdiri dari batuan dan mineral. Ada kerak benua (lebih tebal, ±30–70 km) dan kerak samudra (lebih tipis, ±5–10 km).</div>
+            </div>
+          </div>
+          <div class="layer-item" style="--lc:#ff7043">
+            <div class="li-depth">70 – 2.900 km</div>
+            <div>
+              <div class="li-name">🌋 Mantel Bumi</div>
+              <div class="li-desc">Lapisan tebat batuan semi-cair (magma). Bagian atas mantel bersama kerak membentuk lempeng tektonik. Pergerakan mantel menyebabkan gempa dan letusan gunung berapi.</div>
+            </div>
+          </div>
+          <div class="layer-item" style="--lc:#ff5722">
+            <div class="li-depth">2.900 – 5.150 km</div>
+            <div>
+              <div class="li-name">🔴 Inti Luar</div>
+              <div class="li-desc">Lapisan cairan logam (besi dan nikel). Pergerakan cairan logam ini yang menghasilkan medan magnet Bumi yang melindungi kita dari radiasi Matahari.</div>
+            </div>
+          </div>
+          <div class="layer-item" style="--lc:#b71c1c">
+            <div class="li-depth">5.150 – 6.371 km</div>
+            <div>
+              <div class="li-name">⭕ Inti Dalam</div>
+              <div class="li-desc">Bola padat dari besi dan nikel. Suhu ±5.000–6.000°C — hampir sepanas permukaan Matahari! Padat karena tekanan yang sangat besar dari lapisan di atasnya.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ SLIDE 3 — LEMPENG TEKTONIK ══ -->
+    <div class="slide" id="sl3">
+      <div class="slide-content">
+        <div class="slide-label">Slide 3 · Dinamika Bumi</div>
+        <h2 class="slide-heading">Lempeng Tektonik &amp; Gempa Bumi</h2>
+        <div class="hl hl-orange">
+          <span class="hl-icon">🌋</span>
+          <span>Kerak Bumi terpecah menjadi sekitar <strong>15 lempeng tektonik besar</strong> yang terus bergerak sangat lambat (~2–5 cm per tahun) di atas mantel yang semi-cair.</span>
+        </div>
+        <table class="tbl">
+          <thead><tr><th>Jenis Pergerakan</th><th>Arah</th><th>Akibat</th></tr></thead>
+          <tbody>
+            <tr class="hl-row"><td><strong>Konvergen</strong></td><td>Dua lempeng saling mendekat/bertumbukan</td><td>Terbentuk pegunungan (Himalaya), palung samudra, gunung berapi, gempa bumi</td></tr>
+            <tr><td><strong>Divergen</strong></td><td>Dua lempeng saling menjauh</td><td>Terbentuk punggungan samudra (Mid-Atlantic Ridge), celah (rift), dan laut baru</td></tr>
+            <tr><td><strong>Transform</strong></td><td>Dua lempeng saling bergeser menyamping</td><td>Gempa bumi (contoh: Sesar San Andreas di California)</td></tr>
+          </tbody>
+        </table>
+        <div class="hl hl-gold">
+          <span class="hl-icon">💡</span>
+          <span>Indonesia terletak di pertemuan <strong>tiga lempeng tektonik</strong> (Eurasia, Indo-Australia, dan Pasifik) — menjadikannya salah satu negara paling rawan gempa dan gunung berapi di dunia.</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ SLIDE 4 — LAPISAN ATMOSFER ══ -->
+    <div class="slide" id="sl4">
+      <div class="slide-content">
+        <div class="slide-label">Slide 4 · Atmosfer</div>
+        <h2 class="slide-heading">Lapisan-Lapisan Atmosfer Bumi</h2>
+        <div class="hl hl-blue">
+          <span class="hl-icon">🌤️</span>
+          <span>Atmosfer adalah selimut gas yang menyelimuti Bumi hingga ketinggian ±10.000 km. Terdiri dari <strong>5 lapisan utama</strong> dengan sifat dan fungsi berbeda.</span>
+        </div>
+        <div class="layer-list">
+          <div class="layer-item" style="--lc:#1565c0">
+            <div class="li-depth">0–12 km</div>
+            <div>
+              <div class="li-name">☁️ Troposfer</div>
+              <div class="li-desc">Lapisan tempat kita hidup dan cuaca terjadi. Mengandung 75% massa atmosfer. Suhu menurun seiring ketinggian. Tempat terbangnya pesawat komersial.</div>
+            </div>
+          </div>
+          <div class="layer-item" style="--lc:#0288d1">
+            <div class="li-depth">12–50 km</div>
+            <div>
+              <div class="li-name">🛡️ Stratosfer</div>
+              <div class="li-desc">Mengandung lapisan ozon (O₃) yang menyerap UV berbahaya dari Matahari. Tempat terbangnya pesawat supersonik (Concorde). Suhu meningkat ke atas.</div>
+            </div>
+          </div>
+          <div class="layer-item" style="--lc:#7b1fa2">
+            <div class="li-depth">50–80 km</div>
+            <div>
+              <div class="li-name">🌠 Mesosfer</div>
+              <div class="li-desc">Lapisan paling dingin (hingga -100°C). Tempat meteor terbakar habis sebelum mencapai Bumi (bintang jatuh). Lapisan paling sulit dijangkau.</div>
+            </div>
+          </div>
+          <div class="layer-item" style="--lc:#c62828">
+            <div class="li-depth">80–700 km</div>
+            <div>
+              <div class="li-name">🌌 Termosfer &amp; Ionosfer</div>
+              <div class="li-desc">Suhu sangat tinggi (500–2.000°C). Tempat aurora (cahaya utara/selatan) dan orbit ISS (Stasiun Luar Angkasa Internasional). Ionosfer memantulkan gelombang radio.</div>
+            </div>
+          </div>
+          <div class="layer-item" style="--lc:#37474f">
+            <div class="li-depth">&gt; 700 km</div>
+            <div>
+              <div class="li-name">🚀 Eksosfer</div>
+              <div class="li-desc">Lapisan terluar; gas sangat tipis; bertransisi ke luar angkasa. Satelit cuaca dan GPS beroperasi di sini.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ SLIDE 5 — KOMPOSISI UDARA ══ -->
+    <div class="slide" id="sl5">
+      <div class="slide-content">
+        <div class="slide-label">Slide 5 · Komposisi Atmosfer</div>
+        <h2 class="slide-heading">Komposisi Udara &amp; Lapisan Ozon</h2>
+        <div class="hl hl-teal">
+          <span class="hl-icon">💨</span>
+          <span>Udara yang kita hirup adalah campuran berbagai gas, terutama <strong>Nitrogen (78%)</strong> dan <strong>Oksigen (21%)</strong>.</span>
+        </div>
+        <div class="facts">
+          <div class="fact"><div class="fact-label">Nitrogen (N₂)</div><div class="fact-value">78% · gas terbanyak · tidak reaktif · penyangga</div></div>
+          <div class="fact"><div class="fact-label">Oksigen (O₂)</div><div class="fact-value">21% · untuk pernapasan & pembakaran</div></div>
+          <div class="fact"><div class="fact-label">Argon (Ar)</div><div class="fact-value">0,93% · gas mulia · tidak bereaksi</div></div>
+          <div class="fact"><div class="fact-label">Karbon Dioksida (CO₂)</div><div class="fact-value">0,04% · untuk fotosintesis · gas rumah kaca</div></div>
+        </div>
+        <div class="hl hl-orange">
+          <span class="hl-icon">⚠️</span>
+          <span><strong>Lubang ozon</strong> terbentuk akibat gas CFC (chlorofluorocarbon) dari AC, kulkas, dan aerosol lama yang merusak lapisan ozon. Ozon menipis → UV berbahaya masuk → risiko kanker kulit meningkat. Perjanjian Montreal (1987) berhasil mengurangi emisi CFC dunia.</span>
+        </div>
+        <div class="hl hl-red">
+          <span class="hl-icon">🌡️</span>
+          <span><strong>Efek rumah kaca</strong>: CO₂, metana, dan gas lain memerangkap panas Matahari di atmosfer. Peningkatan gas rumah kaca akibat aktivitas manusia menyebabkan <strong>pemanasan global (global warming)</strong>.</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ SLIDE 6 — CUACA & IKLIM ══ -->
+    <div class="slide" id="sl6">
+      <div class="slide-content">
+        <div class="slide-label">Slide 6 · Cuaca &amp; Iklim</div>
+        <h2 class="slide-heading">Cuaca vs Iklim</h2>
+        <table class="tbl">
+          <thead><tr><th></th><th>Cuaca</th><th>Iklim</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Definisi</strong></td><td>Kondisi atmosfer di suatu tempat dalam waktu singkat</td><td>Rata-rata cuaca suatu wilayah dalam jangka panjang (30+ tahun)</td></tr>
+            <tr><td><strong>Waktu</strong></td><td>Jam, hari, minggu</td><td>Puluhan hingga ratusan tahun</td></tr>
+            <tr><td><strong>Sifat</strong></td><td>Berubah-ubah setiap hari</td><td>Relatif tetap dan stabil</td></tr>
+            <tr class="hl-row"><td><strong>Contoh</strong></td><td>"Hari ini hujan deras di Jakarta"</td><td>"Indonesia beriklim tropis dengan 2 musim"</td></tr>
+            <tr><td><strong>Dipelajari oleh</strong></td><td>Meteorologi (BMKG)</td><td>Klimatologi</td></tr>
+          </tbody>
+        </table>
+        <div class="hl hl-blue">
+          <span class="hl-icon">🌡️</span>
+          <span><strong>Unsur-unsur cuaca</strong>: suhu udara, kelembaban udara, tekanan udara, kecepatan angin, curah hujan, dan tutupan awan. Semua diukur oleh stasiun meteorologi BMKG.</span>
+        </div>
+        <div class="hl hl-gold">
+          <span class="hl-icon">💡</span>
+          <span>Di Indonesia, musim hujan dipicu angin muson barat (Oktober–April) dari Samudra Hindia yang membawa uap air. Musim kemarau dipicu angin muson timur (April–Oktober) dari Australia yang kering.</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ SLIDE 7 — SIKLUS AIR ══ -->
+    <div class="slide" id="sl7">
+      <div class="slide-content">
+        <div class="slide-label">Slide 7 · Siklus Air</div>
+        <h2 class="slide-heading">Siklus Air (Hidrologi)</h2>
+        <div class="hl hl-teal">
+          <span class="hl-icon">💧</span>
+          <span>Siklus air adalah perputaran air secara terus-menerus dari Bumi ke atmosfer dan kembali lagi ke Bumi. Air di Bumi jumlahnya <strong>tetap</strong> — hanya berubah bentuk dan tempat.</span>
+        </div>
+        <table class="tbl">
+          <thead><tr><th>Tahap</th><th>Proses</th><th>Keterangan</th></tr></thead>
+          <tbody>
+            <tr><td><strong>☀️ Evaporasi</strong></td><td>Penguapan air dari laut, danau, sungai</td><td>Dipicu panas Matahari; air cair → uap air</td></tr>
+            <tr><td><strong>🌿 Transpirasi</strong></td><td>Penguapan air melalui daun tumbuhan</td><td>Evaporasi + Transpirasi = Evapotranspirasi</td></tr>
+            <tr><td><strong>☁️ Kondensasi</strong></td><td>Uap air mendingin dan berubah menjadi titik air</td><td>Membentuk awan dan kabut</td></tr>
+            <tr class="hl-row"><td><strong>🌧️ Presipitasi</strong></td><td>Air jatuh dari awan ke permukaan Bumi</td><td>Berupa hujan, salju, atau hujan es tergantung suhu</td></tr>
+            <tr><td><strong>🌊 Run-off (Aliran)</strong></td><td>Air mengalir di permukaan tanah menuju sungai dan laut</td><td>Membentuk sungai, danau; sebagian meresap ke tanah (infiltrasi)</td></tr>
+            <tr><td><strong>🏔️ Infiltrasi</strong></td><td>Air meresap ke dalam tanah</td><td>Membentuk air tanah (groundwater); sumber sumur dan mata air</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- ══ SLIDE 8 — AWAN & HUJAN ══ -->
+    <div class="slide" id="sl8">
+      <div class="slide-content">
+        <div class="slide-label">Slide 8 · Fenomena Atmosfer</div>
+        <h2 class="slide-heading">Jenis-Jenis Awan &amp; Fenomena Cuaca</h2>
+        <table class="tbl">
+          <thead><tr><th>Nama</th><th>Ketinggian</th><th>Ciri &amp; Keterangan</th></tr></thead>
+          <tbody>
+            <tr><td><strong>☁️ Cirrus</strong></td><td>Tinggi (&gt; 6 km)</td><td>Tipis seperti serat kapas; es; tidak menghasilkan hujan; pertanda cuaca cerah</td></tr>
+            <tr><td><strong>☁️ Cumulus</strong></td><td>Menengah (2–6 km)</td><td>Putih mengembung seperti kapas; cuaca cerah hingga berawan</td></tr>
+            <tr class="hl-row"><td><strong>⛈️ Cumulonimbus</strong></td><td>Rendah–tinggi (bisa 0–18 km)</td><td>Awan badai raksasa; menghasilkan hujan lebat, petir, angin kencang, dan tornado</td></tr>
+            <tr><td><strong>☁️ Stratus</strong></td><td>Rendah (&lt; 2 km)</td><td>Berlapis seperti selimut abu-abu; menghasilkan gerimis; sering membentuk kabut</td></tr>
+            <tr><td><strong>🌈 Pelangi</strong></td><td>—</td><td>Pembiasan & penguraian cahaya Matahari oleh tetes air hujan; warna MEJIKUHIBINIU</td></tr>
+            <tr><td><strong>⚡ Petir</strong></td><td>—</td><td>Pelepasan listrik statis antara awan dengan awan atau awan dengan tanah</td></tr>
+          </tbody>
+        </table>
+        <div class="hl hl-gold">
+          <span class="hl-icon">🌈</span>
+          <span>Warna pelangi dari luar ke dalam: <strong>MEJIKUHIBINIU</strong> — Merah, Jingga, Kuning, Hijau, Biru, Nila, Ungu. Pelangi selalu muncul berlawanan dari posisi Matahari.</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ SLIDE 9 — FENOMENA ALAM ══ -->
+    <div class="slide" id="sl9">
+      <div class="slide-content">
+        <div class="slide-label">Slide 9 · Fenomena Alam</div>
+        <h2 class="slide-heading">Fenomena Alam Geologi &amp; Meteorologi</h2>
+        <table class="tbl">
+          <thead><tr><th>Fenomena</th><th>Penyebab</th><th>Dampak &amp; Fakta</th></tr></thead>
+          <tbody>
+            <tr><td><strong>🌋 Gunung Meletus</strong></td><td>Magma dari mantel naik ke permukaan melalui retakan kerak</td><td>Hujan abu, lahar, gas beracun; tetapi abu vulkanik menyuburkan tanah</td></tr>
+            <tr class="hl-row"><td><strong>🌊 Tsunami</strong></td><td>Gempa di dasar laut, letusan gunung laut, longsor bawah laut</td><td>Gelombang sangat cepat (800 km/jam); ketinggian mencapai puluhan meter di pantai</td></tr>
+            <tr><td><strong>🌀 Angin Puting Beliung</strong></td><td>Perbedaan tekanan udara yang ekstrem; awan Cumulonimbus</td><td>Angin berputar sangat kencang; merusak bangunan; di laut disebut waterspout</td></tr>
+            <tr><td><strong>🏜️ El Niño</strong></td><td>Pemanasan abnormal Samudra Pasifik tengah-timur</td><td>Kemarau panjang di Indonesia; banjir di Peru-Ekuador</td></tr>
+            <tr><td><strong>🌧️ La Niña</strong></td><td>Pendinginan abnormal Samudra Pasifik</td><td>Hujan berlebih di Indonesia; kekeringan di Amerika Latin</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- ══ SLIDE 10 — BATUAN ══ -->
+    <div class="slide" id="sl10">
+      <div class="slide-content">
+        <div class="slide-label">Slide 10 · Batuan &amp; Mineral</div>
+        <h2 class="slide-heading">Jenis-Jenis Batuan</h2>
+        <div class="hl hl-navy">
+          <span class="hl-icon">🪨</span>
+          <span>Kerak Bumi tersusun dari batuan. Ada tiga jenis utama batuan berdasarkan proses pembentukannya: <strong>batuan beku, sedimen, dan metamorf</strong>.</span>
+        </div>
+        <table class="tbl">
+          <thead><tr><th>Jenis Batuan</th><th>Proses Pembentukan</th><th>Contoh</th></tr></thead>
+          <tbody>
+            <tr class="hl-row"><td><strong>🌋 Batuan Beku (Igneous)</strong></td><td>Dari pembekuan magma/lava yang mendingin</td><td>Granit (dalam bumi), basal (permukaan), obsidian, andesit, batu apung</td></tr>
+            <tr><td><strong>🏜️ Batuan Sedimen</strong></td><td>Dari endapan material yang terpadatkan selama jutaan tahun</td><td>Batu pasir, batu kapur, batu gamping, batu bara, stalaktit-stalagmit</td></tr>
+            <tr><td><strong>💎 Batuan Metamorf</strong></td><td>Dari batuan yang berubah akibat tekanan dan panas tinggi</td><td>Marmer (dari batu kapur), batu tulis/sabak (dari serpih), kuarsit (dari batu pasir)</td></tr>
+          </tbody>
+        </table>
+        <div class="hl hl-gold">
+          <span class="hl-icon">💎</span>
+          <span><strong>Intan (berlian)</strong> adalah bentuk karbon murni yang terbentuk di dalam Bumi pada tekanan dan suhu sangat tinggi selama miliaran tahun — mineral paling keras di Bumi (skala Mohs: 10).</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ SLIDE 11 — LINGKUNGAN & PERUBAHAN IKLIM ══ -->
+    <div class="slide" id="sl11">
+      <div class="slide-content">
+        <div class="slide-label">Slide 11 · Lingkungan &amp; Iklim Global</div>
+        <h2 class="slide-heading">Perubahan Iklim &amp; Pelestarian Lingkungan</h2>
+        <div class="hl hl-red">
+          <span class="hl-icon">🌡️</span>
+          <span>Suhu rata-rata Bumi telah naik sekitar <strong>1,1°C sejak era pra-industri</strong>. Jika tidak diatasi, perubahan iklim akan mengancam kehidupan di seluruh planet.</span>
+        </div>
+        <table class="tbl">
+          <thead><tr><th>Masalah</th><th>Penyebab</th><th>Dampak</th></tr></thead>
+          <tbody>
+            <tr class="hl-row"><td><strong>Pemanasan Global</strong></td><td>Emisi CO₂ dari bahan bakar fosil, deforestasi</td><td>Naiknya permukaan laut, cuaca ekstrem, hilangnya es kutub</td></tr>
+            <tr><td><strong>Hujan Asam</strong></td><td>Gas SO₂ dan NO₂ dari pabrik dan kendaraan</td><td>Merusak hutan, bangunan batu, dan ekosistem danau</td></tr>
+            <tr><td><strong>Pencemaran Udara</strong></td><td>Asap industri, kendaraan, kebakaran hutan</td><td>ISPA, kabut asap (smog), gangguan pernapasan</td></tr>
+          </tbody>
+        </table>
+        <div class="hl hl-green">
+          <span class="hl-icon">🌱</span>
+          <span>Upaya pelestarian: <strong>3R</strong> (Reduce, Reuse, Recycle), beralih ke energi terbarukan (surya, angin, air), menanam pohon, dan mengurangi penggunaan plastik sekali pakai.</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ SLIDE 12 — RANGKUMAN ══ -->
+    <div class="slide" id="sl12">
+      <div class="slide-content">
+        <div class="slide-label">Slide 12 · Rangkuman</div>
+        <h2 class="slide-heading">Rangkuman Bumi &amp; Atmosfer</h2>
+        <table class="tbl">
+          <thead><tr><th>Topik</th><th>Poin Kunci</th></tr></thead>
+          <tbody>
+            <tr><td><strong>🌍 Lapisan Bumi</strong></td><td>Kerak → Mantel → Inti Luar (cair) → Inti Dalam (padat)</td></tr>
+            <tr><td><strong>🌋 Lempeng Tektonik</strong></td><td>15 lempeng besar; konvergen (tumbukan), divergen (menjauh), transform (bergeser) → gempa &amp; gunung berapi</td></tr>
+            <tr class="hl-row"><td><strong>🌤️ Lapisan Atmosfer</strong></td><td>Troposfer (cuaca) → Stratosfer (ozon) → Mesosfer (meteor terbakar) → Termosfer (ISS, aurora) → Eksosfer</td></tr>
+            <tr><td><strong>💧 Siklus Air</strong></td><td>Evaporasi → Kondensasi → Presipitasi → Run-off/Infiltrasi → kembali ke laut</td></tr>
+            <tr><td><strong>🌈 Pelangi</strong></td><td>MEJIKUHIBINIU · pembiasan cahaya oleh tetes air</td></tr>
+            <tr><td><strong>🪨 Batuan</strong></td><td>Beku (magma membeku) · Sedimen (endapan) · Metamorf (tekanan+panas)</td></tr>
+            <tr><td><strong>🌡️ Perubahan Iklim</strong></td><td>Pemanasan global akibat emisi CO₂ → solusi: energi terbarukan, 3R, reboisasi</td></tr>
+          </tbody>
+        </table>
+        <div class="hl hl-green">
+          <span class="hl-icon">✅</span>
+          <span>Selamat! Kamu sudah mempelajari <strong>Bumi &amp; Atmosfer</strong> — dari lapisan bumi, lempeng tektonik, lapisan atmosfer, siklus air, fenomena alam, hingga perubahan iklim.</span>
+        </div>
+        <a href="../soal/paket-01.html" class="cta-btn">📝 Latihan Soal Sekarang →</a>
+      </div>
+    </div>
+
+  </div><!-- /slides-wrap -->
+
+  <footer class="s-footer">
+    <button class="nav-btn prev-btn" id="btn-prev" onclick="prev()" disabled>◄ Sebelumnya</button>
+    <div class="s-hint"><kbd>←</kbd> <kbd>→</kbd> navigasi &nbsp;·&nbsp; <kbd>F</kbd> layar penuh</div>
+    <button class="nav-btn next-btn" id="btn-next" onclick="next()">Berikutnya ►</button>
+  </footer>
+
+  <script>
+    const TOTAL = 12;
+    let cur = 1;
+    function showSlide(n) {
+      const pv = document.getElementById('sl' + cur);
+      const nx = document.getElementById('sl' + n);
+      if (!nx) return;
+      pv.classList.add('leaving'); pv.classList.remove('active');
+      setTimeout(() => pv.classList.remove('leaving'), 400);
+      nx.classList.add('active'); cur = n;
+      document.getElementById('s-counter').textContent = cur + ' / ' + TOTAL;
+      document.getElementById('s-prog').style.width = (cur / TOTAL * 100).toFixed(2) + '%';
+      document.getElementById('btn-prev').disabled = (cur === 1);
+      document.getElementById('btn-next').disabled = (cur === TOTAL);
+    }
+    function next() { if (cur < TOTAL) showSlide(cur + 1); }
+    function prev() { if (cur > 1)     showSlide(cur - 1); }
+    document.addEventListener('keydown', e => {
+      if (e.code === 'ArrowRight' || e.code === 'ArrowDown') next();
+      if (e.code === 'ArrowLeft'  || e.code === 'ArrowUp')   prev();
+      if (e.code === 'KeyF') toggleFS();
+    });
+    document.getElementById('btn-fs').addEventListener('click', toggleFS);
+    function toggleFS() {
+      if (!document.fullscreenElement) document.documentElement.requestFullscreen().catch(() => {});
+      else document.exitFullscreen();
+    }
+    let ts = 0;
+    document.getElementById('slides-wrap').addEventListener('touchstart', e => { ts = e.touches[0].clientX; });
+    document.getElementById('slides-wrap').addEventListener('touchend', e => {
+      const dx = e.changedTouches[0].clientX - ts;
+      if (Math.abs(dx) > 50) { dx < 0 ? next() : prev(); }
+    });
+  </script>
+</body>
+</html>
