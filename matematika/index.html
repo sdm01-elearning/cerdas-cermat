@@ -4,50 +4,290 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pengetahuan Matematika — Cerdas Cermat SDM01KKS</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style.css">
   <style>
     :root { --hero-color: #6a1b9a; }
+
+    /* ── Quick nav ── */
+    .qnav {
+      display: flex; gap: .75rem; flex-wrap: wrap;
+      padding: 1rem 2rem;
+      background: #fff;
+      border-bottom: 1px solid #e9ecef;
+      position: sticky; top: 60px; z-index: 40;
+    }
+    .qnav a {
+      display: inline-flex; align-items: center; gap: .4rem;
+      font-size: .85rem; font-weight: 700;
+      color: #6a1b9a; background: #f3e5f5;
+      border: 1.5px solid #ce93d8; border-radius: 20px;
+      padding: .35rem 1rem;
+      text-decoration: none; transition: background .15s;
+    }
+    .qnav a:hover { background: #e1bee7; }
+
+    /* ── Section heads ── */
+    .sec-head { display: flex; align-items: baseline; gap: 1rem; margin-bottom: 1.5rem; }
+    .sec-head h2 { font-family: var(--font-display); font-size: 1.5rem; color: #6a1b9a; margin: 0; }
+    .sec-head .sec-sub { font-size: .82rem; color: #718096; }
+
+    /* ── Materi cards ── */
+    .materi-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+      gap: 1rem;
+      margin-bottom: 3rem;
+    }
+    .materi-card {
+      background: #fff; border-radius: 14px;
+      border: 1px solid #e9ecef;
+      display: flex; flex-direction: column;
+      text-decoration: none; color: inherit;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,.06);
+      transition: transform .18s, box-shadow .18s;
+    }
+    .materi-card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,.12); }
+    .materi-card.soon { opacity: .7; pointer-events: none; }
+    .mc-accent { height: 4px; background: var(--mc); }
+    .mc-icon   { font-size: 2rem; padding: .9rem 1rem .3rem; line-height: 1; }
+    .mc-title  { font-weight: 800; font-size: .9rem; padding: 0 1rem .35rem; color: #1a2420; }
+    .mc-desc   { font-size: .78rem; color: #718096; padding: 0 1rem; line-height: 1.55; flex: 1; }
+    .mc-foot   {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: .6rem 1rem; margin-top: .5rem;
+      border-top: 1px solid #f0f4f8;
+    }
+    .mc-slides     { font-size: .72rem; color: #a0aec0; }
+    .mbadge-soon   { font-size: .65rem; font-weight: 800; padding: 2px 7px; border-radius: 10px; background: #fff3e0; color: #e65100; }
+
+    /* ── Soal section ── */
+    .soal-single {
+      background: #fff; border-radius: 14px; border: 1px solid #e9ecef;
+      padding: 1.5rem 1.75rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,.06);
+      display: flex; align-items: center; gap: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    .soal-icon  { font-size: 2.5rem; flex-shrink: 0; }
+    .soal-info  { flex: 1; }
+    .soal-title { font-weight: 800; font-size: 1rem; color: #1a2420; margin-bottom: .3rem; }
+    .soal-meta  { font-size: .82rem; color: #718096; line-height: 1.6; }
+    .soal-meta strong { color: #6a1b9a; }
+    .btn-mulai {
+      display: inline-flex; align-items: center; gap: .3rem;
+      background: #6a1b9a; color: #fff;
+      padding: .55rem 1.3rem; border-radius: 8px;
+      font-weight: 700; font-size: .88rem;
+      text-decoration: none; white-space: nowrap;
+      transition: opacity .15s;
+    }
+    .btn-mulai:hover { opacity: .85; }
+
+    /* ── Info box ── */
+    .info-box {
+      background: #f3e5f5; border: 1px solid #ce93d8;
+      border-radius: 10px; padding: 1rem 1.25rem;
+      font-size: .83rem; color: #4a148c;
+      margin-top: 1.5rem; line-height: 1.65;
+    }
+    .info-box code { background: #e1bee7; padding: 1px 5px; border-radius: 4px; }
+    .info-box a    { color: #6a1b9a; font-weight: 700; }
+
+    /* ── Topik strip ── */
+    .topik-strip {
+      display: flex; flex-wrap: wrap; gap: .5rem;
+      margin-bottom: 2.5rem;
+      padding: .75rem 1rem;
+      background: #faf5ff; border-radius: 10px;
+      border: 1px solid #e1bee7;
+    }
+    .topik-chip {
+      font-size: .74rem; font-weight: 700;
+      padding: 3px 10px; border-radius: 12px;
+      background: #f3e5f5; color: #6a1b9a;
+      border: 1px solid #ce93d8;
+    }
   </style>
 </head>
 <body class="page-inner">
+
   <nav class="inner-nav">
-  <a href="../../index.html" class="nav-brand">🏆 Cerdas Cermat</a>
-  <span class="nav-sep">›</span>
-  <span class="nav-current">Pengetahuan Matematika</span>
+    <a href="../index.html" class="nav-brand">🏆 Cerdas Cermat</a>
+    <span class="nav-sep">›</span>
+    <span class="nav-current">🔢 Pengetahuan Matematika</span>
   </nav>
 
   <div class="cat-hero">
     <div class="cat-hero-icon">🔢</div>
     <h1 class="cat-hero-title">Pengetahuan Matematika</h1>
-    <p class="cat-hero-desc">Aritmatika, geometri, aljabar dasar, statistika, dan soal cerita.</p>
+    <p class="cat-hero-desc">
+      Hub materi dan soal latihan · <strong>11 topik materi</strong> · <strong>1 paket soal</strong>
+      · <strong>300 soal dalam bank soal</strong>
+    </p>
   </div>
 
-  <div class="content-area">
-    <h2 class="section-heading">Pilih Mode</h2>
-    <div class="menu-grid">
-      <a href="soal/index.html" class="menu-card">
-        <div class="menu-card-icon">📝</div>
-        <div class="menu-card-title">Soal Latihan</div>
-        <div class="menu-card-desc">
-          Paket soal isian singkat dengan timer countdown dan pembahasan detail.
-          Cocok untuk sesi latihan bersama menggunakan proyektor.
-        </div>
-        <div class="menu-card-link">Lihat paket soal →</div>
-      </a>
-      <a href="materi/index.html" class="menu-card">
-        <div class="menu-card-icon">📚</div>
-        <div class="menu-card-title">Materi Belajar</div>
-        <div class="menu-card-desc">
-          Ringkasan materi pembelajaran berbasis slideshow,
-          siap ditampilkan di infokus sebelum sesi latihan soal.
-        </div>
-        <div class="menu-card-link">Lihat materi →</div>
-      </a>
-    </div>
+  <!-- Quick-nav -->
+  <div class="qnav">
+    <a href="#materi">📚 Materi Pembelajaran</a>
+    <a href="#soal">📝 Soal Latihan</a>
+    <a href="materi/index.html">Lihat Semua Materi →</a>
   </div>
-<footer class="inner-footer">
-  <p>© SD Muhammadiyah 01 Kukusan · <a href="../../index.html">← Halaman Utama</a></p>
-</footer>
+
+  <div class="content-area" style="max-width:1100px">
+
+    <!-- Topik strip -->
+    <div class="topik-strip">
+      <span class="topik-chip">🔢 Bilangan Bulat &amp; Operasi</span>
+      <span class="topik-chip">🌲 FPB &amp; KPK</span>
+      <span class="topik-chip">🍕 Pecahan</span>
+      <span class="topik-chip">💯 Persen &amp; Perbandingan</span>
+      <span class="topik-chip">⬛ Perpangkatan &amp; Akar</span>
+      <span class="topik-chip">📐 Geometri Datar</span>
+      <span class="topik-chip">📦 Bangun Ruang</span>
+      <span class="topik-chip">📏 Pengukuran &amp; Satuan</span>
+      <span class="topik-chip">📊 Statistika &amp; Data</span>
+      <span class="topik-chip">🔣 Aljabar &amp; Pola</span>
+      <span class="topik-chip">📖 Soal Cerita</span>
+    </div>
+
+    <!-- ══ MATERI ══ -->
+    <div id="materi" style="scroll-margin-top:120px">
+      <div class="sec-head">
+        <h2>📚 Materi Pembelajaran</h2>
+        <span class="sec-sub">11 topik · sedang dalam persiapan</span>
+      </div>
+      <div class="materi-grid">
+
+        <div class="materi-card soon" style="--mc:#4a148c">
+          <div class="mc-accent"></div>
+          <div class="mc-icon">🔢</div>
+          <div class="mc-title">Bilangan Bulat &amp; Operasi</div>
+          <div class="mc-desc">Penjumlahan, pengurangan, perkalian, pembagian, bilangan negatif, dan urutan operasi (PEMDAS).</div>
+          <div class="mc-foot"><span class="mc-slides">30 soal</span><span class="mbadge-soon">⏳ Segera Hadir</span></div>
+        </div>
+
+        <div class="materi-card soon" style="--mc:#6a1b9a">
+          <div class="mc-accent"></div>
+          <div class="mc-icon">🌲</div>
+          <div class="mc-title">FPB &amp; KPK</div>
+          <div class="mc-desc">Faktorisasi prima, Faktor Persekutuan Terbesar (FPB), Kelipatan Persekutuan Terkecil (KPK), dan penerapannya.</div>
+          <div class="mc-foot"><span class="mc-slides">25 soal</span><span class="mbadge-soon">⏳ Segera Hadir</span></div>
+        </div>
+
+        <div class="materi-card soon" style="--mc:#7b1fa2">
+          <div class="mc-accent"></div>
+          <div class="mc-icon">🍕</div>
+          <div class="mc-title">Pecahan</div>
+          <div class="mc-desc">Menyederhanakan, menjumlah, mengurang, mengali, membagi pecahan, dan pecahan campuran.</div>
+          <div class="mc-foot"><span class="mc-slides">30 soal</span><span class="mbadge-soon">⏳ Segera Hadir</span></div>
+        </div>
+
+        <div class="materi-card soon" style="--mc:#880e4f">
+          <div class="mc-accent"></div>
+          <div class="mc-icon">💯</div>
+          <div class="mc-title">Persen &amp; Perbandingan</div>
+          <div class="mc-desc">Persentase, diskon, kenaikan/penurunan, perbandingan senilai, berbalik nilai, dan skala peta.</div>
+          <div class="mc-foot"><span class="mc-slides">25 soal</span><span class="mbadge-soon">⏳ Segera Hadir</span></div>
+        </div>
+
+        <div class="materi-card soon" style="--mc:#311b92">
+          <div class="mc-accent"></div>
+          <div class="mc-icon">⬛</div>
+          <div class="mc-title">Perpangkatan &amp; Akar</div>
+          <div class="mc-desc">Bilangan kuadrat, akar kuadrat, bilangan pangkat tiga, akar pangkat tiga, dan sifat perpangkatan.</div>
+          <div class="mc-foot"><span class="mc-slides">25 soal</span><span class="mbadge-soon">⏳ Segera Hadir</span></div>
+        </div>
+
+        <div class="materi-card soon" style="--mc:#1a237e">
+          <div class="mc-accent"></div>
+          <div class="mc-icon">📐</div>
+          <div class="mc-title">Geometri Datar</div>
+          <div class="mc-desc">Luas dan keliling: persegi, persegi panjang, segitiga, lingkaran, trapesium, jajar genjang, dan gabungannya.</div>
+          <div class="mc-foot"><span class="mc-slides">35 soal</span><span class="mbadge-soon">⏳ Segera Hadir</span></div>
+        </div>
+
+        <div class="materi-card soon" style="--mc:#0d47a1">
+          <div class="mc-accent"></div>
+          <div class="mc-icon">📦</div>
+          <div class="mc-title">Bangun Ruang</div>
+          <div class="mc-desc">Volume dan luas permukaan: kubus, balok, tabung, kerucut, bola, prisma, dan sifat bangun ruang.</div>
+          <div class="mc-foot"><span class="mc-slides">30 soal</span><span class="mbadge-soon">⏳ Segera Hadir</span></div>
+        </div>
+
+        <div class="materi-card soon" style="--mc:#004d40">
+          <div class="mc-accent"></div>
+          <div class="mc-icon">📏</div>
+          <div class="mc-title">Pengukuran &amp; Satuan</div>
+          <div class="mc-desc">Konversi satuan panjang, berat, waktu, luas, volume, kecepatan, dan suhu (Celsius-Fahrenheit).</div>
+          <div class="mc-foot"><span class="mc-slides">25 soal</span><span class="mbadge-soon">⏳ Segera Hadir</span></div>
+        </div>
+
+        <div class="materi-card soon" style="--mc:#1b5e20">
+          <div class="mc-accent"></div>
+          <div class="mc-icon">📊</div>
+          <div class="mc-title">Statistika &amp; Data</div>
+          <div class="mc-desc">Rata-rata (mean), median, modus, jangkauan, dan membaca data dari tabel serta diagram.</div>
+          <div class="mc-foot"><span class="mc-slides">25 soal</span><span class="mbadge-soon">⏳ Segera Hadir</span></div>
+        </div>
+
+        <div class="materi-card soon" style="--mc:#e65100">
+          <div class="mc-accent"></div>
+          <div class="mc-icon">🔣</div>
+          <div class="mc-title">Aljabar &amp; Pola</div>
+          <div class="mc-desc">Pola bilangan, barisan aritmatika-geometri, persamaan sederhana, dan variabel.</div>
+          <div class="mc-foot"><span class="mc-slides">20 soal</span><span class="mbadge-soon">⏳ Segera Hadir</span></div>
+        </div>
+
+        <div class="materi-card soon" style="--mc:#37474f">
+          <div class="mc-accent"></div>
+          <div class="mc-icon">📖</div>
+          <div class="mc-title">Soal Cerita &amp; Penalaran</div>
+          <div class="mc-desc">Masalah multi-langkah, penerapan matematika dalam kehidupan nyata, dan penalaran logis.</div>
+          <div class="mc-foot"><span class="mc-slides">30 soal</span><span class="mbadge-soon">⏳ Segera Hadir</span></div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ══ SOAL ══ -->
+    <div id="soal" style="scroll-margin-top:120px">
+      <div class="sec-head">
+        <h2>📝 Soal Latihan</h2>
+        <span class="sec-sub">Bank soal 300 pertanyaan · 30 soal acak per sesi · tampilan persamaan dengan KaTeX</span>
+      </div>
+
+      <div class="soal-single">
+        <div class="soal-icon">🎯</div>
+        <div class="soal-info">
+          <div class="soal-title">Latihan Cerdas Cermat — Pengetahuan Matematika</div>
+          <div class="soal-meta">
+            Setiap sesi menampilkan <strong>30 soal acak</strong> dari bank soal <strong>300 pertanyaan</strong>.
+            Soal mencakup seluruh 11 topik materi · <strong>~10% soal berbahasa Inggris</strong>.
+            Persamaan matematika ditampilkan rapi menggunakan <strong>KaTeX</strong> —
+            pastikan ada koneksi internet saat pertama kali memuat.
+          </div>
+        </div>
+        <a href="soal/paket-01.html" class="btn-mulai">▶ Mulai Latihan</a>
+      </div>
+
+      <div class="info-box">
+        ⚙️ <strong>KaTeX aktif</strong> — semua notasi matematika seperti
+        <code>$\frac{3}{4}$</code>, <code>$\sqrt{144}$</code>, <code>$2^3$</code>,
+        <code>$\pi r^2$</code> akan dirender otomatis menjadi tampilan persamaan yang bersih
+        dan terbaca di layar maupun proyektor.
+        Bank soal tersimpan di <code>soal/data/pool.json</code>.
+        Lihat panduan di <a href="../README.md">README.md</a>.
+      </div>
+    </div>
+
+  </div>
+
+  <footer class="inner-footer">
+    <p>© SD Muhammadiyah 01 Kukusan · <a href="../index.html">← Halaman Utama</a></p>
+  </footer>
+
 </body>
 </html>
