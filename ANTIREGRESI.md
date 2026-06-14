@@ -70,6 +70,39 @@ paket-XX.html
 
 ---
 
+## [AR-003] — v1.2.0 · Soal Campuran
+
+**Tanggal:** 2026-06-14
+**Cakupan:** `soal-campuran.html` (baru), `index.html` (dimodifikasi)
+
+### Perubahan
+- Mode quiz baru: 30 soal acak dari tiga pool sekaligus (10 per kategori)
+- Merger script berjalan sebelum quiz-engine.js dimuat (inject dinamis)
+- Blob URL dipakai sebagai jembatan antara merger script dan quiz-engine
+
+### Risiko Regresi
+
+| Area | Risiko | Mitigasi |
+|---|---|---|
+| Path pool.json | Jika folder kategori diubah namanya, fetch akan gagal | Jangan ubah nama folder `indonesia-umum/`, `sains/`, `matematika/` |
+| Blob URL & file:// | Blob URL tidak bisa di-fetch dari `file://` | Selalu akses via GitHub Pages atau `python3 -m http.server` |
+| quiz-engine.js inject dinamis | Script diinjeksi setelah Blob siap — jika ada race condition di browser lama | Test di Chrome/Firefox terbaru; IE tidak didukung |
+| KaTeX render timing | MutationObserver harus terpasang sebelum quiz-engine menulis DOM | KaTeX observer dipasang saat `DOMContentLoaded`, sebelum quiz-engine inject |
+| `shuffle: false` di QUIZ_CONFIG | Jika diubah `true`, quiz-engine akan stratified-sample ulang dari 30 soal (bukan masalah, tapi komposisi per-kategori tidak lagi terjamin) | Biarkan `shuffle: false` di `soal-campuran.html` — acak sudah dilakukan di merger script |
+
+### Checklist Validasi
+
+- [ ] Buka `soal-campuran.html` via GitHub Pages atau lokal HTTP server
+- [ ] Verifikasi loading spinner muncul selama fetch pool
+- [ ] Pastikan tepat 30 soal muncul (header: "30 soal acak")
+- [ ] Pastikan ada soal dari ketiga kategori (cek topik di badge)
+- [ ] Pastikan soal Matematika dengan LaTeX ter-render dengan benar
+- [ ] Tombol "← Kembali" mengarah ke `index.html` root ✓
+- [ ] Test keyboard: Spasi, →, F (fullscreen)
+- [ ] Buka ulang beberapa kali — pastikan komposisi soal berbeda setiap sesi
+
+---
+
 ## Panduan Pengisian ANTIREGRESI ke Depan
 
 Setiap kali membuat perubahan besar, tambahkan section baru:

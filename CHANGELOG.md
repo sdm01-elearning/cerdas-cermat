@@ -5,6 +5,25 @@ Format mengikuti [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ---
 
+## [1.2.0] — 2026-06-14
+
+### Ditambahkan
+- `soal-campuran.html` — halaman quiz mode campuran baru di root repo.
+  Menarik 10 soal dari masing-masing pool (Indonesia & Umum, Sains, Matematika)
+  secara paralel (Promise.all), menggabungkan, mengacak, lalu menyuntikkan
+  ke quiz-engine via Blob URL. Total: 30 soal per sesi.
+- `index.html` — card "Soal Campuran" dengan tema biru-ungu-gold ditambahkan
+  di bawah tiga card kategori sebagai entry point ke mode campuran.
+
+### Mekanisme Teknis Soal Campuran
+- Setiap kategori: 1 soal EN + 9 soal ID (stratified sampling ~10% EN)
+- Total: 3 soal EN + 27 soal ID dari 30 soal campuran
+- Sampling dilakukan di sisi klien setiap sesi → komposisi soal selalu berbeda
+- KaTeX diikutsertakan karena soal Matematika ada dalam campuran
+- Back button quiz-engine otomatis mengarah ke `index.html` (root) ✓
+
+---
+
 ## [1.1.0] — 2025-06-09
 
 ### Ditambahkan

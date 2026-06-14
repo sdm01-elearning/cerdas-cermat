@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Soal Campuran — Cerdas Cermat SDM01KKS</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <!-- KaTeX — diperlukan karena soal Matematika ada dalam campuran -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+
+  <style>
+    /* Penyesuaian ukuran KaTeX agar terbaca di layar proyektor */
+    #qe-teks       .katex { font-size: 1.25em; }
+    #qe-jawaban    .katex { font-size: 1.35em; }
+    #qe-pembahasan .katex { font-size: 1.05em; }
+
+    .katex-display { overflow-x: auto; overflow-y: hidden; padding: .25em 0; }
+    .katex-display > .katex { max-width: 100%; }
+    .katex .mfrac .mfrac { font-size: .95em; }
+  </style>
+</head>
+<body class="page-quiz">
+
+  <div id="quiz-root"></div>
+
+  <!--
+    Merger Script — dijalankan SEBELUM quiz-engine.js dimuat.
+    1. Fetch ketiga pool.json secara paralel
+    2. Ambil 10 soal dari masing-masing kategori (stratified: ~1 EN + 9 ID)
+    3. Gabung → acak final → buat Blob URL
+    4. Set window.QUIZ_CONFIG → inject quiz-engine.js secara dinamis
+  -->
+  <script>
+  (function () {
+    'use strict';
+
+    var POOLS = [
+      'indonesia-umum/soal/data/pool.json',
+      'sains/soal/data/pool.json',
+      'matematika/soal/data/pool.json'
+    ];
+
+    var PER_KATEGORI = 10; // soal per kategori → total 30
+
+    /* Fisher-Yates shuffle */
+    function shuffle(arr) {
+      var a = arr.slice();
+      for (var i = a.length - 1; i > 0; i--) {
+        var j = Math.floor(Math.random() * (i + 1));
+        var tmp = a[i]; a[i] = a[j]; a[j] = tmp;
+      }
+      return a;
+    }
+
+    /**
+     * Ambil `count` soal dari pool dengan stratified sampling:
+     * jamin ~10% soal EN, sisanya ID.
+     */
+    function samplePool(pool, count) {
+      var en = pool.filter(function (s) { return s.bahasa === 'en'; });
+      var id = pool.filter(function (s) { return s.bahasa !== 'en'; });
+
+      var enTarget = Math.max(1, Math.ceil(count * 0.1));
+      var enPick   = Math.min(enTarget, en.length);
+      var idPick   = Math.min(count - enPick, id.length);
+
+      var selected = shuffle(en).slice(0, enPick)
+                     .concat(shuffle(id).slice(0, idPick));
+
+      /* Jika masih kurang, ambil sisa dari pool */
+      if (selected.length < count) {
+        var usedIds = {};
+        selected.forEach(function (s) { usedIds[s.id] = true; });
+        var sisa = shuffle(pool.filter(function (s) { return !usedIds[s.id]; }));
+        selected = selected.concat(sisa.slice(0, count - selected.length));
+      }
+
+      return shuffle(selected);
+    }
+
+    async function prepareCampuran() {
+      var root = document.getElementById('quiz-root');
+
+      /* Tampilkan loading manual (quiz-engine belum dimuat) */
+      root.innerHTML = [
+        '<div class="qe-loading">',
+        '  <div class="qe-spinner"></div>',
+        '  <p>Memuat soal campuran…</p>',
+        '</div>'
+      ].join('');
+
+      try {
+        /* Fetch ketiga pool secara paralel */
+        var results = await Promise.all(
+          POOLS.map(function (url) {
+            return fetch(url).then(function (r) {
+              if (!r.ok) throw new Error('HTTP ' + r.status + ' — ' + url);
+              return r.json();
+            });
+          })
+        );
+
+        /* Ambil 10 soal dari masing-masing pool */
+        var combined = [];
+        results.forEach(function (data) {
+          var pool    = (data && data.soal) ? data.soal : [];
+          var sampled = samplePool(pool, PER_KATEGORI);
+          combined    = combined.concat(sampled);
+        });
+
+        /* Acak campuran akhir & normalisasi ID */
+        var final = shuffle(combined);
+        final.forEach(function (s, i) { s.id = i + 1; });
+
+        /* Buat Blob URL agar quiz-engine bisa fetch() */
+        var merged = {
+          meta: { kategori_label: 'Soal Campuran', paket: null },
+          soal: final
+        };
+        var blob    = new Blob([JSON.stringify(merged)], { type: 'application/json' });
+        var blobUrl = URL.createObjectURL(blob);
+
+        /* Konfigurasi quiz-engine: nonaktifkan sampling ulang */
+        window.QUIZ_CONFIG = {
+          dataUrl:       blobUrl,
+          questionCount: 0,     // 0 = tampilkan semua (30 soal yang sudah disiapkan)
+          shuffle:       false  // sudah diacak di atas — jangan acak lagi
+        };
+
+        /* Inject quiz-engine.js — baru dimuat setelah data siap */
+        var script  = document.createElement('script');
+        script.src  = 'assets/js/quiz-engine.js';
+        document.body.appendChild(script);
+
+      } catch (err) {
+        root.innerHTML = [
+          '<div class="qe-error">',
+          '  <div class="qe-error-icon">⚠️</div>',
+          '  <h2>Gagal Memuat Soal</h2>',
+          '  <p>' + err.message + '</p>',
+          '  <p class="qe-error-hint">',
+          '    Pastikan halaman diakses melalui server HTTP',
+          '    (GitHub Pages atau <code>python3 -m http.server</code>),',
+          '    bukan langsung dari file lokal (<code>file://</code>).',
+          '  </p>',
+          '  <a href="index.html" class="qe-btn qe-btn-back">← Kembali</a>',
+          '</div>'
+        ].join('');
+      }
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', prepareCampuran);
+    } else {
+      prepareCampuran();
+    }
+
+  })();
+  </script>
+
+  <!-- KaTeX JS — dimuat setelah merger script, render LaTeX saat quiz-engine mengisi DOM -->
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
+
+  <script>
+  (function () {
+    var TARGETS = ['#qe-teks', '#qe-jawaban', '#qe-pembahasan'];
+
+    var KR_OPTS = {
+      delimiters: [
+        { left: '$$', right: '$$', display: true  },
+        { left: '$',  right: '$',  display: false }
+      ],
+      throwOnError: false,
+      trust: false
+    };
+
+    function renderMath() {
+      if (!window.renderMathInElement) return;
+      TARGETS.forEach(function (sel) {
+        var el = document.querySelector(sel);
+        if (el) renderMathInElement(el, KR_OPTS);
+      });
+    }
+
+    /* MutationObserver — re-render LaTeX setiap kali quiz-engine menulis soal baru */
+    var timer;
+    var obs = new MutationObserver(function () {
+      clearTimeout(timer);
+      timer = setTimeout(renderMath, 80); /* debounce 80ms */
+    });
+
+    document.addEventListener('DOMContentLoaded', function () {
+      var root = document.getElementById('quiz-root');
+      if (root) {
+        obs.observe(root, { childList: true, subtree: true, characterData: true });
+      }
+    });
+  })();
+  </script>
+
+</body>
+</html>
