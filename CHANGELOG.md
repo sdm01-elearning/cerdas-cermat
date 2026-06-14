@@ -5,6 +5,20 @@ Format mengikuti [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ---
 
+## [1.2.1] — 2026-06-15
+
+### Diperbaiki
+- `assets/css/style.css` — tambah class `.cat-campuran` yang proper.
+  Sebelumnya card Soal Campuran memakai inline style sehingga child selector
+  `.cat-meta span` tidak ter-override (badge tampil putih dengan teks tidak
+  terbaca di atas latar gelap). Class CSS baru mencakup semua child override:
+  `.cat-title`, `.cat-desc`, `.cat-meta`, `.cat-meta span`, `.cat-cta`.
+- `index.html` — card Soal Campuran dipindah ke dalam `categories-grid` dengan
+  `grid-column: 1 / -1` (bentang penuh sejajar 3 card kategori). Semua inline
+  style dihapus, diganti class `cat-campuran`.
+
+---
+
 ## [1.2.0] — 2026-06-14
 
 ### Ditambahkan
@@ -12,15 +26,70 @@ Format mengikuti [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
   Menarik 10 soal dari masing-masing pool (Indonesia & Umum, Sains, Matematika)
   secara paralel (Promise.all), menggabungkan, mengacak, lalu menyuntikkan
   ke quiz-engine via Blob URL. Total: 30 soal per sesi.
-- `index.html` — card "Soal Campuran" dengan tema biru-ungu-gold ditambahkan
-  di bawah tiga card kategori sebagai entry point ke mode campuran.
+- `index.html` — card "Soal Campuran" ditambahkan sebagai entry point ke mode campuran.
 
 ### Mekanisme Teknis Soal Campuran
 - Setiap kategori: 1 soal EN + 9 soal ID (stratified sampling ~10% EN)
-- Total: 3 soal EN + 27 soal ID dari 30 soal campuran
-- Sampling dilakukan di sisi klien setiap sesi → komposisi soal selalu berbeda
+- Total: 3 soal EN + 27 soal ID = 30 soal per sesi
+- Sampling dilakukan di sisi klien setiap sesi → komposisi selalu berbeda
 - KaTeX diikutsertakan karena soal Matematika ada dalam campuran
 - Back button quiz-engine otomatis mengarah ke `index.html` (root) ✓
+
+---
+
+## [1.1.2] — *(tidak terdokumentasi saat itu)*
+
+### Ditambahkan — Halaman Materi Matematika
+`matematika/materi/index.html` + 11 halaman materi topik:
+
+| File | Topik |
+|---|---|
+| `aljabar-pola.html` | Aljabar & Pola Bilangan |
+| `bangun-ruang.html` | Bangun Ruang |
+| `bilangan-bulat.html` | Bilangan Bulat |
+| `fpb-kpk.html` | FPB & KPK |
+| `geometri-datar.html` | Geometri Datar |
+| `pecahan-desimal.html` | Pecahan & Desimal |
+| `pengukuran-satuan.html` | Pengukuran & Satuan |
+| `perpangkatan-akar.html` | Perpangkatan & Akar |
+| `persen-perbandingan.html` | Persen & Perbandingan |
+| `soal-cerita-penalaran.html` | Soal Cerita & Penalaran |
+| `statistika-data.html` | Statistika & Data |
+
+### Ditambahkan — Halaman Materi Sains
+`sains/materi/index.html` + 8 halaman materi topik:
+
+| File | Topik |
+|---|---|
+| `biologi-hewan.html` | Biologi Hewan |
+| `biologi-tumbuhan.html` | Biologi Tumbuhan |
+| `bumi-atmosfer.html` | Bumi & Atmosfer |
+| `fisika-dasar.html` | Fisika Dasar |
+| `kimia-dasar.html` | Kimia Dasar |
+| `tata-surya.html` | Tata Surya |
+| `teknologi-sains.html` | Teknologi & Sains |
+| `tubuh-manusia.html` | Tubuh Manusia |
+
+---
+
+## [1.1.1] — *(tidak terdokumentasi saat itu)*
+
+### Ditambahkan — Halaman Materi Indonesia & Umum (pelengkap)
+11 halaman materi topik tersisa (selain `pahlawan-nasional.html` yang sudah ada di v1.1.0):
+
+| File | Topik |
+|---|---|
+| `kemerdekaan-indonesia.html` | Kemerdekaan Indonesia |
+| `pancasila-uud1945.html` | Pancasila & UUD 1945 |
+| `lambang-simbol-negara.html` | Lambang & Simbol Negara |
+| `geografi-indonesia.html` | Geografi Indonesia |
+| `kebudayaan-nusantara.html` | Kebudayaan Nusantara |
+| `pemerintahan-indonesia.html` | Pemerintahan Indonesia |
+| `flora-fauna-indonesia.html` | Flora & Fauna Indonesia |
+| `negara-ibukota-dunia.html` | Negara & Ibu Kota Dunia |
+| `organisasi-internasional.html` | Organisasi Internasional |
+| `penemuan-penemu-dunia.html` | Penemuan & Penemu Dunia |
+| `hari-hari-penting.html` | Hari-Hari Penting |
 
 ---
 
@@ -84,8 +153,11 @@ Format mengikuti [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## [Unreleased]
 
+### Status Saat Ini
+Semua halaman materi ketiga kategori sudah tersedia (lihat v1.1.1 dan v1.1.2).
+Pool soal masing-masing kategori berjumlah 300 soal (90% ID / 10% EN).
+
 ### Direncanakan
-- Penambahan soal hingga 40 per paket untuk semua kategori
-- Paket soal 02, 03, dst.
-- Halaman materi pembelajaran berbasis slideshow
-- Tambahan kategori bila diperlukan
+- Paket soal 02, 03, dst. untuk masing-masing kategori (berbasis pool yang sudah ada)
+- Perbaikan teks `soal/index.html` di ketiga kategori (masih tertulis "40 soal / paket")
+- Penghapusan `paket-01.json` lama yang sudah tidak dipakai (diganti pool.json)
