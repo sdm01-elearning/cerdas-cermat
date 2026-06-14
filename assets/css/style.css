@@ -665,6 +665,19 @@ img { max-width: 100%; display: block; }
   color: var(--qe-text-dim);
 }
 
+/* ── Category card: Campuran (full-width, dark gradient) ── */
+.cat-campuran {
+  background: linear-gradient(135deg, #1a237e 0%, #4527a0 50%, #880e4f 100%);
+  color: #fff;
+  grid-column: 1 / -1;   /* bentang penuh di grid 3 kolom */
+}
+.cat-campuran::before        { background: #ffd600; }
+.cat-campuran .cat-title     { color: #ffd600; }
+.cat-campuran .cat-desc      { color: rgba(255,255,255,.85); }
+.cat-campuran .cat-meta      { color: rgba(255,255,255,.7); }
+.cat-campuran .cat-meta span { background: rgba(255,255,255,.12); color: rgba(255,255,255,.92); }
+.cat-campuran .cat-cta       { color: #ffd600; }
+
 /* ── Responsive ── */
 @media (max-width: 600px) {
   .categories-grid  { grid-template-columns: 1fr; padding: 0 1rem; }
