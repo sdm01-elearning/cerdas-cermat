@@ -9,6 +9,21 @@
   <style>
     .school-logo { width: 64px; height: 64px; object-fit: contain; display:block; }
     .school-badge { gap: 1rem; align-items: center; }
+
+    /* Wrapper baris bawah: bentang penuh grid utama, lalu bagi 2 kolom */
+    .bottom-row {
+      grid-column: 1 / -1;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.75rem;
+    }
+    @media (max-width: 600px) {
+      .bottom-row { grid-template-columns: 1fr; }
+    }
+
+    /* Kartu Soal Campuran: hapus grid-column dari CSS global, atur ulang di sini */
+    .cat-campuran { grid-column: unset !important; }
+
     /* Kartu Latihan Tahap 1 */
     .cat-latihan1 {
       background: linear-gradient(135deg, #1b5e20 0%, #2e7d32 60%, #388e3c 100%);
@@ -90,37 +105,40 @@
         <div class="cat-cta">Masuk ke kategori →</div>
       </a>
 
-      <!-- ── Soal Campuran: bentang penuh baris ke-2 ── -->
-      <a href="soal-campuran.html" class="category-card cat-campuran">
-        <div class="cat-icon">🏆</div>
-        <h2 class="cat-title">Soal Campuran</h2>
-        <p class="cat-desc">
-          Tantangan gabungan dari ketiga kategori sekaligus —
-          Indonesia &amp; Umum, Sains, dan Matematika — diacak dalam satu sesi.
-        </p>
-        <div class="cat-meta">
-          <span>30 soal acak</span>
-          <span>10 soal / kategori</span>
-          <span>~10% English</span>
-        </div>
-        <div class="cat-cta">Mulai tantangan →</div>
-      </a>
+      <!-- ── Baris bawah: Soal Campuran + Latihan Tahap 1 berdampingan ── -->
+      <div class="bottom-row">
 
-      <!-- ── Latihan Tahap 1: Liga Bintang Juara ── -->
-      <a href="latihan-tahap1.html" class="category-card cat-latihan1">
-        <div class="cat-icon">🎯</div>
-        <h2 class="cat-title">Latihan Tahap 1</h2>
-        <p class="cat-desc">
-          Persiapan Liga Bintang Juara — soal campuran IPS &amp; PPKn, IPA,
-          Matematika, Bahasa Indonesia, dan Bahasa Inggris sesuai kisi-kisi Ujian Tahap 1.
-        </p>
-        <div class="cat-meta">
-          <span>30 soal acak</span>
-          <span>5 mata pelajaran</span>
-          <span>Pool: 100 soal</span>
-        </div>
-        <div class="cat-cta">Mulai latihan →</div>
-      </a>
+        <a href="soal-campuran.html" class="category-card cat-campuran">
+          <div class="cat-icon">🏆</div>
+          <h2 class="cat-title">Soal Campuran</h2>
+          <p class="cat-desc">
+            Tantangan gabungan dari ketiga kategori sekaligus —
+            Indonesia &amp; Umum, Sains, dan Matematika — diacak dalam satu sesi.
+          </p>
+          <div class="cat-meta">
+            <span>30 soal acak</span>
+            <span>10 soal / kategori</span>
+            <span>~10% English</span>
+          </div>
+          <div class="cat-cta">Mulai tantangan →</div>
+        </a>
+
+        <a href="latihan-tahap1.html" class="category-card cat-latihan1">
+          <div class="cat-icon">🎯</div>
+          <h2 class="cat-title">Latihan Tahap 1</h2>
+          <p class="cat-desc">
+            Persiapan Liga Bintang Juara — soal campuran IPS &amp; PPKn, IPA,
+            Matematika, Bahasa Indonesia, dan Bahasa Inggris sesuai kisi-kisi Ujian Tahap 1.
+          </p>
+          <div class="cat-meta">
+            <span>30 soal acak</span>
+            <span>5 mata pelajaran</span>
+            <span>Pool: 100 soal</span>
+          </div>
+          <div class="cat-cta">Mulai latihan →</div>
+        </a>
+
+      </div>
 
     </div>
 
