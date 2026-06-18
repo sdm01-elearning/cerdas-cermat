@@ -2,11 +2,11 @@
   "meta": {
     "kategori": "latihan-tahap1",
     "kategori_label": "Latihan Tahap 1 — Liga Bintang Juara",
-    "versi": "1.2.0",
-    "batch": 3,
-    "total_soal": 300,
+    "versi": "1.4.0",
+    "batch": 5,
+    "total_soal": 500,
     "target_soal": 1000,
-    "catatan": "Batch 3/10 — 300 soal aktif. Kisi-kisi Ujian Tahap 1 Liga Bintang Juara."
+    "catatan": "Batch 5/10 — 500 soal aktif. Kisi-kisi Ujian Tahap 1 Liga Bintang Juara."
   },
   "soal": [
     {
@@ -4157,6 +4157,2770 @@
       "mapel": "Bahasa Inggris",
       "level": "sedang",
       "waktu": 10
+    },
+    {
+      "id": 301,
+      "teks": "Pada peta skala 1:100.000, jarak dua desa 9 cm. Jarak sesungguhnya?",
+      "bahasa": "id",
+      "jawaban": "9 km",
+      "alternatif_jawaban": [
+        "9km"
+      ],
+      "pembahasan": "9 × 100.000 = 900.000 cm = 9 km.",
+      "topik": "Menghitung Skala Peta",
+      "mapel": "IPS",
+      "level": "mudah",
+      "waktu": 15
+    },
+    {
+      "id": 302,
+      "teks": "Jarak kota P ke Q sesungguhnya 45 km. Pada peta berskala 1:1.500.000, jaraknya di peta?",
+      "bahasa": "id",
+      "jawaban": "3 cm",
+      "alternatif_jawaban": [],
+      "pembahasan": "45 km = 4.500.000 cm. Jarak peta = 4.500.000 ÷ 1.500.000 = 3 cm.",
+      "topik": "Menghitung Skala Peta",
+      "mapel": "IPS",
+      "level": "sedang",
+      "waktu": 20
+    },
+    {
+      "id": 303,
+      "teks": "Candi Prambanan dibangun sebagai tempat ibadah umat?",
+      "bahasa": "id",
+      "jawaban": "Hindu",
+      "alternatif_jawaban": [],
+      "pembahasan": "Candi Prambanan adalah kompleks candi Hindu terbesar di Indonesia, dibangun sekitar abad ke-9 M oleh Wangsa Sanjaya.",
+      "topik": "Kerajaan Hindu dan Buddha",
+      "mapel": "IPS",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 304,
+      "teks": "Kerajaan Sriwijaya mencapai puncak kejayaan pada masa raja?",
+      "bahasa": "id",
+      "jawaban": "Balaputradewa",
+      "alternatif_jawaban": [],
+      "pembahasan": "Raja Balaputradewa membawa Kerajaan Sriwijaya mencapai puncak kejayaannya pada abad ke-9 M.",
+      "topik": "Kerajaan Hindu dan Buddha",
+      "mapel": "IPS",
+      "level": "sulit",
+      "waktu": 10
+    },
+    {
+      "id": 305,
+      "teks": "Masjid Agung Demak dibangun pada masa Kesultanan?",
+      "bahasa": "id",
+      "jawaban": "Demak",
+      "alternatif_jawaban": [
+        "Kesultanan Demak"
+      ],
+      "pembahasan": "Masjid Agung Demak dibangun pada masa Kesultanan Demak, merupakan salah satu masjid tertua di Indonesia.",
+      "topik": "Kerajaan Islam",
+      "mapel": "IPS",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 306,
+      "teks": "Kesultanan Gowa-Tallo terletak di Pulau?",
+      "bahasa": "id",
+      "jawaban": "Sulawesi",
+      "alternatif_jawaban": [
+        "Sulawesi Selatan"
+      ],
+      "pembahasan": "Kesultanan Gowa-Tallo adalah kerajaan Islam yang berpengaruh di Sulawesi Selatan, dengan pelabuhan Makassar sebagai pusatnya.",
+      "topik": "Kerajaan Islam",
+      "mapel": "IPS",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 307,
+      "teks": "Upacara Seren Taun adalah upacara syukur panen padi dari daerah?",
+      "bahasa": "id",
+      "jawaban": "Jawa Barat",
+      "alternatif_jawaban": [
+        "Sunda"
+      ],
+      "pembahasan": "Seren Taun adalah upacara adat Suku Sunda di Jawa Barat sebagai ungkapan syukur atas hasil panen padi.",
+      "topik": "Upacara Adat",
+      "mapel": "IPS",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 308,
+      "teks": "Upacara adat Kasada dilakukan oleh suku mana di Gunung Bromo?",
+      "bahasa": "id",
+      "jawaban": "Tengger",
+      "alternatif_jawaban": [
+        "Suku Tengger"
+      ],
+      "pembahasan": "Upacara Kasada dilakukan Suku Tengger di Gunung Bromo sebagai persembahan kepada Sang Hyang Widhi setiap tahun.",
+      "topik": "Upacara Adat",
+      "mapel": "IPS",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 309,
+      "teks": "Rumah adat Provinsi Aceh yang berbentuk panggung disebut?",
+      "bahasa": "id",
+      "jawaban": "Rumoh Aceh",
+      "alternatif_jawaban": [
+        "Rumah Aceh"
+      ],
+      "pembahasan": "Rumoh Aceh adalah rumah adat Provinsi Aceh, berbentuk panggung dengan tangga di bagian depan dan atap melengkung tinggi.",
+      "topik": "Rumah Adat",
+      "mapel": "IPS",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 310,
+      "teks": "Rumah adat Provinsi Nusa Tenggara Timur dari Suku Timor disebut?",
+      "bahasa": "id",
+      "jawaban": "Musalaki",
+      "alternatif_jawaban": [],
+      "pembahasan": "Musalaki adalah rumah adat tradisional Suku Timor di Nusa Tenggara Timur, berbentuk bulat dengan atap kerucut dari alang-alang.",
+      "topik": "Rumah Adat",
+      "mapel": "IPS",
+      "level": "sulit",
+      "waktu": 10
+    },
+    {
+      "id": 311,
+      "teks": "Kegiatan produksi di bidang pertanian disebut kegiatan ekonomi sektor?",
+      "bahasa": "id",
+      "jawaban": "Primer",
+      "alternatif_jawaban": [
+        "sektor primer"
+      ],
+      "pembahasan": "Sektor primer mencakup kegiatan yang langsung mengambil dari alam: pertanian, perkebunan, perikanan, pertambangan.",
+      "topik": "Kegiatan Ekonomi",
+      "mapel": "IPS",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 312,
+      "teks": "Kegiatan membuat kue untuk dijual termasuk kegiatan ekonomi?",
+      "bahasa": "id",
+      "jawaban": "Produksi",
+      "alternatif_jawaban": [],
+      "pembahasan": "Membuat kue untuk dijual adalah kegiatan produksi karena menghasilkan barang dari bahan mentah (tepung, telur, dll).",
+      "topik": "Kegiatan Ekonomi",
+      "mapel": "IPS",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 313,
+      "teks": "Harimau Sumatera berstatus kritis dan hanya ditemukan di Pulau?",
+      "bahasa": "id",
+      "jawaban": "Sumatera",
+      "alternatif_jawaban": [],
+      "pembahasan": "Harimau Sumatera (Panthera tigris sumatrae) adalah subspesies harimau endemik Pulau Sumatera yang terancam punah.",
+      "topik": "Flora dan Fauna di Indonesia",
+      "mapel": "IPS",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 314,
+      "teks": "Tanaman Titan Arum (Amorphophallus titanum) yang bunganya raksasa berasal dari daerah?",
+      "bahasa": "id",
+      "jawaban": "Sumatera",
+      "alternatif_jawaban": [
+        "Sumatra",
+        "hutan Sumatera"
+      ],
+      "pembahasan": "Titan Arum atau Bunga Bangkai Raksasa (Amorphophallus titanum) adalah tanaman endemik hutan hujan Sumatera.",
+      "topik": "Flora dan Fauna di Indonesia",
+      "mapel": "IPS",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 315,
+      "teks": "Lambang sila ke-1 Pancasila adalah?",
+      "bahasa": "id",
+      "jawaban": "Bintang",
+      "alternatif_jawaban": [
+        "bintang emas"
+      ],
+      "pembahasan": "Sila ke-1 'Ketuhanan Yang Maha Esa' dilambangkan dengan bintang emas bersudut lima di perisai Garuda.",
+      "topik": "Pancasila",
+      "mapel": "IPS",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 316,
+      "teks": "Lambang sila ke-3 Pancasila adalah?",
+      "bahasa": "id",
+      "jawaban": "Pohon beringin",
+      "alternatif_jawaban": [
+        "beringin"
+      ],
+      "pembahasan": "Sila ke-3 'Persatuan Indonesia' dilambangkan dengan pohon beringin yang besar dan kokoh.",
+      "topik": "Pancasila",
+      "mapel": "IPS",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 317,
+      "teks": "Menjaga kebersihan lingkungan adalah contoh ... warga negara.",
+      "bahasa": "id",
+      "jawaban": "Kewajiban",
+      "alternatif_jawaban": [],
+      "pembahasan": "Menjaga kebersihan lingkungan adalah kewajiban setiap warga karena menyangkut kepentingan bersama.",
+      "topik": "Hak, Kewajiban, dan Norma",
+      "mapel": "IPS",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 318,
+      "teks": "Norma kesopanan bersumber dari?",
+      "bahasa": "id",
+      "jawaban": "Masyarakat",
+      "alternatif_jawaban": [
+        "kebiasaan masyarakat"
+      ],
+      "pembahasan": "Norma kesopanan bersumber dari kebiasaan dan tata krama yang berlaku di masyarakat, bukan dari Tuhan atau negara.",
+      "topik": "Hak, Kewajiban, dan Norma",
+      "mapel": "IPS",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 319,
+      "teks": "Perpindahan panas melalui aliran zat cair atau gas disebut?",
+      "bahasa": "id",
+      "jawaban": "Konveksi",
+      "alternatif_jawaban": [],
+      "pembahasan": "Konveksi adalah perpindahan kalor yang disertai perpindahan zat perantaranya. Contoh: angin darat dan angin laut.",
+      "topik": "Pemanfaatan Energi",
+      "mapel": "IPA",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 320,
+      "teks": "Energi yang dihasilkan dari reaksi nuklir dalam inti atom disebut energi?",
+      "bahasa": "id",
+      "jawaban": "Nuklir",
+      "alternatif_jawaban": [
+        "atom"
+      ],
+      "pembahasan": "Energi nuklir dihasilkan dari reaksi fisi (pembelahan) atau fusi (penggabungan) inti atom dan sangat besar jumlahnya.",
+      "topik": "Pemanfaatan Energi",
+      "mapel": "IPA",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 321,
+      "teks": "Sifat kemagnetan benda akan hilang jika dipanaskan atau?",
+      "bahasa": "id",
+      "jawaban": "Dipukul",
+      "alternatif_jawaban": [
+        "dibanting",
+        "diguncang"
+      ],
+      "pembahasan": "Sifat magnet dapat hilang jika dipanaskan, dipukul/dibanting berulang kali, atau dialiri arus bolak-balik (AC).",
+      "topik": "Pembuatan Magnet",
+      "mapel": "IPA",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 322,
+      "teks": "Kompas bekerja berdasarkan prinsip?",
+      "bahasa": "id",
+      "jawaban": "Kemagnetan bumi",
+      "alternatif_jawaban": [
+        "medan magnet bumi"
+      ],
+      "pembahasan": "Kompas bekerja karena jarum kompas yang bersifat magnet akan selalu menunjuk ke arah kutub magnet bumi (utara-selatan).",
+      "topik": "Pembuatan Magnet",
+      "mapel": "IPA",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 323,
+      "teks": "Kecepatan bunyi di udara pada suhu normal sekitar?",
+      "bahasa": "id",
+      "jawaban": "340 m/s",
+      "alternatif_jawaban": [
+        "±340 m/s",
+        "sekitar 340 m/s"
+      ],
+      "pembahasan": "Kecepatan bunyi di udara pada suhu sekitar 20°C adalah ±340 m/s. Di air lebih cepat (~1.500 m/s).",
+      "topik": "Sumber Bunyi",
+      "mapel": "IPA",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 324,
+      "teks": "Bunyi tidak dapat merambat di?",
+      "bahasa": "id",
+      "jawaban": "Ruang hampa",
+      "alternatif_jawaban": [
+        "vakum",
+        "ruang vakum"
+      ],
+      "pembahasan": "Bunyi memerlukan medium untuk merambat. Di ruang hampa (vakum) tidak ada zat perantara sehingga bunyi tidak dapat merambat.",
+      "topik": "Sumber Bunyi",
+      "mapel": "IPA",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 325,
+      "teks": "Proses pemisahan campuran dengan menyaring menggunakan kertas saring disebut?",
+      "bahasa": "id",
+      "jawaban": "Filtrasi",
+      "alternatif_jawaban": [
+        "penyaringan"
+      ],
+      "pembahasan": "Filtrasi (penyaringan) adalah pemisahan campuran berdasarkan perbedaan ukuran partikel menggunakan saringan/filter.",
+      "topik": "Penggolongan Materi",
+      "mapel": "IPA",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 326,
+      "teks": "Air termasuk jenis materi?",
+      "bahasa": "id",
+      "jawaban": "Senyawa",
+      "alternatif_jawaban": [],
+      "pembahasan": "Air (H₂O) adalah senyawa karena terdiri dari dua unsur berbeda (hidrogen dan oksigen) yang bergabung secara kimia.",
+      "topik": "Penggolongan Materi",
+      "mapel": "IPA",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 327,
+      "teks": "Zat padat memiliki bentuk dan volume yang?",
+      "bahasa": "id",
+      "jawaban": "Tetap",
+      "alternatif_jawaban": [
+        "keduanya tetap"
+      ],
+      "pembahasan": "Zat padat memiliki bentuk dan volume yang tetap karena partikel-partikelnya tersusun sangat rapat dan tidak bergerak bebas.",
+      "topik": "Wujud Zat",
+      "mapel": "IPA",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 328,
+      "teks": "Contoh perubahan fisika adalah?",
+      "bahasa": "id",
+      "jawaban": "Es mencair",
+      "alternatif_jawaban": [
+        "air membeku",
+        "besi dipotong"
+      ],
+      "pembahasan": "Perubahan fisika tidak menghasilkan zat baru, sifat kimia tidak berubah. Contoh: es mencair, air mendidih, besi dipotong.",
+      "topik": "Wujud Zat",
+      "mapel": "IPA",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 329,
+      "teks": "Bagian bunga yang melindungi bunga saat masih kuncup adalah?",
+      "bahasa": "id",
+      "jawaban": "Kelopak bunga",
+      "alternatif_jawaban": [
+        "sepal",
+        "calyx"
+      ],
+      "pembahasan": "Kelopak bunga (sepal) adalah bagian terluar bunga yang berwarna hijau dan berfungsi melindungi bunga saat masih kuncup.",
+      "topik": "Perkembangbiakan Generatif Tumbuhan",
+      "mapel": "IPA",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 330,
+      "teks": "Proses melekatnya serbuk sari pada kepala putik disebut?",
+      "bahasa": "id",
+      "jawaban": "Penyerbukan",
+      "alternatif_jawaban": [
+        "polinasi",
+        "pollination"
+      ],
+      "pembahasan": "Penyerbukan (polinasi) adalah proses menempelnya serbuk sari dari kepala sari ke kepala putik bunga.",
+      "topik": "Perkembangbiakan Generatif Tumbuhan",
+      "mapel": "IPA",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 331,
+      "teks": "Hewan yang menyusui anaknya dan berdarah panas disebut?",
+      "bahasa": "id",
+      "jawaban": "Mamalia",
+      "alternatif_jawaban": [
+        "mammal"
+      ],
+      "pembahasan": "Mamalia adalah hewan berdarah panas yang menyusui anaknya. Contoh: sapi, kucing, paus, kelelawar.",
+      "topik": "Morfologi/Fungsi Tubuh Hewan",
+      "mapel": "IPA",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 332,
+      "teks": "Fungsi insang pada ikan adalah untuk?",
+      "bahasa": "id",
+      "jawaban": "Bernapas",
+      "alternatif_jawaban": [
+        "mengambil oksigen dari air"
+      ],
+      "pembahasan": "Insang adalah alat pernapasan ikan yang berfungsi menyaring oksigen terlarut dari air.",
+      "topik": "Morfologi/Fungsi Tubuh Hewan",
+      "mapel": "IPA",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 333,
+      "teks": "Kawasan yang dilindungi untuk melestarikan ekosistem beserta flora dan faunanya disebut?",
+      "bahasa": "id",
+      "jawaban": "Cagar alam",
+      "alternatif_jawaban": [],
+      "pembahasan": "Cagar alam adalah kawasan suaka alam yang dilindungi negara untuk menjaga ekosistem dan keanekaragaman hayatinya.",
+      "topik": "Upaya Pelestarian Sumber Daya Alam",
+      "mapel": "IPA",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 334,
+      "teks": "Penggunaan kembali barang bekas pakai disebut?",
+      "bahasa": "id",
+      "jawaban": "Reuse",
+      "alternatif_jawaban": [
+        "daur ulang pemakaian"
+      ],
+      "pembahasan": "Reuse adalah salah satu prinsip 3R (Reduce, Reuse, Recycle), yaitu menggunakan kembali barang yang masih bisa dipakai.",
+      "topik": "Upaya Pelestarian Sumber Daya Alam",
+      "mapel": "IPA",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 335,
+      "teks": "Penggunaan pupuk kimia berlebihan dapat menyebabkan pencemaran?",
+      "bahasa": "id",
+      "jawaban": "Tanah",
+      "alternatif_jawaban": [
+        "pencemaran tanah"
+      ],
+      "pembahasan": "Pupuk kimia berlebihan mencemari tanah dan dapat meresap ke air tanah, merusak keseimbangan mineral tanah.",
+      "topik": "Jenis Pencemaran Lingkungan",
+      "mapel": "IPA",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 336,
+      "teks": "Sampah organik dapat diolah menjadi pupuk melalui proses?",
+      "bahasa": "id",
+      "jawaban": "Kompos",
+      "alternatif_jawaban": [
+        "pengomposan",
+        "composting"
+      ],
+      "pembahasan": "Pengomposan (composting) adalah proses penguraian sampah organik oleh mikroorganisme menjadi kompos/pupuk alami.",
+      "topik": "Jenis Pencemaran Lingkungan",
+      "mapel": "IPA",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 337,
+      "teks": "Komponen ekosistem yang terdiri dari makhluk hidup disebut komponen?",
+      "bahasa": "id",
+      "jawaban": "Biotik",
+      "alternatif_jawaban": [],
+      "pembahasan": "Komponen biotik adalah semua makhluk hidup dalam ekosistem: produsen, konsumen, dan dekomposer.",
+      "topik": "Komponen Ekosistem",
+      "mapel": "IPA",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 338,
+      "teks": "Air, tanah, dan cahaya matahari termasuk komponen?",
+      "bahasa": "id",
+      "jawaban": "Abiotik",
+      "alternatif_jawaban": [],
+      "pembahasan": "Komponen abiotik adalah benda tak hidup yang membentuk lingkungan: air, tanah, udara, suhu, cahaya, dan mineral.",
+      "topik": "Komponen Ekosistem",
+      "mapel": "IPA",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 339,
+      "teks": "Jantung manusia terdiri dari berapa ruangan?",
+      "bahasa": "id",
+      "jawaban": "4",
+      "alternatif_jawaban": [
+        "empat"
+      ],
+      "pembahasan": "Jantung manusia terdiri dari 4 ruangan: serambi kanan, serambi kiri, bilik kanan, dan bilik kiri.",
+      "topik": "Sistem Peredaran Darah",
+      "mapel": "IPA",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 340,
+      "teks": "Peredaran darah besar mengalirkan darah dari jantung ke?",
+      "bahasa": "id",
+      "jawaban": "Seluruh tubuh",
+      "alternatif_jawaban": [
+        "tubuh"
+      ],
+      "pembahasan": "Peredaran darah besar: jantung (bilik kiri) → seluruh tubuh → jantung (serambi kanan), membawa O₂ ke jaringan tubuh.",
+      "topik": "Sistem Peredaran Darah",
+      "mapel": "IPA",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 341,
+      "teks": "Bagian telinga dalam yang berfungsi menjaga keseimbangan tubuh adalah?",
+      "bahasa": "id",
+      "jawaban": "Saluran setengah lingkaran",
+      "alternatif_jawaban": [
+        "kanalis semisirkularis"
+      ],
+      "pembahasan": "Saluran setengah lingkaran (kanalis semisirkularis) di telinga dalam berisi cairan yang mendeteksi gerakan dan menjaga keseimbangan.",
+      "topik": "Indra Pendengaran",
+      "mapel": "IPA",
+      "level": "sulit",
+      "waktu": 10
+    },
+    {
+      "id": 342,
+      "teks": "Kebiasaan mendengarkan musik keras dengan earphone dapat merusak?",
+      "bahasa": "id",
+      "jawaban": "Gendang telinga",
+      "alternatif_jawaban": [
+        "pendengaran",
+        "telinga"
+      ],
+      "pembahasan": "Mendengarkan musik terlalu keras dengan earphone dapat merusak gendang telinga dan sel-sel rambut di koklea secara permanen.",
+      "topik": "Indra Pendengaran",
+      "mapel": "IPA",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 343,
+      "teks": "Nilai $\\frac{7}{8}$ dalam bentuk persen adalah?",
+      "bahasa": "id",
+      "jawaban": "87,5%",
+      "alternatif_jawaban": [
+        "87.5%"
+      ],
+      "pembahasan": "$\\frac{7}{8} \\times 100\\% = 87,5\\%$.",
+      "topik": "Pecahan Senilai dan Menyederhanakan Pecahan",
+      "mapel": "Matematika",
+      "level": "sedang",
+      "waktu": 20
+    },
+    {
+      "id": 344,
+      "teks": "Ubah $0{,}6$ ke bentuk pecahan paling sederhana!",
+      "bahasa": "id",
+      "jawaban": "$\\frac{3}{5}$",
+      "alternatif_jawaban": [
+        "3/5"
+      ],
+      "pembahasan": "$0{,}6 = \\frac{6}{10} = \\frac{3}{5}$ (dibagi FPB 2).",
+      "topik": "Pecahan Senilai dan Menyederhanakan Pecahan",
+      "mapel": "Matematika",
+      "level": "mudah",
+      "waktu": 15
+    },
+    {
+      "id": 345,
+      "teks": "Jarak pada peta 5 cm mewakili jarak nyata 25 km. Berapa skalanya?",
+      "bahasa": "id",
+      "jawaban": "1 : 500.000",
+      "alternatif_jawaban": [
+        "1:500.000"
+      ],
+      "pembahasan": "25 km = 2.500.000 cm. Skala = 5 : 2.500.000 = 1 : 500.000.",
+      "topik": "Perbandingan dan Mengurutkan Nilai",
+      "mapel": "Matematika",
+      "level": "sedang",
+      "waktu": 20
+    },
+    {
+      "id": 346,
+      "teks": "Resep kue membutuhkan tepung dan gula dengan perbandingan 4:1. Jika tepung 200 gram, berapa gram gula?",
+      "bahasa": "id",
+      "jawaban": "50 gram",
+      "alternatif_jawaban": [
+        "50"
+      ],
+      "pembahasan": "Gula = $\\frac{1}{4} \\times 200 = 50$ gram.",
+      "topik": "Perbandingan dan Mengurutkan Nilai",
+      "mapel": "Matematika",
+      "level": "sedang",
+      "waktu": 20
+    },
+    {
+      "id": 347,
+      "teks": "Keliling segitiga dengan sisi 5 cm, 12 cm, dan 13 cm adalah?",
+      "bahasa": "id",
+      "jawaban": "30 cm",
+      "alternatif_jawaban": [
+        "30"
+      ],
+      "pembahasan": "Keliling segitiga = jumlah semua sisi = 5 + 12 + 13 = 30 cm.",
+      "topik": "Konsep Keliling Bangun Datar",
+      "mapel": "Matematika",
+      "level": "mudah",
+      "waktu": 15
+    },
+    {
+      "id": 348,
+      "teks": "Sebuah taman berbentuk persegi panjang (40 m × 25 m) akan dipasangi pagar. Berapa meter pagar dibutuhkan?",
+      "bahasa": "id",
+      "jawaban": "130 m",
+      "alternatif_jawaban": [
+        "130"
+      ],
+      "pembahasan": "Keliling = 2 × (40 + 25) = 2 × 65 = 130 m.",
+      "topik": "Konsep Keliling Bangun Datar",
+      "mapel": "Matematika",
+      "level": "sedang",
+      "waktu": 20
+    },
+    {
+      "id": 349,
+      "teks": "Luas belah ketupat dengan diagonal 16 cm dan 12 cm adalah?",
+      "bahasa": "id",
+      "jawaban": "96 cm²",
+      "alternatif_jawaban": [
+        "96"
+      ],
+      "pembahasan": "Luas belah ketupat = $\\frac{d_1 \\times d_2}{2} = \\frac{16 \\times 12}{2} = 96$ cm².",
+      "topik": "Luas Gabungan Bangun Datar",
+      "mapel": "Matematika",
+      "level": "sedang",
+      "waktu": 20
+    },
+    {
+      "id": 350,
+      "teks": "Luas persegi panjang 120 cm². Jika panjangnya 15 cm, berapa lebarnya?",
+      "bahasa": "id",
+      "jawaban": "8 cm",
+      "alternatif_jawaban": [
+        "8"
+      ],
+      "pembahasan": "Lebar = Luas ÷ Panjang = 120 ÷ 15 = 8 cm.",
+      "topik": "Luas Gabungan Bangun Datar",
+      "mapel": "Matematika",
+      "level": "sedang",
+      "waktu": 20
+    },
+    {
+      "id": 351,
+      "teks": "Bus A berangkat setiap 15 menit, Bus B setiap 20 menit. Berapa menit sekali keduanya berangkat bersamaan?",
+      "bahasa": "id",
+      "jawaban": "60 menit",
+      "alternatif_jawaban": [
+        "60",
+        "1 jam"
+      ],
+      "pembahasan": "KPK(15, 20) = 60. Keduanya berangkat bersamaan setiap 60 menit (1 jam).",
+      "topik": "FPB dan KPK",
+      "mapel": "Matematika",
+      "level": "sedang",
+      "waktu": 20
+    },
+    {
+      "id": 352,
+      "teks": "FPB dari 32 dan 48 adalah?",
+      "bahasa": "id",
+      "jawaban": "16",
+      "alternatif_jawaban": [],
+      "pembahasan": "$32=2^5$, $48=2^4\\times3$. FPB = $2^4 = 16$.",
+      "topik": "FPB dan KPK",
+      "mapel": "Matematika",
+      "level": "sedang",
+      "waktu": 20
+    },
+    {
+      "id": 353,
+      "teks": "Diagram yang menggunakan batang untuk menampilkan data disebut?",
+      "bahasa": "id",
+      "jawaban": "Diagram batang",
+      "alternatif_jawaban": [
+        "bar chart"
+      ],
+      "pembahasan": "Diagram batang (bar chart) menggunakan batang vertikal atau horizontal untuk membandingkan besaran data antar kategori.",
+      "topik": "Membaca dan Menyajikan Data",
+      "mapel": "Matematika",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 354,
+      "teks": "Data nilai: 6, 7, 8, 8, 9, 10. Nilai mediannya?",
+      "bahasa": "id",
+      "jawaban": "8",
+      "alternatif_jawaban": [],
+      "pembahasan": "6 data, median = rata-rata data ke-3 dan ke-4 = $\\frac{8+8}{2} = 8$.",
+      "topik": "Membaca dan Menyajikan Data",
+      "mapel": "Matematika",
+      "level": "sedang",
+      "waktu": 15
+    },
+    {
+      "id": 355,
+      "teks": "Membuat 5 loyang kue butuh 10 telur. Untuk 8 loyang butuh berapa telur?",
+      "bahasa": "id",
+      "jawaban": "16 telur",
+      "alternatif_jawaban": [
+        "16"
+      ],
+      "pembahasan": "Perbandingan senilai: $\\frac{5}{10} = \\frac{8}{x}$ → $x = \\frac{8 \\times 10}{5} = 16$ telur.",
+      "topik": "Perbandingan Senilai",
+      "mapel": "Matematika",
+      "level": "sedang",
+      "waktu": 20
+    },
+    {
+      "id": 356,
+      "teks": "Kecepatan motor dan jarak yang ditempuh merupakan contoh perbandingan?",
+      "bahasa": "id",
+      "jawaban": "Senilai",
+      "alternatif_jawaban": [
+        "perbandingan senilai"
+      ],
+      "pembahasan": "Semakin cepat motor, semakin jauh jarak (dalam waktu sama) → perbandingan senilai. Berbeda dengan perbandingan berbalik nilai.",
+      "topik": "Perbandingan Senilai",
+      "mapel": "Matematika",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 357,
+      "teks": "Ani punya pita $3\\frac{1}{2}$ m, dipakai $1\\frac{3}{4}$ m. Sisa pita?",
+      "bahasa": "id",
+      "jawaban": "$1\\frac{3}{4}$ m",
+      "alternatif_jawaban": [
+        "1 3/4 m",
+        "7/4 m"
+      ],
+      "pembahasan": "$3\\frac{1}{2} - 1\\frac{3}{4} = \\frac{7}{2} - \\frac{7}{4} = \\frac{14}{4} - \\frac{7}{4} = \\frac{7}{4} = 1\\frac{3}{4}$ m.",
+      "topik": "Operasi Campuran Pecahan Soal Terapan",
+      "mapel": "Matematika",
+      "level": "sedang",
+      "waktu": 20
+    },
+    {
+      "id": 358,
+      "teks": "$2\\frac{1}{3} \\times 1\\frac{1}{2}$",
+      "bahasa": "id",
+      "jawaban": "$3\\frac{1}{2}$",
+      "alternatif_jawaban": [
+        "3,5",
+        "7/2"
+      ],
+      "pembahasan": "$\\frac{7}{3} \\times \\frac{3}{2} = \\frac{21}{6} = \\frac{7}{2} = 3\\frac{1}{2}$.",
+      "topik": "Operasi Campuran Pecahan Soal Terapan",
+      "mapel": "Matematika",
+      "level": "sedang",
+      "waktu": 20
+    },
+    {
+      "id": 359,
+      "teks": "Volume kerucut dengan jari-jari 7 cm dan tinggi 9 cm? ($\\pi=\\frac{22}{7}$)",
+      "bahasa": "id",
+      "jawaban": "462 cm³",
+      "alternatif_jawaban": [
+        "462"
+      ],
+      "pembahasan": "Volume kerucut = $\\frac{1}{3}\\pi r^2 t = \\frac{1}{3}\\times\\frac{22}{7}\\times49\\times9 = \\frac{1}{3}\\times1386 = 462$ cm³.",
+      "topik": "Volume Bangun Ruang Gabungan",
+      "mapel": "Matematika",
+      "level": "sulit",
+      "waktu": 25
+    },
+    {
+      "id": 360,
+      "teks": "Sebuah akuarium panjang 50 cm, lebar 30 cm, dan tinggi 40 cm. Berapa liter air jika diisi penuh?",
+      "bahasa": "id",
+      "jawaban": "60 liter",
+      "alternatif_jawaban": [
+        "60"
+      ],
+      "pembahasan": "Volume = 50 × 30 × 40 = 60.000 cm³ = 60 liter (1 liter = 1.000 cm³).",
+      "topik": "Volume Bangun Ruang Gabungan",
+      "mapel": "Matematika",
+      "level": "sedang",
+      "waktu": 20
+    },
+    {
+      "id": 361,
+      "teks": "Sebuah kapal berlayar 180 km dalam 4 jam. Kecepatan rata-ratanya?",
+      "bahasa": "id",
+      "jawaban": "45 km/jam",
+      "alternatif_jawaban": [
+        "45"
+      ],
+      "pembahasan": "Kecepatan = 180 ÷ 4 = 45 km/jam.",
+      "topik": "Kecepatan",
+      "mapel": "Matematika",
+      "level": "mudah",
+      "waktu": 15
+    },
+    {
+      "id": 362,
+      "teks": "Dengan kecepatan 80 km/jam, berapa jam untuk menempuh 320 km?",
+      "bahasa": "id",
+      "jawaban": "4 jam",
+      "alternatif_jawaban": [
+        "4"
+      ],
+      "pembahasan": "Waktu = 320 ÷ 80 = 4 jam.",
+      "topik": "Kecepatan",
+      "mapel": "Matematika",
+      "level": "mudah",
+      "waktu": 15
+    },
+    {
+      "id": 363,
+      "teks": "Bangun ruang dengan satu titik puncak dan alas berbentuk lingkaran disebut?",
+      "bahasa": "id",
+      "jawaban": "Kerucut",
+      "alternatif_jawaban": [],
+      "pembahasan": "Kerucut adalah bangun ruang dengan alas berbentuk lingkaran dan satu titik puncak. Memiliki 1 sisi lengkung dan 1 sisi datar.",
+      "topik": "Visualisasi Spasial",
+      "mapel": "Matematika",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 364,
+      "teks": "Jaring-jaring kubus terdiri dari berapa persegi?",
+      "bahasa": "id",
+      "jawaban": "6",
+      "alternatif_jawaban": [
+        "enam"
+      ],
+      "pembahasan": "Kubus memiliki 6 sisi, sehingga jaring-jaringnya terdiri dari 6 buah persegi yang sama ukurannya.",
+      "topik": "Visualisasi Spasial",
+      "mapel": "Matematika",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 365,
+      "teks": "Penulisan yang benar: 'analisa' atau 'analisis'?",
+      "bahasa": "id",
+      "jawaban": "Analisis",
+      "alternatif_jawaban": [],
+      "pembahasan": "Menurut KBBI, bentuk baku yang benar adalah 'analisis', bukan 'analisa'.",
+      "topik": "Ejaan Penulisan Kata",
+      "mapel": "Bahasa Indonesia",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 366,
+      "teks": "Tanda titik dua (:) digunakan sebelum?",
+      "bahasa": "id",
+      "jawaban": "Perincian",
+      "alternatif_jawaban": [
+        "rincian",
+        "daftar"
+      ],
+      "pembahasan": "Tanda titik dua (:) digunakan sebelum perincian/daftar dan sesudah kata-kata seperti 'sebagai berikut'.",
+      "topik": "Ejaan Penulisan Kata",
+      "mapel": "Bahasa Indonesia",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 367,
+      "teks": "'Sungai Nil adalah sungai terpanjang di dunia.' Ini kalimat?",
+      "bahasa": "id",
+      "jawaban": "Fakta",
+      "alternatif_jawaban": [],
+      "pembahasan": "Pernyataan tentang panjang Sungai Nil dapat dibuktikan secara ilmiah, sehingga merupakan fakta.",
+      "topik": "Kalimat Fakta dan Opini",
+      "mapel": "Bahasa Indonesia",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 368,
+      "teks": "'Kota ini sangat indah.' Ini kalimat?",
+      "bahasa": "id",
+      "jawaban": "Opini",
+      "alternatif_jawaban": [],
+      "pembahasan": "'Sangat indah' adalah penilaian subjektif yang berbeda-beda menurut tiap orang, sehingga merupakan opini.",
+      "topik": "Kalimat Fakta dan Opini",
+      "mapel": "Bahasa Indonesia",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 369,
+      "teks": "Paragraf yang kalimat utamanya ada di awal dan akhir disebut paragraf?",
+      "bahasa": "id",
+      "jawaban": "Campuran",
+      "alternatif_jawaban": [
+        "paragraf campuran"
+      ],
+      "pembahasan": "Paragraf campuran memiliki kalimat utama di awal (deduktif) dan dipertegas kembali di akhir paragraf.",
+      "topik": "Ide Pokok Paragraf",
+      "mapel": "Bahasa Indonesia",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 370,
+      "teks": "Ide pokok suatu paragraf dapat ditemukan di kalimat?",
+      "bahasa": "id",
+      "jawaban": "Utama",
+      "alternatif_jawaban": [
+        "kalimat utama",
+        "kalimat pokok"
+      ],
+      "pembahasan": "Ide pokok selalu ada di kalimat utama, yang posisinya bisa di awal, akhir, atau awal dan akhir paragraf.",
+      "topik": "Ide Pokok Paragraf",
+      "mapel": "Bahasa Indonesia",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 371,
+      "teks": "Kata tanya 'siapa' digunakan untuk menanyakan?",
+      "bahasa": "id",
+      "jawaban": "Orang atau tokoh",
+      "alternatif_jawaban": [
+        "siapa pelakunya",
+        "orang"
+      ],
+      "pembahasan": "Kata tanya 'Siapa' (Who) digunakan untuk menanyakan nama orang atau tokoh yang terlibat dalam suatu peristiwa.",
+      "topik": "Informasi dalam Teks",
+      "mapel": "Bahasa Indonesia",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 372,
+      "teks": "Kata tanya 'apa' digunakan untuk menanyakan?",
+      "bahasa": "id",
+      "jawaban": "Benda atau peristiwa",
+      "alternatif_jawaban": [
+        "sesuatu/benda",
+        "hal"
+      ],
+      "pembahasan": "Kata tanya 'Apa' (What) digunakan untuk menanyakan benda, hal, atau peristiwa yang terjadi.",
+      "topik": "Informasi dalam Teks",
+      "mapel": "Bahasa Indonesia",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 373,
+      "teks": "Simpulan yang baik berisi ... bukan detail kecil.",
+      "bahasa": "id",
+      "jawaban": "Gagasan utama",
+      "alternatif_jawaban": [
+        "inti/pokok"
+      ],
+      "pembahasan": "Simpulan yang baik berisi gagasan utama atau inti dari teks, bukan rincian atau detail yang kecil.",
+      "topik": "Simpulan Teks Bacaan",
+      "mapel": "Bahasa Indonesia",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 374,
+      "teks": "Tanda yang menunjukkan pernyataan benar dalam teks biasanya ditandai dengan kesesuaian antara isi teks dan?",
+      "bahasa": "id",
+      "jawaban": "Pernyataan yang diajukan",
+      "alternatif_jawaban": [
+        "kalimat yang ditanyakan"
+      ],
+      "pembahasan": "Pernyataan benar ditentukan dengan mencocokkan langsung antara isi teks dan pernyataan yang diajukan.",
+      "topik": "Pernyataan Benar/Salah pada Teks Bacaan",
+      "mapel": "Bahasa Indonesia",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 375,
+      "teks": "Nomor surat resmi berfungsi untuk?",
+      "bahasa": "id",
+      "jawaban": "Pengarsipan",
+      "alternatif_jawaban": [
+        "mengarsipkan",
+        "identifikasi surat"
+      ],
+      "pembahasan": "Nomor surat memudahkan pengarsipan dan pencarian kembali surat yang telah dikirim atau diterima.",
+      "topik": "Surat Pribadi dan Surat Resmi",
+      "mapel": "Bahasa Indonesia",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 376,
+      "teks": "Surat pribadi tidak perlu menggunakan?",
+      "bahasa": "id",
+      "jawaban": "Kop surat",
+      "alternatif_jawaban": [
+        "nomor surat",
+        "kop"
+      ],
+      "pembahasan": "Surat pribadi bersifat informal sehingga tidak memerlukan kop surat, nomor surat, atau stempel resmi.",
+      "topik": "Surat Pribadi dan Surat Resmi",
+      "mapel": "Bahasa Indonesia",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 377,
+      "teks": "Kalimat 'Dia memenangkan lomba itu.' Kata 'memenangkan' berawalan?",
+      "bahasa": "id",
+      "jawaban": "me-",
+      "alternatif_jawaban": [
+        "meN-",
+        "mem-"
+      ],
+      "pembahasan": "'Memenangkan' = me- + menang + -kan. Awalan me- berubah menjadi 'me-' di sini karena kata dasar dimulai konsonan 'm'.",
+      "topik": "Kalimat Aktif dan Pasif",
+      "mapel": "Bahasa Indonesia",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 378,
+      "teks": "Kalimat 'Hadiah itu diberikan kepada juara.' Predikatnya adalah?",
+      "bahasa": "id",
+      "jawaban": "Diberikan",
+      "alternatif_jawaban": [],
+      "pembahasan": "'Diberikan' adalah predikat kalimat pasif, ditandai dengan awalan 'di-'. Subjeknya adalah 'Hadiah itu'.",
+      "topik": "Kalimat Aktif dan Pasif",
+      "mapel": "Bahasa Indonesia",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 379,
+      "teks": "Kata 'pertanian' menggunakan konfiks?",
+      "bahasa": "id",
+      "jawaban": "per-an",
+      "alternatif_jawaban": [
+        "per-...-an"
+      ],
+      "pembahasan": "'Pertanian' = per-an + tani. Konfiks per-...-an membentuk kata benda yang bermakna 'hal berkaitan dengan'.",
+      "topik": "Afiksasi",
+      "mapel": "Bahasa Indonesia",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 380,
+      "teks": "Ungkapan 'panjang tangan' berarti?",
+      "bahasa": "id",
+      "jawaban": "Suka mencuri",
+      "alternatif_jawaban": [
+        "pencuri"
+      ],
+      "pembahasan": "'Panjang tangan' adalah ungkapan negatif untuk orang yang suka mencuri atau mengambil milik orang lain.",
+      "topik": "Pemilihan Kata pada Istilah dan Ungkapan",
+      "mapel": "Bahasa Indonesia",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 381,
+      "teks": "How many days are there in a week?",
+      "bahasa": "en",
+      "jawaban": "7",
+      "alternatif_jawaban": [
+        "Seven"
+      ],
+      "pembahasan": "There are 7 days in a week: Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday.",
+      "topik": "Days",
+      "mapel": "Bahasa Inggris",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 382,
+      "teks": "What are the days of the weekend?",
+      "bahasa": "en",
+      "jawaban": "Saturday and Sunday",
+      "alternatif_jawaban": [
+        "Sunday and Saturday"
+      ],
+      "pembahasan": "The weekend consists of Saturday (Sabtu) and Sunday (Minggu), the two days when most people don't work or go to school.",
+      "topik": "Days",
+      "mapel": "Bahasa Inggris",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 383,
+      "teks": "What day comes after Sunday?",
+      "bahasa": "en",
+      "jawaban": "Monday",
+      "alternatif_jawaban": [],
+      "pembahasan": "After Sunday comes Monday, the first day of the new week.",
+      "topik": "Days",
+      "mapel": "Bahasa Inggris",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 384,
+      "teks": "Which season comes after winter?",
+      "bahasa": "en",
+      "jawaban": "Spring",
+      "alternatif_jawaban": [],
+      "pembahasan": "The order of seasons is: Spring → Summer → Autumn (Fall) → Winter → Spring again.",
+      "topik": "Seasons",
+      "mapel": "Bahasa Inggris",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 385,
+      "teks": "In which season do people usually wear thick coats and it snows?",
+      "bahasa": "en",
+      "jawaban": "Winter",
+      "alternatif_jawaban": [],
+      "pembahasan": "Winter is the coldest season, characterized by snow, ice, and short days. People wear heavy coats to stay warm.",
+      "topik": "Seasons",
+      "mapel": "Bahasa Inggris",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 386,
+      "teks": "Which season is known for flowers blooming and warmer weather after winter?",
+      "bahasa": "en",
+      "jawaban": "Spring",
+      "alternatif_jawaban": [],
+      "pembahasan": "Spring (musim semi) follows winter and is known for flowers blooming, warmer temperatures, and longer days.",
+      "topik": "Seasons",
+      "mapel": "Bahasa Inggris",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 387,
+      "teks": "How do you ask a shopkeeper if they have a specific item?",
+      "bahasa": "en",
+      "jawaban": "Do you have ...?",
+      "alternatif_jawaban": [
+        "Have you got ...?",
+        "Is there ...?"
+      ],
+      "pembahasan": "'Do you have ...?' is the standard question to ask a shopkeeper whether they sell or stock a specific item.",
+      "topik": "Expression for Shop and Shopping",
+      "mapel": "Bahasa Inggris",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 388,
+      "teks": "How do you ask for a discount in a shop?",
+      "bahasa": "en",
+      "jawaban": "Can I get a discount?",
+      "alternatif_jawaban": [
+        "Is there a discount?",
+        "Can you lower the price?"
+      ],
+      "pembahasan": "'Can I get a discount?' or 'Is there a discount?' are polite ways to ask for a price reduction when shopping.",
+      "topik": "Expression for Shop and Shopping",
+      "mapel": "Bahasa Inggris",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 389,
+      "teks": "What do you say when you want to pay for something?",
+      "bahasa": "en",
+      "jawaban": "I'll take it",
+      "alternatif_jawaban": [
+        "I want to pay",
+        "I'll buy this"
+      ],
+      "pembahasan": "'I'll take it' is a common expression used when you have decided to buy something and are ready to pay.",
+      "topik": "Expression for Shop and Shopping",
+      "mapel": "Bahasa Inggris",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 390,
+      "teks": "What do you call an animal that only eats plants?",
+      "bahasa": "en",
+      "jawaban": "Herbivore",
+      "alternatif_jawaban": [],
+      "pembahasan": "A herbivore is an animal that only eats plants. Examples: cow, rabbit, deer, elephant.",
+      "topik": "Kinds of Animal",
+      "mapel": "Bahasa Inggris",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 391,
+      "teks": "What do you call an animal that eats both plants and meat?",
+      "bahasa": "en",
+      "jawaban": "Omnivore",
+      "alternatif_jawaban": [],
+      "pembahasan": "An omnivore eats both plants and animals. Examples: humans, bears, pigs, chickens.",
+      "topik": "Kinds of Animal",
+      "mapel": "Bahasa Inggris",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 392,
+      "teks": "What kind of animal is a whale?",
+      "bahasa": "en",
+      "jawaban": "Mammal",
+      "alternatif_jawaban": [
+        "Marine mammal"
+      ],
+      "pembahasan": "A whale is a mammal, not a fish. It breathes air through a blowhole, gives birth to live young, and nurses them.",
+      "topik": "Kinds of Animal",
+      "mapel": "Bahasa Inggris",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 393,
+      "teks": "What do you call your sister's daughter?",
+      "bahasa": "en",
+      "jawaban": "Niece",
+      "alternatif_jawaban": [],
+      "pembahasan": "Your sister's (or brother's) daughter is your niece (keponakan perempuan). A son would be your nephew.",
+      "topik": "Family Tree",
+      "mapel": "Bahasa Inggris",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 394,
+      "teks": "What tool does a teacher use to write on a whiteboard?",
+      "bahasa": "en",
+      "jawaban": "Marker",
+      "alternatif_jawaban": [
+        "whiteboard marker"
+      ],
+      "pembahasan": "A teacher uses a marker (or whiteboard marker) to write on a whiteboard. On a blackboard, they use chalk.",
+      "topik": "Things They Need to Work",
+      "mapel": "Bahasa Inggris",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 395,
+      "teks": "What word describes the taste of chili or pepper?",
+      "bahasa": "en",
+      "jawaban": "Spicy",
+      "alternatif_jawaban": [
+        "hot",
+        "peppery"
+      ],
+      "pembahasan": "Chili and pepper taste spicy (pedas). 'Hot' can also describe spicy food in informal speech.",
+      "topik": "Taste",
+      "mapel": "Bahasa Inggris",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 396,
+      "teks": "What do you call a vehicle that travels underwater?",
+      "bahasa": "en",
+      "jawaban": "Submarine",
+      "alternatif_jawaban": [],
+      "pembahasan": "A submarine is a vehicle that can travel underwater. It is used by navies and for ocean research.",
+      "topik": "Things Related to Transportation",
+      "mapel": "Bahasa Inggris",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 397,
+      "teks": "I ___ (write) a letter to my friend right now. (Present Continuous)",
+      "bahasa": "en",
+      "jawaban": "am writing",
+      "alternatif_jawaban": [],
+      "pembahasan": "Present Continuous: I + am + verb-ing. → 'I am writing a letter to my friend right now.'",
+      "topik": "Present Continuous",
+      "mapel": "Bahasa Inggris",
+      "level": "mudah",
+      "waktu": 15
+    },
+    {
+      "id": 398,
+      "teks": "What is the room in a house where people eat meals together?",
+      "bahasa": "en",
+      "jawaban": "Dining room",
+      "alternatif_jawaban": [
+        "The dining room"
+      ],
+      "pembahasan": "The dining room (ruang makan) is the room where the family eats meals together around a table.",
+      "topik": "Parts of the House",
+      "mapel": "Bahasa Inggris",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 399,
+      "teks": "What do you call the person at school whose job is to give advice to students?",
+      "bahasa": "en",
+      "jawaban": "Counselor",
+      "alternatif_jawaban": [
+        "school counselor",
+        "guidance counselor"
+      ],
+      "pembahasan": "A school counselor (guru BK) is the person who gives advice and support to students about personal, academic, or career matters.",
+      "topik": "People at School",
+      "mapel": "Bahasa Inggris",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 400,
+      "teks": "What do you call a small bracelet made of beads worn on the wrist?",
+      "bahasa": "en",
+      "jawaban": "Beaded bracelet",
+      "alternatif_jawaban": [
+        "bead bracelet",
+        "gelang manik"
+      ],
+      "pembahasan": "A beaded bracelet is a bracelet made of beads (manik-manik) strung together, worn as a fashion accessory.",
+      "topik": "Jewelry and Accessories",
+      "mapel": "Bahasa Inggris",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 401,
+      "teks": "Jarak kota X ke Y pada peta 12 cm, skala 1:250.000. Jarak sebenarnya?",
+      "bahasa": "id",
+      "jawaban": "30 km",
+      "alternatif_jawaban": [
+        "30km"
+      ],
+      "pembahasan": "12 × 250.000 = 3.000.000 cm = 30 km.",
+      "topik": "Menghitung Skala Peta",
+      "mapel": "IPS",
+      "level": "sedang",
+      "waktu": 20
+    },
+    {
+      "id": 402,
+      "teks": "Kerajaan Majapahit berdiri pada tahun?",
+      "bahasa": "id",
+      "jawaban": "1293",
+      "alternatif_jawaban": [
+        "tahun 1293"
+      ],
+      "pembahasan": "Kerajaan Majapahit berdiri pada tahun 1293 M, didirikan oleh Raden Wijaya di Jawa Timur.",
+      "topik": "Kerajaan Hindu dan Buddha",
+      "mapel": "IPS",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 403,
+      "teks": "Sunan Kalijaga adalah salah satu Wali Songo yang menyebarkan Islam melalui media?",
+      "bahasa": "id",
+      "jawaban": "Wayang",
+      "alternatif_jawaban": [
+        "seni wayang"
+      ],
+      "pembahasan": "Sunan Kalijaga menggunakan wayang kulit sebagai media dakwah Islam, memadukan budaya Jawa dengan ajaran Islam.",
+      "topik": "Kerajaan Islam",
+      "mapel": "IPS",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 404,
+      "teks": "Upacara Tabuik adalah tradisi dari Provinsi?",
+      "bahasa": "id",
+      "jawaban": "Sumatera Barat",
+      "alternatif_jawaban": [
+        "Sumbar",
+        "Padang"
+      ],
+      "pembahasan": "Tabuik adalah upacara adat di Pariaman, Sumatera Barat, diadakan setiap 10 Muharram memperingati wafatnya Husein bin Ali.",
+      "topik": "Upacara Adat",
+      "mapel": "IPS",
+      "level": "sulit",
+      "waktu": 10
+    },
+    {
+      "id": 405,
+      "teks": "Rumah adat Provinsi Riau berbentuk panggung disebut?",
+      "bahasa": "id",
+      "jawaban": "Rumah Selaso Jatuh Kembar",
+      "alternatif_jawaban": [
+        "Selaso Jatuh Kembar"
+      ],
+      "pembahasan": "Rumah Selaso Jatuh Kembar adalah rumah adat Provinsi Riau, berbentuk panggung dengan dua selasar di kiri dan kanan.",
+      "topik": "Rumah Adat",
+      "mapel": "IPS",
+      "level": "sulit",
+      "waktu": 10
+    },
+    {
+      "id": 406,
+      "teks": "Pedagang yang membeli barang dari produsen lalu menjual ke pengecer disebut?",
+      "bahasa": "id",
+      "jawaban": "Grosir",
+      "alternatif_jawaban": [
+        "pedagang besar",
+        "wholesaler"
+      ],
+      "pembahasan": "Grosir (pedagang besar/wholesaler) membeli dalam jumlah besar dari produsen dan menjual ke pengecer/retailer.",
+      "topik": "Kegiatan Ekonomi",
+      "mapel": "IPS",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 407,
+      "teks": "Jalak Bali adalah burung endemik yang hanya hidup di Pulau?",
+      "bahasa": "id",
+      "jawaban": "Bali",
+      "alternatif_jawaban": [],
+      "pembahasan": "Jalak Bali (Leucopsar rothschildi) adalah burung endemik Bali yang terancam punah, dilindungi di Taman Nasional Bali Barat.",
+      "topik": "Flora dan Fauna di Indonesia",
+      "mapel": "IPS",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 408,
+      "teks": "Pengamalan sila ke-2 Pancasila dalam kehidupan sehari-hari adalah?",
+      "bahasa": "id",
+      "jawaban": "Menolong sesama",
+      "alternatif_jawaban": [
+        "membantu orang lain",
+        "tidak membeda-bedakan orang"
+      ],
+      "pembahasan": "Sila ke-2 'Kemanusiaan yang Adil dan Beradab' diamalkan dengan menolong sesama, tidak membeda-bedakan orang, dan menghormati HAM.",
+      "topik": "Pancasila",
+      "mapel": "IPS",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 409,
+      "teks": "Contoh pelanggaran hak warga negara adalah?",
+      "bahasa": "id",
+      "jawaban": "Diskriminasi",
+      "alternatif_jawaban": [
+        "tidak mendapat keadilan",
+        "pelarangan beribadah"
+      ],
+      "pembahasan": "Diskriminasi (pembedaan perlakuan berdasarkan suku, agama, ras) adalah contoh pelanggaran hak warga negara.",
+      "topik": "Hak, Kewajiban, dan Norma",
+      "mapel": "IPS",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 410,
+      "teks": "Penemu teori heliosentris (matahari sebagai pusat tata surya) adalah?",
+      "bahasa": "id",
+      "jawaban": "Nicolaus Copernicus",
+      "alternatif_jawaban": [
+        "Copernicus"
+      ],
+      "pembahasan": "Nicolaus Copernicus (1473–1543) adalah ilmuwan yang mengemukakan teori heliosentris, bahwa matahari adalah pusat tata surya.",
+      "topik": "Kerajaan Hindu dan Buddha",
+      "mapel": "IPS",
+      "level": "sulit",
+      "waktu": 10
+    },
+    {
+      "id": 411,
+      "teks": "Kerajaan Islam di Sumatera yang menjadi pusat perdagangan lada adalah Kesultanan?",
+      "bahasa": "id",
+      "jawaban": "Banten",
+      "alternatif_jawaban": [
+        "Kesultanan Banten"
+      ],
+      "pembahasan": "Kesultanan Banten (di Jawa Barat/Banten) adalah pusat perdagangan lada terbesar di Asia pada abad ke-16–17.",
+      "topik": "Kerajaan Islam",
+      "mapel": "IPS",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 412,
+      "teks": "Gajah Sumatera berstatus sangat terancam punah dan merupakan satwa endemik di?",
+      "bahasa": "id",
+      "jawaban": "Sumatera",
+      "alternatif_jawaban": [
+        "Pulau Sumatera"
+      ],
+      "pembahasan": "Gajah Sumatera (Elephas maximus sumatranus) adalah subspesies gajah Asia yang hanya hidup di Sumatera.",
+      "topik": "Flora dan Fauna di Indonesia",
+      "mapel": "IPS",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 413,
+      "teks": "Upacara adat masyarakat Minangkabau untuk pengangkatan penghulu (pemimpin adat) disebut?",
+      "bahasa": "id",
+      "jawaban": "Batagak Penghulu",
+      "alternatif_jawaban": [
+        "Batagak penghulu"
+      ],
+      "pembahasan": "Batagak Penghulu adalah upacara adat Minangkabau untuk mengangkat seorang laki-laki menjadi penghulu (pemimpin suku).",
+      "topik": "Upacara Adat",
+      "mapel": "IPS",
+      "level": "sulit",
+      "waktu": 10
+    },
+    {
+      "id": 414,
+      "teks": "Rumah adat Provinsi Maluku disebut?",
+      "bahasa": "id",
+      "jawaban": "Baileo",
+      "alternatif_jawaban": [],
+      "pembahasan": "Baileo adalah rumah adat Maluku yang berfungsi sebagai tempat pertemuan adat dan musyawarah masyarakat.",
+      "topik": "Rumah Adat",
+      "mapel": "IPS",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 415,
+      "teks": "Kegiatan ekonomi yang menghasilkan jasa, seperti dokter dan guru, termasuk sektor?",
+      "bahasa": "id",
+      "jawaban": "Tersier",
+      "alternatif_jawaban": [
+        "sektor jasa",
+        "sektor tersier"
+      ],
+      "pembahasan": "Sektor tersier mencakup kegiatan yang menghasilkan jasa: perdagangan, kesehatan, pendidikan, transportasi, dll.",
+      "topik": "Kegiatan Ekonomi",
+      "mapel": "IPS",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 416,
+      "teks": "Pengamalan sila ke-5 Pancasila adalah?",
+      "bahasa": "id",
+      "jawaban": "Berlaku adil terhadap sesama",
+      "alternatif_jawaban": [
+        "menjunjung keadilan",
+        "bersikap adil"
+      ],
+      "pembahasan": "Sila ke-5 'Keadilan Sosial bagi Seluruh Rakyat Indonesia' diamalkan dengan berlaku adil, tidak merugikan orang lain, dan menghormati hak orang lain.",
+      "topik": "Pancasila",
+      "mapel": "IPS",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 417,
+      "teks": "Sanksi bagi pelanggar norma hukum adalah?",
+      "bahasa": "id",
+      "jawaban": "Hukuman penjara atau denda",
+      "alternatif_jawaban": [
+        "dipenjara",
+        "didenda"
+      ],
+      "pembahasan": "Pelanggaran norma hukum mendapat sanksi tegas dari negara berupa hukuman penjara, denda, atau sanksi hukum lainnya.",
+      "topik": "Hak, Kewajiban, dan Norma",
+      "mapel": "IPS",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 418,
+      "teks": "Prasasti Yupa ditemukan di daerah Kerajaan?",
+      "bahasa": "id",
+      "jawaban": "Kutai",
+      "alternatif_jawaban": [
+        "Kerajaan Kutai"
+      ],
+      "pembahasan": "Prasasti Yupa adalah prasasti tertua di Indonesia, ditemukan di Muara Kaman, Kalimantan Timur, wilayah Kerajaan Kutai.",
+      "topik": "Kerajaan Hindu dan Buddha",
+      "mapel": "IPS",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 419,
+      "teks": "Alat yang mengubah energi listrik menjadi energi gerak adalah?",
+      "bahasa": "id",
+      "jawaban": "Motor listrik",
+      "alternatif_jawaban": [
+        "motor",
+        "dinamo"
+      ],
+      "pembahasan": "Motor listrik mengubah energi listrik menjadi energi gerak (mekanik). Digunakan pada kipas angin, pompa air, dll.",
+      "topik": "Pemanfaatan Energi",
+      "mapel": "IPA",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 420,
+      "teks": "Dua kutub magnet yang berbeda akan saling?",
+      "bahasa": "id",
+      "jawaban": "Tarik-menarik",
+      "alternatif_jawaban": [
+        "menarik"
+      ],
+      "pembahasan": "Kutub magnet berbeda (U-S atau S-U) akan saling tarik-menarik. Kutub sejenis saling tolak-menolak.",
+      "topik": "Pembuatan Magnet",
+      "mapel": "IPA",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 421,
+      "teks": "Alat yang digunakan untuk mengukur frekuensi suara adalah?",
+      "bahasa": "id",
+      "jawaban": "Osiloskop",
+      "alternatif_jawaban": [],
+      "pembahasan": "Osiloskop adalah alat elektronik yang dapat menampilkan dan mengukur gelombang bunyi, termasuk frekuensinya.",
+      "topik": "Sumber Bunyi",
+      "mapel": "IPA",
+      "level": "sulit",
+      "waktu": 10
+    },
+    {
+      "id": 422,
+      "teks": "Udara termasuk contoh campuran?",
+      "bahasa": "id",
+      "jawaban": "Homogen",
+      "alternatif_jawaban": [],
+      "pembahasan": "Udara adalah campuran homogen gas-gas (N₂, O₂, CO₂, dll) yang tercampur merata dan tidak terlihat batas-batasnya.",
+      "topik": "Penggolongan Materi",
+      "mapel": "IPA",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 423,
+      "teks": "Contoh perubahan kimia adalah?",
+      "bahasa": "id",
+      "jawaban": "Kertas terbakar",
+      "alternatif_jawaban": [
+        "besi berkarat",
+        "makanan membusuk"
+      ],
+      "pembahasan": "Perubahan kimia menghasilkan zat baru dengan sifat berbeda. Contoh: kertas terbakar, besi berkarat, makanan membusuk.",
+      "topik": "Wujud Zat",
+      "mapel": "IPA",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 424,
+      "teks": "Buah yang terbentuk setelah terjadi pembuahan pada tumbuhan berasal dari?",
+      "bahasa": "id",
+      "jawaban": "Bakal buah",
+      "alternatif_jawaban": [
+        "ovarium",
+        "ovari"
+      ],
+      "pembahasan": "Setelah pembuahan, bakal buah (ovarium) berkembang menjadi buah, dan bakal biji (ovulum) menjadi biji.",
+      "topik": "Perkembangbiakan Generatif Tumbuhan",
+      "mapel": "IPA",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 425,
+      "teks": "Hewan yang merayap menggunakan perut disebut hewan?",
+      "bahasa": "id",
+      "jawaban": "Melata",
+      "alternatif_jawaban": [
+        "reptil"
+      ],
+      "pembahasan": "Hewan melata (reptil) bergerak dengan merayap menggunakan perut atau kaki pendek. Contoh: ular, buaya, biawak.",
+      "topik": "Morfologi/Fungsi Tubuh Hewan",
+      "mapel": "IPA",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 426,
+      "teks": "Kawasan konservasi tempat satwa liar dilindungi dan dapat dikunjungi wisatawan disebut?",
+      "bahasa": "id",
+      "jawaban": "Taman nasional",
+      "alternatif_jawaban": [
+        "taman safari"
+      ],
+      "pembahasan": "Taman nasional adalah kawasan konservasi yang melindungi keanekaragaman hayati sekaligus membuka akses wisata alam yang terkontrol.",
+      "topik": "Upaya Pelestarian Sumber Daya Alam",
+      "mapel": "IPA",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 427,
+      "teks": "Asap kendaraan bermotor mengandung gas beracun?",
+      "bahasa": "id",
+      "jawaban": "Karbon monoksida",
+      "alternatif_jawaban": [
+        "CO",
+        "CO₂"
+      ],
+      "pembahasan": "Asap kendaraan bermotor mengandung karbon monoksida (CO), gas beracun yang dapat mengganggu pengikatan oksigen oleh darah.",
+      "topik": "Jenis Pencemaran Lingkungan",
+      "mapel": "IPA",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 428,
+      "teks": "Ekosistem terbesar di bumi adalah?",
+      "bahasa": "id",
+      "jawaban": "Laut",
+      "alternatif_jawaban": [
+        "samudra",
+        "ekosistem laut"
+      ],
+      "pembahasan": "Ekosistem laut adalah ekosistem terbesar di bumi, mencakup sekitar 71% permukaan bumi dengan keanekaragaman hayati yang sangat tinggi.",
+      "topik": "Komponen Ekosistem",
+      "mapel": "IPA",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 429,
+      "teks": "Golongan darah manusia terbagi menjadi berapa jenis menurut sistem ABO?",
+      "bahasa": "id",
+      "jawaban": "4",
+      "alternatif_jawaban": [
+        "empat"
+      ],
+      "pembahasan": "Sistem ABO membagi golongan darah manusia menjadi 4 jenis: A, B, AB, dan O.",
+      "topik": "Sistem Peredaran Darah",
+      "mapel": "IPA",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 430,
+      "teks": "Proses mendengar dimulai dari gelombang bunyi masuk ke?",
+      "bahasa": "id",
+      "jawaban": "Saluran telinga",
+      "alternatif_jawaban": [
+        "lubang telinga",
+        "meatus akustikus"
+      ],
+      "pembahasan": "Proses mendengar: gelombang bunyi → saluran telinga → gendang telinga → tulang pendengaran → koklea → saraf → otak.",
+      "topik": "Indra Pendengaran",
+      "mapel": "IPA",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 431,
+      "teks": "Panel surya memanfaatkan energi?",
+      "bahasa": "id",
+      "jawaban": "Matahari",
+      "alternatif_jawaban": [
+        "cahaya matahari",
+        "surya"
+      ],
+      "pembahasan": "Panel surya (sel fotovoltaik) mengubah energi cahaya matahari langsung menjadi energi listrik.",
+      "topik": "Pemanfaatan Energi",
+      "mapel": "IPA",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 432,
+      "teks": "Magnet yang terbuat dari baja bersifat?",
+      "bahasa": "id",
+      "jawaban": "Permanen",
+      "alternatif_jawaban": [
+        "tetap"
+      ],
+      "pembahasan": "Baja sulit dijadikan magnet, namun jika sudah menjadi magnet sifatnya permanen (tetap). Cocok untuk magnet tetap.",
+      "topik": "Pembuatan Magnet",
+      "mapel": "IPA",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 433,
+      "teks": "Pemanasan global terjadi akibat meningkatnya konsentrasi gas?",
+      "bahasa": "id",
+      "jawaban": "Rumah kaca",
+      "alternatif_jawaban": [
+        "CO₂",
+        "gas CO₂"
+      ],
+      "pembahasan": "Pemanasan global disebabkan oleh meningkatnya gas rumah kaca (terutama CO₂, metana) yang menangkap panas di atmosfer.",
+      "topik": "Jenis Pencemaran Lingkungan",
+      "mapel": "IPA",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 434,
+      "teks": "Hewan yang tubuhnya berlendir, tidak bertulang belakang, dan hidup di laut atau darat adalah?",
+      "bahasa": "id",
+      "jawaban": "Moluska",
+      "alternatif_jawaban": [
+        "mollusca"
+      ],
+      "pembahasan": "Moluska adalah hewan lunak bertubuh berlendir tanpa tulang belakang. Contoh: siput, cumi-cumi, kerang, gurita.",
+      "topik": "Morfologi/Fungsi Tubuh Hewan",
+      "mapel": "IPA",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 435,
+      "teks": "Rantai makanan dimulai dari?",
+      "bahasa": "id",
+      "jawaban": "Produsen",
+      "alternatif_jawaban": [
+        "tumbuhan"
+      ],
+      "pembahasan": "Rantai makanan selalu dimulai dari produsen (tumbuhan hijau) yang menghasilkan makanan melalui fotosintesis.",
+      "topik": "Komponen Ekosistem",
+      "mapel": "IPA",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 436,
+      "teks": "Proses pengikatan oksigen oleh hemoglobin terjadi di?",
+      "bahasa": "id",
+      "jawaban": "Paru-paru",
+      "alternatif_jawaban": [],
+      "pembahasan": "Di paru-paru, hemoglobin dalam eritrosit mengikat oksigen dari udara pernapasan untuk dibawa ke seluruh jaringan tubuh.",
+      "topik": "Sistem Peredaran Darah",
+      "mapel": "IPA",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 437,
+      "teks": "Biji yang disebarkan oleh angin biasanya memiliki sifat?",
+      "bahasa": "id",
+      "jawaban": "Ringan dan bersayap",
+      "alternatif_jawaban": [
+        "ringan",
+        "berbulu"
+      ],
+      "pembahasan": "Biji yang disebarkan angin (anemokori) umumnya ringan dan memiliki sayap atau rambut halus agar mudah terbawa angin.",
+      "topik": "Perkembangbiakan Generatif Tumbuhan",
+      "mapel": "IPA",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 438,
+      "teks": "Tulang yang melindungi otak manusia adalah?",
+      "bahasa": "id",
+      "jawaban": "Tulang tengkorak",
+      "alternatif_jawaban": [
+        "tengkorak"
+      ],
+      "pembahasan": "Tulang tengkorak (kranium) adalah tulang keras yang membungkus dan melindungi otak dari benturan.",
+      "topik": "Morfologi/Fungsi Tubuh Hewan",
+      "mapel": "IPA",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 439,
+      "teks": "Ubah $\\frac{5}{4}$ ke bentuk pecahan campuran!",
+      "bahasa": "id",
+      "jawaban": "$1\\frac{1}{4}$",
+      "alternatif_jawaban": [
+        "1 1/4"
+      ],
+      "pembahasan": "$\\frac{5}{4} = 4\\div4 + 1 = 1\\frac{1}{4}$.",
+      "topik": "Pecahan Senilai dan Menyederhanakan Pecahan",
+      "mapel": "Matematika",
+      "level": "mudah",
+      "waktu": 15
+    },
+    {
+      "id": 440,
+      "teks": "Umur ayah dan anak berbanding 5:2. Jika umur anak 12 tahun, berapa umur ayah?",
+      "bahasa": "id",
+      "jawaban": "30 tahun",
+      "alternatif_jawaban": [
+        "30"
+      ],
+      "pembahasan": "Umur ayah = $\\frac{5}{2} \\times 12 = 30$ tahun.",
+      "topik": "Perbandingan dan Mengurutkan Nilai",
+      "mapel": "Matematika",
+      "level": "sedang",
+      "waktu": 20
+    },
+    {
+      "id": 441,
+      "teks": "Keliling persegi dengan sisi 13 cm adalah?",
+      "bahasa": "id",
+      "jawaban": "52 cm",
+      "alternatif_jawaban": [
+        "52"
+      ],
+      "pembahasan": "Keliling persegi = 4 × sisi = 4 × 13 = 52 cm.",
+      "topik": "Konsep Keliling Bangun Datar",
+      "mapel": "Matematika",
+      "level": "mudah",
+      "waktu": 15
+    },
+    {
+      "id": 442,
+      "teks": "Luas persegi dengan keliling 40 cm adalah?",
+      "bahasa": "id",
+      "jawaban": "100 cm²",
+      "alternatif_jawaban": [
+        "100"
+      ],
+      "pembahasan": "Sisi = keliling ÷ 4 = 40 ÷ 4 = 10 cm. Luas = 10 × 10 = 100 cm².",
+      "topik": "Luas Gabungan Bangun Datar",
+      "mapel": "Matematika",
+      "level": "sedang",
+      "waktu": 20
+    },
+    {
+      "id": 443,
+      "teks": "KPK dari 6, 8, dan 12 adalah?",
+      "bahasa": "id",
+      "jawaban": "24",
+      "alternatif_jawaban": [],
+      "pembahasan": "$6=2\\times3$, $8=2^3$, $12=2^2\\times3$. KPK = $2^3\\times3 = 24$.",
+      "topik": "FPB dan KPK",
+      "mapel": "Matematika",
+      "level": "sedang",
+      "waktu": 20
+    },
+    {
+      "id": 444,
+      "teks": "Data nilai: 70, 80, 90, 85, 75. Nilai rata-ratanya?",
+      "bahasa": "id",
+      "jawaban": "80",
+      "alternatif_jawaban": [],
+      "pembahasan": "Rata-rata = $(70+80+90+85+75)\\div5 = 400\\div5 = 80$.",
+      "topik": "Membaca dan Menyajikan Data",
+      "mapel": "Matematika",
+      "level": "mudah",
+      "waktu": 15
+    },
+    {
+      "id": 445,
+      "teks": "12 orang dapat menyelesaikan pekerjaan dalam 8 hari. Berapa hari jika dikerjakan 6 orang?",
+      "bahasa": "id",
+      "jawaban": "16 hari",
+      "alternatif_jawaban": [
+        "16"
+      ],
+      "pembahasan": "Perbandingan berbalik: $12 \\times 8 = 6 \\times x \\Rightarrow x = 96\\div6 = 16$ hari.",
+      "topik": "Perbandingan Senilai",
+      "mapel": "Matematika",
+      "level": "sedang",
+      "waktu": 20
+    },
+    {
+      "id": 446,
+      "teks": "$\\frac{7}{8} \\div \\frac{7}{16}$",
+      "bahasa": "id",
+      "jawaban": "2",
+      "alternatif_jawaban": [],
+      "pembahasan": "$\\frac{7}{8} \\div \\frac{7}{16} = \\frac{7}{8} \\times \\frac{16}{7} = \\frac{16}{8} = 2$.",
+      "topik": "Operasi Campuran Pecahan Soal Terapan",
+      "mapel": "Matematika",
+      "level": "sedang",
+      "waktu": 20
+    },
+    {
+      "id": 447,
+      "teks": "Luas permukaan kubus dengan sisi 5 cm adalah?",
+      "bahasa": "id",
+      "jawaban": "150 cm²",
+      "alternatif_jawaban": [
+        "150"
+      ],
+      "pembahasan": "Luas permukaan kubus = $6 \\times s^2 = 6 \\times 25 = 150$ cm².",
+      "topik": "Volume Bangun Ruang Gabungan",
+      "mapel": "Matematika",
+      "level": "sedang",
+      "waktu": 20
+    },
+    {
+      "id": 448,
+      "teks": "Paman bersepeda motor dari kota A pukul 07.30, tiba di kota B pukul 09.00. Jarak 90 km. Kecepatan rata-rata?",
+      "bahasa": "id",
+      "jawaban": "60 km/jam",
+      "alternatif_jawaban": [
+        "60"
+      ],
+      "pembahasan": "Waktu = 1,5 jam. Kecepatan = 90 ÷ 1,5 = 60 km/jam.",
+      "topik": "Kecepatan",
+      "mapel": "Matematika",
+      "level": "sedang",
+      "waktu": 20
+    },
+    {
+      "id": 449,
+      "teks": "Tabung, kerucut, dan bola termasuk bangun?",
+      "bahasa": "id",
+      "jawaban": "Ruang",
+      "alternatif_jawaban": [
+        "bangun ruang"
+      ],
+      "pembahasan": "Tabung, kerucut, dan bola adalah bangun ruang (3 dimensi) karena memiliki panjang, lebar, dan tinggi.",
+      "topik": "Visualisasi Spasial",
+      "mapel": "Matematika",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 450,
+      "teks": "Sederhanakan $\\frac{56}{72}$!",
+      "bahasa": "id",
+      "jawaban": "$\\frac{7}{9}$",
+      "alternatif_jawaban": [
+        "7/9"
+      ],
+      "pembahasan": "FPB(56,72) = 8. $\\frac{56\\div8}{72\\div8} = \\frac{7}{9}$.",
+      "topik": "Pecahan Senilai dan Menyederhanakan Pecahan",
+      "mapel": "Matematika",
+      "level": "mudah",
+      "waktu": 15
+    },
+    {
+      "id": 451,
+      "teks": "FPB dari 18, 24, dan 36 adalah?",
+      "bahasa": "id",
+      "jawaban": "6",
+      "alternatif_jawaban": [],
+      "pembahasan": "$18=2\\times3^2$, $24=2^3\\times3$, $36=2^2\\times3^2$. FPB = $2\\times3 = 6$.",
+      "topik": "FPB dan KPK",
+      "mapel": "Matematika",
+      "level": "sedang",
+      "waktu": 20
+    },
+    {
+      "id": 452,
+      "teks": "Diagram garis digunakan untuk menampilkan data yang?",
+      "bahasa": "id",
+      "jawaban": "Berubah dari waktu ke waktu",
+      "alternatif_jawaban": [
+        "perubahan data",
+        "data berkembang"
+      ],
+      "pembahasan": "Diagram garis paling tepat untuk data yang menunjukkan perubahan atau perkembangan dari waktu ke waktu (tren).",
+      "topik": "Membaca dan Menyajikan Data",
+      "mapel": "Matematika",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 453,
+      "teks": "Lebar suatu persegi panjang $\\frac{2}{3}$ dari panjangnya. Jika panjangnya 18 cm, luasnya?",
+      "bahasa": "id",
+      "jawaban": "216 cm²",
+      "alternatif_jawaban": [
+        "216"
+      ],
+      "pembahasan": "Lebar = $\\frac{2}{3}\\times18 = 12$ cm. Luas = $18\\times12 = 216$ cm².",
+      "topik": "Luas Gabungan Bangun Datar",
+      "mapel": "Matematika",
+      "level": "sedang",
+      "waktu": 20
+    },
+    {
+      "id": 454,
+      "teks": "Sebuah bola memiliki jari-jari 6 cm. Berapa volumenya? ($\\pi=3{,}14$)",
+      "bahasa": "id",
+      "jawaban": "904,32 cm³",
+      "alternatif_jawaban": [
+        "904.32"
+      ],
+      "pembahasan": "Volume bola = $\\frac{4}{3}\\pi r^3 = \\frac{4}{3}\\times3{,}14\\times216 = 904{,}32$ cm³.",
+      "topik": "Volume Bangun Ruang Gabungan",
+      "mapel": "Matematika",
+      "level": "sulit",
+      "waktu": 25
+    },
+    {
+      "id": 455,
+      "teks": "Sebuah motor melaju dari A ke B sejauh 150 km. Berangkat pukul 06.00 dengan kecepatan 60 km/jam. Tiba pukul?",
+      "bahasa": "id",
+      "jawaban": "08.30",
+      "alternatif_jawaban": [
+        "pukul 08.30",
+        "8.30"
+      ],
+      "pembahasan": "Waktu = 150÷60 = 2,5 jam = 2 jam 30 menit. 06.00 + 2 jam 30 menit = 08.30.",
+      "topik": "Kecepatan",
+      "mapel": "Matematika",
+      "level": "sedang",
+      "waktu": 20
+    },
+    {
+      "id": 456,
+      "teks": "Berapa banyak sisi pada bangun ruang bola?",
+      "bahasa": "id",
+      "jawaban": "1",
+      "alternatif_jawaban": [
+        "satu"
+      ],
+      "pembahasan": "Bola hanya memiliki 1 sisi lengkung yang menutup seluruh permukaannya, tidak memiliki rusuk atau titik sudut.",
+      "topik": "Visualisasi Spasial",
+      "mapel": "Matematika",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 457,
+      "teks": "Nilai $\\frac{3}{5}$ dalam bentuk desimal adalah?",
+      "bahasa": "id",
+      "jawaban": "0,6",
+      "alternatif_jawaban": [
+        "0.6"
+      ],
+      "pembahasan": "$\\frac{3}{5} = 3\\div5 = 0{,}6$.",
+      "topik": "Pecahan Senilai dan Menyederhanakan Pecahan",
+      "mapel": "Matematika",
+      "level": "mudah",
+      "waktu": 15
+    },
+    {
+      "id": 458,
+      "teks": "Perbandingan kecepatan dua mobil adalah 3:4. Jika mobil pertama 90 km/jam, kecepatan mobil kedua?",
+      "bahasa": "id",
+      "jawaban": "120 km/jam",
+      "alternatif_jawaban": [
+        "120"
+      ],
+      "pembahasan": "Kecepatan mobil kedua = $\\frac{4}{3}\\times90 = 120$ km/jam.",
+      "topik": "Perbandingan dan Mengurutkan Nilai",
+      "mapel": "Matematika",
+      "level": "sedang",
+      "waktu": 20
+    },
+    {
+      "id": 459,
+      "teks": "Penulisan yang benar: 'praktek' atau 'praktik'?",
+      "bahasa": "id",
+      "jawaban": "Praktik",
+      "alternatif_jawaban": [],
+      "pembahasan": "Menurut KBBI, bentuk baku yang benar adalah 'praktik', bukan 'praktek'.",
+      "topik": "Ejaan Penulisan Kata",
+      "mapel": "Bahasa Indonesia",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 460,
+      "teks": "Kata seru atau interjeksi 'aduh' ditulis dengan tanda baca?",
+      "bahasa": "id",
+      "jawaban": "Tanda seru (!)",
+      "alternatif_jawaban": [
+        "tanda seru",
+        "!"
+      ],
+      "pembahasan": "Kata seru yang mengungkapkan perasaan kuat (seperti 'Aduh!') diikuti tanda seru di akhir kalimat.",
+      "topik": "Ejaan Penulisan Kata",
+      "mapel": "Bahasa Indonesia",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 461,
+      "teks": "'Para ilmuwan menemukan vaksin baru.' Ini kalimat?",
+      "bahasa": "id",
+      "jawaban": "Fakta",
+      "alternatif_jawaban": [],
+      "pembahasan": "Penemuan vaksin adalah peristiwa nyata yang dapat dibuktikan, sehingga termasuk kalimat fakta.",
+      "topik": "Kalimat Fakta dan Opini",
+      "mapel": "Bahasa Indonesia",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 462,
+      "teks": "Kalimat yang mengandung kata 'seharusnya', 'sebaiknya', atau 'menurut saya' cenderung berupa?",
+      "bahasa": "id",
+      "jawaban": "Opini",
+      "alternatif_jawaban": [
+        "kalimat opini"
+      ],
+      "pembahasan": "Kata-kata seperti 'seharusnya', 'sebaiknya', 'menurut saya' adalah penanda kalimat opini yang bersifat subjektif.",
+      "topik": "Kalimat Fakta dan Opini",
+      "mapel": "Bahasa Indonesia",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 463,
+      "teks": "Kalimat yang menjelaskan dan merinci ide pokok disebut kalimat?",
+      "bahasa": "id",
+      "jawaban": "Penjelas",
+      "alternatif_jawaban": [
+        "kalimat penjelas"
+      ],
+      "pembahasan": "Kalimat penjelas bertugas menjelaskan, merinci, atau memberikan contoh yang mendukung ide pokok kalimat utama.",
+      "topik": "Ide Pokok Paragraf",
+      "mapel": "Bahasa Indonesia",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 464,
+      "teks": "Berapa kata tanya dalam rumus 5W+1H? Sebutkan dua saja!",
+      "bahasa": "id",
+      "jawaban": "Apa dan siapa",
+      "alternatif_jawaban": [
+        "kapan dan di mana",
+        "mengapa dan bagaimana"
+      ],
+      "pembahasan": "Rumus 5W+1H: What (apa), Who (siapa), When (kapan), Where (di mana), Why (mengapa), How (bagaimana).",
+      "topik": "Informasi dalam Teks",
+      "mapel": "Bahasa Indonesia",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 465,
+      "teks": "Simpulan paragraf yang baik tidak boleh berisi informasi yang?",
+      "bahasa": "id",
+      "jawaban": "Tidak ada dalam teks",
+      "alternatif_jawaban": [
+        "di luar teks",
+        "tidak sesuai teks"
+      ],
+      "pembahasan": "Simpulan harus berdasarkan isi teks, tidak boleh memasukkan informasi atau opini yang tidak ada dalam teks bacaan.",
+      "topik": "Simpulan Teks Bacaan",
+      "mapel": "Bahasa Indonesia",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 466,
+      "teks": "Kata yang memiliki makna berbeda dari makna sebenarnya disebut?",
+      "bahasa": "id",
+      "jawaban": "Kata kiasan",
+      "alternatif_jawaban": [
+        "ungkapan",
+        "idiom"
+      ],
+      "pembahasan": "Kata kiasan (ungkapan/idiom) adalah kata atau frasa yang maknanya berbeda dari makna harfiahnya.",
+      "topik": "Pemilihan Kata pada Istilah dan Ungkapan",
+      "mapel": "Bahasa Indonesia",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 467,
+      "teks": "Pernyataan yang sesuai dengan isi teks merupakan pernyataan yang?",
+      "bahasa": "id",
+      "jawaban": "Benar",
+      "alternatif_jawaban": [
+        "tepat",
+        "sesuai"
+      ],
+      "pembahasan": "Pernyataan benar adalah pernyataan yang isinya sesuai dan tidak bertentangan dengan informasi dalam teks bacaan.",
+      "topik": "Pernyataan Benar/Salah pada Teks Bacaan",
+      "mapel": "Bahasa Indonesia",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 468,
+      "teks": "Bagian penutup surat resmi berisi?",
+      "bahasa": "id",
+      "jawaban": "Salam penutup dan tanda tangan",
+      "alternatif_jawaban": [
+        "salam penutup"
+      ],
+      "pembahasan": "Bagian penutup surat resmi terdiri dari salam penutup (misal: Hormat kami), tanda tangan, nama terang, dan jabatan pengirim.",
+      "topik": "Surat Pribadi dan Surat Resmi",
+      "mapel": "Bahasa Indonesia",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 469,
+      "teks": "Kalimat 'Tanaman itu disiram setiap hari.' Merupakan kalimat?",
+      "bahasa": "id",
+      "jawaban": "Pasif",
+      "alternatif_jawaban": [
+        "kalimat pasif"
+      ],
+      "pembahasan": "Kalimat pasif: subjek (tanaman) dikenai pekerjaan (disiram). Predikat berawalan 'di-'.",
+      "topik": "Kalimat Aktif dan Pasif",
+      "mapel": "Bahasa Indonesia",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 470,
+      "teks": "Kata 'berlayar' berasal dari kata dasar 'layar' dengan imbuhan?",
+      "bahasa": "id",
+      "jawaban": "ber-",
+      "alternatif_jawaban": [
+        "ber"
+      ],
+      "pembahasan": "'Berlayar' = ber- + layar. Awalan 'ber-' bermakna melakukan kegiatan atau menggunakan sesuatu.",
+      "topik": "Afiksasi",
+      "mapel": "Bahasa Indonesia",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 471,
+      "teks": "Kata 'diperindah' menggunakan konfiks?",
+      "bahasa": "id",
+      "jawaban": "di-per-...-",
+      "alternatif_jawaban": [
+        "diper-"
+      ],
+      "pembahasan": "'Diperindah' = di- + per- + indah. Konfiks di-per- menyatakan kalimat pasif dengan penguatan tindakan.",
+      "topik": "Afiksasi",
+      "mapel": "Bahasa Indonesia",
+      "level": "sulit",
+      "waktu": 10
+    },
+    {
+      "id": 472,
+      "teks": "Ungkapan 'angkat kaki' berarti?",
+      "bahasa": "id",
+      "jawaban": "Pergi",
+      "alternatif_jawaban": [
+        "meninggalkan tempat"
+      ],
+      "pembahasan": "'Angkat kaki' adalah ungkapan yang berarti pergi meninggalkan suatu tempat.",
+      "topik": "Pemilihan Kata pada Istilah dan Ungkapan",
+      "mapel": "Bahasa Indonesia",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 473,
+      "teks": "Istilah untuk ilmu yang mempelajari makhluk hidup adalah?",
+      "bahasa": "id",
+      "jawaban": "Biologi",
+      "alternatif_jawaban": [],
+      "pembahasan": "Biologi adalah cabang ilmu pengetahuan alam yang mempelajari makhluk hidup beserta kehidupan dan prosesnya.",
+      "topik": "Pemilihan Kata pada Istilah dan Ungkapan",
+      "mapel": "Bahasa Indonesia",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 474,
+      "teks": "Untuk menyimpulkan, langkah pertama yang harus dilakukan adalah?",
+      "bahasa": "id",
+      "jawaban": "Membaca teks secara keseluruhan",
+      "alternatif_jawaban": [
+        "membaca seluruh teks"
+      ],
+      "pembahasan": "Langkah menyimpulkan: baca teks secara keseluruhan → temukan ide pokok tiap paragraf → rangkum menjadi simpulan.",
+      "topik": "Simpulan Teks Bacaan",
+      "mapel": "Bahasa Indonesia",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 475,
+      "teks": "Ciri utama yang membedakan surat pribadi dari surat resmi adalah?",
+      "bahasa": "id",
+      "jawaban": "Bahasa tidak resmi",
+      "alternatif_jawaban": [
+        "bahasa informal",
+        "tidak menggunakan bahasa baku"
+      ],
+      "pembahasan": "Surat pribadi menggunakan bahasa tidak resmi/informal, sedangkan surat resmi wajib menggunakan bahasa baku.",
+      "topik": "Surat Pribadi dan Surat Resmi",
+      "mapel": "Bahasa Indonesia",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 476,
+      "teks": "'Bunga itu dipetik oleh Dina.' Ubah menjadi kalimat aktif!",
+      "bahasa": "id",
+      "jawaban": "Dina memetik bunga itu",
+      "alternatif_jawaban": [
+        "Dina memetik bunga"
+      ],
+      "pembahasan": "Kalimat aktif: subjek asal (Dina) + me- + kata kerja (metik → memetik) + objek (bunga itu).",
+      "topik": "Kalimat Aktif dan Pasif",
+      "mapel": "Bahasa Indonesia",
+      "level": "mudah",
+      "waktu": 15
+    },
+    {
+      "id": 477,
+      "teks": "What day is it two days after Monday?",
+      "bahasa": "en",
+      "jawaban": "Wednesday",
+      "alternatif_jawaban": [],
+      "pembahasan": "Monday → Tuesday → Wednesday. Two days after Monday is Wednesday.",
+      "topik": "Days",
+      "mapel": "Bahasa Inggris",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 478,
+      "teks": "Which days are considered weekdays (school days)?",
+      "bahasa": "en",
+      "jawaban": "Monday to Friday",
+      "alternatif_jawaban": [
+        "Mon to Fri"
+      ],
+      "pembahasan": "Weekdays are Monday, Tuesday, Wednesday, Thursday, and Friday — the five working and school days.",
+      "topik": "Days",
+      "mapel": "Bahasa Inggris",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 479,
+      "teks": "How many seasons are there in countries with four seasons?",
+      "bahasa": "en",
+      "jawaban": "4",
+      "alternatif_jawaban": [
+        "Four"
+      ],
+      "pembahasan": "Countries outside the tropics have four seasons: Spring, Summer, Autumn (Fall), and Winter.",
+      "topik": "Seasons",
+      "mapel": "Bahasa Inggris",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 480,
+      "teks": "In which season do farmers usually harvest crops?",
+      "bahasa": "en",
+      "jawaban": "Autumn",
+      "alternatif_jawaban": [
+        "Fall"
+      ],
+      "pembahasan": "Autumn (Fall) is traditionally the harvest season in temperate countries, when many crops reach maturity.",
+      "topik": "Seasons",
+      "mapel": "Bahasa Inggris",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 481,
+      "teks": "What do you say to a shopkeeper to ask for the size of a shirt?",
+      "bahasa": "en",
+      "jawaban": "Do you have this in size ...?",
+      "alternatif_jawaban": [
+        "What sizes do you have?"
+      ],
+      "pembahasan": "'Do you have this in size S/M/L?' is the standard expression when asking about clothing sizes in a shop.",
+      "topik": "Expression for Shop and Shopping",
+      "mapel": "Bahasa Inggris",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 482,
+      "teks": "What do you say when the price is too expensive and you want something cheaper?",
+      "bahasa": "en",
+      "jawaban": "It's too expensive. Do you have something cheaper?",
+      "alternatif_jawaban": [
+        "Can you make it cheaper?",
+        "That's too much."
+      ],
+      "pembahasan": "When shopping, you can say 'It's too expensive. Do you have something cheaper?' to negotiate or look for alternatives.",
+      "topik": "Expression for Shop and Shopping",
+      "mapel": "Bahasa Inggris",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 483,
+      "teks": "What do you call an animal that has no legs and moves by slithering?",
+      "bahasa": "en",
+      "jawaban": "Snake",
+      "alternatif_jawaban": [
+        "A snake"
+      ],
+      "pembahasan": "A snake is a reptile with no legs that moves by slithering (meliuk-liuk) on the ground using its muscular body.",
+      "topik": "Kinds of Animal",
+      "mapel": "Bahasa Inggris",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 484,
+      "teks": "What kind of animal is a bat? (It flies at night.)",
+      "bahasa": "en",
+      "jawaban": "Mammal",
+      "alternatif_jawaban": [],
+      "pembahasan": "A bat is the only flying mammal. It feeds young with milk and gives birth to live young, despite being able to fly.",
+      "topik": "Kinds of Animal",
+      "mapel": "Bahasa Inggris",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 485,
+      "teks": "What do you call the person who cooks food in a restaurant?",
+      "bahasa": "en",
+      "jawaban": "Chef",
+      "alternatif_jawaban": [
+        "Cook"
+      ],
+      "pembahasan": "A chef (or cook) is the person who professionally prepares and cooks food in a restaurant or hotel kitchen.",
+      "topik": "People at School",
+      "mapel": "Bahasa Inggris",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 486,
+      "teks": "Look! The birds ___ (fly) over the school. (Present Continuous)",
+      "bahasa": "en",
+      "jawaban": "are flying",
+      "alternatif_jawaban": [],
+      "pembahasan": "Signal word 'Look!' → Present Continuous. The birds (plural) → 'are flying'.",
+      "topik": "Present Continuous",
+      "mapel": "Bahasa Inggris",
+      "level": "mudah",
+      "waktu": 15
+    },
+    {
+      "id": 487,
+      "teks": "What do you call the room where students study and the teacher teaches?",
+      "bahasa": "en",
+      "jawaban": "Classroom",
+      "alternatif_jawaban": [
+        "class"
+      ],
+      "pembahasan": "A classroom is the room in a school where students sit and learn while the teacher delivers lessons.",
+      "topik": "Parts of the House",
+      "mapel": "Bahasa Inggris",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 488,
+      "teks": "How do you say 11:00 at night in English?",
+      "bahasa": "en",
+      "jawaban": "Eleven o'clock PM",
+      "alternatif_jawaban": [
+        "11 PM",
+        "eleven PM"
+      ],
+      "pembahasan": "11:00 at night = eleven o'clock PM (or 23:00 in 24-hour format). PM stands for 'Post Meridiem' (after noon).",
+      "topik": "Telling the Time",
+      "mapel": "Bahasa Inggris",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 489,
+      "teks": "What is the difference between 'half past' and 'quarter to' when telling time?",
+      "bahasa": "en",
+      "jawaban": "Half past = 30 minutes after, quarter to = 15 minutes before",
+      "alternatif_jawaban": [
+        "half past adalah 30 menit setelah, quarter to adalah 15 menit sebelum"
+      ],
+      "pembahasan": "'Half past 3' = 3:30 (30 minutes after 3). 'Quarter to 4' = 3:45 (15 minutes before 4).",
+      "topik": "Telling the Time",
+      "mapel": "Bahasa Inggris",
+      "level": "sedang",
+      "waktu": 15
+    },
+    {
+      "id": 490,
+      "teks": "What vehicle travels on tracks and is used to transport goods or passengers between cities?",
+      "bahasa": "en",
+      "jawaban": "Train",
+      "alternatif_jawaban": [
+        "A train"
+      ],
+      "pembahasan": "A train travels on railway tracks and can carry large numbers of passengers or heavy goods between cities.",
+      "topik": "Things Related to Transportation",
+      "mapel": "Bahasa Inggris",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 491,
+      "teks": "What do you call a vehicle used by firefighters to put out fires?",
+      "bahasa": "en",
+      "jawaban": "Fire truck",
+      "alternatif_jawaban": [
+        "fire engine",
+        "firetruck"
+      ],
+      "pembahasan": "A fire truck (fire engine) is the vehicle used by firefighters, equipped with hoses and water tanks to put out fires.",
+      "topik": "Things Related to Transportation",
+      "mapel": "Bahasa Inggris",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 492,
+      "teks": "What word describes the taste of unripe mango?",
+      "bahasa": "en",
+      "jawaban": "Sour",
+      "alternatif_jawaban": [],
+      "pembahasan": "Unripe mango tastes sour (asam). When ripe, mangoes taste sweet.",
+      "topik": "Taste",
+      "mapel": "Bahasa Inggris",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 493,
+      "teks": "What word describes the taste of salty crackers?",
+      "bahasa": "en",
+      "jawaban": "Salty",
+      "alternatif_jawaban": [],
+      "pembahasan": "Crackers (kerupuk) that contain a lot of salt taste salty (asin).",
+      "topik": "Taste",
+      "mapel": "Bahasa Inggris",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 494,
+      "teks": "What tool does a farmer use to dig the soil?",
+      "bahasa": "id",
+      "jawaban": "Cangkul",
+      "alternatif_jawaban": [
+        "hoe",
+        "spade"
+      ],
+      "pembahasan": "A farmer uses a hoe (cangkul) to dig, loosen, and prepare soil for planting crops.",
+      "topik": "Things They Need to Work",
+      "mapel": "Bahasa Inggris",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 495,
+      "teks": "What does a pilot wear to protect their eyes while flying?",
+      "bahasa": "en",
+      "jawaban": "Goggles",
+      "alternatif_jawaban": [
+        "sunglasses"
+      ],
+      "pembahasan": "Pilots wear goggles or special sunglasses to protect their eyes from glare and UV rays at high altitude.",
+      "topik": "Things They Need to Work",
+      "mapel": "Bahasa Inggris",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 496,
+      "teks": "What do you call a decorative pin worn on clothing?",
+      "bahasa": "en",
+      "jawaban": "Brooch",
+      "alternatif_jawaban": [
+        "pin",
+        "bros"
+      ],
+      "pembahasan": "A brooch (bros) is a decorative pin or clip that is fastened onto clothing as a fashion accessory.",
+      "topik": "Jewelry and Accessories",
+      "mapel": "Bahasa Inggris",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 497,
+      "teks": "What do you call a band or tie worn around the head as an accessory?",
+      "bahasa": "en",
+      "jawaban": "Headband",
+      "alternatif_jawaban": [
+        "hair band"
+      ],
+      "pembahasan": "A headband is a flexible band worn around the head to keep hair in place or as a fashion accessory.",
+      "topik": "Jewelry and Accessories",
+      "mapel": "Bahasa Inggris",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 498,
+      "teks": "What do you call your parents' siblings' children?",
+      "bahasa": "en",
+      "jawaban": "Cousins",
+      "alternatif_jawaban": [
+        "cousin"
+      ],
+      "pembahasan": "The children of your parents' siblings (aunts and uncles) are your cousins (sepupu).",
+      "topik": "Family Tree",
+      "mapel": "Bahasa Inggris",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 499,
+      "teks": "What do you call a couple who are married — the woman and the man?",
+      "bahasa": "en",
+      "jawaban": "Wife and husband",
+      "alternatif_jawaban": [
+        "husband and wife"
+      ],
+      "pembahasan": "A married couple consists of a husband (suami) and a wife (istri). Together they are called 'a married couple'.",
+      "topik": "Family Tree",
+      "mapel": "Bahasa Inggris",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 500,
+      "teks": "He ___ (not/watch) TV now. He is reading. (Present Continuous)",
+      "bahasa": "en",
+      "jawaban": "is not watching",
+      "alternatif_jawaban": [
+        "isn't watching"
+      ],
+      "pembahasan": "Negative Present Continuous: He + is + not + verb-ing → 'He is not watching TV now.'",
+      "topik": "Present Continuous",
+      "mapel": "Bahasa Inggris",
+      "level": "mudah",
+      "waktu": 15
     }
   ]
 }
