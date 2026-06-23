@@ -5,7 +5,45 @@ Format mengikuti [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ---
 
-## [1.2.1] — 2026-06-15
+## [1.3.0] — 2026-06-23
+
+### Ditambahkan
+- `latihan-tahap2.html` — halaman quiz Latihan Tahap 2, struktur identik dengan
+  `latihan-tahap1.html` (loader fetch pool → inject quiz-engine via QUIZ_CONFIG,
+  shuffle, 30 soal/sesi, dukungan KaTeX untuk soal Matematika).
+- `latihan-tahap2/soal/data/pool.json` — **Batch 1/10, 100 soal** sesuai kisi-kisi
+  Ujian Tahap 2 Liga Bintang Juara (5 mata pelajaran):
+  - IPS & Pendidikan Pancasila — 17 soal (10 topik: jenis peta, SDA, kerajaan
+    Hindu-Buddha, kerajaan Islam, keragaman budaya, kearifan lokal, usaha
+    ekonomi, posisi strategis Indonesia, Pancasila, hak/kewajiban/norma)
+  - IPA — 35 soal (23 topik: energi & perubahannya, gaya, magnet, cahaya/optik,
+    bunyi, materi & wujud zat, kalor, tumbuhan, hewan, keanekaragaman hayati,
+    pelestarian SDA, daur air, pencemaran, atmosfer, ekosistem, tubuh manusia,
+    pertumbuhan & perkembangan)
+  - Matematika — 15 soal (7 topik: keliling, luas, debit/waktu/volume, proporsi,
+    perbandingan senilai, skala, kecepatan)
+  - Bahasa Indonesia — 15 soal (9 topik: konjungsi, majas, tanda baca, kalimat
+    efektif, kata berimbuhan, SPOK, huruf kapital, makna kata, singkatan/akronim)
+  - Bahasa Inggris — 18 soal, seluruhnya `"bahasa": "en"` (11 topik: at school,
+    my house, transportation, food and drink, jobs, clothes, family tree,
+    animals, days/months/dates, seasons/weather, shop and shopping)
+- `index.html` — card baru **"Latihan Tahap 2"** ditambahkan ke `bottom-row`
+  (diubah jadi `bottom-row-3`, 3 kolom: Soal Campuran, Latihan Tahap 1,
+  Latihan Tahap 2). Style baru `.cat-latihan2` (gradasi ungu, aksen kuning).
+
+### Mekanisme Teknis
+- Mengikuti pola yang sama dengan `latihan-tahap1`: satu pool gabungan per
+  tahap (bukan dipisah per mata pelajaran), field `mapel` pada setiap soal
+  dipakai quiz-engine untuk badge kategori.
+- `id` soal pada pool berurutan 1–100, unik, dan akan dilanjutkan
+  (101, 102, …) saat batch 2 ditambahkan agar tidak collision.
+
+### Direncanakan
+- Batch 2–10 pool Tahap 2 (menyusul, target akhir 1000 soal seperti Tahap 1).
+- Audit ulang distribusi level kesulitan (mudah/sedang/sulit) setelah seluruh
+  batch terkumpul.
+
+---
 
 ### Diperbaiki
 - `assets/css/style.css` — tambah class `.cat-campuran` yang proper.

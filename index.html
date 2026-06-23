@@ -35,6 +35,29 @@
     .cat-latihan1 .cat-meta      { color: rgba(255,255,255,.7); }
     .cat-latihan1 .cat-meta span { background: rgba(255,255,255,.12); color: rgba(255,255,255,.92); }
     .cat-latihan1 .cat-cta       { color: #69f0ae; }
+
+    /* Kartu Latihan Tahap 2 */
+    .cat-latihan2 {
+      background: linear-gradient(135deg, #4a148c 0%, #6a1b9a 60%, #8e24aa 100%);
+      color: #fff;
+    }
+    .cat-latihan2::before        { background: #ffd54f; }
+    .cat-latihan2 .cat-title     { color: #ffd54f; }
+    .cat-latihan2 .cat-desc      { color: rgba(255,255,255,.85); }
+    .cat-latihan2 .cat-meta      { color: rgba(255,255,255,.7); }
+    .cat-latihan2 .cat-meta span { background: rgba(255,255,255,.12); color: rgba(255,255,255,.92); }
+    .cat-latihan2 .cat-cta       { color: #ffd54f; }
+
+    /* Baris bawah sekarang menampung 3 kartu: Campuran, Tahap 1, Tahap 2 */
+    .bottom-row-3 {
+      grid-column: 1 / -1;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 1.75rem;
+    }
+    @media (max-width: 900px) {
+      .bottom-row-3 { grid-template-columns: 1fr; }
+    }
   </style>
 </head>
 <body class="page-landing">
@@ -105,8 +128,8 @@
         <div class="cat-cta">Masuk ke kategori →</div>
       </a>
 
-      <!-- ── Baris bawah: Soal Campuran + Latihan Tahap 1 berdampingan ── -->
-      <div class="bottom-row">
+      <!-- ── Baris bawah: Soal Campuran + Latihan Tahap 1 + Latihan Tahap 2 ── -->
+      <div class="bottom-row-3">
 
         <a href="soal-campuran.html" class="category-card cat-campuran">
           <div class="cat-icon">🏆</div>
@@ -134,6 +157,21 @@
             <span>30 soal acak</span>
             <span>5 mata pelajaran</span>
             <span>Pool: 1000 soal</span>
+          </div>
+          <div class="cat-cta">Mulai latihan →</div>
+        </a>
+
+        <a href="latihan-tahap2.html" class="category-card cat-latihan2">
+          <div class="cat-icon">🚀</div>
+          <h2 class="cat-title">Latihan Tahap 2</h2>
+          <p class="cat-desc">
+            Persiapan Liga Bintang Juara — soal campuran IPS &amp; Pendidikan Pancasila,
+            IPA, Matematika, Bahasa Indonesia, dan Bahasa Inggris sesuai kisi-kisi Ujian Tahap 2.
+          </p>
+          <div class="cat-meta">
+            <span>30 soal acak</span>
+            <span>5 mata pelajaran</span>
+            <span>Pool: 100 soal (batch 1/10)</span>
           </div>
           <div class="cat-cta">Mulai latihan →</div>
         </a>
