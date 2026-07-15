@@ -1,1 +1,1342 @@
-
+{
+  "meta": {
+    "kategori": "latihan-tahap3",
+    "kategori_label": "Latihan Tahap 3 — Liga Bintang Juara",
+    "versi": "1.0.0",
+    "batch": 1,
+    "total_soal": 106,
+    "target_soal": 1000,
+    "catatan": "Batch 1 — 106 soal awal sesuai kisi-kisi Ujian Tahap 3 Liga Bintang Juara (6 mata pelajaran terpisah: Matematika, Bahasa Indonesia, IPS, Pendidikan Pancasila, IPA, Bahasa Inggris — Pendidikan Pancasila kini berdiri sendiri, tidak lagi digabung dengan IPS seperti di Tahap 2). Batch 1 memprioritaskan topik inti/dasar di tiap kisi-kisi (interpretasi prioritas oleh penyusun); topik lanjutan (mis. sebagian subtopik kisi-kisi Bahasa Inggris seperti Famous Landmarks, Sightseeing, Parts of Speech) menyusul di batch berikutnya. PENTING: seluruh field `jawaban` sengaja dibuat singkat (kata/angka/frasa pendek) — bukan kalimat panjang — sesuai catatan evaluasi peserta pada Latihan Tahap 2."
+  },
+  "soal": [
+    {
+      "id": 1,
+      "teks": "Hasil dari 248 + 375 adalah?",
+      "bahasa": "id",
+      "jawaban": "623",
+      "alternatif_jawaban": [],
+      "pembahasan": "248 + 375 = 623.",
+      "topik": "Bilangan Cacah",
+      "mapel": "Matematika",
+      "level": "mudah",
+      "waktu": 15
+    },
+    {
+      "id": 2,
+      "teks": "Bilangan cacah terkecil yang lebih dari 100 adalah?",
+      "bahasa": "id",
+      "jawaban": "101",
+      "alternatif_jawaban": [],
+      "pembahasan": "Bilangan cacah adalah 0, 1, 2, 3, ... Bilangan cacah pertama setelah 100 adalah 101.",
+      "topik": "Bilangan Cacah",
+      "mapel": "Matematika",
+      "level": "mudah",
+      "waktu": 15
+    },
+    {
+      "id": 3,
+      "teks": "Bentuk paling sederhana dari pecahan 18/24 adalah?",
+      "bahasa": "id",
+      "jawaban": "3/4",
+      "alternatif_jawaban": [
+        "3 per 4"
+      ],
+      "pembahasan": "18/24 disederhanakan dengan membagi pembilang dan penyebut dengan FPB-nya, yaitu 6, sehingga menjadi 3/4.",
+      "topik": "Pecahan",
+      "mapel": "Matematika",
+      "level": "sedang",
+      "waktu": 20
+    },
+    {
+      "id": 4,
+      "teks": "Hasil dari 2/5 + 1/4 adalah?",
+      "bahasa": "id",
+      "jawaban": "13/20",
+      "alternatif_jawaban": [],
+      "pembahasan": "Samakan penyebut menjadi 20: 2/5 = 8/20 dan 1/4 = 5/20. 8/20 + 5/20 = 13/20.",
+      "topik": "Pecahan",
+      "mapel": "Matematika",
+      "level": "sedang",
+      "waktu": 20
+    },
+    {
+      "id": 5,
+      "teks": "Tiga suku berikutnya dari pola bilangan 2, 4, 8, 16, ... adalah?",
+      "bahasa": "id",
+      "jawaban": "32, 64, 128",
+      "alternatif_jawaban": [],
+      "pembahasan": "Pola ini adalah pola kali 2. Setelah 16 adalah 32, 64, dan 128.",
+      "topik": "Pola Gambar & Pola Bilangan",
+      "mapel": "Matematika",
+      "level": "sedang",
+      "waktu": 20
+    },
+    {
+      "id": 6,
+      "teks": "Suku ke-6 dari pola bilangan 3, 6, 9, 12, ... adalah?",
+      "bahasa": "id",
+      "jawaban": "18",
+      "alternatif_jawaban": [],
+      "pembahasan": "Pola ini bertambah 3 setiap suku: 3, 6, 9, 12, 15, 18. Suku ke-6 adalah 18.",
+      "topik": "Pola Gambar & Pola Bilangan",
+      "mapel": "Matematika",
+      "level": "mudah",
+      "waktu": 15
+    },
+    {
+      "id": 7,
+      "teks": "Bangun datar yang memiliki 4 sisi sama panjang dan 4 sudut siku-siku disebut?",
+      "bahasa": "id",
+      "jawaban": "Persegi",
+      "alternatif_jawaban": [],
+      "pembahasan": "Bangun dengan 4 sisi sama panjang dan 4 sudut 90 derajat disebut persegi.",
+      "topik": "Bangun Datar dan Sudut",
+      "mapel": "Matematika",
+      "level": "mudah",
+      "waktu": 15
+    },
+    {
+      "id": 8,
+      "teks": "Jumlah besar seluruh sudut pada segitiga adalah?",
+      "bahasa": "id",
+      "jawaban": "180 derajat",
+      "alternatif_jawaban": [
+        "180°"
+      ],
+      "pembahasan": "Jumlah ketiga sudut dalam segitiga selalu 180 derajat.",
+      "topik": "Bangun Datar dan Sudut",
+      "mapel": "Matematika",
+      "level": "mudah",
+      "waktu": 15
+    },
+    {
+      "id": 9,
+      "teks": "3 km sama dengan berapa meter?",
+      "bahasa": "id",
+      "jawaban": "3000 meter",
+      "alternatif_jawaban": [
+        "3000 m",
+        "3.000 meter"
+      ],
+      "pembahasan": "1 km = 1000 meter, sehingga 3 km = 3 x 1000 = 3000 meter.",
+      "topik": "Hubungan Satuan-satuan",
+      "mapel": "Matematika",
+      "level": "mudah",
+      "waktu": 15
+    },
+    {
+      "id": 10,
+      "teks": "2,5 jam sama dengan berapa menit?",
+      "bahasa": "id",
+      "jawaban": "150 menit",
+      "alternatif_jawaban": [],
+      "pembahasan": "1 jam = 60 menit, sehingga 2,5 jam = 2,5 x 60 = 150 menit.",
+      "topik": "Hubungan Satuan-satuan",
+      "mapel": "Matematika",
+      "level": "sedang",
+      "waktu": 20
+    },
+    {
+      "id": 11,
+      "teks": "Bentuk desimal dari pecahan 3/4 adalah?",
+      "bahasa": "id",
+      "jawaban": "0,75",
+      "alternatif_jawaban": [
+        "0.75"
+      ],
+      "pembahasan": "3/4 = 3 : 4 = 0,75.",
+      "topik": "Bilangan Desimal",
+      "mapel": "Matematika",
+      "level": "sedang",
+      "waktu": 20
+    },
+    {
+      "id": 12,
+      "teks": "Hasil dari 4,5 + 3,25 adalah?",
+      "bahasa": "id",
+      "jawaban": "7,75",
+      "alternatif_jawaban": [
+        "7.75"
+      ],
+      "pembahasan": "4,5 + 3,25 = 7,75.",
+      "topik": "Bilangan Desimal",
+      "mapel": "Matematika",
+      "level": "mudah",
+      "waktu": 15
+    },
+    {
+      "id": 13,
+      "teks": "FPB dari 24 dan 36 adalah?",
+      "bahasa": "id",
+      "jawaban": "12",
+      "alternatif_jawaban": [],
+      "pembahasan": "24 = 2^3 x 3, 36 = 2^2 x 3^2. Faktor yang sama dengan pangkat terkecil: 2^2 x 3 = 12.",
+      "topik": "KPK dan FPB",
+      "mapel": "Matematika",
+      "level": "sedang",
+      "waktu": 20
+    },
+    {
+      "id": 14,
+      "teks": "KPK dari 4 dan 6 adalah?",
+      "bahasa": "id",
+      "jawaban": "12",
+      "alternatif_jawaban": [],
+      "pembahasan": "Kelipatan 4: 4,8,12,... Kelipatan 6: 6,12,... Kelipatan persekutuan terkecil adalah 12.",
+      "topik": "KPK dan FPB",
+      "mapel": "Matematika",
+      "level": "mudah",
+      "waktu": 15
+    },
+    {
+      "id": 15,
+      "teks": "Perbandingan paling sederhana dari 15 apel dan 25 jeruk adalah?",
+      "bahasa": "id",
+      "jawaban": "3 : 5",
+      "alternatif_jawaban": [
+        "3/5",
+        "3 banding 5"
+      ],
+      "pembahasan": "15:25 dibagi FPB-nya (5) menjadi 3:5.",
+      "topik": "Rasio",
+      "mapel": "Matematika",
+      "level": "mudah",
+      "waktu": 15
+    },
+    {
+      "id": 16,
+      "teks": "Jika uang Andi dan Budi berbanding 2 : 3, dan uang Andi Rp40.000, berapa uang Budi?",
+      "bahasa": "id",
+      "jawaban": "Rp60.000",
+      "alternatif_jawaban": [
+        "60000",
+        "60.000"
+      ],
+      "pembahasan": "1 bagian = 40.000 : 2 = 20.000. Uang Budi = 3 x 20.000 = Rp60.000.",
+      "topik": "Rasio",
+      "mapel": "Matematika",
+      "level": "sedang",
+      "waktu": 20
+    },
+    {
+      "id": 17,
+      "teks": "Nilai yang paling sering muncul dalam sekumpulan data disebut?",
+      "bahasa": "id",
+      "jawaban": "Modus",
+      "alternatif_jawaban": [],
+      "pembahasan": "Modus adalah nilai/data yang paling banyak/paling sering muncul.",
+      "topik": "Data",
+      "mapel": "Matematika",
+      "level": "mudah",
+      "waktu": 15
+    },
+    {
+      "id": 18,
+      "teks": "Median dari data 5, 7, 7, 8, 9 adalah?",
+      "bahasa": "id",
+      "jawaban": "7",
+      "alternatif_jawaban": [],
+      "pembahasan": "Data sudah terurut, nilai tengah dari 5 data (data ke-3) adalah 7.",
+      "topik": "Data",
+      "mapel": "Matematika",
+      "level": "mudah",
+      "waktu": 15
+    },
+    {
+      "id": 19,
+      "teks": "Sinonim dari kata 'cerdas' adalah?",
+      "bahasa": "id",
+      "jawaban": "Pintar",
+      "alternatif_jawaban": [
+        "Pandai"
+      ],
+      "pembahasan": "Sinonim (persamaan kata) dari 'cerdas' antara lain pintar atau pandai.",
+      "topik": "Sinonim & Akronim",
+      "mapel": "Bahasa Indonesia",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 20,
+      "teks": "Akronim 'SIM' adalah singkatan dari?",
+      "bahasa": "id",
+      "jawaban": "Surat Izin Mengemudi",
+      "alternatif_jawaban": [],
+      "pembahasan": "SIM merupakan akronim dari Surat Izin Mengemudi.",
+      "topik": "Sinonim & Akronim",
+      "mapel": "Bahasa Indonesia",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 21,
+      "teks": "Sinonim dari kata 'senang' adalah?",
+      "bahasa": "id",
+      "jawaban": "Gembira",
+      "alternatif_jawaban": [
+        "Bahagia"
+      ],
+      "pembahasan": "Sinonim dari 'senang' antara lain gembira atau bahagia.",
+      "topik": "Sinonim & Akronim",
+      "mapel": "Bahasa Indonesia",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 22,
+      "teks": "Majas yang menggambarkan benda mati seolah-olah hidup disebut majas?",
+      "bahasa": "id",
+      "jawaban": "Personifikasi",
+      "alternatif_jawaban": [],
+      "pembahasan": "Majas personifikasi memberi sifat manusia pada benda mati, contoh: 'angin berbisik'.",
+      "topik": "Majas",
+      "mapel": "Bahasa Indonesia",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 23,
+      "teks": "Kalimat 'Suaranya menggelegar bagai petir di siang bolong' menggunakan majas?",
+      "bahasa": "id",
+      "jawaban": "Hiperbola",
+      "alternatif_jawaban": [],
+      "pembahasan": "Majas hiperbola melebih-lebihkan sesuatu agar terkesan lebih dramatis.",
+      "topik": "Majas",
+      "mapel": "Bahasa Indonesia",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 24,
+      "teks": "Majas yang membandingkan dua hal menggunakan kata 'seperti' atau 'bagai' disebut majas?",
+      "bahasa": "id",
+      "jawaban": "Simile",
+      "alternatif_jawaban": [
+        "Perumpamaan"
+      ],
+      "pembahasan": "Majas simile (perumpamaan) membandingkan dua hal secara langsung dengan kata pembanding seperti 'seperti' atau 'bagai'.",
+      "topik": "Majas",
+      "mapel": "Bahasa Indonesia",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 25,
+      "teks": "Kata dasar dari kata 'mempelajari' adalah?",
+      "bahasa": "id",
+      "jawaban": "Ajar",
+      "alternatif_jawaban": [],
+      "pembahasan": "'Mempelajari' berasal dari kata dasar 'ajar' yang mendapat imbuhan me-...-i.",
+      "topik": "Tata Kata",
+      "mapel": "Bahasa Indonesia",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 26,
+      "teks": "Imbuhan yang terletak di awal kata disebut?",
+      "bahasa": "id",
+      "jawaban": "Awalan",
+      "alternatif_jawaban": [
+        "Prefiks"
+      ],
+      "pembahasan": "Imbuhan di awal kata disebut awalan atau prefiks.",
+      "topik": "Tata Kata",
+      "mapel": "Bahasa Indonesia",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 27,
+      "teks": "Kata 'berlari' terbentuk dari kata dasar 'lari' dengan mendapat imbuhan?",
+      "bahasa": "id",
+      "jawaban": "Awalan ber-",
+      "alternatif_jawaban": [
+        "Ber-"
+      ],
+      "pembahasan": "Kata 'berlari' = ber- + lari, menggunakan awalan ber-.",
+      "topik": "Tata Kata",
+      "mapel": "Bahasa Indonesia",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 28,
+      "teks": "Makna kata yang sesuai dengan arti sebenarnya (sesuai kamus) disebut makna?",
+      "bahasa": "id",
+      "jawaban": "Denotasi",
+      "alternatif_jawaban": [],
+      "pembahasan": "Makna denotasi adalah makna sebenarnya/lugas sesuai kamus.",
+      "topik": "Makna Kata",
+      "mapel": "Bahasa Indonesia",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 29,
+      "teks": "Ungkapan 'kambing hitam' dalam kalimat 'Dia dijadikan kambing hitam' bermakna?",
+      "bahasa": "id",
+      "jawaban": "Orang yang disalahkan",
+      "alternatif_jawaban": [],
+      "pembahasan": "'Kambing hitam' adalah ungkapan yang bermakna orang yang disalahkan atas suatu kesalahan.",
+      "topik": "Makna Kata",
+      "mapel": "Bahasa Indonesia",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 30,
+      "teks": "Makna kata yang mengandung nilai rasa atau kiasan disebut makna?",
+      "bahasa": "id",
+      "jawaban": "Konotasi",
+      "alternatif_jawaban": [],
+      "pembahasan": "Makna konotasi adalah makna tidak sebenarnya/kiasan yang mengandung nilai rasa.",
+      "topik": "Makna Kata",
+      "mapel": "Bahasa Indonesia",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 31,
+      "teks": "Kalimat yang diakhiri tanda tanya disebut kalimat?",
+      "bahasa": "id",
+      "jawaban": "Kalimat tanya",
+      "alternatif_jawaban": [],
+      "pembahasan": "Kalimat yang mengandung pertanyaan dan diakhiri tanda tanya (?) disebut kalimat tanya.",
+      "topik": "Kalimat",
+      "mapel": "Bahasa Indonesia",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 32,
+      "teks": "Dalam kalimat 'Adik membaca buku', kata 'Adik' berfungsi sebagai unsur?",
+      "bahasa": "id",
+      "jawaban": "Subjek",
+      "alternatif_jawaban": [],
+      "pembahasan": "'Adik' adalah pelaku/subjek dalam kalimat tersebut.",
+      "topik": "Kalimat",
+      "mapel": "Bahasa Indonesia",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 33,
+      "teks": "Dalam kalimat 'Adik membaca buku', kata 'membaca' berfungsi sebagai unsur?",
+      "bahasa": "id",
+      "jawaban": "Predikat",
+      "alternatif_jawaban": [],
+      "pembahasan": "'Membaca' adalah kata kerja yang menunjukkan perbuatan, berfungsi sebagai predikat.",
+      "topik": "Kalimat",
+      "mapel": "Bahasa Indonesia",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 34,
+      "teks": "Kalimat yang berisi ide pokok suatu paragraf disebut kalimat?",
+      "bahasa": "id",
+      "jawaban": "Kalimat utama",
+      "alternatif_jawaban": [],
+      "pembahasan": "Kalimat yang mengandung ide/gagasan pokok paragraf disebut kalimat utama.",
+      "topik": "Paragraf",
+      "mapel": "Bahasa Indonesia",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 35,
+      "teks": "Paragraf yang ide pokoknya terletak di awal paragraf disebut paragraf?",
+      "bahasa": "id",
+      "jawaban": "Deduktif",
+      "alternatif_jawaban": [],
+      "pembahasan": "Paragraf deduktif memiliki kalimat utama/ide pokok di awal paragraf.",
+      "topik": "Paragraf",
+      "mapel": "Bahasa Indonesia",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 36,
+      "teks": "Paragraf yang ide pokoknya terletak di akhir paragraf disebut paragraf?",
+      "bahasa": "id",
+      "jawaban": "Induktif",
+      "alternatif_jawaban": [],
+      "pembahasan": "Paragraf induktif memiliki kalimat utama/ide pokok di akhir paragraf.",
+      "topik": "Paragraf",
+      "mapel": "Bahasa Indonesia",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 37,
+      "teks": "Rumah adat 'Gadang' berasal dari daerah?",
+      "bahasa": "id",
+      "jawaban": "Sumatera Barat",
+      "alternatif_jawaban": [
+        "Minangkabau"
+      ],
+      "pembahasan": "Rumah Gadang adalah rumah adat suku Minangkabau, Sumatera Barat.",
+      "topik": "Keragaman Budaya di Indonesia",
+      "mapel": "IPS",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 38,
+      "teks": "Tari Kecak berasal dari daerah?",
+      "bahasa": "id",
+      "jawaban": "Bali",
+      "alternatif_jawaban": [],
+      "pembahasan": "Tari Kecak adalah tarian tradisional khas Bali.",
+      "topik": "Keragaman Budaya di Indonesia",
+      "mapel": "IPS",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 39,
+      "teks": "Kota Yogyakarta terkenal dengan julukan?",
+      "bahasa": "id",
+      "jawaban": "Kota Pelajar",
+      "alternatif_jawaban": [
+        "Kota Gudeg"
+      ],
+      "pembahasan": "Yogyakarta dikenal sebagai Kota Pelajar karena banyaknya lembaga pendidikan; juga dijuluki Kota Gudeg.",
+      "topik": "Ciri Khas Daerah Indonesia",
+      "mapel": "IPS",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 40,
+      "teks": "Danau vulkanik terbesar di dunia yang terletak di Sumatera Utara bernama?",
+      "bahasa": "id",
+      "jawaban": "Danau Toba",
+      "alternatif_jawaban": [],
+      "pembahasan": "Danau Toba di Sumatera Utara terbentuk dari letusan gunung berapi purba dan merupakan danau vulkanik terbesar di dunia.",
+      "topik": "Ciri Khas Daerah Indonesia",
+      "mapel": "IPS",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 41,
+      "teks": "Bangsa Eropa yang pertama kali mendarat di Malaka pada tahun 1511 adalah bangsa?",
+      "bahasa": "id",
+      "jawaban": "Portugis",
+      "alternatif_jawaban": [],
+      "pembahasan": "Portugis dipimpin Alfonso de Albuquerque menaklukkan Malaka pada tahun 1511.",
+      "topik": "Kedatangan Bangsa Asing ke Indonesia",
+      "mapel": "IPS",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 42,
+      "teks": "VOC adalah kongsi dagang milik bangsa?",
+      "bahasa": "id",
+      "jawaban": "Belanda",
+      "alternatif_jawaban": [],
+      "pembahasan": "VOC (Vereenigde Oostindische Compagnie) adalah kongsi dagang Belanda yang berdiri tahun 1602.",
+      "topik": "Kedatangan Bangsa Asing ke Indonesia",
+      "mapel": "IPS",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 43,
+      "teks": "Kegiatan menyalurkan barang dari produsen ke konsumen disebut kegiatan?",
+      "bahasa": "id",
+      "jawaban": "Distribusi",
+      "alternatif_jawaban": [],
+      "pembahasan": "Distribusi adalah kegiatan menyalurkan hasil produksi kepada konsumen.",
+      "topik": "Aktivitas Ekonomi dalam Kehidupan Sehari-hari",
+      "mapel": "IPS",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 44,
+      "teks": "Kegiatan menghasilkan atau membuat barang/jasa disebut kegiatan?",
+      "bahasa": "id",
+      "jawaban": "Produksi",
+      "alternatif_jawaban": [],
+      "pembahasan": "Produksi adalah kegiatan menghasilkan atau menambah nilai guna suatu barang/jasa.",
+      "topik": "Aktivitas Ekonomi dalam Kehidupan Sehari-hari",
+      "mapel": "IPS",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 45,
+      "teks": "Indonesia terletak di antara dua benua, yaitu Asia dan?",
+      "bahasa": "id",
+      "jawaban": "Australia",
+      "alternatif_jawaban": [],
+      "pembahasan": "Secara geografis Indonesia berada di posisi silang antara Benua Asia dan Benua Australia.",
+      "topik": "Kondisi Geografis Indonesia",
+      "mapel": "IPS",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 46,
+      "teks": "Indonesia terletak di antara Samudra Hindia dan?",
+      "bahasa": "id",
+      "jawaban": "Samudra Pasifik",
+      "alternatif_jawaban": [],
+      "pembahasan": "Indonesia diapit dua samudra, yaitu Samudra Hindia dan Samudra Pasifik.",
+      "topik": "Kondisi Geografis Indonesia",
+      "mapel": "IPS",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 47,
+      "teks": "Pahlawan yang memimpin Perang Jawa (1825-1830) melawan Belanda adalah?",
+      "bahasa": "id",
+      "jawaban": "Pangeran Diponegoro",
+      "alternatif_jawaban": [],
+      "pembahasan": "Pangeran Diponegoro memimpin Perang Jawa/Perang Diponegoro melawan Belanda tahun 1825-1830.",
+      "topik": "Perlawanan terhadap Bangsa Asing di Indonesia",
+      "mapel": "IPS",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 48,
+      "teks": "Pahlawan yang memimpin perlawanan rakyat Maluku tahun 1817 melawan Belanda adalah?",
+      "bahasa": "id",
+      "jawaban": "Kapitan Pattimura",
+      "alternatif_jawaban": [
+        "Thomas Matulessy"
+      ],
+      "pembahasan": "Kapitan Pattimura (Thomas Matulessy) memimpin perlawanan rakyat Maluku tahun 1817.",
+      "topik": "Perlawanan terhadap Bangsa Asing di Indonesia",
+      "mapel": "IPS",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 49,
+      "teks": "Benua terluas di dunia adalah?",
+      "bahasa": "id",
+      "jawaban": "Asia",
+      "alternatif_jawaban": [],
+      "pembahasan": "Asia merupakan benua dengan luas wilayah terbesar di dunia.",
+      "topik": "Benua-benua di Dunia",
+      "mapel": "IPS",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 50,
+      "teks": "Benua yang terletak di kutub selatan dan diselimuti es sepanjang tahun adalah?",
+      "bahasa": "id",
+      "jawaban": "Antartika",
+      "alternatif_jawaban": [],
+      "pembahasan": "Antartika adalah benua di kutub selatan yang hampir seluruhnya tertutup es.",
+      "topik": "Benua-benua di Dunia",
+      "mapel": "IPS",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 51,
+      "teks": "Proklamasi Kemerdekaan Indonesia dibacakan pada tanggal?",
+      "bahasa": "id",
+      "jawaban": "17 Agustus 1945",
+      "alternatif_jawaban": [],
+      "pembahasan": "Proklamasi Kemerdekaan Indonesia dibacakan oleh Soekarno-Hatta pada 17 Agustus 1945.",
+      "topik": "Kemerdekaan dan Peristiwa di Sekitarnya",
+      "mapel": "IPS",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 52,
+      "teks": "Teks proklamasi kemerdekaan Indonesia diketik oleh?",
+      "bahasa": "id",
+      "jawaban": "Sayuti Melik",
+      "alternatif_jawaban": [],
+      "pembahasan": "Sayuti Melik bertugas mengetik naskah proklamasi yang telah disusun.",
+      "topik": "Kemerdekaan dan Peristiwa di Sekitarnya",
+      "mapel": "IPS",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 53,
+      "teks": "Lambang sila pertama Pancasila adalah?",
+      "bahasa": "id",
+      "jawaban": "Bintang",
+      "alternatif_jawaban": [],
+      "pembahasan": "Sila pertama, Ketuhanan Yang Maha Esa, dilambangkan dengan bintang.",
+      "topik": "Pancasila (Perumusan dan Lambang)",
+      "mapel": "Pendidikan Pancasila",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 54,
+      "teks": "Lambang sila kelima Pancasila adalah?",
+      "bahasa": "id",
+      "jawaban": "Padi dan kapas",
+      "alternatif_jawaban": [],
+      "pembahasan": "Sila kelima, Keadilan Sosial bagi Seluruh Rakyat Indonesia, dilambangkan dengan padi dan kapas.",
+      "topik": "Pancasila (Perumusan dan Lambang)",
+      "mapel": "Pendidikan Pancasila",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 55,
+      "teks": "Hari Lahir Pancasila diperingati setiap tanggal?",
+      "bahasa": "id",
+      "jawaban": "1 Juni",
+      "alternatif_jawaban": [],
+      "pembahasan": "1 Juni diperingati sebagai Hari Lahir Pancasila, saat Ir. Soekarno mengusulkan dasar negara pada sidang BPUPKI 1945.",
+      "topik": "Pancasila (Perumusan dan Lambang)",
+      "mapel": "Pendidikan Pancasila",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 56,
+      "teks": "Pancasila secara resmi disahkan sebagai dasar negara pada tanggal?",
+      "bahasa": "id",
+      "jawaban": "18 Agustus 1945",
+      "alternatif_jawaban": [],
+      "pembahasan": "Pancasila disahkan sebagai dasar negara bersamaan dengan UUD 1945 oleh PPKI pada 18 Agustus 1945.",
+      "topik": "Pancasila (Perumusan dan Lambang)",
+      "mapel": "Pendidikan Pancasila",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 57,
+      "teks": "Hak warga negara untuk mendapatkan pendidikan diatur dalam UUD 1945 pasal?",
+      "bahasa": "id",
+      "jawaban": "Pasal 31",
+      "alternatif_jawaban": [],
+      "pembahasan": "Pasal 31 UUD 1945 mengatur hak setiap warga negara untuk mendapatkan pendidikan.",
+      "topik": "UUD 1945 (Undang-undang dan Pasal)",
+      "mapel": "Pendidikan Pancasila",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 58,
+      "teks": "Kemerdekaan tiap penduduk memeluk agamanya diatur dalam UUD 1945 pasal?",
+      "bahasa": "id",
+      "jawaban": "Pasal 29",
+      "alternatif_jawaban": [],
+      "pembahasan": "Pasal 29 UUD 1945 mengatur kemerdekaan setiap penduduk memeluk agama dan beribadah.",
+      "topik": "UUD 1945 (Undang-undang dan Pasal)",
+      "mapel": "Pendidikan Pancasila",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 59,
+      "teks": "Ketentuan bahwa fakir miskin dan anak terlantar dipelihara oleh negara diatur dalam pasal?",
+      "bahasa": "id",
+      "jawaban": "Pasal 34",
+      "alternatif_jawaban": [],
+      "pembahasan": "Pasal 34 UUD 1945 mengatur bahwa fakir miskin dan anak terlantar dipelihara oleh negara.",
+      "topik": "UUD 1945 (Undang-undang dan Pasal)",
+      "mapel": "Pendidikan Pancasila",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 60,
+      "teks": "UUD 1945 disahkan sebagai konstitusi negara Indonesia pada tanggal?",
+      "bahasa": "id",
+      "jawaban": "18 Agustus 1945",
+      "alternatif_jawaban": [],
+      "pembahasan": "UUD 1945 disahkan oleh PPKI pada 18 Agustus 1945, sehari setelah proklamasi kemerdekaan.",
+      "topik": "UUD 1945 (Undang-undang dan Pasal)",
+      "mapel": "Pendidikan Pancasila",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 61,
+      "teks": "Semboyan 'Bhinneka Tunggal Ika' berasal dari kitab?",
+      "bahasa": "id",
+      "jawaban": "Sutasoma",
+      "alternatif_jawaban": [],
+      "pembahasan": "Semboyan Bhinneka Tunggal Ika diambil dari Kitab Sutasoma.",
+      "topik": "Bhinneka Tunggal Ika (Keberagaman)",
+      "mapel": "Pendidikan Pancasila",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 62,
+      "teks": "Kitab Sutasoma ditulis oleh?",
+      "bahasa": "id",
+      "jawaban": "Mpu Tantular",
+      "alternatif_jawaban": [],
+      "pembahasan": "Kitab Sutasoma ditulis oleh Mpu Tantular pada masa Kerajaan Majapahit.",
+      "topik": "Bhinneka Tunggal Ika (Keberagaman)",
+      "mapel": "Pendidikan Pancasila",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 63,
+      "teks": "Arti dari semboyan 'Bhinneka Tunggal Ika' adalah?",
+      "bahasa": "id",
+      "jawaban": "Berbeda-beda tetapi tetap satu",
+      "alternatif_jawaban": [],
+      "pembahasan": "Bhinneka Tunggal Ika berarti walaupun berbeda-beda suku, agama, dan budaya, tetap satu jua sebagai bangsa Indonesia.",
+      "topik": "Bhinneka Tunggal Ika (Keberagaman)",
+      "mapel": "Pendidikan Pancasila",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 64,
+      "teks": "Semboyan Bhinneka Tunggal Ika tertulis pada lambang negara yang dicengkeram oleh?",
+      "bahasa": "id",
+      "jawaban": "Burung Garuda",
+      "alternatif_jawaban": [],
+      "pembahasan": "Pita bertuliskan Bhinneka Tunggal Ika dicengkeram oleh kaki burung Garuda Pancasila.",
+      "topik": "Bhinneka Tunggal Ika (Keberagaman)",
+      "mapel": "Pendidikan Pancasila",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 65,
+      "teks": "Bentuk negara Indonesia adalah negara?",
+      "bahasa": "id",
+      "jawaban": "Kesatuan",
+      "alternatif_jawaban": [],
+      "pembahasan": "Indonesia berbentuk Negara Kesatuan Republik Indonesia (NKRI), bukan negara serikat/federasi.",
+      "topik": "NKRI (Sistem Pemerintahan, Lembaga Negara, dan Bentuk Negara)",
+      "mapel": "Pendidikan Pancasila",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 66,
+      "teks": "Sistem pemerintahan yang dianut Indonesia adalah sistem?",
+      "bahasa": "id",
+      "jawaban": "Presidensial",
+      "alternatif_jawaban": [],
+      "pembahasan": "Indonesia menganut sistem pemerintahan presidensial, di mana presiden adalah kepala negara sekaligus kepala pemerintahan.",
+      "topik": "NKRI (Sistem Pemerintahan, Lembaga Negara, dan Bentuk Negara)",
+      "mapel": "Pendidikan Pancasila",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 67,
+      "teks": "Lembaga negara yang bertugas membuat undang-undang bersama presiden adalah?",
+      "bahasa": "id",
+      "jawaban": "DPR",
+      "alternatif_jawaban": [],
+      "pembahasan": "DPR (Dewan Perwakilan Rakyat) bertugas membentuk undang-undang bersama presiden.",
+      "topik": "NKRI (Sistem Pemerintahan, Lembaga Negara, dan Bentuk Negara)",
+      "mapel": "Pendidikan Pancasila",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 68,
+      "teks": "Lembaga negara yang bertugas memeriksa pengelolaan keuangan negara adalah?",
+      "bahasa": "id",
+      "jawaban": "BPK",
+      "alternatif_jawaban": [],
+      "pembahasan": "BPK (Badan Pemeriksa Keuangan) bertugas memeriksa pengelolaan dan tanggung jawab keuangan negara.",
+      "topik": "NKRI (Sistem Pemerintahan, Lembaga Negara, dan Bentuk Negara)",
+      "mapel": "Pendidikan Pancasila",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 69,
+      "teks": "Energi yang dimiliki benda karena geraknya disebut energi?",
+      "bahasa": "id",
+      "jawaban": "Energi kinetik",
+      "alternatif_jawaban": [
+        "Kinetik"
+      ],
+      "pembahasan": "Energi kinetik adalah energi yang dimiliki benda yang sedang bergerak.",
+      "topik": "Energi dan Perubahannya",
+      "mapel": "IPA",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 70,
+      "teks": "Perubahan energi pada setrika listrik adalah dari energi listrik menjadi energi?",
+      "bahasa": "id",
+      "jawaban": "Energi panas",
+      "alternatif_jawaban": [
+        "Panas"
+      ],
+      "pembahasan": "Setrika listrik mengubah energi listrik menjadi energi panas.",
+      "topik": "Energi dan Perubahannya",
+      "mapel": "IPA",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 71,
+      "teks": "Gelombang yang arah rambatnya tegak lurus dengan arah getarnya disebut gelombang?",
+      "bahasa": "id",
+      "jawaban": "Transversal",
+      "alternatif_jawaban": [],
+      "pembahasan": "Gelombang transversal memiliki arah rambat tegak lurus terhadap arah getarnya, contohnya gelombang cahaya.",
+      "topik": "Gelombang",
+      "mapel": "IPA",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 72,
+      "teks": "Banyaknya getaran yang terjadi dalam waktu satu detik disebut?",
+      "bahasa": "id",
+      "jawaban": "Frekuensi",
+      "alternatif_jawaban": [],
+      "pembahasan": "Frekuensi adalah jumlah getaran/gelombang yang terjadi tiap satu detik, satuannya Hertz (Hz).",
+      "topik": "Gelombang",
+      "mapel": "IPA",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 73,
+      "teks": "Gaya yang menyebabkan semua benda jatuh ke bawah disebut gaya?",
+      "bahasa": "id",
+      "jawaban": "Gravitasi",
+      "alternatif_jawaban": [],
+      "pembahasan": "Gaya gravitasi bumi menarik semua benda ke arah pusat bumi.",
+      "topik": "Gaya",
+      "mapel": "IPA",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 74,
+      "teks": "Gaya yang timbul akibat dua permukaan benda yang saling bersentuhan disebut gaya?",
+      "bahasa": "id",
+      "jawaban": "Gaya gesek",
+      "alternatif_jawaban": [
+        "Gesek"
+      ],
+      "pembahasan": "Gaya gesek muncul akibat sentuhan antara dua permukaan benda dan cenderung menghambat gerak.",
+      "topik": "Gaya",
+      "mapel": "IPA",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 75,
+      "teks": "Makhluk hidup yang dapat membuat makanannya sendiri disebut?",
+      "bahasa": "id",
+      "jawaban": "Produsen",
+      "alternatif_jawaban": [],
+      "pembahasan": "Produsen (misalnya tumbuhan hijau) mampu membuat makanan sendiri melalui fotosintesis.",
+      "topik": "Ekosistem",
+      "mapel": "IPA",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 76,
+      "teks": "Makhluk hidup yang berperan menguraikan sisa-sisa makhluk hidup yang telah mati disebut?",
+      "bahasa": "id",
+      "jawaban": "Pengurai",
+      "alternatif_jawaban": [
+        "Dekomposer"
+      ],
+      "pembahasan": "Pengurai (dekomposer), misalnya bakteri dan jamur, menguraikan sisa makhluk hidup menjadi zat sederhana.",
+      "topik": "Ekosistem",
+      "mapel": "IPA",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 77,
+      "teks": "Organ utama dalam sistem peredaran darah manusia adalah?",
+      "bahasa": "id",
+      "jawaban": "Jantung",
+      "alternatif_jawaban": [],
+      "pembahasan": "Jantung berfungsi memompa darah ke seluruh tubuh melalui pembuluh darah.",
+      "topik": "Sistem Tubuh Manusia",
+      "mapel": "IPA",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 78,
+      "teks": "Organ yang berfungsi menyaring darah dan mengeluarkan zat sisa berupa urine adalah?",
+      "bahasa": "id",
+      "jawaban": "Ginjal",
+      "alternatif_jawaban": [],
+      "pembahasan": "Ginjal berfungsi menyaring darah dan membuang zat sisa metabolisme dalam bentuk urine.",
+      "topik": "Sistem Tubuh Manusia",
+      "mapel": "IPA",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 79,
+      "teks": "Hewan yang berkembang biak dengan cara bertelur disebut?",
+      "bahasa": "id",
+      "jawaban": "Ovipar",
+      "alternatif_jawaban": [],
+      "pembahasan": "Hewan ovipar berkembang biak dengan bertelur, contohnya ayam dan burung.",
+      "topik": "Ciri dan Reproduksi Makhluk Hidup",
+      "mapel": "IPA",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 80,
+      "teks": "Perkembangbiakan tumbuhan menggunakan biji termasuk perkembangbiakan secara?",
+      "bahasa": "id",
+      "jawaban": "Generatif",
+      "alternatif_jawaban": [],
+      "pembahasan": "Perkembangbiakan generatif terjadi melalui proses perkawinan (penyerbukan) yang menghasilkan biji.",
+      "topik": "Ciri dan Reproduksi Makhluk Hidup",
+      "mapel": "IPA",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 81,
+      "teks": "Proses penguapan air dari permukaan bumi dalam siklus/daur air disebut?",
+      "bahasa": "id",
+      "jawaban": "Evaporasi",
+      "alternatif_jawaban": [
+        "Penguapan"
+      ],
+      "pembahasan": "Evaporasi adalah proses berubahnya air menjadi uap air akibat panas matahari.",
+      "topik": "Lingkungan Hidup (Daur Air, Pencemaran Lingkungan)",
+      "mapel": "IPA",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 82,
+      "teks": "Pencemaran yang disebabkan oleh asap kendaraan bermotor termasuk pencemaran?",
+      "bahasa": "id",
+      "jawaban": "Pencemaran udara",
+      "alternatif_jawaban": [
+        "Udara"
+      ],
+      "pembahasan": "Asap kendaraan bermotor mengandung zat berbahaya yang mencemari udara.",
+      "topik": "Lingkungan Hidup (Daur Air, Pencemaran Lingkungan)",
+      "mapel": "IPA",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 83,
+      "teks": "Planet terbesar dalam tata surya adalah?",
+      "bahasa": "id",
+      "jawaban": "Jupiter",
+      "alternatif_jawaban": [],
+      "pembahasan": "Jupiter adalah planet terbesar dalam tata surya kita.",
+      "topik": "Alam Semesta",
+      "mapel": "IPA",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 84,
+      "teks": "Perputaran bumi pada porosnya sendiri disebut?",
+      "bahasa": "id",
+      "jawaban": "Rotasi",
+      "alternatif_jawaban": [],
+      "pembahasan": "Rotasi bumi menyebabkan terjadinya siang dan malam, berlangsung selama 24 jam.",
+      "topik": "Alam Semesta",
+      "mapel": "IPA",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 85,
+      "teks": "What time is it when the short hand points to 3 and the long hand points to 12?",
+      "bahasa": "en",
+      "jawaban": "Three o'clock",
+      "alternatif_jawaban": [
+        "3 o'clock",
+        "3:00"
+      ],
+      "pembahasan": "Jarum pendek di angka 3 dan jarum panjang di angka 12 menunjukkan pukul tiga tepat (3 o'clock).",
+      "topik": "General Knowledge - Time",
+      "mapel": "Bahasa Inggris",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 86,
+      "teks": "What is the name of a shape with three sides?",
+      "bahasa": "en",
+      "jawaban": "Triangle",
+      "alternatif_jawaban": [],
+      "pembahasan": "Bangun datar dengan tiga sisi disebut triangle (segitiga).",
+      "topik": "General Knowledge - Shapes",
+      "mapel": "Bahasa Inggris",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 87,
+      "teks": "What is the capital city of Japan?",
+      "bahasa": "en",
+      "jawaban": "Tokyo",
+      "alternatif_jawaban": [],
+      "pembahasan": "Tokyo adalah ibu kota negara Jepang.",
+      "topik": "General Knowledge - Capital Cities",
+      "mapel": "Bahasa Inggris",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 88,
+      "teks": "What is the largest ocean in the world?",
+      "bahasa": "en",
+      "jawaban": "Pacific Ocean",
+      "alternatif_jawaban": [],
+      "pembahasan": "Samudra Pasifik (Pacific Ocean) adalah samudra terluas di dunia.",
+      "topik": "General Knowledge - Oceans",
+      "mapel": "Bahasa Inggris",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 89,
+      "teks": "What is the closest planet to the sun?",
+      "bahasa": "en",
+      "jawaban": "Mercury",
+      "alternatif_jawaban": [],
+      "pembahasan": "Merkurius (Mercury) adalah planet yang paling dekat dengan matahari.",
+      "topik": "General Knowledge - Planets/Solar System",
+      "mapel": "Bahasa Inggris",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 90,
+      "teks": "Which country shares a land border with Indonesia on the island of Borneo?",
+      "bahasa": "en",
+      "jawaban": "Malaysia",
+      "alternatif_jawaban": [],
+      "pembahasan": "Malaysia berbatasan darat langsung dengan Indonesia di Pulau Kalimantan (Borneo).",
+      "topik": "General Knowledge - Neighboring Countries",
+      "mapel": "Bahasa Inggris",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 91,
+      "teks": "Who is credited with inventing the light bulb?",
+      "bahasa": "en",
+      "jawaban": "Thomas Edison",
+      "alternatif_jawaban": [],
+      "pembahasan": "Thomas Edison dikenal luas sebagai penemu bola lampu praktis.",
+      "topik": "General Knowledge - Inventors",
+      "mapel": "Bahasa Inggris",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 92,
+      "teks": "What is the currency used in Japan?",
+      "bahasa": "en",
+      "jawaban": "Yen",
+      "alternatif_jawaban": [],
+      "pembahasan": "Mata uang resmi Jepang adalah Yen.",
+      "topik": "General Knowledge - Currencies",
+      "mapel": "Bahasa Inggris",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 93,
+      "teks": "I am yellow and curved, and monkeys love to eat me. What fruit am I?",
+      "bahasa": "en",
+      "jawaban": "Banana",
+      "alternatif_jawaban": [],
+      "pembahasan": "Buah berwarna kuning, melengkung, dan disukai monyet adalah pisang (banana).",
+      "topik": "Who Am I - Fruits",
+      "mapel": "Bahasa Inggris",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 94,
+      "teks": "I am the largest country in the world by area, and my capital is Moscow. What country am I?",
+      "bahasa": "en",
+      "jawaban": "Russia",
+      "alternatif_jawaban": [],
+      "pembahasan": "Negara dengan wilayah terluas di dunia dan beribu kota Moskow adalah Rusia.",
+      "topik": "Who Am I - Countries",
+      "mapel": "Bahasa Inggris",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 95,
+      "teks": "I have black and white keys, and you play me with your fingers. What instrument am I?",
+      "bahasa": "en",
+      "jawaban": "Piano",
+      "alternatif_jawaban": [],
+      "pembahasan": "Alat musik dengan tuts hitam dan putih yang dimainkan dengan jari adalah piano.",
+      "topik": "Who Am I - Musical Instruments",
+      "mapel": "Bahasa Inggris",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 96,
+      "teks": "What is the name for a baby cat?",
+      "bahasa": "en",
+      "jawaban": "Kitten",
+      "alternatif_jawaban": [],
+      "pembahasan": "Anak kucing disebut kitten dalam bahasa Inggris.",
+      "topik": "Vocabulary - Names of Baby Animals",
+      "mapel": "Bahasa Inggris",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 97,
+      "teks": "What is the plural form of 'child'?",
+      "bahasa": "en",
+      "jawaban": "Children",
+      "alternatif_jawaban": [],
+      "pembahasan": "'Child' termasuk kata benda tidak beraturan, bentuk jamaknya adalah 'children', bukan 'childs'.",
+      "topik": "Vocabulary - Common Irregular Plural Nouns",
+      "mapel": "Bahasa Inggris",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 98,
+      "teks": "What is a synonym for the word 'happy'?",
+      "bahasa": "en",
+      "jawaban": "Glad",
+      "alternatif_jawaban": [
+        "Joyful",
+        "Pleased"
+      ],
+      "pembahasan": "Sinonim dari 'happy' antara lain glad, joyful, atau pleased.",
+      "topik": "Vocabulary - Synonyms",
+      "mapel": "Bahasa Inggris",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 99,
+      "teks": "What is the antonym of the word 'big'?",
+      "bahasa": "en",
+      "jawaban": "Small",
+      "alternatif_jawaban": [
+        "Little"
+      ],
+      "pembahasan": "Antonim (lawan kata) dari 'big' adalah 'small' atau 'little'.",
+      "topik": "Vocabulary - Antonyms",
+      "mapel": "Bahasa Inggris",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 100,
+      "teks": "What is the past tense form of the verb 'go'?",
+      "bahasa": "en",
+      "jawaban": "Went",
+      "alternatif_jawaban": [],
+      "pembahasan": "'Go' adalah kata kerja tidak beraturan; bentuk lampaunya adalah 'went'.",
+      "topik": "Vocabulary - Verb Forms",
+      "mapel": "Bahasa Inggris",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 101,
+      "teks": "What is the comparative form of the adjective 'tall'?",
+      "bahasa": "en",
+      "jawaban": "Taller",
+      "alternatif_jawaban": [],
+      "pembahasan": "Bentuk comparative (perbandingan) dari 'tall' adalah 'taller'.",
+      "topik": "Vocabulary - Degrees of Comparison",
+      "mapel": "Bahasa Inggris",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 102,
+      "teks": "What does the common abbreviation 'ASAP' stand for?",
+      "bahasa": "en",
+      "jawaban": "As Soon As Possible",
+      "alternatif_jawaban": [],
+      "pembahasan": "ASAP adalah akronim dari 'As Soon As Possible', artinya sesegera mungkin.",
+      "topik": "Common Abbreviations - Common Acronyms",
+      "mapel": "Bahasa Inggris",
+      "level": "sulit",
+      "waktu": 15
+    },
+    {
+      "id": 103,
+      "teks": "What is the contraction for 'do not'?",
+      "bahasa": "en",
+      "jawaban": "Don't",
+      "alternatif_jawaban": [],
+      "pembahasan": "Bentuk kontraksi dari 'do not' adalah 'don't'.",
+      "topik": "Common Abbreviations - Common Contractions",
+      "mapel": "Bahasa Inggris",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 104,
+      "teks": "How many players from one team are on the field at the same time in football (soccer)?",
+      "bahasa": "en",
+      "jawaban": "Eleven",
+      "alternatif_jawaban": [
+        "11"
+      ],
+      "pembahasan": "Setiap tim sepak bola menurunkan 11 pemain di lapangan pada saat bersamaan.",
+      "topik": "Sports",
+      "mapel": "Bahasa Inggris",
+      "level": "sedang",
+      "waktu": 10
+    },
+    {
+      "id": 105,
+      "teks": "In the story 'Cinderella', what does Cinderella lose at midnight?",
+      "bahasa": "en",
+      "jawaban": "Her glass slipper",
+      "alternatif_jawaban": [
+        "Glass slipper"
+      ],
+      "pembahasan": "Cinderella kehilangan sepatu kacanya (glass slipper) saat lari meninggalkan pesta tepat tengah malam.",
+      "topik": "Common Fairytales and Narratives",
+      "mapel": "Bahasa Inggris",
+      "level": "mudah",
+      "waktu": 10
+    },
+    {
+      "id": 106,
+      "teks": "Which part of the body do we use to smell?",
+      "bahasa": "en",
+      "jawaban": "Nose",
+      "alternatif_jawaban": [],
+      "pembahasan": "Kita menggunakan hidung (nose) untuk mencium/membaui sesuatu.",
+      "topik": "Body Parts",
+      "mapel": "Bahasa Inggris",
+      "level": "mudah",
+      "waktu": 10
+    }
+  ]
+}
