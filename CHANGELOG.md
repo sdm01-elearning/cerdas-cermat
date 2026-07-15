@@ -5,6 +5,78 @@ Format mengikuti [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ---
 
+## [1.4.0] — 2026-07-15
+
+### Ditambahkan
+- `latihan-tahap3.html` — halaman quiz Latihan Tahap 3, struktur identik dengan
+  `latihan-tahap1.html`/`latihan-tahap2.html` (loader fetch pool → inject
+  quiz-engine via QUIZ_CONFIG, shuffle, 30 soal/sesi).
+- `latihan-tahap3/soal/data/pool.json` — **Batch 1, 106 soal** sesuai
+  kisi-kisi Ujian Tahap 3 Liga Bintang Juara (6 mata pelajaran terpisah):
+  - Matematika — 18 soal (9 topik: bilangan cacah, pecahan, pola gambar &
+    pola bilangan, bangun datar dan sudut, hubungan satuan-satuan, bilangan
+    desimal, KPK dan FPB, rasio, data)
+  - Bahasa Indonesia — 18 soal (6 topik: sinonim & akronim, majas, tata kata,
+    makna kata, kalimat, paragraf)
+  - IPS — 16 soal (8 topik: keragaman budaya, ciri khas daerah, kedatangan
+    bangsa asing, aktivitas ekonomi, kondisi geografis, perlawanan terhadap
+    bangsa asing, benua-benua di dunia, kemerdekaan dan peristiwa di
+    sekitarnya)
+  - Pendidikan Pancasila — 16 soal (4 topik: Pancasila/perumusan & lambang,
+    UUD 1945/undang-undang & pasal, Bhinneka Tunggal Ika, NKRI/sistem
+    pemerintahan & lembaga negara & bentuk negara)
+  - IPA — 16 soal (8 topik: energi & perubahannya, gelombang, gaya,
+    ekosistem, sistem tubuh manusia, ciri & reproduksi makhluk hidup,
+    lingkungan hidup/daur air/pencemaran, alam semesta)
+  - Bahasa Inggris — 22 soal (22 subtopik prioritas dari kisi-kisi: general
+    knowledge, who am I, vocabulary, common abbreviations, sports,
+    fairytales, body parts — beberapa subtopik general knowledge/vocabulary
+    yang lebih jarang, mis. famous landmarks, sightseeing, parts of speech,
+    initialisms, disisakan untuk batch berikutnya)
+- `index.html` — card baru **"Latihan Tahap 3"** ditambahkan ke bottom row
+  (diubah dari `bottom-row-3` jadi `bottom-row-4`, 4 kolom: Soal Campuran,
+  Latihan Tahap 1, Latihan Tahap 2, Latihan Tahap 3). Style baru
+  `.cat-latihan3` (gradasi merah, aksen kuning), responsif 2 kolom di
+  <1100px dan 1 kolom di <600px.
+
+### Perubahan Kebijakan Konten (penting)
+- **Pendidikan Pancasila kini berdiri sendiri sebagai mapel terpisah**,
+  tidak lagi digabung dengan IPS seperti pada Tahap 1 & 2 — mengikuti
+  kisi-kisi Tahap 3 yang menampilkan 6 kotak kategori terpisah pada Round 1
+  (Matematika, Bahasa Indonesia, Bahasa Inggris, IPA, IPS, Pendidikan
+  Pancasila).
+- **Field `jawaban` wajib singkat** (kata/angka/frasa pendek, bukan
+  kalimat/paragraf) — perbaikan atas keluhan sejumlah soal Tahap 2 yang
+  menuntut jawaban panjang, tidak sesuai pola cerdas cermat (jawab cepat).
+  Seluruh 106 soal batch 1 divalidasi otomatis (skrip generator) agar tidak
+  ada `jawaban` melebihi 6 kata.
+
+### Mekanisme Teknis
+- Mengikuti pola yang sama dengan `latihan-tahap1`/`latihan-tahap2`: satu
+  pool gabungan per tahap, field `mapel` dipakai quiz-engine untuk badge
+  kategori.
+- `id` soal batch 1 berurutan 1–106, unik, dan akan dilanjutkan (107, 108,
+  …) saat batch 2 ditambahkan agar tidak collision.
+- Distribusi topik batch 1 mengikuti prinsip "topik prioritas/inti dahulu":
+  setiap mapel non-Inggris mendapat soal merata per topik kisi-kisi (2–4
+  soal/topik); kisi-kisi Bahasa Inggris yang jauh lebih granular (26
+  subtopik) disaring ke 22 subtopik prioritas dengan 1 soal/subtopik agar
+  cakupan tetap luas tanpa membuat batch 1 timpang.
+
+### Diketahui / Direncanakan
+- Batch 2+ pool Tahap 3 (menyusul) — akan melengkapi subtopik Bahasa Inggris
+  yang belum tercakup serta menambah kedalaman topik lain.
+- Catatan teknis untuk ditinjau: `stratifiedSample()` di `quiz-engine.js`
+  memaksa proporsi soal `bahasa: "en"` ke arah ~10% dalam satu sesi 30 soal.
+  Karena Bahasa Inggris kini adalah salah satu dari 6 mapel sejajar (bukan
+  sekadar ~10% sisipan seperti pada Tahap 1/2), perilaku ini bisa membuat
+  mapel Bahasa Inggris under-represented dibanding 5 mapel lain saat sesi
+  acak. Belum diubah pada rilis ini — perlu didiskusikan sebelum diubah agar
+  tidak mengganggu pool Tahap 1/2/Soal Campuran yang juga memakai fungsi
+  yang sama.
+
+---
+
 ## [1.3.0] — 2026-06-23
 
 ### Ditambahkan

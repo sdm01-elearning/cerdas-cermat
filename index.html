@@ -48,15 +48,30 @@
     .cat-latihan2 .cat-meta span { background: rgba(255,255,255,.12); color: rgba(255,255,255,.92); }
     .cat-latihan2 .cat-cta       { color: #ffd54f; }
 
-    /* Baris bawah sekarang menampung 3 kartu: Campuran, Tahap 1, Tahap 2 */
-    .bottom-row-3 {
+    /* Kartu Latihan Tahap 3 */
+    .cat-latihan3 {
+      background: linear-gradient(135deg, #b71c1c 0%, #d32f2f 60%, #e53935 100%);
+      color: #fff;
+    }
+    .cat-latihan3::before        { background: #ffee58; }
+    .cat-latihan3 .cat-title     { color: #ffee58; }
+    .cat-latihan3 .cat-desc      { color: rgba(255,255,255,.85); }
+    .cat-latihan3 .cat-meta      { color: rgba(255,255,255,.7); }
+    .cat-latihan3 .cat-meta span { background: rgba(255,255,255,.12); color: rgba(255,255,255,.92); }
+    .cat-latihan3 .cat-cta       { color: #ffee58; }
+
+    /* Baris bawah sekarang menampung 4 kartu: Campuran, Tahap 1, Tahap 2, Tahap 3 */
+    .bottom-row-4 {
       grid-column: 1 / -1;
       display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
       gap: 1.75rem;
     }
-    @media (max-width: 900px) {
-      .bottom-row-3 { grid-template-columns: 1fr; }
+    @media (max-width: 1100px) {
+      .bottom-row-4 { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 600px) {
+      .bottom-row-4 { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -128,8 +143,8 @@
         <div class="cat-cta">Masuk ke kategori →</div>
       </a>
 
-      <!-- ── Baris bawah: Soal Campuran + Latihan Tahap 1 + Latihan Tahap 2 ── -->
-      <div class="bottom-row-3">
+      <!-- ── Baris bawah: Soal Campuran + Latihan Tahap 1 + Latihan Tahap 2 + Latihan Tahap 3 ── -->
+      <div class="bottom-row-4">
 
         <a href="soal-campuran.html" class="category-card cat-campuran">
           <div class="cat-icon">🏆</div>
@@ -172,6 +187,21 @@
             <span>30 soal acak</span>
             <span>5 mata pelajaran</span>
             <span>Pool: 1000 soal</span>
+          </div>
+          <div class="cat-cta">Mulai latihan →</div>
+        </a>
+
+        <a href="latihan-tahap3.html" class="category-card cat-latihan3">
+          <div class="cat-icon">⭐</div>
+          <h2 class="cat-title">Latihan Tahap 3</h2>
+          <p class="cat-desc">
+            Persiapan Liga Bintang Juara — soal campuran Matematika, Bahasa Indonesia, IPS,
+            Pendidikan Pancasila, IPA, dan Bahasa Inggris sesuai kisi-kisi Ujian Tahap 3.
+          </p>
+          <div class="cat-meta">
+            <span>30 soal acak</span>
+            <span>6 mata pelajaran</span>
+            <span>Pool: 106 soal</span>
           </div>
           <div class="cat-cta">Mulai latihan →</div>
         </a>

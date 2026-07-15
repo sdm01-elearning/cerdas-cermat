@@ -103,6 +103,47 @@ paket-XX.html
 
 ---
 
+## [AR-004] — v1.4.0 · Latihan Tahap 3 (Batch 1)
+
+**Tanggal:** 2026-07-15
+**Cakupan:** `latihan-tahap3.html` (baru), `latihan-tahap3/soal/data/pool.json` (baru),
+`index.html` (dimodifikasi)
+
+### Perubahan
+- Halaman & pool baru untuk Latihan Tahap 3, pola identik dengan Tahap 1/2.
+- Skema mapel berubah: **Pendidikan Pancasila kini mapel mandiri**, terpisah dari
+  IPS (sebelumnya digabung sebagai "IPS & Pendidikan Pancasila" di Tahap 2).
+  Total mapel di pool Tahap 3: Matematika, Bahasa Indonesia, IPS, Pendidikan
+  Pancasila, IPA, Bahasa Inggris (6 mapel).
+- Kebijakan baru: field `jawaban` **wajib singkat** (kata/angka/frasa pendek).
+  Ini bukan perubahan struktur JSON (field tetap sama), melainkan perubahan
+  kebijakan pengisian konten untuk mencegah repeat masalah "jawaban terlalu
+  panjang" yang dikeluhkan pada sebagian soal Tahap 2.
+
+### Risiko Regresi
+
+| Area | Risiko | Mitigasi |
+|---|---|---|
+| Nilai `mapel` baru "Pendidikan Pancasila" | Kode/filter apa pun yang mengasumsikan hanya 5 nilai mapel (seperti pool Tahap 1/2) akan melewatkan mapel ini | quiz-engine.js tidak melakukan filter per-mapel (hanya menampilkan `s.topik` sebagai badge), jadi aman untuk saat ini; tetap dicatat bila nanti dibuat fitur filter per-mapel |
+| Proporsi `bahasa: "en"` | Pool Tahap 3 batch 1 punya ~20% soal EN (22/106) karena Bahasa Inggris kini mapel sejajar, bukan sisipan ~10% seperti Tahap 1/2 — namun `stratifiedSample()` di quiz-engine.js tetap memaksa ~10% EN per sesi 30 soal, sehingga proporsi tampil Bahasa Inggris bisa lebih rendah dari mapel lain saat sesi acak | Belum diubah — perlu keputusan eksplisit sebelum mengubah `stratifiedSample()` karena dipakai bersama oleh pool Tahap 1/2/Soal Campuran |
+| Cakupan kisi-kisi belum 100% | Batch 1 baru mencakup topik prioritas (terutama Bahasa Inggris: 22 dari 26 subtopik kisi-kisi) | Batch 2+ akan melengkapi subtopik yang tersisa; jangan anggap batch 1 sebagai representasi lengkap kisi-kisi Tahap 3 saat menyusun latihan tatap muka |
+| `id` soal | id batch 1 berurutan 1–106, unik | Batch 2 harus mulai dari id 107 agar tidak collision (ikuti pola Tahap 1/2) |
+| Grid `bottom-row-4` di `index.html` | Menambah 1 kolom dari `bottom-row-3` — breakpoint responsif diperbarui (2 kolom di <1100px, 1 kolom di <600px) | Sudah ditest secara visual di lebar 1400/1000/500px (mental check); disarankan cek ulang di browser sungguhan sebelum tampil di depan siswa |
+
+### Checklist Validasi
+
+- [ ] Buka `latihan-tahap3.html` via GitHub Pages atau lokal HTTP server
+- [ ] Pastikan 30 soal acak muncul dan badge topik tampil per soal
+- [ ] Cek minimal 3 soal dari tiap mapel (Matematika, Bahasa Indonesia, IPS,
+      Pendidikan Pancasila, IPA, Bahasa Inggris) — pastikan field `jawaban`
+      pendek dan wajar dibacakan cepat
+- [ ] Kartu "Latihan Tahap 3" tampil benar di `index.html`, warna tidak
+      tabrakan dengan 3 kartu lain, responsif di layar sempit
+- [ ] Link kartu mengarah ke `latihan-tahap3.html` ✓
+- [ ] Test keyboard: Spasi, →, F (fullscreen)
+
+---
+
 ## Panduan Pengisian ANTIREGRESI ke Depan
 
 Setiap kali membuat perubahan besar, tambahkan section baru:
