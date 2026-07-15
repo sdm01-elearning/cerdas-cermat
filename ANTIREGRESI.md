@@ -144,6 +144,38 @@ paket-XX.html
 
 ---
 
+## [AR-005] — v1.5.0 · Latihan Tahap 3 (Batch 2)
+
+**Tanggal:** 2026-07-15
+**Cakupan:** `latihan-tahap3/soal/data/pool.json` (ditambah, bukan diganti),
+`index.html` (label pool diperbarui)
+
+### Perubahan
+- +100 soal baru (id 107–206), total pool 206 soal.
+- Seluruh 26 subtopik kisi-kisi Bahasa Inggris kini tercakup 100% (batch 1
+  baru 22/26).
+- Tidak ada perubahan struktur field/skema JSON — murni penambahan data.
+
+### Risiko Regresi
+
+| Area | Risiko | Mitigasi |
+|---|---|---|
+| Kontinuitas id | Batch 2 harus lanjut dari id 106 (bukan mulai dari 1 lagi) agar `latihan-tahap3.html`/tools lain yang mungkin menyimpan progres per-id tidak bentrok | Divalidasi otomatis oleh skrip generator (`ids == sorted(set(ids))`), id 107–206 dikonfirmasi unik & berurutan |
+| Duplikasi konten | 22 subtopik Bahasa Inggris yang sudah ada di batch 1 mendapat soal ke-2 — berisiko soal terasa mirip/repetitif jika sesi 30-soal kebetulan menarik keduanya | Soal ke-2 ditulis dengan sudut pandang/fakta berbeda dari soal batch 1 pada topik yang sama (bukan duplikat/variasi angka saja) |
+| Label pool di `index.html` | Jika lupa diperbarui, akan menampilkan angka lama (106) meski pool sudah 206 | Sudah diperbarui pada rilis ini — cek ulang di rilis berikutnya bila batch 3 ditambahkan |
+| Kebijakan "jawaban singkat" | Berlaku juga untuk seluruh soal baru | Divalidasi otomatis (≤6 kata) sebelum file ditulis, konsisten dengan batch 1 |
+
+### Checklist Validasi
+
+- [ ] Reload `latihan-tahap3.html`, pastikan soal-soal baru (mis. tentang Borobudur,
+      Eiffel Tower, Snow White) bisa muncul dalam sesi acak
+- [ ] Cek badge kartu di `index.html` menampilkan "Pool: 206 soal"
+- [ ] Ambil sampel acak beberapa soal Bahasa Inggris — pastikan tidak ada
+      subtopik yang masih kosong (26/26 subtopik kini terisi)
+- [ ] Pastikan tidak ada soal dengan `id` duplikat setelah batch 1+2 digabung
+
+---
+
 ## Panduan Pengisian ANTIREGRESI ke Depan
 
 Setiap kali membuat perubahan besar, tambahkan section baru:

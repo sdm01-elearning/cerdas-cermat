@@ -5,6 +5,56 @@ Format mengikuti [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ---
 
+## [1.5.0] — 2026-07-15
+
+### Ditambahkan
+- `latihan-tahap3/soal/data/pool.json` — **Batch 2, +100 soal baru (id 107–206),
+  total pool sekarang 206 soal.** Melanjutkan urutan id dari batch 1 tanpa
+  collision.
+  - Matematika +18 (36 total) — kedalaman baru per topik yang sama seperti
+    batch 1 (mis. perkalian pecahan, pecahan campuran, luas persegi panjang,
+    jenis sudut, KPK/FPB nilai lebih besar, rata-rata & jangkauan data).
+  - Bahasa Indonesia +12 (30 total) — menambah jenis majas (metafora,
+    ironi), jenis kalimat (perintah, efektif), jenis paragraf (campuran),
+    dan makna kata (eufemisme).
+  - IPS +16 (32 total) — menambah tokoh perlawanan (Tuanku Imam Bonjol,
+    Sultan Hasanuddin), peristiwa kemerdekaan (Rengasdengklok, Fatmawati),
+    dan kondisi geografis (letak astronomis, iklim tropis).
+  - Pendidikan Pancasila +12 (28 total) — menambah tokoh perumus (Mohammad
+    Yamin, Panitia Sembilan), pasal UUD 1945 (30, 33), dan lembaga negara
+    (MA, MK).
+  - IPA +16 (32 total) — menambah topik gelombang longitudinal, gaya
+    magnet/dinamometer, populasi, kondensasi/presipitasi, gerhana bulan.
+  - Bahasa Inggris +26 (48 total) — **melengkapi seluruh 26/26 subtopik
+    kisi-kisi Bahasa Inggris.** 4 subtopik yang belum tersentuh di batch 1
+    kini ditambahkan: Famous Landmarks, Sightseeing/Tourist Attractions,
+    Identifying Parts of Speech in a Sentence, Common Initialisms — plus 22
+    subtopik lain mendapat soal kedua (soal baru, bukan duplikat) untuk
+    menambah kedalaman & variasi.
+
+### Perubahan
+- `index.html` — label jumlah soal pada kartu "Latihan Tahap 3" diperbarui
+  dari "Pool: 106 soal" menjadi **"Pool: 206 soal"**.
+
+### Validasi (otomatis via skrip generator)
+- id 1–206 berurutan dan unik (tidak ada collision antar batch).
+- Seluruh 100 `jawaban` soal baru divalidasi ≤ 6 kata (kebijakan singkat
+  tetap dipertahankan dari batch 1).
+- Seluruh field wajib (`id, teks, bahasa, jawaban, alternatif_jawaban,
+  pembahasan, topik, mapel, level, waktu`) lengkap pada tiap soal.
+- Cakupan subtopik Bahasa Inggris dikonfirmasi 26/26 (100%) setelah batch 2
+  digabungkan.
+
+### Diketahui / Direncanakan
+- Cakupan kisi-kisi non-Inggris kini rata-rata 3-6 soal/topik (masih di
+  bawah target ideal untuk pool besar); batch 3+ akan terus menambah
+  kedalaman serta variasi bentuk soal (bukan sekadar menambah jumlah).
+- Catatan `stratifiedSample()` dari batch 1 (proporsi EN ~10% per sesi 30
+  soal, sementara Bahasa Inggris kini mapel sejajar) masih berlaku dan
+  belum diubah — menunggu keputusan eksplisit.
+
+---
+
 ## [1.4.0] — 2026-07-15
 
 ### Ditambahkan
