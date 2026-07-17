@@ -176,6 +176,215 @@ paket-XX.html
 
 ---
 
+## [AR-006] — v1.6.0 · Latihan Tahap 3 (Batch 3)
+
+**Tanggal:** 2026-07-16
+**Cakupan:** `latihan-tahap3/soal/data/pool.json` (ditambah), `index.html`
+(label pool diperbarui)
+
+### Perubahan
+- +96 soal baru (id 207–302), total pool 302 soal.
+- Menambah kedalaman ke-2/ke-3 di seluruh topik non-Inggris, dan kedalaman
+  ke-2 (rata-rata 3 soal/subtopik) untuk seluruh 26 subtopik Bahasa Inggris.
+- Skrip generator kini menambahkan **pengecekan duplikat teks soal** di
+  seluruh pool gabungan, tidak hanya batch berjalan — mendeteksi bila suatu
+  saat ada soal yang tidak sengaja ditulis ulang persis sama.
+
+### Risiko Regresi
+
+| Area | Risiko | Mitigasi |
+|---|---|---|
+| Kontinuitas id | Batch 3 harus lanjut dari id 206 | Divalidasi otomatis, id 207–302 unik & berurutan |
+| Kemiripan soal antar batch | Beberapa topik kini punya 3+ soal — risiko soal terasa mirip meski faktanya berbeda (mis. beberapa soal UUD 1945 tentang pasal berbeda-beda) | Ditinjau manual saat penyusunan agar tiap soal menanyakan fakta/pasal/aspek yang benar-benar berbeda, bukan variasi angka dari soal yang sama |
+| Duplikat teks soal | Dengan pool yang makin besar, risiko menulis ulang pertanyaan yang sama persis meningkat | Ditambahkan validasi otomatis (`teks_list` dicek duplikat) — lolos untuk batch 1-3 |
+| Label pool di `index.html` | Bisa tertinggal menunjukkan angka lama | Diperbarui ke "Pool: 302 soal" pada rilis ini |
+
+### Checklist Validasi
+
+- [ ] Reload `latihan-tahap3.html`, cek soal-soal baru (mis. tentang Ngaben,
+      W.R. Supratman, Papua New Guinea) bisa muncul dalam sesi acak
+- [ ] Cek badge kartu di `index.html` menampilkan "Pool: 302 soal"
+- [ ] Spot-check beberapa soal Matematika baru secara manual (skala peta,
+      rasio total, keliling) — pastikan perhitungan pembahasan benar
+- [ ] Pastikan tidak ada `id` atau `teks` duplikat setelah batch 1+2+3
+      digabung (sudah divalidasi otomatis oleh skrip, disarankan spot-check
+      ulang oleh guru pendamping)
+
+---
+
+## [AR-007] — v1.7.0 · Sampling Per-Mapel untuk Latihan Tahap 3 (Perubahan Engine Bersama)
+
+**Tanggal:** 2026-07-16
+**Cakupan:** `assets/js/quiz-engine.js` (dipakai bersama semua halaman quiz),
+`latihan-tahap3.html` (mengaktifkan opsi baru)
+
+**⚠️ Ini satu-satunya AR sejauh ini yang menyentuh file bersama
+(`quiz-engine.js`) — dampaknya berpotensi lintas halaman, jadi ditinjau
+lebih ketat dari AR sebelumnya.**
+
+### Perubahan
+- Menambahkan fungsi `stratifiedSampleByMapel()` dan opsi
+  `QUIZ_CONFIG.stratifyBy` (`'bahasa'` default / `'mapel'`).
+- Hanya `latihan-tahap3.html` yang diubah untuk memakai `stratifyBy: 'mapel'`.
+  `latihan-tahap1.html`, `latihan-tahap2.html`, dan halaman Soal Campuran
+  **tidak disentuh sama sekali** — tetap memakai `stratifiedSample()` lama
+  secara default karena tidak men-set `stratifyBy`.
+
+### Mengapa Aman (Non-Regresi)
+1. Fungsi lama `stratifiedSample()` tidak diubah satu baris pun (lihat diff
+   di commit ini) — hanya ditambah pengecekan `cfg.stratifyBy === 'mapel'`
+   sebagai percabangan baru sebelum jatuh ke fungsi lama sebagai default.
+2. `stratifiedSampleByMapel()` adalah fungsi baru yang berdiri sendiri,
+   tidak memanggil atau memodifikasi `stratifiedSample()`.
+3. Halaman manapun yang tidak menambahkan `stratifyBy: 'mapel'` di
+   `QUIZ_CONFIG`-nya otomatis memakai jalur kode lama — termasuk paket
+   materi (`cerdas-cermat/*/soal/paket-XX.json`) dan hub yang mungkin
+   memakai `quiz-engine.js` yang sama.
+
+### Risiko Regresi
+
+| Area | Risiko | Mitigasi |
+|---|---|---|
+| Pool dengan mapel timpang jauh | Jika suatu saat ada mapel dengan pool sangat kecil (mis. < 5 soal saat target 5/sesi), `stratifiedSampleByMapel` akan otomatis mengisi kekurangan dari mapel lain (lihat blok "isi kekurangan" di kode) — sesi tetap 30 soal, tapi proporsi mapel itu turun di bawah target untuk sesi tersebut | Sudah ditangani di kode; divalidasi lewat simulasi 5.000 sesi (semua sesi tetap tepat 30 soal) |
+| Halaman lain yang lupa/sengaja tidak set `stratifyBy` | Tetap pakai default `'bahasa'` — TIDAK otomatis ikut merata per mapel | Ini disengaja (backward compatible); jika suatu saat Tahap 1/2 ingin perilaku sama, harus ditambahkan eksplisit `stratifyBy: 'mapel'` di HTML masing-masing, bukan mengubah default global |
+| `_lainnya` fallback key | Jika ada soal tanpa field `mapel` terisi, otomatis masuk grup `_lainnya` dan tetap dapat alokasi rata seperti mapel lain | Tidak relevan untuk pool saat ini (semua soal Tahap 1/2/3 sudah punya `mapel` terisi), dicatat untuk jaga-jaga |
+
+### Checklist Validasi
+
+- [ ] Buka `latihan-tahap3.html`, jalankan beberapa sesi berturut-turut,
+      hitung manual badge topik → pastikan tiap mapel muncul ~5x per 30 soal
+- [ ] Buka `latihan-tahap1.html` dan `latihan-tahap2.html`, pastikan
+      perilaku tidak berubah (soal EN tetap ~10%, seperti sebelumnya)
+- [ ] Jika ada halaman lain yang memakai `quiz-engine.js` (mis. paket materi
+      per topik), pastikan tetap berjalan normal tanpa error JS di console
+
+---
+
+## [AR-008] — v1.8.0 · Latihan Tahap 3 (Batch 4)
+
+**Tanggal:** 2026-07-17
+**Cakupan:** `latihan-tahap3/soal/data/pool.json` (ditambah), `index.html`
+(label pool diperbarui)
+
+### Perubahan
+- +96 soal baru (id 303–398), total pool 398 soal.
+- Kedalaman topik non-Inggris kini rata-rata 6-12 soal/topik; Bahasa
+  Inggris rata-rata ~4 soal/subtopik (26 subtopik x ~4).
+
+### Risiko Regresi
+
+| Area | Risiko | Mitigasi |
+|---|---|---|
+| Kontinuitas id | Batch 4 harus lanjut dari id 302 | Divalidasi otomatis, id 303–398 unik & berurutan |
+| Interaksi dengan `stratifyBy: 'mapel'` (AR-007) | Pool yang makin besar & timpang antar mapel (Bahasa Inggris 100 vs Pendidikan Pancasila 44) berpotensi mengubah perilaku sampling | Disimulasikan ulang 5.000 sesi pada pool 398 soal — hasil tetap tepat 5 soal/mapel/sesi, tidak terpengaruh ukuran pool per mapel karena `stratifiedSampleByMapel` mengambil sampel acak dari tiap grup terlepas dari ukuran totalnya |
+| Soal dengan konten sensitif/berubah cepat | Ada godaan menambahkan soal tentang topik yang sedang berkembang (mis. status Ibu Kota Nusantara) — berisiko keliru karena bisa berubah setelah cutoff pengetahuan | Sengaja dihindari pada batch ini; topik NKRI diarahkan ke fakta yang stabil (pemilihan presiden langsung, otonomi daerah) |
+| Label pool di `index.html` | Bisa tertinggal menunjukkan angka lama | Diperbarui ke "Pool: 398 soal" pada rilis ini |
+
+### Checklist Validasi
+
+- [ ] Reload `latihan-tahap3.html`, cek soal-soal baru bisa muncul dalam
+      sesi acak dan tetap 5 soal/mapel per sesi
+- [ ] Cek badge kartu di `index.html` menampilkan "Pool: 398 soal"
+- [ ] Spot-check soal Matematika baru (pembagian pecahan, luas segitiga,
+      kecepatan-jarak) — pastikan perhitungan pembahasan benar
+- [ ] Pastikan tidak ada `id`/`teks` duplikat setelah batch 1-4 digabung
+
+---
+
+## [AR-009] — v1.9.0 · Latihan Tahap 3 (Batch 5)
+
+**Tanggal:** 2026-07-17
+**Cakupan:** `latihan-tahap3/soal/data/pool.json` (ditambah), `index.html`
+(label pool diperbarui)
+
+### Perubahan
+- +96 soal baru (id 399–494), total pool 494 soal.
+- Bahasa Inggris kini melengkapi seluruh 5 samudra dunia sebagai satu
+  sub-tema penuh di bawah subtopik Oceans.
+
+### Risiko Regresi
+
+| Area | Risiko | Mitigasi |
+|---|---|---|
+| Kontinuitas id | Batch 5 harus lanjut dari id 398 | Divalidasi otomatis, id 399–494 unik & berurutan |
+| Ukuran pool Bahasa Inggris makin dominan (126 dari 494, ~25%) | Berpotensi mengubah *rasa* proporsi pool meski sampling per sesi tetap merata | Tidak berdampak pada sesi latihan (tetap 5/mapel berkat `stratifyBy: 'mapel'`); dicatat sebagai pertimbangan bila batch depan ingin menyeimbangkan ukuran pool antar mapel demi kerapian data, bukan demi fungsi |
+| Fakta yang berpotensi sensitif/berubah (mis. jumlah pulau Indonesia, provinsi) | Angka seperti "17.000 pulau" bisa sedikit bervariasi tergantung sumber/metode hitung | Dipilih angka yang umum dan stabil digunakan dalam materi pendidikan SD, bukan angka presisi yang mudah diperdebatkan |
+| Label pool di `index.html` | Bisa tertinggal menunjukkan angka lama | Diperbarui ke "Pool: 494 soal" pada rilis ini |
+
+### Checklist Validasi
+
+- [ ] Reload `latihan-tahap3.html`, cek soal-soal baru bisa muncul dan tetap
+      5 soal/mapel per sesi
+- [ ] Cek badge kartu di `index.html` menampilkan "Pool: 494 soal"
+- [ ] Spot-check soal IPS baru yang menyangkut sejarah (EIC, Garis Wallace,
+      naskah klad) — pastikan istilah tidak membingungkan untuk siswa SD
+- [ ] Pastikan tidak ada `id`/`teks` duplikat setelah batch 1-5 digabung
+
+---
+
+## [AR-010] — v1.10.0 · Latihan Tahap 3 (Batch 6)
+
+**Tanggal:** 2026-07-17
+**Cakupan:** `latihan-tahap3/soal/data/pool.json` (ditambah), `index.html`
+(label pool diperbarui)
+
+### Perubahan
+- +96 soal baru (id 495–590), total pool 590 soal.
+- Lambang seluruh 5 sila Pancasila kini lengkap tersebar di pool (bintang,
+  rantai, pohon beringin, kepala banteng, padi & kapas).
+- Skrip generator mendapat pengecekan baru: pasangan (topik, jawaban) yang
+  berulang dilaporkan sebagai info (bukan blocker) untuk membantu tinjauan
+  manual.
+
+### Risiko Regresi
+
+| Area | Risiko | Mitigasi |
+|---|---|---|
+| Kontinuitas id | Batch 6 harus lanjut dari id 494 | Divalidasi otomatis, id 495–590 unik & berurutan |
+| Pool sangat besar (590 soal) | Semakin besar pool, semakin sulit meninjau manual satu per satu; risiko soal dengan kualitas/akurasi lebih rendah meningkat seiring skala | Setiap fakta baru tetap ditulis dan diverifikasi manual terhadap pengetahuan umum sebelum dimasukkan ke skrip; pengecekan pasangan topik+jawaban membantu menandai soal yang perlu ditinjau ulang |
+| Kelelahan pola soal (fatigue) | Beberapa topik kini punya 10-15+ soal — berpotensi soal terasa "template" meski faktanya berbeda | Belum ada mitigasi otomatis; disarankan uji coba lapangan sebelum batch 7 untuk masukan langsung dari guru/siswa |
+| Label pool di `index.html` | Bisa tertinggal menunjukkan angka lama | Diperbarui ke "Pool: 590 soal" pada rilis ini |
+
+### Checklist Validasi
+
+- [ ] Reload `latihan-tahap3.html`, cek soal-soal baru bisa muncul dan tetap
+      5 soal/mapel per sesi
+- [ ] Cek badge kartu di `index.html` menampilkan "Pool: 590 soal"
+- [ ] **Disarankan:** lakukan sesi latihan sungguhan dengan siswa sebelum
+      menambah batch berikutnya, kumpulkan catatan soal mana yang perlu
+      direvisi (ambigu, terlalu sulit/mudah, atau jawabannya membingungkan)
+
+---
+
+## [AR-011] — v1.11.0 · Latihan Tahap 3 (Batch 7)
+
+**Tanggal:** 2026-07-17
+**Cakupan:** `latihan-tahap3/soal/data/pool.json` (ditambah), `index.html`
+(label pool diperbarui)
+
+### Perubahan
+- +96 soal baru (id 591–686), total pool 686 soal.
+
+### Risiko Regresi
+
+| Area | Risiko | Mitigasi |
+|---|---|---|
+| Kontinuitas id | Batch 7 harus lanjut dari id 590 | Divalidasi otomatis, id 591–686 unik & berurutan |
+| Skala pool sangat besar (686 soal) | Semakin sulit ditinjau manual menyeluruh; beberapa fakta yang lebih niche (mis. Van den Bosch, Sutan Syahrir, konvensi ketatanegaraan) berpotensi terlalu detail untuk sebagian siswa SD | Tingkat kesulitan (`level`) sudah ditandai "sulit" untuk fakta-fakta ini agar host/guru bisa menyesuaikan; disarankan tinjauan guru sebelum tayang untuk menyaring soal yang dirasa terlalu berat |
+| Label pool di `index.html` | Bisa tertinggal menunjukkan angka lama | Diperbarui ke "Pool: 686 soal" pada rilis ini |
+
+### Checklist Validasi
+
+- [ ] Reload `latihan-tahap3.html`, cek soal-soal baru bisa muncul dan tetap
+      5 soal/mapel per sesi
+- [ ] Cek badge kartu di `index.html` menampilkan "Pool: 686 soal"
+- [ ] **Sangat disarankan:** sebelum batch 8, uji pool 686 soal ini dengan
+      sesi latihan nyata bersama siswa dan guru pendamping. Tandai soal yang
+      terasa ambigu/terlalu sulit agar bisa direvisi, bukan sekadar ditambah
+      terus dari sisi kuantitas.
+
+---
+
 ## Panduan Pengisian ANTIREGRESI ke Depan
 
 Setiap kali membuat perubahan besar, tambahkan section baru:
