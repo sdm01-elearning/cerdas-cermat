@@ -385,6 +385,108 @@ lebih ketat dari AR sebelumnya.**
 
 ---
 
+## [AR-012] — v1.12.0 · Latihan Tahap 3 (Batch 8)
+
+**Tanggal:** 2026-07-17
+**Cakupan:** `latihan-tahap3/soal/data/pool.json` (ditambah), `index.html`
+(label pool diperbarui)
+
+### Perubahan
+- +96 soal baru (id 687–782), total pool 782 soal. Menuju target 1000
+  soal (10 batch) sesuai kesepakatan dengan penyusun materi.
+
+### Risiko Regresi
+
+| Area | Risiko | Mitigasi |
+|---|---|---|
+| Kontinuitas id | Batch 8 harus lanjut dari id 686 | Divalidasi otomatis, id 687–782 unik & berurutan |
+| Rencana batch 10 tidak seragam (122 soal, bukan 96) | Skrip generator batch 10 nanti perlu penyesuaian jumlah soal per mapel agar totalnya tetap genap 1000 dan proporsional | Dicatat di sini sebagai pengingat eksplisit sebelum batch 10 disusun |
+| Label pool di `index.html` | Bisa tertinggal menunjukkan angka lama | Diperbarui ke "Pool: 782 soal" pada rilis ini |
+
+### Checklist Validasi
+
+- [ ] Reload `latihan-tahap3.html`, cek soal-soal baru bisa muncul dan tetap
+      5 soal/mapel per sesi
+- [ ] Cek badge kartu di `index.html` menampilkan "Pool: 782 soal"
+
+---
+
+## [AR-013] — v1.13.0 · Latihan Tahap 3 (Batch 9)
+
+**Tanggal:** 2026-07-17
+**Cakupan:** `latihan-tahap3/soal/data/pool.json` (ditambah), `index.html`
+(label pool diperbarui)
+
+### Perubahan
+- +96 soal baru (id 783–878), total pool 878 soal.
+
+### Risiko Regresi
+
+| Area | Risiko | Mitigasi |
+|---|---|---|
+| Kontinuitas id | Batch 9 harus lanjut dari id 782 | Divalidasi otomatis, id 783–878 unik & berurutan |
+| Batch 10 (terakhir) berukuran tidak standar (+122, bukan +96) | Skrip generator batch 10 perlu alokasi soal per mapel yang disesuaikan (bukan pola 18/12/16/8/16/26 seperti biasa) agar total genap 1000 dan proporsi mapel tetap wajar | Perlu direncanakan eksplisit saat menyusun batch 10 — lihat rencana di CHANGELOG v1.13.0 |
+| Label pool di `index.html` | Bisa tertinggal menunjukkan angka lama | Diperbarui ke "Pool: 878 soal" pada rilis ini |
+
+### Checklist Validasi
+
+- [ ] Reload `latihan-tahap3.html`, cek soal-soal baru bisa muncul dan tetap
+      5 soal/mapel per sesi
+- [ ] Cek badge kartu di `index.html` menampilkan "Pool: 878 soal"
+
+---
+
+## [AR-014] — v2.0.0 · Latihan Tahap 3 (Batch 10 — TERAKHIR, Target 1000 Soal Tercapai)
+
+**Tanggal:** 2026-07-17
+**Cakupan:** `latihan-tahap3/soal/data/pool.json` (ditambah, target akhir
+tercapai), `index.html` (label pool diperbarui)
+
+**🎯 Ini adalah AR penutup untuk fase pembuatan soal Latihan Tahap 3.**
+Pool kini genap 1000 soal, menyamai skala Latihan Tahap 1 dan Tahap 2.
+
+### Perubahan
+- +122 soal baru (id 879–1000) — alokasi disesuaikan (bukan pola +96
+  standar) agar totalnya tepat 1000: Matematika +18, Bahasa Indonesia +12,
+  IPS +16, Pendidikan Pancasila +8, IPA +16, Bahasa Inggris +52 (2
+  soal/subtopik untuk seluruh 26 subtopik).
+- Field `meta.status` ditambahkan ke `pool.json` untuk menandai bahwa
+  fase pembuatan soal telah selesai.
+
+### Insiden yang Tertangkap Validasi (dan diperbaiki)
+Draf awal batch ini sempat memuat pertanyaan "What does UNESCO stand
+for?" dengan jawaban ekspansi penuh 8 kata (melanggar kebijakan jawaban
+singkat ≤ 6 kata). Ini terdeteksi otomatis oleh skrip validasi generator
+sebelum file final ditulis, dan diperbaiki dengan mengganti soal menjadi
+pertanyaan lain (UNESCO bernaung di bawah organisasi apa → "United
+Nations") yang tetap membahas topik sama namun jawabannya singkat. Ini
+menjadi bukti bahwa lapisan validasi otomatis yang dibangun sejak batch 1
+berhasil menangkap pelanggaran sebelum sampai ke produk akhir.
+
+### Risiko Regresi
+
+| Area | Risiko | Mitigasi |
+|---|---|---|
+| Kontinuitas id | Batch 10 harus lanjut dari id 878, dan merupakan batch terakhir (tidak ada batch 11 untuk pembuatan soal awal) | Divalidasi otomatis, id 879–1000 unik & berurutan, total tepat 1000 (assert eksplisit di skrip generator) |
+| Alokasi tidak seragam (+122, bukan +96) | Risiko human error dalam menghitung alokasi per mapel agar totalnya pas 1000 | Dihitung eksplisit di kepala skrip generator (komentar alokasi) dan divalidasi dengan `assert len(combined) == 1000` yang menghentikan proses jika meleset |
+| Ukuran akhir per mapel tidak seragam (92-282) | Bahasa Inggris jauh lebih besar (282) dibanding Pendidikan Pancasila (92) — bisa terkesan tidak seimbang jika dilihat sebagai proporsi pool mentah | Tidak berdampak pada pengalaman latihan karena sampling tetap 5/mapel/sesi (`stratifyBy: 'mapel'`); jika nanti dibangun mode latihan per-mapel terpisah, perlu diperhatikan bahwa "kedalaman" Bahasa Inggris lebih tinggi dari mapel lain |
+| Label pool di `index.html` | Bisa tertinggal menunjukkan angka lama | Diperbarui ke "Pool: 1000 soal" pada rilis ini |
+
+### Checklist Validasi
+
+- [ ] Reload `latihan-tahap3.html`, cek soal-soal baru bisa muncul dan tetap
+      5 soal/mapel per sesi
+- [ ] Cek badge kartu di `index.html` menampilkan "Pool: 1000 soal"
+- [ ] **Sangat disarankan sebelum digunakan di siaran:** lakukan minimal
+      beberapa sesi uji coba lapangan dengan siswa dan guru pendamping
+      untuk memvalidasi kualitas soal secara langsung, karena pool sebesar
+      ini (1000 soal, dibuat dalam 10 batch berurutan tanpa jeda uji coba
+      di tengah jalan) belum pernah diuji dengan pengguna sungguhan.
+- [ ] Diskusikan dan rencanakan desain mode latihan per-mapel/kategori
+      sebelum implementasi (lihat rencana di CHANGELOG v2.0.0)
+
+---
+
 ## Panduan Pengisian ANTIREGRESI ke Depan
 
 Setiap kali membuat perubahan besar, tambahkan section baru:

@@ -5,6 +5,146 @@ Format mengikuti [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ---
 
+## [2.0.0] — 2026-07-17 — 🎯 TARGET 1000 SOAL TERCAPAI
+
+### Ditambahkan
+- `latihan-tahap3/soal/data/pool.json` — **Batch 10 (TERAKHIR), +122 soal
+  baru (id 879–1000). Pool Latihan Tahap 3 genap mencapai target 1000
+  soal, menyamai skala pool Latihan Tahap 1 dan Tahap 2.**
+  - Matematika +18 (180 total)
+  - Bahasa Indonesia +12 (126 total)
+  - IPS +16 (160 total)
+  - Pendidikan Pancasila +8 (92 total)
+  - IPA +16 (160 total)
+  - Bahasa Inggris +52 — 2 soal/subtopik, kedalaman ke-9 & ke-10 untuk
+    seluruh 26 subtopik (282 total)
+
+### Perubahan
+- `index.html` — label jumlah soal pada kartu "Latihan Tahap 3" diperbarui
+  menjadi **"Pool: 1000 soal"**.
+- `pool.json` meta — ditambahkan field `status: "SELESAI — 10/10 batch,
+  target 1000 soal tercapai"` sebagai penanda eksplisit bahwa fase
+  pembuatan soal awal sudah rampung.
+
+### Validasi (otomatis via skrip generator + simulasi)
+- id 1–1000 berurutan dan unik.
+- Seluruh 122 `jawaban` baru divalidasi ≤ 6 kata. **Catatan proses:** draf
+  awal sempat memuat 1 pelanggaran (ekspansi akronim UNESCO 8 kata) yang
+  terdeteksi otomatis oleh skrip validasi dan diperbaiki sebelum file final
+  ditulis — soal diganti dengan pertanyaan lain yang jawabannya tetap
+  singkat.
+- Tidak ada teks soal duplikat persis di seluruh 1000 soal.
+- Simulasi 5.000 sesi acak 30 soal terhadap pool 1000 soal — tetap tepat
+  5 soal/mapel/sesi untuk keenam mapel (Matematika, Bahasa Indonesia, IPS,
+  Pendidikan Pancasila, IPA, Bahasa Inggris).
+
+### Distribusi Final (1000 soal)
+| Mapel | Jumlah |
+|---|---|
+| Bahasa Inggris | 282 |
+| Matematika | 180 |
+| IPS | 160 |
+| IPA | 160 |
+| Bahasa Indonesia | 126 |
+| Pendidikan Pancasila | 92 |
+
+### Rencana Selanjutnya
+Sesuai kesepakatan dengan penyusun materi: tahap pembuatan soal (10 batch)
+sudah selesai. Langkah berikutnya adalah membangun **mode latihan per
+mapel/kategori** menggunakan pool 1000 soal yang sama — bukan file/pool
+terpisah, melainkan mekanisme filter di `quiz-engine.js` (konsisten dengan
+pendekatan additive `stratifyBy` di v1.7.0) sehingga satu sumber data tetap
+terjaga dan mudah dirawat.
+
+---
+
+## [1.13.0] — 2026-07-17
+
+### Ditambahkan
+- `latihan-tahap3/soal/data/pool.json` — **Batch 9, +96 soal baru (id 783–878),
+  total pool sekarang 878 soal.**
+  - Matematika +18 (162 total) — pola perkalian, penjumlahan pecahan
+    campuran 3 suku, segi enam, segitiga sama kaki, windu+dasawarsa, KPK/FPB
+    baru, rasio buku, skala peta, data primer & sekunder.
+  - Bahasa Indonesia +12 (114 total) — majas metonimia & anafora, imbuhan
+    ke-...-an, kata ulang dwipurwa, peribahasa "tong kosong nyaring
+    bunyinya", makna kias "tulang punggung", kalimat majemuk setara,
+    paragraf pendahuluan & kalimat sumbang.
+  - IPS +16 (144 total) — Gamelan, Reog Ponorogo, Banjarmasin Kota Seribu
+    Sungai, Bangka Belitung penghasil timah, politik devide et impera,
+    politik etis, distributor, teluk, Supriyadi, PETA, Samudra Arktik,
+    Bung Tomo, Hari Pahlawan.
+  - Pendidikan Pancasila +8 (84 total) — usulan dasar negara Soepomo, UUD
+    1945 sebagai hukum dasar, kewenangan MPR mengamandemen, klenteng,
+    gereja, KPU, usia minimal hak pilih.
+  - IPA +16 (144 total) — energi bunyi pada radio, amplitudo & kekerasan
+    bunyi, USG, gaya elastis ketapel, ekosistem tundra, rantai makanan,
+    enzim amilase, iris mata, metagenesis, benang sari, syarat air bersih,
+    tebang pilih, gerhana matahari, galaksi.
+  - Bahasa Inggris +26 (230 total) — kedalaman ke-8 untuk seluruh 26
+    subtopik (mis. Seoul, Java Sea, Venus si kembaran Bumi, Edward Jenner,
+    Stonehenge, Merapi, kiwi, oboe, joey, FBI).
+
+### Perubahan
+- `index.html` — label jumlah soal pada kartu "Latihan Tahap 3" diperbarui
+  menjadi **"Pool: 878 soal"**.
+
+### Validasi (otomatis via skrip generator + simulasi)
+- id 1–878 berurutan dan unik; 96 `jawaban` baru ≤ 6 kata; tidak ada teks
+  soal duplikat persis di seluruh 878 soal.
+- Simulasi ulang 5.000 sesi acak 30 soal terhadap pool 878 soal — tetap
+  tepat 5 soal/mapel/sesi untuk keenam mapel.
+
+### Rencana
+- **Satu batch lagi menuju target 1000 soal:** batch 10 akan menambah
+  +122 soal (bukan 96 seperti biasa) agar totalnya genap 1000.
+
+---
+
+## [1.12.0] — 2026-07-17
+
+### Ditambahkan
+- `latihan-tahap3/soal/data/pool.json` — **Batch 8, +96 soal baru (id 687–782),
+  total pool sekarang 782 soal.**
+  - Matematika +18 (144 total) — kelipatan 7, pola bilangan segitiga,
+    segitiga sembarang, persegi panjang, dasawarsa, kuartal, nilai tempat
+    desimal, KPK/FPB baru, skala jarak, rasio kelereng, nilai maksimum.
+  - Bahasa Indonesia +12 (102 total) — majas simbolik & asosiasi, akhiran
+    -an, afiksasi, peribahasa "air susu dibalas air tuba", makna kias
+    "hijau", kalimat majemuk bertingkat, paragraf ulasan & koherensi.
+  - IPS +16 (128 total) — upacara Kasada, rumah Honai, Cirebon Kota Udang,
+    Riau penghasil sawit, Tanjung Harapan, ekspedisi Spanyol ke Maluku,
+    Sultan Iskandar Muda, Sultan Baabullah, Gurun Sahara, Selat Bering,
+    Ahmad Soebardjo.
+  - Pendidikan Pancasila +8 (76 total) — tanggal usulan nama Pancasila,
+    Pancasila sebagai pandangan hidup, Pasal 1 ayat 3, kekuasaan MPR
+    sebelum amandemen, bentuk pemerintahan Republik, DPRD.
+  - IPA +16 (128 total) — dinamo sepeda, bunyi ultrasonik & infrasonik,
+    Hukum Newton, hutan hujan tropis, daun telinga, otak besar/kecil/batang
+    otak, lumut, stek, transpirasi, satelit, ekor komet.
+  - Bahasa Inggris +26 (204 total) — kedalaman ke-7 untuk seluruh 26
+    subtopik (mis. Rome, Mediterranean Sea, Machu Picchu, Belitung,
+    durian, cello, GPS, Olympic rings, Pinocchio).
+
+### Perubahan
+- `index.html` — label jumlah soal pada kartu "Latihan Tahap 3" diperbarui
+  menjadi **"Pool: 782 soal"**.
+
+### Validasi (otomatis via skrip generator + simulasi)
+- id 1–782 berurutan dan unik; 96 `jawaban` baru ≤ 6 kata; tidak ada teks
+  soal duplikat persis di seluruh 782 soal.
+- Simulasi ulang 5.000 sesi acak 30 soal terhadap pool 782 soal — tetap
+  tepat 5 soal/mapel/sesi untuk keenam mapel.
+
+### Rencana
+- Target akhir 1000 soal (10 batch), disepakati bersama penyusun materi.
+  Sisa: **batch 9 (+96 → 878)** dan **batch 10 (+122 → 1000, pas)**.
+  Setelah 1000 soal tercapai, rencana berikutnya adalah membangun mode
+  latihan per-mapel/kategori menggunakan pool yang sama (filter di
+  quiz-engine.js, konsisten dengan pendekatan `stratifyBy` di v1.7.0).
+
+---
+
 ## [1.11.0] — 2026-07-17
 
 ### Ditambahkan
