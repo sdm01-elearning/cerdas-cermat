@@ -10,6 +10,21 @@
  *       dataUrl:       'data/pool.json',  // path ke JSON (pool atau paket)
  *       questionCount: 30,               // soal per sesi (default 30, 0 = semua)
  *       shuffle:       true,             // acak urutan (default true)
+ *       stratifyBy:    'bahasa',         // opsional: 'bahasa' (default, ~10% EN)
+ *                                        // atau 'mapel' (bagi rata per mapel,
+ *                                        // dipakai Latihan Tahap 3 karena semua
+ *                                        // mapel—termasuk Bahasa Inggris—sejajar)
+ *       mapelFilter:   'Matematika',     // opsional: string atau array nama mapel.
+ *                                        // Jika diisi, pool difilter ke mapel
+ *                                        // tsb SEBELUM sampling. Dipakai untuk
+ *                                        // latihan per-babak (mis. Round 1
+ *                                        // "Kumpul Poin" — pilih 1 dari 6 mapel).
+ *       fixedWaktu:    5,                // opsional: paksa timer tiap soal ke
+ *                                        // angka detik ini, mengabaikan field
+ *                                        // `waktu` per-soal di pool. Dipakai
+ *                                        // untuk babak dengan waktu jawab tetap
+ *                                        // sesuai kisi-kisi (mis. Round 1 & 2:
+ *                                        // 5 detik).
  *     };
  *   </script>
  *   <script src="../../assets/js/quiz-engine.js"></script>
@@ -68,6 +83,48 @@
     return shuffle(selected); // acak campuran akhir
   }
 
+  /**
+   * Stratified sampling per mapel: bagi rata jumlah soal ke tiap nilai
+   * `mapel` yang ada di pool (mis. 30 soal / 6 mapel = 5 soal/mapel).
+   * Sisa pembagian (jika count tidak habis dibagi jumlah mapel) diacak
+   * urutan mapelnya tiap sesi supaya tidak selalu mapel yang sama yang
+   * "beruntung" dapat +1 soal.
+   * Dipakai saat QUIZ_CONFIG.stratifyBy === 'mapel' (lihat dokumentasi di
+   * atas) — dibuat terpisah dari stratifiedSample() (default, berbasis
+   * bahasa) agar Latihan Tahap 1/2 dan Soal Campuran tidak terpengaruh.
+   */
+  function stratifiedSampleByMapel(pool, count) {
+    if (pool.length <= count) return shuffle(pool);
+
+    const groups = {};
+    pool.forEach(s => {
+      const key = s.mapel || '_lainnya';
+      (groups[key] = groups[key] || []).push(s);
+    });
+
+    const mapelKeys = shuffle(Object.keys(groups));
+    const n    = mapelKeys.length;
+    const base = Math.floor(count / n);
+    let remainder = count - base * n;
+
+    let selected = [];
+    mapelKeys.forEach(key => {
+      let target = base + (remainder > 0 ? 1 : 0);
+      if (remainder > 0) remainder--;
+      selected = selected.concat(shuffle(groups[key]).slice(0, Math.min(target, groups[key].length)));
+    });
+
+    // Jika ada mapel dengan pool lebih sedikit dari target-nya, isi kekurangan
+    // dari sisa soal (mapel manapun) agar total tetap `count`.
+    if (selected.length < count) {
+      const usedIds = new Set(selected.map(s => s.id));
+      const sisa    = shuffle(pool.filter(s => !usedIds.has(s.id)));
+      selected = selected.concat(sisa.slice(0, count - selected.length));
+    }
+
+    return shuffle(selected);
+  }
+
   /* ── Main ──────────────────────────────────────────────── */
   async function init() {
     const cfg  = window.QUIZ_CONFIG || {};
@@ -110,16 +167,34 @@
       return;
     }
 
+    /* Filter opsional per mapel (dipakai latihan per-babak) */
+    let basePool = pool;
+    if (cfg.mapelFilter) {
+      const filters = Array.isArray(cfg.mapelFilter) ? cfg.mapelFilter : [cfg.mapelFilter];
+      basePool = pool.filter(s => filters.includes(s.mapel));
+      if (!basePool.length) {
+        root.innerHTML = `<div class="qe-error">
+          <div class="qe-error-icon">⚠️</div>
+          <h2>Soal Tidak Ditemukan</h2>
+          <p>Tidak ada soal untuk mapel "${filters.join(', ')}" dalam pool ini.</p>
+          <a href="index.html" class="qe-btn qe-btn-back">← Kembali</a>
+        </div>`;
+        return;
+      }
+    }
+
     /* Sampling */
     const doShuffle    = cfg.shuffle !== false;
     // Tentukan jumlah soal yang diminta (requestedCount) SEBELUM di-clamp,
     // agar kondisi sampling bisa dibandingkan dengan ukuran pool yang sebenarnya.
-    const requestedCount = (cfg.questionCount > 0) ? cfg.questionCount : pool.length;
-    const questionCount  = Math.min(requestedCount, pool.length);
+    const requestedCount = (cfg.questionCount > 0) ? cfg.questionCount : basePool.length;
+    const questionCount  = Math.min(requestedCount, basePool.length);
 
-    const list = (doShuffle && questionCount < pool.length)
-      ? stratifiedSample(pool, questionCount)
-      : (doShuffle ? shuffle(pool) : pool.slice(0, questionCount));
+    const list = (doShuffle && questionCount < basePool.length)
+      ? (cfg.stratifyBy === 'mapel'
+          ? stratifiedSampleByMapel(basePool, questionCount)
+          : stratifiedSample(basePool, questionCount))
+      : (doShuffle ? shuffle(basePool) : basePool.slice(0, questionCount));
 
     /* State */
     let idx      = 0;
@@ -130,8 +205,8 @@
 
     /* ── Shell HTML ──────────────────────────────────────── */
     const meta     = data.meta || {};
-    const poolInfo = (pool.length > list.length)
-      ? `${list.length} soal acak dari ${pool.length}`
+    const poolInfo = (basePool.length > list.length)
+      ? `${list.length} soal acak dari ${basePool.length}`
       : `${list.length} soal`;
 
     root.innerHTML = `
@@ -238,7 +313,7 @@
       void tEl.offsetWidth;
       tEl.classList.add('qe-slide-in');
 
-      startTimer(s.waktu || 10);
+      startTimer(cfg.fixedWaktu || s.waktu || 10);
     }
 
     function startTimer(sec) {
