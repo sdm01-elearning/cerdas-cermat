@@ -487,6 +487,77 @@ berhasil menangkap pelanggaran sebelum sampai ke produk akhir.
 
 ---
 
+## [AR-015] — v2.1.0 · Latihan per Babak (Round 1, 2, 5, 6)
+
+**Tanggal:** 2026-07-18
+**Cakupan:** `assets/js/quiz-engine.js` (ditambah, additive), `index.html`
+(tautan baru), file baru: `latihan-tahap3-babak.html`,
+`latihan-tahap3-babak1.html`, `latihan-tahap3-babak2.html`,
+`latihan-tahap3-babak5.html`, `latihan-tahap3-babak6.html`
+
+**⚠️ AR ini menyentuh `quiz-engine.js` (file bersama) — sama seperti
+AR-007, ditinjau lebih ketat karena berdampak lintas halaman.**
+
+### Perubahan
+- Dua config baru di `quiz-engine.js`: `mapelFilter` dan `fixedWaktu`,
+  keduanya opsional, default tidak aktif.
+- 5 halaman HTML baru untuk latihan per-babak (lihat CHANGELOG v2.1.0
+  untuk detail tiap babak).
+- Babak 5 (Arena Hitung) memakai **script mandiri**, sengaja TIDAK
+  memakai `quiz-engine.js`, karena model budget-waktu-bersama +
+  navigasi bebasnya secara fundamental berbeda dari model linear
+  per-soal milik engine utama. Ini murni keputusan desain untuk
+  meminimalkan risiko regresi pada `quiz-engine.js` — bukan celah teknis.
+
+### Mengapa Aman (Non-Regresi)
+1. `mapelFilter` dan `fixedWaktu` adalah percabangan kondisional baru
+   (`if (cfg.mapelFilter) {...}`, `cfg.fixedWaktu || s.waktu || 10`) —
+   keduanya no-op ketika config tidak diset, yaitu kondisi seluruh
+   halaman lain (`latihan-tahap1.html`, `latihan-tahap2.html`,
+   `latihan-tahap3.html`, `soal-campuran.html`, dan halaman paket per
+   kategori).
+2. Jalur kode `stratifiedSample()` dan `stratifiedSampleByMapel()` yang
+   sudah ada TIDAK diubah sama sekali — hanya menerima `basePool` (hasil
+   filter, yang sama dengan `pool` asli jika tidak difilter) alih-alih
+   `pool` secara langsung.
+3. Babak 5 tidak menyentuh `quiz-engine.js` sama sekali, sehingga risiko
+   terhadap halaman lain nol untuk fitur ini.
+4. `index.html`: tautan baru diletakkan sebagai elemen terpisah di luar
+   `.categories-grid`, bukan menyisipkan ke dalam kartu `<a>` manapun
+   (menghindari nested `<a>` yang tidak valid secara HTML dan berisiko
+   merusak markup kartu Tahap 1/2/3 yang sudah ada).
+
+### Risiko Regresi
+
+| Area | Risiko | Mitigasi |
+|---|---|---|
+| `quiz-engine.js` dipakai banyak halaman | `mapelFilter`/`fixedWaktu` salah logika bisa memengaruhi semua halaman | Diverifikasi: diff murni additive, seluruh halaman lama tidak menyetel config baru ini → behavior identik dengan sebelumnya; smoke test Playwright dijalankan pada `latihan-tahap3-babak1/2/6.html` (yang memakai config baru) tanpa ditemukan error |
+| Babak 5 pakai sessionStorage | Jika sessionStorage penuh/nonaktif (mode private browsing ketat), `try/catch` mencegah error, sesi tetap jalan hanya tanpa persistensi refresh | Sudah dibungkus try/catch di kode (`loadQuestions`, penyimpanan) |
+| Amplop bisa terulang isi soal antar sesi berbeda (random murni, bukan disjoint) | Soal antar amplop bisa tumpang tindih dalam satu sesi belajar (amplop 1 dan amplop 3 mungkin share 1-2 soal yang sama secara kebetulan) | Diterima sebagai batasan wajar untuk latihan (pool 1000 soal membuat overlap kecil kemungkinannya); tidak fatal karena tujuannya latihan, bukan kompetisi bernilai |
+| Waktu real per-babak belum divalidasi dengan siswa sungguhan | Timer 5 detik (Babak 1 & 2) dan 90 detik (Babak 5) diambil literal dari teks kisi-kisi, belum diuji apakah pas untuk kecepatan baca/ketik siswa SD sungguhan | **Sangat disarankan diuji coba dulu dengan siswa** sebelum dipakai sebagai latihan utama menjelang tampil — waktu bisa terasa terlalu ketat/longgar di praktik nyata |
+| Babak 3 & 4 tidak diimplementasikan | Guru/siswa mungkin berharap semua 6 babak tersedia | Sudah dikomunikasikan eksplisit di hub (`latihan-tahap3-babak.html`) dengan alasan jelas (berbasis fisik, bukan bank soal) — bukan bug, keterbatasan yang disengaja dan didokumentasikan |
+
+### Checklist Validasi
+
+- [x] Playwright smoke test: hub menampilkan 4 link aktif + 2 disabled — LOLOS
+- [x] Babak 1: picker 6 mapel tampil, filter mapel bekerja (soal yang muncul
+      terverifikasi dari topik Matematika saat memilih Matematika), timer
+      5 detik — LOLOS
+- [x] Babak 2: 24 soal, timer 5 detik — LOLOS
+- [x] Babak 5: picker 5 amplop, sesi dengan timer 90 detik, 5 nav dots,
+      tombol reveal/next/dot-navigation berfungsi, sessionStorage
+      konsisten antar reload, amplop berbeda = soal berbeda — LOLOS
+- [x] Babak 6: 15 soal — LOLOS
+- [x] Tidak ada error JavaScript aplikasi di seluruh alur (Playwright,
+      headless Chromium) — LOLOS
+- [x] Simulasi Node.js 1000-2000 trial untuk logika sampling tiap babak
+      (id unik, jumlah tepat, tidak ada kebocoran filter mapel) — LOLOS
+- [ ] **Belum dilakukan** (disarankan sebelum dipakai serius): uji coba
+      lapangan dengan siswa sungguhan untuk memvalidasi apakah durasi
+      timer (5 detik Babak 1/2, 90 detik Babak 5) terasa pas di praktik
+
+---
+
 ## Panduan Pengisian ANTIREGRESI ke Depan
 
 Setiap kali membuat perubahan besar, tambahkan section baru:

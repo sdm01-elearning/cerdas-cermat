@@ -5,6 +5,78 @@ Format mengikuti [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ---
 
+## [2.1.0] — 2026-07-18 — Latihan per Babak (Liga Bintang Juara)
+
+### Ditambahkan
+- `latihan-tahap3-babak.html` — **hub baru** yang mendaftar seluruh 6 babak
+  sesuai kisi-kisi TV (Round 1–6). Babak 1, 2, 5, 6 aktif dan dapat
+  diklik; Babak 3 (Eksperimen) dan Babak 4 (Eksplorasi) ditandai "Belum
+  tersedia" dengan penjelasan bahwa keduanya berbasis demonstrasi fisik
+  dan puzzle 3D, bukan bank soal teks, sehingga tidak dapat disimulasikan
+  lewat pool soal yang ada.
+- `latihan-tahap3-babak1.html` — **Babak 1: Kumpul Poin.** Halaman pemilih
+  mapel (6 kartu: Matematika, Bahasa Indonesia, Bahasa Inggris, IPA, IPS,
+  Pendidikan Pancasila) → setelah dipilih, sesi 5 soal dari mapel tersebut
+  dengan waktu jawab tetap 5 detik/soal, sesuai kisi-kisi ("Peserta
+  memiliki waktu lima detik untuk menjawab setelah soal dibacakan").
+- `latihan-tahap3-babak2.html` — **Babak 2: Cepat Tepat.** Sesi langsung
+  24 soal campuran dari 6 mapel (merata, `stratifyBy: 'mapel'`), waktu
+  jawab tetap 5 detik/soal, sesuai kisi-kisi ("Waktu berpikir adalah 5
+  detik setelah bel ditekan").
+- `latihan-tahap3-babak5.html` — **Babak 5: Arena Hitung.** Halaman
+  pemilih amplop (5 kartu berwarna) → setelah dipilih, sesi 5 soal dengan
+  **budget waktu bersama 90 detik** untuk seluruh amplop (bukan per-soal),
+  dilengkapi navigasi bebas (Sebelumnya/Berikutnya/Lewati, titik navigasi
+  per soal) sehingga peserta bisa melewati soal yang belum terjawab dan
+  kembali lagi selama waktu tersisa — meniru aturan asli. Saat waktu
+  habis, seluruh jawaban otomatis ditampilkan untuk ditinjau. Halaman ini
+  **mandiri** (custom script, tidak menggunakan `quiz-engine.js`) karena
+  mekanismenya (budget waktu bersama + navigasi bebas) berbeda secara
+  fundamental dari model linear per-soal milik engine utama — dibuat
+  terpisah demi keamanan, agar tidak berisiko mengubah perilaku semua
+  halaman lain yang memakai `quiz-engine.js`.
+- `latihan-tahap3-babak6.html` — **Babak 6: Bintang Juara.** Sesi langsung
+  15 soal campuran dari 6 mapel (merata), memakai waktu default per-soal
+  dari pool karena kisi-kisi tidak menetapkan waktu jawab tetap untuk
+  babak ini (hanya menyebutkan sistem rebutan dan target 8 bintang).
+- `index.html` — tautan baru "🎬 Latihan Tahap 3 juga tersedia per babak…"
+  ditambahkan sebagai baris terpisah di bawah grid kartu utama (bukan
+  bagian dari kartu manapun), mengarah ke hub babak.
+
+### Perubahan pada `assets/js/quiz-engine.js` (v1.7.0 → tambahan additive)
+Dua opsi konfigurasi baru ditambahkan ke `QUIZ_CONFIG`, keduanya opsional
+dan **tidak mengubah perilaku default** untuk halaman manapun yang tidak
+menyetelnya secara eksplisit:
+- `mapelFilter` (string atau array) — memfilter pool ke mapel tertentu
+  SEBELUM sampling. Dipakai oleh Babak 1.
+- `fixedWaktu` (angka) — memaksa timer setiap soal ke angka detik ini,
+  mengabaikan field `waktu` per-soal di pool. Dipakai oleh Babak 1 & 2.
+
+### Validasi
+- **Smoke test end-to-end dengan Playwright (headless Chromium)** terhadap
+  seluruh halaman baru: hub, Babak 1 (picker + sesi dengan filter mapel
+  "Matematika" — dikonfirmasi soal yang tampil benar dari topik Matematika
+  dan timer menunjukkan 5), Babak 2 (24 soal, timer 5), Babak 5 (picker
+  amplop, sesi dengan timer 90, 5 nav dots, tombol reveal/next/dot
+  navigation semuanya berfungsi), Babak 6 (15 soal). **Tidak ada error
+  JavaScript aplikasi** pada seluruh alur (error yang tertangkap murni
+  CORS dari CDN KaTeX yang diblokir sandbox pengujian, tidak relevan
+  untuk deployment GitHub Pages sungguhan).
+- Simulasi 1000–2000 trial (Node.js) untuk logika sampling tiap babak:
+  Babak 1 (filter mapel selalu tepat, tidak ada kebocoran mapel lain,
+  selalu 5 soal), Babak 2 (selalu 24 soal, tidak ada id duplikat dalam
+  1 sesi), Babak 6 (selalu 15 soal, tidak ada id duplikat, distribusi
+  rata ~2.5 soal/mapel sesuai 15÷6), Babak 5 (amplop selalu 5 soal unik).
+- **Test sessionStorage**: amplop yang sama tetap menampilkan 5 soal yang
+  identik saat halaman di-reload (tidak diacak ulang di tengah sesi);
+  amplop berbeda menghasilkan set soal berbeda.
+- Diff `quiz-engine.js` dan `index.html` diverifikasi murni additive/
+  aman — `latihan-tahap1.html`, `latihan-tahap2.html`,
+  `latihan-tahap3.html`, dan seluruh kartu index.html yang sudah ada
+  tidak tersentuh sama sekali.
+
+---
+
 ## [2.0.0] — 2026-07-17 — 🎯 TARGET 1000 SOAL TERCAPAI
 
 ### Ditambahkan

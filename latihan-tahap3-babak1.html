@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Babak 1: Kumpul Poin — Latihan Tahap 3 · Cerdas Cermat SDM01KKS</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <!-- KaTeX — untuk soal Matematika yang mengandung LaTeX -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+
+  <style>
+    #qe-teks       .katex { font-size: 1.25em; }
+    #qe-jawaban    .katex { font-size: 1.35em; }
+    #qe-pembahasan .katex { font-size: 1.05em; }
+    .katex-display { overflow-x: auto; overflow-y: hidden; padding: .25em 0; }
+    .katex-display > .katex { max-width: 100%; }
+    .katex .mfrac .mfrac { font-size: .95em; }
+
+    /* Picker mapel — tampil sebelum sesi dimulai */
+    .mp-wrap {
+      min-height: 100vh;
+      background: var(--qe-bg);
+      color: var(--qe-text);
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      padding: 2rem 1.25rem;
+      gap: 1.75rem;
+      text-align: center;
+    }
+    .mp-title { font-family: var(--font-display); font-size: clamp(1.6rem, 5vw, 2.3rem); color: var(--gold); }
+    .mp-desc  { max-width: 520px; color: var(--qe-text-dim); font-size: 0.95rem; line-height: 1.6; }
+    .mp-grid  {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 1rem; max-width: 720px; width: 100%;
+    }
+    .mp-card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid var(--qe-border);
+      border-radius: var(--radius-md);
+      padding: 1.5rem 1rem;
+      display: flex; flex-direction: column; align-items: center; gap: 0.5rem;
+      transition: transform 0.15s, background 0.15s;
+      color: var(--qe-text);
+    }
+    .mp-card:hover { transform: translateY(-3px); background: rgba(255,255,255,0.12); }
+    .mp-card-icon { font-size: 2rem; }
+    .mp-card-name { font-weight: 700; font-size: 0.95rem; }
+    .mp-back { font-size: 0.85rem; color: var(--qe-text-dim); }
+    .mp-back:hover { color: var(--qe-text); }
+  </style>
+</head>
+<body class="page-quiz">
+
+  <div id="picker" class="mp-wrap">
+    <div class="mp-title">🎯 Babak 1: Kumpul Poin</div>
+    <p class="mp-desc">
+      Pilih salah satu mata pelajaran. Kamu akan mendapat 5 soal dari mapel tersebut,
+      dengan waktu jawab 5 detik per soal — persis seperti aturan di kisi-kisi.
+    </p>
+    <div class="mp-grid" id="mp-grid"></div>
+    <a href="latihan-tahap3-babak.html" class="mp-back">← Kembali ke daftar babak</a>
+  </div>
+
+  <div id="quiz-root" style="display:none"></div>
+
+  <script>
+  (function () {
+    'use strict';
+
+    var POOL_URL = 'latihan-tahap3/soal/data/pool.json';
+
+    var MAPEL_LIST = [
+      { key: 'Matematika',           icon: '🔢' },
+      { key: 'Bahasa Indonesia',     icon: '📖' },
+      { key: 'Bahasa Inggris',       icon: '🇬🇧' },
+      { key: 'IPA',                  icon: '🔬' },
+      { key: 'IPS',                  icon: '🌏' },
+      { key: 'Pendidikan Pancasila', icon: '🇮🇩' }
+    ];
+
+    function buildPicker() {
+      var grid = document.getElementById('mp-grid');
+      var html = '';
+      MAPEL_LIST.forEach(function (m) {
+        html += '<a class="mp-card" href="?mapel=' + encodeURIComponent(m.key) + '">' +
+                '<span class="mp-card-icon">' + m.icon + '</span>' +
+                '<span class="mp-card-name">' + m.key + '</span>' +
+                '</a>';
+      });
+      grid.innerHTML = html;
+    }
+
+    function startQuiz(mapel) {
+      document.getElementById('picker').style.display = 'none';
+      var root = document.getElementById('quiz-root');
+      root.style.display = 'block';
+      root.innerHTML = [
+        '<div class="qe-loading">',
+        '  <div class="qe-spinner"></div>',
+        '  <p>Memuat soal ' + mapel + '…</p>',
+        '</div>'
+      ].join('');
+
+      window.QUIZ_CONFIG = {
+        dataUrl:       POOL_URL,
+        questionCount: 5,
+        shuffle:       true,
+        mapelFilter:   mapel,
+        fixedWaktu:    5
+      };
+
+      var script = document.createElement('script');
+      script.src = 'assets/js/quiz-engine.js';
+      script.onerror = function () {
+        root.innerHTML = [
+          '<div class="qe-error">',
+          '  <div class="qe-error-icon">⚠️</div>',
+          '  <h2>Gagal Memuat Latihan</h2>',
+          '  <a href="latihan-tahap3-babak1.html" class="qe-btn qe-btn-back">← Pilih mapel lain</a>',
+          '</div>'
+        ].join('');
+      };
+      document.body.appendChild(script);
+    }
+
+    var params = new URLSearchParams(window.location.search);
+    var mapelParam = params.get('mapel');
+    var validKeys = MAPEL_LIST.map(function (m) { return m.key; });
+
+    if (mapelParam && validKeys.indexOf(mapelParam) !== -1) {
+      startQuiz(mapelParam);
+    } else {
+      buildPicker();
+    }
+  })();
+  </script>
+
+  <!-- KaTeX JS -->
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
+
+  <script>
+  (function () {
+    var TARGETS = ['#qe-teks', '#qe-jawaban', '#qe-pembahasan'];
+    var KR_OPTS = {
+      delimiters: [
+        { left: '$$', right: '$$', display: true  },
+        { left: '$',  right: '$',  display: false }
+      ],
+      throwOnError: false,
+      trust: false
+    };
+    function renderMath() {
+      if (!window.renderMathInElement) return;
+      TARGETS.forEach(function (sel) {
+        var el = document.querySelector(sel);
+        if (el) renderMathInElement(el, KR_OPTS);
+      });
+    }
+    var timer;
+    var obs = new MutationObserver(function () {
+      clearTimeout(timer);
+      timer = setTimeout(renderMath, 80);
+    });
+    document.addEventListener('DOMContentLoaded', function () {
+      var root = document.getElementById('quiz-root');
+      if (root) {
+        obs.observe(root, { childList: true, subtree: true, characterData: true });
+      }
+    });
+  })();
+  </script>
+
+</body>
+</html>

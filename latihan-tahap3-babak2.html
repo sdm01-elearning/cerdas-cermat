@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Babak 2: Cepat Tepat — Latihan Tahap 3 · Cerdas Cermat SDM01KKS</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <!-- KaTeX — untuk soal Matematika yang mengandung LaTeX -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+
+  <style>
+    #qe-teks       .katex { font-size: 1.25em; }
+    #qe-jawaban    .katex { font-size: 1.35em; }
+    #qe-pembahasan .katex { font-size: 1.05em; }
+    .katex-display { overflow-x: auto; overflow-y: hidden; padding: .25em 0; }
+    .katex-display > .katex { max-width: 100%; }
+    .katex .mfrac .mfrac { font-size: .95em; }
+  </style>
+</head>
+<body class="page-quiz">
+
+  <div id="quiz-root"></div>
+
+  <!--
+    Loader Script — Babak 2: Cepat Tepat (sistem rebutan).
+    Soal campuran dari semua mapel, waktu jawab tetap 5 detik sesuai kisi-kisi
+    ("Waktu berpikir adalah 5 detik setelah bel ditekan").
+  -->
+  <script>
+  (function () {
+    'use strict';
+
+    var POOL_URL       = 'latihan-tahap3/soal/data/pool.json';
+    var QUESTION_COUNT = 24; // ~4 soal / mapel (6 mapel), sesi latihan rebutan
+
+    async function prepareLatihan() {
+      var root = document.getElementById('quiz-root');
+
+      root.innerHTML = [
+        '<div class="qe-loading">',
+        '  <div class="qe-spinner"></div>',
+        '  <p>Memuat soal Babak 2: Cepat Tepat…</p>',
+        '</div>'
+      ].join('');
+
+      try {
+        var r = await fetch(POOL_URL);
+        if (!r.ok) throw new Error('HTTP ' + r.status + ' — ' + POOL_URL);
+        await r.json(); // hanya untuk validasi ketersediaan sebelum engine mengambil ulang
+
+        window.QUIZ_CONFIG = {
+          dataUrl:       POOL_URL,
+          questionCount: QUESTION_COUNT,
+          shuffle:       true,
+          stratifyBy:    'mapel', // soal campuran merata dari 6 mapel
+          fixedWaktu:    5        // waktu berpikir 5 detik setelah "bel" sesuai kisi-kisi
+        };
+
+        var script = document.createElement('script');
+        script.src = 'assets/js/quiz-engine.js';
+        document.body.appendChild(script);
+
+      } catch (err) {
+        root.innerHTML = [
+          '<div class="qe-error">',
+          '  <div class="qe-error-icon">⚠️</div>',
+          '  <h2>Gagal Memuat Soal</h2>',
+          '  <p>' + err.message + '</p>',
+          '  <p class="qe-error-hint">',
+          '    Pastikan halaman diakses melalui server HTTP',
+          '    (GitHub Pages atau <code>python3 -m http.server</code>),',
+          '    bukan langsung dari file lokal (<code>file://</code>).',
+          '  </p>',
+          '  <a href="latihan-tahap3-babak.html" class="qe-btn qe-btn-back">← Kembali</a>',
+          '</div>'
+        ].join('');
+      }
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', prepareLatihan);
+    } else {
+      prepareLatihan();
+    }
+
+  })();
+  </script>
+
+  <!-- KaTeX JS -->
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
+
+  <script>
+  (function () {
+    var TARGETS = ['#qe-teks', '#qe-jawaban', '#qe-pembahasan'];
+
+    var KR_OPTS = {
+      delimiters: [
+        { left: '$$', right: '$$', display: true  },
+        { left: '$',  right: '$',  display: false }
+      ],
+      throwOnError: false,
+      trust: false
+    };
+
+    function renderMath() {
+      if (!window.renderMathInElement) return;
+      TARGETS.forEach(function (sel) {
+        var el = document.querySelector(sel);
+        if (el) renderMathInElement(el, KR_OPTS);
+      });
+    }
+
+    var timer;
+    var obs = new MutationObserver(function () {
+      clearTimeout(timer);
+      timer = setTimeout(renderMath, 80);
+    });
+
+    document.addEventListener('DOMContentLoaded', function () {
+      var root = document.getElementById('quiz-root');
+      if (root) {
+        obs.observe(root, { childList: true, subtree: true, characterData: true });
+      }
+    });
+  })();
+  </script>
+
+</body>
+</html>

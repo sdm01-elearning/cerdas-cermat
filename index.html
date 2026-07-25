@@ -73,6 +73,22 @@
     @media (max-width: 600px) {
       .bottom-row-4 { grid-template-columns: 1fr; }
     }
+
+    /* Link banner ke hub "Latihan per Babak" (Tahap 3) */
+    .babak-hub-link {
+      grid-column: 1 / -1;
+      text-align: center;
+      margin-top: -0.5rem;
+    }
+    .babak-hub-link a {
+      display: inline-block;
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.75);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      transition: color 0.15s;
+    }
+    .babak-hub-link a:hover { color: #ffee58; }
   </style>
 </head>
 <body class="page-landing">
@@ -208,6 +224,12 @@
 
       </div>
 
+    </div>
+
+    <div class="babak-hub-link">
+      <a href="latihan-tahap3-babak.html">
+        🎬 Latihan Tahap 3 juga tersedia per babak (Kumpul Poin, Cepat Tepat, Arena Hitung, Bintang Juara) →
+      </a>
     </div>
 
   </main>

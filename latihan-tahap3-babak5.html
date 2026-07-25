@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Babak 5: Arena Hitung — Latihan Tahap 3 · Cerdas Cermat SDM01KKS</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <!-- KaTeX — untuk soal Matematika yang mengandung LaTeX -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+
+  <style>
+    #ah-teks       .katex { font-size: 1.2em; }
+    #ah-jawaban    .katex { font-size: 1.3em; }
+    #ah-pembahasan .katex { font-size: 1.05em; }
+    .katex-display { overflow-x: auto; overflow-y: hidden; padding: .25em 0; }
+    .katex-display > .katex { max-width: 100%; }
+
+    /* ── Picker amplop ── */
+    .ah-picker {
+      min-height: 100vh;
+      background: var(--qe-bg);
+      color: var(--qe-text);
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      padding: 2rem 1.25rem; gap: 1.75rem; text-align: center;
+    }
+    .ah-title { font-family: var(--font-display); font-size: clamp(1.6rem, 5vw, 2.3rem); color: var(--gold); }
+    .ah-desc  { max-width: 560px; color: var(--qe-text-dim); font-size: 0.95rem; line-height: 1.6; }
+    .ah-env-grid { display: flex; gap: 1.1rem; flex-wrap: wrap; justify-content: center; max-width: 720px; }
+    .ah-env {
+      width: 130px; height: 150px;
+      border-radius: var(--radius-md);
+      display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.5rem;
+      color: #fff; font-weight: 800; font-size: 1.05rem;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.35);
+      transition: transform 0.15s;
+    }
+    .ah-env:hover { transform: translateY(-5px) scale(1.03); }
+    .ah-env-icon { font-size: 2.2rem; }
+    .ah-env-1 { background: linear-gradient(160deg,#e53935,#b71c1c); }
+    .ah-env-2 { background: linear-gradient(160deg,#43a047,#1b5e20); }
+    .ah-env-3 { background: linear-gradient(160deg,#8e24aa,#4a148c); }
+    .ah-env-4 { background: linear-gradient(160deg,#fb8c00,#e65100); }
+    .ah-env-5 { background: linear-gradient(160deg,#3949ab,#1a237e); }
+    .ah-back { font-size: 0.85rem; color: var(--qe-text-dim); }
+    .ah-back:hover { color: var(--qe-text); }
+
+    /* ── Sesi amplop ── */
+    .ah-session { display: none; flex-direction: column; min-height: 100vh; }
+    .ah-nav-dots { display: flex; gap: 0.5rem; justify-content: center; margin-top: 0.75rem; }
+    .ah-dot {
+      width: 34px; height: 34px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.85rem; font-weight: 700;
+      background: rgba(255,255,255,0.08); color: var(--qe-text-dim);
+      border: 2px solid transparent;
+      cursor: pointer; transition: all 0.15s;
+    }
+    .ah-dot.is-current { border-color: var(--gold); color: var(--qe-text); }
+    .ah-dot.is-revealed { background: var(--qe-green-bg); color: #a5d6a7; }
+    .ah-timer-label { font-size: 0.7rem; color: var(--qe-text-dim); text-align: center; margin-top: 0.35rem; }
+    .ah-timeup-banner {
+      display: none;
+      background: rgba(244,67,54,0.15); border: 1px solid var(--timer-red);
+      color: #ef9a9a; border-radius: var(--radius-md);
+      padding: 0.75rem 1.25rem; text-align: center;
+      font-weight: 700; max-width: 820px; width: 100%;
+      margin: 0 auto 1rem;
+    }
+  </style>
+</head>
+<body class="page-quiz">
+
+  <!-- ── Picker amplop ── -->
+  <div id="ah-picker" class="ah-picker">
+    <div class="ah-title">🧮 Babak 5: Arena Hitung</div>
+    <p class="ah-desc">
+      Pilih 1 dari 5 amplop. Setiap amplop berisi 5 soal campuran dengan waktu total
+      <strong>90 detik</strong> untuk seluruhnya — kamu boleh melewati soal yang belum
+      terjawab dan kembali lagi selama waktu masih tersisa.
+    </p>
+    <div class="ah-env-grid" id="ah-env-grid"></div>
+    <a href="latihan-tahap3-babak.html" class="ah-back">← Kembali ke daftar babak</a>
+  </div>
+
+  <!-- ── Sesi amplop (multi-soal, budget waktu bersama) ── -->
+  <div id="ah-session" class="ah-session">
+    <header class="qe-header">
+      <div class="qe-hd-left">
+        <a href="latihan-tahap3-babak5.html" class="qe-back-btn" title="Ganti amplop">←</a>
+        <div class="qe-hd-info">
+          <span class="qe-hd-kategori">Babak 5 · Arena Hitung</span>
+          <span class="qe-hd-paket" id="ah-amplop-label">Amplop 1</span>
+        </div>
+      </div>
+      <div class="qe-hd-center">
+        <span id="ah-prog-txt" class="qe-prog-txt">Soal 1 dari 5</span>
+        <div class="qe-prog-bg"><div id="ah-nav-dots-holder"></div></div>
+      </div>
+      <div class="qe-hd-right"></div>
+    </header>
+
+    <main class="qe-main">
+      <div id="ah-timeup-banner" class="ah-timeup-banner">⏰ Waktu habis! Semua jawaban ditampilkan — silakan tinjau.</div>
+
+      <div class="qe-soal-top">
+        <span class="qe-soal-num" id="ah-num">1</span>
+        <span class="qe-badge-en" id="ah-en-badge" style="display:none">🇬🇧 English</span>
+        <span class="qe-badge-topik" id="ah-topik-badge" style="display:none"></span>
+      </div>
+
+      <div class="qe-teks" id="ah-teks"></div>
+
+      <div class="qe-timer-wrap" id="ah-timer-wrap">
+        <svg viewBox="0 0 100 100" class="qe-timer-svg">
+          <circle class="qe-t-track" cx="50" cy="50" r="45"/>
+          <circle class="qe-t-ring" id="ah-t-ring" cx="50" cy="50" r="45"
+            stroke-dasharray="282.743" stroke-dashoffset="0"/>
+        </svg>
+        <span class="qe-timer-num" id="ah-t-num">90</span>
+      </div>
+      <div class="ah-timer-label">Sisa waktu amplop (total 5 soal)</div>
+
+      <div class="qe-ans-area" id="ah-ans-area">
+        <div class="qe-jawaban">
+          <div class="qe-ans-lbl">✅ Jawaban</div>
+          <div class="qe-ans-val" id="ah-jawaban"></div>
+        </div>
+        <div class="qe-pembahasan">
+          <div class="qe-pem-lbl">📖 Pembahasan</div>
+          <div class="qe-pem-val" id="ah-pembahasan"></div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="qe-footer">
+      <div class="ah-nav-dots" id="ah-nav-dots"></div>
+      <div class="qe-btn-row">
+        <button id="ah-prev-btn"   class="qe-btn qe-btn-back">◀ Sebelumnya</button>
+        <button id="ah-reveal-btn" class="qe-btn qe-btn-reveal">Tampilkan Jawaban</button>
+        <button id="ah-skip-btn"   class="qe-btn qe-btn-back">Lewati →</button>
+        <button id="ah-next-btn"   class="qe-btn qe-btn-next">Berikutnya ▶</button>
+      </div>
+      <div class="qe-hint">Amplop selesai kapan pun kamu mau — waktu terus berjalan sampai 90 detik habis.</div>
+    </footer>
+  </div>
+
+  <script>
+  (function () {
+    'use strict';
+
+    var POOL_URL     = 'latihan-tahap3/soal/data/pool.json';
+    var TOTAL_TIME   = 90;
+    var Q_PER_ENVELOPE = 5;
+    var CIRC = 282.743;
+
+    var ENVELOPES = [1, 2, 3, 4, 5];
+
+    /* ── Utility ── */
+    function qs(sel) { return document.querySelector(sel); }
+    function shuffle(arr) {
+      var a = arr.slice();
+      for (var i = a.length - 1; i > 0; i--) {
+        var j = Math.floor(Math.random() * (i + 1));
+        var t = a[i]; a[i] = a[j]; a[j] = t;
+      }
+      return a;
+    }
+
+    /* ── Picker ── */
+    function buildPicker() {
+      var grid = document.getElementById('ah-env-grid');
+      var html = '';
+      ENVELOPES.forEach(function (n) {
+        html += '<a class="ah-env ah-env-' + n + '" href="?amplop=' + n + '">' +
+                '<span class="ah-env-icon">✉️</span>' +
+                '<span>Amplop ' + n + '</span>' +
+                '</a>';
+      });
+      grid.innerHTML = html;
+    }
+
+    /* ── State sesi ── */
+    var state = {
+      questions: [],
+      idx: 0,
+      revealed: {},   // idx -> true
+      timeLeft: TOTAL_TIME,
+      timerIv: null,
+      timeUp: false
+    };
+
+    function storageKey(amplop) { return 'babak5_amplop_' + amplop; }
+
+    async function loadQuestions(amplop) {
+      var key = storageKey(amplop);
+      var cached = null;
+      try {
+        var raw = sessionStorage.getItem(key);
+        if (raw) cached = JSON.parse(raw);
+      } catch (e) { cached = null; }
+
+      var r = await fetch(POOL_URL);
+      if (!r.ok) throw new Error('HTTP ' + r.status + ' — ' + POOL_URL);
+      var data = await r.json();
+      var pool = data.soal || [];
+
+      if (cached && cached.ids && cached.ids.length === Q_PER_ENVELOPE) {
+        var byId = {};
+        pool.forEach(function (s) { byId[s.id] = s; });
+        var restored = cached.ids.map(function (id) { return byId[id]; }).filter(Boolean);
+        if (restored.length === Q_PER_ENVELOPE) return restored;
+      }
+
+      var picked = shuffle(pool).slice(0, Q_PER_ENVELOPE);
+      try {
+        sessionStorage.setItem(key, JSON.stringify({ ids: picked.map(function (s) { return s.id; }) }));
+      } catch (e) { /* abaikan jika storage penuh/nonaktif */ }
+      return picked;
+    }
+
+    function buildDots() {
+      var wrap = qs('#ah-nav-dots');
+      var html = '';
+      for (var i = 0; i < state.questions.length; i++) {
+        html += '<div class="ah-dot" data-idx="' + i + '">' + (i + 1) + '</div>';
+      }
+      wrap.innerHTML = html;
+      Array.prototype.forEach.call(wrap.querySelectorAll('.ah-dot'), function (dot) {
+        dot.addEventListener('click', function () {
+          goTo(parseInt(dot.getAttribute('data-idx'), 10));
+        });
+      });
+      refreshDots();
+    }
+
+    function refreshDots() {
+      Array.prototype.forEach.call(qs('#ah-nav-dots').children, function (dot, i) {
+        dot.classList.toggle('is-current', i === state.idx);
+        dot.classList.toggle('is-revealed', !!state.revealed[i]);
+      });
+    }
+
+    function showSoal(i) {
+      state.idx = i;
+      var s = state.questions[i];
+
+      qs('#ah-prog-txt').textContent = 'Soal ' + (i + 1) + ' dari ' + state.questions.length;
+      qs('#ah-num').textContent = i + 1;
+
+      var enBadge  = qs('#ah-en-badge');
+      var topBadge = qs('#ah-topik-badge');
+      enBadge.style.display  = s.bahasa === 'en' ? 'inline-flex' : 'none';
+      topBadge.textContent   = (s.mapel ? s.mapel + ' · ' : '') + (s.topik || '');
+      topBadge.style.display = 'inline-flex';
+
+      var tEl = qs('#ah-teks');
+      tEl.textContent = s.teks;
+      tEl.lang = s.bahasa === 'en' ? 'en' : 'id';
+      tEl.classList.remove('qe-slide-in');
+      void tEl.offsetWidth;
+      tEl.classList.add('qe-slide-in');
+
+      var isRevealed = !!state.revealed[i];
+      qs('#ah-ans-area').classList.toggle('qe-ans-visible', isRevealed);
+      if (isRevealed) {
+        qs('#ah-jawaban').textContent    = s.jawaban;
+        qs('#ah-pembahasan').textContent = s.pembahasan;
+      }
+      qs('#ah-reveal-btn').style.display = isRevealed ? 'none' : 'inline-flex';
+
+      qs('#ah-prev-btn').disabled = (i === 0);
+      qs('#ah-skip-btn').style.display = (i === state.questions.length - 1) ? 'none' : 'inline-flex';
+      qs('#ah-next-btn').style.display = (i === state.questions.length - 1) ? 'none' : 'inline-flex';
+
+      refreshDots();
+      if (window.renderMathInElement) window.dispatchEvent(new Event('ah-render-math'));
+    }
+
+    function reveal(i) {
+      state.revealed[i] = true;
+      var s = state.questions[i];
+      qs('#ah-jawaban').textContent    = s.jawaban;
+      qs('#ah-pembahasan').textContent = s.pembahasan;
+      qs('#ah-ans-area').classList.add('qe-ans-visible');
+      qs('#ah-reveal-btn').style.display = 'none';
+      refreshDots();
+      if (window.renderMathInElement) window.dispatchEvent(new Event('ah-render-math'));
+    }
+
+    function goTo(i) {
+      if (i < 0 || i >= state.questions.length) return;
+      showSoal(i);
+    }
+
+    function revealAllAndLock() {
+      state.timeUp = true;
+      for (var i = 0; i < state.questions.length; i++) state.revealed[i] = true;
+      qs('#ah-timeup-banner').style.display = 'block';
+      qs('#ah-timer-wrap').style.opacity = '0.4';
+      showSoal(state.idx); // refresh tampilan soal saat ini agar jawabannya langsung terlihat
+    }
+
+    function startTimer() {
+      var ring = qs('#ah-t-ring');
+      var num  = qs('#ah-t-num');
+      state.timeLeft = TOTAL_TIME;
+
+      function tick() {
+        num.textContent = state.timeLeft;
+        var frac = state.timeLeft / TOTAL_TIME;
+        ring.style.strokeDashoffset = (CIRC * (1 - frac)).toFixed(3);
+        if      (frac > 0.6) ring.style.stroke = 'var(--timer-green)';
+        else if (frac > 0.3) ring.style.stroke = 'var(--timer-orange)';
+        else                 ring.style.stroke = 'var(--timer-red)';
+        if (state.timeLeft <= 10) num.classList.add('qe-urgent');
+
+        if (state.timeLeft <= 0) {
+          clearInterval(state.timerIv);
+          revealAllAndLock();
+          return;
+        }
+        state.timeLeft--;
+      }
+      tick();
+      state.timerIv = setInterval(tick, 1000);
+    }
+
+    async function startSession(amplop) {
+      document.getElementById('ah-picker').style.display = 'none';
+      var session = document.getElementById('ah-session');
+      session.style.display = 'flex';
+      qs('#ah-amplop-label').textContent = 'Amplop ' + amplop;
+
+      try {
+        state.questions = await loadQuestions(amplop);
+      } catch (e) {
+        session.innerHTML = [
+          '<div class="qe-error">',
+          '  <div class="qe-error-icon">⚠️</div>',
+          '  <h2>Gagal Memuat Soal</h2>',
+          '  <p>' + e.message + '</p>',
+          '  <a href="latihan-tahap3-babak5.html" class="qe-btn qe-btn-back">← Pilih amplop lain</a>',
+          '</div>'
+        ].join('');
+        return;
+      }
+
+      buildDots();
+      showSoal(0);
+      startTimer();
+    }
+
+    /* ── Events ── */
+    document.addEventListener('DOMContentLoaded', function () {
+      qs('#ah-reveal-btn').addEventListener('click', function () { reveal(state.idx); });
+      qs('#ah-next-btn').addEventListener('click', function () { goTo(state.idx + 1); });
+      qs('#ah-skip-btn').addEventListener('click', function () { goTo(state.idx + 1); });
+      qs('#ah-prev-btn').addEventListener('click', function () { goTo(state.idx - 1); });
+
+      var params = new URLSearchParams(window.location.search);
+      var amplop = parseInt(params.get('amplop'), 10);
+
+      if (amplop && ENVELOPES.indexOf(amplop) !== -1) {
+        startSession(amplop);
+      } else {
+        buildPicker();
+      }
+    });
+  })();
+  </script>
+
+  <!-- KaTeX JS -->
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
+
+  <script>
+  (function () {
+    var TARGETS = ['#ah-teks', '#ah-jawaban', '#ah-pembahasan'];
+    var KR_OPTS = {
+      delimiters: [
+        { left: '$$', right: '$$', display: true  },
+        { left: '$',  right: '$',  display: false }
+      ],
+      throwOnError: false,
+      trust: false
+    };
+    function renderMath() {
+      if (!window.renderMathInElement) return;
+      TARGETS.forEach(function (sel) {
+        var el = document.querySelector(sel);
+        if (el) renderMathInElement(el, KR_OPTS);
+      });
+    }
+    window.addEventListener('ah-render-math', function () {
+      setTimeout(renderMath, 50);
+    });
+    document.addEventListener('DOMContentLoaded', function () {
+      setTimeout(renderMath, 200);
+    });
+  })();
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Latihan per Babak — Tahap 3 · Cerdas Cermat SDM01KKS</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <style>
+    /* Kartu babak — varian dari .menu-card dengan nomor babak & status */
+    .babak-list { display: flex; flex-direction: column; gap: 1rem; margin-bottom: 2rem; }
+    .babak-item {
+      background: #fff;
+      border-radius: var(--radius-md);
+      padding: 1.35rem 1.5rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 1.25rem;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+      border: 1px solid #e9ecef;
+      transition: transform 0.18s, box-shadow 0.18s;
+    }
+    .babak-item.is-active { cursor: pointer; }
+    .babak-item.is-active:hover {
+      transform: translateX(4px);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    }
+    .babak-item.is-disabled { opacity: 0.6; background: #f7f8fa; }
+    .babak-num {
+      font-family: var(--font-display);
+      font-size: 1.7rem; font-weight: 900;
+      color: var(--green-800);
+      min-width: 44px; text-align: center;
+      flex-shrink: 0;
+    }
+    .babak-item.is-disabled .babak-num { color: #a0aec0; }
+    .babak-info  { flex: 1; }
+    .babak-title { font-weight: 700; color: #1a2420; margin-bottom: 0.25rem; font-size: 1.05rem; }
+    .babak-desc  { font-size: 0.86rem; color: #718096; line-height: 1.6; margin-bottom: 0.5rem; }
+    .babak-meta  { font-size: 0.75rem; color: #718096; display: flex; gap: 0.5rem; flex-wrap: wrap; }
+    .babak-meta span { background: #f0f4f8; border-radius: 20px; padding: 2px 10px; }
+    .babak-badge {
+      font-size: 0.72rem; font-weight: 700;
+      padding: 3px 10px; border-radius: 20px;
+      background: #e6f4ea; color: #2e7d32;
+      white-space: nowrap; flex-shrink: 0;
+      align-self: center;
+    }
+    .babak-badge.unavailable { background: #f0f0f0; color: #909090; }
+  </style>
+</head>
+<body class="page-inner">
+
+  <nav class="inner-nav">
+    <a href="index.html" class="nav-brand">🏆 Cerdas Cermat</a>
+    <span class="nav-sep">/</span>
+    <a href="latihan-tahap3.html">Latihan Tahap 3</a>
+    <span class="nav-sep">/</span>
+    <span class="nav-current">Latihan per Babak</span>
+  </nav>
+
+  <header class="cat-hero" style="--hero-color:#6a1b9a;">
+    <div class="cat-hero-icon">🎬</div>
+    <h1 class="cat-hero-title">Latihan per Babak</h1>
+    <p class="cat-hero-desc">
+      Latihan yang meniru format tiap babak Liga Bintang Juara sesuai kisi-kisi resmi —
+      waktu jawab dan cara pemilihan soal disesuaikan per babak, memakai pool 1000 soal
+      Latihan Tahap 3 yang sama.
+    </p>
+  </header>
+
+  <div class="content-area">
+
+    <h2 class="section-heading">Pilih Babak</h2>
+
+    <div class="babak-list">
+
+      <a href="latihan-tahap3-babak1.html" class="babak-item is-active">
+        <div class="babak-num">1</div>
+        <div class="babak-info">
+          <div class="babak-title">Kumpul Poin</div>
+          <div class="babak-desc">
+            Pilih 1 dari 6 mata pelajaran, jawab 5 soal pilihan dari mapel tersebut.
+            Waktu jawab 5 detik setelah soal dibacakan.
+          </div>
+          <div class="babak-meta">
+            <span>5 soal / sesi</span>
+            <span>⏱ 5 detik / soal</span>
+            <span>Pilih mapel dulu</span>
+          </div>
+        </div>
+        <div class="babak-badge">Mulai →</div>
+      </a>
+
+      <a href="latihan-tahap3-babak2.html" class="babak-item is-active">
+        <div class="babak-num">2</div>
+        <div class="babak-info">
+          <div class="babak-title">Cepat Tepat</div>
+          <div class="babak-desc">
+            Soal campuran dari semua mapel, sistem rebutan. Latihan ini memakai waktu
+            berpikir 5 detik per soal untuk membiasakan menjawab cepat setelah "bel".
+          </div>
+          <div class="babak-meta">
+            <span>24 soal / sesi</span>
+            <span>⏱ 5 detik / soal</span>
+            <span>Campuran 6 mapel</span>
+          </div>
+        </div>
+        <div class="babak-badge">Mulai →</div>
+      </a>
+
+      <div class="babak-item is-disabled">
+        <div class="babak-num">3</div>
+        <div class="babak-info">
+          <div class="babak-title">Eksperimen</div>
+          <div class="babak-desc">
+            Seluruh tim mengamati dua eksperimen sains secara langsung dan menuliskan
+            jawaban di papan tulis. Babak ini berbasis demonstrasi fisik, bukan bank soal
+            teks, sehingga belum bisa disimulasikan di sini.
+          </div>
+          <div class="babak-meta"><span>Demonstrasi langsung</span></div>
+        </div>
+        <div class="babak-badge unavailable">Belum tersedia</div>
+      </div>
+
+      <div class="babak-item is-disabled">
+        <div class="babak-num">4</div>
+        <div class="babak-info">
+          <div class="babak-title">Eksplorasi</div>
+          <div class="babak-desc">
+            Tiga perwakilan tim menyusun sembilan balok kubus menjadi gambar sesuai
+            kategori pilihan dalam 90 detik. Babak ini berbasis puzzle fisik 3D, bukan
+            bank soal teks, sehingga belum bisa disimulasikan di sini.
+          </div>
+          <div class="babak-meta"><span>Puzzle balok kubus</span></div>
+        </div>
+        <div class="babak-badge unavailable">Belum tersedia</div>
+      </div>
+
+      <a href="latihan-tahap3-babak5.html" class="babak-item is-active">
+        <div class="babak-num">5</div>
+        <div class="babak-info">
+          <div class="babak-title">Arena Hitung</div>
+          <div class="babak-desc">
+            Pilih 1 dari 5 amplop, masing-masing berisi 5 soal. Waktu total 90 detik
+            untuk seluruh amplop — boleh melewati soal yang belum terjawab dan kembali
+            lagi selama waktu masih tersisa.
+          </div>
+          <div class="babak-meta">
+            <span>5 amplop × 5 soal</span>
+            <span>⏱ 90 detik / amplop</span>
+            <span>Bisa lewati &amp; kembali</span>
+          </div>
+        </div>
+        <div class="babak-badge">Mulai →</div>
+      </a>
+
+      <a href="latihan-tahap3-babak6.html" class="babak-item is-active">
+        <div class="babak-num">6</div>
+        <div class="babak-info">
+          <div class="babak-title">Bintang Juara</div>
+          <div class="babak-desc">
+            15 soal campuran sistem rebutan. Di TV, tim pertama yang mengumpulkan
+            8 bintang menjadi pemenang — latihan ini membantu mengenali pola dan
+            kecepatan menjawab 15 soal beruntun.
+          </div>
+          <div class="babak-meta">
+            <span>15 soal / sesi</span>
+            <span>Campuran 6 mapel</span>
+          </div>
+        </div>
+        <div class="babak-badge">Mulai →</div>
+      </a>
+
+    </div>
+
+    <div class="coming-soon">
+      <h3>💡 Catatan</h3>
+      <p>
+        Babak 3 (Eksperimen) dan Babak 4 (Eksplorasi) melibatkan demonstrasi fisik dan
+        puzzle 3D yang tidak berbasis bank soal teks, sehingga tidak dapat disimulasikan
+        lewat latihan berbasis web ini. Fokuslah berlatih Babak 1, 2, 5, dan 6 di sini,
+        lalu koordinasikan latihan fisik untuk Babak 3 dan 4 bersama guru pendamping.
+      </p>
+    </div>
+
+  </div>
+
+  <footer class="inner-footer">
+    <p>© SD Muhammadiyah 01 Kukusan · Latihan per Babak — Liga Bintang Juara Tahap 3</p>
+  </footer>
+
+</body>
+</html>
