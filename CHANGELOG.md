@@ -5,6 +5,84 @@ Format mengikuti [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ---
 
+## [2.2.0] — 2026-07-18 — Desain Ulang Halaman Utama
+
+### Konteks
+Halaman utama (`index.html`) tumbuh dari 3 kartu kategori awal menjadi 7
+kartu dengan warna gradien berbeda-beda (merah/biru/ungu/hijau/ungu/merah)
+plus satu tautan teks kecil terselip di bawah — hasil penambahan fitur
+bertahap tanpa peninjauan desain ulang. Hasilnya terasa ramai, tidak ada
+hierarki visual, dan logo sekolah "mengambang" sebagai lingkaran putih
+polos di atas latar hijau tanpa bingkai yang pas. Rilis ini mendesain
+ulang halaman utama dari awal untuk mengatasi hal tersebut.
+
+### Perubahan
+- **`index.html` ditulis ulang total.** Struktur baru membagi halaman
+  menjadi hierarki 3 tingkat alih-alih 7 kartu setara:
+  1. **Hero (gelap)** — medali logo sekolah (bingkai cincin emas + latar
+     radial lembut, bukan lagi lingkaran putih polos), judul, dan
+     **stage tracker**: pita progres bertahap (Tahap 1 ✓ → Tahap 2 ✓ →
+     Tahap 3 ●) yang menampilkan status nyata tim (sudah lolos ke Tahap 3)
+     — elemen signature halaman ini, sekaligus satu-satunya penomoran
+     yang dipakai karena memang representasi urutan tahap yang sungguhan.
+  2. **"Fokus Sekarang"** — satu kartu unggulan (gold-accented) untuk
+     Latihan Tahap 3, kini juga menampilkan 4 pil tautan babak (Kumpul
+     Poin/Cepat Tepat/Arena Hitung/Bintang Juara) langsung di kartu ini —
+     dulu hanya tautan teks kecil yang mudah terlewat.
+  3. **"Tahap Sebelumnya"** — 2 kartu tenang (hijau gelap seragam,
+     bertanda "✓ Selesai") untuk Tahap 1 & 2, sengaja dibuat lebih
+     senyap karena statusnya sudah lewat.
+  4. **"Latihan per Kategori"** — 4 kartu seragam (Indonesia & Umum,
+     Sains, Matematika, Soal Campuran) dengan gaya konsisten satu sama
+     lain; pembeda hanya lewat warna lembut pada ikon (bukan lagi
+     gradien penuh berbeda-beda per kartu), termasuk memindahkan
+     "Soal Campuran" dari kartu gelap khusus lebar-penuh menjadi bagian
+     seragam grid ini.
+- **`assets/css/style.css`** — seluruh blok "LANDING PAGE" (khusus dipakai
+  `index.html`, dikonfirmasi tidak dipakai halaman lain mana pun sebelum
+  diubah) ditulis ulang mengikuti sistem desain baru. Token warna baru
+  ditambahkan (`--forest-950`, `--cream`, `--cream-line`) tanpa menghapus
+  variabel lama yang masih dipakai halaman lain (`--green-*`, `--gold`,
+  `--qe-*`, dll). Aturan CSS mati (`.cat-campuran`, `.categories-grid`
+  responsive, dll., yang hanya dipakai struktur lama) turut dibersihkan.
+- **Perbaikan aksesibilitas menyeluruh (bonus, berlaku semua halaman):**
+  ditambahkan aturan global `:focus-visible` (outline emas saat navigasi
+  keyboard) dan `prefers-reduced-motion` (animasi dinonaktifkan otomatis
+  bagi pengguna yang memintanya di sistem operasinya) — sebelumnya tidak
+  ada aturan ini sama sekali di seluruh situs.
+
+### Alasan Desain
+- **Warna**: bukan lagi warna acak per kartu (merah/biru/ungu/hijau/emas
+  bertabrakan), melainkan disiplin ke satu keluarga warna yang sudah jadi
+  identitas situs (hijau tua Muhammadiyah + emas medali), dengan variasi
+  tonal untuk menunjukkan hierarki (emas = prioritas saat ini, hijau tua
+  senyap = sudah lewat, netral krem = pustaka umum) — bukan lagi setiap
+  kartu berteriak sama kerasnya.
+- **Tema "medali/pencapaian"**: cocok dengan konteks sebenarnya (tim
+  akan tampil di TV nasional mewakili sekolah), logo kini dibingkai
+  sebagai medali (cincin emas) alih-alih ditempel mentah, dan stage
+  tracker meniru pita lintasan/relay yang menegaskan makna "perjalanan
+  menuju kompetisi", bukan sekadar dekorasi.
+- **Hierarki nyata**: 7 pilihan setara → 1 unggulan + 2 senyap + 4
+  seragam, sesuai kepentingan aktual (Tahap 3 adalah yang paling relevan
+  sekarang), bukan sekadar daftar menu datar.
+
+### Validasi
+- **Playwright (headless Chromium)**: seluruh 13 tautan di halaman utama
+  diverifikasi valid dan mengarah ke halaman yang benar; tidak ada error
+  JavaScript.
+- **Screenshot review** (desktop 1400px & mobile 390px, penuh halaman
+  dan close-up hero/kartu unggulan) dilakukan untuk memeriksa hasil
+  visual secara langsung sebelum diserahkan.
+- **Regresi lintas halaman**: dikonfirmasi `latihan-tahap3.html`, seluruh
+  4 halaman babak, dan `quiz-engine.js` **tidak berubah sama sekali**
+  (diff identik). Screenshot ulang beberapa halaman tersebut dilakukan
+  setelah perubahan `style.css` untuk memastikan tampilannya tidak
+  terpengaruh — lolos, tampilan identik seperti sebelumnya.
+- Div/anchor tag balance pada `index.html` baru diverifikasi seimbang.
+
+---
+
 ## [2.1.0] — 2026-07-18 — Latihan per Babak (Liga Bintang Juara)
 
 ### Ditambahkan

@@ -4,231 +4,145 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cerdas Cermat — SD Muhammadiyah 01 Kukusan</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
-  <style>
-    .school-logo { width: 64px; height: 64px; object-fit: contain; display:block; }
-    .school-badge { gap: 1rem; align-items: center; }
-
-    /* Wrapper baris bawah: bentang penuh grid utama, lalu bagi 2 kolom */
-    .bottom-row {
-      grid-column: 1 / -1;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1.75rem;
-    }
-    @media (max-width: 600px) {
-      .bottom-row { grid-template-columns: 1fr; }
-    }
-
-    /* Kartu Soal Campuran: hapus grid-column dari CSS global, atur ulang di sini */
-    .cat-campuran { grid-column: unset !important; }
-
-    /* Kartu Latihan Tahap 1 */
-    .cat-latihan1 {
-      background: linear-gradient(135deg, #1b5e20 0%, #2e7d32 60%, #388e3c 100%);
-      color: #fff;
-    }
-    .cat-latihan1::before        { background: #69f0ae; }
-    .cat-latihan1 .cat-title     { color: #69f0ae; }
-    .cat-latihan1 .cat-desc      { color: rgba(255,255,255,.85); }
-    .cat-latihan1 .cat-meta      { color: rgba(255,255,255,.7); }
-    .cat-latihan1 .cat-meta span { background: rgba(255,255,255,.12); color: rgba(255,255,255,.92); }
-    .cat-latihan1 .cat-cta       { color: #69f0ae; }
-
-    /* Kartu Latihan Tahap 2 */
-    .cat-latihan2 {
-      background: linear-gradient(135deg, #4a148c 0%, #6a1b9a 60%, #8e24aa 100%);
-      color: #fff;
-    }
-    .cat-latihan2::before        { background: #ffd54f; }
-    .cat-latihan2 .cat-title     { color: #ffd54f; }
-    .cat-latihan2 .cat-desc      { color: rgba(255,255,255,.85); }
-    .cat-latihan2 .cat-meta      { color: rgba(255,255,255,.7); }
-    .cat-latihan2 .cat-meta span { background: rgba(255,255,255,.12); color: rgba(255,255,255,.92); }
-    .cat-latihan2 .cat-cta       { color: #ffd54f; }
-
-    /* Kartu Latihan Tahap 3 */
-    .cat-latihan3 {
-      background: linear-gradient(135deg, #b71c1c 0%, #d32f2f 60%, #e53935 100%);
-      color: #fff;
-    }
-    .cat-latihan3::before        { background: #ffee58; }
-    .cat-latihan3 .cat-title     { color: #ffee58; }
-    .cat-latihan3 .cat-desc      { color: rgba(255,255,255,.85); }
-    .cat-latihan3 .cat-meta      { color: rgba(255,255,255,.7); }
-    .cat-latihan3 .cat-meta span { background: rgba(255,255,255,.12); color: rgba(255,255,255,.92); }
-    .cat-latihan3 .cat-cta       { color: #ffee58; }
-
-    /* Baris bawah sekarang menampung 4 kartu: Campuran, Tahap 1, Tahap 2, Tahap 3 */
-    .bottom-row-4 {
-      grid-column: 1 / -1;
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr 1fr;
-      gap: 1.75rem;
-    }
-    @media (max-width: 1100px) {
-      .bottom-row-4 { grid-template-columns: 1fr 1fr; }
-    }
-    @media (max-width: 600px) {
-      .bottom-row-4 { grid-template-columns: 1fr; }
-    }
-
-    /* Link banner ke hub "Latihan per Babak" (Tahap 3) */
-    .babak-hub-link {
-      grid-column: 1 / -1;
-      text-align: center;
-      margin-top: -0.5rem;
-    }
-    .babak-hub-link a {
-      display: inline-block;
-      font-size: 0.85rem;
-      color: rgba(255,255,255,0.75);
-      text-decoration: underline;
-      text-underline-offset: 3px;
-      transition: color 0.15s;
-    }
-    .babak-hub-link a:hover { color: #ffee58; }
-  </style>
 </head>
 <body class="page-landing">
-<div class="landing-inner">
 
-  <div class="school-badge">
-    <img src="assets/img/logo-sdm01.svg" alt="Logo SDM01KKS" class="school-logo">
-    <div>
+  <!-- ══════════════ HERO — identitas & progres tim ══════════════ -->
+  <header class="landing-hero">
+    <div class="landing-hero-inner">
+
+      <div class="school-medallion">
+        <img src="assets/img/logo-sdm01.svg" alt="Logo SD Muhammadiyah 01 Kukusan">
+      </div>
       <span class="school-name-main">SD Muhammadiyah 01 Kukusan</span>
       <span class="school-name-sub">Kukusan · Depok · Jawa Barat</span>
-    </div>
-  </div>
 
-  <header class="landing-header">
-    <h1 class="landing-title">🏆 Cerdas Cermat</h1>
-    <p class="landing-subtitle">
-      Bank soal latihan kompetisi tingkat Sekolah Dasar.<br>
-      Isian singkat · Timer countdown · Pembahasan detail.
-    </p>
-  </header>
+      <h1 class="landing-title">Cerdas Cermat</h1>
+      <p class="landing-subtitle">
+        Bank soal latihan resmi tim — kini bersiap menuju
+        <strong>Liga Bintang Juara Tahap 3</strong> di GTV.
+      </p>
 
-  <main>
-
-    <div class="categories-grid">
-
-      <a href="indonesia-umum/index.html" class="category-card cat-indonesia">
-        <div class="cat-icon">🇮🇩</div>
-        <h2 class="cat-title">Indonesia &amp; Umum</h2>
-        <p class="cat-desc">
-          Sejarah Indonesia, geografi, kewarganegaraan, tokoh nasional,
-          dan pengetahuan umum dunia.
-        </p>
-        <div class="cat-meta">
-          <span>40 soal / paket</span>
-          <span>~10% English</span>
-          <span>⏱ 10 detik</span>
+      <div class="stage-track" role="list" aria-label="Progres tahap kompetisi">
+        <div class="stage-node is-done" role="listitem">
+          <span class="stage-dot">✓</span>
+          <span class="stage-label">Tahap 1</span>
         </div>
-        <div class="cat-cta">Masuk ke kategori →</div>
-      </a>
-
-      <a href="sains/index.html" class="category-card cat-sains">
-        <div class="cat-icon">🔬</div>
-        <h2 class="cat-title">Pengetahuan Sains</h2>
-        <p class="cat-desc">
-          IPA, fisika dasar, biologi, kimia, tata surya, tubuh manusia,
-          dan teknologi sehari-hari.
-        </p>
-        <div class="cat-meta">
-          <span>40 soal / paket</span>
-          <span>~10% English</span>
-          <span>⏱ 10 detik</span>
+        <div class="stage-line is-done"></div>
+        <div class="stage-node is-done" role="listitem">
+          <span class="stage-dot">✓</span>
+          <span class="stage-label">Tahap 2</span>
         </div>
-        <div class="cat-cta">Masuk ke kategori →</div>
-      </a>
-
-      <a href="matematika/index.html" class="category-card cat-mat">
-        <div class="cat-icon">🔢</div>
-        <h2 class="cat-title">Pengetahuan Matematika</h2>
-        <p class="cat-desc">
-          Aritmatika, geometri, aljabar dasar, statistika, soal cerita,
-          dan pemecahan masalah.
-        </p>
-        <div class="cat-meta">
-          <span>40 soal / paket</span>
-          <span>~10% English</span>
-          <span>⏱ 15–30 detik</span>
+        <div class="stage-line is-done"></div>
+        <div class="stage-node is-current" role="listitem">
+          <span class="stage-dot">3</span>
+          <span class="stage-label">Tahap 3</span>
         </div>
-        <div class="cat-cta">Masuk ke kategori →</div>
-      </a>
-
-      <!-- ── Baris bawah: Soal Campuran + Latihan Tahap 1 + Latihan Tahap 2 + Latihan Tahap 3 ── -->
-      <div class="bottom-row-4">
-
-        <a href="soal-campuran.html" class="category-card cat-campuran">
-          <div class="cat-icon">🏆</div>
-          <h2 class="cat-title">Soal Campuran</h2>
-          <p class="cat-desc">
-            Tantangan gabungan dari ketiga kategori sekaligus —
-            Indonesia &amp; Umum, Sains, dan Matematika — diacak dalam satu sesi.
-          </p>
-          <div class="cat-meta">
-            <span>30 soal acak</span>
-            <span>10 soal / kategori</span>
-            <span>~10% English</span>
-          </div>
-          <div class="cat-cta">Mulai tantangan →</div>
-        </a>
-
-        <a href="latihan-tahap1.html" class="category-card cat-latihan1">
-          <div class="cat-icon">🎯</div>
-          <h2 class="cat-title">Latihan Tahap 1</h2>
-          <p class="cat-desc">
-            Persiapan Liga Bintang Juara — soal campuran IPS &amp; PPKn, IPA,
-            Matematika, Bahasa Indonesia, dan Bahasa Inggris sesuai kisi-kisi Ujian Tahap 1.
-          </p>
-          <div class="cat-meta">
-            <span>30 soal acak</span>
-            <span>5 mata pelajaran</span>
-            <span>Pool: 1000 soal</span>
-          </div>
-          <div class="cat-cta">Mulai latihan →</div>
-        </a>
-
-        <a href="latihan-tahap2.html" class="category-card cat-latihan2">
-          <div class="cat-icon">🚀</div>
-          <h2 class="cat-title">Latihan Tahap 2</h2>
-          <p class="cat-desc">
-            Persiapan Liga Bintang Juara — soal campuran IPS &amp; Pendidikan Pancasila,
-            IPA, Matematika, Bahasa Indonesia, dan Bahasa Inggris sesuai kisi-kisi Ujian Tahap 2.
-          </p>
-          <div class="cat-meta">
-            <span>30 soal acak</span>
-            <span>5 mata pelajaran</span>
-            <span>Pool: 1000 soal</span>
-          </div>
-          <div class="cat-cta">Mulai latihan →</div>
-        </a>
-
-        <a href="latihan-tahap3.html" class="category-card cat-latihan3">
-          <div class="cat-icon">⭐</div>
-          <h2 class="cat-title">Latihan Tahap 3</h2>
-          <p class="cat-desc">
-            Persiapan Liga Bintang Juara — soal campuran Matematika, Bahasa Indonesia, IPS,
-            Pendidikan Pancasila, IPA, dan Bahasa Inggris sesuai kisi-kisi Ujian Tahap 3.
-          </p>
-          <div class="cat-meta">
-            <span>30 soal acak</span>
-            <span>6 mata pelajaran</span>
-            <span>Pool: 1000 soal</span>
-          </div>
-          <div class="cat-cta">Mulai latihan →</div>
-        </a>
-
       </div>
 
     </div>
+  </header>
 
-    <div class="babak-hub-link">
-      <a href="latihan-tahap3-babak.html">
-        🎬 Latihan Tahap 3 juga tersedia per babak (Kumpul Poin, Cepat Tepat, Arena Hitung, Bintang Juara) →
+  <!-- ══════════════ BODY — menu latihan, dikelompokkan ══════════════ -->
+  <main class="landing-body">
+
+    <!-- Fokus Sekarang -->
+    <div class="section-label">
+      <h2>Fokus Sekarang</h2>
+      <div class="rule"></div>
+    </div>
+
+    <div class="featured-card">
+      <span class="featured-eyebrow">Sedang Berlangsung</span>
+      <h3 class="featured-title">Latihan Tahap 3</h3>
+      <p class="featured-desc">
+        1000 soal campuran dari 6 mata pelajaran, disusun sesuai kisi-kisi resmi
+        Liga Bintang Juara. Berlatih sesi campuran, atau langsung pilih format
+        babak yang ingin diasah.
+      </p>
+      <div class="featured-meta">
+        <span>1000 soal</span>
+        <span>6 mata pelajaran</span>
+        <span>6 babak</span>
+      </div>
+      <div class="featured-actions">
+        <a href="latihan-tahap3.html" class="btn-gold">Mulai Sesi Campuran →</a>
+        <a href="latihan-tahap3-babak.html" class="btn-outline">Lihat Semua Babak</a>
+      </div>
+
+      <div class="featured-babak">
+        <div class="featured-babak-label">Atau langsung latihan per babak</div>
+        <div class="babak-pill-row">
+          <a href="latihan-tahap3-babak1.html" class="babak-pill">🎯 Kumpul Poin</a>
+          <a href="latihan-tahap3-babak2.html" class="babak-pill">⚡ Cepat Tepat</a>
+          <a href="latihan-tahap3-babak5.html" class="babak-pill">🧮 Arena Hitung</a>
+          <a href="latihan-tahap3-babak6.html" class="babak-pill">🌟 Bintang Juara</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tahap Sebelumnya -->
+    <div class="section-label">
+      <h2>Tahap Sebelumnya</h2>
+      <div class="rule"></div>
+      <span class="tag">Sudah Dilalui</span>
+    </div>
+
+    <div class="stage-past-grid">
+      <a href="latihan-tahap1.html" class="stage-past-card">
+        <div>
+          <div class="stage-past-title">Latihan Tahap 1</div>
+          <div class="stage-past-desc">5 mata pelajaran · Pool 1000 soal</div>
+        </div>
+        <span class="done-badge">✓ Selesai</span>
+      </a>
+      <a href="latihan-tahap2.html" class="stage-past-card">
+        <div>
+          <div class="stage-past-title">Latihan Tahap 2</div>
+          <div class="stage-past-desc">5 mata pelajaran · Pool 1000 soal</div>
+        </div>
+        <span class="done-badge">✓ Selesai</span>
+      </a>
+    </div>
+
+    <!-- Latihan per Kategori -->
+    <div class="section-label">
+      <h2>Latihan per Kategori</h2>
+      <div class="rule"></div>
+      <span class="tag">Bank Soal Umum</span>
+    </div>
+
+    <div class="lib-grid">
+      <a href="indonesia-umum/index.html" class="lib-card">
+        <div class="lib-icon tone-a">🇮🇩</div>
+        <div class="lib-text">
+          <strong>Indonesia &amp; Umum</strong>
+          <span>Sejarah, geografi, tokoh nasional</span>
+        </div>
+      </a>
+      <a href="sains/index.html" class="lib-card">
+        <div class="lib-icon tone-b">🔬</div>
+        <div class="lib-text">
+          <strong>Pengetahuan Sains</strong>
+          <span>IPA, fisika dasar, tubuh manusia</span>
+        </div>
+      </a>
+      <a href="matematika/index.html" class="lib-card">
+        <div class="lib-icon tone-c">🔢</div>
+        <div class="lib-text">
+          <strong>Pengetahuan Matematika</strong>
+          <span>Aritmatika, geometri, soal cerita</span>
+        </div>
+      </a>
+      <a href="soal-campuran.html" class="lib-card">
+        <div class="lib-icon tone-d">🎲</div>
+        <div class="lib-text">
+          <strong>Soal Campuran</strong>
+          <span>Gabungan 3 kategori di atas</span>
+        </div>
       </a>
     </div>
 
@@ -243,6 +157,5 @@
     </p>
   </footer>
 
-</div>
 </body>
 </html>

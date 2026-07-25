@@ -558,6 +558,62 @@ AR-007, ditinjau lebih ketat karena berdampak lintas halaman.**
 
 ---
 
+## [AR-016] — v2.2.0 · Desain Ulang Halaman Utama
+
+**Tanggal:** 2026-07-18
+**Cakupan:** `index.html` (ditulis ulang total), `assets/css/style.css`
+(blok "LANDING PAGE" ditulis ulang + aturan aksesibilitas global baru)
+
+### Perubahan
+- Halaman utama diubah dari 7 kartu warna-warni setara menjadi hierarki
+  3 tingkat: hero (medali logo + stage tracker) → 1 kartu unggulan
+  "Fokus Sekarang" (Tahap 3, termasuk 4 pil tautan babak) → 2 kartu senyap
+  "Tahap Sebelumnya" → 4 kartu seragam "Latihan per Kategori".
+- `style.css`: token warna baru ditambahkan (additive, tidak menghapus
+  variabel lama), blok CSS landing lama dihapus total dan diganti,
+  ditambah aturan `:focus-visible` dan `prefers-reduced-motion` global.
+
+### Mengapa Aman (Non-Regresi)
+1. **Diverifikasi sebelum mengubah**: kelas-kelas landing lama
+   (`.category-card`, `.categories-grid`, `.cat-title`, dst.) dicek dengan
+   `grep -rl` ke seluruh file HTML — dikonfirmasi **hanya dipakai
+   `index.html`**, tidak ada halaman lain yang bergantung padanya. Ini
+   membuat penghapusan totalnya aman.
+2. Variabel CSS lama (`--green-900/800/700/600`, `--gold`, `--gold-dark`,
+   `--col-indonesia/sains/mat`, seluruh `--qe-*`) **tidak dihapus atau
+   diubah nilainya** — hanya ditambah 3 variabel baru
+   (`--forest-950`, `--cream`, `--cream-line`).
+3. Aturan `:focus-visible`/`prefers-reduced-motion` yang baru bersifat
+   murni aditif dan tidak dapat merusak tampilan apa pun secara visual
+   (outline hanya muncul saat fokus keyboard; reduced-motion hanya
+   memengaruhi pengguna yang secara eksplisit mengaktifkannya di OS).
+
+### Risiko Regresi
+
+| Area | Risiko | Mitigasi |
+|---|---|---|
+| `style.css` dipakai semua halaman | Perubahan besar pada file bersama berisiko memengaruhi halaman lain meski secara teori terisolasi ke kelas landing-only | Screenshot regresi diambil ulang untuk `latihan-tahap3-babak.html` dan `latihan-tahap3-babak2.html` (sesi kuis aktif) setelah perubahan `style.css` — tampilan identik dengan sebelum perubahan, tidak ada kebocoran style |
+| Link internal di `index.html` baru | Salah ketik path bisa membuat tombol menu rusak | Diverifikasi otomatis dengan Playwright: seluruh 13 `href` di halaman diekstrak dan dicocokkan manual — semua benar |
+| Konten "Tahap Sebelumnya" mengklaim status "✓ Selesai" | Ini adalah klaim status (tim sudah lolos dari Tahap 1 & 2) — jika ternyata belum benar-benar tuntas, bisa menyesatkan | Didasarkan pada pernyataan eksplisit pengguna sebelumnya ("peserta ... sudah berhasil masuk ke putaran 3"), bukan asumsi sepihak |
+| Emoji pada judul besar dihapus (🏆 di H1) | Perubahan gaya, bukan bug — tapi perlu dicatat sebagai keputusan desain yang disengaja | Emoji dipindah/dikurangi karena permintaan eksplisit "terlihat lebih profesional, tidak seperti didesain remaja" — dicatat di sini agar tidak dikira terlupa |
+
+### Checklist Validasi
+
+- [x] Screenshot desktop (1400px) & mobile (390px) ditinjau langsung — LOLOS
+- [x] Close-up hero (cek logo tidak lagi "mengambang" tanpa bingkai) — LOLOS
+- [x] Playwright: 13 link diverifikasi, 0 error JavaScript — LOLOS
+- [x] Regresi: `latihan-tahap3.html`, seluruh halaman babak, dan
+      `quiz-engine.js` dikonfirmasi **tidak berubah sama sekali** (diff
+      identik terhadap versi sebelum redesign) — LOLOS
+- [x] Screenshot ulang 3 halaman lain (hub babak + sesi kuis babak2)
+      setelah perubahan `style.css` untuk memastikan tidak ada kebocoran
+      style ke halaman lain — LOLOS
+- [ ] **Disarankan:** tinjauan visual langsung oleh guru/pihak sekolah di
+      browser sungguhan (bukan hanya screenshot) sebelum dipakai untuk
+      keperluan yang lebih formal/dipamerkan ke pihak luar
+
+---
+
 ## Panduan Pengisian ANTIREGRESI ke Depan
 
 Setiap kali membuat perubahan besar, tambahkan section baru:
