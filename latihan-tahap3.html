@@ -48,14 +48,15 @@
       ].join('');
 
       try {
-        var r = await fetch(POOL_URL);
+        var r = await fetch(POOL_URL, { cache: 'no-store' });
         if (!r.ok) throw new Error('HTTP ' + r.status + ' — ' + POOL_URL);
         var data = await r.json();
 
         window.QUIZ_CONFIG = {
           dataUrl:       POOL_URL,
           questionCount: QUESTION_COUNT,
-          shuffle:       true
+          shuffle:       true,
+          stratifyBy:    'mapel' // 6 mapel sejajar (termasuk Bahasa Inggris) -> dibagi rata, bukan dibatasi ~10% seperti default
         };
 
         var script = document.createElement('script');

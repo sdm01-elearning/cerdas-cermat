@@ -614,6 +614,55 @@ AR-007, ditinjau lebih ketat karena berdampak lintas halaman.**
 
 ---
 
+## [AR-017] — v2.2.1 · Perbaikan Bug: Soal Tidak Teracak (Latihan per Babak)
+
+**Tanggal:** 2026-07-19
+**Cakupan:** `assets/js/quiz-engine.js` (ditambah, additive),
+`latihan-tahap3-babak5.html` (mekanisme cache dihapus), `latihan-tahap3-babak2.html`,
+`latihan-tahap3-babak6.html`, `latihan-tahap3.html` (fetch cache option)
+
+**⚠️ Ini bug-fix, bukan fitur baru — ditinjau dengan fokus "apakah benar
+memperbaiki, dan apakah ada risiko baru yang muncul."**
+
+### Ringkasan Bug & Perbaikan
+Lihat detail lengkap di CHANGELOG v2.2.1. Singkatnya: Babak 5 (Arena
+Hitung) menyimpan soal ke `sessionStorage` per amplop (bug pasti); Babak
+1/2/6 kemungkinan besar terkena bfcache saat diuji dengan tombol
+Back/Forward (bukan bug sampling itu sendiri — sampling terbukti benar
+lewat pengujian navigasi fresh berulang).
+
+### Mengapa Aman (Non-Regresi)
+1. Guard bfcache (`pageshow` + `event.persisted`) adalah kode BARU yang
+   ditambahkan, tidak mengubah satu baris pun logika lama di
+   `quiz-engine.js` — hanya menambah satu listener di awal file.
+2. Penghapusan `sessionStorage` di Babak 5 murni menyederhanakan kode
+   (menghapus, bukan menambah kompleksitas) — fungsi `loadQuestions()`
+   sekarang lebih pendek dan tidak punya cabang logika cache sama sekali.
+3. `{ cache: 'no-store' }` pada `fetch()` adalah opsi standar Fetch API,
+   tidak mengubah bentuk data yang diterima, hanya memengaruhi apakah
+   browser boleh menyajikan salinan cache — tidak ada risiko fungsional.
+
+### Risiko Regresi
+
+| Area | Risiko | Mitigasi |
+|---|---|---|
+| Guard bfcache memicu reload | Jika ada state penting yang belum tersimpan saat pageshow persisted terjadi, reload akan menghilangkannya | Untuk latihan soal (bukan aplikasi dengan data penting/form), kehilangan progres tampilan soal akibat reload dinilai dapat diterima — jauh lebih baik daripada menampilkan soal basi tanpa disadari |
+| Babak 5 tidak lagi tahan refresh mid-sesi | Refresh disengaja/tidak sengaja di tengah 90 detik kini akan mengacak ulang 5 soal baru (bukan melanjutkan 5 soal yang sama) | Ini adalah pertukaran yang disengaja dan sudah dicatat eksplisit di kode & CHANGELOG — memprioritaskan "soal harus selalu acak" sesuai permintaan eksplisit pengguna |
+| `cache:'no-store'` sedikit menambah latensi jaringan (tidak bisa memakai cache) | Dampak sangat kecil untuk file JSON ~200KB pada koneksi sekolah biasa | Diterima sebagai trade-off wajar demi kepastian data selalu segar |
+
+### Checklist Validasi
+
+- [x] Babak 5: 6x navigasi ke amplop yang sama → 6 soal-pertama berbeda — LOLOS (sebelumnya bug: selalu 1 yang sama)
+- [x] Babak 1, 2, 6: 6x navigasi fresh → 6 hasil unik (tidak regresi) — LOLOS
+- [x] Guard bfcache memicu reload sungguhan saat `pageshow persisted=true` (diuji di halaman berbasis engine DAN Babak 5) — LOLOS
+- [x] Guard bfcache TIDAK memicu reload saat `pageshow persisted=false` (navigasi normal) — LOLOS
+- [x] Regresi menyeluruh: index, Tahap 3, Babak 1/2/5/6 — semua berfungsi normal, 0 error JS — LOLOS
+- [ ] **Disarankan:** pengguna mengonfirmasi ulang di penggunaan nyata
+      (bukan hanya simulasi otomatis) bahwa soal kini benar-benar terasa
+      berbeda setiap kali berlatih
+
+---
+
 ## Panduan Pengisian ANTIREGRESI ke Depan
 
 Setiap kali membuat perubahan besar, tambahkan section baru:

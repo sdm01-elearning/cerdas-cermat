@@ -152,6 +152,15 @@
   (function () {
     'use strict';
 
+    /* Guard bfcache — sama alasannya dengan quiz-engine.js: tanpa ini,
+       tombol Back/Forward browser bisa menampilkan ulang snapshot lama
+       (5 soal yang sama) tanpa menjalankan ulang pengacakan. */
+    window.addEventListener('pageshow', function (event) {
+      if (event.persisted) {
+        window.location.reload();
+      }
+    });
+
     var POOL_URL     = 'latihan-tahap3/soal/data/pool.json';
     var TOTAL_TIME   = 90;
     var Q_PER_ENVELOPE = 5;
@@ -193,33 +202,23 @@
       timeUp: false
     };
 
-    function storageKey(amplop) { return 'babak5_amplop_' + amplop; }
-
-    async function loadQuestions(amplop) {
-      var key = storageKey(amplop);
-      var cached = null;
-      try {
-        var raw = sessionStorage.getItem(key);
-        if (raw) cached = JSON.parse(raw);
-      } catch (e) { cached = null; }
-
-      var r = await fetch(POOL_URL);
+    /**
+     * PENTING: soal SELALU diambil acak fresh dari pool setiap amplop
+     * dibuka — TIDAK di-cache lewat sessionStorage/localStorage apa pun.
+     * (Versi sebelumnya sempat menyimpan hasil acak per nomor amplop ke
+     * sessionStorage agar tahan refresh, tapi efek sampingnya membuat
+     * amplop yang sama selalu menampilkan 5 soal yang identik selama tab
+     * browser belum ditutup — melanggar aturan babak yang seharusnya
+     * mengacak dari pool setiap kali dimainkan. Refresh mid-sesi sekarang
+     * memang akan mengacak ulang; ini pertukaran yang disengaja demi
+     * memastikan soal selalu benar-benar acak.)
+     */
+    async function loadQuestions() {
+      var r = await fetch(POOL_URL, { cache: 'no-store' });
       if (!r.ok) throw new Error('HTTP ' + r.status + ' — ' + POOL_URL);
       var data = await r.json();
       var pool = data.soal || [];
-
-      if (cached && cached.ids && cached.ids.length === Q_PER_ENVELOPE) {
-        var byId = {};
-        pool.forEach(function (s) { byId[s.id] = s; });
-        var restored = cached.ids.map(function (id) { return byId[id]; }).filter(Boolean);
-        if (restored.length === Q_PER_ENVELOPE) return restored;
-      }
-
-      var picked = shuffle(pool).slice(0, Q_PER_ENVELOPE);
-      try {
-        sessionStorage.setItem(key, JSON.stringify({ ids: picked.map(function (s) { return s.id; }) }));
-      } catch (e) { /* abaikan jika storage penuh/nonaktif */ }
-      return picked;
+      return shuffle(pool).slice(0, Q_PER_ENVELOPE);
     }
 
     function buildDots() {
@@ -336,7 +335,7 @@
       qs('#ah-amplop-label').textContent = 'Amplop ' + amplop;
 
       try {
-        state.questions = await loadQuestions(amplop);
+        state.questions = await loadQuestions();
       } catch (e) {
         session.innerHTML = [
           '<div class="qe-error">',

@@ -5,6 +5,68 @@ Format mengikuti [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ---
 
+## [2.2.1] — 2026-07-19 — Perbaikan Bug: Soal Tidak Teracak di Latihan per Babak
+
+### Laporan Masalah
+Pengguna melaporkan soal yang muncul di setiap babak (Kumpul Poin per
+mapel, Cepat Tepat, Arena Hitung per amplop) selalu sama setiap kali
+berlatih, alih-alih diacak ulang dari pool.
+
+### Akar Masalah (ditemukan lewat pembacaan kode langsung, bukan tebakan)
+1. **Bug pasti/terverifikasi — Babak 5 (Arena Hitung):** halaman ini
+   menyimpan 5 soal hasil acak ke `sessionStorage` per nomor amplop, agar
+   refresh halaman tidak mengacak ulang. Efek sampingnya: amplop yang
+   sama akan SELALU menampilkan 5 soal identik selama tab browser belum
+   ditutup, melanggar aturan babak yang seharusnya mengacak dari pool
+   setiap kali dimainkan.
+2. **Penyebab sangat mungkin — Babak 1, 2, 6 (berbasis `quiz-engine.js`):**
+   pengujian dengan tombol Back/Forward browser dapat memicu *bfcache*
+   (back/forward cache) — browser menampilkan kembali snapshot halaman
+   yang sudah "dibekukan" (termasuk hasil acak sebelumnya) tanpa
+   menjalankan ulang skrip pengacakan sama sekali.
+3. Diverifikasi lewat pengujian otomatis (Playwright) bahwa navigasi
+   fresh/normal ke Babak 1, 2, dan 6 **sudah benar teracak** sejak awal
+   (6 dari 6 percobaan menghasilkan soal berbeda) — bug nyata hanya ada
+   di Babak 5 dan pada skenario Back/Forward.
+
+### Perbaikan
+- **`latihan-tahap3-babak5.html`** — seluruh mekanisme `sessionStorage`
+  dihapus. Setiap amplop kini SELALU mengambil sampel 5 soal acak baru
+  dari pool setiap kali dibuka, tanpa pengecualian. (Konsekuensi yang
+  disengaja: refresh di tengah sesi kini akan mengacak ulang juga — ini
+  pertukaran yang tepat demi memastikan soal benar-benar acak sesuai
+  laporan.)
+- **`assets/js/quiz-engine.js`** — ditambahkan guard bfcache: listener
+  `pageshow` yang memaksa `location.reload()` penuh jika
+  `event.persisted === true` (halaman dipulihkan dari bfcache akibat
+  tombol Back/Forward). Ini melindungi SEMUA halaman yang memakai engine
+  ini (Tahap 1/2/3, Soal Campuran, kategori, dan Babak 1/2/6).
+- **`latihan-tahap3-babak5.html`** juga mendapat guard bfcache yang sama
+  secara independen, karena halaman ini memakai skrip mandiri (tidak
+  memakai `quiz-engine.js`).
+- **Semua fetch ke `pool.json`** (di `quiz-engine.js`, Babak 2, Babak 5,
+  Babak 6, dan `latihan-tahap3.html`) kini memakai opsi
+  `{ cache: 'no-store' }` — langkah defensif tambahan agar tidak ada
+  kemungkinan sama sekali browser/CDN menyajikan respons pool.json yang
+  basi.
+
+### Validasi (Playwright, headless Chromium)
+- **Sebelum vs sesudah fix pada Babak 5**: 6 kali navigasi berturut-turut
+  ke amplop nomor yang sama menghasilkan **6 soal-pertama yang seluruhnya
+  berbeda** (sebelumnya bug akan selalu menghasilkan 1 soal yang sama).
+- **Babak 1, 2, 6**: dikonfirmasi ulang 6 kali navigasi fresh tetap
+  menghasilkan 6 hasil unik (tidak ada regresi, sudah benar sejak awal).
+- **Guard bfcache**: diuji dengan memicu event `pageshow` sintetis
+  (`persisted: true`) — dikonfirmasi memicu reload penuh sungguhan
+  (bukan sekadar terpanggil tanpa efek) baik di halaman berbasis
+  `quiz-engine.js` maupun di Babak 5 (skrip mandiri). Event `pageshow`
+  tanpa `persisted` (navigasi normal) dikonfirmasi TIDAK memicu reload.
+- **Regresi menyeluruh**: seluruh halaman (index, Tahap 3, Babak 1/2/5/6)
+  diuji ulang end-to-end setelah perbaikan — semua berfungsi normal,
+  nol error JavaScript.
+
+---
+
 ## [2.2.0] — 2026-07-18 — Desain Ulang Halaman Utama
 
 ### Konteks
