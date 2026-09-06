@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Riwayat Latihan Mandiri — Cerdas Cermat SDM01KKS</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="page-quiz">
+
+  <div id="lmr-root"></div>
+
+  <script>
+  (function () {
+    'use strict';
+
+    /**
+     * latihan-mandiri-riwayat.html — Riwayat Latihan Mandiri
+     *
+     * Menampilkan (BUKAN menghapus) riwayat sesi latihan mandiri per
+     * peserta, dibaca dari localStorage key yang sama dengan yang ditulis
+     * oleh latihan-mandiri.html. TIDAK ADA tombol/fungsi hapus riwayat di
+     * halaman ini — sengaja, sesuai kebijakan riwayat permanen. Lihat
+     * catatan lengkap tentang batasan localStorage (per-browser, bukan
+     * server terpusat) di komentar kepala latihan-mandiri.html.
+     */
+
+    var LS_KEY = 'cc_riwayat_mandiri_v1';
+
+    var PESERTA_LIST = [
+      { nama: 'Kimi Zia Azahra',              icon: '🌟' },
+      { nama: 'Kirana Hafizah Iqra Nasution', icon: '🌟' },
+      { nama: 'Fairel Atharizz Calief',       icon: '🌟' }
+    ];
+
+    function qs(sel, ctx) { return (ctx || document).querySelector(sel); }
+    function esc(str) {
+      var d = document.createElement('div');
+      d.textContent = (str === null || str === undefined) ? '' : String(str);
+      return d.innerHTML;
+    }
+    function bacaRiwayat() {
+      try { return JSON.parse(localStorage.getItem(LS_KEY) || '{}'); }
+      catch (e) { return {}; }
+    }
+    function formatTanggal(iso) {
+      try {
+        var d = new Date(iso);
+        return d.toLocaleDateString('id-ID', { day: 'numeric', month: 'short', year: 'numeric' }) +
+               ' · ' + d.toLocaleTimeString('id-ID', { hour: '2-digit', minute: '2-digit' });
+      } catch (e) { return iso; }
+    }
+
+    var root = document.getElementById('lmr-root');
+
+    function renderPesertaPicker() {
+      var kartu = PESERTA_LIST.map(function (p) {
+        return '<button class="lm-peserta-card" data-nama="' + esc(p.nama) + '">' +
+               '  <span class="lm-peserta-avatar">' + p.icon + '</span>' +
+               '  <span class="lm-peserta-name">' + esc(p.nama) + '</span>' +
+               '</button>';
+      }).join('');
+
+      root.innerHTML =
+        '<div class="lm-wrap">' +
+        '  <div class="lm-title">🕘 Riwayat Latihan Mandiri</div>' +
+        '  <p class="lm-desc">Pilih nama untuk melihat riwayat sesi latihan mandirinya.</p>' +
+        '  <div class="lm-peserta-grid">' + kartu + '</div>' +
+        '  <a href="latihan-mandiri.html" class="lm-back">📱 Mulai latihan mandiri baru</a>' +
+        '  <a href="index.html" class="lm-back">← Kembali ke menu utama</a>' +
+        '</div>';
+
+      Array.prototype.forEach.call(root.querySelectorAll('.lm-peserta-card'), function (btn) {
+        btn.addEventListener('click', function () { renderRiwayat(btn.getAttribute('data-nama')); });
+      });
+    }
+
+    function renderRiwayat(peserta) {
+      var data  = bacaRiwayat();
+      var sesi  = (data[peserta] || []).slice().reverse(); // terbaru dulu
+
+      var grafikHtml = '';
+      if (sesi.length > 1) {
+        var terurutAsli = sesi.slice().reverse(); // urut waktu untuk grafik (lama → baru)
+        var bars = terurutAsli.slice(-15).map(function (s, i) {
+          return '<div class="lm-riwayat-bar" style="height:' + Math.max(s.skor, 3) + '%">' +
+                 '  <span class="lm-riwayat-bar-label">' + s.skor + '</span>' +
+                 '</div>';
+        }).join('');
+        grafikHtml =
+          '<p class="lm-desc" style="margin-top:0.5rem;">Tren skor (maksimal 15 sesi terakhir, lama → baru)</p>' +
+          '<div class="lm-riwayat-bar-wrap" style="margin-top:1.25rem;">' + bars + '</div>';
+      }
+
+      var listHtml;
+      if (!sesi.length) {
+        listHtml = '<p class="lm-riwayat-empty">Belum ada riwayat latihan untuk ' + esc(peserta) + '. Yuk mulai latihan pertamanya!</p>';
+      } else {
+        listHtml = '<div class="lm-riwayat-table">' + sesi.map(function (s) {
+          return '<div class="lm-riwayat-row">' +
+                 '  <span class="lm-riwayat-tanggal">' + esc(formatTanggal(s.waktu)) + '</span>' +
+                 '  <span class="lm-riwayat-skor">' + s.skor + '</span>' +
+                 '  <span class="lm-riwayat-detail">' + s.benar + ' benar &nbsp;·&nbsp; ' + s.salah + ' salah &nbsp;·&nbsp; dari ' + s.total + ' soal</span>' +
+                 '</div>';
+        }).join('') + '</div>';
+      }
+
+      root.innerHTML =
+        '<div class="lm-wrap" style="min-height:100vh;">' +
+        '  <div class="lm-title">🕘 ' + esc(peserta) + '</div>' +
+        '  <p class="lm-desc">' + sesi.length + ' sesi latihan tercatat.</p>' +
+        grafikHtml +
+        listHtml +
+        '  <a href="latihan-mandiri.html" class="lm-back">📱 Latihan lagi</a>' +
+        '  <a href="latihan-mandiri-riwayat.html" class="lm-back">← Pilih peserta lain</a>' +
+        '</div>';
+    }
+
+    renderPesertaPicker();
+  })();
+  </script>
+
+</body>
+</html>

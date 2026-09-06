@@ -21,6 +21,26 @@ Bank soal dan materi latihan **Cerdas Cermat** tingkat Sekolah Dasar untuk
 
 ---
 
+## Latihan Mandiri (belajar sendiri, tanpa didampingi)
+
+Berbeda dari mode-mode di atas yang dirancang untuk dijawab **lisan bersama-sama**
+(guru membaca soal, tim menjawab, guru menekan Spasi), `latihan-mandiri.html`
+dirancang untuk **belajar sendiri** di rumah/perangkat pribadi:
+
+- Soal **pilihan ganda** (4 opsi) — 3 opsi pengecoh dibangkitkan otomatis dari
+  jawaban soal lain di pool yang sama (lihat komentar `buildOpsi()` di file
+  tersebut untuk detail & batasannya)
+- **20 soal/sesi**, diacak dari pool 1000 soal Latihan Tahap 3 (6 mata pelajaran)
+- **15 detik/soal**, jawaban langsung diperiksa benar/salah + pembahasan tampil seketika
+- Wajib pilih nama peserta dulu (3 peserta tetap, didaftar langsung di file)
+- Hasil setiap sesi (skor, rincian per soal) otomatis tersimpan ke riwayat dan
+  bisa dilihat di `latihan-mandiri-riwayat.html`
+- **Riwayat bersifat permanen** — sengaja tidak ada tombol/fungsi hapus di mana
+  pun. Catatan: karena situs ini statis (tanpa server/database), riwayat
+  tersimpan di `localStorage` browser yang dipakai, jadi tidak otomatis
+  tersinkron lintas perangkat dan tidak sepenuhnya kebal dari penghapusan data
+  browser di level sistem — hanya tidak bisa dihapus **lewat aplikasi ini**.
+
 ## Cara Penggunaan
 
 ### Untuk Guru (Mode Presentasi)

@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Latihan Mandiri — Cerdas Cermat SDM01KKS</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <!-- KaTeX — untuk soal Matematika yang mengandung LaTeX -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+
+  <style>
+    #lm-teks       .katex { font-size: 1.2em; }
+    #lm-pembahasan .katex { font-size: 1.05em; }
+    .katex-display { overflow-x: auto; overflow-y: hidden; padding: .25em 0; }
+    .katex-display > .katex { max-width: 100%; }
+  </style>
+</head>
+<body class="page-quiz">
+
+  <div id="lm-root"></div>
+
+  <script>
+  (function () {
+    'use strict';
+
+    /**
+     * latihan-mandiri.html — Latihan Mandiri (belajar sendiri di rumah)
+     * Cerdas Cermat SD Muhammadiyah 01 Kukusan
+     *
+     * BEDA dari mode latihan lain di repo ini:
+     *  - Soal disajikan PILIHAN GANDA (4 opsi), bukan isian lisan —
+     *    pool soal sumbernya tetap isian ("jawaban" bertipe teks bebas),
+     *    jadi 3 opsi pengecoh dibangkitkan otomatis dari jawaban soal
+     *    lain di mapel yang sama (lihat buildOpsi()).
+     *  - Waktu tetap 15 detik/soal, TIDAK bisa dikonfigurasi dari luar
+     *    (beda dari quiz-engine.js yang menerima fixedWaktu).
+     *  - Wajib pilih nama peserta dulu sebelum sesi dimulai.
+     *  - Setiap sesi SELESAI (20/20 soal terjawab/lewat waktu) otomatis
+     *    disimpan ke riwayat (localStorage) per peserta. Riwayat dapat
+     *    dilihat di latihan-mandiri-riwayat.html.
+     *
+     *  PENTING — kebijakan riwayat tidak dapat dihapus:
+     *  Berkas ini SENGAJA tidak menyediakan fungsi hapus/reset riwayat
+     *  dalam bentuk apa pun (tidak ada tombol, tidak ada endpoint JS).
+     *  Catatan: karena situs ini murni statis (GitHub Pages, tanpa
+     *  server/database), riwayat tersimpan di localStorage browser yang
+     *  dipakai saat latihan. Ini mencegah penghapusan lewat aplikasi,
+     *  tapi tidak mencegah penghapusan lewat pengaturan browser itu
+     *  sendiri, dan tidak otomatis tersinkron ke perangkat lain. Kalau
+     *  ke depan perlu riwayat terpusat yang benar-benar tidak bisa
+     *  diutak-atik siswa, itu perlu backend kecil (mis. Google Sheets
+     *  lewat Apps Script) di luar cakupan file ini.
+     */
+
+    var POOL_URL       = 'latihan-tahap3/soal/data/pool.json';
+    var JUMLAH_SOAL    = 20;
+    var WAKTU_PER_SOAL = 15; // detik
+    var LS_KEY         = 'cc_riwayat_mandiri_v1';
+
+    var PESERTA_LIST = [
+      { nama: 'Kimi Zia Azahra',                icon: '🌟' },
+      { nama: 'Kirana Hafizah Iqra Nasution',   icon: '🌟' },
+      { nama: 'Fairel Atharizz Calief',         icon: '🌟' }
+    ];
+
+    var CIRC = 282.743; // keliling timer ring (r = 45), sama seperti quiz-engine.js
+
+    /* Guard bfcache — sama alasannya dengan babak5: tanpa ini, tombol
+       Back/Forward browser bisa menampilkan ulang snapshot sesi lama. */
+    window.addEventListener('pageshow', function (event) {
+      if (event.persisted) window.location.reload();
+    });
+
+    /* ── Utility ───────────────────────────────────────────── */
+    function qs(sel, ctx) { return (ctx || document).querySelector(sel); }
+    function esc(str) {
+      var d = document.createElement('div');
+      d.textContent = (str === null || str === undefined) ? '' : String(str);
+      return d.innerHTML;
+    }
+    function normalize(s) { return (s || '').toString().trim().toLowerCase(); }
+    function shuffle(arr) {
+      var a = arr.slice();
+      for (var i = a.length - 1; i > 0; i--) {
+        var j = Math.floor(Math.random() * (i + 1));
+        var t = a[i]; a[i] = a[j]; a[j] = t;
+      }
+      return a;
+    }
+
+    /**
+     * Bangun 4 opsi pilihan ganda untuk satu soal: 1 jawaban benar +
+     * 3 pengecoh. Pengecoh diambil dari jawaban soal LAIN pada mapel
+     * yang sama (supaya masuk akal secara kategori), lalu diperlebar ke
+     * seluruh pool kalau soal semapel tidak cukup. Duplikat teks jawaban
+     * (case-insensitive) dibuang supaya tidak ada 2 opsi yang terlihat
+     * sama. Ini heuristik otomatis — bukan pengecoh yang dikurasi guru —
+     * jadi sesekali bisa terasa terlalu mudah/gampang ditebak dari
+     * bentuk angka atau panjang teks. Kalau ingin pengecoh yang lebih
+     * rapi, perlu field baru semacam "opsi_pengecoh" di JSON soal.
+     */
+    function buildOpsi(soal, pool) {
+      var jawabanBenar = soal.jawaban;
+      var kunciTerpakai = {};
+      kunciTerpakai[normalize(jawabanBenar)] = true;
+      (soal.alternatif_jawaban || []).forEach(function (alt) {
+        kunciTerpakai[normalize(alt)] = true;
+      });
+
+      function kandidatDari(list) {
+        return shuffle(list.filter(function (s) {
+          return s.id !== soal.id && !kunciTerpakai[normalize(s.jawaban)];
+        }));
+      }
+
+      var pengecoh  = [];
+      var seenKunci = {};
+      var sameMapel = pool.filter(function (s) { return s.mapel === soal.mapel; });
+
+      [kandidatDari(sameMapel), kandidatDari(pool)].some(function (kandidatList) {
+        kandidatList.forEach(function (s) {
+          if (pengecoh.length >= 3) return;
+          var kunci = normalize(s.jawaban);
+          if (seenKunci[kunci]) return;
+          seenKunci[kunci] = true;
+          pengecoh.push(s.jawaban);
+        });
+        return pengecoh.length >= 3;
+      });
+
+      return shuffle([jawabanBenar].concat(pengecoh));
+    }
+
+    /* ── Riwayat (localStorage) ───────────────────────────────
+       Lihat catatan kebijakan di atas: TIDAK ADA fungsi hapus di sini. */
+    function bacaRiwayat() {
+      try { return JSON.parse(localStorage.getItem(LS_KEY) || '{}'); }
+      catch (e) { return {}; }
+    }
+    function simpanSesi(peserta, sesi) {
+      var data = bacaRiwayat();
+      if (!data[peserta]) data[peserta] = [];
+      data[peserta].push(sesi);
+      try { localStorage.setItem(LS_KEY, JSON.stringify(data)); }
+      catch (e) { console.error('[LatihanMandiri] Gagal menyimpan riwayat:', e); }
+    }
+
+    /* ── State sesi ────────────────────────────────────────── */
+    var state = {
+      peserta: null,
+      pool: [],
+      soalSesi: [],
+      idx: 0,
+      jawabanUser: [],
+      timerIv: null,
+      timeLeft: 0,
+      locked: false
+    };
+
+    var root = document.getElementById('lm-root');
+
+    /* ── Layar: loading & error ───────────────────────────── */
+    function renderLoading() {
+      root.innerHTML = '<div class="qe-loading"><div class="qe-spinner"></div>' +
+        '<p>Memuat soal Latihan Mandiri…</p></div>';
+    }
+    function renderError(msg) {
+      root.innerHTML =
+        '<div class="qe-error">' +
+        '  <div class="qe-error-icon">⚠️</div>' +
+        '  <h2>Gagal Memuat Soal</h2>' +
+        '  <p>' + esc(msg) + '</p>' +
+        '  <p class="qe-error-hint">Pastikan halaman diakses lewat server HTTP ' +
+        '  (GitHub Pages atau <code>python3 -m http.server</code>), bukan file lokal.</p>' +
+        '  <a href="index.html" class="qe-btn qe-btn-back">← Kembali</a>' +
+        '</div>';
+    }
+
+    /* ── Layar 1: pilih peserta ───────────────────────────── */
+    function renderPesertaPicker() {
+      var kartu = PESERTA_LIST.map(function (p) {
+        return '<button class="lm-peserta-card" data-nama="' + esc(p.nama) + '">' +
+               '  <span class="lm-peserta-avatar">' + p.icon + '</span>' +
+               '  <span class="lm-peserta-name">' + esc(p.nama) + '</span>' +
+               '</button>';
+      }).join('');
+
+      root.innerHTML =
+        '<div class="lm-wrap">' +
+        '  <div class="lm-title">📱 Latihan Mandiri</div>' +
+        '  <p class="lm-desc">' +
+        '    Pilih namamu dulu, ya! Kamu akan mendapat ' + JUMLAH_SOAL + ' soal pilihan ganda ' +
+        '    campuran dari semua mata pelajaran. Setiap soal punya waktu ' + WAKTU_PER_SOAL + ' detik, ' +
+        '    dan begitu kamu memilih jawaban, langsung ketahuan benar atau salah lengkap dengan pembahasannya.' +
+        '  </p>' +
+        '  <div class="lm-peserta-grid">' + kartu + '</div>' +
+        '  <a href="latihan-mandiri-riwayat.html" class="lm-back">🕘 Lihat riwayat latihan</a>' +
+        '  <a href="index.html" class="lm-back">← Kembali ke menu utama</a>' +
+        '</div>';
+
+      Array.prototype.forEach.call(root.querySelectorAll('.lm-peserta-card'), function (btn) {
+        btn.addEventListener('click', function () { mulaiSesi(btn.getAttribute('data-nama')); });
+      });
+    }
+
+    /* ── Mulai sesi ────────────────────────────────────────── */
+    function mulaiSesi(peserta) {
+      state.peserta = peserta;
+      state.soalSesi = shuffle(state.pool).slice(0, JUMLAH_SOAL).map(function (s) {
+        var salinan = Object.assign({}, s);
+        salinan.opsi = buildOpsi(s, state.pool);
+        return salinan;
+      });
+      state.idx = 0;
+      state.jawabanUser = [];
+      renderSoal(0);
+    }
+
+    /* ── Layar 2: soal pilihan ganda ───────────────────────── */
+    function renderSoal(i) {
+      state.locked = false;
+      var s      = state.soalSesi[i];
+      var huruf  = ['A', 'B', 'C', 'D'];
+
+      var opsiHtml = s.opsi.map(function (teks, idx) {
+        return '<button class="lm-opsi-btn" data-opsi="' + esc(teks) + '">' +
+               '  <span class="lm-opsi-huruf">' + huruf[idx] + '</span>' +
+               '  <span class="lm-opsi-teks">' + esc(teks) + '</span>' +
+               '</button>';
+      }).join('');
+
+      root.innerHTML =
+        '<div class="qe-wrap">' +
+        '  <header class="qe-header">' +
+        '    <div class="qe-hd-left">' +
+        '      <a href="latihan-mandiri.html" class="qe-back-btn" title="Ganti peserta">←</a>' +
+        '      <div class="qe-hd-info">' +
+        '        <span class="qe-hd-kategori">Latihan Mandiri</span>' +
+        '        <span class="qe-hd-paket">' + esc(state.peserta) + '</span>' +
+        '      </div>' +
+        '    </div>' +
+        '    <div class="qe-hd-center">' +
+        '      <span class="qe-prog-txt">Soal ' + (i + 1) + ' dari ' + state.soalSesi.length + '</span>' +
+        '      <div class="qe-prog-bg"><div class="qe-prog-bar" style="width:' +
+             ((i + 1) / state.soalSesi.length * 100).toFixed(1) + '%"></div></div>' +
+        '    </div>' +
+        '    <div class="qe-hd-right"></div>' +
+        '  </header>' +
+        '  <main class="qe-main">' +
+        '    <div class="qe-soal-top">' +
+        '      <span class="qe-soal-num">' + (i + 1) + '</span>' +
+        '      ' + (s.bahasa === 'en' ? '<span class="qe-badge-en">🇬🇧 English</span>' : '') +
+        '      <span class="qe-badge-topik">' + esc((s.mapel ? s.mapel + ' · ' : '') + (s.topik || '')) + '</span>' +
+        '    </div>' +
+        '    <div class="qe-teks" id="lm-teks" lang="' + (s.bahasa === 'en' ? 'en' : 'id') + '">' + esc(s.teks) + '</div>' +
+        '    <div class="qe-timer-wrap">' +
+        '      <svg viewBox="0 0 100 100" class="qe-timer-svg">' +
+        '        <circle class="qe-t-track" cx="50" cy="50" r="45"/>' +
+        '        <circle class="qe-t-ring" id="lm-t-ring" cx="50" cy="50" r="45" stroke-dasharray="282.743" stroke-dashoffset="0"/>' +
+        '      </svg>' +
+        '      <span class="qe-timer-num" id="lm-t-num">' + WAKTU_PER_SOAL + '</span>' +
+        '    </div>' +
+        '    <div class="lm-opsi-list" id="lm-opsi-list">' + opsiHtml + '</div>' +
+        '    <div class="qe-ans-area" id="lm-ans-area">' +
+        '      <div id="lm-status-wrap" style="text-align:center;"></div>' +
+        '      <div class="qe-pembahasan">' +
+        '        <div class="qe-pem-lbl">📖 Pembahasan</div>' +
+        '        <div class="qe-pem-val" id="lm-pembahasan">' + esc(s.pembahasan) + '</div>' +
+        '      </div>' +
+        '    </div>' +
+        '  </main>' +
+        '  <footer class="qe-footer">' +
+        '    <div class="qe-btn-row">' +
+        '      <button id="lm-lanjut-btn" class="qe-btn qe-btn-next" style="display:none">' +
+             (i === state.soalSesi.length - 1 ? 'Lihat Hasil Akhir ✓' : 'Soal Berikutnya →') +
+        '      </button>' +
+        '    </div>' +
+        '  </footer>' +
+        '</div>';
+
+      Array.prototype.forEach.call(root.querySelectorAll('.lm-opsi-btn'), function (btn) {
+        btn.addEventListener('click', function () { pilihJawaban(btn.getAttribute('data-opsi')); });
+      });
+      qs('#lm-lanjut-btn').addEventListener('click', lanjut);
+
+      if (window.renderMathInElement) window.dispatchEvent(new Event('lm-render-math'));
+      startTimer();
+    }
+
+    function startTimer() {
+      clearInterval(state.timerIv);
+      state.timeLeft = WAKTU_PER_SOAL;
+      var ring = qs('#lm-t-ring');
+      var num  = qs('#lm-t-num');
+
+      function tick() {
+        num.textContent = state.timeLeft;
+        var frac = state.timeLeft / WAKTU_PER_SOAL;
+        ring.style.strokeDashoffset = (CIRC * (1 - frac)).toFixed(3);
+        if      (frac > 0.6) ring.style.stroke = 'var(--timer-green)';
+        else if (frac > 0.3) ring.style.stroke = 'var(--timer-orange)';
+        else                 ring.style.stroke = 'var(--timer-red)';
+        if (state.timeLeft <= 5) num.classList.add('qe-urgent');
+
+        if (state.timeLeft <= 0) { clearInterval(state.timerIv); pilihJawaban(null); return; }
+        state.timeLeft--;
+      }
+      tick();
+      state.timerIv = setInterval(tick, 1000);
+    }
+
+    /* ── Jawaban dipilih (atau null = waktu habis tanpa jawaban) ── */
+    function pilihJawaban(opsiDipilih) {
+      if (state.locked) return;
+      state.locked = true;
+      clearInterval(state.timerIv);
+
+      var s     = state.soalSesi[state.idx];
+      var benar = (opsiDipilih !== null) && (normalize(opsiDipilih) === normalize(s.jawaban));
+
+      state.jawabanUser[state.idx] = { dipilih: opsiDipilih, benar: benar };
+
+      qs('#lm-t-num').classList.remove('qe-urgent');
+      Array.prototype.forEach.call(root.querySelectorAll('.lm-opsi-btn'), function (btn) {
+        var teks = btn.getAttribute('data-opsi');
+        btn.classList.add('is-disabled');
+        if (normalize(teks) === normalize(s.jawaban)) btn.classList.add('is-benar');
+        else if (teks === opsiDipilih) btn.classList.add('is-salah');
+        else btn.classList.add('is-muted');
+      });
+
+      var statusHtml = benar
+        ? '<span class="lm-status-banner is-benar">✅ Benar!</span>'
+        : (opsiDipilih === null
+            ? '<span class="lm-status-banner is-salah">⏰ Waktu habis</span>'
+            : '<span class="lm-status-banner is-salah">❌ Kurang tepat</span>');
+      qs('#lm-status-wrap').innerHTML = statusHtml;
+
+      qs('#lm-ans-area').classList.add('qe-ans-visible');
+      qs('#lm-lanjut-btn').style.display = 'inline-flex';
+
+      if (window.renderMathInElement) window.dispatchEvent(new Event('lm-render-math'));
+    }
+
+    function lanjut() {
+      if (state.idx < state.soalSesi.length - 1) {
+        state.idx++;
+        renderSoal(state.idx);
+      } else {
+        selesaiSesi();
+      }
+    }
+
+    /* ── Layar 3: hasil akhir & rangkuman ──────────────────── */
+    function selesaiSesi() {
+      var benar = state.jawabanUser.filter(function (j) { return j && j.benar; }).length;
+      var total = state.soalSesi.length;
+      var skor  = Math.round((benar / total) * 100);
+
+      var sesi = {
+        waktu: new Date().toISOString(),
+        benar: benar,
+        salah: total - benar,
+        total: total,
+        skor: skor,
+        rincian: state.soalSesi.map(function (s, i) {
+          var j = state.jawabanUser[i] || { dipilih: null, benar: false };
+          return {
+            mapel: s.mapel || '', topik: s.topik || '', teks: s.teks,
+            jawabanBenar: s.jawaban, dipilih: j.dipilih, statusBenar: j.benar
+          };
+        })
+      };
+
+      /* Simpan permanen — lihat catatan kebijakan riwayat di atas file ini. */
+      simpanSesi(state.peserta, sesi);
+
+      var rincianHtml = sesi.rincian.map(function (r, i) {
+        var icon = r.statusBenar ? '✅' : '❌';
+        var jawabanKamu = r.dipilih === null ? '<em>(tidak sempat menjawab)</em>' : esc(r.dipilih);
+        return '<div class="lm-rincian-item">' +
+               '  <span class="lm-rincian-icon">' + icon + '</span>' +
+               '  <span class="lm-rincian-text">' +
+               '    <strong>Soal ' + (i + 1) + '</strong> · ' + esc(r.mapel) + '<br>' +
+               '    Jawabanmu: ' + jawabanKamu +
+               (r.statusBenar ? '' : ' &nbsp;·&nbsp; Jawaban benar: <strong>' + esc(r.jawabanBenar) + '</strong>') +
+               '  </span>' +
+               '</div>';
+      }).join('');
+
+      root.innerHTML =
+        '<div class="lm-wrap" style="min-height:100vh;">' +
+        '  <div class="lm-title">🏁 Sesi Selesai!</div>' +
+        '  <p class="lm-desc">' + esc(state.peserta) + '</p>' +
+        '  <div class="lm-ringkasan-skor">' + skor + '</div>' +
+        '  <p class="lm-ringkasan-sub">Skor kamu &nbsp;·&nbsp; ' + benar + ' benar, ' + (total - benar) + ' salah dari ' + total + ' soal</p>' +
+        '  <div class="lm-rincian-list">' + rincianHtml + '</div>' +
+        '  <div class="qe-btn-row">' +
+        '    <button id="lm-ulangi-btn" class="qe-btn qe-btn-next">🔁 Latihan Lagi</button>' +
+        '    <a href="latihan-mandiri-riwayat.html" class="qe-btn qe-btn-back">🕘 Lihat Riwayat</a>' +
+        '    <a href="index.html" class="qe-btn qe-btn-back">← Menu Utama</a>' +
+        '  </div>' +
+        '</div>';
+
+      qs('#lm-ulangi-btn').addEventListener('click', function () { mulaiSesi(state.peserta); });
+      if (window.renderMathInElement) window.dispatchEvent(new Event('lm-render-math'));
+    }
+
+    /* ── Start ─────────────────────────────────────────────── */
+    async function init() {
+      renderLoading();
+      try {
+        var r = await fetch(POOL_URL, { cache: 'no-store' });
+        if (!r.ok) throw new Error('HTTP ' + r.status + ' — ' + POOL_URL);
+        var data = await r.json();
+        state.pool = data.soal || [];
+        if (!state.pool.length) throw new Error('Pool soal kosong.');
+      } catch (e) {
+        renderError(e.message);
+        return;
+      }
+      renderPesertaPicker();
+    }
+
+    if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
+    else init();
+
+  })();
+  </script>
+
+  <!-- KaTeX JS -->
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
+
+  <script>
+  (function () {
+    var TARGETS = ['#lm-teks', '#lm-pembahasan'];
+    var KR_OPTS = {
+      delimiters: [
+        { left: '$$', right: '$$', display: true  },
+        { left: '$',  right: '$',  display: false }
+      ],
+      throwOnError: false,
+      trust: false
+    };
+    function renderMath() {
+      if (!window.renderMathInElement) return;
+      TARGETS.forEach(function (sel) {
+        var el = document.querySelector(sel);
+        if (el) renderMathInElement(el, KR_OPTS);
+      });
+    }
+    window.addEventListener('lm-render-math', function () { setTimeout(renderMath, 50); });
+    document.addEventListener('DOMContentLoaded', function () { setTimeout(renderMath, 200); });
+  })();
+  </script>
+
+</body>
+</html>
