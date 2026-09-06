@@ -1014,3 +1014,34 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
   .lm-rincian-list { max-height: 300px; }
   .lm-riwayat-tanggal, .lm-riwayat-skor { min-width: auto; }
 }
+
+/* Peringatan sebelum sesi dimulai — layar akui-paham */
+.lm-peringatan-box {
+  max-width: 560px; text-align: left;
+  background: rgba(244,67,54,0.1); border: 1px solid rgba(244,67,54,0.4);
+  border-radius: var(--radius-md); padding: 1.25rem 1.4rem;
+  color: var(--qe-text); font-size: 0.92rem; line-height: 1.7;
+}
+.lm-peringatan-box strong { color: #ff8a80; }
+
+/* Pengingat singkat & selalu terlihat selama sesi berjalan */
+.lm-warning-banner {
+  max-width: 900px; margin: 0.6rem auto 0; padding: 0.55rem 1rem;
+  background: rgba(244,67,54,0.1); border: 1px solid rgba(244,67,54,0.35);
+  border-radius: 10px; color: #ffcdd2; font-size: 0.78rem; line-height: 1.5;
+  text-align: center;
+}
+
+/* Badge status sesi di riwayat */
+.lm-status-badge {
+  display: inline-flex; align-items: center; gap: 0.3rem;
+  font-size: 0.72rem; font-weight: 800; padding: 3px 10px; border-radius: 20px;
+}
+.lm-status-badge.is-selesai { background: var(--qe-green-bg); color: var(--qe-green-text); border: 1px solid var(--qe-green-border); }
+.lm-status-badge.is-keluar  { background: rgba(255,152,0,0.15); color: #ffb74d; border: 1px solid rgba(255,152,0,0.4); }
+
+.lm-riwayat-bar.is-keluar { background: repeating-linear-gradient(135deg, #ffb74d, #ffb74d 4px, #a87800 4px, #a87800 8px); opacity: 0.75; }
+
+.lm-riwayat-summary { display: flex; gap: 0.6rem; flex-wrap: wrap; justify-content: center; margin-top: -0.5rem; }
+.lm-riwayat-summary span { background: rgba(255,255,255,0.06); border: 1px solid var(--qe-border); border-radius: 20px; padding: 5px 14px; font-size: 0.78rem; color: var(--qe-text-dim); }
+.lm-riwayat-summary strong { color: var(--qe-text); }
