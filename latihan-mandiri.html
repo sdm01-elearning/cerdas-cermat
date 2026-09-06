@@ -35,30 +35,41 @@
      *    pool soal sumbernya tetap isian ("jawaban" bertipe teks bebas),
      *    jadi 3 opsi pengecoh dibangkitkan otomatis dari jawaban soal
      *    lain di mapel yang sama (lihat buildOpsi()).
-     *  - Waktu tetap 15 detik/soal, TIDAK bisa dikonfigurasi dari luar
-     *    (beda dari quiz-engine.js yang menerima fixedWaktu).
+     *  - Waktu tetap 15 detik/soal.
      *  - Wajib pilih nama peserta dulu sebelum sesi dimulai.
-     *  - Setiap sesi SELESAI (20/20 soal terjawab/lewat waktu) otomatis
-     *    disimpan ke riwayat (localStorage) per peserta. Riwayat dapat
-     *    dilihat di latihan-mandiri-riwayat.html.
+     *  - Setiap sesi tercatat ke riwayat, BAIK yang selesai 20/20 MAUPUN
+     *    yang ditinggal/dibatalkan di tengah jalan (lihat bagian
+     *    "Keluar di tengah sesi" di bawah).
      *
-     *  PENTING — kebijakan riwayat tidak dapat dihapus:
-     *  Berkas ini SENGAJA tidak menyediakan fungsi hapus/reset riwayat
-     *  dalam bentuk apa pun (tidak ada tombol, tidak ada endpoint JS).
-     *  Catatan: karena situs ini murni statis (GitHub Pages, tanpa
-     *  server/database), riwayat tersimpan di localStorage browser yang
-     *  dipakai saat latihan. Ini mencegah penghapusan lewat aplikasi,
-     *  tapi tidak mencegah penghapusan lewat pengaturan browser itu
-     *  sendiri, dan tidak otomatis tersinkron ke perangkat lain. Kalau
-     *  ke depan perlu riwayat terpusat yang benar-benar tidak bisa
-     *  diutak-atik siswa, itu perlu backend kecil (mis. Google Sheets
-     *  lewat Apps Script) di luar cakupan file ini.
+     *  PENYIMPANAN RIWAYAT — localStorage + backend pusat (opsional):
+     *  Riwayat SELALU disimpan ke localStorage browser (cadangan/offline).
+     *  Kalau RIWAYAT_ENDPOINT_URL di bawah diisi dengan URL Web App Google
+     *  Apps Script (lihat backend/apps-script/Code.gs), riwayat JUGA
+     *  dikirim ke Google Sheet pusat — supaya tidak hilang saat cache
+     *  browser dibersihkan dan bisa dipantau guru dari satu tempat lintas
+     *  perangkat. Backend itu SENGAJA hanya punya endpoint tambah (POST)
+     *  dan baca (GET), tanpa endpoint hapus/ubah — jadi riwayat tidak
+     *  bisa dihapus lewat aplikasi ini sama sekali, baik oleh siswa
+     *  maupun lewat bug di halaman ini sendiri.
+     *
+     *  KELUAR DI TENGAH SESI:
+     *  Kalau siswa menekan tombol kembali, menutup tab, atau pindah
+     *  halaman sebelum soal ke-20 selesai, progres sejauh itu tetap
+     *  dicatat sebagai sesi berstatus "keluar_di_tengah" (lihat
+     *  simpanSesiKeluarDiTengah()). Siswa diberi tahu soal ini di layar
+     *  peringatan sebelum sesi dimulai dan lewat pita pengingat yang
+     *  selalu tampil selama sesi berjalan.
      */
 
     var POOL_URL       = 'latihan-tahap3/soal/data/pool.json';
     var JUMLAH_SOAL    = 20;
     var WAKTU_PER_SOAL = 15; // detik
     var LS_KEY         = 'cc_riwayat_mandiri_v1';
+
+    // >>> ISI URL WEB APP GOOGLE APPS SCRIPT DI SINI SETELAH DI-DEPLOY <<<
+    // Kosongkan ('') kalau belum ada backend — fitur tetap jalan, riwayat
+    // hanya tersimpan lokal di browser yang dipakai. Lihat backend/apps-script/Code.gs.
+    var RIWAYAT_ENDPOINT_URL = '';
 
     var PESERTA_LIST = [
       { nama: 'Kimi Zia Azahra',                icon: '🌟' },
@@ -96,11 +107,8 @@
      * 3 pengecoh. Pengecoh diambil dari jawaban soal LAIN pada mapel
      * yang sama (supaya masuk akal secara kategori), lalu diperlebar ke
      * seluruh pool kalau soal semapel tidak cukup. Duplikat teks jawaban
-     * (case-insensitive) dibuang supaya tidak ada 2 opsi yang terlihat
-     * sama. Ini heuristik otomatis — bukan pengecoh yang dikurasi guru —
-     * jadi sesekali bisa terasa terlalu mudah/gampang ditebak dari
-     * bentuk angka atau panjang teks. Kalau ingin pengecoh yang lebih
-     * rapi, perlu field baru semacam "opsi_pengecoh" di JSON soal.
+     * (case-insensitive) dibuang. Ini heuristik otomatis — bukan
+     * pengecoh yang dikurasi guru.
      */
     function buildOpsi(soal, pool) {
       var jawabanBenar = soal.jawaban;
@@ -134,18 +142,36 @@
       return shuffle([jawabanBenar].concat(pengecoh));
     }
 
-    /* ── Riwayat (localStorage) ───────────────────────────────
-       Lihat catatan kebijakan di atas: TIDAK ADA fungsi hapus di sini. */
-    function bacaRiwayat() {
+    /* ── Riwayat: localStorage (selalu) + backend pusat (kalau dikonfigurasi) ──
+       TIDAK ADA fungsi hapus di file ini — lihat catatan kebijakan di atas. */
+    function bacaRiwayatLokal() {
       try { return JSON.parse(localStorage.getItem(LS_KEY) || '{}'); }
       catch (e) { return {}; }
     }
-    function simpanSesi(peserta, sesi) {
-      var data = bacaRiwayat();
+    function simpanRiwayatLokal(peserta, sesi) {
+      var data = bacaRiwayatLokal();
       if (!data[peserta]) data[peserta] = [];
       data[peserta].push(sesi);
       try { localStorage.setItem(LS_KEY, JSON.stringify(data)); }
-      catch (e) { console.error('[LatihanMandiri] Gagal menyimpan riwayat:', e); }
+      catch (e) { console.error('[LatihanMandiri] Gagal menyimpan riwayat lokal:', e); }
+    }
+    function kirimKeServer(payload) {
+      if (!RIWAYAT_ENDPOINT_URL) return;
+      try {
+        var body = JSON.stringify(payload);
+        if (navigator.sendBeacon) {
+          // sendBeacon: paling andal saat halaman sedang ditutup/dipindah.
+          // text/plain dipakai supaya tidak memicu CORS preflight ke Apps Script.
+          navigator.sendBeacon(RIWAYAT_ENDPOINT_URL, new Blob([body], { type: 'text/plain' }));
+        } else {
+          fetch(RIWAYAT_ENDPOINT_URL, { method: 'POST', mode: 'no-cors', body: body }).catch(function () {});
+        }
+      } catch (e) { console.error('[LatihanMandiri] Gagal mengirim riwayat ke server:', e); }
+    }
+    function catatSesi(peserta, sesi) {
+      simpanRiwayatLokal(peserta, sesi);
+      var payload = Object.assign({ peserta: peserta }, sesi);
+      kirimKeServer(payload);
     }
 
     /* ── State sesi ────────────────────────────────────────── */
@@ -157,7 +183,8 @@
       jawabanUser: [],
       timerIv: null,
       timeLeft: 0,
-      locked: false
+      locked: false,
+      sessionInProgress: false // true selama sesi berjalan; dipakai guard exit/beforeunload
     };
 
     var root = document.getElementById('lm-root');
@@ -202,8 +229,30 @@
         '</div>';
 
       Array.prototype.forEach.call(root.querySelectorAll('.lm-peserta-card'), function (btn) {
-        btn.addEventListener('click', function () { mulaiSesi(btn.getAttribute('data-nama')); });
+        btn.addEventListener('click', function () { renderPeringatan(btn.getAttribute('data-nama')); });
       });
+    }
+
+    /* ── Layar 1b: peringatan wajib dibaca sebelum sesi dimulai ── */
+    function renderPeringatan(peserta) {
+      root.innerHTML =
+        '<div class="lm-wrap">' +
+        '  <div class="lm-title">⚠️ Sebelum Mulai, ' + esc(peserta.split(' ')[0]) + '</div>' +
+        '  <div class="lm-peringatan-box">' +
+        '    Latihan ini berisi <strong>' + JUMLAH_SOAL + ' soal</strong>, masing-masing ' + WAKTU_PER_SOAL + ' detik.<br><br>' +
+        '    <strong>Kalau kamu menekan tombol kembali, menutup halaman, atau berhenti ' +
+        '    sebelum soal terakhir</strong>, latihan ini TETAP akan tercatat di riwayatmu — ' +
+        '    ditandai sebagai <strong>"berhenti di tengah"</strong> beserta sampai soal nomor ' +
+        '    berapa kamu mengerjakan. Jadi usahakan mengerjakan sampai selesai supaya hasilnya ' +
+        '    benar-benar menunjukkan kemampuanmu ya!' +
+        '  </div>' +
+        '  <div class="qe-btn-row">' +
+        '    <button id="lm-mulai-btn" class="qe-btn qe-btn-next">✅ Saya Paham, Mulai Latihan</button>' +
+        '    <a href="latihan-mandiri.html" class="qe-btn qe-btn-back">← Batal, Pilih Nama Lain</a>' +
+        '  </div>' +
+        '</div>';
+
+      qs('#lm-mulai-btn').addEventListener('click', function () { mulaiSesi(peserta); });
     }
 
     /* ── Mulai sesi ────────────────────────────────────────── */
@@ -216,6 +265,7 @@
       });
       state.idx = 0;
       state.jawabanUser = [];
+      state.sessionInProgress = true;
       renderSoal(0);
     }
 
@@ -236,7 +286,7 @@
         '<div class="qe-wrap">' +
         '  <header class="qe-header">' +
         '    <div class="qe-hd-left">' +
-        '      <a href="latihan-mandiri.html" class="qe-back-btn" title="Ganti peserta">←</a>' +
+        '      <button id="lm-keluar-btn" class="qe-back-btn" title="Kembali / hentikan latihan">←</button>' +
         '      <div class="qe-hd-info">' +
         '        <span class="qe-hd-kategori">Latihan Mandiri</span>' +
         '        <span class="qe-hd-paket">' + esc(state.peserta) + '</span>' +
@@ -249,6 +299,7 @@
         '    </div>' +
         '    <div class="qe-hd-right"></div>' +
         '  </header>' +
+        '  <p class="lm-warning-banner">⚠️ Belum selesai sampai soal terakhir? Progresmu tetap dicatat di riwayat sebagai "berhenti di tengah".</p>' +
         '  <main class="qe-main">' +
         '    <div class="qe-soal-top">' +
         '      <span class="qe-soal-num">' + (i + 1) + '</span>' +
@@ -285,6 +336,7 @@
         btn.addEventListener('click', function () { pilihJawaban(btn.getAttribute('data-opsi')); });
       });
       qs('#lm-lanjut-btn').addEventListener('click', lanjut);
+      qs('#lm-keluar-btn').addEventListener('click', konfirmasiKeluar);
 
       if (window.renderMathInElement) window.dispatchEvent(new Event('lm-render-math'));
       startTimer();
@@ -354,29 +406,83 @@
       }
     }
 
-    /* ── Layar 3: hasil akhir & rangkuman ──────────────────── */
+    /* ── Bangun objek "rincian" dari sejumlah N soal pertama yang sudah terjawab ── */
+    function bangunRincian(jumlah) {
+      return state.soalSesi.slice(0, jumlah).map(function (s, i) {
+        var j = state.jawabanUser[i] || { dipilih: null, benar: false };
+        return {
+          mapel: s.mapel || '', topik: s.topik || '', teks: s.teks,
+          jawabanBenar: s.jawaban, dipilih: j.dipilih, statusBenar: j.benar
+        };
+      });
+    }
+
+    /* ── Keluar di tengah sesi (tombol ←, beforeunload) ────── */
+    function konfirmasiKeluar() {
+      var sudahDijawab = state.jawabanUser.filter(function (j) { return !!j; }).length;
+      var lanjutkanKeluar = window.confirm(
+        'Yakin mau berhenti sekarang?\n\n' +
+        'Baru sampai soal ' + (state.idx + 1) + ' dari ' + state.soalSesi.length + ' (' + sudahDijawab + ' sudah dijawab).\n' +
+        'Progres sejauh ini akan tetap tercatat di riwayatmu sebagai "berhenti di tengah".'
+      );
+      if (!lanjutkanKeluar) return;
+      simpanSesiKeluarDiTengah();
+      window.location.href = 'latihan-mandiri.html';
+    }
+
+    function simpanSesiKeluarDiTengah() {
+      if (!state.sessionInProgress) return; // guard: jangan simpan dobel
+      state.sessionInProgress = false;
+      clearInterval(state.timerIv);
+
+      var jawabanTerjawab = state.jawabanUser.filter(function (j) { return !!j; });
+      var totalDijawab    = jawabanTerjawab.length;
+      var benar           = jawabanTerjawab.filter(function (j) { return j.benar; }).length;
+
+      var sesi = {
+        waktu: new Date().toISOString(),
+        status: 'keluar_di_tengah',
+        totalDijawab: totalDijawab,
+        total: state.soalSesi.length,
+        benar: benar,
+        salah: totalDijawab - benar,
+        skor: totalDijawab ? Math.round((benar / totalDijawab) * 100) : 0,
+        rincian: bangunRincian(totalDijawab)
+      };
+      catatSesi(state.peserta, sesi);
+    }
+
+    /* Jaring pengaman untuk tab ditutup / refresh / tombol Back browser
+       (bukan tombol ← di dalam halaman, yang sudah ditangani konfirmasiKeluar).
+       Browser modern tidak lagi menampilkan teks kustom di dialog ini, jadi
+       pita peringatan yang selalu tampil (lihat renderSoal) adalah lini
+       pertama; ini cuma jaring pengaman terakhir + tetap mengirim data. */
+    window.addEventListener('beforeunload', function (event) {
+      if (!state.sessionInProgress) return;
+      simpanSesiKeluarDiTengah();
+      event.preventDefault();
+      event.returnValue = '';
+    });
+
+    /* ── Layar 3: hasil akhir & rangkuman (sesi selesai 20/20) ── */
     function selesaiSesi() {
+      state.sessionInProgress = false;
+
       var benar = state.jawabanUser.filter(function (j) { return j && j.benar; }).length;
       var total = state.soalSesi.length;
       var skor  = Math.round((benar / total) * 100);
 
       var sesi = {
         waktu: new Date().toISOString(),
+        status: 'selesai',
+        totalDijawab: total,
+        total: total,
         benar: benar,
         salah: total - benar,
-        total: total,
         skor: skor,
-        rincian: state.soalSesi.map(function (s, i) {
-          var j = state.jawabanUser[i] || { dipilih: null, benar: false };
-          return {
-            mapel: s.mapel || '', topik: s.topik || '', teks: s.teks,
-            jawabanBenar: s.jawaban, dipilih: j.dipilih, statusBenar: j.benar
-          };
-        })
+        rincian: bangunRincian(total)
       };
-
-      /* Simpan permanen — lihat catatan kebijakan riwayat di atas file ini. */
-      simpanSesi(state.peserta, sesi);
+      catatSesi(state.peserta, sesi);
 
       var rincianHtml = sesi.rincian.map(function (r, i) {
         var icon = r.statusBenar ? '✅' : '❌';
@@ -405,7 +511,7 @@
         '  </div>' +
         '</div>';
 
-      qs('#lm-ulangi-btn').addEventListener('click', function () { mulaiSesi(state.peserta); });
+      qs('#lm-ulangi-btn').addEventListener('click', function () { renderPeringatan(state.peserta); });
       if (window.renderMathInElement) window.dispatchEvent(new Event('lm-render-math'));
     }
 

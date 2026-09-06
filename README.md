@@ -32,14 +32,46 @@ dirancang untuk **belajar sendiri** di rumah/perangkat pribadi:
   tersebut untuk detail & batasannya)
 - **20 soal/sesi**, diacak dari pool 1000 soal Latihan Tahap 3 (6 mata pelajaran)
 - **15 detik/soal**, jawaban langsung diperiksa benar/salah + pembahasan tampil seketika
-- Wajib pilih nama peserta dulu (3 peserta tetap, didaftar langsung di file)
-- Hasil setiap sesi (skor, rincian per soal) otomatis tersimpan ke riwayat dan
-  bisa dilihat di `latihan-mandiri-riwayat.html`
-- **Riwayat bersifat permanen** — sengaja tidak ada tombol/fungsi hapus di mana
-  pun. Catatan: karena situs ini statis (tanpa server/database), riwayat
-  tersimpan di `localStorage` browser yang dipakai, jadi tidak otomatis
-  tersinkron lintas perangkat dan tidak sepenuhnya kebal dari penghapusan data
-  browser di level sistem — hanya tidak bisa dihapus **lewat aplikasi ini**.
+- Wajib pilih nama peserta dulu (3 peserta tetap, didaftar langsung di file), dan
+  wajib menekan "Saya Paham, Mulai Latihan" di layar peringatan sebelum sesi dimulai
+- Hasil setiap sesi (skor, rincian per soal, tanggal & jam) otomatis tersimpan ke
+  riwayat dan bisa dilihat di `latihan-mandiri-riwayat.html`, lengkap dengan
+  ringkasan (rata-rata skor, skor tertinggi) dan grafik tren
+
+### Sesi yang tidak diselesaikan tetap tercatat
+
+Kalau siswa menekan tombol ← di dalam latihan, menutup tab, atau berpindah
+halaman sebelum soal ke-20, progres sejauh itu **tetap masuk riwayat** —
+ditandai status "berhenti di tengah" beserta sampai soal ke berapa ia
+mengerjakan. Ini diberitahukan dua kali ke siswa: layar peringatan wajib-baca
+sebelum sesi dimulai, dan pita pengingat kecil yang selalu tampil di atas soal
+selama sesi berjalan. Detail teknis (guard `beforeunload`, penanganan tombol
+kembali) ada di komentar `latihan-mandiri.html`.
+
+### Penyimpanan riwayat: localStorage + backend pusat (opsional)
+
+Riwayat **selalu** disimpan ke `localStorage` browser yang dipakai (cadangan
+otomatis, tidak perlu setup apa pun). Karena situs ini statis (GitHub Pages,
+tanpa server), itu berarti riwayat **per-perangkat/per-browser** — tidak
+otomatis tersinkron lintas perangkat, dan bisa hilang kalau data browser
+dibersihkan dari pengaturan sistem.
+
+Untuk riwayat yang benar-benar terpusat (satu catatan yang bisa dipantau guru
+dari mana saja, lintas perangkat), sudah disiapkan backend **Google Apps
+Script + Google Sheet** di `backend/apps-script/Code.gs`. Backend ini sengaja
+hanya punya endpoint tambah (`doPost`) dan baca (`doGet`) — **tidak ada
+endpoint hapus/ubah** — supaya "riwayat tidak dapat dihapus" berlaku di level
+backend, bukan cuma di tampilan.
+
+Untuk mengaktifkannya:
+1. Deploy `backend/apps-script/Code.gs` sebagai Google Apps Script Web App
+   (lihat komentar di file tersebut untuk detail).
+2. Salin URL Web App yang didapat.
+3. Isikan URL itu ke konstanta `RIWAYAT_ENDPOINT_URL` di **kedua** file:
+   `latihan-mandiri.html` dan `latihan-mandiri-riwayat.html` (harus sama persis).
+
+Selama `RIWAYAT_ENDPOINT_URL` masih kosong (`''`), fitur latihan tetap
+berjalan normal — riwayat hanya tersimpan lokal.
 
 ## Cara Penggunaan
 
@@ -68,9 +100,13 @@ Spasi lagi → Soal berikutnya
 ```
 cerdas-cermat/
 ├── index.html                        ← Halaman utama / hub
+├── latihan-mandiri.html              ← Latihan mandiri (pilihan ganda, 15 detik/soal)
+├── latihan-mandiri-riwayat.html      ← Riwayat latihan mandiri per peserta
 ├── assets/
 │   ├── css/style.css                 ← Stylesheet bersama
 │   └── js/quiz-engine.js             ← Engine soal slideshow
+├── backend/
+│   └── apps-script/Code.gs           ← Backend opsional (Google Apps Script) untuk riwayat pusat
 │
 ├── indonesia-umum/
 │   ├── index.html                    ← Hub kategori
